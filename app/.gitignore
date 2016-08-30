@@ -1,0 +1,26 @@
+# TYPO3 specific ignores
+/vendor
+/web/index.php
+/web/typo3
+/web/typo3temp/**/*
+/web/typo3conf/PackageStates.php
+/web/typo3conf/temp_*.php
+/web/typo3conf/deprecation_*.log
+/web/typo3conf/realurl_autoconf.php
+/web/typo3conf/AdditionalConfiguration_custom.php
+
+
+/web/typo3conf/ENABLE_INSTALL_TOOL
+/web/FIRST_INSTALL
+
+/tpo3cms
+/typo3log.log
+
+/web/fileadmin/**/*
+/web/fileadmin/_processed_/**/*
+/web/uploads/**/*
+
+
+# TYPO3 specific ignores: ignore all except project specific extensions
+/web/typo3conf/ext/*
+!/web/typo3conf/ext/theme
