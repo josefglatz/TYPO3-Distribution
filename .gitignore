@@ -1,0 +1,45 @@
+# General ignores
+.DS_Store
+.idea
+nbproject
+*.project
+*.swp
+.buildpath
+.cache
+.project
+.session
+.settings
+.TemporaryItems
+.webprj
+.vagrant
+*.t3x
+*.t3d
+*.zip
+*.bak
+
+# TYPO3 specific ignores
+/app/vendor
+/app/web/index.php
+/app/web/typo3
+/app/web/typo3temp/**/*
+/app/web/typo3conf/PackageStates.php
+/app/web/typo3conf/temp_*.php
+/app/web/typo3conf/deprecation_*.log
+/app/web/typo3conf/realurl_autoconf.php
+/app/web/typo3conf/AdditionalConfiguration_custom.php
+
+
+ENABLE_INSTALL_TOOL
+FIRST_INSTALL
+
+/app/typo3cms
+/app/typo3log.log
+
+/app/web/fileadmin/**/*
+/app/web/fileadmin/_processed_/**/*
+/app/web/uploads/**/*
+
+
+# TYPO3 specific ignores: ignore all except project specific extensions
+/app/web/typo3conf/ext/*
+!/app/web/typo3conf/ext/theme
