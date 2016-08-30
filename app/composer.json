@@ -11,7 +11,21 @@
 		"@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
 		"@TODO/TBD: Composer: PackagesStates Generation and Folder Structure Fix"
 	],
-    "license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Josef Glatz",
+			"email": "j.glatz@supseven.at",
+			"role": "Developer",
+			"homepage": "http://www.sup7seven.digital"
+		},
+		{
+			"name": "Josef Glatz",
+			"email": "jousch@jousch.com",
+			"role": "Developer",
+			"homepage": "http://jousch.com"
+		}
+	],
+    "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "config": {
         "optimize-autoloader": true,
