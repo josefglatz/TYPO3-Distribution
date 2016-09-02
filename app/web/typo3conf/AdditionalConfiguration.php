@@ -23,6 +23,13 @@ if ($context) {
 }
 // project specific configuration
 $customChanges = [
+    'EXTCONF' => [
+        'lang' => [
+            'availableLanguages' => [
+                'de',
+            ],
+        ],
+    ],
     'EXT' => [
         'extConf' => [
             't3monitoring_client' => serialize([
@@ -36,6 +43,15 @@ $customChanges = [
                 'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/LoginBackground.png',
                 'backendLogo' => 'EXT:backend/Resources/Public/Images/Backend/typo3-topbar@2x.png', // @TODO: Backend Logo (Stage, Prod, Dev)
                 'backendFavicon' => 'EXT:backend/Resources/Public/Backend/Icons/favicon.ico', // @TODO: Backend FavIcon (Stage, Prod, Dev)
+            ]),
+            'fluid_styled_content' => serialize([
+                'loadContentElementWizardTsConfig' => 1,
+            ]),
+            'realurl' => serialize([
+                'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
+                'enableAutoConf' => 1,
+                'autoConfFormat' => 0,
+                'enableDevLog' => 0,
             ]),
 //            'lfeditor' => serialize([
 //                'viewLanguages' => 'de',
