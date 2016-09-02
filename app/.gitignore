@@ -13,7 +13,12 @@
 /web/typo3conf/ENABLE_INSTALL_TOOL
 /web/FIRST_INSTALL
 
-/tpo3cms
+/doctrine-dbal
+/fluid
+/phpunit
+/typo3
+/typo3cms
+
 /typo3log.log
 
 /web/fileadmin/**/*
