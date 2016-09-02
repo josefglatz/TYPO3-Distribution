@@ -75,6 +75,12 @@ $customChanges = [
 //                    'updatePasswd' => 1,
 //                ],
 //            ]),
+            'scheduler' => serialize([
+                'maxLifetime' => 1440,
+                'enableBELog' => 1,
+                'showSampleTasks' => 1,
+                'useAtDaemon' => 0,
+            ]),
             'static_info_tables' => serialize([
                 'enableManager' => 0
             ]),
