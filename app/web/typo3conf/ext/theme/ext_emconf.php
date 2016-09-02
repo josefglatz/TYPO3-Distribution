@@ -25,6 +25,7 @@ $EM_CONF[$_EXTKEY] = [
                 ],
             'conflicts' =>
                 [
+                    'css_styled_content' => '',
                 ],
             'suggests' =>
                 [
