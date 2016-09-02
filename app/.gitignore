@@ -18,6 +18,9 @@
 /phpunit
 /typo3
 /typo3cms
+/rmversion
+/setversion
+/upload
 
 /typo3log.log
 
