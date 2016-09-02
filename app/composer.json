@@ -29,7 +29,8 @@
     "minimum-stability": "dev",
     "config": {
         "optimize-autoloader": true,
-		"secure-http": true
+		"secure-http": true,
+		"bin-dir": "."
     },
     "require": {
         "typo3/cms": "dev-master as 7.6.99",
@@ -62,10 +63,10 @@
     },
 	"scripts": {
 		"package-states": [
-			"{$bin-dir}/typo3cms install:generatepackagestates"
+			"./typo3cms install:generatepackagestates"
 		],
 		"folder-structure": [
-			"{$bin-dir}/typo3cms install:fixfolderstructure"
+			"./typo3cms install:fixfolderstructure"
 		],
 		"pre-deploy": [
 			"# TBD"
