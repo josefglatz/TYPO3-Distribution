@@ -7,9 +7,10 @@
     "name": "jousch/typo3-distribution",
 	"description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
     "_comment": [
-		"Some lines",
+		"This is my TYPO3 distribution",
 		"@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
-		"@TODO/TBD: Composer: PackagesStates Generation and Folder Structure Fix"
+		"mimimi",
+		"mumumu"
 	],
 	"authors": [
 		{
