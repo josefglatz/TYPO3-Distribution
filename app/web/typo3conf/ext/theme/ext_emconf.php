@@ -1,5 +1,5 @@
 <?php
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Project specific theme extension',
     'description' => 'Description for ext',
     'category' => 'Theme',
@@ -18,30 +18,35 @@ $EM_CONF[$_EXTKEY] = array(
     'lockType' => '',
     'version' => '0.0.0',
     'constraints' =>
-        array(
+        [
             'depends' =>
-                array(
+                [
                     'typo3' => '8.3.0-8.99.99',
-                ),
+                ],
             'conflicts' =>
-                array(
-                ),
+                [
+                ],
             'suggests' =>
-                array(
-                ),
-        ),
+                [
+                    'realurl' => '',
+                    'news' => '',
+                    'piwik' => '',
+                    'gridelements' => '',
+                    'tt_address' => '',
+                ],
+        ],
     'autoload' =>
-        array(
+        [
             'psr-4' =>
-                array(
+                [
                     'Sup7even\\Theme\\' => 'Classes',
-                ),
-        ),
+                ],
+        ],
     'autoload-dev' =>
-        array(
+        [
             'psr-4' =>
-                array(
+                [
                     'Sup7even\\Theme\\Tests\\' => 'Tests',
-                ),
-        ),
-);
+                ],
+        ],
+];
