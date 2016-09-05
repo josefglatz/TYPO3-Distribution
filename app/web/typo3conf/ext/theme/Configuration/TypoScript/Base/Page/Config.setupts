@@ -27,6 +27,17 @@ config {
 		}
 	}
 
+
+	// Language settings
+	locale_all = {$site.l10n.locale_all}
+	language = {$site.l10n.language}
+	sys_language_uid = {$site.l10n.sys_language_uid}
+	sys_language_mode = {$site.l10n.language_mode}
+	sys_language_isocode_default = {$site.l10n.sys_language_isocode_default}
+	#	sys_language_overlay = {$site.l10n.language_overlay}
+	#	sys_language_softMergeIfNotBlank = tt_content:image, tt_content:header, pages:title, pages:subtitle, pages:nav_title, page:media
+
+
 	pageTitleFirst = 1
 	pageTitleSeparator = -
 	pageTitleSeparator.noTrimWrap = | | |

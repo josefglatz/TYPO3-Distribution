@@ -16,7 +16,7 @@ site {
 
 
     l10n {
-        locale_all = de_DE.UTF-8
+        locale_all = de_AT.UTF-8, de_DE.UTF-8
         language = de
         # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
         sys_language_isocode = de
