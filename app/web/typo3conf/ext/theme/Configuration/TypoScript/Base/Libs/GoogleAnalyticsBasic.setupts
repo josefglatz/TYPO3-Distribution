@@ -3,7 +3,7 @@
 // @TODO: Move GA to inline js (like page.jsFooterInline)
 lib.googleAnalyticsBasic = COA
 lib.googleAnalyticsBasic {
-	if.isTrue = {$site.analytics.google.id}
+	if.isTrue = {$site.tracking.google.id}
 	stdWrap.cObject = COA
 	stdWrap.cObject {
 		10 = TEXT
@@ -14,7 +14,7 @@ lib.googleAnalyticsBasic {
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', '{$site.analytics.google.id}', 'auto', {
+ga('create', '{$site.tracking.google.id}', 'auto', {
   anonymizeIp: true
 });
 ga('send', 'pageview');

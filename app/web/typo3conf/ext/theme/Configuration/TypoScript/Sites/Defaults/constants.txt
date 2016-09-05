@@ -4,7 +4,9 @@ thm {
     name = Theme
     key = theme
     res = EXT:theme/Resources
+    // @TODO: refactor $thm.resPub to $thm.resPublic
     resPub = EXT:theme/Resources/Public
+    // @TODO: refactor $thm.resPriv to $thm.resPrivate
     resPriv = EXT:theme/Resources/Private
     resLanguage = EXT:theme/Resources/Private/Language
     resTemplates = EXT:theme/Resources/Private/Templates

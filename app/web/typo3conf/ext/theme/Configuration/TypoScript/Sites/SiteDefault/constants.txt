@@ -44,7 +44,7 @@ site {
     }
 
 
-    analytics {
+    tracking {
 
         google {
             id =
@@ -82,7 +82,7 @@ site {
         debug = 1
     }
     site {
-        analytics {
+        tracking {
             google {
                 id =
                 domain =
@@ -95,7 +95,7 @@ site {
 
 [applicationContext = Production/Staging]
     site {
-        analytics {
+        tracking {
             google {
                 id =
                 domain =
@@ -107,7 +107,7 @@ site {
     }
 [applicationContext = Production/Testing]
     site {
-        analytics {
+        tracking {
             google {
                 id =
                 domain =

@@ -1,6 +1,6 @@
 lib.piwikBasic = COA
 lib.piwikBasic {
-	if.isTrue = {$site.analytics.piwik.enable}
+	if.isTrue = {$site.tracking.piwik.enable}
 	stdWrap.cObject = COA
 	stdWrap.cObject {
 		10 = TEXT
@@ -11,14 +11,14 @@ lib.piwikBasic {
 	_paq.push(['trackPageView']);
 	_paq.push(['enableLinkTracking']);
 	(function() {
-	var u="{$site.analytics.piwik.host}";
+	var u="{$site.tracking.piwik.host}";
 	_paq.push(['setTrackerUrl', u+'/piwik.php']);
-	_paq.push(['setSiteId', {$site.analytics.piwik.id}]);
+	_paq.push(['setSiteId', {$site.tracking.piwik.id}]);
 	var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 	g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 	})();
 	</script>
-	<noscript><p><img src="{$site.analytics.piwik.host}/piwik.php?idsite={$site.analytics.piwik.id}" style="border:0;" alt="" /></p></noscript>
+	<noscript><p><img src="{$site.tracking.piwik.host}/piwik.php?idsite={$site.tracking.piwik.id}" style="border:0;" alt="" /></p></noscript>
 	<!-- End Piwik Code -->
 		)
 	}
