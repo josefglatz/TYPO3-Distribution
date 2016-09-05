@@ -1,0 +1,7 @@
+// return title of the actual page
+lib.getTitle = TEXT
+lib.getTitle {
+	value.current = 1
+	value.stdWrap.wrap = {DB : pages : | : title}
+	value.stdWrap.insertData = 1
+}
