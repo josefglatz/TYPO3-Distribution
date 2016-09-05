@@ -1,0 +1,105 @@
+config {
+	doctype = html5
+	metaCharset = utf-8
+	htmlTag_setParams = none
+	htmlTag_stdWrap {
+		setContentToCurrent = 1
+		cObject = COA
+		cObject {
+			10 = LOAD_REGISTER
+			10 {
+				newLine.char = 10
+				tagEnd {
+					current = 1
+					split.max = 2
+					split.token = <html
+					split.returnKey = 1
+				}
+
+				additionalHtmlTagAttributes {
+					cObject = TEXT
+					cObject {
+						value = {$tree.sys.htmlTag_additionalTagAttributes}
+						required = 1
+						noTrimWrap = | ||
+					}
+				}
+			}
+
+			20 = TEXT
+			20.value = <!--[if IE 8]> <html class="no-js lt-ie9" dir="{$Tree.System.L10n.directionalityOfText}" lang="{$Tree.System.L10n.language}"{register:additionalHtmlTagAttributes}{register:tagEnd} <![endif]-->
+			20.wrap = |{register:newLine}
+			20.insertData = 1
+			50 < .20
+			50.value = <!--[if gt IE 8]> <!--><html class="no-js" dir="{$Tree.System.L10n.directionalityOfText}" lang="{$Tree.System.L10n.language}"{register:additionalHtmlTagAttributes}{register:tagEnd} <!--<![endif]-->
+
+			90 = RESTORE_REGISTER
+		}
+	}
+
+	pageTitleFirst = 1
+	pageTitleSeparator = -
+	pageTitleSeparator.noTrimWrap = | | |
+	noPageTitle = 2
+
+	headerComment = Created by Sup7even Digital :: http://www.sup7even.digital
+
+	debug = 0
+	admPanel = 0
+	# disabled until https://forge.typo3.org/issues/63815
+	sendCacheHeaders = 0
+	disablePrefixComment = 1
+
+	disableImgBorderAttr = 1
+
+	concatenateCss = 0
+	concatenateJs = 0
+	#    concatenateJsAndCss = 0
+	compressJs = 0
+	compressCss = 0
+	moveJsFromHeaderToFooter = 0
+	#    removeDefaultJS = 1
+	removeDefaultJS = external
+	inlineStyle2TempFile = 1
+	removeDefaultCss = 0
+
+	noScaleUp = 0
+
+	absRefPrefix = /
+	tx_realurl_enable = 1
+
+	// Links & content sharing across domains & jumpUrl & external target stuff
+	typolinkEnableLinksAcrossDomains = 1
+	typolinkCheckRootline = 1
+	content_from_pid_allowOutsideDomain = 1
+	disablePageExternalUrl = 0
+	jumpurl_enable = 0
+	jumpurl_mailto_disable = 1
+	intTarget = _self
+	extTarget = _blank
+	fileTarget =
+
+	// E-Mail AntiSpam
+	#    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
+	#    spamProtectEmailAddresses = -3
+	spamProtectEmailAddresses = ascii
+	spamProtectEmailAddresses_atSubst = &#64;
+	spamProtectEmailAddresses_lastDotSubst = &#46;
+
+	#    linkVars
+	// linkVars := addToList(L(0-1))
+	// until an additional fe language is used, no linkVars necessary
+	// !!! Please do NOT add `type` to config.linkVars !!!
+	linkVars =
+	uniqueLinkVars = 1
+}
+
+[globalVar = LIT:1 = {$thm.debug}]
+	config {
+		debug = 1
+		admPanel = 1
+		sendCacheHeaders = 0
+		disablePrefixComment = 0
+		tx_realurl_enable = 1
+	}
+[global]
