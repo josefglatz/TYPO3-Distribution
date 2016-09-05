@@ -1,0 +1,25 @@
+[globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*]
+	// show some debug infos in <head>
+	page.headerData.666999 = TEXT
+	page.headerData.666999 {
+		insertData = 1
+		value (
+
+
+	<!-- TYPO3 debug infos
+
+	   Page Uid:             {page:uid}
+	   Page Pid:             {page:pid}
+	   Page Hidden:          {page:hidden}
+	   Page Doktype:         {page:doktype}
+	   Sys_language_uid:     {TSFE:sys_language_uid}
+	   Sys_language_content: {TSFE:sys_language_content}
+	   Level:                {level:0}
+
+
+	-->
+
+
+		)
+	}
+[global]
