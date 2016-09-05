@@ -1,0 +1,28 @@
+// Default TypoScript located at typo3/sysext/felogin/ext_typoscript_setup.txt
+
+plugin.tx_felogin_pi1 {
+	// set infinite storagePid
+	recursive = 250
+
+	// @TODO: Add EXT:felogin default bootstrap template
+	// custom sysext:felogin template
+#	templateFile = {$thm.res}Private/Extension/Felogin/FrontendLogin.html
+	storagePid = {$site.uid.felogin.storagePid}
+
+	// remove default CSS styles
+	_CSS_DEFAULT_STYLE >
+
+	# redirect options
+	redirectMode =
+	redirectFirstMethod =
+	redirectPageLogin =
+	redirectPageLoginError =
+	redirectPageLogout =
+
+	# additional fields
+	showForgotPasswordLink = 1
+	showPermaLogin = 0
+
+	# when setting a new password, this is the minimum amount of characters
+	newPasswordMinLength = 8
+}
