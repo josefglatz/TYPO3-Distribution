@@ -1,0 +1,4 @@
+plugin.tx_staticinfotables_pi1 {
+	countryCode = AUT
+	languageCode = DE
+}
