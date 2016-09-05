@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="frontend.close" approved="yes">
+				<source>Close</source>
+				<target>Schließen</target>
+			</trans-unit>
+			<trans-unit id="frontend.showMore" approved="yes">
+				<source>Show more...</source>
+				<target>Zeige mehr...</target>
+			</trans-unit>
+			<trans-unit id="frontend.modalbox.close" approved="yes">
+				<source>Close (Esc)</source>
+				<target>Schließen (Esc)</target>
+			</trans-unit>
+			<trans-unit id="frontend.modalbox.loading" approved="yes">
+				<source>Loading...</source>
+				<target>Lade...</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

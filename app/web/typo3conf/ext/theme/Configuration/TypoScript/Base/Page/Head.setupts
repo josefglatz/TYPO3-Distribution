@@ -88,7 +88,16 @@ page {
 
 
 	inlineLanguageLabelFiles {
-		// @TODO: add support for page.inlineLanguageLabelFiles
+		themeFrontend = {$thm.resLanguage}/locallang_JavascriptFrontend.xlf
+		themeFrontend {
+			// Only label keys that start with this prefix will be included (default: '')
+			selectionPrefix = frontend
+			// A string that will be removed from any included label key (default: '')
+			stripFromSelectionName = strip_me
+			// Error mode if the file could not be found: 0 - syslog entry, 1 - do nothing, 2 - throw an exception (default: 0)
+			errorMode = 2
+		}
+
 	}
 
 }
