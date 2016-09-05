@@ -5,10 +5,23 @@
 		// set infinite storagePid
 		recursive = 250
 
-		// @TODO: Add EXT:felogin default bootstrap template
-		// custom sysext:felogin template
-		#	templateFile = {$thm.res}Private/Extension/Felogin/FrontendLogin.html
+		templateFile = {$thm.resTemplates}/Felogin/FrontendLogin.html
 		storagePid = {$site.uid.felogin.storagePid}
+
+		// Wraps
+		welcomeMessage_stdWrap.wrap = <p>|</p>
+		logoutMessage_stdWrap.wrap = <p>|</p>
+		errorMessage_stdWrap.wrap = <p class="text-danger">|</p>
+		successMessage_stdWrap.wrap = <p class="text-success">|</p>
+		cookieWarning_stdWrap.wrap = <p class="text-warning">|</p>
+		forgotMessage_stdWrap.wrap = <p>|</p>
+		forgotErrorMessage_stdWrap.wrap = <p class="text-danger">|</p>
+		forgotResetMessageEmailSentMessage_stdWrap.wrap = <p class="text-success">|</p>
+		changePasswordNotValidMessage_stdWrap.wrap = <p class="text-danger">|</p>
+		changePasswordTooShortMessage_stdWrap.wrap = <p class="text-danger">|</p>
+		changePasswordNotEqualMessage_stdWrap.wrap = <p class="text-danger">|</p>
+		changePasswordMessage_stdWrap.wrap = <p>|</p>
+		changePasswordDoneMessage_stdWrap.wrap = <p class="text-success">|</p>
 
 		// remove default CSS styles
 		_CSS_DEFAULT_STYLE >
