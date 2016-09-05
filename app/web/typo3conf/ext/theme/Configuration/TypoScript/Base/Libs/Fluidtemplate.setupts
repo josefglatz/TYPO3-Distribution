@@ -1,0 +1,45 @@
+lib.fluidTemplate {
+	base = FLUIDTEMPLATE
+	base {
+		extbase.controllerExtensionName = {$thm.key}
+		layoutRootPaths {
+			10 = {$thm.resLayouts}
+			20 = EXT:sitemodification/Resources/Private/Layouts
+		}
+		partialRootPaths {
+			10 = {$thm.resPartials}
+			20 = EXT:sitemodification/Resources/Private/Partials
+		}
+		templateRootPaths {
+			10 = {$thm.resTemplates}
+			20 = EXT:sitemodification/Resources/Private/Templates
+		}
+		variables {
+			RootUid = TEXT
+			RootUid {
+				data = leveluid : 0
+			}
+		}
+	}
+
+	// default templateName selection based on active beLayout
+	default < .base
+	default {
+		templateName = TEXT
+		templateName.stdWrap {
+			cObject = TEXT
+			cObject {
+				data = levelfield:-2,backend_layout_next_level,slide
+				override.field = backend_layout
+				split {
+					token = pagets__
+					1.current = 1
+					1.wrap = |
+				}
+			}
+			ifEmpty = Default
+		}
+	}
+}
+
+

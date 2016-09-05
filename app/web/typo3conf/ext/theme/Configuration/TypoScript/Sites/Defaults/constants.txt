@@ -3,8 +3,12 @@
 thm {
     name = Theme
     key = theme
-    res = EXT:theme/Resources/
-    resPub = EXT:theme/Resources/Public/
-    resLang = EXT:theme/Resources/Private/Language/
+    res = EXT:theme/Resources
+    resPub = EXT:theme/Resources/Public
+    resPriv = EXT:theme/Resources/Private
+    resLanguage = EXT:theme/Resources/Private/Language
+    resTemplates = EXT:theme/Resources/Private/Templates
+    resLayouts = EXT:theme/Resources/Private/Layouts
+    resPartials = EXT:theme/Resources/Private/Partials
     debug = 0
 }
