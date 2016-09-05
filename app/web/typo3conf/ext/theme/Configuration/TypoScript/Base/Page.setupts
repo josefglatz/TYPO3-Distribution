@@ -51,6 +51,15 @@ page {
 			}
 		}
 
+		google-site-verification = TEXT
+		google-site-verification {
+			if.isTrue = {$site.meta.googleSiteVerification}
+			stdWrap.cObject = COA
+			stdWrap.cObject {
+				10 = TEXT
+				10.value = {$site.meta.googleSiteVerification}
+			}
+		}
 	}
 
 
