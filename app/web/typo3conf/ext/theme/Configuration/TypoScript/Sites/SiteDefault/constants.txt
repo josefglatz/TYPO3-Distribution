@@ -1,0 +1,116 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/constants.txt">
+
+site {
+
+
+    uid {
+
+    }
+
+
+    ext {
+        news {
+
+        }
+    }
+
+
+    l10n {
+        locale_all = de_DE.UTF-8
+        language = de
+        # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
+        sys_language_isocode = de
+        directionalityOfText = ltr
+        sys_language_uid = 0
+        language_mode = content_fallback; 0
+        language_overlay = 1
+        sys_language_isocode_default = de
+    }
+
+
+    htmlTag_additionalTagAttributes = itemscope="itemscope" itemtype="http://schema.org/WebPage"
+
+
+    titleTag {
+        sitename = My Website
+    }
+
+
+    meta {
+        robotsAdditional = ,follow,noarchive
+        googleSiteVerification =
+    }
+
+
+    analytics {
+
+        google {
+            id =
+            domain =
+        }
+
+        piwik {
+            enable = 0
+            id = -1
+        }
+
+    }
+
+
+    euCookieLaw {
+        link =
+        container = body
+        theme = false
+        path = /
+        domain =
+        expiryDays = 365
+    }
+}
+
+
+[globalVar = GP:L=1]
+    site {
+
+    }
+
+[applicationContext = Development*]
+    thm {
+        debug = 1
+    }
+    site {
+        analytics {
+            google {
+                id =
+                domain =
+            }
+            piwik {
+                enable = 0
+            }
+        }
+    }
+
+[applicationContext = Production/Staging]
+    site {
+        analytics {
+            google {
+                id =
+                domain =
+            }
+            piwik {
+                enable = 0
+            }
+        }
+    }
+[applicationContext = Production/Testing]
+    site {
+        analytics {
+            google {
+                id =
+                domain =
+            }
+            piwik {
+                enable = 0
+            }
+        }
+    }
+[global]
