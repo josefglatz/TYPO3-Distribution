@@ -1,6 +1,5 @@
 config {
 	doctype = html5
-	metaCharset = utf-8
 	htmlTag_setParams = none
 	htmlTag_stdWrap {
 		setContentToCurrent = 1
