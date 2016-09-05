@@ -5,6 +5,20 @@ page {
 	headTag = <head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
+	headerData {
+
+		// custom titleTag
+		1 < lib.titleTag.default
+
+		// basic Google Analytics
+		1447083274 < lib.googleAnalyticsBasic
+
+		// basic Piwik
+		1447083686 < lib.piwikBasic
+
+	}
+
+
 
 
 	inlineLanguageLabelFiles {
