@@ -1,0 +1,10 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:theme/Configuration/TypoScript/Base" extensions="constantsts">
+
+thm {
+    name = Theme
+    key = theme
+    res = EXT:theme/Resources/
+    resPub = EXT:theme/Resources/Public/
+    resLang = EXT:theme/Resources/Private/Language/
+    debug = 0
+}
