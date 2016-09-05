@@ -56,6 +56,8 @@ page {
 		keywords.field = keywords
 		keywords.override.data = register:newsKeywords
 
+		// https://support.google.com/webmasters/answer/79812?hl=de
+		// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?csw=1
 		robots = TEXT
 		robots {
 
@@ -81,6 +83,12 @@ page {
 				10 = TEXT
 				10.value = {$site.meta.googleSiteVerification}
 			}
+		}
+
+		author = {$site.meta.author}
+		author {
+			override.field = author
+			// @TODO: Add author support for ext:news per default
 		}
 	}
 
