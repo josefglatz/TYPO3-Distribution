@@ -1,5 +1,6 @@
 // Basic google analytics
 // Add before closing </head> tag
+// @TODO: Move GA to inline js (like page.jsFooterInline)
 lib.googleAnalyticsBasic = COA
 lib.googleAnalyticsBasic {
 	if.isTrue = {$site.analytics.google.id}
