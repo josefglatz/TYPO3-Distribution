@@ -1,0 +1,7 @@
+// Disable automatic linking within <pre> tags to avoid auto links in code snippets
+lib.parseFunc_RTE.externalBlocks := addToList(pre)
+lib.parseFunc_RTE.externalBlocks {
+	pre.stripNL = 1
+	pre.stdWrap.parseFunc =< lib.parseFunc
+	pre.stdWrap.parseFunc.makelinks = 0
+}
