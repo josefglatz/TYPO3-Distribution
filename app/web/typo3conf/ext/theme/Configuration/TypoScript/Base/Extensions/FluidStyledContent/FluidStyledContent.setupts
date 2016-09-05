@@ -1,0 +1,16 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/Styling/setup.txt">
+
+// set override paths for custom fluid_styled_content
+lib.fluidContent {
+	templateRootPaths.10 = {$thm.resTemplates}/
+	partialRootPaths.10 = {$thm.resPartials}/
+	layoutRootPaths.10 = {$thm.resLayouts}/
+}
+
+// set default extension name for labels in Fluid
+lib.fluidContent.extbase.controllerExtensionName = {$thm.name}
+
+// @TODO: Add defaults for FSC settings
+// adjust default lightbox settings
+#lib.fluidContent.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}"
