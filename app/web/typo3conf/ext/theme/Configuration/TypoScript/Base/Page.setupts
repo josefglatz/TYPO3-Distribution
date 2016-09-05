@@ -23,6 +23,17 @@ page {
 
 
 	meta {
+		description = TEXT
+		description {
+			data = register:newsTeaser
+			#		ifEmpty.data = register:yourExtension
+			ifEmpty.ifEmpty.field = description
+			htmlSpecialChars = 1
+		}
+
+		keywords.field = keywords
+		keywords.override.data = register:newsKeywords
+
 		robots = TEXT
 		robots {
 
