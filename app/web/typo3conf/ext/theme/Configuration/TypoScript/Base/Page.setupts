@@ -1,3 +1,19 @@
+page {
+
+
+	// Opening headTag with directly appending the http-equiv meta tag for IE performance reasons.
+	headTag = <head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+
+	inlineLanguageLabelFiles {
+		// @TODO: add support for page.inlineLanguageLabelFiles
+	}
+
+}
+
+
 [globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*]
 	// show some debug infos in <head>
 	page.headerData.666999 = TEXT
