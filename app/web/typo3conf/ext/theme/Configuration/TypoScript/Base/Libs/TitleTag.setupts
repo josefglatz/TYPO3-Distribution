@@ -1,0 +1,49 @@
+/*
+Custom titleTag configurations
+  Keep in mind to change/adapt also config.noPageTitle to your needs
+  You have to import it e.g. via page.headerData.1447161203 < lib.titleTag.default
+
+  @TODO: Add support for additional text per page (something custom or EXT:metaseo)
+*/
+
+lib.titleTag.default = COA
+lib.titleTag.default {
+
+	5 = RECORDS
+	5 {
+		if.isTrue.data = GP:tx_news_pi1|news
+		dontCheckPid = 1
+		tables = tx_news_domain_model_news
+		source.data = GP:tx_news_pi1|news
+		source.intval = 1
+		conf.tx_news_domain_model_news = TEXT
+		conf.tx_news_domain_model_news {
+			field = title
+			htmlSpecialChars = 1
+			noTrimWrap = || - |
+		}
+	}
+
+	150 = TEXT
+	150 {
+		#data = TSFE:altPageTitle // page:title
+		field = title
+		htmlSpecialChars = 1
+		noTrimWrap = || - |
+		if.isFalse.data = GP:tx_news_pi1|news
+	}
+
+	300 = TEXT
+	300 {
+		value = {$site.titleTag.sitename}
+		htmlSpecialChars = 1
+	}
+
+	wrap = <title>|</title>
+}
+[treeLevel = 0]
+	lib.titleTag.default {
+		// disable pageTitle on homepage/rootpage
+		150 >
+	}
+[global]
