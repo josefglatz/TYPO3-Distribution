@@ -1,5 +1,7 @@
 page {
 
+	// @TODO: Page Edit Panel
+
 	// Import desired FLUIDTEMPLATE (see EXT:theme/Configuration/TypoScript/Base/Libs/Fluidtemplate.setupts for available implementations)
 	10 < lib.fluidTemplate.default
 	10 {
@@ -127,6 +129,17 @@ page {
 
 	// basic Piwik
 	20 < lib.piwikBasic
+
+
+	stdWrap.replacement {
+		1 {
+			search = ###CURRENTYEAR###
+			replace {
+				data = date:U
+				strftime = %Y
+			}
+		}
+	}
 
 }
 
