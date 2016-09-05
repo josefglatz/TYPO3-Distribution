@@ -52,6 +52,8 @@ site {
         piwik {
             enable = 0
             id = -1
+            // Piwik host without schema and trailing slash like "//my.piwik.host"
+            host = //piwik.domain.tld
         }
 
     }
