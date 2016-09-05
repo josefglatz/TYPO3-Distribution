@@ -1,6 +1,5 @@
 page {
 
-
 	// Opening headTag with directly appending the http-equiv meta tag for IE performance reasons.
 	headTag = <head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
