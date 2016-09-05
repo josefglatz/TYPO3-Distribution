@@ -1,1 +1,3 @@
-plugin.tx_vhs.settings.prependPath = /
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('vhs')]
+	plugin.tx_vhs.settings.prependPath = /
+[global]

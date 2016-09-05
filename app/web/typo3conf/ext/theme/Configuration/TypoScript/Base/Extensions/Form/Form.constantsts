@@ -1,1 +1,3 @@
-<INCLUDE_TYPOSCRIPT: source="FILE: EXT:form/Configuration/TypoScript/constants.txt">
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('form')]
+	<INCLUDE_TYPOSCRIPT: source="FILE: EXT:form/Configuration/TypoScript/constants.txt">
+[global]

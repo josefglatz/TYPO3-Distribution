@@ -1,4 +1,6 @@
-plugin.tx_staticinfotables_pi1 {
-	countryCode = AUT
-	languageCode = DE
-}
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('static_info_tables')]
+	plugin.tx_staticinfotables_pi1 {
+		countryCode = AUT
+		languageCode = DE
+	}
+[global]
