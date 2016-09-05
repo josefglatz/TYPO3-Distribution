@@ -19,6 +19,30 @@ page {
 	}
 
 
+	// @TODO: FavIcon
+
+
+	meta {
+		robots = TEXT
+		robots {
+
+			stdWrap.cObject = COA
+			stdWrap.cObject {
+				10 = LOAD_REGISTER
+				10 {
+					seoIndex.cObject = TEXT
+					seoIndex.cObject.value = index
+					seoIndex.cObject.override = noindex
+					seoIndex.cObject.override.if.isTrue.field = no_search
+				}
+				20 = TEXT
+				20.dataWrap = {register:seoIndex}{$site.meta.robotsAdditional}
+			}
+		}
+
+	}
+
+
 
 
 	inlineLanguageLabelFiles {
@@ -51,5 +75,18 @@ page {
 
 
 		)
+	}
+[global]
+
+
+
+[applicationContext = Production/Staging, Production/Testing]
+	page {
+
+		meta {
+			robots >
+			robots = noindex,nofollow,noarchive
+		}
+
 	}
 [global]
