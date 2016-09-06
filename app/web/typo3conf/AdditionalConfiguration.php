@@ -38,9 +38,9 @@ $customChanges = [
                 'enableDebugForErrors' => 0,
             ]),
             'backend' => serialize([
-                'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/LoginLogo.svg',
+                'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
                 'loginHighlightColor' => '#ff8700',
-                'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/LoginBackground.png',
+                'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
                 'backendLogo' => 'EXT:backend/Resources/Public/Images/Backend/typo3-topbar@2x.png', // @TODO: Backend Logo (Stage, Prod, Dev)
                 'backendFavicon' => 'EXT:backend/Resources/Public/Backend/Icons/favicon.ico', // @TODO: Backend FavIcon (Stage, Prod, Dev)
             ]),

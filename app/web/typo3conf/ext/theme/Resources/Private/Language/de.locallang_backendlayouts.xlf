@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-02-12T09:51:18Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="col.intro" approved="yes">
+			<source>Introduction</source>
+			<target>Einleitung</target>
+		</trans-unit>
+		<trans-unit id="col.main" approved="yes">
+			<source>Main Content</source>
+			<target>Hauptinhalt</target>
+		</trans-unit>
+		<trans-unit id="col.sidebar" approved="yes">
+			<source>Sidebar</source>
+			<target>Seitenleiste</target>
+		</trans-unit>
+		<trans-unit id="col.sidebarSlide" approved="yes">
+			<source>Sidebar (sliding elements from parent pages)</source>
+			<target>Seitenleiste (von Elternseiten vererbte Elemente werden ausgegeben)</target>
+		</trans-unit>
+		<trans-unit id="default.title" approved="yes">
+			<source>Default</source>
+			<target>Standard</target>
+		</trans-unit>
+		<trans-unit id="homepage.title" approved="yes">
+			<source>Homepage</source>
+			<target>Startseite</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

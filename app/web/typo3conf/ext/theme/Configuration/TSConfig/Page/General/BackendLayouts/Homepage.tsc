@@ -1,0 +1,27 @@
+mod {
+	web_layout {
+		BackendLayouts {
+			Homepage {
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:homepage.title
+				config {
+					backend_layout {
+						colCount = 3
+						rowCount = 1
+						rows {
+							1 {
+								columns {
+									1 {
+										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.intro
+										colPos = 0
+										colspan = 3
+									}
+								}
+							}
+						}
+					}
+				}
+				icon = EXT:theme/Resources/Public/Images/Backend/BackendLayouts/Homepage.svg
+			}
+		}
+	}
+}
