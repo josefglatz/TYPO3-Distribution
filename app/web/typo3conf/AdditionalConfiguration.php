@@ -47,6 +47,21 @@ $customChanges = [
             'fluid_styled_content' => serialize([
                 'loadContentElementWizardTsConfig' => 1,
             ]),
+            'news' => serialize([
+                'archiveDate' => 'date',
+                'rteForTeaser' => 0,
+                'tagPid' => 1,
+                'prependAtCopy' => 0,
+                'categoryRestriction' => 'none',
+                'categoryBeGroupTceFormsRestriction' => 0,
+                'contentElementRelation' => 1,
+                'manualSorting' => 0,
+                'dateTimeNotRequired' => 0,
+                'showAdministrationModule' => 0,
+                'showImporter' => 0,
+                'storageUidImporter' => '1',
+                'resourceFolderImporter' => '/news_import',
+            ]),
             'realurl' => serialize([
                 'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
                 'enableAutoConf' => 1,
