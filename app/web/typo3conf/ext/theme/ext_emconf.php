@@ -29,11 +29,19 @@ $EM_CONF[$_EXTKEY] = [
                 ],
             'suggests' =>
                 [
+                    'felogin' => '',
+                    'fluid_styled_content' => '',
+                    'form' => '',
+                    'formhandler' => '',
                     'realurl' => '',
                     'news' => '',
                     'piwik' => '',
                     'gridelements' => '',
+                    'sourceopt' => '',
+                    'static_info_tables' => '',
+                    't3monitoring_client' => '',
                     'tt_address' => '',
+                    'vhs' => '',
                 ],
         ],
     'autoload' =>
