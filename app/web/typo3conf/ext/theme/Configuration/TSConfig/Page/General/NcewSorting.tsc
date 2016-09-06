@@ -1,0 +1,12 @@
+// Influence the order of the tabs in the New Content Element Wizard.
+// You can use before and after with comma separated values.
+mod.wizards.newContentElement.wizardItems {
+	#	homepage {
+	#		before = special
+	#		after = common
+	#	}
+	#	defaultpage {
+	#		after = common,homepage
+	#		before = special
+	#	}
+}

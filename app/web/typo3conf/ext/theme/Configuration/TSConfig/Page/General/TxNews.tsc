@@ -1,0 +1,10 @@
+tx_news {
+	templateLayouts {
+		// Key					= Label
+#		listFooter				= News Listing :: Footer
+#		detailSidebar			= News Listing :: Detail Sidebar
+	}
+}
+
+// single pid for news preview
+#news.singlePid =

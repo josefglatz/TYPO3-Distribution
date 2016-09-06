@@ -1,0 +1,3 @@
+mod.web_layout.tt_content.preview {
+	div = EXT:theme/Resources/Private/Templates/Preview/Div.html
+}

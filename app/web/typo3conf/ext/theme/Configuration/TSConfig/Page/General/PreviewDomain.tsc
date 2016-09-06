@@ -1,0 +1,7 @@
+[applicationContext = Development/Docker]
+TCEMAIN.previewDomain = project.vm
+[applicationContext = Production/Staging]
+TCEMAIN.previewDomain = stage.project.foo
+[applicationContext = Production/Live]
+TCEMAIN.previewDomain = live.project.foo
+[global]

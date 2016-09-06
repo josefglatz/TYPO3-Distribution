@@ -1,0 +1,13 @@
+mod {
+	SHARED {
+		# set correct label and flag for default language in BE
+		defaultLanguageFlag = at
+		defaultLanguageLabel = German
+
+		# show translated records next to the original ones
+		web_layout.defLangBinding = 1
+	}
+}
+
+// Disallow localization mixtures
+mod.web_layout.allowInconsistentLanguageHandling = 0

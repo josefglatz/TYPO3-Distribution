@@ -1,0 +1,2 @@
+
+mod.web_list.hideTables := addToList(tt_content)

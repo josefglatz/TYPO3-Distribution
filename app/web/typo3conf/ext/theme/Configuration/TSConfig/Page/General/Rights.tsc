@@ -1,0 +1,10 @@
+TCEMAIN {
+	// Permissions for "user"
+	permissions.user = show,edit,delete,new,editcontent
+	// Permissions for "group"
+	permissions.group = show,edit,delete,new,editcontent
+	// Set owner group
+	permissions.groupid = 1
+	// Permissions for "everybody"
+	permissions.everybody =
+}

@@ -1,0 +1,3 @@
+
+mod.web_list.allowedNewTables = tx_news_domain_model_news,sys_note,sys_category
+TCAdefaults.sys_file_reference.showinpreview = 1

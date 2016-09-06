@@ -1,0 +1,5 @@
+RTE.default {
+#	proc.allowedClasses := addToList(classname)
+#	buttons.link.properties.class.allowedClasses := addToList(classname)
+}
+RTE.default.FE < RTE.default

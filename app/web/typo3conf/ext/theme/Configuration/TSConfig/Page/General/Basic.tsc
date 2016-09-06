@@ -1,0 +1,12 @@
+mod {
+	SHARED {
+		web_list.enableLocalizationView = activated
+		web_list.enableDisplayBigControlPanel = activated
+	}
+
+	// Page-Module: deactivate "QuickEdit" mode
+	web_layout.menu.function {
+		0 = 0
+	}
+}
+TCAdefaults.pages.url_scheme = 2
