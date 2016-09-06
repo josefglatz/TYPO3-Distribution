@@ -1,99 +1,99 @@
 {
-    "repositories": [
-
-        { "type": "git", "url": "https://github.com/FriendsOfTYPO3/tt_address" },
-        { "type": "composer", "url": "https://composer.typo3.org/" }
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/FriendsOfTYPO3/tt_address"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
+  "name": "jousch/typo3-distribution",
+  "description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
+  "_comment": [
+    "This is my TYPO3 distribution",
+    "@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
+  ],
+  "authors": [
+    {
+      "name": "Josef Glatz",
+      "email": "j.glatz@supseven.at",
+      "role": "Developer",
+      "homepage": "http://www.sup7seven.digital"
+    },
+    {
+      "name": "Josef Glatz",
+      "email": "jousch@jousch.com",
+      "role": "Developer",
+      "homepage": "http://jousch.com"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "config": {
+    "optimize-autoloader": true,
+    "secure-http": true,
+    "bin-dir": "."
+  },
+  "require": {
+    "typo3/cms": "dev-master as 7.6.99",
+    "typo3/cms-belog": "dev-master as 7.6.99",
+    "typo3/cms-beuser": "dev-master as 7.6.99",
+    "typo3/cms-context-help": "dev-master as 7.6.99",
+    "typo3/cms-fluid-styled-content": "dev-master as 7.6.99",
+    "typo3/cms-felogin": "dev-master as 7.6.99",
+    "typo3/cms-filelist": "dev-master as 7.6.99",
+    "typo3/cms-impexp": "dev-master as 7.6.99",
+    "typo3/cms-info": "dev-master as 7.6.99",
+    "typo3/cms-info-pagetsconfig": "dev-master as 7.6.99",
+    "typo3/cms-lowlevel": "dev-master as 7.6.99",
+    "typo3/cms-reports": "dev-master as 7.6.99",
+    "typo3/cms-rsaauth": "dev-master as 7.6.99",
+    "typo3/cms-rtehtmlarea": "dev-master as 7.6.99",
+    "typo3/cms-setup": "dev-master as 7.6.99",
+    "typo3/cms-tstemplate": "dev-master as 7.6.99",
+    "typo3/cms-viewpage": "dev-master as 7.6.99",
+    "helhum/typo3-console": "dev-master",
+    "dmitryd/typo3-realurl": "dev-master",
+    "georgringer/news": "dev-master",
+    "t3monitor/t3monitoring_client": "dev-master",
+    "sjbr/static-info-tables": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.0",
+    "mikey179/vfsStream": "^1.6.0",
+    "namelesscoder/typo3-repository-client": "^1.2"
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "web"
+    },
+    "helhum/typo3-console": {
+      "install-binary": false
+    }
+  },
+  "autoload": {
+    "classmap": [
     ],
-    "name": "jousch/typo3-distribution",
-	"description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
-    "_comment": [
-		"This is my TYPO3 distribution",
-		"@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
-		"mimimi",
-		"mumumu"
-	],
-	"authors": [
-		{
-			"name": "Josef Glatz",
-			"email": "j.glatz@supseven.at",
-			"role": "Developer",
-			"homepage": "http://www.sup7seven.digital"
-		},
-		{
-			"name": "Josef Glatz",
-			"email": "jousch@jousch.com",
-			"role": "Developer",
-			"homepage": "http://jousch.com"
-		}
-	],
-    "license": "GPL-2.0+",
-    "minimum-stability": "dev",
-    "config": {
-        "optimize-autoloader": true,
-		"secure-http": true,
-		"bin-dir": "."
-    },
-    "require": {
-		"typo3/cms": "dev-master as 7.6.99",
-
-		"typo3/cms-belog": "dev-master as 7.6.99",
-		"typo3/cms-beuser": "dev-master as 7.6.99",
-		"typo3/cms-context-help": "dev-master as 7.6.99",
-		"typo3/cms-fluid-styled-content": "dev-master as 7.6.99",
-		"typo3/cms-felogin": "dev-master as 7.6.99",
-		"typo3/cms-filelist": "dev-master as 7.6.99",
-		"typo3/cms-impexp": "dev-master as 7.6.99",
-		"typo3/cms-info": "dev-master as 7.6.99",
-		"typo3/cms-info-pagetsconfig": "dev-master as 7.6.99",
-		"typo3/cms-lowlevel": "dev-master as 7.6.99",
-		"typo3/cms-reports": "dev-master as 7.6.99",
-		"typo3/cms-rsaauth": "dev-master as 7.6.99",
-		"typo3/cms-rtehtmlarea": "dev-master as 7.6.99",
-		"typo3/cms-setup": "dev-master as 7.6.99",
-		"typo3/cms-tstemplate": "dev-master as 7.6.99",
-		"typo3/cms-viewpage": "dev-master as 7.6.99",
-
-		"helhum/typo3-console": "dev-master",
-        "dmitryd/typo3-realurl": "dev-master",
-        "georgringer/news": "dev-master",
-        "t3monitor/t3monitoring_client": "dev-master",
-		"sjbr/static-info-tables": "dev-master"
-    },
-	"require-dev": {
-		"phpunit/phpunit": "^4.8.0",
-		"mikey179/vfsStream": "^1.6.0",
-		"namelesscoder/typo3-repository-client": "^1.2"
-	},
-    "extra": {
-        "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": "web"
-        },
-        "helhum/typo3-console": {
-            "install-binary": false
-        }
-    },
-    "autoload": {
-		"classmap": [
-
-		],
-        "psr-4": {
-            "Sup7even\\Theme\\": "web/typo3conf/ext/theme/Classes"
-        }
-    },
-	"scripts": {
-		"package-states": [
-			"./typo3cms install:generatepackagestates"
-		],
-		"folder-structure": [
-			"./typo3cms install:fixfolderstructure"
-		],
-		"pre-deploy": [
-			"# TBD"
-		],
-		"post-autoload-dump": [
-			"@package-states",
-			"@folder-structure"
-		]
-	}
+    "psr-4": {
+      "Sup7even\\Theme\\": "web/typo3conf/ext/theme/Classes"
+    }
+  },
+  "scripts": {
+    "package-states": [
+      "./typo3cms install:generatepackagestates"
+    ],
+    "folder-structure": [
+      "./typo3cms install:fixfolderstructure"
+    ],
+    "pre-deploy": [
+      "# TBD"
+    ],
+    "post-autoload-dump": [
+      "@package-states",
+      "@folder-structure"
+    ]
+  }
 }
