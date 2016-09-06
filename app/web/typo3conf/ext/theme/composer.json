@@ -1,0 +1,42 @@
+{
+	"name": "jousch/theme-dummy",
+	"type": "typo3-cms-extension",
+	"description": "Site Template Extension",
+	"license": "GPL-2.0+",
+	"keywords": [
+		"TYPO3 CMS",
+		"Template",
+		"site package",
+		"front-end",
+		"web"
+	],
+	"_comment": [
+		"This composer.json is useless, as long as this extension is part of the TYPO3-Distribution"
+	],
+	"authors": [
+		{
+			"name": "Josef Glatz",
+			"email": "j.glatz@supseven.at",
+			"role": "Developer",
+			"homepage": "http://www.sup7seven.at"
+		},
+		{
+		  "name": "Josef Glatz",
+		  "email": "jousch@jousch.com",
+		  "role": "Developer",
+		  "homepage": "http://jousch.com"
+		}
+	],
+	"version": "1.0",
+	"require": {
+		"typo3/cms-core": "^8.0 || ^8.1 || ^8.2 || ^8.3"
+	},
+	"require-dev": {
+
+	},
+	"autoload": {
+		"psr-4": {
+			"Sup7even\\Theme\\": "Classes"
+		}
+	}
+}
