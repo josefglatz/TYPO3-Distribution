@@ -1,0 +1,19 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sourceopt/Configuration/TypoScript/constants.txt">
+
+sourceopt {
+	removeGenerator = 0
+	removeComments = 1
+	formatHtml = 1
+	formatHtml.tabSize = 1
+}
+
+[globalVar = TSFE : beUserLogin > 0]
+	sourceopt {
+		removeComments = 0
+	}
+[global]
+
+// Disable ext:sourceopt if type isn't 0 (default) or the page is in Development Mode
+[globalVar = GP:type > 0] || [applicationContext = Development*]
+	sourceopt.enabled = 0
+[global]

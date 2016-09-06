@@ -1,0 +1,7 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sourceopt/Configuration/TypoScript/setup.txt">
+
+config.sourceopt {
+	removeComments.keep {
+
+	}
+}
