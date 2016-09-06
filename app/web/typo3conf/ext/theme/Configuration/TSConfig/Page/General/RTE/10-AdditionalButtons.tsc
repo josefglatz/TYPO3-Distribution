@@ -1,0 +1,58 @@
+RTE.default {
+
+	// remove rte about button
+	showButtons := removeFromList(about)
+
+
+	// show actual style
+	#	showButtons := addToList(textindicator)
+
+
+	// add additional inline styles
+	// @TODO: strikethrough must be implemented by <del> or <s> html tag (not <strike> tag which isn't supported by html5) -> https://forge.typo3.org/issues/72780
+#	showButtons := addToList(strikethrough)
+	showButtons := addToList(subscript, superscript)
+
+
+	// allow the "awesome" inline style UNDERLINE ;-[
+	#	showbuttons := addToList(underline)
+
+
+	// add horizontal ruler/line "<hr />"
+#	showButtons := addToList(line)
+
+
+	// add quote
+	showButtons := addToList(blockquote)
+
+
+	// add text-align
+	showButtons := addToList(left, center, right)
+
+
+	// add definitionlist/-item for semantic reasons
+	showButtons := addToList(definitionlist, definitionitem)
+
+
+	// special characters buttons (the "softhyphen" is a must have for responsive websites)
+	showButtons := addToList(insertcharacter,insertsofthyphen)
+
+
+	// add "lang" attribute support (especially when having different languages in one record)
+#	showbuttons := addToList(lefttoright, righttoleft, language, showlanguagemarks)
+
+
+	// advanced edit element button
+#	showButtons := addToList(editelement)
+	showButtons := removeFromList(editelement)
+
+
+	// SpellChecker (need a component on server and further configuration)
+#	showButtons := addToList(spellcheck)
+
+
+
+}
+
+
+// and hey, RTFM at https://docs.typo3.org/typo3cms/extensions/rtehtmlarea/latest/

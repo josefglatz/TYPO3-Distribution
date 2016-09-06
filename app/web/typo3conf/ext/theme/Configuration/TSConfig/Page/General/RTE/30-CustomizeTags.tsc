@@ -1,0 +1,14 @@
+// <table>: prevent style, width, height attribute if the editor drag the table in RTE.
+RTE.default.proc.entryHTMLparser_db.tags.table {
+	fixAttrib.style.unset = 1
+	fixAttrib.width.unset = 1
+	fixAttrib.height.unset = 1
+}
+// <td>: prevent style, width, height attribute if the editor drag the table in RTE.
+RTE.default.proc.entryHTMLparser_db.tags.td < RTE.default.proc.entryHTMLparser_db.tags.table
+// <tr>: prevent style, width, height attribute if the editor drag the table in RTE.
+RTE.default.proc.entryHTMLparser_db.tags.tr < RTE.default.proc.entryHTMLparser_db.tags.table
+// <th>: prevent style, width, height attribute if the editor drag the table in RTE.
+RTE.default.proc.entryHTMLparser_db.tags.th < RTE.default.proc.entryHTMLparser_db.tags.table
+// <blockquote>: prevent style, width, height attribute if the editor drag the table in RTE.
+RTE.default.proc.entryHTMLparser_db.tags.blockquote < RTE.default.proc.entryHTMLparser_db.tags.table

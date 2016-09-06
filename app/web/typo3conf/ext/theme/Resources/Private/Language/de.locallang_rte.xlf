@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-01-17T17:58:57Z">
+		<header>
+			<description>Language labels for rte</description>
+			<authorName>Josef Glatz</authorName>
+			<authorEmail>josef.glatz@typo3.org</authorEmail>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="classes.small" approved="yes">
+			<source>Small</source>
+			<target>Klein</target>
+		</trans-unit>
+		<trans-unit id="classes.text-center" approved="yes">
+			<source>Align center</source>
+			<target>Zentriert</target>
+		</trans-unit>
+		<trans-unit id="classes.text-left" approved="yes">
+			<source>Align left</source>
+			<target>Linksbündig</target>
+		</trans-unit>
+		<trans-unit id="classes.text-right" approved="yes">
+			<source>Align right</source>
+			<target>Rechtsbündig</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

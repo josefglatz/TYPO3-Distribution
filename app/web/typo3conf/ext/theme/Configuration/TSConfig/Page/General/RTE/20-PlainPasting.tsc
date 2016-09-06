@@ -1,0 +1,8 @@
+RTE.default {
+	// add button to toolbar
+	showButtons := addToList(pastetoggle)
+	// activate button on loading
+	buttons.pastetoggle.setActiveOnRteOpen = 1
+	// hide button to force pasting in the configured mode (user setting)
+	buttons.pastetoggle.hidden = 1
+}
