@@ -1,0 +1,24 @@
+options {
+	pageTree {
+		hideFilter = 0
+
+		disableIconLinkToContextmenu = 0
+		showPageIdWithTitle = 0
+		showNavTitle = 1
+		separateNotinmenuPages = 0
+		alphasortNotinmenuPages = 0
+		disableTitleHighlight = 0
+		// @TODO Discuss to allow more doktypes, but restrict it in dragNdrop area
+#        doktypesToShowInNewPageDragArea =
+		showDomainNameWithTitle = 0
+		// @TODO Discuss if we should add background for a better backend experience
+#        backgroundColor {
+#        }
+#        showPathAboveMounts =
+#        excludeDoktypes =
+		// @TODO Inform about options.pageTree.altElementBrowserMountPoints and discuss if we should use it for a better backend experience
+#        options.pageTree.altElementBrowserMountPoints = 20,31
+#        options.pageTree.altElementBrowserMountPoints.append = 1
+	}
+}
+
