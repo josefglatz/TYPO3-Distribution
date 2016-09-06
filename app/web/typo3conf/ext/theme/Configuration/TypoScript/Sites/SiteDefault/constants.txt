@@ -11,7 +11,7 @@ site {
 
     ext {
         news {
-
+            defaultDetailPid =
         }
     }
 
