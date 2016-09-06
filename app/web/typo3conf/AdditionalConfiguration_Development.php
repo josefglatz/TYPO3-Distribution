@@ -22,8 +22,6 @@ $customChanges = [
         'enableDeprecationLog' => 'file',
         'sqlDebug' => 1,
         'systemLogLevel' => 0,
-        't3lib_cs_convMethod' => 'mbstring',
-        't3lib_cs_utils' => 'mbstring',
         'systemLog' => '',
     ],
     'HTTP' => [
