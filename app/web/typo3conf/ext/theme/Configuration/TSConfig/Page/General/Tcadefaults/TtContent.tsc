@@ -1,0 +1,6 @@
+TCAdefaults {
+	tt_content {
+		header_layout = 2
+		sectionIndex = 0
+	}
+}

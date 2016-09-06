@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="theme">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.layout.1">
+				<target><![CDATA[Aussehen 1]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.layout.2">
+				<target><![CDATA[Aussehen 2]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.layout.3">
+				<target><![CDATA[Aussehen 3]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.0">
+				<target><![CDATA[Überschrift H2 (Standard)]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.1">
+				<target><![CDATA[Überschrift H1]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.2">
+				<target><![CDATA[Überschrift H2]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.3">
+				<target><![CDATA[Überschrift H3]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.4">
+				<target><![CDATA[Überschrift H4]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.5">
+				<target><![CDATA[Überschrift H5]]></target>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.100">
+				<target><![CDATA[Versteckte Überschrift]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

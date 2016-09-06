@@ -1,0 +1,5 @@
+TCAdefaults {
+	fe_users {
+		tx_extbase_type = Tx_Extbase_Domain_Model_FrontendUser
+	}
+}

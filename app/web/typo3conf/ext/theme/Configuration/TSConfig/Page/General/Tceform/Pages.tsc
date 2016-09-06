@@ -1,0 +1,6 @@
+TCEFORM.pages {
+	layout {
+		// Remove default fe layouts
+		removeItems = 1,2,3
+	}
+}

@@ -1,0 +1,46 @@
+TCEFORM.tt_content {
+
+	layout {
+		// disable default layouts
+		removeItems = 1,2,3
+
+		altLabels {
+			1 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.1
+			2 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.2
+			3 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.3
+		}
+
+		addItems {
+#			4 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.4
+		}
+	}
+
+	header_layout {
+		removeItems = 5
+		// disable the "default header layout"
+		removeItems := addToList(0)
+
+		altLabels {
+			0 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.0
+			1 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.1
+			2 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.2
+			3 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.3
+			4 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.4
+			5 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.5
+			100 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.100
+		}
+	}
+
+	// not used anymore in FSC -> but anyway remove items
+	section_frame {
+		removeItems = 1,5,6,10,11,12,20,21
+	}
+
+	// add new menu_types
+	menu_type {
+		addItems {
+#			courses_overview = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:ctype.menu.menuType.coursesOverview
+		}
+	}
+
+}

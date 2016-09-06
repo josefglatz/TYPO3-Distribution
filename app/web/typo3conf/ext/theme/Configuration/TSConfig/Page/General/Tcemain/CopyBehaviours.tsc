@@ -1,0 +1,52 @@
+// Add "copy defaults" for tables
+
+/*
+TCEMAIN {
+	table {
+		table_name {
+			// add suffix to copied element no/yes
+			disablePrependAtCopy = 0|1
+			// set copied element visible by default no/yes
+			disableHideAtCopy = 0|1
+		}
+	}
+}
+*/
+
+TCEMAIN {
+	table {
+		be_users {
+			// add suffix to copied element
+			disablePrependAtCopy = 0
+			// set copied element visible by default
+			disableHideAtCopy = 1
+		}
+		pages {
+			// add suffix to copied element
+			disablePrependAtCopy = 0
+			// set copied element visible by default
+			disableHideAtCopy = 0
+		}
+
+		tt_content {
+			// add suffix to copied element
+			disablePrependAtCopy = 1
+			// set copied element visible by default
+			disableHideAtCopy = 0
+		}
+
+		sys_category {
+			// add suffix to copied element
+			disablePrependAtCopy = 0
+			// set copied element visible by default
+			disableHideAtCopy = 1
+		}
+
+		tx_news_domain_model_news {
+			// add suffix to copied element
+			disablePrependAtCopy = 1
+			// set copied element visible by default
+			disableHideAtCopy = 0
+		}
+	}
+}
