@@ -1,0 +1,4 @@
+TCEMAIN {
+	// https://docs.typo3.org/typo3cms/TSconfigReference/PageTsconfig/TCEmain/Index.html#pagetcemain-clearcachecmd
+	clearCacheCmd = pages
+}

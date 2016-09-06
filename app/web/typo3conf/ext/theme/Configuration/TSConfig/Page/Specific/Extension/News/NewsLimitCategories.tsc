@@ -1,0 +1,8 @@
+TCEFORM.tx_news_domain_model_news {
+	categories {
+		config {
+			maxitems = 1
+			minitems = 1
+		}
+	}
+}

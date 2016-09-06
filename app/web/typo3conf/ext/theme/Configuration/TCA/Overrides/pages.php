@@ -4,40 +4,31 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function ($extKey) {
 
-        // Add theme's general PageTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-            'theme',
-            'Configuration/TSConfig/PageGeneral.tsc',
-            'theme :: General PageTSConfig'
-        );
+        $pathSegment = 'Configuration/TSConfig/';
+        $fileExt = '.tsc';
+        $labelPrefix = 'theme :: ';
 
-        // Add "Only X" PageTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-            'theme',
-            'Configuration/TSConfig/Page/Specifc/NewOnlyFeUsers.tsc',
-            'theme :: Restrict pages to FeUsers/FeGroups'
-        );
-
-        // Add "Only X" PageTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-            'theme',
-            'Configuration/TSConfig/Page/Specific/NewOnlyNews.tsc',
-            'theme :: Restrict pages to News/SysCategories/SysNote'
-        );
-
-        // Add "Only X" PageTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-            $extKey,
-            'Configuration/TSConfig/Page/Specific/HideTableTtContent.tsc',
-            'theme :: Hide table TtContent'
-        );
-
-        // Add "Only X" PageTSConfig
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-            $extKey,
-            'Configuration/TSConfig/Page/Specific/ClearCacheNews.tsc',
-            'theme :: ClearCacheCmd->cacheTag:tx_news'
-        );
+        // register elements (path/filename without extension, label without prefix)
+        $elements = [
+            'Page/PageGeneral' => 'General PageTSConfig',
+            'Page/Specific/NewOnlyFeUsers' => 'Restrict page(s) to FeUsers/FeGroups',
+            'Page/Specific/ClearCachePages' => 'ClearCacheCmd->pages',
+            'Page/Specific/ClearCacheRegistrationSpecific' => 'ClearCacheCmd->cacheTag:customregistration,pages',
+            'Page/Specific/HideTableTtContent' => 'Hide table TtContent',
+            'Page/Specific/Extension/News/NewOnlyNews' => 'Restrict page(s) to News/SysCategories/SysNote',
+            'Page/Specific/Extension/News/ClearCacheNews' => 'ClearCacheCmd->cacheTag:tx_news',
+            'Page/Specific/Extension/News/NewsLimitCategories' => 'News->Limit Categories',
+            'Page/Specific/Extension/News/NewsLimitMedia' => 'News->Limit Media',
+            'Page/Specific/Extension/News/NewsMediaDefaultShowinpreviewOn' => 'News->Default "show in preview" per default on',
+        ];
+        // register each $elements item as PageTSConfig file
+        foreach ($elements as $fileName => $label) {
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+                $extKey,
+                $pathSegment . $fileName . $fileExt,
+                $labelPrefix . $label
+            );
+        }
 
     },
     'theme'
