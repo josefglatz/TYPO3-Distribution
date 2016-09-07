@@ -1,0 +1,37 @@
+.devbox {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	background: rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.8);
+	padding: 10px;
+	z-index: 999;
+	
+	p {
+		font-size: 10px;
+		color: #fff;
+		margin: 0;
+		
+		&::before {
+			@include media-breakpoint-only(xs) {
+				content: 'XS';
+			}
+
+			@include media-breakpoint-only(sm) {
+				content: 'SM';
+			}
+
+			@include media-breakpoint-only(md) {
+				content: 'MD';
+			}
+
+			@include media-breakpoint-only(lg) {
+				content: 'LG';
+			}
+
+			@include media-breakpoint-only(xl) {
+				content: 'XL';
+			}
+		}
+	}
+}

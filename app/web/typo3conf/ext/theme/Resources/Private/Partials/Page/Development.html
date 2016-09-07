@@ -1,0 +1,7 @@
+{namespace s7=Sup7even\Theme\ViewHelpers}
+
+<f:if condition="{s7:context()} != 'Production'">
+	<div class="devbox">
+		<p> / {s7:context()}</p>
+	</div>
+</f:if>

@@ -1,3 +1,4 @@
+page = PAGE
 page {
 
 	// @TODO: Page Edit Panel
@@ -20,7 +21,9 @@ page {
 
 	//CSS files to be included
 	includeCSS {
-
+		// standard bootstrap v4-alpha + custom styles included
+		theme = {$thm.resPub}/Css/Theme.css
+		theme.disableCompression = 1
 	}
 
 	// JS files to be included in <head />
