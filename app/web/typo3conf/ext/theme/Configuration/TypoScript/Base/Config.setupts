@@ -46,7 +46,7 @@ config {
 	headerComment = Created by Sup7even Digital :: http://www.sup7even.digital
 
 	debug = 0
-	admPanel = 0
+	admPanel = 1
 	# disabled until https://forge.typo3.org/issues/63815
 	sendCacheHeaders = 0
 	disablePrefixComment = 1
@@ -91,14 +91,13 @@ config {
 	// linkVars := addToList(L(0-1))
 	// until an additional fe language is used, no linkVars necessary
 	// !!! Please do NOT add `type` to config.linkVars !!!
-	linkVars =
+	linkVars = L(int)
 	uniqueLinkVars = 1
 }
 
 [globalVar = LIT:1 = {$thm.debug}]
 	config {
 		debug = 1
-		admPanel = 1
 		sendCacheHeaders = 0
 		disablePrefixComment = 0
 		tx_realurl_enable = 1
