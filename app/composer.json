@@ -17,7 +17,7 @@
 			"name": "Josef Glatz",
 			"email": "j.glatz@supseven.at",
 			"role": "Developer",
-			"homepage": "http://www.sup7seven.digital"
+			"homepage": "http://www.sup7even.digital"
 		},
 		{
 			"name": "Josef Glatz",
@@ -35,7 +35,6 @@
     },
     "require": {
 		"typo3/cms": "dev-master as 7.6.99",
-
 		"typo3/cms-belog": "dev-master as 7.6.99",
 		"typo3/cms-beuser": "dev-master as 7.6.99",
 		"typo3/cms-context-help": "dev-master as 7.6.99",
@@ -52,7 +51,6 @@
 		"typo3/cms-setup": "dev-master as 7.6.99",
 		"typo3/cms-tstemplate": "dev-master as 7.6.99",
 		"typo3/cms-viewpage": "dev-master as 7.6.99",
-
 		"helhum/typo3-console": "dev-master",
         "dmitryd/typo3-realurl": "dev-master",
         "georgringer/news": "dev-master",
