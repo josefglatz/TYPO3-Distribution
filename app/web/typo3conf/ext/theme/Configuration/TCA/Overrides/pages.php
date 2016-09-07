@@ -10,7 +10,7 @@ call_user_func(
 
         // register elements (path/filename without extension, label without prefix)
         $elements = [
-            'Page/PageGeneral' => 'General PageTSConfig',
+            'PageGeneral' => 'General PageTSConfig',
             'Page/Specific/NewOnlyFeUsers' => 'Restrict page(s) to FeUsers/FeGroups',
             'Page/Specific/ClearCachePages' => 'ClearCacheCmd->pages',
             'Page/Specific/ClearCacheRegistrationSpecific' => 'ClearCacheCmd->cacheTag:customregistration,pages',

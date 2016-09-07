@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="DIR :EXT:theme/Configuration/TSConfig/User/General" extensions="tsc">
+<INCLUDE_TYPOSCRIPT: source="DIR: EXT:theme/Configuration/TSConfig/User/General" extensions="tsc">
