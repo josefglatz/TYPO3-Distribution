@@ -28,9 +28,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 @eaDir
-*.log
-ENABLE_INSTALL_TOOL
-FIRST_INSTALL
-*.map
+
 # bootstrap scss files
 app/web/typo3conf/ext/theme/Resources/Private/Scss/bootstrap
