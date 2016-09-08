@@ -41,8 +41,8 @@ $customChanges = [
                 'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
                 'loginHighlightColor' => '#ff8700',
                 'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
-                'backendLogo' => 'EXT:backend/Resources/Public/Images/Backend/typo3-topbar@2x.png', // @TODO: Backend Logo (Stage, Prod, Dev)
-                'backendFavicon' => 'EXT:backend/Resources/Public/Backend/Icons/favicon.ico', // @TODO: Backend FavIcon (Stage, Prod, Dev)
+                'backendLogo' => 'EXT:backend/Resources/Public/Images/typo3-topbar@2x.png', // @TODO: Backend Logo (Stage, Prod, Dev)
+                'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico', // @TODO: Backend FavIcon (Stage, Prod, Dev)
             ]),
             'fluid_styled_content' => serialize([
                 'loadContentElementWizardTsConfig' => 1,
