@@ -17,3 +17,17 @@ nbproject
 *.zip
 *.bak
 /backup/*
+*.bak
+*~
+.htaccess
+.tmp
+*.tmrproj
+*.iml
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+@eaDir
+
+# bootstrap scss files
+app/web/typo3conf/ext/theme/Resources/Private/Scss/bootstrap

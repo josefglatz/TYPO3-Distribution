@@ -1,0 +1,10 @@
+{namespace s7=Sup7even\Theme\ViewHelpers}
+
+<f:comment>
+	@TODO: change the inline js with a addjs method in the viewhelper. that
+	could be a bit more nice ;) especially with the concatenation and compression
+	typo3 stuff shizzle. 
+</f:comment>
+<script>
+	var breakpoints = JSON.parse('<f:format.raw><s7:scssBreakpoint file="EXT:theme/Resources/Private/Scss/globals/variables.scss" /></f:format.raw>');
+</script>

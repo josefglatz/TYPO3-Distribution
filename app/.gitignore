@@ -27,6 +27,8 @@
 /web/fileadmin/_processed_/**/*
 /web/uploads/**/*
 
+# remove the cssmapping files
+*.map
 
 # TYPO3 specific ignores: ignore all except project specific extensions
 /web/typo3conf/ext/*
