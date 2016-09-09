@@ -65,6 +65,11 @@ lib.dynamicContent {
 		wrap.cObject {
 			field = wrap
 		}
+		maxItems.cObject = TEXT
+		maxItems.cObject {
+			field = maxItems
+			ifEmpty =
+		}
 	}
 	20 = CONTENT
 	20 {
@@ -76,6 +81,7 @@ lib.dynamicContent {
 			where.insertData = 1
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid
+			max.data = register:maxItems
 		}
 		stdWrap {
 			dataWrap = {register:wrap}
