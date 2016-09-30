@@ -46,7 +46,7 @@ config {
 	headerComment = Created by Sup7even Digital :: http://www.sup7even.digital
 
 	debug = 0
-	admPanel = 0
+	admPanel = 1
 	# disabled until https://forge.typo3.org/issues/63815
 	sendCacheHeaders = 0
 	disablePrefixComment = 1
