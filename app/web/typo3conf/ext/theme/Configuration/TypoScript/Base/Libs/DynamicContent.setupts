@@ -4,9 +4,17 @@
 #
 # initially from https://github.com/benjaminkott/bootstrap_package/blob/master/Configuration/TypoScript/Helper/DynamicContent.txt
 #
-#  EXAMPLE
+#  EXAMPLE: default
 #  ---------------
 #  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
+#
+#  EXAMPLE: slide
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
+#
+#  EXAMPLE: only the first content element
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.dynamicContentMax1" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
 #
 #
 #  COLUMN NUMBERS
@@ -90,5 +98,8 @@ lib.dynamicContent {
 	}
 	90 = RESTORE_REGISTER
 }
-lib.dynamicContentSlide =< lib.dynamicContent
+lib.dynamicContentSlide < lib.dynamicContent
 lib.dynamicContentSlide.20.slide = -1
+
+lib.dynamicContentMax1 < lib.dynamicContent
+lib.dynamicContentMax1.20.select.max = 1
