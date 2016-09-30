@@ -95,12 +95,14 @@ config {
 	uniqueLinkVars = 1
 }
 
-[globalVar = LIT:1 = {$thm.debug}]
+[globalVar = LIT:1 = {$thm.debug}] && [globalVar = TSFE : beUserLogin > 0]
 	config {
 		debug = 1
 		admPanel = 1
 		sendCacheHeaders = 0
 		disablePrefixComment = 0
 		tx_realurl_enable = 1
+		// https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#contentobjectexceptionhandler
+		contentObjectExceptionHandler = 0
 	}
 [global]
