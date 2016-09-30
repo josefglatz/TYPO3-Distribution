@@ -47,6 +47,7 @@ site {
     tracking {
 
         google {
+            enable = 0
             id =
             domain =
         }
@@ -84,6 +85,7 @@ site {
     site {
         tracking {
             google {
+                enable = 0
                 id =
                 domain =
             }
@@ -97,6 +99,7 @@ site {
     site {
         tracking {
             google {
+                enable = 0
                 id =
                 domain =
             }
@@ -109,6 +112,7 @@ site {
     site {
         tracking {
             google {
+                enable = 0
                 id =
                 domain =
             }
