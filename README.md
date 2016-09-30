@@ -1,5 +1,14 @@
 # TYPO3 Distribution
 
+**Documentation is still WIP**
+
+## Features
+
+* TYPO3 v8 dev-master in Composer mode
+* custom composer tasks
+* TYPO3 console
+* ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
+
 
 ## Tools
 
