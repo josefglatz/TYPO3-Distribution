@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+# General
+User-Agent: *
+
+# Only allow URLs generated with RealURL
+Disallow: /*?id=*
+Disallow: /*&id=*
+
+# L=0 is the default language
+Disallow: /*?L=0*
+Disallow: /*&L=0*
+
+# typeNum = 98 is usually the print version.
+Disallow: /*?type=98*
+Disallow: /*&type=98*
+
+# Should always be protected (.htaccess)
+Disallow: /*/Private/*
+Disallow: /*/Configuration/*
+
+Disallow: /typo3/
+
+Disallow: *.sql
+Disallow: *.sql.gz
+
+Disallow: /*?tx_indexedsearch
+
+#Sitemap: /?eID=dd_googlesitemap
+
+</html>
+
