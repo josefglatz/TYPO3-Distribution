@@ -31,6 +31,17 @@ class RealUrlAutoConfiguration
             'pagePath' => [
                 'disablePathCache' => true,
             ],
+            'fileName' => [
+                'defaultToHTMLsuffixOnPrev' => 0,
+                'acceptHTMLsuffix' => 0,
+                'index' => [
+                    'robots.txt' => [
+                        'keyValues' => [
+                            'type' => 9201,
+                        ]
+                    ],
+                ]
+            ],
             'postVarSets' => [
                 // @TODO: add my common ext:news default realurl config
             ],

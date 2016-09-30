@@ -1,1 +1,20 @@
-// @TODO: Add support for dynamic robots.txt
+robots = PAGE
+robots {
+	typeNum = 9201
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:text/plain
+		admPanel = 0
+		metaCharset = utf-8
+		debug = 0
+	}
+
+	10 = FLUIDTEMPLATE
+	10 {
+		extbase.controllerExtensionName = {$thm.key}
+		templateName = Default
+		templateRootPaths {
+			0 = {$thm.resTemplates}/Templates/RobotsTxt
+		}
+	}
+}
