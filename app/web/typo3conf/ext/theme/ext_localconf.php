@@ -7,10 +7,13 @@ call_user_func(
         // Add fields to rootLineFields
         $GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= '';
 
+        // Hook for adding realurl custom configuration
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][$extKey] =
+            'Sup7even\\Theme\\Hooks\\Frontend\\Realurl\\RealUrlAutoConfiguration->addThmConfig';
+
         // Disable ext:news realurl hook
 //        unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
 
-//        @TODO: RealUrl Hooks for disabling cache and so on
 
 
         // Add general UserTSConfig
