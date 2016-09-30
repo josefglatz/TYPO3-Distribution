@@ -83,22 +83,21 @@ $customChanges = [
 //                'extIgnore' => '/^(CVS|.svn|.git|csh_)/',
 //                'changeXlfDate' => 1,
 //            ]),
-//            @TODO: Activate PBKDF2 if project will not be downgraded to TYPO3 7LTS.
-//            'saltedpasswords' => serialize([
-//                'BE.' => [
-//                    'saltedPWHashingMethod' => 'TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt',
-//                    'forceSalted' => 0,
-//                    'onlyAuthService' => 0,
-//                    'updatePasswd' => 1,
-//                ],
-//                'FE.' => [
-//                    'enabled' => 1,
-//                    'saltedPWHashingMethod' => 'TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt',
-//                    'forceSalted' => 0,
-//                    'onlyAuthService' => 0,
-//                    'updatePasswd' => 1,
-//                ],
-//            ]),
+            'saltedpasswords' => serialize([
+                'BE.' => [
+                    'saltedPWHashingMethod' => 'TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt',
+                    'forceSalted' => 0,
+                    'onlyAuthService' => 0,
+                    'updatePasswd' => 1,
+                ],
+                'FE.' => [
+                    'enabled' => 1,
+                    'saltedPWHashingMethod' => 'TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt',
+                    'forceSalted' => 0,
+                    'onlyAuthService' => 0,
+                    'updatePasswd' => 1,
+                ],
+            ]),
             'scheduler' => serialize([
                 'maxLifetime' => 1440,
                 'enableBELog' => 1,
@@ -123,7 +122,6 @@ $customChanges = [
         'curlUse' => true,
         'textfile_ext' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['tsfile_ext'] . ',setupts,constantsts,ts1,tsc',
         'UTF8filesystem' => true,
-        'clearCacheSystem' => true,
         'cookieSecure' => 2,
     ],
 ];
