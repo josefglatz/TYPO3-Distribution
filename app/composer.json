@@ -52,7 +52,7 @@
 		"typo3/cms-tstemplate": "dev-master as 7.6.99",
 		"typo3/cms-viewpage": "dev-master as 7.6.99",
 		"helhum/typo3-console": "dev-master",
-        "dmitryd/typo3-realurl": "dev-master",
+        "helhum/realurl": "dev-master",
         "georgringer/news": "dev-master",
         "t3monitor/t3monitoring_client": "dev-master",
 		"sjbr/static-info-tables": "dev-master"
