@@ -35,10 +35,11 @@ page {
 		// basic Google Analytics
 		1447083274 < lib.googleAnalyticsBasic
 
+		// realfavicongenerator.net powered favicon
+		1475270008 = FILE
+		1475270008.file = {$thm.resPartials}/Page/Favicon/Dist/RealFavIcon.html
+
 	}
-
-
-	// @TODO: FavIcon
 
 
 	meta {

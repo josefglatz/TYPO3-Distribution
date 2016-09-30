@@ -8,6 +8,8 @@
 * custom composer tasks
 * TYPO3 console
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
+* Simple dynamic robots.txt
+* RealFaviconGenerator.net gulp integration
 
 
 ## Tools
@@ -20,6 +22,15 @@ cd ./app && php-cs-fixer fix --config-file Build/.php_cs
 ```
 (Check app/Build/.php_cs for instructions how to install php-cs-fixer)
 
+### Gulp powered RealFaviconGenerator.net
+
+* Install dependencies `cd ./app/web/typo3conf/ext/theme/Build && npm install`
+* Replace dummy favicon with your Favicon `./app/web/typo3conf/ext/theme/Resources/Public/Icons/Favicon/FaviconMaster.svg`
+* Configure the task in the gulpfile.js `./app/web/typo3conf/ext/theme/Build/gulpfile.js` ([details and instructions](https://realfavicongenerator.net/favicon/gulp))
+* Generate/Update favicon `cd ./app/web/typo3conf/ext/theme/Build && gulp generate-favicon`
+* Inject favicon markup `cd ./app/web/typo3conf/ext/theme/Build && gulp inject-favicon-markups`
+
+As the favicon doesn't change often and generation takes some seconds, all the generated files are included in git repository and could be deployed as-is.
 
 ## Credits
 
