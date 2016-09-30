@@ -75,7 +75,16 @@ site {
 
 [globalVar = GP:L=1]
     site {
-
+        l10n {
+            locale_all = en_US.UTF-8
+            language = en
+            # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
+            sys_language_isocode = en
+            directionalityOfText = ltr
+            sys_language_uid = 1
+            language_mode = content_fallback; 0
+            language_overlay = 1
+        }
     }
 
 [applicationContext = Development*]
