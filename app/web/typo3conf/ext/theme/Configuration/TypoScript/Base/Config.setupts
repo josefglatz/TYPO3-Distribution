@@ -43,7 +43,7 @@ config {
 	pageTitleSeparator.noTrimWrap = | | |
 	noPageTitle = 2
 
-	headerComment = Created by Sup7even Digital :: http://www.sup7even.digital
+	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/jousch/TYPO3-Distribution
 
 	debug = 0
 	admPanel = 1
