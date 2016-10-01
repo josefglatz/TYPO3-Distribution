@@ -1,5 +1,5 @@
 <?php
-namespace Sup7even\Theme\Hooks\Frontend\Realurl;
+namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
 
 use Tx\Realurl\Configuration\ConfigurationGenerator;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;

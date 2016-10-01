@@ -3,9 +3,9 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'Project specific theme extension',
     'description' => 'Description for ext',
     'category' => 'Theme',
-    'author' => 'Josef Glatz, Josef Glatz',
-    'author_email' => 'jousch@jousch.com, j.glatz@supseven.at',
-    'author_company' => 'http://jousch.com, http://www.sup7even.digital',
+    'author' => 'Josef Glatz',
+    'author_email' => 'jousch@jousch.com',
+    'author_company' => 'http://jousch.com',
     'shy' => '',
     'priority' => '',
     'module' => '',
@@ -48,14 +48,14 @@ $EM_CONF[$_EXTKEY] = [
         [
             'psr-4' =>
                 [
-                    'Sup7even\\Theme\\' => 'Classes',
+                    'JosefGlatz\\Theme\\' => 'Classes',
                 ],
         ],
     'autoload-dev' =>
         [
             'psr-4' =>
                 [
-                    'Sup7even\\Theme\\Tests\\' => 'Tests',
+                    'JosefGlatz\\Theme\\Tests\\' => 'Tests',
                 ],
         ],
 ];

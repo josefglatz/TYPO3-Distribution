@@ -1,5 +1,5 @@
 <?php
-namespace Sup7even\Theme\ViewHelpers;
+namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
