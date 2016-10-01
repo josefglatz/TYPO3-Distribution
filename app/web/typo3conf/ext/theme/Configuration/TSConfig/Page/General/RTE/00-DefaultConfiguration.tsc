@@ -77,6 +77,7 @@ RTE.default.buttons {
 #	formatblock.removeItems := addToList(h4)
 #	formatblock.removeItems := addToList(h5)
 	formatblock.removeItems := addToList(h6)
+	formatblock.removeItems := addToList(blockquote)
 
 	// allowed textstyle classes for <span> tag
 	textstyle.tags.span.allowedClasses = small

@@ -23,7 +23,7 @@ RTE.default {
 
 
 	// add quote
-	showButtons := addToList(blockquote)
+#	showButtons := addToList(blockquote)
 
 
 	// add text-align
