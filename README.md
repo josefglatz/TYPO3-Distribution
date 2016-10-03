@@ -7,6 +7,7 @@
 * TYPO3 v8 dev-master in Composer mode
 * custom composer tasks
 * typo3-console support
+* PackageStates.php is excluded in git repository
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
