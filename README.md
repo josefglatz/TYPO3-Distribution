@@ -6,7 +6,7 @@
 
 * TYPO3 v8 dev-master in Composer mode
 * custom composer tasks
-* TYPO3 console
+* typo3-console support
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
@@ -32,7 +32,20 @@ cd ./app && php-cs-fixer fix --config-file Build/.php_cs
 
 As the favicon doesn't change often and generation takes some seconds, all the generated files are included in git
 repository and could be deployed as-is. The reasons why the favicons are saved in document root are described
-[here](https://realfavicongenerator.net/faq). 
+[in the realfavicongenerator.net faq section](https://realfavicongenerator.net/faq). 
+
+### Change vendor name
+
+Initially, the vendor is `JosefGlatz`. If you want to change that at all affected places you can run a small script
+which can do that for you:
+
+```bash
+cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
+```
+
+[Details about the script](Build/ChangeVendor.sh)
+
+Additionally, backup files with an suffixed "-e" are created. (You can safely delete them, if the renaming was successful)
 
 ## Credits
 
