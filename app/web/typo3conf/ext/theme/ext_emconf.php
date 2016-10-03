@@ -34,6 +34,7 @@ $EM_CONF[$_EXTKEY] = [
                     'form' => '',
                     'formhandler' => '',
                     'realurl' => '',
+                    'logging' => '',
                     'news' => '',
                     'piwik' => '',
                     'gridelements' => '',
