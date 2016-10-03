@@ -5,7 +5,7 @@
 		// set infinite storagePid
 		recursive = 250
 
-		templateFile = {$thm.resPrivate}/Felogin/FrontendLogin.html
+		templateFile = {$theme.resPrivate}/Felogin/FrontendLogin.html
 		storagePid = {$site.uid.felogin.storagePid}
 
 		// Wraps

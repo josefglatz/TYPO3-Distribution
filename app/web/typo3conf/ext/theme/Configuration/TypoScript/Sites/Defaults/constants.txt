@@ -1,6 +1,6 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:theme/Configuration/TypoScript/Base" extensions="constantsts">
 
-thm {
+theme {
     name = Theme
     key = theme
     res = EXT:theme/Resources

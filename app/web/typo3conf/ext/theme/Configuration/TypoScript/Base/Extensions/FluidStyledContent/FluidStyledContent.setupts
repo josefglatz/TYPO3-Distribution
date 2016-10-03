@@ -3,13 +3,13 @@
 
 // set override paths for custom fluid_styled_content
 lib.fluidContent {
-	templateRootPaths.10 = {$thm.resTemplates}/
-	partialRootPaths.10 = {$thm.resPartials}/
-	layoutRootPaths.10 = {$thm.resLayouts}/
+	templateRootPaths.10 = {$theme.resTemplates}/
+	partialRootPaths.10 = {$theme.resPartials}/
+	layoutRootPaths.10 = {$theme.resLayouts}/
 }
 
 // set default extension name for labels in Fluid
-lib.fluidContent.extbase.controllerExtensionName = {$thm.name}
+lib.fluidContent.extbase.controllerExtensionName = {$theme.name}
 
 // @TODO: Add defaults for FSC settings
 // adjust default lightbox settings

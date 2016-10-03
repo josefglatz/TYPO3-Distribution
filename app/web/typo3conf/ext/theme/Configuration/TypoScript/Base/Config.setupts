@@ -95,7 +95,7 @@ config {
 	uniqueLinkVars = 1
 }
 
-[globalVar = LIT:1 = {$thm.debug}] && [globalVar = TSFE : beUserLogin > 0]
+[globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0]
 	config {
 		debug = 1
 		admPanel = 1

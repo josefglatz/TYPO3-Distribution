@@ -37,7 +37,7 @@ page {
 
 		// realfavicongenerator.net powered favicon
 		1475270008 = FILE
-		1475270008.file = {$thm.resPartials}/Page/Favicon/Dist/RealFavIcon.html
+		1475270008.file = {$theme.resPartials}/Page/Favicon/Dist/RealFavIcon.html
 
 	}
 
@@ -122,7 +122,7 @@ page {
 
 
 	inlineLanguageLabelFiles {
-		themeFrontend = {$thm.resLanguage}/locallang_JavascriptFrontend.xlf
+		themeFrontend = {$theme.resLanguage}/locallang_JavascriptFrontend.xlf
 		themeFrontend {
 			// Only label keys that start with this prefix will be included (default: '')
 			selectionPrefix = frontend

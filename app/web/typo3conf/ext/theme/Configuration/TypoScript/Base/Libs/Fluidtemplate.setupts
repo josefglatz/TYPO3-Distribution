@@ -1,17 +1,17 @@
 lib.fluidTemplate {
 	base = FLUIDTEMPLATE
 	base {
-		extbase.controllerExtensionName = {$thm.key}
+		extbase.controllerExtensionName = {$theme.key}
 		layoutRootPaths {
-			10 = {$thm.resLayouts}
+			10 = {$theme.resLayouts}
 			20 = EXT:sitemodification/Resources/Private/Layouts
 		}
 		partialRootPaths {
-			10 = {$thm.resPartials}
+			10 = {$theme.resPartials}
 			20 = EXT:sitemodification/Resources/Private/Partials
 		}
 		templateRootPaths {
-			10 = {$thm.resTemplates}/Page
+			10 = {$theme.resTemplates}/Page
 			20 = EXT:sitemodification/Resources/Private/Templates
 		}
 		variables {

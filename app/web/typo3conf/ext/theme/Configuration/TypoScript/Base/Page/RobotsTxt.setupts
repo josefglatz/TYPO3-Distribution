@@ -11,10 +11,10 @@ robots {
 
 	10 = FLUIDTEMPLATE
 	10 {
-		extbase.controllerExtensionName = {$thm.key}
+		extbase.controllerExtensionName = {$theme.key}
 		templateName = Default
 		templateRootPaths {
-			0 = {$thm.resTemplates}/Templates/RobotsTxt
+			0 = {$theme.resTemplates}/Templates/RobotsTxt
 		}
 	}
 }
