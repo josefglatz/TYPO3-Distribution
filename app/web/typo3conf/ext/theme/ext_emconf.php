@@ -37,6 +37,7 @@ $EM_CONF[$_EXTKEY] = [
                     'news' => '',
                     'piwik' => '',
                     'gridelements' => '',
+                    'page_speed' => '',
                     'sourceopt' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
