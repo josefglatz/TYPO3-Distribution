@@ -59,13 +59,15 @@ Additionally, backup files with an suffixed "-e" are created. (You can safely de
 * PhpStorm Plugin .ignore
 * PhpStorm Plugin String Manipulation
 * PhpStorm Plugin Shifter
-* PhpStorm Plugin Dash
+* PhpStorm Plugin Dash (or alternative devdocs.io)
 * PhpStorm Plugin PHP composer.json support
 * PhpStorm Plugin Markup to SCSS
 * PhpStorm Plugin TypoScript Plugin - Enterprise
 * PhpStorm Plugin Fluid Plugin - Enterprise
 * PhpStorm Plugin EditorConfig
 * Git Tower (or GitKraken)
+* SequelPro (or HeidiSQL)
+* https://www.getpostman.com/ (Easily test APIs, AJAX requests with postman (Chrome App))
 
 ## Credits
 
