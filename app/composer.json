@@ -76,7 +76,7 @@
 
 		],
         "psr-4": {
-            "Sup7even\\Theme\\": "web/typo3conf/ext/theme/Classes"
+            "JosefGlatz\\Theme\\": "web/typo3conf/ext/theme/Classes"
         }
     },
 	"scripts": {
