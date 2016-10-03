@@ -19,7 +19,7 @@ class RealUrlAutoConfiguration
      * @param ConfigurationGenerator $pObj Parent object
      * @return array Updated configuration
      */
-    public function addThmConfig($params, ConfigurationGenerator &$pObj)
+    public function addThemeConfig($params, ConfigurationGenerator &$pObj)
     {
 
         $processedConfig = array_replace_recursive($params['config'], [
