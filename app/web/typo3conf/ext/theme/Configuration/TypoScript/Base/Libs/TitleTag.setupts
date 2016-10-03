@@ -9,18 +9,48 @@ Custom titleTag configurations
 lib.titleTag.default = COA
 lib.titleTag.default {
 
-	5 = RECORDS
+	// Add an array for every special detail view, where the page title should not be displayed in <title> tag (e.g. news detail view)
+	5 = COA
 	5 {
-		if.isTrue.data = GP:tx_news_pi1|news
-		dontCheckPid = 1
-		tables = tx_news_domain_model_news
-		source.data = GP:tx_news_pi1|news
-		source.intval = 1
-		conf.tx_news_domain_model_news = TEXT
-		conf.tx_news_domain_model_news {
-			field = title
-			htmlSpecialChars = 1
-			noTrimWrap = || - |
+		// ext:news
+		10 = RECORDS
+		10 {
+			if.isTrue.data = GP:tx_news_pi1|news
+			dontCheckPid = 1
+			tables = tx_news_domain_model_news
+			source.data = GP:tx_news_pi1|news
+			source.intval = 1
+			conf.tx_news_domain_model_news = TEXT
+			conf.tx_news_domain_model_news {
+				field = title
+				htmlSpecialChars = 1
+				noTrimWrap = || - |
+			}
+		}
+
+#		// ext:myfaqext
+#		20 = RECORDS
+#		20 {
+#			if.isTrue.data = GP:tx_myfaqext_pi1|faq
+#			dontCheckPid = 1
+#			tables = tx_myfaqext_domain_model_faq
+#			source.data = GP:tx_myfaqext_pi1|faq
+#			source.intval = 1
+#			conf.tx_myfaqext_domain_model_faq = TEXT
+#			conf.tx_myfaqext_domain_model_faq {
+#				field = title
+#				htmlSpecialChars = 1
+#				noTrimWrap = || - |
+#			}
+#		}
+
+	}
+	// load register to check later, if page title should be rendered in <title> tag
+	6 = COA
+	6 {
+		10 = LOAD_REGISTER
+		10 {
+			anySpecialDetailView.cObject < lib.titleTag.default.5
 		}
 	}
 
@@ -30,7 +60,8 @@ lib.titleTag.default {
 		field = title
 		htmlSpecialChars = 1
 		noTrimWrap = || - |
-		if.isFalse.data = GP:tx_news_pi1|news
+		// render title of page only, if register "anySpecialDetailView" is empty
+		if.isFalse.data = register:anySpecialDetailView
 	}
 
 	300 = TEXT
