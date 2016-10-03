@@ -80,6 +80,9 @@ $customChanges = [
                 'autoConfFormat' => 0,
                 'enableDevLog' => 0,
             ]),
+            'rsaauth' => serialize([
+                'temporaryDirectory' => '',
+            ]),
             'rtehtmlarea' => serialize([
                 'defaultConfiguration' => 'Minimal',
                 'enableInlineElements' => 0,
