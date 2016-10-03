@@ -49,7 +49,6 @@ class FalViewHelper extends AbstractViewHelper
     public function render(string $table, string $field, string $id, string $as = 'references')
     {
         // create query builder object
-        /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable($table);
         // query
