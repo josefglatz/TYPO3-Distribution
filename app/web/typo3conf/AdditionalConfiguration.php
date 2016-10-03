@@ -24,6 +24,7 @@ if ($context) {
 // project specific configuration
 $customChanges = [
     'BE' => [
+        'explicitADmode' => 'explicitAllow',
         'loginSecurityLevel' => 'rsa',
     ],
     'EXTCONF' => [
