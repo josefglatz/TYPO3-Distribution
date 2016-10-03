@@ -1,6 +1,10 @@
 # TYPO3 Distribution
 
-**Documentation is still WIP**
+This repository delivers a full configure, bare metal TYPO3 distribution
+based on my best practices.
+
+The goal of this package is to give an example of how a TYPO3 project could
+be configured and structured.
 
 ## Features
 
@@ -61,7 +65,7 @@ Additionally, backup files with an suffixed "-e" are created. (You can safely de
 * PhpStorm Plugin TypoScript Plugin - Enterprise
 * PhpStorm Plugin Fluid Plugin - Enterprise
 * PhpStorm Plugin EditorConfig
-* Git Tower
+* Git Tower (or GitKraken)
 
 ## Credits
 
