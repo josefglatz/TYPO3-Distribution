@@ -60,6 +60,7 @@ Additionally, backup files with an suffixed "-e" are created. (You can safely de
 * PhpStorm Plugin Markup to SCSS
 * PhpStorm Plugin TypoScript Plugin - Enterprise
 * PhpStorm Plugin Fluid Plugin - Enterprise
+* PhpStorm Plugin EditorConfig
 * Git Tower
 
 ## Credits
