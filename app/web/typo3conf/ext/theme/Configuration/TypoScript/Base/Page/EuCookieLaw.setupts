@@ -1,0 +1,20 @@
+// @TODO: Finalize dynamic EU cookie law
+#page.jsInline {
+#	1448269198 = FLUIDTEMPLATE
+#	1448269198 {
+#
+#		extbase.controllerExtensionName = theme
+#		file = EXT:theme/Resources/Private/Templates/EuCookieLaw.html
+#		partialRootPaths.10 = EXT:theme/Resources/Private/Partials/
+#		layoutRootPaths.10 = EXT:theme/Resources/Private/Layouts/
+#
+#		settings {
+#			link = {$tree.euCookieLaw.link}
+#			container = {$tree.euCookieLaw.container}
+#			theme = {$tree.euCookieLaw.theme}
+#			path = {$tree.euCookieLaw.path}
+#			domain = {$tree.euCookieLaw.domain}
+#			expiryDays = {$tree.euCookieLaw.expiryDays}
+#		}
+#	}
+#}
