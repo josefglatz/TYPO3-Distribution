@@ -14,7 +14,7 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * = Example =
  *
  * <code title="register namespace in fluid first">
- * xmlns:theme="http://typo3.org/ns/Vendor/Theme/ViewHelpers"
+ * xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers"
  * </code>
  *
  * <code title="default notation">
