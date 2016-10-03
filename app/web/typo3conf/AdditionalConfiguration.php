@@ -27,6 +27,14 @@ $customChanges = [
         'explicitADmode' => 'explicitAllow',
         'loginSecurityLevel' => 'rsa',
     ],
+    'DB' => [
+        'Connections' => [
+            'Default' => [
+                'charset' => 'utf8',
+                'driver' => 'mysqli',
+            ],
+        ],
+    ],
     'EXTCONF' => [
         'lang' => [
             'availableLanguages' => [
