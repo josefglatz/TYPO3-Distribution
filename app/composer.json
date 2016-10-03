@@ -83,8 +83,26 @@
 		"folder-structure": [
 			"./typo3cms install:fixfolderstructure"
 		],
+		"toolchain-install": [
+			"./sgc-core/install.sh --local && cd ./web/typo3conf/ext/theme/ && npm install"
+		],
+		"toolchain-update": [
+			"cd ./web/typo3conf/ext/theme/ && npm install"
+		],
+		"toolchain-watch": [
+			"./sgc build && ./sgc"
+		],
+		"toolchain-watch-silent": [
+			"./sgc build && ./sgc -s"
+		],
+		"toolchain-watch-nobrowsersync": [
+			"./sgc build && ./sgc watch"
+		],
+		"toolchain-build": [
+			"./sgc build"
+		],
 		"pre-deploy": [
-			"# TBD"
+			"./sgc build"
 		],
 		"post-autoload-dump": [
 			"@package-states",
