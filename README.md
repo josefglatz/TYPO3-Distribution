@@ -48,6 +48,20 @@ cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
 
 Additionally, backup files with an suffixed "-e" are created. (You can safely delete them, if the renaming was successful)
 
+## Recommended Tools/Software/Plugins
+
+* PhpStorm
+* PhpStorm Plugin DynamicReturnTypePlugin
+* PhpStorm Plugin .ignore
+* PhpStorm Plugin String Manipulation
+* PhpStorm Plugin Shifter
+* PhpStorm Plugin Dash
+* PhpStorm Plugin PHP composer.json support
+* PhpStorm Plugin Markup to SCSS
+* PhpStorm Plugin TypoScript Plugin - Enterprise
+* PhpStorm Plugin Fluid Plugin - Enterprise
+* Git Tower
+
 ## Credits
 
 Thanks for your support, ideas, issues and shared code
