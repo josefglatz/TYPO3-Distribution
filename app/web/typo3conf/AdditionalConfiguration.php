@@ -114,9 +114,10 @@ $customChanges = [
         ],
     ],
     'FE' => [
-        'versionNumberInFilename' => 'querystring',
         'disableNoCacheParameter' => true,
+        'cHashIncludePageId' => true,
         'loginSecurityLevel' => 'rsa',
+        'versionNumberInFilename' => 'querystring',
     ],
     'GFX' => [
         'processor_allowUpscaling' => false,
