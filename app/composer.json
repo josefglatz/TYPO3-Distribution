@@ -83,6 +83,9 @@
 		"folder-structure": [
 			"./typo3cms install:fixfolderstructure"
 		],
+		"setup-active-extensions": [
+			"./typo3cms extension:setupactive"
+		],
 		"toolchain-install": [
 			"./sgc-core/install.sh --local && cd ./web/typo3conf/ext/theme/ && npm install"
 		],
