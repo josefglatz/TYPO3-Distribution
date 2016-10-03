@@ -52,6 +52,6 @@ Additionally, backup files with an suffixed "-e" are created. (You can safely de
 
 Thanks for your support, ideas, issues and shared code
 
-* [Georg Ringer](https://twitter.com/georg_ringer)
+* [Georg Ringer](http://www.ringer.it)
 * [Volker Kemeter](https://twitter.com/volkizzl)
 * [Benjamin Kott](https://twitter.com/benjaminkott)
