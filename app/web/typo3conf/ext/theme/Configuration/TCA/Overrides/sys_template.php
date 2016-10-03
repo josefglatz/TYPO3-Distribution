@@ -17,7 +17,7 @@ call_user_func(
             TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
                 'theme',
                 'Configuration/TypoScript/Sites/'.$website,
-                'Thm TS:'.$website
+                'Theme TS:'.$website
             );
         }
 
