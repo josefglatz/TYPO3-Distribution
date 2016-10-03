@@ -23,6 +23,9 @@ if ($context) {
 }
 // project specific configuration
 $customChanges = [
+    'BE' => [
+        'loginSecurityLevel' => 'rsa',
+    ],
     'EXTCONF' => [
         'lang' => [
             'availableLanguages' => [
@@ -112,6 +115,7 @@ $customChanges = [
     'FE' => [
         'versionNumberInFilename' => 'querystring',
         'disableNoCacheParameter' => true,
+        'loginSecurityLevel' => 'rsa',
     ],
     'GFX' => [
         'processor_allowUpscaling' => false,
