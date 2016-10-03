@@ -1,0 +1,5 @@
+TCAdefaults {
+	be_users {
+		file_permissions =
+	}
+}
