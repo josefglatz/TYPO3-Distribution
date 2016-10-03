@@ -1,0 +1,18 @@
+setup.default {
+	thumbnailsByDefault = 1
+	condensedMode = 0
+	extendedView = 1
+}
+setup.override {
+	condensedMode = 0
+	extendedView = 1
+}
+
+options {
+	enableBookmarks = 1
+	createFoldersInEB = 1
+	file_list.enableDisplayBigControlPanel = activated
+	file_list.enableDisplayThumbnails = activated
+	// default direct upload folder
+#	defaultUploadFolder = 1:Bilder/
+}
