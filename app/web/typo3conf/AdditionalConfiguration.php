@@ -113,6 +113,9 @@ $customChanges = [
         'versionNumberInFilename' => 'querystring',
         'disableNoCacheParameter' => true,
     ],
+    'GFX' => [
+        'processor_allowUpscaling' => false,
+    ],
     'MAIL' => [
         'defaultMailFromAddress' => $site['defaultMailFromAddress'],
         'defaultMailFromName' => $site['defaultMailFromName'],
