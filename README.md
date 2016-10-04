@@ -15,6 +15,7 @@ be configured and structured.
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
+* Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
 
 
 ### RealUrl
