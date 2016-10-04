@@ -68,7 +68,6 @@ config {
 	noScaleUp = 0
 
 	absRefPrefix = auto
-	tx_realurl_enable = 1
 
 	// Links & content sharing across domains & jumpUrl & external target stuff
 	typolinkEnableLinksAcrossDomains = 1

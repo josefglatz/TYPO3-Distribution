@@ -1,0 +1,3 @@
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')]
+	config.tx_realurl_enable = 1
+[global]
