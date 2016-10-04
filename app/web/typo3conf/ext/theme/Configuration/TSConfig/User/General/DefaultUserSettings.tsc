@@ -11,8 +11,11 @@ setup.override {
 options {
 	enableBookmarks = 1
 	createFoldersInEB = 1
-	file_list.enableDisplayBigControlPanel = activated
-	file_list.enableDisplayThumbnails = activated
+	file_list {
+		enableDisplayBigControlPanel = activated
+		enableDisplayThumbnails = activated
+		filesPerPage = 40
+	}
 	// default direct upload folder
 #	defaultUploadFolder = 1:Bilder/
 }
