@@ -123,7 +123,7 @@ $customChanges = [
             'scheduler' => serialize([
                 'maxLifetime' => 1440,
                 'enableBELog' => 1,
-                'showSampleTasks' => 1,
+                'showSampleTasks' => 0,
                 'useAtDaemon' => 0,
             ]),
             'static_info_tables' => serialize([

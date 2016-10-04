@@ -52,6 +52,7 @@
 		"typo3/cms-reports": "dev-master as 8.3.0",
 		"typo3/cms-rsaauth": "dev-master as 8.3.0",
 		"typo3/cms-rtehtmlarea": "dev-master as 8.3.0",
+		"typo3/cms-scheduler": "dev-master as 8.3.0",
 		"typo3/cms-setup": "dev-master as 8.3.0",
 		"typo3/cms-tstemplate": "dev-master as 8.3.0",
 		"typo3/cms-viewpage": "dev-master as 8.3.0",

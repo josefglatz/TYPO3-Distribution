@@ -40,6 +40,7 @@ $EM_CONF[$_EXTKEY] = [
                     'gridelements' => '',
                     'page_speed' => '',
                     'rx_shariff' => '',
+                    'scheduler' => '',
                     'sourceopt' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
