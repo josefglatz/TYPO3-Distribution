@@ -138,6 +138,21 @@ $customChanges = [
         'defaultMailFromName' => $site['defaultMailFromName'],
     ],
     'SYS' => [
+        'caching' => [
+            'cacheConfigurations' => [
+                'extbase_object' => [
+                    /* @TODO Until an solution is provided by the core https://forge.typo3.org/issues/78140 */
+                    'backend' => TYPO3\CMS\Core\Cache\Backend\Typo3DatabaseBackend::class,
+                    'frontend' => TYPO3\CMS\Core\Cache\Frontend\VariableFrontend::class,
+                    'groups' => [
+                        'system',
+                    ],
+                    'options' => [
+                        'defaultLifetime' => 0,
+                    ],
+                ],
+            ],
+        ],
         'sitename' => htmlspecialchars($site['sitenameBase']) . ' [' . $context . ']',
         'curlUse' => true,
         'textfile_ext' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['tsfile_ext'] . ',setupts,constantsts,ts1,tsc',
