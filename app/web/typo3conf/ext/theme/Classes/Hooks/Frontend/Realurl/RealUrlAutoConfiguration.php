@@ -1,35 +1,40 @@
 <?php
 namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
 
-use Tx\Realurl\Configuration\ConfigurationGenerator;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+/**
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
+
 
 /**
- * Class RealUrlAutoConfiguration
+ * RealUrlAutoConfiguration for RealURL extension v2.x
  */
 class RealUrlAutoConfiguration
 {
     /**
      * Generates additional RealURL configuration and replace it with provided configuration recursively
      * - Add basic/often used/common RealUrl configuration
-     * - Disable RealUrl Cache
-     * - Set language preVars (since no ext:static_info_tables is installed)
+     * - Configuration reference: https://github.com/dmitryd/typo3-realurl/wiki/Configuration-reference
      *
      * @param array $params Default configuration
-     * @param ConfigurationGenerator $pObj Parent object
      * @return array Updated configuration
      */
-    public function addThemeConfig($params, ConfigurationGenerator &$pObj)
+    public function addThemeConfig($params)
     {
 
-        $processedConfig = array_replace_recursive($params['config'], [
+        $processedConfig = array_merge_recursive($params['config'], [
             'init' => [
-                'enableCHashCache' => false,
-                'enableUrlDecodeCache' => false,
-                'enableUrlEncodeCache' => false
             ],
             'pagePath' => [
-                'disablePathCache' => true,
             ],
             'fileName' => [
                 'defaultToHTMLsuffixOnPrev' => 0,
@@ -48,21 +53,6 @@ class RealUrlAutoConfiguration
             'preVars' => [
             ],
         ]);
-
-        if (!ExtensionManagementUtility::isLoaded('static_info_tables')) {
-            $processedConfig = array_replace_recursive($params['config'], [
-                'preVars' => [
-                    [
-                        'GETvar' => 'L',
-                        'valueMap' => [
-                            'en' => 1,
-                        ],
-                        'noMatch' => 'bypass',
-                    ],
-                ],
-            ]);
-            unset($processedConfig['preVars'][0]['valueMap'][1]);
-        }
 
         return $processedConfig;
     }

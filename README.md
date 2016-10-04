@@ -17,6 +17,19 @@ be configured and structured.
 * RealFaviconGenerator.net gulp integration
 
 
+### RealUrl
+
+This distribution uses the the rewritten version [2](https://github.com/dmitryd/typo3-realurl). As there are some changes and
+new limitations I recommend to read at least [the install section of realurl's wiki](https://github.com/dmitryd/typo3-realurl/wiki/Installing-and-enabling-the-extension).
+
+
+#### Configuration
+
+Realurl operates in "auto configuration mode". Therefore you don't need to write the realurl configuration manually.
+Instead, you can add your desired changes in `EXT:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php`.
+As already mentioned, read the [realurl v2 manual](https://github.com/dmitryd/typo3-realurl/wiki)! The automatic resulting
+configuration is saved to `app/web/typo3conf/realurl_autoconf.php`.
+
 ## Tools
 
 ### php-cs-fixer
