@@ -1,0 +1,5 @@
+// Check EXT:rx_shariff/Configuration/TypoScript for available options on how to integrate extension:
+// You also find some infos about the possibilities in the manual EXT:rx_shariff/Documentation/Installation/Index.rst
+
+#page.includeJSFooter.tx_rxshariff_shariff = EXT:rx_shariff/Resources/Public/JavaScript/shariff.min.js
+#page.includeCSS.tx_rxshariff_shariff = EXT:rx_shariff/Resources/Public/Css/shariff.min.css

@@ -92,6 +92,13 @@ $customChanges = [
                 'noSpellCheckLanguages' => 'ja,km,ko,lo,th,zh,b5,gb',
                 'AspellDirectory' => '/usr/bin/aspell',
             ]),
+            'rx_shariff' => serialize([
+                'services' => 'GooglePlus, Facebook, LinkedIn, Reddit, StumbleUpon, Flattr, Pinterest, Xing, AddThis',
+                'allowedDomains' => 'SERVER_NAME',
+                'ttl' => 3600,
+                'facebook_app_id' => '',
+                'facebook_secret' => '',
+            ]),
 //            'lfeditor' => serialize([
 //                'viewLanguages' => 'de',
 //                'defaultLanguage' => '',

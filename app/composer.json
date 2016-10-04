@@ -61,7 +61,8 @@
 		"dmitryd/typo3-realurl": "dev-master",
 		"georgringer/news": "dev-master",
 		"t3monitor/t3monitoring_client": "dev-master",
-		"georgringer/logging": "dev-master"
+		"georgringer/logging": "dev-master",
+		"reelworx/rx-shariff": "dev-master"
 	},
 	"require-dev": {
 	},
