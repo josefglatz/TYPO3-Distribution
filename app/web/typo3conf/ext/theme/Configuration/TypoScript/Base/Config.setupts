@@ -67,7 +67,7 @@ config {
 	// @TODO: Check if config.noScaleUp is obsolete
 	noScaleUp = 0
 
-	absRefPrefix = /
+	absRefPrefix = auto
 	tx_realurl_enable = 1
 
 	// Links & content sharing across domains & jumpUrl & external target stuff
