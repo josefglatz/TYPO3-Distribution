@@ -16,7 +16,12 @@ be configured and structured.
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
 * Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
+* Prepared Linkvalidator configuration
 
+### Linkvalidator (sysext)
+
+To enable the linkvalidator, adopt the prepared configuration first to your needs (`EXT:theme/Configuration/TSConfig/Page/General/Linkvalidator.tsc`)
+and then add a Linkvalidator Scheduler Task to activate the linkvalidator on a regular base.
 
 ### RealUrl
 
