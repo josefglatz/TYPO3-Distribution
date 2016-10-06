@@ -3,7 +3,7 @@
 
 // set override paths for custom fluid_styled_content
 lib.fluidContent {
-	templateRootPaths.10 = {$theme.resTemplates}/
+	templateRootPaths.10 = {$theme.resTemplates}/Content/
 	partialRootPaths.10 = {$theme.resPartials}/
 	layoutRootPaths.10 = {$theme.resLayouts}/
 }
