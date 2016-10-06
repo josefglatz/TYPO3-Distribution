@@ -14,3 +14,10 @@ lib.fluidContent.extbase.controllerExtensionName = {$theme.name}
 // @TODO: Add defaults for FSC settings
 // adjust default lightbox settings
 #lib.fluidContent.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}"
+
+
+
+// Custom content configuration
+tt_content {
+
+}
