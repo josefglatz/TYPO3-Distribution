@@ -67,7 +67,7 @@ which can do that for you:
 cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
 ```
 
-[Details about the script](Build/ChangeVendor.sh)
+[Details about the script](app/Build/ChangeVendor.sh)
 
 Additionally, backup files with an suffixed "-e" are created. (You can safely delete them, if the renaming was successful)
 
