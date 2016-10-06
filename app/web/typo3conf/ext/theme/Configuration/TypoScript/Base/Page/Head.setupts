@@ -114,6 +114,13 @@ page {
 			}
 		}
 
+		date = TEXT
+		date {
+			data = page:SYS_LASTCHANGED // page:crdate
+			date = Y-m-d
+			// @TODO: meta tag data an detailpages and news list views?
+		}
+
 		// Add DC tags like the following example:
 #		dc\.description = Inspiring people to share
 	}
