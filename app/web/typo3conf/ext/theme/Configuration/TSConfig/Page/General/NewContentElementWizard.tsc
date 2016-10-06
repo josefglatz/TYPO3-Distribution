@@ -1,0 +1,40 @@
+mod.wizards.newContentElement.wizardItems {
+
+	common {
+		show := addToList()
+		elements {
+
+		}
+	}
+
+	plugins {
+		elements {
+#			news-list-latest {
+#				iconIdentifier = ext-news-wizard-icon
+#				title = LLL:EXT:theme/Resources/Private/Language/locallang_be.xml:ncew.news.latest
+#				description = LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:pi1_plus_wiz_description
+#				tt_content_defValues {
+#					CType = list
+#					list_type = news_pi1
+#					pi_flexform = <?xml version="1.0" encoding="utf-8" standalone="yes" ?> <T3FlexForms> <data> <sheet index="sDEF"> <language index="lDEF"> <field index="settings.orderBy"> <value index="vDEF"></value> </field> <field index="settings.orderDirection"> <value index="vDEF"></value> </field> <field index="settings.categoryConjunction"> <value index="vDEF"></value> </field> <field index="settings.categories"> <value index="vDEF"></value> </field> <field index="settings.includeSubCategories"> <value index="vDEF">0</value> </field> <field index="settings.archiveRestriction"> <value index="vDEF"></value> </field> <field index="settings.timeRestriction"> <value index="vDEF"></value> </field> <field index="settings.timeRestrictionHigh"> <value index="vDEF"></value> </field> <field index="settings.topNewsRestriction"> <value index="vDEF"></value> </field> <field index="settings.startingpoint"> <value index="vDEF"></value> </field> <field index="settings.recursive"> <value index="vDEF"></value> </field> <field index="switchableControllerActions"> <value index="vDEF">News-&gt;list;News-&gt;detail</value> </field> </language> </sheet> <sheet index="additional"> <language index="lDEF"> <field index="settings.detailPid"> <value index="vDEF"></value> </field> <field index="settings.listPid"> <value index="vDEF"></value> </field> <field index="settings.backPid"> <value index="vDEF"></value> </field> <field index="settings.limit"> <value index="vDEF"></value> </field> <field index="settings.offset"> <value index="vDEF"></value> </field> <field index="settings.tags"> <value index="vDEF"></value> </field> <field index="settings.hidePagination"> <value index="vDEF">0</value> </field> <field index="settings.list.paginate.itemsPerPage"> <value index="vDEF"></value> </field> <field index="settings.topNewsFirst"> <value index="vDEF">0</value> </field> <field index="settings.excludeAlreadyDisplayedNews"> <value index="vDEF">0</value> </field> <field index="settings.disableOverrideDemand"> <value index="vDEF">0</value> </field> </language> </sheet> <sheet index="template"> <language index="lDEF"> <field index="settings.media.maxWidth"> <value index="vDEF"></value> </field> <field index="settings.media.maxHeight"> <value index="vDEF"></value> </field> <field index="settings.cropMaxCharacters"> <value index="vDEF"></value> </field> <field index="settings.templateLayout"> <value index="vDEF">listLatest</value> </field> </language> </sheet> </data> </T3FlexForms>
+#				}
+#			}
+		}
+	}
+
+#	homepage {
+#		header = My new group
+#		show = *
+#		elements {
+#			theme-mycontentelement {
+#				iconIdentifier = content-textmedia
+#				title = CE
+#				description = Dummy CE
+#				tt_content_defValues {
+#					CType = theme_mycontentelement
+#				}
+#			}
+#		}
+#	}
+
+}
