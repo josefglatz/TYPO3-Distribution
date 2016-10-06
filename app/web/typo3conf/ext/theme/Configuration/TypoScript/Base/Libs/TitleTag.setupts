@@ -22,7 +22,6 @@ lib.titleTag.default {
 			conf.tx_news_domain_model_news = TEXT
 			conf.tx_news_domain_model_news {
 				field = title
-				htmlSpecialChars = 1
 				noTrimWrap = || - |
 			}
 		}
@@ -48,7 +47,6 @@ lib.titleTag.default {
 		stdWrap.ifEmpty.cObject {
 			#data = TSFE:altPageTitle // page:title
 			field = title
-			htmlSpecialChars = 1
 			noTrimWrap = || - |
 		}
 
@@ -57,10 +55,14 @@ lib.titleTag.default {
 	300 = TEXT
 	300 {
 		value = {$site.titleTag.sitename}
-		htmlSpecialChars = 1
 	}
 
-	wrap = <title>|</title>
+	stdWrap {
+		htmlSpecialChars = 1
+		wrap = <title>|</title>
+	}
+
+
 }
 [treeLevel = 0]
 	lib.titleTag.default {
