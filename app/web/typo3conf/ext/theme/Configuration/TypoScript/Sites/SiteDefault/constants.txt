@@ -52,6 +52,11 @@ site {
             domain =
         }
 
+        googleTagManager {
+            enable = 0
+            id = GTM-XXXXX
+        }
+
         piwik {
             enable = 0
             id = -1
