@@ -6,6 +6,7 @@ setup.default {
 setup.override {
 	condensedMode = 0
 	extendedView = 1
+	edit_docModuleUpload = 1
 }
 
 options {
