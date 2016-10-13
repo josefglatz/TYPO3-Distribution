@@ -31,7 +31,7 @@ class RealUrlAutoConfiguration
     public function addThemeConfig($params)
     {
 
-        $processedConfig = array_merge_recursive($params['config'], [
+        $processedConfig = array_replace_recursive($params['config'], [
             'init' => [
             ],
             'pagePath' => [
