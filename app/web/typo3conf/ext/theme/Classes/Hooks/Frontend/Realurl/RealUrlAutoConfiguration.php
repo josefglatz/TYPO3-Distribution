@@ -14,7 +14,6 @@ namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
  * The TYPO3 project - inspiring people to share!
  */
 
-
 /**
  * RealUrlAutoConfiguration for RealURL extension v2.x
  */
@@ -30,7 +29,6 @@ class RealUrlAutoConfiguration
      */
     public function addThemeConfig($params)
     {
-
         $processedConfig = array_replace_recursive($params['config'], [
             'init' => [
             ],

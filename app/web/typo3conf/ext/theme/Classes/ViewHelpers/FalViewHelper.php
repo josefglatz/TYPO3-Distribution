@@ -2,11 +2,9 @@
 namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
-
 
 /**
  * Class FalViewHelper
@@ -35,9 +33,9 @@ class FalViewHelper extends AbstractViewHelper
 {
 
     /**
-     * @var boolean
+     * @var bool
      */
-    protected $escapeOutput = FALSE;
+    protected $escapeOutput = false;
 
     /**
      * @param string $table
@@ -71,6 +69,4 @@ class FalViewHelper extends AbstractViewHelper
 
         return $output;
     }
-
-
 }

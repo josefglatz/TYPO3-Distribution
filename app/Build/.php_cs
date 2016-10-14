@@ -25,7 +25,7 @@ if (PHP_SAPI !== 'cli') {
 // Exclude some directories that are excluded by Git anyways to speed up the sniffing
 $finder = Symfony\CS\Finder\DefaultFinder::create()
     ->exclude('vendor')
-    ->in(__DIR__ . '/web/typo3conf/ext/theme');
+    ->in(__DIR__ . '/../web/typo3conf/ext/theme');
 
 // Return a Code Sniffing configuration using
 // all sniffers needed for PSR-2

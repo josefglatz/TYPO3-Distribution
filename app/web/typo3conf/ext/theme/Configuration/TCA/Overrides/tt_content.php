@@ -4,7 +4,6 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function ($extKey) {
 
-
         /**
          * set common image crop ratios
          *
@@ -17,7 +16,6 @@ call_user_func(
             '1.333333333' => '4 x 3',
             'NaN' => 'LLL:EXT:lang/locallang_wizards.xlf:imwizard.ratio.free',
         ];
-
     },
     'theme'
 );
