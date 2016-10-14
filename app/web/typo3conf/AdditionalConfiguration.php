@@ -176,6 +176,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
  */
 $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '.php';
 if (is_file($file)) {
+    /** @noinspection PhpIncludeInspection */
     include_once($file);
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
 }
@@ -185,6 +186,7 @@ if (is_file($file)) {
  */
 $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1 . '.php';
 if (is_file($file)) {
+    /** @noinspection PhpIncludeInspection */
     include_once($file);
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
 }
@@ -195,6 +197,7 @@ if (is_file($file)) {
 $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1
     . '_' . $contextSubPart2 . '.php';
 if (is_file($file)) {
+    /** @noinspection PhpIncludeInspection */
     include_once($file);
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
 }
@@ -205,6 +208,7 @@ if (is_file($file)) {
 if ($contextMainPart === 'Development') {
     $file = realpath(__DIR__) . '/AdditionalConfiguration_custom.php';
     if (is_file($file)) {
+        /** @noinspection PhpIncludeInspection */
         include_once($file);
         $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
