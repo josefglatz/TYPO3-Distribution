@@ -34,8 +34,8 @@ config {
 	sys_language_uid = {$site.l10n.sys_language_uid}
 	sys_language_mode = {$site.l10n.language_mode}
 	sys_language_isocode_default = {$site.l10n.sys_language_isocode_default}
-	#	sys_language_overlay = {$site.l10n.language_overlay}
-	#	sys_language_softMergeIfNotBlank = tt_content:image, tt_content:header, pages:title, pages:subtitle, pages:nav_title, page:media
+#	sys_language_overlay = {$site.l10n.language_overlay}
+#	sys_language_softMergeIfNotBlank = tt_content:image, tt_content:header, pages:title, pages:subtitle, pages:nav_title, page:media
 
 
 	pageTitleFirst = 1
@@ -55,11 +55,11 @@ config {
 
 	concatenateCss = 0
 	concatenateJs = 0
-	#    concatenateJsAndCss = 0
+#    concatenateJsAndCss = 0
 	compressJs = 0
 	compressCss = 0
 	moveJsFromHeaderToFooter = 0
-	#    removeDefaultJS = 1
+#    removeDefaultJS = 1
 	removeDefaultJS = external
 	inlineStyle2TempFile = 1
 	removeDefaultCss = 0
@@ -81,8 +81,8 @@ config {
 	fileTarget =
 
 	// E-Mail AntiSpam
-	#    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
-	#    spamProtectEmailAddresses = -3
+#    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
+#    spamProtectEmailAddresses = -3
 	spamProtectEmailAddresses = ascii
 	spamProtectEmailAddresses_atSubst = &#64;
 	spamProtectEmailAddresses_lastDotSubst = &#46;
