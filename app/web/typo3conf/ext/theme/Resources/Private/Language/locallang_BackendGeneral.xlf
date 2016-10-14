@@ -37,6 +37,13 @@
 			<trans-unit id="icon.pagetree.opendigital">
 				<source><![CDATA[Test Icon]]></source>
 			</trans-unit>
+
+			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
+				<source>Reset realurl automatic configuration</source>
+			</trans-unit>
+			<trans-unit id="clearcacheaction.realurl.autoConfDescription">
+				<source>Delete automatic generated realurl configuration file.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
