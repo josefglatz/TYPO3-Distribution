@@ -1,12 +1,10 @@
 <?php
-namespace Sup7even\Theme\ViewHelpers;
+namespace JosefGlatz\Theme\ViewHelpers;
 
-use \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use function GuzzleHttp\json_encode;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
  * parses a given scss file and extracts the breakpoint variables
@@ -18,22 +16,20 @@ class ScssBreakpointViewHelper extends AbstractViewHelper {
 	}
 
 	/**
-	 * @return array
+	 * @return void
 	 */
 	public function render() {
-		$arr = array();
-
 		if (!isset($this->arguments['file']) || $this->arguments['file'] == '') {
-			$file = 'EXT:theme/Resources/Private/Scss/globals/variables.scss';
+			$file = 'EXT:theme/Resources/Public/Scss/_Variables.scss';
 		}
 			else {
 				$file = $this->arguments['file'];
 			}
-            
+
 		if (stripos($file, 'EXT:') !== false) {
-		    $ext = array_shift(explode('/', $this->arguments['file']));
+		    $ext = array_shift(explode('/', $file));
 		    $extPath = ExtensionManagementUtility::extPath(str_replace('EXT:', '', $ext));
-		    $file = str_replace($ext .'/', $extPath, $this->arguments['file']);
+		    $file = str_replace($ext .'/', $extPath, $file);
 		}
 
 		if (file_exists($file)) {
@@ -66,9 +62,23 @@ class ScssBreakpointViewHelper extends AbstractViewHelper {
 					}
 				}
 			}
-		}
 
-		return json_encode($arr);
-	}
+			$json = json_encode($arr);
+            $jsPath = ExtensionManagementUtility::extPath('theme') .'Resources/Public/JavaScript';
+
+            if (!file_exists($jsPath .'/breakpoints.js')) {
+                $file = fopen($jsPath .'/breakpoints.js', 'w');
+                fwrite($file, 'window._breakpoints = ' . $json . ';');
+                fclose($file);
+            }
+
+            if (file_exists($jsPath .'/Dist/breakpoints.bundled.min.js')) {
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+                $pageRenderer->addJsFile($jsPath .'/Dist/breakpoints.bundled.min.js', 'text/javascript', false);
+            }
+        }
+
+        return;
+    }
 
 }
