@@ -17,4 +17,4 @@ nbproject
 *.zip
 *.bak
 /backup/*
-docker-compose.yml
+/docker-compose.yml
