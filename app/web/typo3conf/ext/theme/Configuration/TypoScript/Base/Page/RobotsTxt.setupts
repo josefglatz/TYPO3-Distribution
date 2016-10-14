@@ -12,9 +12,16 @@ robots {
 	10 = FLUIDTEMPLATE
 	10 {
 		extbase.controllerExtensionName = {$theme.key}
-		templateName = Default
+		templateName = TEXT
+		templateName.stdWrap {
+			cObject = TEXT
+			cObject {
+				value = {$site.robotsTxt.customTemplateName}
+			}
+			ifEmpty = Default
+		}
 		templateRootPaths {
-			0 = {$theme.resTemplates}/Templates/RobotsTxt
+			0 = {$theme.resTemplates}/RobotsTxt
 		}
 	}
 }

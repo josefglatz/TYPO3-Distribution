@@ -75,6 +75,10 @@ site {
         domain =
         expiryDays = 365
     }
+
+    robotsTxt {
+        customTemplateName =
+    }
 }
 
 
