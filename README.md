@@ -1,10 +1,11 @@
 # TYPO3 Distribution
 
-This repository delivers a full configure, bare metal TYPO3 distribution
+This repository delivers a full configured, bare metal TYPO3 distribution
 based on my best practices.
 
 The goal of this package is to give an example of how a TYPO3 project could
-be configured and structured.
+be configured and structured. It is updated on a regular basis to reflect the
+current developments of TYPO3 CMS.
 
 ## Features
 
