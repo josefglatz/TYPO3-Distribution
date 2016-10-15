@@ -26,6 +26,8 @@ class ClearCache
      * Even it's disabled actually, later it can be re-enabled
      * and suddenly an obsolete config will be used. So we clear always.
      *
+     * Based on the idea of \DmitryDulepov\Realurl\Hooks\DataHandler::clearAutoConfiguration
+     *
      * @return void
      */
     public function deleteAutoConfigurationFile()
