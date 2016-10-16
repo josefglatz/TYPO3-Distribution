@@ -25,3 +25,18 @@ robots {
 		}
 	}
 }
+
+robots {
+	10 {
+		stdWrap.prepend = COA
+		stdWrap.prepend {
+			10 = TEXT
+			10 {
+				value < robots.10.templateName
+				noTrimWrap = |# Current used template name: ||
+			}
+			20 = TEXT
+			20.value.char = 10
+		}
+	}
+}
