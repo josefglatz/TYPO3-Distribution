@@ -75,7 +75,8 @@
 			"web-dir": "web"
 		},
 		"helhum/typo3-console": {
-			"install-binary": false
+			"install-binary": false,
+			"install-extension-dummy": false
 		}
 	},
 	"autoload": {
