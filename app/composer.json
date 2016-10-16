@@ -85,6 +85,9 @@
 		}
 	},
 	"scripts": {
+		"clean-generated-files": [
+			"rm -rf ./web/typo3conf/PackageStates.php  || true"
+		],
 		"package-states": [
 			"./typo3cms install:generatepackagestates"
 		],
