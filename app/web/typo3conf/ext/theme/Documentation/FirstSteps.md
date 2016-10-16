@@ -1,4 +1,4 @@
-# First steps
+# First steps WORK IN PROGRESS!!!
 
 - composer install
 - Set correct sitename (`AdditionalConfiguration.php::8`)
@@ -16,3 +16,4 @@
 - set all known frontend languages `EXT:theme/Configuration/TypoScript/Tree/Base/constants.txt`
 - set ext:static_info_tables default lang (and langs for known alternative languages) `EXT:theme/Configuration/TypoScript/Base/Extensions/StaticInfoTables.constantsts`
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
+- set backend view page module widths to your projectspecific frontend breakpoints
