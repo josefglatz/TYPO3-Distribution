@@ -74,6 +74,11 @@ $customChanges = [
                 'storageUidImporter' => '1',
                 'resourceFolderImporter' => '/news_import',
             ]),
+            'page_speed' => serialize([
+                'key' => '',
+                'cacheTime'  => 86400,
+                'demo' => 1,
+            ]),
             'realurl' => serialize([
                 'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
                 'enableAutoConf' => 1,
