@@ -10,6 +10,16 @@ $customChanges = [
         'createGroup' => '',
         'versionNumberInFilename' => true,
     ],
+    'EXT' => [
+        'extConf' => [
+            'realurl' => serialize([
+                'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
+                'enableAutoConf' => 1,
+                'autoConfFormat' => 1,
+                'enableDevLog' => 0,
+            ]),
+        ],
+    ],
     'FE' => [
         'debug' => true,
     ],
