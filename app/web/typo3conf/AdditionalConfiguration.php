@@ -126,6 +126,9 @@ $customChanges = [
                 'showSampleTasks' => 0,
                 'useAtDaemon' => 0,
             ]),
+            'seo_basics' => serialize([
+                'xmlSitemap' => 0,
+            ]),
             'static_info_tables' => serialize([
                 'enableManager' => 0
             ]),
