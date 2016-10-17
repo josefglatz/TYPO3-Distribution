@@ -64,8 +64,6 @@ config {
 	inlineStyle2TempFile = 1
 	removeDefaultCss = 0
 
-	// @TODO: Check if config.noScaleUp is obsolete
-	noScaleUp = 0
 
 	absRefPrefix = auto
 
