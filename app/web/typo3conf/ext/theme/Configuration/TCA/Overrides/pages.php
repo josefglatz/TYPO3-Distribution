@@ -19,6 +19,7 @@ call_user_func(
             'Page/Specific/Extension/News/NewsLimitCategories' => 'News->Limit Categories',
             'Page/Specific/Extension/News/NewsLimitMedia' => 'News->Limit Media',
             'Page/Specific/Extension/News/NewsMediaDefaultShowinpreviewOn' => 'News->Default "show in preview" per default on',
+            'Page/Specific/Extension/News/PreviewRecordsNewsDetailDefault' => 'News->Preview Record (Default)',
         ];
         // register each $elements item as PageTSConfig file
         foreach ($elements as $fileName => $label) {
