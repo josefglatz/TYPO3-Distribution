@@ -118,6 +118,9 @@
 		"toolchain-build": [
 			"./sgc build"
 		],
+		"php-cs-fixer": [
+			"php-cs-fixer fix --config-file ./Build/.php_cs"
+		],
 		"pre-deploy": [
 			"./sgc build"
 		],

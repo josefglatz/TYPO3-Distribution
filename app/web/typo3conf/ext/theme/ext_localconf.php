@@ -23,6 +23,11 @@ call_user_func(
             // Add custom cache action item: delete realurl configuration file
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][$extKey] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
         }
+
+        // Add EXT:solr CommandController support for older versions
+        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr') && class_exists(\ApacheSolrForTypo3\Solr\Command\SolrCommandController::class)) {
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
+        }
     },
     $_EXTKEY
 );
