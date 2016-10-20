@@ -45,6 +45,7 @@ $EM_CONF[$_EXTKEY] = [
                     'rx_shariff' => '',
                     'scheduler' => '',
                     'seo_basics' => '',
+                    'solr' => '',
                     'sr_language_menu' => '',
                     'sourceopt' => '',
                     'static_info_tables' => '',
