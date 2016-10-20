@@ -1,0 +1,4 @@
+options.feedit {
+	popupHeight = 700
+	popupWidth = 900
+}

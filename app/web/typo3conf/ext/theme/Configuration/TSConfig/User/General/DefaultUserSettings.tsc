@@ -15,6 +15,7 @@ options {
 	file_list {
 		enableDisplayBigControlPanel = activated
 		enableDisplayThumbnails = activated
+		// file list module: files per page
 		filesPerPage = 40
 	}
 	// default direct upload folder
