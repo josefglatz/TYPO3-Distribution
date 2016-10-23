@@ -14,9 +14,6 @@ $site = [
 // get complete context
 $context = GeneralUtility::getApplicationContext()->__toString();
 
-// alternative: set $context (please keep in mind that you also have to set the correct context for cli tasks)
-//$context = 'Development/Production';
-
 // check for "Production/Live/Server123" etc
 if ($context) {
     list($contextMainPart, $contextSubPart1, $contextSubPart2) = explode('/', $context);
