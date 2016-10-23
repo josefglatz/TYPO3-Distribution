@@ -1,4 +1,5 @@
-// If the setting [FE][disableNoCacheParameter] is enabled, the preview of records won't work as the cHash is not set in the URL.
+// If the setting [FE][disableNoCacheParameter] is enabled, the preview of records won't work as the cHash is not set in the URL
+// UNTIL https://forge.typo3.org/issues/78336 is merged :-]
 TCEMAIN.preview {
 	tx_news_domain_model_news {
 		previewPageId =
