@@ -1,0 +1,11 @@
+---
+  TYPO3: 
+    Data: 
+      sys_filemounts: 
+        - 
+          uid: "1"
+          title: "fileadmin/"
+          path: "/"
+          base: "1"
+          sorting: "256"
+

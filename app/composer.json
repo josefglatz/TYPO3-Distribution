@@ -69,6 +69,7 @@
 		"reelworx/rx-shariff": "dev-master"
 	},
 	"require-dev": {
+		"maxserv/yaml_configuration": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {

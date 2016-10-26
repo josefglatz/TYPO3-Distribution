@@ -1,0 +1,28 @@
+---
+TYPO3:
+  Data:
+    tx_scheduler_task_group:
+      -
+        groupName: General
+        sorting: "256"
+        uid: "1"
+      -
+        groupName: Search/Indexes
+        sorting: "512"
+        uid: "2"
+      -
+        groupName: Reports
+        sorting: "128"
+        uid: "3"
+      -
+        groupName: Security
+        sorting: "4096"
+        uid: "4"
+      -
+        groupName: Cleanup
+        sorting: "1024"
+        uid: "5"
+      -
+        groupName: FAL/Storages
+        sorting: "2048"
+        uid: "6"
