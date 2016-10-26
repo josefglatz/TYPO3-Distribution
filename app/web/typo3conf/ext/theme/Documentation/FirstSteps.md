@@ -17,3 +17,12 @@
 - set ext:static_info_tables default lang (and langs for known alternative languages) `EXT:theme/Configuration/TypoScript/Base/Extensions/StaticInfoTables.constantsts`
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
 - set backend view page module widths to your projectspecific frontend breakpoints
+
+## EXT:yaml_confiugration
+
+RTFM.
+
+```
+./typo3cms export:table tx_scheduler_task --include-hidden=true --include-deleted=true --skip-columns=crdate,lastexecution_time,lastexecution_failure,lastexecution_context --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
+./typo3cms import:table tx_scheduler_task --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
+```

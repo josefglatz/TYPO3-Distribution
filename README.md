@@ -18,6 +18,7 @@ current developments of TYPO3 CMS.
 * RealFaviconGenerator.net gulp integration
 * Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
 * Prepared Linkvalidator configuration
+* Support for ext:yaml_configuration
 
 ### Linkvalidator (sysext)
 
