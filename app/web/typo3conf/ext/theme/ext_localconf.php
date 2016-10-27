@@ -8,7 +8,7 @@ call_user_func(
         $GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= '';
 
         // Hook for adding realurl custom configuration
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][$extKey] =
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][] =
             'JosefGlatz\\Theme\\Hooks\\Frontend\\Realurl\\RealUrlAutoConfiguration->addThemeConfig';
 
         // Disable ext:news realurl hook
