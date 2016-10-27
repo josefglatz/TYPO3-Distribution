@@ -166,6 +166,14 @@ $customChanges = [
             ],
         ],
         'sitename' => htmlspecialchars($site['sitenameBase']) . ' [' . $context . ']',
+        'fluid' => [
+            'namespaces' => [
+//                'project' => [
+//                    'JosefGlatz\\Theme\\ViewHelpers',
+//                    'Sup7even\\ThemeOverride\\ViewHelpers',
+//                ],
+            ],
+        ],
         'curlUse' => true,
         'textfile_ext' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['tsfile_ext'] . ',setupts,constantsts,ts1,tsc',
         'UTF8filesystem' => true,
