@@ -50,8 +50,10 @@ $customChanges = [
                 'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
                 'loginHighlightColor' => '#ff8700',
                 'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
-                'backendLogo' => 'EXT:backend/Resources/Public/Images/typo3-topbar@2x.png', // @TODO: Backend Logo (Stage, Prod, Dev)
-                'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico', // @TODO: Backend FavIcon (Stage, Prod, Dev)
+                'backendLogo' => 'EXT:backend/Resources/Public/Images/typo3-topbar@2x.png',
+                // @TODO: Backend Logo (Stage, Prod, Dev)
+                'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico',
+                // @TODO: Backend FavIcon (Stage, Prod, Dev)
             ]),
             'fluid_styled_content' => serialize([
                 'loadContentElementWizardTsConfig' => 1,
@@ -73,7 +75,7 @@ $customChanges = [
             ]),
             'page_speed' => serialize([
                 'key' => '',
-                'cacheTime'  => 86400,
+                'cacheTime' => 86400,
                 'demo' => 1,
             ]),
             'realurl' => serialize([
@@ -132,7 +134,7 @@ $customChanges = [
                 'xmlSitemap' => 0,
             ]),
             'static_info_tables' => serialize([
-                'enableManager' => 0
+                'enableManager' => 0,
             ]),
         ],
     ],
