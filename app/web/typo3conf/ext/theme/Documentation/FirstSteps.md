@@ -20,7 +20,8 @@
 
 ## EXT:yaml_confiugration
 
-RTFM.
+RTFM. With the help of Michiel Roos's extension it's possible to export/import backend/frontend-/-user/-groups and theoretically
+any other table to/from yaml.
 
 ```
 ./typo3cms export:table tx_scheduler_task --include-hidden=true --include-deleted=true --skip-columns=crdate,lastexecution_time,lastexecution_failure,lastexecution_context --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
