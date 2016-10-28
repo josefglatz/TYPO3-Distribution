@@ -30,6 +30,44 @@ call_user_func(
             );
         }
 
+        $tca = [
+            'tx_theme_title_prefix' => [
+                'label' => 'Title Tag Prefix',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                    'rows' => 3,
+                    'max' => 255,
+                ]
+            ],
+            'tx_theme_title_suffix' => [
+                'label' => 'Title Tag Suffix',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                    'rows' => 3,
+                    'max' => 255,
+                ]
+            ],
+            'tx_theme_title_override' => [
+                'label' => 'Complete Title Tag Override',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                    'rows' => 3,
+                    'max' => 255,
+                ]
+            ],
+        ];
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tca);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            'pages',
+            '--div--;Title Tag,tx_theme_title_prefix,tx_theme_title_suffix,tx_theme_title_override',
+            '',
+            'after:tx_realurl_pathoverride'
+        );
+
     },
     'theme'
 );

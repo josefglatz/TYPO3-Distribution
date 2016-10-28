@@ -1,17 +1,27 @@
 /*
 Custom titleTag configurations
-  Keep in mind to change/adapt also config.noPageTitle to your needs
-  You have to import it e.g. via page.headerData.1447161203 < lib.titleTag.default
+Keep in mind to change/adapt also config.noPageTitle to your needs
+You have to import it e.g. via page.headerData.1447161203 < lib.titleTag.default
 
-  @TODO: Add support for additional text per page (something custom or EXT:metaseo)
+@TODO: Add support for additional text per page (something custom or EXT:metaseo)
 */
 
 lib.titleTag.default = COA
 lib.titleTag.default {
 
+	1 = TEXT
+	1 {
+		field = tx_theme_title_prefix
+		if.isTrue.field = tx_theme_title_prefix
+		if.isFalse.field = tx_theme_title_override
+		noTrimWrap = || - |
+		htmlSpecialChars = 1
+	}
+
 	5 = RECORDS
 	5 {
 		if.isTrue.data = GP:tx_news_pi1|news
+		if.isFalse.field = tx_theme_title_override
 		dontCheckPid = 1
 		tables = tx_news_domain_model_news
 		source.data = GP:tx_news_pi1|news
@@ -24,13 +34,30 @@ lib.titleTag.default {
 		}
 	}
 
-	150 = TEXT
-	150 {
-		#data = TSFE:altPageTitle // page:title
+	30 = TEXT
+	30 {
 		field = title
-		htmlSpecialChars = 1
+		if.isFalse.field = tx_theme_title_override
 		noTrimWrap = || - |
+		htmlSpecialChars = 1
 		if.isFalse.data = GP:tx_news_pi1|news
+	}
+
+	40 = TEXT
+	40 {
+		field = tx_theme_title_suffix
+		if.isTrue.field = tx_theme_title_suffix
+		if.isFalse.field = tx_theme_title_override
+		noTrimWrap = || - |
+		htmlSpecialChars = 1
+	}
+
+	50 = TEXT
+	50 {
+		field = tx_theme_title_override
+		if.isTrue.field = tx_theme_title_override
+		noTrimWrap = || - |
+		htmlSpecialChars = 1
 	}
 
 	300 = TEXT
@@ -44,6 +71,10 @@ lib.titleTag.default {
 [treeLevel = 0]
 	lib.titleTag.default {
 		// disable pageTitle on homepage/rootpage
-		150 >
+		1 >
+		5 >
+		30 >
+		40 >
+		50 >
 	}
 [global]
