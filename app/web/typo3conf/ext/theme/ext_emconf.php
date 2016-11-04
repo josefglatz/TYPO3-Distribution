@@ -35,6 +35,7 @@ $EM_CONF[$_EXTKEY] = [
                     'form' => '',
                     'formhandler' => '',
                     'gridelements' => '',
+                    'lfeditor' => '',
                     'linkvalidator' => '',
                     'logging' => '',
                     'news' => '',
