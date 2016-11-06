@@ -58,6 +58,17 @@ $customChanges = [
             'fluid_styled_content' => serialize([
                 'loadContentElementWizardTsConfig' => 1,
             ]),
+            'image_autoresize_ff' => serialize([
+                'directories' => 'fileadmin/,uploads/',
+                'file_types' => 'jpg,jpeg,png',
+                'threshold' => '400K',
+                'max_width' => 1024,
+                'max_height' => 768,
+                'auto_orient' => 1,
+                'conversion_mapping' => 'ai => jpg,bmp => jpg,pcx => jpg,tga => jpg,tif => jpg,tiff => jpg',
+                'keep_metadata' => 0,
+                'resize_png_with_alpha' => 0,
+            ]),
             'news' => serialize([
                 'archiveDate' => 'date',
                 'rteForTeaser' => 0,
@@ -83,6 +94,7 @@ $customChanges = [
                 'enableAutoConf' => 1,
                 'autoConfFormat' => 0,
                 'enableDevLog' => 0,
+                'moduleIcon' => 0,
             ]),
             'rsaauth' => serialize([
                 'temporaryDirectory' => '',

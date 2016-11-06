@@ -19,6 +19,7 @@ current developments of TYPO3 CMS.
 * Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
 * Prepared Linkvalidator configuration
 * Support for ext:yaml_configuration
+* Support for automatic image resizing when uploading too large images.
 
 ### Linkvalidator (sysext)
 

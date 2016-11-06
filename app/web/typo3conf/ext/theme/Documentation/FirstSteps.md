@@ -1,11 +1,13 @@
 # First steps WORK IN PROGRESS!!!
 
+- delete non required extensions/packages from app/composer.json
+- delete extConf settings in AdditinonalConfiguration of extensions which you deleted in the previous step
 - composer install
 - Set correct sitename (`AdditionalConfiguration.php::8`)
 - Set default email (`AdditionalConfiguration.php::9`)
 - Set default email name (`AdditionalConfiguration.php::10`)`
-- Set productive install tool password in (`AdditionalConfiguration_Production.php`) and save it in password manager (for colleague)
-- Set activated languages and update languages
+- Set productive install tool password and save hash in (`AdditionalConfiguration_Production.php`). Don't forget to save it in password manager (e.g. for colleagues)
+- Set activated languages and update/retrive them
 - make shure productive host can handle utf8 file system and correct system locales are set
 - Set sys_domains (1. production domain, 2. staging domain, ..., 10. dev domain)
 - Set `TCEMAIN.previewDomain`â€™s (DEV, STAGING, ...)
@@ -17,6 +19,12 @@
 - set ext:static_info_tables default lang (and langs for known alternative languages) `EXT:theme/Configuration/TypoScript/Base/Extensions/StaticInfoTables.constantsts`
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
 - set backend view page module widths to your projectspecific frontend breakpoints
+
+## ext:image_autoresize
+
+RTFM and update the configuration to your needs.
+
+## Module News
 
 ## EXT:yaml_confiugration
 
