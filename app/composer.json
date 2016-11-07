@@ -55,6 +55,7 @@
 		"typo3/cms-rtehtmlarea": "dev-master as 8.3.0",
 		"typo3/cms-scheduler": "dev-master as 8.3.0",
 		"typo3/cms-setup": "dev-master as 8.3.0",
+		"typo3/cms-sys-action": "dev-master as 8.3.0",
 		"typo3/cms-taskcenter": "dev-master as 8.3.0",
 		"typo3/cms-tstemplate": "dev-master as 8.3.0",
 		"typo3/cms-viewpage": "dev-master as 8.3.0",
