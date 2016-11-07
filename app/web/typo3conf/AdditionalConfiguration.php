@@ -50,7 +50,7 @@ $customChanges = [
                 'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
                 'loginHighlightColor' => '#ff8700',
                 'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
-                'backendLogo' => 'EXT:backend/Resources/Public/Images/typo3-topbar@2x.png',
+                'backendLogo' => 'EXT:backend/Resources/Public/Images/typo3_logo_orange.svg',
                 // @TODO: Backend Logo (Stage, Prod, Dev)
                 'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico',
                 // @TODO: Backend FavIcon (Stage, Prod, Dev)
