@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.header">
+				<source>Cookies used on the website!</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.message">
+				<source>This website uses cookies to ensure you get the best experience on our website.</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.dismiss">
+				<source>Got it!</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.allow">
+				<source>Allow cookies</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.deny">
+				<source>Decline</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<source>Learn more</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.href">
+				<source>http://cookiesandyou.com</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.close">
+				<source>&#x274c;</source>
+			</trans-unit>
+			<trans-unit id="cookieLaw.revokeBtn">
+				<source>Cookie Policy</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

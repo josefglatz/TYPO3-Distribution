@@ -20,6 +20,7 @@ current developments of TYPO3 CMS.
 * Prepared Linkvalidator configuration
 * Support for ext:yaml_configuration
 * Support for automatic image resizing when uploading too large images.
+* Simple cookieconsent v3 support
 
 ### Linkvalidator (sysext)
 

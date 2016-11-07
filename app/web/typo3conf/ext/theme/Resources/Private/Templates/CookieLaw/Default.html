@@ -1,0 +1,33 @@
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+	<f:if condition="{settings.enabled} != ''">"enabled": true,</f:if>
+	<f:if condition="{settings.appendToHtmlElement} != ''">"container": '{settings.appendToHtmlElement -> f:format.raw()}',</f:if>
+	"content": {
+		"header": '{f:translate(key: "cookieLaw.header")}',
+		"message": '{f:translate(key: "cookieLaw.message")}',
+		"dismiss": '{f:translate(key: "cookieLaw.dismiss")}',
+		"allow": '{f:translate(key: "cookieLaw.allow")}',
+		"deny": '{f:translate(key: "cookieLaw.deny")}',
+		"link": '{f:translate(key: "cookieLaw.link")}',
+		"href": '<f:if condition="{settings.link} != ''"><f:then>{f:uri.typolink(parameter: '{settings.link}')}</f:then><f:else>{f:translate(key: "cookieLaw.href")}</f:else></f:if>',
+		"close": '{f:translate(key: "cookieLaw.close")}'
+	},
+	"revokable": {settings.revokable},
+	"revokeBtn": '<div class="cc-revoke \{\{classes\}\}">{f:translate(key: "cookieLaw.revokeBtn")}</div>',
+	"palette": {
+		"popup": {<f:comment>wake up, fluid!</f:comment>
+			"background": "{settings.color.popup.background}",
+			"text": "{settings.color.popup.text}",
+			"link": "{settings.color.popup.link}"
+		},
+		"button": {<f:comment>wake up, fluid!</f:comment>
+			"background": "{settings.color.button.background}",
+			"text": "{settings.color.button.text}",
+			"border": "{settings.color.button.border}"
+		}
+	},
+	"theme": "{settings.theme}",
+	"static": {settings.static},
+	"showLink": {settings.showLink},
+	"position": "{settings.position}"
+})});<f:comment>/* Visit https://cookieconsent.insites.com/documentation/javascript-api/ for all javascript options! */</f:comment>

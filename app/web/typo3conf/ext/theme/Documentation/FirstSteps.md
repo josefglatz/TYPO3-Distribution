@@ -19,12 +19,23 @@
 - set ext:static_info_tables default lang (and langs for known alternative languages) `EXT:theme/Configuration/TypoScript/Base/Extensions/StaticInfoTables.constantsts`
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
 - set backend view page module widths to your projectspecific frontend breakpoints
+- configure cookie consent (EU cookie law stuff) `EXT:theme/Configuration/TypoScript/Base/Page/CookieLaw.setupts`
 
-## ext:image_autoresize
+## Cookie Consent
+
+Basically it's just FLUIDTEMPLATE. It comes with https://cookieconsent.insites.com/ v3 support. The fact that it's just a bunch of TypoScript and Fluid makes it easy to pretty easy adopt it to your needs (e.g. if you don't want to use another solution).
+
+Under the hood? An inline javascript is included with `page.jsFooterInline`. Some settings could be set through TypoScript constants. The inline javascript code is rendered via `FLUIDTEMPLATE`. An explicit cache key (TYPO3 caching framework) is used to get better performance and an independent lifetime. The cache key is basically sticked to the rootpage uid and the frontend language. You can adopt the cache key configuration to your needs - e.g. if you don't have additional frontend languages.
+
+
+- `EXT:theme/Configuration/TypoScript/Base/Page/CookieLaw.setupts`
+- `EXT:theme/Configuration/TypoScript/Sites/SiteDefault/constants.txt`
+
+## EXT:image_autoresize
 
 RTFM and update the configuration to your needs.
 
-## Module News
+## EXT:News
 
 ## EXT:yaml_confiugration
 
