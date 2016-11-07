@@ -2,6 +2,9 @@
 
 site {
 
+    // activate dummy website (rudimentary TYPO3 frontend and some feature testing)
+    dummyFrontend = 1
+
 
     uid {
         // default EXT:felogin storagePid

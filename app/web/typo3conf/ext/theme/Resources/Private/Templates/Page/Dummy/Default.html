@@ -1,0 +1,18 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+	<f:layout name="Page/Dummy" />
+
+	<f:section name="Content">
+		<div class="sidebar">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+		</div>
+
+
+		<div class="main">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+		</div>
+
+	</f:section>
+
+</html>
