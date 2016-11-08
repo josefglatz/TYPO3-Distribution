@@ -31,6 +31,8 @@ Under the hood? An inline javascript is included with `page.jsFooterInline`. Som
 - `EXT:theme/Configuration/TypoScript/Base/Page/CookieLaw.setupts`
 - `EXT:theme/Configuration/TypoScript/Sites/SiteDefault/constants.txt`
 
+See https://www.cookiechoices.org/ for more informations.
+
 ## EXT:image_autoresize
 
 RTFM and update the configuration to your needs.

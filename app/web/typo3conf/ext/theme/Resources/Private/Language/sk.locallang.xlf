@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="sk" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.dismiss">
+				<target>OK</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<target>Uč sa viac</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

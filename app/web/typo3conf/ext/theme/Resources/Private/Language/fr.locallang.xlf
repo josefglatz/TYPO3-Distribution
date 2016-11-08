@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.header">
+				<target>Les cookies sont utilisés sur ce site.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.message">
+				<target>Ce site Web utilise des cookies pour vous assurer d'obtenir la meilleure expérience sur notre site Web. En utilisant nos services, vous acceptez que nous utilisons des cookies.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.dismiss">
+				<target>Accepter</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.allow">
+				<target>Autoriser les cookies</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.deny">
+				<target>Déclin</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<target>Plus d'info</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.revokeBtn">
+				<target>Cookie policy</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

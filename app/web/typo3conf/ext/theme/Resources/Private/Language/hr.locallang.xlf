@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="hr" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.message">
+				<target>Naša web stranica koristi kolačiće za praćenje. Klikom na "prihvaćam" dajete dopuštenje ovoj web stranici da koristi kolačiće za praćenje.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.dismiss">
+				<target>Prihvati</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.deny">
+				<target>Odbij</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<target>Kliknite ovdje kako bi pročitali naša pravila privatnosti i kolačića</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

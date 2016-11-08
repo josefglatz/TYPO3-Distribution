@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="ru" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.header">
+				<target>Этот сайт использует куки-файлы.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.message">
+				<target>Kу́ки-файлы помогают нам в предоставлении наших услуг. Пользуясь нашими услугами, вы соглашаетесь, что мы используем ку́ки-файлы.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.dismiss">
+				<target>согласи́ться</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.allow">
+				<target>ку́ки-файл позво́лить </target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.deny">
+				<target>отклони́ть</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<target>бо́льше информа́ции</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.revokeBtn">
+				<target>ку́ки-файлы</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

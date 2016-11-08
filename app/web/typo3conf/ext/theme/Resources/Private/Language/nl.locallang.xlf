@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="nl" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="cookieLaw.header">
+				<target>Cookies worden gebruikt op deze website</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.message">
+				<target>Onze website maakt gebruik van tracking cookies. Door op "akkoord" te klikken geeft u toestemming voor het gebruik van tracking cookies.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.dismiss">
+				<target>Akkoord</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.allow">
+				<target>Ja, ik geef toestemming</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.deny">
+				<target>Weigeren</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.link">
+				<target>Klik hier voor ons privacy- en cookiebeleid</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.revokeBtn">
+				<target>Cookie beleid</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

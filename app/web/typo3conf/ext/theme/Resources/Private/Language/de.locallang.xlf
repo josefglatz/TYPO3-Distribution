@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-02-07T16:27:19Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
 		<body>
 			<trans-unit id="cookieLaw.header">
-				<source>Cookies are used on the website</source>
+				<target>Diese Website nutzt Cookies</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.message">
-				<source>This website uses cookies to ensure you get the best experience on our website.</source>
+				<target>Cookies helfen uns bei der Bereitstellung unserer Dienste. Durch die Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies setzen.</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.dismiss">
-				<source>Got it</source>
+				<target>Akzeptieren</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.allow">
-				<source>Allow cookies</source>
+				<target>Erlaube Cookies</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.deny">
-				<source>Decline</source>
+				<target>Ablehnen</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.link">
-				<source>Learn more</source>
+				<target>Mehr Info</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.href">
-				<source>http://cookiesandyou.com</source>
+				<target>http://cookiesandyou.com</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.close">
-				<source>&#x274c;</source>
+				<target>&#x274c;</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.revokeBtn">
-				<source>Cookie Policy</source>
+				<target>Cookies</target>
 			</trans-unit>
 		</body>
 	</file>
