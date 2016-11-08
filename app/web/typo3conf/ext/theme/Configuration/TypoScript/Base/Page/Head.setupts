@@ -1,7 +1,7 @@
 page {
 
 	// Opening headTag with directly appending the http-equiv meta tag for IE performance reasons.
-	headTag = <head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	headTag = <head><meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
 
 
 	headerData {
@@ -172,7 +172,7 @@ page {
 
 
 
-[applicationContext = Production/Staging, Production/Testing]
+[applicationContext = Production/Staging, Production/Testing] || [globalVar = LIT:1 = {$site.dummyFrontend}]
 	page {
 
 		meta {
