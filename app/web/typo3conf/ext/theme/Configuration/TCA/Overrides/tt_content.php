@@ -16,6 +16,20 @@ call_user_func(
             '1.333333333' => '4 x 3',
             'NaN' => 'LLL:EXT:lang/locallang_wizards.xlf:imwizard.ratio.free',
         ];
+
+
+        /**
+         * Add subheader property to content elements
+         * where it makes basically sense
+         *
+         * @TODO Switch to a nice way to replace header-palette with headers-palette?
+         */
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            'tt_content',
+            'subheader',
+            'textmedia,bullets,table,uploads,menu,shortcut',
+            'after:header'
+        );
     },
     'theme'
 );
