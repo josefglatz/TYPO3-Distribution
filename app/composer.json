@@ -27,7 +27,7 @@
 			"homepage": "http://jousch.com"
 		}
 	],
-	"license": "GPL-2.0+",
+	"license": "GPL-3.0+",
 	"minimum-stability": "dev",
 	"config": {
 		"optimize-autoloader": true,
@@ -72,6 +72,15 @@
 	},
 	"require-dev": {
 		"maxserv/yaml_configuration": "dev-master"
+	},
+	"suggest": {
+		"gridelementsteam/gridelements": "dev-master",
+		"dmitryd/typo3-dd-googlesitemap": "dev-master",
+		"sjbr/sr-language-menu": "dev-master",
+		"rlmp/rlmp-language-detection": "dev-master",
+		"in2code/powermail": "dev-master",
+		"dl/yag": "dev-master",
+		"causal/extractor": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {
