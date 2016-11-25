@@ -16,5 +16,6 @@ nbproject
 *.t3d
 *.zip
 *.bak
+.~lock.*
 /backup/*
 /docker-compose.yml
