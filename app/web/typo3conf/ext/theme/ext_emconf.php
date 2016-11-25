@@ -6,16 +6,10 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Josef Glatz',
     'author_email' => 'jousch@jousch.com',
     'author_company' => 'http://jousch.com',
-    'shy' => '',
-    'priority' => '',
-    'module' => '',
     'state' => 'excludeFromUpdates',
-    'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
-    'modify_tables' => '',
     'clearCacheOnLoad' => 0,
-    'lockType' => '',
     'version' => '0.0.0',
     'constraints' =>
         [
