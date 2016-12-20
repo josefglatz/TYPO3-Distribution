@@ -114,3 +114,4 @@ Thanks for your support, ideas, issues and shared code
 * [Georg Ringer](http://www.ringer.it)
 * [Volker Kemeter](https://twitter.com/volkizzl)
 * [Benjamin Kott](https://twitter.com/benjaminkott)
+* [Sup7even Digital](http://www.supseven.at)
