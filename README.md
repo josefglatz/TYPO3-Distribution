@@ -13,6 +13,7 @@ current developments of TYPO3 CMS.
 * custom composer tasks
 * typo3-console support
 * PackageStates.php is excluded in git repository
+* activated extensions are controlled by root composer.json
 * easy vendor name change script
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
 * Simple dynamic robots.txt
