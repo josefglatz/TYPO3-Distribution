@@ -13,6 +13,7 @@ current developments of TYPO3 CMS.
 * custom composer tasks
 * typo3-console support
 * PackageStates.php is excluded in git repository
+* easy vendor name change script
 * ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
@@ -65,7 +66,9 @@ As the favicon doesn't change often and generation takes some seconds, all the g
 repository and could be deployed as-is. The reasons why the favicons are saved in document root are described
 [in the realfavicongenerator.net faq section](https://realfavicongenerator.net/faq). 
 
-### Change vendor name
+### Change vendor name and other brand marks
+
+#### Vendor Name
 
 Initially, the vendor is `JosefGlatz`. If you want to change that at all affected places you can run a small script
 which can do that for you:
@@ -77,6 +80,15 @@ cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
 [Details about the script](app/Build/ChangeVendor.sh)
 
 Additionally, backup files with an suffixed "-e" are created. (You can safely delete them, if the renaming was successful)
+
+#### Head comment
+
+Initially, the `config.headerComment` is mentioning this distribution. If you want to change that you can run a small
+script too which change it to your needs (or edit [manually](app/web/typo3conf/ext/theme/Configuration/TypoScript/Base/Config.setupts):
+
+```bash
+cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW 
+```
 
 ## Recommended Tools/Software/Plugins
 
