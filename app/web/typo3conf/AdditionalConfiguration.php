@@ -155,6 +155,7 @@ $customChanges = [
         'cHashIncludePageId' => true,
         'loginSecurityLevel' => 'rsa',
         'versionNumberInFilename' => 'querystring',
+        'noPHPscriptInclude' => true,
     ],
     'GFX' => [
         'processor_allowUpscaling' => false,
