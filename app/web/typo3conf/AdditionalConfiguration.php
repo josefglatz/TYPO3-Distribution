@@ -23,6 +23,7 @@ $customChanges = [
     'BE' => [
         'explicitADmode' => 'explicitAllow',
         'loginSecurityLevel' => 'rsa',
+        'notificationPrefix' => '[' . htmlspecialchars($site['sitenameBase']) . ' TYPO3 Note]',
     ],
     'DB' => [
         'Connections' => [
