@@ -92,7 +92,6 @@ config {
 	// until an additional fe language is used, no linkVars necessary
 	// !!! Please do NOT add `type` to config.linkVars !!!
 	linkVars =
-	uniqueLinkVars = 1
 }
 
 [globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0]
