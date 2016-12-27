@@ -90,6 +90,8 @@ lib.dynamicContent {
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid
 			max.data = register:maxItems
+			// select.languageField setting is needed if you use this typoscript in TYPO3 < v7
+			// languageField = sys_language_uid
 		}
 		stdWrap {
 			dataWrap = {register:wrap}
