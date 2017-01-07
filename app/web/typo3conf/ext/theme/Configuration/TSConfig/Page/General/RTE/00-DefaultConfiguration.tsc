@@ -6,7 +6,6 @@ RTE.default {
 	contentCSS = EXT:theme/Resources/Public/Css/rteDefault.css
 
 	showStatusBar = 1
-	keepButtonGroupTogether = 1
 	hideTableOperationsInToolbar = 1
 
 	// Markup options
