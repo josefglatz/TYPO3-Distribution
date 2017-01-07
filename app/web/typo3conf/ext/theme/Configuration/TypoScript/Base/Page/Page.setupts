@@ -44,91 +44,104 @@ page {
 
 	bodyTagCObject = COA
 	bodyTagCObject {
-		stdWrap.wrap = <body id="top" class="|">
+		stdWrap.wrap = <body id="top"|>
 
-		# Add page UID
-		10 = TEXT
+		# attribute class
+		10 = COA
 		10 {
-			value = page-{field:uid}
-			insertData = 1
-			noTrimWrap = || |
-		}
+			stdWrap {
+				noTrimWrap = | class="|"|
+				required = 1
+			}
 
-		# Add current language
-		20 = TEXT
-		20 {
-			value = language-{TSFE:sys_language_uid} languagecontent-{TSFE:sys_language_content}
-			insertData = 1
-			noTrimWrap = || |
-		}
+			# Add current language
+			20 = TEXT
+			20 {
+				value = language-{TSFE:sys_language_uid} languagecontent-{TSFE:sys_language_content}
+				insertData = 1
+				noTrimWrap = || |
+			}
 
-		# Add level
-		25 = TEXT
-		25 {
-			value = level-{level:0}
-			insertData = 1
-			noTrimWrap = || |
-		}
+			# Add level
+			25 = TEXT
+			25 {
+				value = level-{level:0}
+				insertData = 1
+				noTrimWrap = || |
+			}
 
-		# Add backend-layout
-		30 = TEXT
-		30 {
-			wrap = tmpl-|
-			data < page.10.templateName.stdWrap.cObject.data
-			override.field < page.10.templateName.stdWrap.cObject.override.field
-			split < page.10.templateName.stdWrap.cObject.split
-			case = lower
-		}
+			# Add backend-layout
+			30 = TEXT
+			30 {
+				wrap = tmpl-|
+				data < page.10.templateName.stdWrap.cObject.data
+				override.field < page.10.templateName.stdWrap.cObject.override.field
+				split < page.10.templateName.stdWrap.cObject.split
+				case = lower
+			}
 
-		# Add uid of optional FE-layout
-		40 = TEXT
-		40 {
-			fieldRequired = layout
-			value = layout-{field:layout}
-			insertData = 1
-			noTrimWrap = | ||
-		}
+			# Add uid of optional FE-layout
+			40 = TEXT
+			40 {
+				fieldRequired = layout
+				value = layout-{field:layout}
+				insertData = 1
+				noTrimWrap = | ||
+			}
 
-		# Add uid of rootpage
-		50 = TEXT
-		50 {
-			value = root-{leveluid:0}
-			insertData = 1
-			noTrimWrap = | ||
-		}
+			# Add uid of rootpage
+			50 = TEXT
+			50 {
+				value = root-{leveluid:0}
+				insertData = 1
+				noTrimWrap = | ||
+			}
 
-		# Add class if it's the rootpage
-		60 = TEXT
-		60 {
-			fieldRequired = is_siteroot
-			value = rootpage
-			noTrimWrap = | ||
-		}
+			# Add class if it's the rootpage
+			60 = TEXT
+			60 {
+				fieldRequired = is_siteroot
+				value = rootpage
+				noTrimWrap = | ||
+			}
 
-		# Add special class based on the template layout (needed when your frontend developer don't uses
+			# Add special class based on the template layout (needed when your frontend developer don't uses
 			# the same `tmpl-belayoutname`
-#		70 = COA
-#		70 {
-#			10 = CASE
-#			10 {
-#				key.cObject = TEXT
-#				key.cObject {
-#					data < page.10.templateName.stdWrap.cObject.data
-#					override.field < page.10.templateName.stdWrap.cObject.override.field
-#					split < page.10.templateName.stdWrap.cObject.split
-#					case = lower
+#			70 = COA
+#			70 {
+#				10 = CASE
+#				10 {
+#					key.cObject = TEXT
+#					key.cObject {
+#						data < page.10.templateName.stdWrap.cObject.data
+#						override.field < page.10.templateName.stdWrap.cObject.override.field
+#						split < page.10.templateName.stdWrap.cObject.split
+#						case = lower
+#					}
+#					homepage = TEXT
+#					homepage {
+#						value = body-start-page
+#					}
+#					default = TEXT
+#					default {
+#						value = body-sub-page
+#					}
 #				}
-#				homepage = TEXT
-#				homepage {
-#					value = body-start-page
-#				}
-#				default = TEXT
-#				default {
-#					value = body-sub-page
-#				}
+#				stdWrap.noTrimWrap = | ||
 #			}
-#			stdWrap.noTrimWrap = | ||
-#		}
+		}
+
+		# attribute(s) data-*
+		20 = COA
+		20 {
+			# Add page UID
+			10 = TEXT
+			10 {
+				value = data-page-uid="{field:uid}"
+				insertData = 1
+				noTrimWrap = | ||
+			}
+		}
 	}
 
 
