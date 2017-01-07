@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
@@ -23,13 +24,13 @@ $customChanges = [
     'LOG' => [
         'writerConfiguration' => [
             \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
-                'TYPO3\\CMS\\Core\\Log\\Writer\\NullWriter' => []
+                \TYPO3\CMS\Core\Log\Writer\NullWriter::class => []
             ]
         ],
         'deprecated' => [
             'writerConfiguration' => [
                 \TYPO3\CMS\Core\Log\LogLevel::WARNING => [
-                    'TYPO3\\CMS\\Core\\Log\\Writer\\FileWriter' => [
+                    \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
                         'logFile' => 'typo3conf/deprecation.log'
                     ]
                 ]
