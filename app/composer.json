@@ -80,7 +80,8 @@
 		"rlmp/rlmp-language-detection": "dev-master",
 		"in2code/powermail": "dev-master",
 		"dl/yag": "dev-master",
-		"causal/extractor": "dev-master"
+		"causal/extractor": "dev-master",
+		"cedricziel/transladder": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {
