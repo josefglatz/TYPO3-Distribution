@@ -71,7 +71,8 @@
 		"causal/image_autoresize": "dev-master"
 	},
 	"require-dev": {
-		"maxserv/yaml_configuration": "dev-master"
+		"maxserv/yaml_configuration": "dev-master",
+		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
 		"gridelementsteam/gridelements": "dev-master",
