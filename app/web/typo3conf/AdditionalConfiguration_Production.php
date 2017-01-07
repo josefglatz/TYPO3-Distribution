@@ -7,6 +7,7 @@ $customChanges = [
         'debug' => false,
         'warning_email_addr' => '',
         'warning_mode' => '',
+        'adminOnly' => '0',
     ],
     'FE' => [
         'debug' => false,
