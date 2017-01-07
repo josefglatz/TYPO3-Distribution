@@ -44,6 +44,7 @@
 		"typo3/cms-filelist": "dev-master as 8.3.0",
 		"typo3/cms-filemetadata": "dev-master as 8.3.0",
 		"typo3/cms-func": "dev-master as 8.3.0",
+		"typo3/cms-form": "dev-master as 8.3.0",
 		"typo3/cms-impexp": "dev-master as 8.3.0",
 		"typo3/cms-info": "dev-master as 8.3.0",
 		"typo3/cms-info-pagetsconfig": "dev-master as 8.3.0",

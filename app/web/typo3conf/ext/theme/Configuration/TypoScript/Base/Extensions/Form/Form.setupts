@@ -1,5 +1,6 @@
 [userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('form')]
-	<INCLUDE_TYPOSCRIPT: source="FILE: EXT:form/Configuration/TypoScript/setup.txt">
+	// While ext:form adds typoscript per default, including the setup isn't necessary:
+	// <INCLUDE_TYPOSCRIPT: source="FILE: EXT:form/Configuration/TypoScript/setup.txt">
 
 	plugin.tx_form {
 		_CSS_DEFAULT_STYLE >
