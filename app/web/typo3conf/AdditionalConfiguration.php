@@ -181,6 +181,7 @@ $customChanges = [
                 ],
             ],
         ],
+        'defaultCategorizedTables' => '',
         'sitename' => htmlspecialchars($site['sitenameBase']) . ' [' . $context . ']',
         'fluid' => [
             'namespaces' => [
