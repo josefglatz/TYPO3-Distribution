@@ -24,6 +24,7 @@ current developments of TYPO3 CMS.
 * Support for automatic image resizing when uploading too large images.
 * Simple cookieconsent v3 support
 * Easy language file editing in the backend [sgalinski/lfeditor](https://packagist.org/packages/sgalinski/lfeditor) (Development context)
+* TYPO3 backend password policies with secure default configuration
 
 ### Linkvalidator (sysext)
 

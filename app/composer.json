@@ -69,7 +69,8 @@
 		"t3monitor/t3monitoring_client": "dev-master",
 		"georgringer/logging": "dev-master",
 		"reelworx/rx-shariff": "dev-master",
-		"causal/image_autoresize": "dev-master"
+		"causal/image_autoresize": "dev-master",
+		"spooner-web/be_secure_pw": "dev-master"
 	},
 	"require-dev": {
 		"maxserv/yaml_configuration": "dev-master",
