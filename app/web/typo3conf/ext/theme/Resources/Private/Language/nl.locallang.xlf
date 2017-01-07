@@ -9,7 +9,10 @@
 				<target>Cookies worden gebruikt op deze website</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.message">
-				<target>Onze website maakt gebruik van tracking cookies. Door op "akkoord" te klikken geeft u toestemming voor het gebruik van tracking cookies.</target>
+				<target>Deze website maakt gebruik van tracking cookies. Door op "akkoord" te klikken geeft u toestemming voor het gebruik van tracking cookies.</target>
+			</trans-unit>
+			<trans-unit id="cookieLaw.messageAdvanced">
+				<target>Wij gebruiken cookies om het gebruiksgemak voor onze bezoekers te verhogen en een gepersonaliseerd ervaring te bieden aan elke gebruiker. Door middel van cookies onthouden we uw voorkeuren en meten we gebruikersinteractie. Een cookie kan geen persoonlijke informatie bevatten, zoals een telefoonnummer of e-mailadres, zodoende kunnen cookies dus niet gebruikt worden voor ongevraagde telemarketing of e-mail nieuwsbrieven.</target>
 			</trans-unit>
 			<trans-unit id="cookieLaw.dismiss">
 				<target>Akkoord</target>
