@@ -3,7 +3,21 @@ mod.wizards.newContentElement.wizardItems {
 	common {
 		show := addToList()
 		elements {
+		}
+	}
 
+	special {
+		show := addToList(theme-inheritance-stop)
+		elements {
+			theme-inheritance-stop {
+				iconIdentifier = theme-content-inheritance-stop
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_inheritance_stop.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_inheritance_stop.description
+				tt_content_defValues {
+					CType = theme_inheritance_stop
+					sectionIndex = 0
+				}
+			}
 		}
 	}
 

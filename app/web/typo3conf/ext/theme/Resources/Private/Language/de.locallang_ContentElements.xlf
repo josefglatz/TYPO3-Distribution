@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-01-07T23:33:11Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="theme_inheritance_stop.description" approved="yes">
+			<source>Stops the sliding of content elements from upper pages. </source>
+			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>
+		</trans-unit>
+		<trans-unit id="theme_inheritance_stop.title" approved="yes">
+			<source>Stop inheritance</source>
+			<target>Vererbung deaktivieren</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

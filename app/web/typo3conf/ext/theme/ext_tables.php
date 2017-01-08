@@ -10,7 +10,8 @@ call_user_func(
 
             // register svg icons: identifier and filename
             $iconsSvg = [
-                'theme-backend-realurl-reset' => 'theme-backend-realurl-reset.svg'
+                'theme-backend-realurl-reset' => 'theme-backend-realurl-reset.svg',
+                'theme-content-inheritance-stop' => 'theme-content-inheritance-stop.svg',
             ];
             $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
             foreach ($iconsSvg as $identifier => $path) {
