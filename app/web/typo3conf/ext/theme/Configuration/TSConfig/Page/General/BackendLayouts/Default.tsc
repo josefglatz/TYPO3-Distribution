@@ -34,7 +34,7 @@ mod {
 						}
 					}
 				}
-				icon = EXT:theme/Resources/Public/Images/Backend/BackendLayouts/Default.svg
+				icon = theme-belayout-content
 			}
 		}
 	}

@@ -20,7 +20,7 @@ mod {
 						}
 					}
 				}
-				icon = EXT:theme/Resources/Public/Images/Backend/BackendLayouts/Homepage.svg
+				icon = theme-belayout-content-homepage
 			}
 		}
 	}
