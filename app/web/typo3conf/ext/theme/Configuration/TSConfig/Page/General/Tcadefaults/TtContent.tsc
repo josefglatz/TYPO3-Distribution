@@ -1,6 +1,8 @@
 TCAdefaults {
 	tt_content {
 		header_layout = 2
+		imageborder = 0
+		imagecols = 1
 		sectionIndex = 0
 	}
 }
