@@ -26,6 +26,7 @@ current developments of TYPO3 CMS.
 * Easy language file editing in the backend [sgalinski/lfeditor](https://packagist.org/packages/sgalinski/lfeditor) (Development context)
 * TYPO3 backend password policies with secure default configuration
 * News extension
+* Additional useful custom icons for the backend
 
 ### Linkvalidator (sysext)
 
@@ -37,17 +38,23 @@ and then add a Linkvalidator Scheduler Task to activate the linkvalidator on a r
 This distribution uses the the rewritten version [2](https://github.com/dmitryd/typo3-realurl). As there are some changes and
 new limitations I recommend to read at least [the install section of realurl's wiki](https://github.com/dmitryd/typo3-realurl/wiki/Installing-and-enabling-the-extension).
 
-
-### News
-
-With Twitter Bootstrap activated fluid template.
-
 #### Configuration
 
 Realurl operates in "auto configuration mode". Therefore you don't need to write the realurl configuration manually.
 Instead, you can add your desired changes in `EXT:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php`.
 As already mentioned, read the [realurl v2 manual](https://github.com/dmitryd/typo3-realurl/wiki)! The automatic resulting
 configuration is saved to `app/web/typo3conf/realurl_autoconf.php`.
+
+
+### News
+
+With Twitter Bootstrap activated fluid template.
+
+
+### Additional useful custom icons for the backend
+
+Some useful icons for the backend for e.g. custom content elements, grid elements, ... `EXT:theme/Resources/Public/Icons/Backend`
+
 
 ## Tools
 
