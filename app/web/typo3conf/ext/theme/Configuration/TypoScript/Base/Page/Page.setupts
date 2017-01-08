@@ -75,7 +75,6 @@ page {
 			30 {
 				wrap = tmpl-|
 				data < page.10.templateName.stdWrap.cObject.data
-				override.field < page.10.templateName.stdWrap.cObject.override.field
 				split < page.10.templateName.stdWrap.cObject.split
 				case = lower
 			}
