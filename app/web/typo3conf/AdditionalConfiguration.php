@@ -126,12 +126,12 @@ $customChanges = [
                 'facebook_app_id' => '',
                 'facebook_secret' => '',
             ]),
-//            'lfeditor' => serialize([
-//                'viewLanguages' => 'de',
-//                'defaultLanguage' => '',
-//                'extIgnore' => '/^(CVS|.svn|.git|csh_)/',
-//                'changeXlfDate' => 1,
-//            ]),
+            'lfeditor' => serialize([
+                'viewLanguages' => '', // cz,de,fr,hr,hu,it,nl,pl,ru,sk
+                'defaultLanguage' => '',
+                'extIgnore' => '/^(CVS|.svn|.git|csh_)/',
+                'changeXlfDate' => 1,
+            ]),
             'saltedpasswords' => serialize([
                 'BE.' => [
                     'saltedPWHashingMethod' => 'TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt',
