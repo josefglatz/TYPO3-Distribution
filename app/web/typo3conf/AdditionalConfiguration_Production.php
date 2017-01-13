@@ -27,16 +27,7 @@ $customChanges = [
                 \TYPO3\CMS\Core\Log\Writer\NullWriter::class => []
             ]
         ],
-        'deprecated' => [
-            'writerConfiguration' => [
-                \TYPO3\CMS\Core\Log\LogLevel::WARNING => [
-                    \TYPO3\CMS\Core\Log\Writer\FileWriter::class => [
-                        'logFile' => 'typo3conf/deprecation.log'
-                    ]
-                ]
-            ]
-        ]
-    ]
+    ],
 ];
 
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], $customChanges);
