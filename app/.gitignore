@@ -22,6 +22,8 @@
 /upload
 /sgc
 
+.php_cs.cache
+
 /typo3log.log
 
 /web/fileadmin/**/*
