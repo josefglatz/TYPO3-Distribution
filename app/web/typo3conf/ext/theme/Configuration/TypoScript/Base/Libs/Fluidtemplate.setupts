@@ -29,9 +29,7 @@ lib.fluidTemplate {
 		templateName.stdWrap {
 			cObject = TEXT
 			cObject {
-				// internal core:  `levelfield:-2,backend_layout_next_level,slide`
 				data = pagelayout
-				override.field = backend_layout
 				split {
 					token = pagets__
 					1.current = 1
