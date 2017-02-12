@@ -21,6 +21,7 @@ echo " "
 
 grep -rl $Vendor ../ --include composer.json |xargs sed -i -e "s/$Vendor/$VendorNew/"
 grep -rl $Vendor ../web/typo3conf/ext/theme |xargs sed -i -e "s/$Vendor/$VendorNew/"
+grep -rl $Vendor ../web/typo3conf/AdditionalConfiguration.php |xargs sed -i -e "s/$Vendor/$VendorNew/"
 echo "> Changed all known occurrences from $Vendor to $VendorNew."
 echo " "
 grep -rl $Vendor ../ --include composer.json |xargs sed -i -e "s/$Vendor/$VendorNew/"
