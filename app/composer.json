@@ -75,7 +75,9 @@
 	},
 	"require-dev": {
 		"maxserv/yaml_configuration": "dev-master",
-		"sgalinski/lfeditor": "dev-master"
+		"sgalinski/lfeditor": "dev-master",
+		"pyrech/composer-changelogs": "dev-master",
+		"macopedia/mess_detector": "dev-master"
 	},
 	"suggest": {
 		"gridelementsteam/gridelements": "dev-master",
