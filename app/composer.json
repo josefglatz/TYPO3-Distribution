@@ -144,7 +144,6 @@
 			"./sgc build"
 		],
 		"post-autoload-dump": [
-			"@package-states",
 			"@folder-structure"
 		]
 	}
