@@ -138,7 +138,7 @@
 			"./sgc build"
 		],
 		"php-cs-fixer": [
-			"php-cs-fixer fix --config-file ./Build/.php_cs"
+			"php-cs-fixer fix --config ./Build/.php_cs"
 		],
 		"pre-deploy": [
 			"./sgc build"
