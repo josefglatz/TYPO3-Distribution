@@ -1,0 +1,30 @@
+---
+  TYPO3:
+    Data:
+      be_users:
+        -
+          uid: "1"
+          username: "admin-jog"
+          password: "$P$CNI.LOBbWzkdloTw4yONASMN7jL6PB1"
+          admin: "1"
+          workspace_perms: "1"
+          workspace_preview: "1"
+        -
+          uid: "2"
+          username: "_cli_"
+          description: "TYPO3 CLI User"
+          password: "$P$CxMyJt34yXzBvAOXqMOZ59ufia3LWn/"
+          admin: "1"
+          options: "3"
+          workspace_perms: "1"
+          workspace_preview: "1"
+        -
+          uid: "3"
+          username: "editor-test"
+          description: "META: Editors test user"
+          password: "$P$CbEg1oLdVWA8W2Z9QQkoSdYE1Hl6lX1"
+          usergroup: "3"
+          options: "3"
+          realName: "Test user for administrators"
+          workspace_perms: "1"
+          workspace_preview: "1"
