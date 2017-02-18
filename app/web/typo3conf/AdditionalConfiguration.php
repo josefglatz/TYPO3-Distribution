@@ -201,7 +201,6 @@ $customChanges = [
 //                ],
             ],
         ],
-        'curlUse' => true,
         'textfile_ext' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['tsfile_ext'] . ',setupts,constantsts,ts1,tsc',
         'UTF8filesystem' => true,
         'systemLocale' => 'de_DE.utf8',
