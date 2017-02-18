@@ -1,0 +1,20 @@
+lib.foobaluu {
+	dataProcessing {
+		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		10 {
+			special = list
+			special.value.field = pages
+			levels = 7
+			as = menu
+			expandAll = 1
+			includeSpacer = 1
+			titleField = nav_title // title
+			dataProcessing {
+				10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+				10 {
+					references.fieldName = media
+				}
+			}
+		}
+	}
+}

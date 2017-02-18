@@ -20,6 +20,9 @@ lib.fluidTemplate {
 				data = leveluid : 0
 			}
 		}
+		dataProcessing {
+
+		}
 	}
 
 	// default templateName selection based on active beLayout
