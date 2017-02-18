@@ -24,9 +24,6 @@ $customChanges = [
         'debug' => true,
     ],
     'SYS' => [
-        'curlUse' => true,
-        'curlProxyServer' => '',
-        'curlProxyUserPass' => '',
         'devIPmask' => '*',
         'displayErrors' => true,
         'enableDeprecationLog' => 'file',
@@ -35,11 +32,6 @@ $customChanges = [
         'systemLog' => '',
     ],
     'HTTP' => [
-        'proxy_host' => '',
-        'proxy_password' => '',
-        'proxy_port' => '',
-        'proxy_user' => '',
-        'ssl_verify_host' => '0',
     ],
 ];
 
