@@ -85,6 +85,10 @@ site {
         // set expireDays to "-1" for no expiry
         expiryDays = 365
         revokable = true
+        // false|integer in scroll range
+        dismissOnScroll = false
+        // false|integer in milliseconds
+        dismissOnTimeout = false
         // bottom, top, top-left, top-right, bottom-left, bottom-right
         position = bottom-right
         // true = static position, false = fixed position

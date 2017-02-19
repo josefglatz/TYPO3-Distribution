@@ -40,6 +40,8 @@ page.jsFooterInline {
 				theme = {$site.cookieLaw.theme}
 				showLink = {$site.cookieLaw.showLink}
 				revokable = {$site.cookieLaw.revokable}
+				dismissOnScroll = {$site.cookieLaw.dismissOnScroll}
+				dismissOnTimeout = {$site.cookieLaw.dismissOnTimeout}
 				color {
 					popup {
 						background = {$site.cookieLaw.color.popup.background}
