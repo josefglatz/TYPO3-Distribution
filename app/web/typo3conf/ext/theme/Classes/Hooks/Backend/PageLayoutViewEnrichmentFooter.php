@@ -1,0 +1,33 @@
+<?php
+
+namespace JosefGlatz\Theme\Hooks\Backend;
+
+use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+
+class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInterface
+{
+
+    /**
+     * Preprocesses the preview footer rendering of a content element.
+     *
+     * @param \TYPO3\CMS\Backend\View\PageLayoutView $parentObject Calling parent object
+     * @param string $info Processed values
+     * @param array $row Record row of tt_content
+     * @return void
+     */
+    public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$info, array &$row)
+    {
+        if (GeneralUtility::getApplicationContext()->isDevelopment()) {
+            $info[] = '<span 
+                            style="display: block;text-align: right;opacity: .4" 
+	                        title="Only visible in Development applicationContext"
+                >'
+                . 'CType: ' . $row['CType']
+                . '</span>';
+        }
+
+    }
+
+}

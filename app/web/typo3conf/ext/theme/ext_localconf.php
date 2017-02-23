@@ -28,6 +28,10 @@ call_user_func(
         if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr') && !class_exists(\ApacheSolrForTypo3\Solr\Command\SolrCommandController::class)) {
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
         }
+
+        // Hook for enriching content element preview footer in BE with additional data
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
+            \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;
     },
     $_EXTKEY
 );
