@@ -9,6 +9,13 @@
 		storagePid = {$site.uid.felogin.storagePid}
 
 		// Wraps
+		welcomeHeader_stdWrap.wrap = <h3>|</h3>
+		successHeader_stdWrap.wrap = <h3>|</h3>
+		logoutHeader_stdWrap.wrap = <h3>|</h3>
+		errorHeader_stdWrap.wrap = <h3>|</h3>
+		forgotHeader_stdWrap.wrap = <h3>|</h3>
+		changePasswordHeader_stdWrap.wrap = <h3>|</h3>
+
 		welcomeMessage_stdWrap.wrap = <p>|</p>
 		logoutMessage_stdWrap.wrap = <p>|</p>
 		errorMessage_stdWrap.wrap = <p class="text-danger">|</p>
