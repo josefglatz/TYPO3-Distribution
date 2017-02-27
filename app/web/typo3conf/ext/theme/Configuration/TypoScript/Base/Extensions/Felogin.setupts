@@ -32,6 +32,8 @@
 
 		// remove default CSS styles
 		_CSS_DEFAULT_STYLE >
+		// remove default
+		wrapContentInBaseClass = 0
 
 		# redirect options
 		redirectMode =
