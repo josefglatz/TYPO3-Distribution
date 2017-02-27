@@ -125,7 +125,10 @@ page {
 #						value = body-sub-page
 #					}
 #				}
-#				stdWrap.noTrimWrap = | ||
+#				stdWrap {
+#					noTrimWrap = | ||
+#					required = 1
+#				}
 #			}
 		}
 
