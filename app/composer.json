@@ -87,7 +87,9 @@
 		"in2code/powermail": "dev-master",
 		"dl/yag": "dev-master",
 		"causal/extractor": "dev-master",
-		"cedricziel/transladder": "dev-master"
+		"cedricziel/transladder": "dev-master",
+		"georgringer/autoswitchtolistview": "dev-master",
+		"helhum/typoscript-rendering": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {

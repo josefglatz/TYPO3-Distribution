@@ -23,6 +23,7 @@ $EM_CONF[$_EXTKEY] = [
                 ],
             'suggests' =>
                 [
+                    'autoswitchtolistview' => '',
                     'dd_googlesitemap' => '',
                     'felogin' => '',
                     'fluid_styled_content' => '',
@@ -46,7 +47,9 @@ $EM_CONF[$_EXTKEY] = [
                     'sourceopt' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
+                    'transladder' => '',
                     'tt_address' => '',
+                    'typoscript_rendering' => '',
                     'vhs' => '',
                     'yag' => '',
                 ],
