@@ -63,33 +63,36 @@
 		"typo3/cms-viewpage": "dev-master as 8.5.0",
 		"typo3/cms-wizard-crpages": "dev-master as 8.5.0",
 		"typo3/cms-wizard-sortpages": "dev-master as 8.5.0",
-		"helhum/typo3-console": "dev-master",
+		"causal/image_autoresize": "dev-master",
 		"dmitryd/typo3-realurl": "dev-master",
+		"georgringer/logging": "dev-master",
 		"georgringer/news": "dev-master",
 		"georgringer/page_speed": "dev-master",
-		"t3monitor/t3monitoring_client": "dev-master",
-		"georgringer/logging": "dev-master",
+		"helhum/typo3-console": "dev-master",
 		"reelworx/rx-shariff": "dev-master",
-		"causal/image_autoresize": "dev-master",
-		"spooner-web/be_secure_pw": "dev-master"
+		"spooner-web/be_secure_pw": "dev-master",
+		"t3monitor/t3monitoring_client": "dev-master"
 	},
 	"require-dev": {
+		"macopedia/mess_detector": "dev-master",
 		"maxserv/yaml_configuration": "dev-master",
-		"sgalinski/lfeditor": "dev-master",
 		"pyrech/composer-changelogs": "dev-master",
-		"macopedia/mess_detector": "dev-master"
+		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
-		"gridelementsteam/gridelements": "dev-master",
-		"dmitryd/typo3-dd-googlesitemap": "dev-master",
-		"sjbr/sr-language-menu": "dev-master",
-		"rlmp/rlmp-language-detection": "dev-master",
-		"in2code/powermail": "dev-master",
-		"dl/yag": "dev-master",
 		"causal/extractor": "dev-master",
 		"cedricziel/transladder": "dev-master",
+		"dl/yag": "dev-master",
+		"dmitryd/typo3-dd-googlesitemap": "dev-master",
 		"georgringer/autoswitchtolistview": "dev-master",
-		"helhum/typoscript-rendering": "dev-master"
+		"gridelementsteam/gridelements": "dev-master",
+		"helhum/typoscript-rendering": "dev-master",
+		"in2code/in2publish_core": "dev-master",
+		"in2code/powermail": "dev-master",
+		"koninklijke-collective/my-redirects": "dev-master",
+		"rlmp/rlmp-language-detection": "dev-master",
+		"sjbr/sr-language-menu": "dev-master",
+		"t3g/blog": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {
