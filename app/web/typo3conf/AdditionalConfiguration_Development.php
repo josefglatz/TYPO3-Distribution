@@ -6,6 +6,7 @@ $customChanges = [
     'BE' => [
         'debug' => true,
         'installToolPassword' => '$P$C8R5CmXAuzvklF.d5eGuTS7eQquuQN1',
+        'languageDebug' => false,
         'sessionTimeout' => 3600 * 24 * 365,
         'createGroup' => '',
         'versionNumberInFilename' => true,
