@@ -53,7 +53,7 @@
 		"typo3/cms-recycler": "dev-master as 8.5.0",
 		"typo3/cms-reports": "dev-master as 8.5.0",
 		"typo3/cms-rsaauth": "dev-master as 8.5.0",
-		"typo3/cms-rtehtmlarea": "dev-master as 8.5.0",
+		"typo3/cms-rte-ckeditor": "dev-master as 8.5.0",
 		"typo3/cms-scheduler": "dev-master as 8.5.0",
 		"typo3/cms-setup": "dev-master as 8.5.0",
 		"typo3/cms-sys-action": "dev-master as 8.5.0",
