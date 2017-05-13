@@ -163,7 +163,6 @@ $customChanges = [
     ],
     'FE' => [
         'disableNoCacheParameter' => true,
-        'cHashIncludePageId' => true,
         'loginSecurityLevel' => 'rsa',
         'versionNumberInFilename' => 'querystring',
         'noPHPscriptInclude' => true,
