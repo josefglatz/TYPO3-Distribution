@@ -29,7 +29,9 @@ current developments of TYPO3 CMS.
 1. After you finished your adjustments save the file and run a `composer install`
 1. It's time to install TYPO3 by adding an empty file within the web root `touch web/FIRST_INSTALL`
 1. No open `yourproject.vm/` in the browser once more and follow the install steps
+1. Commit your installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
 
+@TODO: Import default database structure
 
 ## Features
 
