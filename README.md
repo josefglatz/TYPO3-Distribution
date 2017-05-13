@@ -7,6 +7,30 @@ The goal of this package is to give an example of how a TYPO3 project could
 be configured and structured. It is updated on a regular basis to reflect the
 current developments of TYPO3 CMS.
 
+## Installation/First-setup in combination with webdevops/TYPO3-docker-boilerplate and webdevops/vagrant-docker-vm (Ubuntu 14.04 non reverse-proxy magic)
+
+1. Clone TYPO3-docker-boilerplate `git clone https://github.com/webdevops/TYPO3-docker-boilerplate YourProject`
+1. Clone this TYPO3-Distribution `git clone https://github.com/jousch/TYPO3-Distribution YourProjectTemp`
+1. Navigate to newly created project dir `cd YourProject`
+1. Copy necessary files to prior created project `rsync -av --progress --exclude '/README.md .git' ../TestBoilerplateTemp/ ./`
+1. Remove the temporary folder `rm -rf ../YourProjectTemp`
+1. Now choose your docker-compose file for your development environment: `ln -s docker-compose.development.yml docker-compose.yml`
+1. Set your active containers (and proper links) by un-/commenting lines in `docker-compose.yml`
+1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one fromm the values mentioned in the comments above within the same file)
+1. To start your environment take care that no other TYPO3-docker-boilerplate is running on your development environment with `docker ps`. If some other of your projects is running navigate to the folder and run `docker-compose stop`
+1. Start your machines aka lamp (basically webserver + mysql server) by running `docker-compose up -d` (make sure you're still in the same folder `YourProject`)
+1. Open `yourproject.vm/` in the browser - it should show the php info if all is running correct.
+1. Delete the dummy index.php (which is responsible for the php info) `rm app/web/index.php`
+1. `cd app`
+1. Let's switch to TYPO3 stuff: Ad your proper adjustments to the TYPO3 `composer.json`
+1. Replace exisiting namespaces with your own: `cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName`
+1. Replace the comment within the head of the website: `cd ./Build && ./ChangeHeaderComment.php by Sup7even Digital`
+1. Remove the remote git repo and do an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
+1. After you finished your adjustments save the file and run a `composer install`
+1. It's time to install TYPO3 by adding an empty file within the web root `touch web/FIRST_INSTALL`
+1. No open `yourproject.vm/` in the browser once more and follow the install steps
+
+
 ## Features
 
 * TYPO3 v8 dev-master in Composer mode
