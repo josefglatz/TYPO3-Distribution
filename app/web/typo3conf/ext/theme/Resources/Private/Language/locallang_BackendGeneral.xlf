@@ -46,6 +46,9 @@
 			<trans-unit id="icon.pagetree.page.attention">
 				<source>Page with exclamation sign</source>
 			</trans-unit>
+			<trans-unit id="icon.pagetree.page.search">
+				<source>Page with exclamation sign</source>
+			</trans-unit>
 
 			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
 				<source>Reset realurl automatic configuration</source>

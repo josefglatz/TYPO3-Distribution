@@ -49,6 +49,11 @@ call_user_func(
             1 => 'attention',
             2 => 'apps-pagetree-page-contains-attention',
         ];
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.search',
+            1 => 'search',
+            2 => 'apps-pagetree-page-contains-search',
+        ];
 
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
             $GLOBALS['TCA']['pages'],
@@ -57,6 +62,7 @@ call_user_func(
                     'typeicon_classes' => [
                         'contains-impress' => 'apps-pagetree-page-contains-impress',
                         'contains-attention' => 'apps-pagetree-page-contains-attention',
+                        'contains-search' => 'apps-pagetree-page-contains-search',
                         'contains-records' => 'apps-pagetree-folder-contains-records',
                     ],
                 ]

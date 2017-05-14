@@ -15,6 +15,7 @@ call_user_func(
                 'apps-pagetree-folder-contains-records'     => 'theme-pagetree-folder-contains-records.svg',
                 'apps-pagetree-page-contains-impress'       => 'theme-pagetree-page-contains-impress.svg',
                 'apps-pagetree-page-contains-attention'     => 'theme-pagetree-page-contains-attention.svg',
+                'apps-pagetree-page-contains-search'     => 'theme-pagetree-page-contains-search.svg',
 
                 'theme-content-inheritance-stop' => 'theme-content-inheritance-stop.svg',
 
