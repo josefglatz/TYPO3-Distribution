@@ -24,10 +24,15 @@ $customChanges = [
     'FE' => [
         'debug' => true,
     ],
+    'MAIL' => [
+//        'transport' => 'mbox',
+//        'transport_mbox_file' => PATH_site . 'mails.txt',
+    ],
     'SYS' => [
         'devIPmask' => '*',
         'displayErrors' => true,
         'enableDeprecationLog' => 'file',
+//        'exceptionalErrors' => 28674,
         'sqlDebug' => 1,
         'systemLogLevel' => 0,
         'systemLog' => '',
