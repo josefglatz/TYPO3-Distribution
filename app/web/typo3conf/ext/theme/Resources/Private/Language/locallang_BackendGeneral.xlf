@@ -47,7 +47,10 @@
 				<source>Page with exclamation sign</source>
 			</trans-unit>
 			<trans-unit id="icon.pagetree.page.search">
-				<source>Page with exclamation sign</source>
+				<source>Page with loupe/search icon</source>
+			</trans-unit>
+			<trans-unit id="icon.pagetree.page.news">
+				<source>Page with news plugins</source>
 			</trans-unit>
 
 			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
