@@ -34,15 +34,15 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `cd app` switch to the app folder
 1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
 1. `cd ./Build && ./ChangeVendor.sh Sup7even` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `cd ./Build && ./ChangeHeaderComment.php by Sup7even Digital` Replace the comment within the head of the website.
+1. `./ChangeHeaderComment.php by Sup7even Digital` Replace the comment within the head of the website.
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
 1. `composer install` When you finished your specific editing, save the file and run composer install.
 1. `touch web/FIRST_INSTALL` It's time to install TYPO3 by adding an empty file within the web root before.
 1. Now open `yourproject.vm/` in the browser and follow the TYPO3 install steps
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
-1. Now familiarize yourself with the TYPO3 instance
-
-@TODO: Import default database structure
+1. `./InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
+1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
+1. Have fun developing another great TYPO3 website!
 
 ---
 

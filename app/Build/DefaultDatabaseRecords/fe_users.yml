@@ -1,0 +1,2 @@
+TYPO3:
+    Data: { fe_users: [{ tx_extbase_type: Tx_Extbase_Domain_Model_FrontendUser, pid: '8', username: frontenduser, password: $pbkdf2-sha256$25000$bdN/usg2HlgOg8Jm5WOlBQ$6Bs7kmYsRhxvy.i14091dDCc8hz8irDaGG7UVDhy2zY, usergroup: '1', first_name: PiBase, last_name: Extbase, telephone: 0800TYPO3, title: DJ, zip: '2851', city: 'Krumbach i.d. Buckligen Welt', country: Austria, www: jousch.com, description: 'Default Frontend User' }] }

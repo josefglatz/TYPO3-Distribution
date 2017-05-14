@@ -44,7 +44,48 @@ RTFM and update the configuration to your needs.
 RTFM. With the help of Michiel Roos's extension it's possible to export/import backend/frontend-/-user/-groups and theoretically
 any other table to/from yaml.
 
-```
+
+### Scheduler tables
+```bash
+## Scheduler
+./typo3cms export:table tx_scheduler_task_group --include-hidden=true --include-deleted=false --skip-columns=crdate,tstamp,cruser_id --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml
+./typo3cms import:table "tx_scheduler_task_group" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml"
+./typo3cms import:table "tx_scheduler_task_group" "groupName" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml" # if https://github.com/MaxServ/t3ext-yaml-configuration/issues/19 is fixed
+
 ./typo3cms export:table tx_scheduler_task --include-hidden=true --include-deleted=true --skip-columns=crdate,lastexecution_time,lastexecution_failure,lastexecution_context --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
-./typo3cms import:table tx_scheduler_task --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
+./typo3cms import:table "tx_scheduler_task" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml"
+
+
+## Default Filemount (normally no need to import as it get's automatically created when installing TYPO3
+./typo3cms export:table sys_filemounts --include-hidden=true --include-deleted=false --skip-columns=tstamp --file=/app/Build/DefaultDatabaseRecords/sys_filemounts.yml
+./typo3cms import:table "sys_filemounts" "uid" "/app/Build/DefaultDatabaseRecords/sys_filemounts.yml"
+
+
+## Backend User/-group
+./typo3cms export:backendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/be_groups.yml
+./typo3cms import:backendgroups "uid" "/app/Build/DefaultDatabaseRecords/be_groups.yml"
+
+./typo3cms export:backendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin,tx_news_categorymounts,lfeditor_change_editing_modes,tx_besecurepw_lastpwchange --file=/app/Build/DefaultDatabaseRecords/be_users.yml
+./typo3cms import:backendusers "username" "/app/Build/DefaultDatabaseRecords/be_users.yml"
+
+## Page
+./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED --file=/app/Build/DefaultDatabaseRecords/pages.yml
+./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
+
+
+## Domain
+./typo3cms export:table sys_domain --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_domain.yml
+./typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
+
+
+## Template
+./typo3cms export:table sys_template --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_template.yml
+./typo3cms import:table "sys_template" "uid" "/app/Build/DefaultDatabaseRecords/sys_template.yml"
+
+## Frontend user/-group
+./typo3cms export:frontendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/fe_groups.yml
+./typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"
+
+./typo3cms export:frontendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin --file=/app/Build/DefaultDatabaseRecords/fe_users.yml
+./typo3cms import:frontendusers "username" "/app/Build/DefaultDatabaseRecords/fe_users.yml"
 ```

@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "Begin importing default database records"
+echo " "
+echo " "
+../typo3cms import:table "tx_scheduler_task_group" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml"
+../typo3cms import:table "tx_scheduler_task" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml"
+../typo3cms import:backendgroups "uid" "/app/Build/DefaultDatabaseRecords/be_groups.yml"
+../typo3cms import:backendusers "username" "/app/Build/DefaultDatabaseRecords/be_users.yml"
+../typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
+../typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
+../typo3cms import:table "sys_template" "uid" "/app/Build/DefaultDatabaseRecords/sys_template.yml"
+../typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"
+../typo3cms import:frontendusers "username" "/app/Build/DefaultDatabaseRecords/fe_users.yml"
+echo " "
+echo " "
+echo "Finalized the import of default database records"
