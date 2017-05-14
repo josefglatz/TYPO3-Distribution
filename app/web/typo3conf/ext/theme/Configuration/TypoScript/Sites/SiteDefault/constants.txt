@@ -141,6 +141,10 @@ site {
                 id =
                 domain =
             }
+            googleTagManager {
+                enable = 0
+                id = GTM-XXXXX
+            }
             piwik {
                 enable = 0
             }
@@ -155,6 +159,10 @@ site {
                 id =
                 domain =
             }
+            googleTagManager {
+                enable = 0
+                id = GTM-XXXXX
+            }
             piwik {
                 enable = 0
             }
@@ -167,6 +175,10 @@ site {
                 enable = 0
                 id =
                 domain =
+            }
+            googleTagManager {
+                enable = 0
+                id = GTM-XXXXX
             }
             piwik {
                 enable = 0
