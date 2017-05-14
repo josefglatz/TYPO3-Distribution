@@ -40,7 +40,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `touch web/FIRST_INSTALL` It's time to install TYPO3 by adding an empty file within the web root before.
 1. Now open `yourproject.vm/` in the browser and follow the TYPO3 install steps
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
-1. `./InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
+1. `ct docker:exec /app/Build/InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
 1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
 1. Add/remove backend users and set strong passwords for all real backend users.
 1. Have fun developing another great TYPO3 website!
