@@ -75,6 +75,11 @@ any other table to/from yaml.
 ./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
 
 
+## Page Content
+./typo3cms export:table tt_content --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/tt_content.yml
+./typo3cms import:table "tt_content" "uid" "/app/Build/DefaultDatabaseRecords/tt_content.yml"
+
+
 ## Domain
 ./typo3cms export:table sys_domain --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_domain.yml
 ./typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
