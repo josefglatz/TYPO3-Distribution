@@ -3,14 +3,14 @@
 - delete non required extensions/packages from app/composer.json
 - delete extConf settings in AdditinonalConfiguration of extensions which you deleted in the previous step
 - composer install
-- Set correct sitename (`AdditionalConfiguration.php::8`)
-- Set default email (`AdditionalConfiguration.php::9`)
-- Set default email name (`AdditionalConfiguration.php::10`)`
+- Set correct sitename (`~AdditionalConfiguration.php::8`)
+- Set default email (`~AdditionalConfiguration.php::9`)
+- Set default email name (`~AdditionalConfiguration.php::10`)`
 - Set productive install tool password and save hash in (`AdditionalConfiguration_Production.php`). Don't forget to save it in password manager (e.g. for colleagues)
 - Set activated languages and update/retrive them
-- make shure productive host can handle utf8 file system and correct system locales are set
+- make sure that productive host can handle utf8 file system and correct system locales are set
 - Set sys_domains (1. production domain, 2. staging domain, ..., 10. dev domain)
-- Set `TCEMAIN.previewDomain`â€™s (DEV, STAGING, ...)
+- Set `TCEMAIN.previewDomain` (DEV, STAGING, ...)
 - Set backendLogin logo, color and image in AdditionalConfiguration.php
 - add great favicons http://realfavicongenerator.net
 - configure linkvalidator scheduler job (receiver email, ...)
@@ -20,6 +20,7 @@
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
 - set backend view page module widths to your projectspecific frontend breakpoints
 - configure cookie consent (EU cookie law stuff) `EXT:theme/Configuration/TypoScript/Base/Page/CookieLaw.setupts`
+- ....
 
 ## Cookie Consent
 

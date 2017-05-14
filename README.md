@@ -42,7 +42,9 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
 1. `./InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
 1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
+1. Add/remove backend users and set strong passwords for all real backend users.
 1. Have fun developing another great TYPO3 website!
+1. Read on: [First steps](app/web/typo3conf/ext/theme/Documentation/FirstSteps.md)
 
 ---
 
