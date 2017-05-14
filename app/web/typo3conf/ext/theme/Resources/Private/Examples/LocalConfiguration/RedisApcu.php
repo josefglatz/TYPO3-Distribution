@@ -3,10 +3,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 
-// @TODO: Redis/APCu examples
 // @TODO: redis backend pConnect feature (7d0c8befc5999627edefb340cef270707c2956bd)
-
-// @TODO: redis + apcu be caches like benni said
 
 
 // Override configuration of LocalConfiguration
