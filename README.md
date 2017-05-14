@@ -19,10 +19,10 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 ### Let's start 
 
-1. `git clone https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate 
-1. `git clone https://github.com/jousch/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
+1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate 
+1. `git clone --depth=1 https://github.com/jousch/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
 1. `cd YourProject` Navigate to newly created project dir
-1. `rsync -av --progress --exclude '/README.md .git' ../TestBoilerplateTemp/ ./` Copy necessary files to prior created project
+1. `rsync -av --progress --exclude '/README.md .git' ../YourProjectTemp/ ./` Copy necessary files to prior created project
 1. `rm -rf ../YourProjectTemp` Remove the temporary folder 
 1. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
 1. `docker-compose.yml` Set your active containers (and proper links) by un-/commenting lines
@@ -36,9 +36,8 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `cd ./Build && ./ChangeVendor.sh Sup7even` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
 1. `./ChangeHeaderComment.php by Sup7even Digital` Replace the comment within the head of the website.
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
-1. `composer install` When you finished your specific editing, save the file and run composer install.
-1. `touch web/FIRST_INSTALL` It's time to install TYPO3 by adding an empty file within the web root before.
-1. Now open `yourproject.vm/` in the browser and follow the TYPO3 install steps
+1. `docker exec -it $$(docker-compose ps -q app) cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no && ./typo3cms install:generatepackagestates && ./typo3cms install:extensionsetupifpossible` It's time to install TYPO3
+1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
 1. `ct docker:exec /app/Build/InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
 1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
