@@ -57,6 +57,7 @@ $EM_CONF[$_EXTKEY] = [
                     'typoscript_rendering' => '',
                     'vhs' => '',
                     'yag' => '',
+                    'yaml_configuration' => '',
                 ],
         ],
     'autoload' =>
