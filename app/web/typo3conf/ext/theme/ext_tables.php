@@ -12,6 +12,10 @@ call_user_func(
             $iconsSvg = [
                 'theme-backend-realurl-reset' => 'theme-backend-realurl-reset.svg',
 
+                'apps-pagetree-folder-contains-records'     => 'theme-pagetree-folder-contains-records.svg',
+                'apps-pagetree-page-contains-impress'       => 'theme-pagetree-page-contains-impress.svg',
+                'apps-pagetree-page-contains-attention'     => 'theme-pagetree-page-contains-attention.svg',
+
                 'theme-content-inheritance-stop' => 'theme-content-inheritance-stop.svg',
 
                 'theme-content-gridelement'                             => 'GridElements/theme-content-gridelement.svg',

@@ -29,6 +29,39 @@ call_user_func(
                 $labelPrefix . $label
             );
         }
+
+
+        // Add custom page tree icons
+        // @TODO: Streamline adding new icons with simple foreach
+
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.folder.storage',
+            1 => 'records',
+            2 => 'apps-pagetree-folder-contains-records',
+        ];
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.impress',
+            1 => 'impress',
+            2 => 'apps-pagetree-page-contains-impress',
+        ];
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.attention',
+            1 => 'attention',
+            2 => 'apps-pagetree-page-contains-attention',
+        ];
+
+        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+            $GLOBALS['TCA']['pages'],
+            [
+                'ctrl' => [
+                    'typeicon_classes' => [
+                        'contains-impress' => 'apps-pagetree-page-contains-impress',
+                        'contains-attention' => 'apps-pagetree-page-contains-attention',
+                        'contains-records' => 'apps-pagetree-folder-contains-records',
+                    ],
+                ]
+            ]
+        );
     },
     'theme'
 );
