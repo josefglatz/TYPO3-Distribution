@@ -36,6 +36,11 @@ page {
 
 	}
 
+	// JS files to be included in the page footer before other scripts
+	includeJSFooterlibs {
+
+	}
+
 	// JS files to be included in the page footer
 	includeJSFooter {
 
