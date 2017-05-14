@@ -49,6 +49,13 @@
 
 		# when setting a new password, this is the minimum amount of characters
 		newPasswordMinLength = 8
+
+		exposeNonexistentUserInForgotPasswordDialog = 0
+
+		# E-Mail Settings
+		email_from = {$site.felogin.emailFrom}
+		email_fromName = {$site.felogin.emailFromName}
+		replyTo = {$site.felogin.replyTo}
 	}
 
 [global]

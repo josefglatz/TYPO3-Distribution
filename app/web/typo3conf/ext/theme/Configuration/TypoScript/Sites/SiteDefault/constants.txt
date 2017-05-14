@@ -11,6 +11,11 @@ site {
         felogin.storagePid =
     }
 
+    felogin {
+        emailFrom =
+        emailFromName =
+        replyTo =
+    }
 
     ext {
         news {
