@@ -69,6 +69,7 @@ any other table to/from yaml.
 ./typo3cms export:backendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin,tx_news_categorymounts,lfeditor_change_editing_modes,tx_besecurepw_lastpwchange --file=/app/Build/DefaultDatabaseRecords/be_users.yml
 ./typo3cms import:backendusers "username" "/app/Build/DefaultDatabaseRecords/be_users.yml"
 
+
 ## Page
 ./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED --file=/app/Build/DefaultDatabaseRecords/pages.yml
 ./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
@@ -83,10 +84,16 @@ any other table to/from yaml.
 ./typo3cms export:table sys_template --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_template.yml
 ./typo3cms import:table "sys_template" "uid" "/app/Build/DefaultDatabaseRecords/sys_template.yml"
 
+
 ## Frontend user/-group
 ./typo3cms export:frontendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/fe_groups.yml
 ./typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"
 
 ./typo3cms export:frontendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin --file=/app/Build/DefaultDatabaseRecords/fe_users.yml
 ./typo3cms import:frontendusers "username" "/app/Build/DefaultDatabaseRecords/fe_users.yml"
+
+
+## Backend Bookmarks
+./typo3cms export:table sys_be_shortcuts --include-hidden=true --include-deleted=false --skip-columns=userid --file=/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml
+./typo3cms import:table "sys_be_shortcuts" "uid" "/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml"
 ```
