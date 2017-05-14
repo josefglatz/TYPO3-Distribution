@@ -13,6 +13,7 @@ call_user_func(
                 'theme-backend-realurl-reset' => 'theme-backend-realurl-reset.svg',
 
                 'apps-pagetree-folder-contains-records'     => 'theme-pagetree-folder-contains-records.svg',
+                'apps-pagetree-folder-contains-pages'     => 'theme-pagetree-folder-contains-pages.svg',
                 'apps-pagetree-page-contains-impress'       => 'theme-pagetree-page-contains-impress.svg',
                 'apps-pagetree-page-contains-attention'     => 'theme-pagetree-page-contains-attention.svg',
                 'apps-pagetree-page-contains-search'     => 'theme-pagetree-page-contains-search.svg',

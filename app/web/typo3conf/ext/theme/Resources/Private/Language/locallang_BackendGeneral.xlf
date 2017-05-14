@@ -40,6 +40,9 @@
 			<trans-unit id="icon.pagetree.folder.storage">
 				<source>Folder with Storage</source>
 			</trans-unit>
+			<trans-unit id="icon.pagetree.folder.pages">
+				<source>Folder with Pages</source>
+			</trans-unit>
 			<trans-unit id="icon.pagetree.page.impress">
 				<source>Page with paragraph</source>
 			</trans-unit>

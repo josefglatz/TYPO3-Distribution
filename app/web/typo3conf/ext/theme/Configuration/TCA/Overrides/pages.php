@@ -40,6 +40,11 @@ call_user_func(
             2 => 'apps-pagetree-folder-contains-records',
         ];
         $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.folder.pages',
+            1 => 'pages',
+            2 => 'apps-pagetree-folder-contains-pages',
+        ];
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
             0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.impress',
             1 => 'impress',
             2 => 'apps-pagetree-page-contains-impress',
@@ -70,6 +75,7 @@ call_user_func(
                         'contains-search' => 'apps-pagetree-page-contains-search',
                         'contains-newsplugins' => 'apps-pagetree-page-contains-news',
                         'contains-records' => 'apps-pagetree-folder-contains-records',
+                        'contains-pages' => 'apps-pagetree-folder-contains-pages',
                     ],
                 ]
             ]
