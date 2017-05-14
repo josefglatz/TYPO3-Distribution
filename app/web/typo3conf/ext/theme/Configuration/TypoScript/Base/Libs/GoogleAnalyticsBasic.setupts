@@ -34,7 +34,6 @@ lib.googleAnalyticsBasic {
 	<!--
 
 		 Basic google analytics disabled
-           (based on applicationContext)
 
 	-->
 			)

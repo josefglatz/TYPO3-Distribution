@@ -173,4 +173,17 @@ site {
             }
         }
     }
+
+[globalVar = TSFE : beUserLogin > 0]
+    site {
+        tracking {
+            google {
+                enable = 0
+            }
+            googleTagManager {
+                enable = 0
+                id = GTM-XXXXX
+            }
+        }
+    }
 [global]
