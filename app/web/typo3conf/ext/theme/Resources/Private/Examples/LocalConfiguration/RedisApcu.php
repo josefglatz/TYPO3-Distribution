@@ -49,20 +49,6 @@ $customChanges = [
                         'defaultLifetime' => 86400,
                         'database' => 2
                     ]
-                ],
-                'extbase_object' => [
-                    'backend' => \TYPO3\CMS\Core\Cache\Backend\RedisBackend::class,
-                    'options' => [
-                        'defaultLifetime' => 86400,
-                        'database' => 3
-                    ]
-                ],
-                'extbase_reflection' => [
-                    'backend' => \TYPO3\CMS\Core\Cache\Backend\RedisBackend::class,
-                    'options' => [
-                        'defaultLifetime' => 86400,
-                        'database' => 4
-                    ]
                 ]
             ]
         ],
@@ -82,7 +68,8 @@ if (extension_loaded('apc') && PHP_SAPI !== 'cli') {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_rootline']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_datamapfactory_datamap']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['backend'] =
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_reflection']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_typo3dbbackend_tablecolumns']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['t3lib_l10n']['backend'] =
-        'TYPO3\\CMS\\Core\\Cache\\Backend\\ApcBackend';
+        \TYPO3\CMS\Core\Cache\Backend\ApcBackend::class;
 }
