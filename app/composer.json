@@ -37,6 +37,7 @@
 	"require": {
 		"php": "^7",
 		"typo3/cms": "dev-TYPO3_8-7 as 8.7.1",
+		"typo3/cms-about": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-belog": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-beuser": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-context-help": "dev-TYPO3_8-7 as 8.7.1",
