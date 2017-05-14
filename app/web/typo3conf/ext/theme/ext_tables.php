@@ -16,7 +16,7 @@ call_user_func(
                 'apps-pagetree-page-contains-impress'       => 'theme-pagetree-page-contains-impress.svg',
                 'apps-pagetree-page-contains-attention'     => 'theme-pagetree-page-contains-attention.svg',
                 'apps-pagetree-page-contains-search'     => 'theme-pagetree-page-contains-search.svg',
-                'apps-pagetree-page-contains-news'     => 'theme-pagetree-page-contains-news.svg',
+                'apps-pagetree-page-contains-newsplugins'     => 'theme-pagetree-page-contains-news.svg',
 
                 'theme-content-inheritance-stop' => 'theme-content-inheritance-stop.svg',
 

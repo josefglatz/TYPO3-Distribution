@@ -56,8 +56,8 @@ call_user_func(
         ];
         $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
             0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.news',
-            1 => 'news',
-            2 => 'apps-pagetree-page-contains-news',
+            1 => 'newsplugins',
+            2 => 'apps-pagetree-page-contains-newsplugins',
         ];
 
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
@@ -68,7 +68,7 @@ call_user_func(
                         'contains-impress' => 'apps-pagetree-page-contains-impress',
                         'contains-attention' => 'apps-pagetree-page-contains-attention',
                         'contains-search' => 'apps-pagetree-page-contains-search',
-                        'contains-news' => 'apps-pagetree-page-contains-news',
+                        'contains-newsplugins' => 'apps-pagetree-page-contains-news',
                         'contains-records' => 'apps-pagetree-folder-contains-records',
                     ],
                 ]
