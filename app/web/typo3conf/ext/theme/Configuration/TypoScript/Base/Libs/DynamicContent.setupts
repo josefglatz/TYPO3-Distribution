@@ -90,7 +90,6 @@ lib.dynamicContent {
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid
 			max.data = register:maxItems
-			// @TODO Minimal constraint: TYPO3 v8 LTS: remove the next 2 fields.
 			// select.languageField setting is needed if you use this typoscript in TYPO3 < v7
 			// languageField = sys_language_uid
 		}
