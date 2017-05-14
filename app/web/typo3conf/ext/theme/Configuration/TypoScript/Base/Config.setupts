@@ -67,7 +67,8 @@ config {
 	// No indexing, we're not using a search
 	index_enable = 0
 
-	absRefPrefix = auto
+	#	absRefPrefix = auto
+	absRefPrefix = /
 
 	// Links & content sharing across domains & jumpUrl & external target stuff
 	typolinkEnableLinksAcrossDomains = 1
