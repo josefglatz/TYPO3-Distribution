@@ -25,7 +25,7 @@ site {
 
 
     l10n {
-        locale_all = de_AT.UTF-8, de_DE.UTF-8
+        locale_all = de_AT.UTF-8, de_DE.UTF-8, de_AT, de_DE, de
         language = de
         # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
         sys_language_isocode = de
@@ -124,7 +124,7 @@ site {
 [globalVar = GP:L=1]
     site {
         l10n {
-            locale_all = en_US.UTF-8, en_GB.UTF-8
+            locale_all = en_US.UTF-8, en_US.utf8, en_GB.UTF-8, en_US, en_GB, en
             language = en
             # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
             sys_language_isocode = en
