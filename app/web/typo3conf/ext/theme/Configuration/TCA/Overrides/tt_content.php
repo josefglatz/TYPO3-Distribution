@@ -5,6 +5,13 @@ call_user_func(
     function ($extKey) {
         $languageFileCePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:';
 
+        $defaultCropArea = [
+            'x' => '0.0',
+            'y' => '0.0',
+            'width' => '1.0',
+            'height' => '1.0',
+        ];
+
         /**
          * Add subheader property to content elements
          * where it makes basically sense
