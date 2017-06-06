@@ -19,7 +19,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$info, array &$row)
     {
-        if (GeneralUtility::getApplicationContext()->isDevelopment()) {
+        if (GeneralUtility::getApplicationContext()->isDevelopment() || $this->getBackendUser()->isAdmin()) {
             $info[] = '<span 
                             style="display: block;text-align: right;opacity: .4" 
 	                        title="Only visible in Development applicationContext"
@@ -28,6 +28,16 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                 . '</span>';
         }
 
+    }
+
+    /**
+     * Returns the current BE user.
+     *
+     * @return \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
+     */
+    protected function getBackendUser()
+    {
+        return $GLOBALS['BE_USER'];
     }
 
 }
