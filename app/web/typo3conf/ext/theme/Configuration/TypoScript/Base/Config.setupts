@@ -108,6 +108,7 @@ config {
 	// until an additional fe language is used, no linkVars necessary
 	// !!! Please do NOT add `type` to config.linkVars !!!
 #	linkVars := addToList(L(0-1))
+#	linkVars := addToList(L(int))
 #	linkVars := removeFromList()
 	linkVars =
 }
