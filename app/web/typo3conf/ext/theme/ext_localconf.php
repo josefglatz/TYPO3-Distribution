@@ -24,6 +24,10 @@ call_user_func(
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
         }
 
+        // Hook for changing output before showing it
+//        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
+//            = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
+
         if (TYPO3_MODE === 'BE') {
 
             // Add custom cache action item: delete realurl configuration file
