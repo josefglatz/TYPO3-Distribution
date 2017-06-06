@@ -68,7 +68,7 @@ page {
 				10 {
 					seoIndex.cObject = TEXT
 					seoIndex.cObject.value = index
-					seoIndex.cObject.override = noindex
+					seoIndex.cObject.override = noindex,noarchive
 					seoIndex.cObject.override.if.isTrue.field = no_search
 				}
 				20 = TEXT
