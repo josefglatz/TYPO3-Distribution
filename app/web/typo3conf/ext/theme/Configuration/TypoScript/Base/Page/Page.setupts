@@ -21,6 +21,17 @@ page {
 
 	//CSS files to be included
 	includeCSS {
+#		10 = EXT:theme/Resources/Public/Css/MyFile.css
+#		10 {
+#			media =
+#			title = Main CSS
+#			import = 0
+#			external = 0
+#			alternate = 0
+#			disableCompression = 0
+#			excludeFromConcatenation = 1
+#			allWrap = allWrap = <!--[if lt IE 9]>|<![endif]-->
+#		}
 
 	}
 
@@ -32,6 +43,7 @@ page {
 		#			external = 1
 		#			excludeFromConcatenation = 1
 		#			allWrap = <!--[if lt IE 9]>|<![endif]-->
+		#			disableCompression = 1
 		#		}
 
 	}
