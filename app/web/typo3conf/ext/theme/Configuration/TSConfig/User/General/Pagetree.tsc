@@ -3,7 +3,7 @@ options {
 		hideFilter = 0
 
 		disableIconLinkToContextmenu = 0
-		showPageIdWithTitle = 0
+		showPageIdWithTitle = 1
 		showNavTitle = 1
 		separateNotinmenuPages = 0
 		alphasortNotinmenuPages = 0
