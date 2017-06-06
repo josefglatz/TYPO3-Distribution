@@ -15,6 +15,11 @@ mod.wizards.newContentElement.wizardItems {
 	special {
 		show := addToList(theme-inheritance-stop)
 		elements {
+			div {
+				tt_content_defValues {
+					sectionIndex = 0
+				}
+			}
 			theme-inheritance-stop {
 				iconIdentifier = theme-content-inheritance-stop
 				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_inheritance_stop.title
