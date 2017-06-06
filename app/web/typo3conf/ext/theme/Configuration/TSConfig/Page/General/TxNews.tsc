@@ -1,8 +1,17 @@
 tx_news {
+	// ext:news templateLayouts (https://docs.typo3.org/typo3cms/extensions/news/AdministratorManual/Templates/TemplateSelector/Index.html)
 	templateLayouts {
 		// Key					= Label
 #		listFooter				= News Listing :: Footer
 #		detailSidebar			= News Listing :: Detail Sidebar
+	}
+
+	// Predefine default fields on news record creation
+	predefine {
+		// Fill author field with actual backend user
+		author = 1
+		// Set archive with date in future (a value that can be interpreted by `strtotime()`) (e.g. +1 day, +1 month, next Monday, +1 week 2 days 4 hours)
+#		archive = +1 month
 	}
 }
 
