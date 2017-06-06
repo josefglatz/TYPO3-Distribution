@@ -12,6 +12,7 @@ TCEFORM.tt_content {
 
 		addItems {
 #			4 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.4
+#			4.icon = my-icon-identifier
 		}
 	}
 
@@ -67,6 +68,7 @@ TCEFORM.tt_content {
 	menu_type {
 		addItems {
 #			courses_overview = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:ctype.menu.menuType.coursesOverview
+#			courses_overview.icon = myIconIdentifier
 		}
 	}
 
