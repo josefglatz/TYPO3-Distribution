@@ -14,7 +14,7 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
             'subheader',
-            'textmedia,bullets,table,uploads,menu,shortcut',
+            'textmedia,bullets,table,uploads,menu',
             'after:header'
         );
 
