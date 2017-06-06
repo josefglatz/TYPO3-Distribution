@@ -1,21 +1,19 @@
-// @TODO Refactor to add support for final TYPO3 8LTS
-
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/Styling/setup.txt">
+// @TODO: Add info about the Default FSC frontend styling css
 
 // set override paths for custom fluid_styled_content
-lib.fluidContent {
+lib.contentElement {
 	templateRootPaths.10 = {$theme.resTemplates}/Content/
 	partialRootPaths.10 = {$theme.resPartials}/
 	layoutRootPaths.10 = {$theme.resLayouts}/
 }
 
 // set default extension name for labels in Fluid
-lib.fluidContent.extbase.controllerExtensionName = {$theme.name}
+lib.contentElement.extbase.controllerExtensionName = {$theme.name}
 
 // @TODO: Add defaults for FSC settings
 // adjust default lightbox settings
-#lib.fluidContent.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}"
+#lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}" class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" rel="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
 
 
 
