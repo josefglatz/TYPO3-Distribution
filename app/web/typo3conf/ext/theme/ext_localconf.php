@@ -19,19 +19,21 @@ call_user_func(
             '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TSConfig/UserGeneral.tsc">'
         );
 
-        if (TYPO3_MODE === 'BE') {
-            // Add custom cache action item: delete realurl configuration file
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][$extKey] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
-        }
-
         // Add EXT:solr CommandController support for older versions
         if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr') && !class_exists(\ApacheSolrForTypo3\Solr\Command\SolrCommandController::class)) {
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
         }
 
-        // Hook for enriching content element preview footer in BE with additional data
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
-            \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;
+        if (TYPO3_MODE === 'BE') {
+
+            // Add custom cache action item: delete realurl configuration file
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][$extKey] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
+
+            // Hook for enriching content element preview footer in BE with additional data
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
+                \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;
+            
+        }
     },
     $_EXTKEY
 );
