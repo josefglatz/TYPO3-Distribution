@@ -57,6 +57,9 @@ call_user_func(
         ];
         $GLOBALS['TCA']['tt_content'] = array_replace_recursive($GLOBALS['TCA']['tt_content'], $tca);
 
+        // Default Content Element
+        $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['default'] = 'text';
+
     },
     'theme'
 );
