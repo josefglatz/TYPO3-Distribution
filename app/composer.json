@@ -28,7 +28,7 @@
 		}
 	],
 	"license": "GPL-3.0+",
-	"minimum-stability": "dev",
+	"minimum-stability": "beta",
 	"config": {
 		"optimize-autoloader": true,
 		"secure-http": true,
