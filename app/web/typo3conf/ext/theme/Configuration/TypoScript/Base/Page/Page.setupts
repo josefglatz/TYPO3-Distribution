@@ -13,7 +13,21 @@ page {
 	10 < lib.fluidTemplate.default
 	10 {
 		variables {
-
+			BreadcrumbNavigationDetail = COA
+			BreadcrumbNavigationDetail {
+				10 = RECORDS
+				10 {
+					if.isTrue.data = GP:tx_news_pi1|news
+					dontCheckPid = 1
+					tables = tx_news_domain_model_news
+					source.data = GP:tx_news_pi1|news
+					source.intval = 1
+					conf.tx_news_domain_model_news = TEXT
+					conf.tx_news_domain_model_news {
+						field = title
+					}
+				}
+			}
 		}
 		settings {
 			sitename = {$site.titleTag.sitename}
@@ -22,6 +36,11 @@ page {
 		##########################
 		### DATA PREPROCESSING ###
 		##########################
+
+		// See HMENU docs for more options.
+		// https://docs.typo3.org/typo3cms/TyposcriptReference/ContentObjects/Hmenu/Index.html
+		// and: sysext:frontend/Classes/DataProcessing/MenuProcessor.php
+
 		dataProcessing {
 			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			100 {
