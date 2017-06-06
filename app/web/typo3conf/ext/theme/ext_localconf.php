@@ -28,6 +28,15 @@ call_user_func(
 //        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
 //            = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
 
+        // Register own RTE (ckeditor) presets
+        $rtePresets = [
+            'default' => 'Default'
+        ];
+        foreach ($rtePresets as $fileIdentifier => $fileName) {
+            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $fileIdentifier . '']
+                = 'EXT:' . $extKey . '/Configuration/RTE/' . $fileName . '.yaml';
+        }
+
         if (TYPO3_MODE === 'BE') {
 
             // Add custom cache action item: delete realurl configuration file
