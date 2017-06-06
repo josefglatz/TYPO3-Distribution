@@ -32,7 +32,13 @@ call_user_func(
             // Hook for enriching content element preview footer in BE with additional data
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
                 \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;
-            
+
+            // Register FormDataProviders
+            $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\JosefGlatz\Theme\Backend\FormDataProvider\Div::class] = [
+                'depends' => [
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class
+                ]
+            ];
         }
     },
     $_EXTKEY
