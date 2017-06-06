@@ -27,7 +27,6 @@ class Div implements FormDataProviderInterface
             foreach ($columnsToHide as $column) {
                 unset($result['processedTca']['columns']['' . $column . '']);
             }
-            unset($result['processedTca']['columns']['sectionIndex']);
         }
 
 
