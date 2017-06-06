@@ -1,8 +1,14 @@
+############
+### PAGE ###
+############
 page = PAGE
 page {
 
 	// @TODO: Page Edit Panel
 
+	######################
+	### FLUID TEMPLATE ###
+	######################
 	// Import desired FLUIDTEMPLATE (see EXT:theme/Configuration/TypoScript/Base/Libs/Fluidtemplate.setupts for available implementations)
 	10 < lib.fluidTemplate.default
 	10 {
@@ -13,11 +19,70 @@ page {
 			sitename = {$site.titleTag.sitename}
 		}
 
+		##########################
+		### DATA PREPROCESSING ###
+		##########################
 		dataProcessing {
+			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			100 {
+				levels = 2
+				includeSpacer = 1
+				as = MainNavigation
+			}
+			110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			110 {
+				entryLevel = 1
+				levels = 2
+				expandAll = 0
+				includeSpacer = 1
+				as = SubNavigation
+			}
+			120 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			120 {
+				special = rootline
+				special.range = 0|-1
+				includeNotInMenu = 1
+				as = BreadcrumbNavigation
+				if {
+					value = {$site.nav.breadcrumbEnableLevel}
+					value {
+						insertData = 1
+						prioriCalc = 1
+						stdWrap.wrap = |-1
+					}
+					isGreaterThan {
+						data = level
+					}
+				}
+				// @TODO: Add news detail breadcrumb item to breadcrumb navigation
+			}
 
+			130 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			130 {
+				special = {$site.nav.meta.navigationType}
+				special.value = {$site.uid.metaNav}
+				includeNotInMenu = {$site.nav.meta.includeNotInMenu}
+				as = MetaNavigation
+				if {
+					isTrue = {$site.uid.metaNav}
+				}
+			}
+			140 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			140 {
+				special = {$site.nav.footer.navigationType}
+				special.value = {$site.uid.footerNav}
+				includeNotInMenu = {$site.nav.footer.includeNotInMenu}
+				as = FooterNavigation
+				if {
+					isTrue = {$site.uid.footerNav}
+				}
+			}
 		}
 	}
 
+	################
+	### CSS / JS ###
+	################
 
 	//CSS files to be included
 	includeCSS {
@@ -71,7 +136,9 @@ page {
 
 	}
 
-
+	################
+	### BODY TAG ###
+	################
 	bodyTagCObject = COA
 	bodyTagCObject {
 		stdWrap.wrap = <body id="top"|>
