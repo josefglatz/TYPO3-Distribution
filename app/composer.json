@@ -7,6 +7,15 @@
 	],
 	"name": "jousch/typo3-distribution",
 	"description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
+	"keywords": [
+		"TYPO3 CMS",
+		"typo3cms-distribution",
+		"sitepackage",
+		"typo3distribution",
+		"typo3 example",
+		"theme",
+		"web"
+	],
 	"_comment": [
 		"This is my TYPO3 distribution",
 		"@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
@@ -28,6 +37,9 @@
 		}
 	],
 	"license": "GPL-3.0+",
+	"support": {
+		"issues": "https://github.com/jousch/TYPO3-Distribution/issues"
+	},
 	"minimum-stability": "beta",
 	"config": {
 		"optimize-autoloader": true,
