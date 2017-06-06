@@ -3,6 +3,12 @@ mod.wizards.newContentElement.wizardItems {
 	common {
 		show := addToList()
 		elements {
+			// Improve default CType uploads by settings target to _blank for download item link
+			uploads {
+				tt_content_defValues {
+					target = _blank
+				}
+			}
 		}
 	}
 
