@@ -1,5 +1,10 @@
 TCEFORM.tt_content {
 
+	CType {
+#		removeItems =
+#		keepItems =
+	}
+
 	layout {
 		// disable default layouts
 		removeItems = 1,2,3
