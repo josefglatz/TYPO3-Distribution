@@ -15,6 +15,7 @@ TCEMAIN.linkHandler {
 #			storagePid = 123
 			hidePageTree = 0
 #			pageTreeMountPoints =
+			// @TODO: Limit possible link options (maybe an upstream missing feature)
 		}
 		scanAfter = page
 #		scanBefore =
