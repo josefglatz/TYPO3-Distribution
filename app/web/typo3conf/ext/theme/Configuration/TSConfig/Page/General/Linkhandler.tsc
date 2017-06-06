@@ -19,8 +19,8 @@ TCEMAIN.linkHandler {
 		}
 		scanAfter = page
 #		scanBefore =
-#		displayAfter =
-#		displayBefore =
+		displayAfter = page
+		displayBefore = file
 	}
 
 }
