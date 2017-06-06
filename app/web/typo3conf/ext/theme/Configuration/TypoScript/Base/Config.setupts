@@ -81,6 +81,21 @@ config {
 	extTarget = _blank
 	fileTarget =
 
+	// Linkhandler Frontend Configuration
+	config.recordLinks {
+		// Keep in mind: you can setup multiple identifiers for just one table/extension
+
+		// Identifier "newsDefault"
+		newsDefault {
+			typolink {
+				parameter = {$site.ext.news.defaultDetailPid}
+				additionalParams.data = field:uid
+				additionalParams.wrap = &tx_news_pi1[news]=|
+				useCacheHash = 1
+			}
+		}
+	}
+
 	// E-Mail AntiSpam
 #    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
 #    spamProtectEmailAddresses = -3
@@ -107,4 +122,8 @@ config {
 		// https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#contentobjectexceptionhandler
 		contentObjectExceptionHandler = 0
 	}
+
+[globalVar = TSFE : beUserLogin > 0]
+	// Force generation of links to hidden linkhandler "newsDefault" records
+	config.recordLinks.newsDefault.forceLink = 1
 [global]

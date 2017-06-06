@@ -1,0 +1,25 @@
+// Linkhandler Backend Configuration
+TCEMAIN.linkHandler {
+	// Some useful documentation about the configuration possibilities:
+	// - https://docs.typo3.org/typo3cms/extensions/core/8.7/Changelog/8.6/Feature-79626-IntegrateRecordLinkHandler.html
+	// - https://docs.typo3.org/typo3cms/extensions/core/8.7/Changelog/8.3/Feature-74365-LinkServiceForUnifiedReferencingSyntax.html
+	// - https://docs.typo3.org/typo3cms/extensions/core/7.6/Changelog/7.6/Feature-66369-AddedLinkBrowserAPIs.html
+	// - https://usetypo3.com/linkhandler.html
+
+	// ext:news default configuration
+	newsDefault {
+		handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+		label = News
+		configuration {
+			table = tx_news_domain_model_news
+#			storagePid = 123
+			hidePageTree = 0
+#			pageTreeMountPoints =
+		}
+		scanAfter = page
+#		scanBefore =
+#		displayAfter =
+#		displayBefore =
+	}
+
+}
