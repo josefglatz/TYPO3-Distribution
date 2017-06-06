@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Project specific theme extension',
-    'description' => 'Description for ext',
+    'description' => 'Sitepackage/Theme/Extension of this great website.',
     'category' => 'Theme',
     'author' => 'Josef Glatz',
     'author_email' => 'jousch@jousch.com',
@@ -9,13 +9,13 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'excludeFromUpdates',
     'uploadfolder' => '0',
     'createDirs' => '',
-    'clearCacheOnLoad' => 0,
+    'clearCacheOnLoad' => 1,
     'version' => '0.0.0',
     'constraints' =>
         [
             'depends' =>
                 [
-                    'typo3' => '8.3.0-8.99.99',
+                    'typo3' => '8.7.1-8.7.99',
                 ],
             'conflicts' =>
                 [
