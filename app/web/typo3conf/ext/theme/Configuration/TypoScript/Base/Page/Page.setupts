@@ -47,6 +47,12 @@ page {
 				levels = 2
 				includeSpacer = 1
 				as = MainNavigation
+#				dataProcessing {
+#					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+#					10 {
+#						references.fieldName = media
+#					}
+#				}
 			}
 			110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			110 {
