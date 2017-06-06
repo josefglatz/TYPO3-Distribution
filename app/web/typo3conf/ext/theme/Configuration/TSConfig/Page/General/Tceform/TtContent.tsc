@@ -59,9 +59,21 @@ TCEFORM.tt_content {
 		removeItems = 1,2,9,10
 	}
 
+	// Only keep default value for frame_class (this field was introduced in TYPO3 8 LTS)
+	frame_class {
+		keepItems = default
+	}
+
 	// not used anymore in FSC -> but anyway remove items
 	section_frame {
 		removeItems = 1,5,6,10,11,12,20,21
+	}
+	// disable tt_content fields which are re-introduced in TYPO3 8 LTS for backwards compatibility (e.g. after upgrade from old TYPO3 version)
+	space_before_class {
+		disabled = 1
+	}
+	space_after_class {
+		disabled = 1
 	}
 
 	// add new menu_types
