@@ -56,7 +56,11 @@ TCEFORM.tt_content {
 
 	imageorient {
 		// remove above left/right, after left/right
-		removeItems = 1,2,9,10
+		removeItems :=  addToList(1,2,9,10)
+		// remove In text, right/left
+		removeItems := addToList(17,18)
+		// remove No wrap: Beside Text right and left
+		removeItems := addToList(25,26)
 	}
 
 	// Only keep default value for frame_class (this field was introduced in TYPO3 8 LTS)
@@ -68,6 +72,7 @@ TCEFORM.tt_content {
 	section_frame {
 		removeItems = 1,5,6,10,11,12,20,21
 	}
+
 	// disable tt_content fields which are re-introduced in TYPO3 8 LTS for backwards compatibility (e.g. after upgrade from old TYPO3 version)
 	space_before_class {
 		disabled = 1
