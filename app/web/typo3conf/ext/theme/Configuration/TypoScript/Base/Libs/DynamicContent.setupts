@@ -86,7 +86,7 @@ lib.dynamicContent {
 			includeRecordsWithoutDefaultTranslation = 1
 			orderBy = sorting
 			where = {#colPos}={register:colPos}
-			where = colPos={register:colPos}
+#			where = colPos={register:colPos}
 			where.insertData = 1
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid
@@ -104,5 +104,5 @@ lib.dynamicContent {
 lib.dynamicContentSlide < lib.dynamicContent
 lib.dynamicContentSlide.20.slide = -1
 
-lib.dynamicContentMax1 < lib.dynamicContent
-lib.dynamicContentMax1.20.select.max = 1
+lib.dynamicContentFirst < lib.dynamicContent
+lib.dynamicContentFirst.20.select.max = 1
