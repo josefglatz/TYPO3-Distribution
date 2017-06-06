@@ -3,6 +3,7 @@ TCAdefaults {
 		header_layout = 2
 		imageborder = 0
 		imagecols = 1
+		// deside if a CE should automatically added the section menus
 		sectionIndex = 0
 	}
 }
