@@ -17,7 +17,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
  *
  * = Examples
  * <code title="basic inline svg">
- *  <theme:svg source="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.svg', extensionName: 'foo')}" />
+ *  <theme:render.inlineSvg source="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.svg', extensionName: 'foo')}" />
  * </code>
  * <output>
  * <svg><contentOfTheSvgFile</svg>
