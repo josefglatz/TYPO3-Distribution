@@ -32,38 +32,50 @@ call_user_func(
 
 
         // Add custom page tree icons
-        // @TODO: Streamline adding new icons with simple foreach
-
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.folder.storage',
-            1 => 'records',
-            2 => 'apps-pagetree-folder-contains-records',
+        $customPageTreeIcons = [
+            [
+                'storage',  // last string of LLL
+                'records',  // last part of typeicon_classes item
+                'apps-pagetree-folder-contains-records' // icon-identifier
+            ],
+            [
+                'pages',
+                'pages',
+                'apps-pagetree-folder-contains-pages',
+            ],
+            [
+                'impress',
+                'impress',
+                'apps-pagetree-page-contains-impress',
+            ],
+            [
+                'attention',
+                'attention',
+                'apps-pagetree-page-contains-attention',
+            ],
+            [
+                'search',
+                'search',
+                'apps-pagetree-page-contains-search',
+            ],
+            [
+                'news',
+                'newsplugins',
+                'apps-pagetree-page-contains-newsplugins',
+            ],
+            [
+                'drafts',
+                'drafts',
+                'apps-pagetree-folder-contains-drafts',
+            ],
         ];
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.folder.pages',
-            1 => 'pages',
-            2 => 'apps-pagetree-folder-contains-pages',
-        ];
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.impress',
-            1 => 'impress',
-            2 => 'apps-pagetree-page-contains-impress',
-        ];
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.attention',
-            1 => 'attention',
-            2 => 'apps-pagetree-page-contains-attention',
-        ];
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.search',
-            1 => 'search',
-            2 => 'apps-pagetree-page-contains-search',
-        ];
-        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-            0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.page.news',
-            1 => 'newsplugins',
-            2 => 'apps-pagetree-page-contains-newsplugins',
-        ];
+        foreach ($customPageTreeIcons as $customPageTreeIcon) {
+            $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+                0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.' . $customPageTreeIcon[0] . '',
+                1 => '' . $customPageTreeIcon[1] . '',
+                2 => '' . $customPageTreeIcon[2] . '',
+            ];
+        }
 
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
             $GLOBALS['TCA']['pages'],
@@ -73,9 +85,10 @@ call_user_func(
                         'contains-impress' => 'apps-pagetree-page-contains-impress',
                         'contains-attention' => 'apps-pagetree-page-contains-attention',
                         'contains-search' => 'apps-pagetree-page-contains-search',
-                        'contains-newsplugins' => 'apps-pagetree-page-contains-news',
+                        'contains-newsplugins' => 'apps-pagetree-page-contains-newsplugins',
                         'contains-records' => 'apps-pagetree-folder-contains-records',
                         'contains-pages' => 'apps-pagetree-folder-contains-pages',
+                        'contains-drafts' => 'apps-pagetree-folder-contains-drafts',
                     ],
                 ]
             ]

@@ -37,23 +37,26 @@
 			<trans-unit id="icon.pagetree.opendigital">
 				<source><![CDATA[Test Icon]]></source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.folder.storage">
+			<trans-unit id="icon.pagetree.storage">
 				<source>Folder with Storage</source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.folder.pages">
+			<trans-unit id="icon.pagetree.pages">
 				<source>Folder with Pages</source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.page.impress">
+			<trans-unit id="icon.pagetree.impress">
 				<source>Page with paragraph</source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.page.attention">
+			<trans-unit id="icon.pagetree.attention">
 				<source>Page with exclamation sign</source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.page.search">
+			<trans-unit id="icon.pagetree.search">
 				<source>Page with loupe/search icon</source>
 			</trans-unit>
-			<trans-unit id="icon.pagetree.page.news">
+			<trans-unit id="icon.pagetree.news">
 				<source>Page with news plugins</source>
+			</trans-unit>
+			<trans-unit id="icon.pagetree.drafts">
+				<source>Folder/Page with Drafts</source>
 			</trans-unit>
 
 			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
