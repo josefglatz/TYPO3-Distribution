@@ -45,6 +45,7 @@ page {
 	meta {
 		viewport = width=device-width, initial-scale=1, shrink-to-fit=no
 		SKYPE_TOOLBAR = SKYPE_TOOLBAR_PARSER_COMPATIBLE
+		format-detection = telephone=no
 
 		description = TEXT
 		description {
