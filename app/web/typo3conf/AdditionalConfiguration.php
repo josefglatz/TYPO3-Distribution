@@ -194,7 +194,7 @@ $customChanges = [
         'sitename' => htmlspecialchars($site['sitenameBase']) . ' [' . $context . ']',
         'fluid' => [
             'namespaces' => [
-                'thm' => [
+                'theme' => [
                     'JosefGlatz\\Theme\\ViewHelpers',
 //                    'Sup7even\\ThemeOverride\\ViewHelpers',
                 ],
