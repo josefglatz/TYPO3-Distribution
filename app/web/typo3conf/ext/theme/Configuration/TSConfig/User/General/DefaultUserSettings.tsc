@@ -11,6 +11,12 @@ setup.override {
 
 options {
 	enableBookmarks = 1
+	bookmarkGroups {
+		11 = Adminstration
+		12 = News
+		13 = Blog
+		14 = Forms
+	}
 	createFoldersInEB = 1
 	file_list {
 		enableDisplayBigControlPanel = activated
