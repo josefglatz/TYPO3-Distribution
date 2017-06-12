@@ -14,6 +14,8 @@ call_user_func(
             'Page/Specific/ClearCachePages' => 'ClearCacheCmd->pages',
             'Page/Specific/ClearCacheRegistrationSpecific' => 'ClearCacheCmd->cacheTag:customregistration,pages',
             'Page/Specific/HideTableTtContent' => 'Hide table TtContent',
+            'Page/Specific/DisableCopyButtons' => 'Disable Backend Copy Buttons',
+            'Page/Specific/DisableTranslateButtons' => 'Disable Backend Translate Buttons',
             'Page/Specific/Extension/News/NewOnlyNews' => 'New: Restrict page(s) to News/SysCategories/SysNote',
             'Page/Specific/Extension/News/ClearCacheNews' => 'ClearCacheCmd->cacheTag:tx_news',
             'Page/Specific/Extension/News/NewsLimitCategories' => 'News->Limit Categories',
