@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
@@ -33,7 +34,7 @@ $customChanges = [
         'displayErrors' => true,
         'enableDeprecationLog' => 'file',
 //        'exceptionalErrors' => 28674,
-        'sqlDebug' => 1,
+        'sqlDebug' => 1,    // 0 = no debug; 1 = only failed queries; 2 = all queries
         'systemLogLevel' => 0,
         'systemLog' => '',
     ],
