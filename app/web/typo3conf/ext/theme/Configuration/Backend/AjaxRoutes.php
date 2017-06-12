@@ -8,5 +8,7 @@ return [
     'theme_realurl_deleteautoconf' => [
         'path' => '/theme/realurl/deleteautoconf',
         'target' => \JosefGlatz\Theme\Hooks\Frontend\Realurl\ClearCache::class . '::deleteAutoConfigurationFile',
+        'parameters' => [
+        ]
     ],
 ];
