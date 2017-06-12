@@ -1,4 +1,4 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/constants.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/constants.typoscript">
 
 site {
 

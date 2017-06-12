@@ -29,3 +29,4 @@
 *.setupts text eol=lf
 *.constantsts text eol=lf
 *.tsc text eol=lf
+*.typoscript text eol=lf

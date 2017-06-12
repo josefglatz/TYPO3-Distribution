@@ -1,1 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/setup.txt">

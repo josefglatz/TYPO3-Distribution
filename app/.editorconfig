@@ -23,7 +23,7 @@ indent_style = tab
 indent_size = 4
 
 # TypoScript
-[{*.ts,*.setupts,*.constantsts,*.tsc,*.ts1}]
+[{*.ts,*.setupts,*.constantsts,*.tsc,*.ts1,*.typoscript}]
 indent_style = tab
 indent_size = 4
 
