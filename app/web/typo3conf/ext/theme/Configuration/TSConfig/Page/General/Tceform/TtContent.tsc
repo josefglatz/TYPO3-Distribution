@@ -8,6 +8,8 @@ TCEFORM.tt_content {
 	layout {
 		// disable default layouts
 		removeItems = 1,2,3
+		// First possible option is selected if current value isn't allowed
+		disableNoMatchingValueElement = 1
 
 		altLabels {
 			1 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.1
