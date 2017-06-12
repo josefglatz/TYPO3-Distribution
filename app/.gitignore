@@ -28,7 +28,6 @@
 /typo3log.log
 
 /web/fileadmin/**/*
-/web/fileadmin/_processed_/**/*
 /web/uploads/**/*
 
 
