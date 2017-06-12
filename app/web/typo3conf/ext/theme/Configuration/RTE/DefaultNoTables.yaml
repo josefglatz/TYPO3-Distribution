@@ -1,0 +1,32 @@
+############################################################
+### Load default processing options / Import other files ###
+############################################################
+imports:
+    # Depend on theme_default preset
+    - { resource: "EXT:theme/Configuration/RTE/Default.yaml" }
+
+
+######################################################################################
+### Add configuration for the editor                                               ###
+### For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config ###
+######################################################################################
+editor:
+  config:
+
+    # Plugins that must not be loaded
+    removePlugins:
+      - quicktable
+      - table
+
+
+    # Toolbar button names that must not be rendered
+    removeButtons:
+      - Table
+
+
+############################
+### Set the proc options ###
+############################
+processing:
+  denyTags:
+  - table

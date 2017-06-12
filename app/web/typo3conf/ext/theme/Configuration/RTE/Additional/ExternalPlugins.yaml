@@ -1,0 +1,13 @@
+editor:
+  externalPlugins:
+    # Register wordcount plugin for ckeditor check details and all config options under https://github.com/w8tcha/CKEditor-wordcount-Plugin
+    wordcount:
+      resource: "EXT:theme/Resources/Public/RTE/Plugins/wordcount/plugin.js"
+      showParagraphs: true
+      showWordCount: true
+      showCharCount: true
+      countSpacesAsChars: false
+      countHTML: false
+      maxWordCount: -1
+      maxCharCount: -1
+      pasteWarningDuration: 0

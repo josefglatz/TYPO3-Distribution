@@ -3,6 +3,18 @@
 		{
 			"type": "composer",
 			"url": "https://composer.typo3.org/"
+		},
+		{
+			"type":"package",
+			"package": {
+				"name": "w8tcha/CKEditor-WordCount-Plugin",
+				"version":"master",
+				"source": {
+					"url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin",
+					"type": "git",
+					"reference":"master"
+				}
+			}
 		}
 	],
 	"name": "jousch/typo3-distribution",
@@ -48,6 +60,8 @@
 	},
 	"require": {
 		"php": "^7",
+		"slowprog/composer-copy-file": "~0.2",
+		"w8tcha/CKEditor-WordCount-Plugin": "dev-master#e70499b0873f745098b1a569efd6fb31103b9d51",
 		"typo3/cms": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-about": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-belog": "dev-TYPO3_8-7 as 8.7.1",
@@ -88,6 +102,7 @@
 		"t3monitor/t3monitoring_client": "dev-master"
 	},
 	"require-dev": {
+		"ckeditor/ckeditor": "4.6.2",
 		"macopedia/mess_detector": "dev-master",
 		"maxserv/yaml_configuration": "dev-master",
 		"pyrech/composer-changelogs": "dev-master",
@@ -116,6 +131,9 @@
 		"helhum/typo3-console": {
 			"install-binary": false,
 			"install-extension-dummy": false
+		},
+		"copy-file": {
+			"vendor/w8tcha/CKEditor-WordCount-Plugin/wordcount/": "web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/wordcount/"
 		}
 	},
 	"autoload": {
@@ -165,6 +183,12 @@
 		"post-autoload-dump": [
 			"@package-states",
 			"@folder-structure"
+		],
+		"post-install-cmd": [
+			"SlowProg\\CopyFile\\ScriptHandler::copy"
+		],
+		"post-update-cmd": [
+			"SlowProg\\CopyFile\\ScriptHandler::copy"
 		]
 	}
 }

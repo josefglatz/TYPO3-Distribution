@@ -49,3 +49,5 @@ node_modules
 !/web/typo3conf/ext/theme/Resources/Public/JavaScript/SourceMaps/.gitkeep
 /web/typo3conf/ext/theme/Resources/Public/SourceMaps/
 !/web/typo3conf/ext/theme/Resources/Public/SourceMaps/.gitkeep
+/web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/
+!/web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/.gitkeep

@@ -45,6 +45,7 @@ $EM_CONF[$_EXTKEY] = [
                     'piwik' => '',
                     'powermail' => '',
                     'realurl' => '',
+                    'rte_ckeditor' => '',
                     'rx_shariff' => '',
                     'scheduler' => '',
                     'seo_basics' => '',

@@ -29,14 +29,18 @@ call_user_func(
 //            = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
 
         // Register own RTE (ckeditor) presets
-        $rtePresets = [
-            'default' => 'Default'
+        $rtePresets = [                             // Final preset identifier:
+            'default' => 'Default',                 //  'theme_default'
+            'defaultNoTables' => 'DefaultNoTables', //  'theme_defaultNoTables'
+            'minimal' => 'Minimal',                 //  'theme_minimal'
         ];
-        foreach ($rtePresets as $fileIdentifier => $fileName) {
-            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $fileIdentifier . '']
+        foreach ($rtePresets as $identifier => $fileName) {
+            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $identifier . '']
                 = 'EXT:' . $extKey . '/Configuration/RTE/' . $fileName . '.yaml';
         }
 
+
+        // Only backend relevant stuff
         if (TYPO3_MODE === 'BE') {
 
             // Add custom cache action item: delete realurl configuration file
