@@ -12,6 +12,8 @@ setup.override {
 options {
 	enableBookmarks = 1
 	bookmarkGroups {
+		// Every custom bookmark group will be available also globally
+		// Override the default bookmark group by just overriding 1 to 4
 		11 = Adminstration
 		12 = News
 		13 = Blog
