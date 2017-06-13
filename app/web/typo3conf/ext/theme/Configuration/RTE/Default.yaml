@@ -95,6 +95,7 @@ editor:
     forcePasteAsPlainText: false
     clipboard_defaultContentType: "text"
     undoStackSize: 20
+    pasteFromWordRemoveFontStyles: true
 
     # Editor sizing and misc settings
     width: "auto"
