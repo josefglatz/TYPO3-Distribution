@@ -51,7 +51,7 @@ editor:
       - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
       - { name: editing, groups: [ spellchecker ] }
       - { name: insert, groups: [ insert ] }
-      - { name: tools, groups: [ quicktable, specialchar, find ] }
+      - { name: tools, groups: [ quicktable, specialchar,insertcharacters, find ] }
       - { name: others}
       - { name: document, groups: [ mode ] }
 
