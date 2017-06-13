@@ -13,7 +13,7 @@ editor:
       pasteWarningDuration: 0
     # Register own nbsp plugin for ckeditor for adding ctrl+space support to insert a non-breaking-space
     nbsp:
-      resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/nbsp/plugin.js"
+      resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/nbsp/"
     # Register own nbsp plugin for ckeditor for adding ctrl+space support to insert a non-breaking-space
     softhyphen:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/softhyphen/"
