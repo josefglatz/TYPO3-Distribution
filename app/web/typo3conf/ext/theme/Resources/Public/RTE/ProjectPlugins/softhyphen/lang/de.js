@@ -1,3 +1,3 @@
 CKEDITOR.plugins.setLang('softhyphen', 'de', {
-	insertButton : 'Ein bedingtes Trennzeichen einfügen'
+	InsertButton: 'Ein bedingtes Trennzeichen einfügen'
 });

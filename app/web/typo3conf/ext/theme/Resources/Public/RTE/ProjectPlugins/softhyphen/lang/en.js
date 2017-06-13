@@ -1,3 +1,3 @@
-CKEDITOR.plugins.setLang('softhyphen', 'de', {
-	insertButton : 'Insert a soft hyphen'
+CKEDITOR.plugins.setLang('softhyphen', 'en', {
+	InsertButton: 'Insert Soft Hyphen (Conditional word-break)'
 });
