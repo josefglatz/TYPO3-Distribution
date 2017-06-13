@@ -15,6 +15,18 @@
 					"reference":"master"
 				}
 			}
+		},
+		{
+			"type":"package",
+			"package": {
+				"name": "ckeditor/ckeditor-dev",
+				"version":"4.7.0",
+				"source": {
+					"url": "https://github.com/ckeditor/ckeditor-dev",
+					"type": "git",
+					"reference":"release/4.7.x"
+				}
+			}
 		}
 	],
 	"name": "jousch/typo3-distribution",
@@ -102,7 +114,7 @@
 		"t3monitor/t3monitoring_client": "dev-master"
 	},
 	"require-dev": {
-		"ckeditor/ckeditor": "4.6.2",
+		"ckeditor/ckeditor-dev": "4.7.0",
 		"macopedia/mess_detector": "dev-master",
 		"maxserv/yaml_configuration": "dev-master",
 		"pyrech/composer-changelogs": "dev-master",

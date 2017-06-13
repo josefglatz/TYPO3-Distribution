@@ -106,6 +106,7 @@ editor:
     resize_maxHeight: 1200
 #    uiColor: "#F8F8F8"
     defaultLanguage: "de"
+    enableContextMenu: true
     browserContextMenuOnCtrl: true
     enterMode: 1
     shiftEnterMode: 2
