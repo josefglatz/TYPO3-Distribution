@@ -167,6 +167,10 @@ $customChanges = [
         'loginSecurityLevel' => 'rsa',
         'versionNumberInFilename' => 'querystring',
         'noPHPscriptInclude' => true,
+        'cHashExcludedParameters' => $GLOBALS['TYPO3_CONF_VARS']['FE']['cHashExcludedParameters'] . '', // see app/vendor/typo3/cms/typo3/sysext/core/Configuration/DefaultConfiguration.php:995ff for default parameters
+//        'cHashOnlyForParameters' => '',
+//        'cHashRequiredParameters' => '',
+//        'cHashExcludedParametersIfEmpty' => '',
     ],
     'GFX' => [
         'processor_allowUpscaling' => false,
