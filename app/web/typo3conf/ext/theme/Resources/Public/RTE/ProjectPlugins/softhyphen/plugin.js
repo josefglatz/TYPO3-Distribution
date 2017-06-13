@@ -1,7 +1,6 @@
 /**
  * soft hyphen character for CKEditor
  */
-
 CKEDITOR.plugins.add("softhyphen", {
 	lang: "de,en", // %REMOVE_LINE_CORE%
 	// lang: "ar,ca,da,de,el,en,es,eu,fa,fi,fr,he,hr,hu,it,ja,nl,no,pl,pt,pt-br,ru,sk,sv,tr,zh-cn", // %REMOVE_LINE_CORE% // @TODO: Add missing translations

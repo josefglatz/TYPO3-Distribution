@@ -1,7 +1,6 @@
 /**
  * Insert non-breaking space for CKEditor
  */
-
 CKEDITOR.plugins.add('nbsp', {
 	init: function (editor) {
 		// create command "insertNbsp" which inserts the html tag `&nbsp;`
