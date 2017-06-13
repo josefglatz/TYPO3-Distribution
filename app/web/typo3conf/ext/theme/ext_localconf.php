@@ -24,6 +24,10 @@ call_user_func(
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
         }
 
+        // Custom translations https://docs.typo3.org/typo3cms/CoreApiReference/Internationalization/Translation/Index.html?highlight=locallangxmloverride#custom-translations
+//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:cms/locallang_tca.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/custom.xlf';
+//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:news/Resources/Private/Language/locallang_modadministration.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/Overrides/de.locallang_modadministration.xlf';
+
         // Hook for changing output before showing it
 //        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
 //            = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
