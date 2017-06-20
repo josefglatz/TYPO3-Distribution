@@ -79,6 +79,7 @@ editor:
     # Plugins that must not be loaded
     removePlugins:
       - image
+#      - elementspath
 
     # Toolbar button names that must not be rendered
     removeButtons:
