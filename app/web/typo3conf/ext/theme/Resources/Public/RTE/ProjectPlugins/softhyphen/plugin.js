@@ -2,8 +2,10 @@
  * soft hyphen character for CKEditor
  */
 CKEDITOR.plugins.add("softhyphen", {
-	lang: "de,en", // %REMOVE_LINE_CORE%
+	lang: "da,de,en,he,nl,ru",
 	// lang: "ar,ca,da,de,el,en,es,eu,fa,fi,fr,he,hr,hu,it,ja,nl,no,pl,pt,pt-br,ru,sk,sv,tr,zh-cn", // %REMOVE_LINE_CORE% // @TODO: Add missing translations
+	icons: 'softhyphen',
+	hidpi: true,
 	init: function (editor) {
 
 		// Default Config
@@ -12,7 +14,7 @@ CKEDITOR.plugins.add("softhyphen", {
 		};
 		var config = CKEDITOR.tools.extend(defaultConfig, editor.config.softhyphen || {}, true);
 
-		// create command "insertNbsp" which inserts the html tag `&nbsp;`
+		// create command "insertSoftHyphen" which inserts the invisible html tag `&shy;`
 		editor.addCommand('insertSoftHyphen', {
 			exec: function (editor) {
 				editor.insertHtml('&shy;');
@@ -28,7 +30,8 @@ CKEDITOR.plugins.add("softhyphen", {
 		editor.ui.addButton && editor.ui.addButton( 'Soft Hyphen', {
 			label: editor.lang.softhyphen.InsertButton,
 			command: 'insertSoftHyphen',
-			toolbar: 'insertcharacters'
+			toolbar: 'insertcharacters',
+			icon: 'softhyphen'
 		} );
 	}
 } );
