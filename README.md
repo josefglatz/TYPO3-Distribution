@@ -22,11 +22,15 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate 
 1. `git clone --depth=1 https://github.com/jousch/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
 1. `cd YourProject` Navigate to newly created project dir
-1. `rsync -av --progress --exclude '/README.md .git' ../YourProjectTemp/ ./` Copy necessary files to prior created project
+1. `rsync -av --progress --exclude '/README.md .git /.github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
 1. `rm -rf ../YourProjectTemp` Remove the temporary folder 
 1. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
-1. `docker-compose.yml` Set your active containers (and proper links) by un-/commenting lines
-1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one fromm the values mentioned in the comments above within the same file)
+1. Edit your `docker-compose.yml` to your needs. E.g. set your active containers (and proper links) by un-/commenting lines
+1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one from the values mentioned in the comments above within the same file)
+1. Edit environment variables in `etc/environment.development.yml` `etc/environment.yml`.
+1. Set the correct path to the web document root (based on project requirements) in `etc/environment.yml` (default: `WEB_DOCUMENT_ROOT=/app/web/`).
+1. Set the correct path to the TYPO3 CLI executable (based on your TYPO3 version) in `etc/environment.yml` (e.g. `CLI_SCRIPT=php /app/web/typo3/sysext/core/bin/typo3`).
+1. Adopt your php.ini settings for your project within `etc/php/development.ini`
 1. To start your environment take care that no other TYPO3-docker-boilerplate is running on your development environment with `docker ps`. If some other of your projects is running navigate to the folder and stop them by running `docker-compose stop`.
 1. Start your machines (basically webserver + mysql server) by running `docker-compose up -d` (make sure you're still in the same folder `YourProject`)
 1. Open `yourproject.vm/` in the browser - it should show the php info if all is running correct.
