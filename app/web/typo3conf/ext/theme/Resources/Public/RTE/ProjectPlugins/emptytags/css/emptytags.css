@@ -1,0 +1,37 @@
+/**
+	@TODO: Convert to SCSS and add build pipeline configuration
+ */
+
+/********
+Toolbar
+ */
+.cke_emptytags {
+	display: block;
+	float: right;
+	margin-top: -2px;
+	margin-right: 3px;
+	/*color: black;*/
+}
+.cke_emptytags .cke_path_item:after {
+	/*content: ","*/
+}
+.cke_emptytags .cke_path_item .badge {
+	padding: 1px 5px;
+	background-color: #737373;
+	font-size: 11px;
+	color: white;
+}
+.cke_wordcount + .cke_emptytags,
+.cke_emptytags + .cke_wordcount {
+
+	margin-right: 12px;
+}
+.cke_wordcount + .cke_emptytags .cke_path_item:last-child:after,
+.cke_emptytags + .cke_wordcount:after {
+	content: "//";
+	margin-left: 12px;
+	zoom: 90%;
+	opacity: 0.4;
+}
+
+
