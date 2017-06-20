@@ -2,8 +2,7 @@
  * soft hyphen character for CKEditor
  */
 CKEDITOR.plugins.add("softhyphen", {
-	lang: "da,de,en,he,nl,ru",
-	// lang: "ar,ca,da,de,el,en,es,eu,fa,fi,fr,he,hr,hu,it,ja,nl,no,pl,pt,pt-br,ru,sk,sv,tr,zh-cn", // %REMOVE_LINE_CORE% // @TODO: Add missing translations
+	lang: "da,de,en,he,nl,ru", // lang: "ar,ca,da,de,el,en,es,eu,fa,fi,fr,he,hr,hu,it,ja,nl,no,pl,pt,pt-br,ru,sk,sv,tr,zh-cn", // @TODO: Add more translations
 	icons: 'softhyphen',
 	hidpi: true,
 	init: function (editor) {
@@ -22,11 +21,11 @@ CKEDITOR.plugins.add("softhyphen", {
 		});
 
 		if (config.enableShortcut) {
-			// enable shortcut ctrl+dash to insert a non-breaking space in CKEditor
+			// enable shortcut ctrl+dash to insert a soft hyphen
 			editor.setKeystroke(CKEDITOR.CTRL + 189 /* char 189 = dash */, 'insertSoftHyphen');
 		}
 
-		// add additional button to insert soft hyphen via CKEditor toolbar
+		// add additional button to insert a soft hyphen via CKEditor toolbar
 		editor.ui.addButton && editor.ui.addButton( 'Soft Hyphen', {
 			label: editor.lang.softhyphen.InsertButton,
 			command: 'insertSoftHyphen',

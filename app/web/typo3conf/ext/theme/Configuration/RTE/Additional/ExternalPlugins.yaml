@@ -14,7 +14,7 @@ editor:
     # Register own nbsp plugin for ckeditor for adding ctrl+space support to insert a non-breaking-space
     nbsp:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/nbsp/"
-    # Register own nbsp plugin for ckeditor for adding ctrl+space support to insert a non-breaking-space
+    # Register own softhyphen plugin for ckeditor for adding ctrl+dash support to insert a conditional word break
     softhyphen:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/softhyphen/"
       enableShortcut: true
