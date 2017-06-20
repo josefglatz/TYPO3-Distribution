@@ -9,16 +9,36 @@ $site = [
     'sitenameBase' => 'TYPO3 Distribution',
     'defaultMailFromAddress' => 'no-reply@example.at',
     'defaultMailFromName' => 'TYPO3 Distribution',
-
+    'backendLogo' => 'BackendLogo',
 ];
 
 // get complete context
 $context = GeneralUtility::getApplicationContext()->__toString();
 
-// check for "Production/Live/Server123" etc
 if ($context) {
+    // check for "Production/Live/Server123" etc
     list($contextMainPart, $contextSubPart1, $contextSubPart2) = explode('/', $context);
+
+
+    // set context specific TYPO3 backend logo
+    if (TYPO3_MODE === 'BE') {
+        $backendLogoFilePathAndFilePrefix = realpath(__DIR__) . '/ext/theme/Resources/Public/Images/Backend/' . $site['backendLogo'] . '-';
+        $backendLogoFileSuffix = '.svg';
+        $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . $backendLogoFileSuffix;
+        if (is_file($backendLogo)) {
+            $site['backendLogo'] .= '-' . $contextMainPart;
+        }
+        $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . '-' . $contextSubPart1 . $backendLogoFileSuffix;
+        if (is_file($backendLogo)) {
+            $site['backendLogo'] .= '-' . $contextMainPart . '-' . $contextSubPart1;
+        }
+        $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . '-' . $contextSubPart1 . '-' . $contextSubPart2 . $backendLogoFileSuffix;
+        if (is_file($backendLogo)) {
+            $site['backendLogo'] .= '-' . $contextMainPart . '-' . $contextSubPart1 . '-' . $contextSubPart2;
+        }
+    }
 }
+
 // project specific configuration
 $customChanges = [
     'BE' => [
@@ -62,7 +82,7 @@ $customChanges = [
                 'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
                 'loginHighlightColor' => '#ff8700',
                 'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
-                'backendLogo' => 'EXT:theme/Resources/Public/Images/Backend/BackendLogo.svg', // custom backend logo should not by higher than 37px
+                'backendLogo' => 'EXT:theme/Resources/Public/Images/Backend/' . $site['backendLogo'] . '.svg', // custom backend logo should not by higher than 37px
                 // @TODO: Backend Logo (Stage, Prod, Dev)
                 'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico',
                 // @TODO: Backend FavIcon (Stage, Prod, Dev)
