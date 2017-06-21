@@ -1,0 +1,13 @@
+##########################################
+### WIP Common language configurations ###
+##########################################
+
+/*
+# Useful links
+- https://typo3worx.eu/2017/04/language-handling-in-typo3-backend-configuration/
+- https://typo3worx.eu/2017/06/language-handling-in-typo3-frontend/
+*/
+
+config {
+
+}
