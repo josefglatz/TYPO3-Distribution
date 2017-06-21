@@ -29,6 +29,7 @@ config {
 
 
 	// Language settings
+	//	Keep in mind to set also CKEditor's editor.config.defaultContentLanguage option in `EXT:theme/Configuration/RTE/Default.yaml`
 	locale_all = {$site.l10n.locale_all}
 	language = {$site.l10n.language}
 	sys_language_uid = {$site.l10n.sys_language_uid}
