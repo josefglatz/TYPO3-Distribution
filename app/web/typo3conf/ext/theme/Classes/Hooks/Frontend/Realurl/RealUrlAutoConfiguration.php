@@ -1,18 +1,11 @@
-<?php
-namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
+<?php declare(strict_types=1);
 
 /**
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * This file is part of the "theme" Extension which is part of
+ * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
+
 
 /**
  * RealUrlAutoConfiguration for RealURL extension v2.x
