@@ -5,16 +5,8 @@
 			"url": "https://composer.typo3.org/"
 		},
 		{
-			"type":"package",
-			"package": {
-				"name": "w8tcha/CKEditor-WordCount-Plugin",
-				"version":"master",
-				"source": {
-					"url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin",
-					"type": "git",
-					"reference":"master"
-				}
-			}
+			"type": "vcs",
+			"url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin"
 		},
 		{
 			"type":"package",
