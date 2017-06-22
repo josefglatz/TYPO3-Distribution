@@ -130,6 +130,7 @@ $customChanges = [
             'rsaauth' => serialize([
                 'temporaryDirectory' => '',
             ]),
+            // @TODO: Remove rtehtmlarea extConf when TYPO3 9LTS is released
             'rtehtmlarea' => serialize([
                 'defaultConfiguration' => 'Minimal',
                 'enableInlineElements' => 0,
