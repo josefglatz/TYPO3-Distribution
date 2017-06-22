@@ -1,6 +1,11 @@
 # General ignores
 .DS_Store
-.idea
+/.idea/**/*
+!/.idea/encodings.xml
+!/.idea/php.xml
+!/.idea/vcs.xml
+!/.idea/modules.xml
+!/.idea/*.iml
 nbproject
 *.project
 *.swp
