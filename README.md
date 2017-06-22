@@ -38,12 +38,14 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `cd app` switch to the app folder
 1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
 1. `cd ./Build && ./ChangeVendor.sh Sup7even` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `./ChangeHeaderComment.php by Sup7even Digital` Replace the comment within the head of the website.
+1. `./ChangeHeaderComment.php by Sup7even Digital - www.supseven.at` Replace the comment within the head of the website.
+1. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
-1. `docker exec -it $$(docker-compose ps -q app) cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no && ./typo3cms install:generatepackagestates && ./typo3cms install:extensionsetupifpossible` It's time to install TYPO3
+1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
 1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
-1. `ct docker:exec /app/Build/InstallDefaultDatabaseRecords.sh` Import default database records via TYPO3 console
+1. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
+1. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
 1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
 1. Add/remove backend users and set strong passwords for all real backend users.
 1. Have fun developing another great TYPO3 website!
