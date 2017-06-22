@@ -130,16 +130,6 @@ $customChanges = [
             'rsaauth' => serialize([
                 'temporaryDirectory' => '',
             ]),
-            // @TODO: Remove rtehtmlarea extConf when TYPO3 9LTS is released
-            'rtehtmlarea' => serialize([
-                'defaultConfiguration' => 'Minimal',
-                'enableInlineElements' => 0,
-                'allowStyleAttribute' => 0,
-                'enableAccessibilityIcons' => 0,
-                'forceCommandMode' => 0,
-                'noSpellCheckLanguages' => 'ja,km,ko,lo,th,zh,b5,gb',
-                'AspellDirectory' => '/usr/bin/aspell',
-            ]),
             'rx_shariff' => serialize([
                 'services' => 'GooglePlus, Facebook, LinkedIn, Reddit, StumbleUpon, Flattr, Pinterest, Xing, AddThis',
                 'allowedDomains' => 'SERVER_NAME',
