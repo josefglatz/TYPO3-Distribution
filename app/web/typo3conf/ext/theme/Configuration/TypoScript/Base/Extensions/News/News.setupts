@@ -1,3 +1,4 @@
+[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')]
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:news/Configuration/TypoScript/Styles/Twb/setup.txt">
 
@@ -84,7 +85,7 @@ plugin.tx_news {
 }
 
 
-[globalVar = GP:tx_news_pi1|news > 0]
+[globalVar = GP:tx_news_pi1|news > 0] && [userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')]
 	config.defaultGetVars {
 		tx_news_pi1 {
 			controller = News

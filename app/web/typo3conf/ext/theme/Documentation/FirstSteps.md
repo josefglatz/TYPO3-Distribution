@@ -1,7 +1,7 @@
 # First steps WORK IN PROGRESS!!!
 
 - delete non required extensions/packages from app/composer.json
-- delete extConf settings in AdditinonalConfiguration of extensions which you deleted in the previous step
+- delete extConf settings in AdditionalConfiguration of extensions which you deleted in the previous step
 - composer install
 - Set correct sitename (`~AdditionalConfiguration.php::8`)
 - Set default email (`~AdditionalConfiguration.php::9`)
