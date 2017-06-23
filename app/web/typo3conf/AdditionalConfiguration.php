@@ -72,6 +72,21 @@ $customChanges = [
                 'specialChar' => true,
                 'patterns' => 4, // Fitting patterns: How many patterns from above must fit to make the password secure
             ]),
+            'extractor' => serialize([
+                'enable_tika' => 0,
+                'enable_tools_exiftool' => 0,
+                'enable_tools_pdfinfo' => 0,
+                'enable_php' => 1,
+                'auto_extract' => 0,
+                'tika_mode' => 'jar',
+                'tika_jar_path' => '',
+                'tika_server_host' => '',
+                'tika_server_port' => 9998,
+                'tools_exiftool' => '',
+                'tools_pdfinfo' => '',
+                'mapping_base_directory' => 'EXT:extractor/Configuration/Services/',
+                'mapping_configuration' => ''
+            ]),
             't3monitoring_client' => serialize([
                 'secret' => 'Provide some secret password',
                 'allowedIps' => '2a03:2a00:1100:2::ac10:29bc,172.17.0.1,188.94.251.75',
