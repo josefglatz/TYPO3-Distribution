@@ -43,6 +43,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
 1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
 1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
+1. Clear git history by cd'ing to project root folder and running `rm -rf .git` 
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
 1. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
 1. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
