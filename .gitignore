@@ -14,7 +14,10 @@ nbproject
 .vagrant
 *.t3x
 *.t3d
-*.zip
+/*.zip
+/*.tgz
+/*.tar.gz
+/*.sql
 *.bak
 .~lock.*
 /backup/*
