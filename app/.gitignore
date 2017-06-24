@@ -28,6 +28,10 @@
 
 /typo3log.log
 
+/web/typo3conf/ext/*.zip
+/web/typo3conf/ext/*.tgz
+/web/typo3conf/ext/*.tar.gz
+
 /web/fileadmin/**/*
 /web/uploads/**/*
 
