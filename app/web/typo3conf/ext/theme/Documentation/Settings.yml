@@ -1,0 +1,24 @@
+# This is the project specific Settings.yml file.
+# Place Sphinx specific build information here.
+# Settings given here will replace the settings of 'conf.py'.
+
+---
+conf.py:
+  copyright: 2016
+  project: TYPO3 distribution by Josef Glatz
+  version: 1.0
+  release: 8.4.0-dev
+  latex_documents:
+  - - Index
+    - BootstrapPackage.tex
+    - Bootstrap Package
+    - Benjamin Kott
+    - manual
+  latex_elements:
+    papersize: a4paper
+    pointsize: 10pt
+    preamble: \usepackage{typo3}
+  html_theme_options:
+    github_repository: jousch/TYPO3-Distribution
+    github_branch: master
+...
