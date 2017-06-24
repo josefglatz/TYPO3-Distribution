@@ -25,6 +25,7 @@
 /sgc
 
 .php_cs.cache
+node_modules
 
 /typo3log.log
 
@@ -36,12 +37,10 @@
 /web/uploads/**/*
 
 
-# TYPO3 specific ignores: ignore all except project specific extensions
+# Initially ignore all local TYPO3 extensions
 /web/typo3conf/ext/*
-!/web/typo3conf/ext/theme
-
-
-node_modules
+# Ignore all ext's except project specific (or modified (you bad boy!)) extensions
+!/web/typo3conf/ext/theme/
 
 /web/typo3conf/ext/theme/Resources/Public/JavaScript/Dist/**/*
 !/web/typo3conf/ext/theme/Resources/Public/JavaScript/Dist/.gitkeep
