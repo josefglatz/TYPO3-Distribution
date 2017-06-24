@@ -18,4 +18,5 @@ nbproject
 *.bak
 .~lock.*
 /backup/*
+!/backup/.gitkeep
 /docker-compose.yml
