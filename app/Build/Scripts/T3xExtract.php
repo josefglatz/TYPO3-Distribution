@@ -606,7 +606,7 @@ if( $EXTRACT === "true" ) {
             }
         }
     }
-    consoleWriteLine( "Done." );
+    consoleWriteLine( "Done. Extracted to '" . $OUTPUTDIR . "'." );
 
     $_emConfFilename =  $OUTPUTDIR . "/ext_emconf.php";
     if( !file_exists( $_emConfFilename ) ) {
