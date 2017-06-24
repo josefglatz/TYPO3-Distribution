@@ -20,6 +20,6 @@ nbproject
 /*.sql
 *.bak
 .~lock.*
-/backup/*
+/backup/**/*
 !/backup/.gitkeep
 /docker-compose.yml
