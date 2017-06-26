@@ -173,7 +173,7 @@ page {
 
 
 
-[applicationContext = Production/Staging, Production/Testing] || [globalVar = LIT:1 = {$site.dummyFrontend}]
+[applicationContext = Production/Staging, Production/Testing] || [applicationContext = /^Production\/Dev/] || [globalVar = LIT:1 = {$site.dummyFrontend}]
 	page {
 
 		meta {
