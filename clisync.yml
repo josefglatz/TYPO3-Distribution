@@ -24,7 +24,7 @@
 
 LOCAL:
     mysql:
-        # docker-compose: mysql
+        docker-compose: mysql
         # docker: mysql-container
         # hostname: localhost
         # port: 3306
@@ -60,13 +60,15 @@ GLOBAL:
     ## RSYNC
     rsync:
         # set target as sub directroy (will be appended to working directory)
-        workdir: ""
+        workdir: "app/"
 
         # Additional options ("-rlptD --delete-after --progress --human-readable" is already set)
-        opts: ""
+        # Use "--iconv=UTF8-MAC,UTF8" if you're local development machine is a macOS system
+        opts: " --iconv=UTF8-MAC,UTF8"
 
         # exclude list/patterns for files and directories
         exclude:
+            # setting GLOBAL/sync/deploy/share specific excludes could actually lead into a misbehaviour within webdevops/clitools
             # Temp files
             - "*~"
             - "._*"
@@ -90,6 +92,19 @@ GLOBAL:
             - ".buildpath"
             - ".project"
 
+            # Additional project specific files
+            - ".DS_Store"
+            - "bower_components"
+            - "*.log"
+            - "/web/typo3temp"
+            - "/web/fileadmin/_processed_"
+            - "ENABLE_INSTALL_TOOL"
+            - "FIRST_INSTALL"
+            - "realurl_autoconf.php"
+            - "AdditionalConfiguration_custom.php"
+            - "AdditionalConfiguration_Development_Docker.php"
+            - "/Build"
+
     ## commands
     command:
         # Start-Tasks: shell command which should be run before run
@@ -107,9 +122,9 @@ GLOBAL:
             #- { type: 'remote', command: 'date' }
 
             # EXAMPLE: create user "dev" with password "dev"
-            - "ct typo3:beuser"
+            #- "ct typo3:beuser"
             # EXAMPLE: append toplevel-domain .vm to all domains
-            - "ct typo3:domain"
+            #- "ct typo3:domain"
 
 
 
@@ -129,27 +144,33 @@ sync:
         rsync:
             # directory list/patterns for synchronization
             directory:
-                - "/fileadmin/"
-                - "/uploads/"
-                - "/typo3conf/l10n/"
+                - "/web/fileadmin/"
+                - "/web/uploads/"
+                - "/web/typo3conf/l10n/"
 
             # directory exclude list/patterns
             exclude:
-                - "/fileadmin/_processed_/**"
-                - "/fileadmin/_temp_/**"
+
+        command:
+            finalize:
+                #- "ct typo3:domain -D mysql --list typo3"
+                #- "ct typo3:domain --list typo3"
+                - "echo 'http://localprojectdomain.vm/ http://localprojectdomain.vm/typo3'"
+                - "echo 'http://localprojectdomain.docker/ http://localprojectdomain.docker/typo3'"
+
 
     ##################
-    # Context "production"
+    # Context "Production/Live"
     ##################
-    production:
+    production-live:
         # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
         ssh:
-            hostname: live-server
+            hostname: serverhostnameProductionLive
 
         # rsync for some directories
         rsync:
             # server and source directory (server host or name - see .ssh/config)
-            path: "live-server:/var/www/website/htdocs"
+            path: "serverhostnameProductionLive:/var/www/website/production/live/htdocs"
 
             #conf:
             #    maxSize: 20M
@@ -158,13 +179,74 @@ sync:
         mysql:
             username: typo3
             password: loremipsum
+            #hostname:
 
             # List of databases for synchronization
             #   examples:
             #       local:foreign
             #       samename
             database:
-                - typo3:website_live
+                - typo3:website_production_live
+
+
+    ##################
+    # Context "Production/Staging"
+    ##################
+    production-staging:
+        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+        ssh:
+            hostname: serverhostnameProductionStaging
+
+        # rsync for some directories
+        rsync:
+            # server and source directory (server host or name - see .ssh/config)
+            path: "serverhostnameProductionStaging:/var/www/website/production/staging/htdocs"
+
+            #conf:
+            #    maxSize: 20M
+            #    minSize: 10kb
+
+        mysql:
+            username: typo3
+            password: loremipsum
+            #hostname:
+
+            # List of databases for synchronization
+            #   examples:
+            #       local:foreign
+            #       samename
+            database:
+                - typo3:website_production_staging
+
+
+    ##################
+    # Context "Production/Dev"
+    ##################
+    production-dev:
+        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+        ssh:
+            hostname: serverhostnameProductionDev
+
+        # rsync for some directories
+        rsync:
+            # server and source directory (server host or name - see .ssh/config)
+            path: "serverhostnameProductionDev:/var/www/website/production/dev/htdocs"
+
+            #conf:
+            #    maxSize: 20M
+            #    minSize: 10kb
+
+        mysql:
+            username: typo3
+            password: loremipsum
+            #hostname:
+
+            # List of databases for synchronization
+            #   examples:
+            #       local:foreign
+            #       samename
+            database:
+                - typo3:website_production_dev
 
 
 
@@ -184,26 +266,103 @@ deploy:
         rsync:
             # directory list/patterns for synchronization
             directory:
-                - "/typo3conf/ext/"
+                - "/"
 
             # directory exclude list/patterns
             exclude:
-                - "/fileadmin/"
-                - "/uploads/"
-                - "/typo3conf/l10n/"
+                # setting GLOBAL/sync/deploy/share specific excludes could actually lead into a misbehaviour within webdevops/clitools
+                - "/web/fileadmin/"
+                - "/web/uploads/"
+                - "/web/typo3conf/l10n/"
 
-   ##################
-   # Context "production"
-   ##################
-    production:
+        command:
+            startup:
+
+            finalize:
+
+
+
+    ##################
+    # Context "Production/Live"
+    ##################
+    production-live:
         # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
         ssh:
-            hostname: live-server
+            hostname: serverhostnameProductionLive
 
         # rsync for some directories
         rsync:
             # server and source directory (server host or name - see .ssh/config)
-            path: "live-server:/var/www/website/htdocs"
+            path: "serverhostnameProductionLive:/var/www/website/production/live/htdocs"
+
+            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
+            exclude:
+
+        command:
+            startup:
+
+            finalize:
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Live php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Live php_cli ~/html/typo3/typo3cms cache:flush --force' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Live php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
+                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
+                - "echo 'Deployed to Production/Live domainProductionLive domainProductionLive/typo3'"
+
+
+    ##################
+    # Context "Production/Staging"
+    ##################
+    production-staging:
+        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+        ssh:
+            hostname: serverhostnameProductionStaging
+
+        # rsync for some directories
+        rsync:
+            # server and source directory (server host or name - see .ssh/config)
+            path: "serverhostnameProductionStaging:/var/www/website/production/staging/htdocs"
+
+            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
+            exclude:
+
+        command:
+            startup:
+
+            finalize:
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms cache:flush --force' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
+                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
+                - "echo 'Deployed to Production/Staging domainProductionStaging domainProductionStaging/typo3'"
+
+
+    ##################
+    # Context "Production/Dev"
+    ##################
+    production-dev:
+        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+        ssh:
+            hostname: serverhostnameProductionDev
+
+        # rsync for some directories
+        rsync:
+            # server and source directory (server host or name - see .ssh/config)
+            path: "serverhostnameProductionDev:/var/www/website/production/dev/htdocs"
+
+            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
+            exclude:
+
+        command:
+            startup:
+
+            finalize:
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms cache:flush --force' }
+                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
+                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
+                #- { type: 'remote', command: 'echo "Header set X-Robots-Tag \"noindex, nofollow, noarchive\"" >> ~/html/typo3/web/.htaccess' }
+                - "echo 'Deployed to Production/Dev domainProductionDev domainProductionDev/typo3'"
+
 
 
 
