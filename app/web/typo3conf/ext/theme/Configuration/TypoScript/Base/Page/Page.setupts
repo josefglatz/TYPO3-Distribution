@@ -333,6 +333,11 @@ popup {
 	}
 	page {
 		10.templateRootPaths.30 = {$theme.resTemplates}/Page/Dummy
+		// overwrite default page.10.dataProcessing
+		10.dataProcessing {
+			// always generate rootline
+			120.if >
+		}
 
 		javascriptLibs {
 			jQuery = 1
