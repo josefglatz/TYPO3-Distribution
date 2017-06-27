@@ -1,34 +1,37 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
 
-
 /**
- * RealUrlAutoConfiguration for RealURL extension v2.x
+ * RealUrlAutoConfiguration for RealURL extension v2.x.
  */
 class RealUrlAutoConfiguration
 {
     /**
      * Generates additional RealURL configuration and replace it with provided configuration recursively
      * - Add basic/often used/common RealUrl configuration
-     * - Configuration reference: https://github.com/dmitryd/typo3-realurl/wiki/Configuration-reference
+     * - Configuration reference: https://github.com/dmitryd/typo3-realurl/wiki/Configuration-reference.
      *
      * @param array $params Default configuration
+     *
      * @return array Updated configuration
      */
     public function addThemeConfig($params)
     {
         $pageTypes = [
-            'robots' => 9201,
+            'robots'  => 9201,
             'rssFeed' => 9818,
         ];
         $pids = [
             'newsDetailPage' => 123,
-            'loginPage' => 123,
+            'loginPage'      => 123,
         ];
 
         $processedConfig = array_replace_recursive($params['config'], [
@@ -38,19 +41,19 @@ class RealUrlAutoConfiguration
             ],
             'fileName' => [
                 'defaultToHTMLsuffixOnPrev' => 0,
-                'acceptHTMLsuffix' => 0,
-                'index' => [
+                'acceptHTMLsuffix'          => 0,
+                'index'                     => [
                     'robots.txt' => [
                         'keyValues' => [
                             'type' => $pageTypes['robots'],
-                        ]
+                        ],
                     ],
                     'feed.rss' => [
                         'keyValues' => [
                             'type' => $pageTypes['rssFeed'],
-                        ]
+                        ],
                     ],
-                ]
+                ],
             ],
             'postVarSets' => [
                 // @TODO: add my common ext:news default realurl config
@@ -65,7 +68,7 @@ class RealUrlAutoConfiguration
         $processedConfig = array_merge_recursive($processedConfig, [
             'preVars' => [
                 [
-                    'GETvar' => 'no_cache',
+                    'GETvar'   => 'no_cache',
                     'valueMap' => [
                         'no_cache' => 1,
                     ],
