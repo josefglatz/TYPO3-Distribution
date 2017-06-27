@@ -1,13 +1,15 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
 $customChanges = [
     'BE' => [
-        'debug' => false,
+        'debug'              => false,
         'warning_email_addr' => '',
-        'warning_mode' => '',
-        'adminOnly' => '0',
+        'warning_mode'       => '',
+        'adminOnly'          => '0',
     ],
     'EXT' => [
         'extConf' => [
@@ -24,16 +26,16 @@ $customChanges = [
     'GFX' => [
     ],
     'SYS' => [
-        'displayErrors' => false,
+        'displayErrors'        => false,
         'enableDeprecationLog' => '',
-        'sqlDebug' => 0,
-        'systemLogLevel' => 4,
+        'sqlDebug'             => 0,
+        'systemLogLevel'       => 4,
     ],
     'LOG' => [
         'writerConfiguration' => [
             \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
-                \TYPO3\CMS\Core\Log\Writer\NullWriter::class => []
-            ]
+                \TYPO3\CMS\Core\Log\Writer\NullWriter::class => [],
+            ],
         ],
     ],
 ];

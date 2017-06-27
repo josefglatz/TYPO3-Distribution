@@ -1,9 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -12,7 +15,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
 
 /**
- * Class FalViewHelper
+ * Class FalViewHelper.
  *
  * = Example =
  *
@@ -32,11 +35,9 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * </f:if>
  * </theme:fal>
  * </code>
- *
  */
 class FalViewHelper extends AbstractViewHelper
 {
-
     /**
      * @var bool
      */
@@ -47,6 +48,7 @@ class FalViewHelper extends AbstractViewHelper
      * @param string $field
      * @param string $id
      * @param string $as
+     *
      * @return string
      */
     public function render(string $table, string $field, string $id, string $as = 'references')
@@ -58,7 +60,7 @@ class FalViewHelper extends AbstractViewHelper
         $row = $queryBuilder
             ->select('*')
             ->from($table)
-            ->where('uid=' . (int)$id)
+            ->where('uid='.(int) $id)
             ->execute()
             ->fetch();
         if (!$row) {
