@@ -9,6 +9,15 @@ $customChanges = [
         'warning_mode' => '',
         'adminOnly' => '0',
     ],
+    'EXT' => [
+        'extConf' => [
+            'page_speed' => serialize([
+                'key' => '',
+                'cacheTime' => 86400,
+                'demo' => 0,
+            ]),
+        ],
+    ],
     'FE' => [
         'debug' => false,
     ],
