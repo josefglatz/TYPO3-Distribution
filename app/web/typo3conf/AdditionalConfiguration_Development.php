@@ -1,23 +1,25 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
 $customChanges = [
     'BE' => [
-        'debug' => true,
-        'installToolPassword' => '$P$C8R5CmXAuzvklF.d5eGuTS7eQquuQN1',
-        'languageDebug' => false,
-        'sessionTimeout' => 3600 * 24 * 365,
-        'createGroup' => '',
+        'debug'                   => true,
+        'installToolPassword'     => '$P$C8R5CmXAuzvklF.d5eGuTS7eQquuQN1',
+        'languageDebug'           => false,
+        'sessionTimeout'          => 3600 * 24 * 365,
+        'createGroup'             => '',
         'versionNumberInFilename' => true,
     ],
     'EXT' => [
         'extConf' => [
             'realurl' => serialize([
-                'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
+                'configFile'     => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
                 'enableAutoConf' => 1,
                 'autoConfFormat' => 1,
-                'enableDevLog' => 0,
+                'enableDevLog'   => 0,
             ]),
         ],
     ],
@@ -29,13 +31,13 @@ $customChanges = [
 //        'transport_mbox_file' => dirname(PATH_site) . 'mails.txt',
     ],
     'SYS' => [
-        'devIPmask' => '*',
-        'displayErrors' => true,
+        'devIPmask'            => '*',
+        'displayErrors'        => true,
         'enableDeprecationLog' => 'file',
 //        'exceptionalErrors' => 28674,
-        'sqlDebug' => 1,    // 0 = no debug; 1 = only failed queries; 2 = all queries
+        'sqlDebug'       => 1,    // 0 = no debug; 1 = only failed queries; 2 = all queries
         'systemLogLevel' => 0,
-        'systemLog' => '',
+        'systemLog'      => '',
     ],
     'HTTP' => [
     ],
