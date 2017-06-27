@@ -5,6 +5,12 @@
 
 // Copyright (c) 2011-2013 Oliver Salzburg
 
+//  Usage - Extract T3X:
+//  1. place yourExtensionToExtract.t3x to a folder (e.g. `./backup > files within this folder are excluded from git)
+//  2. change dir to project root
+//  3. extract the ext with the command `./Build/Scripts/T3xExtract.php --extract backup/yourExtensionToExtract.t3x`
+//  4. Do what ever you want to to with the extracted extension.
+
 define( "SELF", basename( __FILE__ ) );
 define( "INVNAME", $argv[ 0 ] );
 
