@@ -1,15 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\Backend\FormDataProvider;
 
 use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
 
 /**
- * Class Div
+ * Class Div.
  */
 class Div implements FormDataProviderInterface
 {
@@ -30,16 +33,15 @@ class Div implements FormDataProviderInterface
                 'linkToTop',
             ];
             foreach ($columnsToHide as $column) {
-                unset($result['processedTca']['columns']['' . $column . '']);
+                unset($result['processedTca']['columns'][''.$column.'']);
             }
         }
-
 
         return $result;
     }
 
     /**
-     * Check if this this data provider should modify TCA for this record type
+     * Check if this this data provider should modify TCA for this record type.
      *
      * @param array $result
      *
@@ -50,7 +52,6 @@ class Div implements FormDataProviderInterface
         if ($result['databaseRow']['CType'][0] === self::TYPE
             && $result['tableName'] === self::TABLE_NAME
         ) {
-
             return true;
         }
 

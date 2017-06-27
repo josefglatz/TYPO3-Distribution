@@ -1,16 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
-namespace JosefGlatz\Theme\ViewHelpers\Format;
 
+namespace JosefGlatz\Theme\ViewHelpers\Format;
 
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class InlineSvgViewHelper
+ * Class InlineSvgViewHelper.
  *
  * Return the adjusted content of a svg file
  *
@@ -25,8 +27,10 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class InlineSvgViewHelper extends AbstractViewHelper
 {
     /**
-     * Arguments initialization
+     * Arguments initialization.
+     *
      * @TODO: Make VH InlineSvgViewHelper compilable
+     *
      * @return void
      */
     public function initializeArguments()
@@ -43,7 +47,7 @@ class InlineSvgViewHelper extends AbstractViewHelper
      */
     public function render()
     {
-        $sourceAbs = PATH_site . $this->arguments['source'];
+        $sourceAbs = PATH_site.$this->arguments['source'];
 
         // return html comment, if file couldn't be found
         if (!file_exists($sourceAbs)) {
