@@ -1,16 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 class ClearCache
 {
-
     /**
      * Delete RealUrl AutoConf file.
      *
@@ -25,8 +27,8 @@ class ClearCache
      */
     public function deleteAutoConfigurationFile()
     {
-        if (ExtensionManagementUtility::isLoaded('realurl') && file_exists(PATH_site . TX_REALURL_AUTOCONF_FILE)) {
-            @unlink(PATH_site . TX_REALURL_AUTOCONF_FILE);
+        if (ExtensionManagementUtility::isLoaded('realurl') && file_exists(PATH_site.TX_REALURL_AUTOCONF_FILE)) {
+            @unlink(PATH_site.TX_REALURL_AUTOCONF_FILE);
         }
     }
 }

@@ -2,17 +2,15 @@
 
 defined('TYPO3_MODE') || die('Access denied.');
 
-
 // @TODO: redis backend pConnect feature (7d0c8befc5999627edefb340cef270707c2956bd)
-
 
 // Override configuration of LocalConfiguration
 $customChanges = [
     'BE' => [
-        'debug' => false,
+        'debug'              => false,
         'warning_email_addr' => '',
-        'warning_mode' => '',
-        'adminOnly' => '0',
+        'warning_mode'       => '',
+        'adminOnly'          => '0',
     ],
     'FE' => [
         'debug' => false,
@@ -20,41 +18,41 @@ $customChanges = [
     'GFX' => [
     ],
     'SYS' => [
-        'displayErrors' => false,
+        'displayErrors'        => false,
         'enableDeprecationLog' => '',
-        'sqlDebug' => 0,
-        'systemLogLevel' => 4,
-        'caching' => [
+        'sqlDebug'             => 0,
+        'systemLogLevel'       => 4,
+        'caching'              => [
             'cacheConfigurations' => [
                 'cache_pages' => [
                     'backend' => \TYPO3\CMS\Core\Cache\Backend\RedisBackend::class,
                     'options' => [
                         'defaultLifetime' => 86400,
-                        'database' => 0
-                    ]
+                        'database'        => 0,
+                    ],
                 ],
                 'cache_pagesection' => [
                     'backend' => \TYPO3\CMS\Core\Cache\Backend\RedisBackend::class,
                     'options' => [
                         'defaultLifetime' => 86400,
-                        'database' => 1
-                    ]
+                        'database'        => 1,
+                    ],
                 ],
                 'cache_hash' => [
                     'backend' => \TYPO3\CMS\Core\Cache\Backend\RedisBackend::class,
                     'options' => [
                         'defaultLifetime' => 86400,
-                        'database' => 2
-                    ]
-                ]
-            ]
+                        'database'        => 2,
+                    ],
+                ],
+            ],
         ],
     ],
     'LOG' => [
         'writerConfiguration' => [
             \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
-                \TYPO3\CMS\Core\Log\Writer\NullWriter::class => []
-            ]
+                \TYPO3\CMS\Core\Log\Writer\NullWriter::class => [],
+            ],
         ],
     ],
 ];
