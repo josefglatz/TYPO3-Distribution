@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
     function ($extKey) {
 
-        /**
+        /*
          * Add CE: Categorized Pages with First Content Element
          */
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -13,7 +15,7 @@ call_user_func(
             [
                 'Categorized Pages with First Content Element',
                 'menu_categorized_pages_first_ce',
-                'content-menu-categorized'
+                'content-menu-categorized',
             ],
             'menu_categorized_pages',
             'after'
@@ -48,16 +50,15 @@ call_user_func(
                         'category_field' => [
                             'config' => [
                                 'itemsProcConfig' => [
-                                    'table' => 'pages'
-                                ]
-                            ]
-                        ]
-                    ]
+                                    'table' => 'pages',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
         $GLOBALS['TCA']['tt_content'] = array_replace_recursive($GLOBALS['TCA']['tt_content'], $tca);
-
     },
     'theme'
 );
