@@ -16,7 +16,7 @@ call_user_func(
 
         // Add general UserTSConfig
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TSConfig/UserGeneral.tsc">'
+            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:'.$extKey.'/Configuration/TSConfig/UserGeneral.tsc">'
         );
 
         // Add EXT:solr CommandController support for older versions
@@ -34,15 +34,14 @@ call_user_func(
 
         // Register own RTE (ckeditor) presets
         $rtePresets = [                             // Final preset identifier:
-            'default' => 'Default',                 //  'theme_default'
+            'default'         => 'Default',                 //  'theme_default'
             'defaultNoTables' => 'DefaultNoTables', //  'theme_defaultNoTables'
-            'minimal' => 'Minimal',                 //  'theme_minimal'
+            'minimal'         => 'Minimal',                 //  'theme_minimal'
         ];
         foreach ($rtePresets as $identifier => $fileName) {
-            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $identifier . '']
-                = 'EXT:' . $extKey . '/Configuration/RTE/' . $fileName . '.yaml';
+            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'][''.$extKey.'_'.$identifier.'']
+                = 'EXT:'.$extKey.'/Configuration/RTE/'.$fileName.'.yaml';
         }
-
 
         // Only backend relevant stuff
         if (TYPO3_MODE === 'BE') {
@@ -57,8 +56,8 @@ call_user_func(
             // Register FormDataProviders
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\JosefGlatz\Theme\Backend\FormDataProvider\Div::class] = [
                 'depends' => [
-                    \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class
-                ]
+                    \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class,
+                ],
             ];
         }
     },
