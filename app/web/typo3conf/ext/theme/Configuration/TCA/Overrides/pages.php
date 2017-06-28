@@ -32,7 +32,6 @@ call_user_func(
             );
         }
 
-
         // Add custom page tree icons
         $customPageTreeIcons = [
             [

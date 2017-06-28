@@ -18,7 +18,6 @@ if ($context) {
     // check for "Production/Live/Server123" etc
     list($contextMainPart, $contextSubPart1, $contextSubPart2) = explode('/', $context);
 
-
     // set context specific TYPO3 backend logo
     if (TYPO3_MODE === 'BE') {
         $backendLogoFilePathAndFilePrefix = realpath(__DIR__) . '/ext/theme/Resources/Public/Images/Backend/' . $site['backendLogo'] . '-';
