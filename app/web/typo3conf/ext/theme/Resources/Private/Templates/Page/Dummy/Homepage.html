@@ -1,15 +1,36 @@
 <html data-namespace-typo3-fluid="true"
 	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-	<f:layout name="Page/Dummy" />
+<f:layout name="Page/Dummy/Default" />
+<f:section name="Jumbotron">
+	<f:variable name="JumbotronContent" value="{f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos:\'3\'}')}" />
+	<f:if condition="{JumbotronContent}">
+		<div class="jumbotron">
+			<div class="container">
+				{JumbotronContent -> f:format.raw()}
+			</div>
+		</div>
+	</f:if>
+</f:section>
 
-	<f:section name="Ressources">
-	</f:section>
+<f:section name="Content">
 
-	<f:section name="Content">
+	<div class="row">
+		<div class="col-md-12">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4"><f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '30'}" /></div>
+		<div class="col-md-4"><f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '31'}" /></div>
+		<div class="col-md-4"><f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '32'}" /></div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '10'}" />
+		</div>
+	</div>
 
-		<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
-
-	</f:section>
+</f:section>
 
 </html>

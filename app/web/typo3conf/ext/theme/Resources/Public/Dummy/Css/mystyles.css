@@ -1,0 +1,275 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.pageheader {
+	padding-top: .8rem;
+	padding-bottom: .8rem;
+	font-size: 80%;
+}
+
+.pageheader .form-control,
+.pageheader .btn {
+	font-size: 80%;
+}
+
+.mainnav {
+	border-bottom: 1px solid #999;
+}
+
+.jumbotron {
+	display: none;
+}
+
+.jumbotron .container {
+	background: rgba(255,255,255,.6);
+	padding: 1rem;
+}
+
+.homepage .maincontent {
+	margin-top: 2rem;
+ }
+
+@media screen  and (min-width:601px){
+	 .jumbotron {
+		 display: block;
+	 }
+
+	.homepage .maincontent {
+		margin-top: 0;
+	}
+}
+
+/* More spacing on subpages without jumbotron */
+body.tmpl-default .mainnav {
+	margin-bottom: 2rem;
+}
+
+.languagemenu span,
+.languagemenu a {
+	display: inline-block;
+
+}
+
+.languagemenu a:active,
+.languagemenu a:focus,
+.languagemenu a:hover {
+	text-decoration: none;
+}
+
+.languagemenu span:after,
+.languagemenu a:after {
+	content: "|";
+	padding: 0 10px;
+	color: #eee;
+}
+
+.languagemenu span:last-child:after,
+.languagemenu a:last-child:after {
+	content: "";
+	padding: 0;
+}
+
+.pagefooter {
+	font-size: 90%;
+}
+
+.metanav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.metanav li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.metanav li:last-child {
+	margin-right: 0;
+}
+
+.breadcrumb {
+	padding: 0.75rem 0;
+	margin-bottom: 1rem;
+	list-style: none;
+	background-color: transparent;
+	font-size: 90%;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.mysubnav a.current {
+	font-weight: bold;
+}
+
+/* Responsive Videos */
+
+.video-embed {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-embed iframe, .video-embed object, .video-embed embed, .video-embed video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Workaround for responsive videos with fluid_styled_content */
+
+.frame-layout-5 .ce-center .ce-inner {
+	position: relative;
+	float: none;
+	right: -50%;
+}
+
+.frame-layout-5 .ce-textpic, .frame-layout-5 .ce-image, .frame-layout-5 .ce-nowrap .ce-bodytext, .frame-layout-5 .ce-gallery, .frame-layout-5 .ce-row, .ce-uploads li, .frame-layout-5 .ce-uploads div {
+	overflow: visible;
+}
+
+.frame-layout-5 .ce-left .ce-gallery, .frame-layout-5 .ce-column {
+	float: none;
+}
+
+.frame-layout-5 .ce-gallery figure {
+	display: block;
+	margin: 0;
+}
+
+.frame-layout-5 .ce-center .ce-outer {
+	position: relative;
+	float: none;
+	right: 50%;
+}
+
+/* Bootstrap Badges */
+.badge {
+	border: 1px solid #000;
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.25em 0.4em;
+	font-size: 75%;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 0.25rem;
+}
+
+.badge:empty {
+	display: none;
+}
+
+.btn .badge {
+	position: relative;
+	top: -1px;
+}
+
+a.badge:focus, a.badge:hover {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.badge-pill {
+	padding-right: 0.6em;
+	padding-left: 0.6em;
+	border-radius: 10rem;
+}
+
+.indexedsearch .badge-pill {
+	float: right;
+}
+
+.badge-default {
+	background-color: #636c72;
+}
+
+.badge-default[href]:focus, .badge-default[href]:hover {
+	background-color: #4b5257;
+}
+
+.badge-primary {
+	background-color: #0275d8;
+}
+
+.badge-primary[href]:focus, .badge-primary[href]:hover {
+	background-color: #025aa5;
+}
+
+.badge-success {
+	background-color: #5cb85c;
+}
+
+.badge-success[href]:focus, .badge-success[href]:hover {
+	background-color: #449d44;
+}
+
+.badge-info {
+	background-color: #5bc0de;
+}
+
+.badge-info[href]:focus, .badge-info[href]:hover {
+	background-color: #31b0d5;
+}
+
+.badge-warning {
+	background-color: #f0ad4e;
+}
+
+.badge-warning[href]:focus, .badge-warning[href]:hover {
+	background-color: #ec971f;
+}
+
+.badge-danger {
+	background-color: #d9534f;
+}
+
+.badge-danger[href]:focus, .badge-danger[href]:hover {
+	background-color: #c9302c;
+}
+
+/* Adoptions for indexed_search */
+
+.tx-indexedsearch-info dt, .tx-indexedsearch-info dd {
+	display: inline-block;
+}
+
+.tx-indexedsearch-info dd {
+	margin-right: 1rem;
+}
+
+ul.tx-indexedsearch-browsebox {
+	margin: 0 0 1rem 0;
+	padding: 0;
+	font-size: 80%;
+}
+
+ul.tx-indexedsearch-browsebox, .tx-indexedsearch-browsebox li {
+	list-style-type: none;
+}
+
+.tx-indexedsearch-browsebox li {
+	display: inline-block;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin: 0 .5rem 0 0;
+}
+
+.tx-indexedsearch-redMarkup {
+	display: inline-block;
+	background: rgba(255,255,0,.5);
+}
