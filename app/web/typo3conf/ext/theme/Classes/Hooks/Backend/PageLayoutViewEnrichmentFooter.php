@@ -9,7 +9,6 @@ namespace JosefGlatz\Theme\Hooks\Backend;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-
 class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInterface
 {
 
@@ -31,7 +30,6 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                 . 'CType: ' . $row['CType']
                 . '</span>';
         }
-
     }
 
     /**
@@ -43,5 +41,4 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
     {
         return $GLOBALS['BE_USER'];
     }
-
 }
