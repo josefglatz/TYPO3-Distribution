@@ -27,9 +27,9 @@ enabled:
     - whitespace_after_comma_in_array
 
 finder:
+  exclude:
+    - "app/Build/Scripts/T3xExtract.php"
   name:
     - "*.php"
   not-path:
     - ".Build"
-    - ".github"
-    - "Documentation"
