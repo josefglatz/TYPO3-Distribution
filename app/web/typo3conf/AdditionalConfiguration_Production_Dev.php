@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
@@ -6,22 +8,22 @@ $customChanges = [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
-                'dbname' => '',
-                'driver' => 'mysqli',
-                'host' => '',
+                'charset'  => 'utf8',
+                'dbname'   => '',
+                'driver'   => 'mysqli',
+                'host'     => '',
                 'password' => '',
-                'port' => 3306,
-                'user' => '',
+                'port'     => 3306,
+                'user'     => '',
             ],
         ],
     ],
     'EXT' => [
         'extConf' => [
             'page_speed' => serialize([
-                'key' => '',
+                'key'       => '',
                 'cacheTime' => 30,
-                'demo' => 0,
+                'demo'      => 0,
             ]),
         ],
     ],

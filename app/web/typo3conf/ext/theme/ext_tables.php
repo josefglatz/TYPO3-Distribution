@@ -4,7 +4,6 @@
  * HAVE IN MIND that ext_tables.php **ISN'T** loaded in a frontend request
  * !!!!!!!!
  */
-
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
@@ -60,7 +59,7 @@ call_user_func(
                 $iconRegistry->registerIcon(
                     $identifier,
                     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                    ['source' => 'EXT:' . $extKey . '/Resources/Public/Icons/Backend/' . $path]
+                    ['source' => 'EXT:'.$extKey.'/Resources/Public/Icons/Backend/'.$path]
                 );
             }
 

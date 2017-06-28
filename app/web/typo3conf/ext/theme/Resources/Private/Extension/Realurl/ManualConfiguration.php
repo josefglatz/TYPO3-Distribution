@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Use this file for adding your manual realurl configuration.
  *
  * Really need that? Take a look at the autoConfiguration hook, which realurl offers! (ext:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php)
