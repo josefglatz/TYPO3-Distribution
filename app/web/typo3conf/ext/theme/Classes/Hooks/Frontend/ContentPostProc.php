@@ -1,17 +1,19 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\Hooks\Frontend;
 
 /**
- * Hook which runs at the latest possible place
+ * Hook which runs at the latest possible place.
  */
 class ContentPostProc
 {
-
     /**
      * @param array $parameters
      */
