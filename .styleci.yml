@@ -33,3 +33,4 @@ finder:
     - "*.php"
   not-path:
     - ".Build"
+    - "app/web/typo3conf/ext/theme/Resources/Private/Examples"

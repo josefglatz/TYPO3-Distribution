@@ -43,7 +43,6 @@ call_user_func(
                 = 'EXT:' . $extKey . '/Configuration/RTE/' . $fileName . '.yaml';
         }
 
-
         // Only backend relevant stuff
         if (TYPO3_MODE === 'BE') {
 
