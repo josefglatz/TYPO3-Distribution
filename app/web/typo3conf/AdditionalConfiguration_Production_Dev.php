@@ -3,6 +3,9 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 // Override configuration of LocalConfiguration
 $customChanges = [
+    'BE' => [
+        'sessionTimeout' => 3600 * 10,
+    ],
     'DB' => [
         'Connections' => [
             'Default' => [
