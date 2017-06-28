@@ -4,7 +4,7 @@ namespace JosefGlatz\Theme\Hooks\Backend\Toolbar;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Toolbar\ClearCacheActionsHookInterface;
-use TYPO3\CMS\Core\Imaging\Icon;
+
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -26,22 +26,20 @@ class ClearRealurlAutoConfMenuItem implements ClearCacheActionsHookInterface
     public function manipulateCacheActions(&$cacheActions, &$optionValues)
     {
         $backendUser = $this->getBackendUser();
-        $languageService = $this->getLanguageService();
         $languagePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:clearcacheaction.realurl.autoConf';
-        $this->iconFactory = GeneralUtility::makeInstance(IconFactory::class);
 
         $menuItemPath = $this->getUriBuilder()->buildUriFromRoute('ajax_' . 'theme_realurl_deleteautoconf');
 
-        $extConfRealurl = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['realurl']);
+        $extConfRealurl = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['realurl'], [false]);
 
         if (ExtensionManagementUtility::isLoaded('realurl') && $extConfRealurl['enableAutoConf']) {
             if ($backendUser->isAdmin() || $backendUser->getTSConfigVal('options.clearCache.realurl.autoconf')) {
                 $cacheActions[] = [
                     'id' => 'theme_realurl_deleteautoconf',
-                    'title' => htmlspecialchars($languageService->sL($languagePrefix . 'Title')),
-                    'description' => htmlspecialchars($languageService->sL($languagePrefix . 'Description')),
+                    'title' => $languagePrefix . 'Title',
+                    'description' => $languagePrefix . 'Description',
                     'href' => $menuItemPath,
-                    'icon' => $this->iconFactory->getIcon('theme-backend-realurl-reset', Icon::SIZE_SMALL)->render()
+                    'iconIdentifier' => 'theme-backend-realurl-reset'
                 ];
                 $optionValues[] = 'theme_realurl_deleteautoconf';
             }
@@ -53,19 +51,9 @@ class ClearRealurlAutoConfMenuItem implements ClearCacheActionsHookInterface
      *
      * @return \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
      */
-    protected function getBackendUser()
+    protected function getBackendUser(): \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
     {
         return $GLOBALS['BE_USER'];
-    }
-
-    /**
-     * Returns LanguageService
-     *
-     * @return \TYPO3\CMS\Lang\LanguageService
-     */
-    protected function getLanguageService()
-    {
-        return $GLOBALS['LANG'];
     }
 
     /**
@@ -73,7 +61,7 @@ class ClearRealurlAutoConfMenuItem implements ClearCacheActionsHookInterface
      *
      * @return UriBuilder
      */
-    protected function getUriBuilder()
+    protected function getUriBuilder(): \TYPO3\CMS\Backend\Routing\UriBuilder
     {
         return GeneralUtility::makeInstance(UriBuilder::class);
     }
