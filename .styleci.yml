@@ -27,10 +27,9 @@ enabled:
     - whitespace_after_comma_in_array
 
 finder:
-  exclude:
-    - "app/Build/Scripts/T3xExtract.php"
   name:
     - "*.php"
   not-path:
     - ".Build"
     - "app/web/typo3conf/ext/theme/Resources/Private/Examples"
+    - "app/Build/Scripts/T3xExtract.php"
