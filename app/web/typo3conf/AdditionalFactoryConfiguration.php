@@ -28,7 +28,7 @@ return [
     ],
     'GFX' => [
         // Override default quality for processed images
-        'jpg_quality' => '86',
+        'jpg_quality'              => '86',
         'processor_allowUpscaling' => false,
     ],
     'SYS' => [
