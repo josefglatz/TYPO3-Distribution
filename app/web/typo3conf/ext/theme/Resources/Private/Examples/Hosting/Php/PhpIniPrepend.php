@@ -1,4 +1,5 @@
 <?php
+
 putenv('TYPO3_CONTEXT=Production/Live');
 putenv('TYPO3_CONTEXT=Production/Live/Frontend');
 putenv('TYPO3_CONTEXT=Production/Live/Backend');
