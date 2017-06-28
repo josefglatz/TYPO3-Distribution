@@ -34,7 +34,6 @@ class Div implements FormDataProviderInterface
             }
         }
 
-
         return $result;
     }
 
@@ -50,7 +49,6 @@ class Div implements FormDataProviderInterface
         if ($result['databaseRow']['CType'][0] === self::TYPE
             && $result['tableName'] === self::TABLE_NAME
         ) {
-
             return true;
         }
 

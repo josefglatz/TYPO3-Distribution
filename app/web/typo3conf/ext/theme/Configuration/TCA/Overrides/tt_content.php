@@ -12,7 +12,6 @@ call_user_func(
             'height' => '1.0',
         ];
 
-
         /**
          * Add CE: stop inheritance
          */
@@ -53,7 +52,6 @@ call_user_func(
 
         // Default Content Element
         $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['default'] = 'text';
-
     },
     'theme'
 );
