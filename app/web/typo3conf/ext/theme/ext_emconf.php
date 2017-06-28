@@ -33,6 +33,7 @@ $EM_CONF[$_EXTKEY] = [
                     'fluid_styled_content' => '',
                     'form' => '',
                     'formhandler' => '',
+                    'gravatar' => '',
                     'gridelements' => '',
                     'image_autoresize' => '',
                     'in2publish_core' => '',

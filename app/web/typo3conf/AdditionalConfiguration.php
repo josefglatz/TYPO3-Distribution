@@ -87,6 +87,12 @@ $customChanges = [
                 'mapping_base_directory' => 'EXT:extractor/Configuration/Services/',
                 'mapping_configuration' => ''
             ]),
+            'gravatar' => serialize([
+                'fallback' => '', // Fallback behaviour: see https://www.gravatar.com/site/implement/images/  // Transparent/blank=, mystery-man=mm, identicon=identicon, monsterid=monsterid, wavatar=wavatar, retro=retro, Use fallback image=url
+                'fallbackImageUrl' => '', // Fallback image url: MUST be publicly available, see https://www.gravatar.com/site/implement/images/
+                'forceProvider' => false, // Use Gravatar service even if email address is empty: Normally the Gravatar service is only requested when a email address is set. With this setting you can also enable is for BE users without email address. The above fallback will always be used then.
+                'useProxy' => false, // Improve privacy by proxying the image request
+            ]),
             't3monitoring_client' => serialize([
                 'secret' => 'Provide some secret password',
                 'allowedIps' => '2a03:2a00:1100:2::ac10:29bc,172.17.0.1,188.94.251.75',
