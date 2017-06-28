@@ -1,5 +1,7 @@
 # TYPO3 Distribution
 
+[![StyleCI](https://styleci.io/repos/66637769/shield?branch=master)](https://styleci.io/repos/66637769/)
+
 This repository delivers a full configured, bare metal TYPO3 distribution
 based on my best practices.
 
