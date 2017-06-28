@@ -6,7 +6,6 @@
  */
 namespace JosefGlatz\Theme\Hooks\Frontend\Realurl;
 
-
 /**
  * RealUrlAutoConfiguration for RealURL extension v2.x
  */
