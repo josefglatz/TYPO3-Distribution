@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:section name="Content">
+	<div class="pageheader container">
+		<div class="row">
+			<div class="col-sm-4">
+					<f:render partial="Page/Dummy/LanguageSelector" section="Content" arguments="{_all}" />
+			</div>
+			<div class="col-sm-8">
+				<f:render partial="Page/Dummy/Navigation/MetaNavigation" arguments="{_all}" />
+				<f:comment><!-- Search Box @TODO: Add (dummy) search box (solr/indexed_search) -->
+					<div class="searchform text-sm-right">
+						<form class="form-inline">
+							<input type="search" class="form-control" placeholder="Search">
+							<button type="submit" class="btn btn-primary">Search</button>
+						</form>
+					</div>
+				</f:comment>
+			</div>
+		</div>
+	</div>
+</f:section>
+
+</html>

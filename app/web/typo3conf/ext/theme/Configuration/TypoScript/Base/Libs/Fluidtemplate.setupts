@@ -19,6 +19,10 @@ lib.fluidTemplate {
 			RootUid {
 				data = leveluid : 0
 			}
+			Level1Title = TEXT
+			Level1Title {
+				data = leveltitle: 1
+			}
 		}
 		dataProcessing {
 

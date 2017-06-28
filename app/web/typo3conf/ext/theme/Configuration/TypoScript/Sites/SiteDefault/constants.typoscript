@@ -20,6 +20,13 @@ site {
             navigationType = directory
             includeNotInMenu = 1
         }
+		// language navigation configuration
+		language {
+			// Enable Language Navigation
+			enable = 0
+			// Language Navigation Values: Comma separated list of language uids
+			languageValue = 0,1
+		}
     }
 
 
