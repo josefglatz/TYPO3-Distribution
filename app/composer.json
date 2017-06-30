@@ -115,6 +115,7 @@
 	},
 	"suggest": {
 		"causal/extractor": "dev-master",
+		"cpsit/mask-export": "dev-master",
 		"cedricziel/transladder": "dev-master",
 		"dl/yag": "dev-master",
 		"dmitryd/typo3-dd-googlesitemap": "dev-master",
@@ -124,6 +125,7 @@
 		"in2code/in2publish_core": "dev-master",
 		"in2code/powermail": "dev-master",
 		"koninklijke-collective/my-redirects": "dev-master",
+		"mask/mask": "dev-master",
 		"rlmp/rlmp-language-detection": "dev-master",
 		"sjbr/sr-language-menu": "dev-master",
 		"t3g/blog": "dev-master"
