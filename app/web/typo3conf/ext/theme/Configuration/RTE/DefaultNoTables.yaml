@@ -17,6 +17,8 @@ editor:
     removePlugins:
       - quicktable
       - table
+      - tabletools
+      - tableselection
 
 
     # Toolbar button names that must not be rendered
