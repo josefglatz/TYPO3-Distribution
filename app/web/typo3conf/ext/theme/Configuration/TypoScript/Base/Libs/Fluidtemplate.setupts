@@ -22,6 +22,8 @@ lib.fluidTemplate {
 			Level1Title = TEXT
 			Level1Title {
 				data = leveltitle: 1
+				if.value.data = level
+				if.isLessThan = 1
 			}
 		}
 		dataProcessing {
