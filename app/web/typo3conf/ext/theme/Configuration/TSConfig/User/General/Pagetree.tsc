@@ -18,8 +18,8 @@ options {
         showPathAboveMounts = 1
 #        excludeDoktypes =
 		// @TODO Inform about options.pageTree.altElementBrowserMountPoints and discuss if we should use it for a better backend experience
-#        options.pageTree.altElementBrowserMountPoints = 20,31
-#        options.pageTree.altElementBrowserMountPoints.append = 1
+#        altElementBrowserMountPoints = 20,31
+#        altElementBrowserMountPoints.append = 1
 	}
 }
 
