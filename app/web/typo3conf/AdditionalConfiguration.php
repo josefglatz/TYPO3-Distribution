@@ -239,6 +239,7 @@ $customChanges = [
         'UTF8filesystem' => true,
         'systemLocale' => 'de_DE.utf8',
         'cookieSecure' => 2,
+        'productionExceptionHandler' => \JosefGlatz\Theme\Error\ProductionExceptionHandler::class
     ],
 ];
 
