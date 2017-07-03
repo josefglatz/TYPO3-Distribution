@@ -142,10 +142,6 @@ site {
         }
         customTemplateName =
     }
-
-    robotsTxt {
-        customTemplateName =
-    }
 }
 
 
