@@ -14,7 +14,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class RobotsTxtController
 {
-
     public function processRequest()
     {
         $content = [];
@@ -30,5 +29,4 @@ class RobotsTxtController
         header('Content-Type: text/plain', true);
         echo implode(LF, $content);
     }
-
 }

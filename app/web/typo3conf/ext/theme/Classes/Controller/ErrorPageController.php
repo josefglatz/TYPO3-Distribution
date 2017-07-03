@@ -16,10 +16,8 @@ namespace JosefGlatz\Theme\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContext;
 use TYPO3Fluid\Fluid\View\TemplatePaths;
 use TYPO3Fluid\Fluid\View\TemplateView;
@@ -47,5 +45,4 @@ class ErrorPageController extends \TYPO3\CMS\Core\Controller\ErrorPageController
         ]));
         $this->view->setRenderingContext($context);
     }
-
 }
