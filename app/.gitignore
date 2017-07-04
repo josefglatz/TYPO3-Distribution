@@ -1,3 +1,12 @@
+######################################
+## Remove from git ignore BEGIN
+######################################
+/web/typo3conf/LocalConfiguration.php
+/composer.lock
+######################################
+## Remove from git ignore END
+######################################
+
 # TYPO3 specific ignores
 /vendor
 /web/index.php
