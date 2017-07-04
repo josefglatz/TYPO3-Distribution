@@ -7,11 +7,8 @@ namespace JosefGlatz\Theme\Controller;
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
-
-use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContext;
 use TYPO3Fluid\Fluid\View\TemplatePaths;
 use TYPO3Fluid\Fluid\View\TemplateView;
@@ -39,5 +36,4 @@ class ErrorPageController extends \TYPO3\CMS\Core\Controller\ErrorPageController
         ]));
         $this->view->setRenderingContext($context);
     }
-
 }
