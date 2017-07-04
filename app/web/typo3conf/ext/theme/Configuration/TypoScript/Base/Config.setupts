@@ -111,6 +111,8 @@ config {
 #	linkVars := addToList(L(int))
 #	linkVars := removeFromList()
 	linkVars =
+
+	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
 }
 
 [globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0]

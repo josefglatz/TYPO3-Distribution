@@ -2,6 +2,11 @@
 
 namespace JosefGlatz\Theme\Error;
 
+/**
+ * This file is part of the "theme" Extension which is part of
+ * the jousch/TYPO3-Distribution for TYPO3 CMS.
+ */
+
 use GeorgRinger\Logging\Log\MonologManager;
 use JosefGlatz\Theme\Controller\ErrorPageController;
 use Throwable;
