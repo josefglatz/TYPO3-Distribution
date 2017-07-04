@@ -3,7 +3,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function ($extKey) {
+    function ($extKey, $table) {
 
         /**
          * Embed static TypoScript template(s)
@@ -14,11 +14,12 @@ call_user_func(
         $websites = ['SiteDefault'];
         foreach ($websites as $website) {
             TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-                'theme',
+                $extKey,
                 'Configuration/TypoScript/Sites/' . $website,
                 'Theme TS:' . $website
             );
         }
     },
-    'theme'
+    'theme',
+    'sys_template'
 );
