@@ -26,6 +26,9 @@ options {
 		// file list module: files per page
 		filesPerPage = 40
 	}
+	folderTree {
+		uploadFieldsInLinkBrowser = 0
+	}
 	// default direct upload folder
 #	defaultUploadFolder = 1:Bilder/
 }
