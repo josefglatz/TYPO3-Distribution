@@ -24,6 +24,7 @@ enabled:
     - phpdoc_no_package
     - phpdoc_scalar
     - self_accessor
+    - single_blank_line_at_eof
     - short_array_syntax
     - single_quote
     - whitespace_after_comma_in_array
