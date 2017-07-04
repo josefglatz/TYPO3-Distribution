@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Project specific theme extension',
     'description' => 'Sitepackage/Theme/Extension of this great website.',

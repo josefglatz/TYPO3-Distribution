@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3_MODE') || die('Access denied.');
