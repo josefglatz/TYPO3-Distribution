@@ -26,7 +26,6 @@ enabled:
     - self_accessor
     - short_array_syntax
     - single_blank_line_before_namespace
-    - single_line_after_imports
     - single_quote
     - whitespace_after_comma_in_array
 
