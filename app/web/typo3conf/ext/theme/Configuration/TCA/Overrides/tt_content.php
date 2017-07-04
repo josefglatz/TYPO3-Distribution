@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function ($extKey) {
+    function ($extKey, $table) {
         $languageFileCePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:';
 
         $defaultCropArea = [
@@ -16,7 +16,7 @@ call_user_func(
          * Add CE: stop inheritance
          */
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-            'tt_content',
+            $table,
             'CType',
             [
                 $languageFileCePrefix . 'theme_inheritance_stop.title',
@@ -48,10 +48,11 @@ call_user_func(
                 ],
             ],
         ];
-        $GLOBALS['TCA']['tt_content'] = array_replace_recursive($GLOBALS['TCA']['tt_content'], $tca);
+        $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
 
         // Default Content Element
-        $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['default'] = 'text';
+        $GLOBALS['TCA'][$table]['columns']['CType']['config']['default'] = 'text';
     },
-    'theme'
+    'theme',
+    'tt_content'
 );
