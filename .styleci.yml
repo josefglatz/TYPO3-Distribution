@@ -9,6 +9,7 @@ enabled:
     - native_function_casing
     - no_alias_functions
     - no_blank_lines_after_phpdoc
+    - no_blank_lines_between_imports
     - no_empty_statement
     - no_extra_consecutive_blank_lines
     - no_leading_import_slash
