@@ -4,7 +4,6 @@
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
-
 namespace JosefGlatz\Theme\ViewHelpers\Render;
 
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
@@ -70,7 +69,6 @@ class InlineSvgViewHelper extends AbstractViewHelper implements CompilableInterf
             return '<!-- SVG generation produced error! -->';
         }
     }
-
 
     /**
      * @param string $source
