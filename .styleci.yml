@@ -1,6 +1,7 @@
 preset: psr2
 
 enabled:
+    - blank_line_after_opening_tag
     - concat_with_spaces
     - declare_strict_types
     - function_typehint_space
@@ -19,6 +20,7 @@ enabled:
     - no_trailing_comma_in_singleline_array
     - no_unneeded_control_parentheses
     - no_unused_imports
+    - no_whitespace_before_comma_in_array
     - no_whitespace_in_blank_line
     - ordered_imports
     - phpdoc_no_package
