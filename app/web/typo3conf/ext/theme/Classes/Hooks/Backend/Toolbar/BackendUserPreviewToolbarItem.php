@@ -7,14 +7,14 @@
 namespace Sup7even\Theme\Hooks\Backend\Toolbar;
 
 use TYPO3\CMS\Backend\Toolbar\ToolbarItemInterface;
-use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Beuser\Domain\Model\BackendUser;
 use TYPO3\CMS\Beuser\Domain\Repository\BackendUserRepository;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * Main functionality to render a list of backend users to which it is possible to switch as an admin
@@ -174,7 +174,6 @@ class BackendUserPreviewToolbarItem implements ToolbarItemInterface
             )
             ->execute()
             ->fetchAll();
-
 
         /** @var $extbaseObjectManager \TYPO3\CMS\Extbase\Object\ObjectManager */
         $extbaseObjectManager = GeneralUtility::makeInstance(ObjectManager::class);
