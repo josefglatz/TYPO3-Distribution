@@ -4,6 +4,7 @@
  * This file is part of the "theme" Extension which is part of
  * the jousch/TYPO3-Distribution for TYPO3 CMS.
  */
+
 namespace JosefGlatz\Theme\Backend\FormDataProvider;
 
 use TYPO3\CMS\Backend\Form\FormDataProviderInterface;

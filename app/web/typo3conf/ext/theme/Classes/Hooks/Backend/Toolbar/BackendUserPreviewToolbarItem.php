@@ -4,6 +4,7 @@
  *
  *
  */
+
 namespace Sup7even\Theme\Hooks\Backend\Toolbar;
 
 use TYPO3\CMS\Backend\Toolbar\ToolbarItemInterface;
