@@ -65,6 +65,16 @@
 			<trans-unit id="clearcacheaction.realurl.autoConfDescription">
 				<source>Delete automatic generated realurl configuration file.</source>
 			</trans-unit>
+
+			<trans-unit id="toolbar.beuser.fastswitch.dropdown.title">
+				<source>Fast backend user switch</source>
+			</trans-unit>
+			<trans-unit id="toolbar.beuser.fastswitch.dropdown.noUsers">
+				<source>No available editor user!</source>
+			</trans-unit>
+			<trans-unit id="toolbar.beuser.fastswitch.dropdown.user.userNameTitle">
+				<source>Edit user record</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

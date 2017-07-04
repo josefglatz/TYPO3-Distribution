@@ -1,0 +1,50 @@
+<html xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+	  xmlns:bu="http://typo3.org/ns/TYPO3/CMS/Beuser/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<h3 class="dropdown-headline">
+	{f:translate(key: 'LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:toolbar.beuser.fastswitch.dropdown.title')}
+</h3>
+<hr>
+<f:if condition="{users}">
+	<f:then>
+		<div class="dropdown-table">
+			<f:for each="{users}" as="user">
+				<div class="dropdown-table-row">
+					<div class="dropdown-table-column dropdown-table-icon">
+						<a href="#" class="t3js-contextmenutrigger" data-table="be_users" data-uid="{user.1.uid}" title="{f:if(condition: '{user.1.description}', then: '{user.1.description} ')}(id={user.1.uid})">
+							<be:avatar backendUser="{user.1.uid}" showIcon="TRUE" />
+						</a>
+					</div>
+					<div class="dropdown-table-column dropdown-table-title">
+						<a class="dropdown-table-title-ellipsis"
+						   href="{bu:editRecord(parameters: 'edit[be_users][{user.1.uid}]=edit&returnUrl={returnUrl}')}"
+						   target="_new" title="{f:translate(key: 'LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:toolbar.beuser.fastswitch.dropdown.user.userNameTitle')}: {user.1.username}">
+							{user.0.realName}
+						</a>
+						<span class="text-muted dropdown-table-title-ellipsis">{user.1.username}</span>
+					</div>
+					<div class="dropdown-table-column dropdown-table-actions">
+						<f:render section="Info" arguments="{_all}" />
+						<f:render section="Switch" arguments="{_all}" />
+					</div>
+				</div>
+			</f:for>
+		</div>
+	</f:then>
+	<f:else>
+		<p>
+			{f:translate(key: 'LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:toolbar.beuser.fastswitch.dropdown.noUsers')}
+		</p>
+	</f:else>
+</f:if>
+
+<f:section name="Info">
+	<a class="dropdown-table-actions-btn dropdown-table-actions-btn-edit" href="#" onclick="top.launchView('be_users', '{user.1.uid}'); return false;"><core:icon identifier="actions-document-info" alternativeMarkupIdentifier="inline" /></a>
+</f:section>
+
+<f:section name="Switch">
+	<theme:switchUser backendUser="{user.0}" class="dropdown-table-actions-btn dropdown-table-actions-btn-delete" />
+</f:section>
+</html>
