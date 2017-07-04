@@ -27,7 +27,7 @@ options {
 		filesPerPage = 40
 	}
 	folderTree {
-		uploadFieldsInLinkBrowser = 0
+		uploadFieldsInLinkBrowser = 1
 	}
 	// default direct upload folder
 #	defaultUploadFolder = 1:Bilder/
