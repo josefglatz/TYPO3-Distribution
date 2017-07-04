@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function ($extKey) {
+    function ($extKey, $table) {
         $pathSegment = 'Configuration/TSConfig/';
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
@@ -71,7 +71,7 @@ call_user_func(
             ],
         ];
         foreach ($customPageTreeIcons as $customPageTreeIcon) {
-            $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+            $GLOBALS['TCA'][$table]['columns']['module']['config']['items'][] = [
                 0 => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:icon.pagetree.' . $customPageTreeIcon[0] . '',
                 1 => '' . $customPageTreeIcon[1] . '',
                 2 => '' . $customPageTreeIcon[2] . '',
@@ -79,7 +79,7 @@ call_user_func(
         }
 
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
-            $GLOBALS['TCA']['pages'],
+            $GLOBALS['TCA'][$table],
             [
                 'ctrl' => [
                     'typeicon_classes' => [
@@ -95,5 +95,6 @@ call_user_func(
             ]
         );
     },
-    'theme'
+    'theme',
+    'pages'
 );
