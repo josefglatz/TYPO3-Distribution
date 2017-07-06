@@ -48,7 +48,9 @@ call_user_func(
         if (TYPO3_MODE === 'BE') {
 
             // Add custom cache action item: delete realurl configuration file
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][$extKey] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
+            // Add custom cache action item: clear processed files
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearProcessedFilesMenuItem::class;
 
             // Hook for enriching content element preview footer in BE with additional data
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =

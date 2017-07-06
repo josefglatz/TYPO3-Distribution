@@ -15,6 +15,7 @@ call_user_func(
             // register svg icons: identifier and filename
             $iconsSvg = [
                 'theme-backend-realurl-reset' => 'theme-backend-realurl-reset.svg',
+                'theme-backend-clear-processedfiles' => 'theme-backend-clear-processedfiles.svg',
 
                 'apps-pagetree-folder-contains-records'     => 'theme-pagetree-folder-contains-records.svg',
                 'apps-pagetree-folder-contains-pages'       => 'theme-pagetree-folder-contains-pages.svg',

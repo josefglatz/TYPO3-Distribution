@@ -66,6 +66,13 @@
 				<source>Delete automatic generated realurl configuration file.</source>
 			</trans-unit>
 
+			<trans-unit id="clearcacheaction.clear.processedfiles.title">
+				<source>Clear all processed files</source>
+			</trans-unit>
+			<trans-unit id="clearcacheaction.clear.processedfiles.description">
+				<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
+			</trans-unit>
+
 			<trans-unit id="toolbar.beuser.fastswitch.dropdown.title">
 				<source>Fast backend user switch</source>
 			</trans-unit>
