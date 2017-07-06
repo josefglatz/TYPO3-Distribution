@@ -16,7 +16,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class ClearProcessedFilesMenuItem
- * @package JosefGlatz\Theme\Hooks\Backend\Toolbar
  */
 class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
 {
