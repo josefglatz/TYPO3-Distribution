@@ -15,8 +15,9 @@ use TYPO3\CMS\Core\Resource\ProcessedFileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
+ * Add a CacheMenuItem for clearing processed files.
+ *
  * Class ClearProcessedFilesMenuItem
- * @package JosefGlatz\Theme\Hooks\Backend\Toolbar
  */
 class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
 {
