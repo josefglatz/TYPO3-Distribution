@@ -93,8 +93,6 @@
 		"typo3/cms-taskcenter": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-tstemplate": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-viewpage": "dev-TYPO3_8-7 as 8.7.1",
-		"typo3/cms-wizard-crpages": "dev-TYPO3_8-7 as 8.7.1",
-		"typo3/cms-wizard-sortpages": "dev-TYPO3_8-7 as 8.7.1",
 		"causal/image_autoresize": "dev-master",
 		"dmitryd/typo3-realurl": "dev-master",
 		"georgringer/logging": "dev-master",
