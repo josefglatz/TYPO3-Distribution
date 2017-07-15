@@ -75,7 +75,6 @@
 		"typo3/cms-felogin": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-filelist": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-filemetadata": "dev-TYPO3_8-7 as 8.7.1",
-		"typo3/cms-func": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-form": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-impexp": "dev-TYPO3_8-7 as 8.7.1",
 		"typo3/cms-info": "dev-TYPO3_8-7 as 8.7.1",
