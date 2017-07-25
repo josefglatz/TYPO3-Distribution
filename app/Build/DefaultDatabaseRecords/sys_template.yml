@@ -1,2 +1,0 @@
-TYPO3:
-    Data: { sys_template: [{ uid: '1', pid: '1', sorting: '256', title: 'TYPO3 WEBSITE', root: '1', clear: '3', include_static_file: 'EXT:theme/Configuration/TypoScript/Sites/SiteDefault', description: 'Based on the TYPO3 distribution by Josef Glatz', static_file_mode: '3' }] }
