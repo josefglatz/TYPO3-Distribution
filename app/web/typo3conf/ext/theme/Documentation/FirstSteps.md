@@ -85,11 +85,6 @@ any other table to/from yaml.
 ./typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
 
 
-## Template
-./typo3cms export:table sys_template --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_template.yml
-./typo3cms import:table "sys_template" "uid" "/app/Build/DefaultDatabaseRecords/sys_template.yml"
-
-
 ## Frontend user/-group
 ./typo3cms export:frontendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/fe_groups.yml
 ./typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"

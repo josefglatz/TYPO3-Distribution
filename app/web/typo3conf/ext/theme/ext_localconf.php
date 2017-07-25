@@ -23,6 +23,9 @@ call_user_func(
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
         }
 
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Core/TypoScript/TemplateService']['runThroughTemplatesPostProcessing'][1500546787] =
+            \JosefGlatz\Theme\Hooks\Frontend\TypoScriptHook::class . '->addCustomTypoScriptTemplate';
+
         $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['robotstxt'] = \JosefGlatz\Theme\Controller\RobotsTxtController::class . '::processRequest';
 
         // Custom translations https://docs.typo3.org/typo3cms/CoreApiReference/Internationalization/Translation/Index.html?highlight=locallangxmloverride#custom-translations
