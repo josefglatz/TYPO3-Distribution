@@ -51,7 +51,7 @@ class TypoScriptHook
                         'config' => '<INCLUDE_TYPOSCRIPT: source="' . $path . 'setup.typoscript">',
                         'constants' => '<INCLUDE_TYPOSCRIPT: source="' . $path . 'constants.typoscript">',
                         'nextLevel' => 0,
-                        'static_file_mode' => 1,
+                        'static_file_mode' => 3,
                         'uid' => $configuration['uid'],
                         'title' => $configuration['title'],
                     ];
