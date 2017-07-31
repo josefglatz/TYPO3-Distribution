@@ -19,13 +19,13 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 `app/web` is the webserver document root. All files directly in the root of this repo are for git ignoring and handling file within git, CGLs like `.editorconfig` and `dynamicReturnTypeMeta.json` for PhpStorm helper plugin.
 
-### Let's start 
+### Let's start
 
-1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate 
+1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate
 1. `git clone --depth=1 https://github.com/jousch/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
 1. `cd YourProject` Navigate to newly created project dir
-1. `rsync -av --progress --exclude '/README.md .git /.github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
-1. `rm -rf ../YourProjectTemp` Remove the temporary folder 
+1. `rsync -av --progress --exclude '/README.md .git .github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
+1. `rm -rf ../YourProjectTemp` Remove the temporary folder
 1. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
 1. Edit your `docker-compose.yml` to your needs. E.g. set your active containers (and proper links) by un-/commenting lines
 1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one from the values mentioned in the comments above within the same file)
@@ -45,7 +45,6 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
 1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
 1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
-1. Clear git history by cd'ing to project root folder and running `rm -rf .git` 
 1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
 1. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
 1. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
@@ -128,7 +127,7 @@ cd ./app && composer php-cs-fixer
 
 As the favicon doesn't change often and generation takes some seconds, all the generated files are included in git
 repository and could be deployed as-is. The reasons why the favicons are saved in document root are described
-[in the realfavicongenerator.net faq section](https://realfavicongenerator.net/faq). 
+[in the realfavicongenerator.net faq section](https://realfavicongenerator.net/faq).
 
 ### Change vendor name and other brand marks
 
@@ -151,7 +150,7 @@ Initially, the `config.headerComment` is mentioning this distribution. If you wa
 script too which change it to your needs (or edit [manually](app/web/typo3conf/ext/theme/Configuration/TypoScript/Base/Config.setupts):
 
 ```bash
-cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW 
+cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 ```
 
 ## Recommended Tools/Software/Plugins
