@@ -44,6 +44,7 @@ $EM_CONF[$_EXTKEY] = [
                     'mask_export' => '',
                     'my_redirects' => '',
                     'news' => '',
+                    'news_gallery' => '',
                     'page_speed' => '',
                     'piwik' => '',
                     'powermail' => '',
