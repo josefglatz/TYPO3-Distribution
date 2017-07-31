@@ -158,7 +158,7 @@ site {
         }
     }
 
-[applicationContext = Development*]
+[applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
     theme {
         debug = 1
     }
