@@ -73,8 +73,9 @@ class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
      */
     protected function applicationContextIsDevelopment(): bool
     {
-        $applicationContext = GeneralUtility::getApplicationContext();
-        return $applicationContext->isDevelopment();
+        return GeneralUtility::getApplicationContext()->isDevelopment()
+            || (GeneralUtility::getApplicationContext()->isProduction()
+                && GeneralUtility::getApplicationContext()->__toString() === 'Production/Dev');
     }
 
     /**
