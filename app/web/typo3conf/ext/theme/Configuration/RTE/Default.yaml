@@ -75,6 +75,7 @@ editor:
       - showblocks
       - about
       - notification
+#      - devtools
 
     # Plugins that must not be loaded
     removePlugins:
