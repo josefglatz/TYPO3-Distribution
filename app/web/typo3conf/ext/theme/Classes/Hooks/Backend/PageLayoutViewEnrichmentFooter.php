@@ -9,6 +9,7 @@ namespace JosefGlatz\Theme\Hooks\Backend;
 
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Lang\LanguageService;
 
 class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInterface
 {
@@ -23,7 +24,9 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$info, array &$row)
     {
-        if (GeneralUtility::getApplicationContext()->isDevelopment() || $this->getBackendUser()->isAdmin()) {
+        $languageFilePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang.xlf:';
+
+        if ($this->isDevelopmentEnvironment() || $this->getBackendUser()->isAdmin()) {
             $info[] = '<span 
                             style="display: block;text-align: right;opacity: .4" 
 	                        title="Only visible in Development applicationContext"
@@ -31,6 +34,28 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                 . 'CType: ' . $row['CType']
                 . '</span>';
         }
+    }
+
+    /**
+     * Check if current applicationContext is a development environment
+     *
+     * @return bool
+     */
+    protected function isDevelopmentEnvironment(): bool
+    {
+        if(GeneralUtility::getApplicationContext()->isDevelopment()
+            || (GeneralUtility::getApplicationContext()->isProduction()
+                && GeneralUtility::getApplicationContext()->__toString() === 'Production/Dev')) {
+            return true;
+        }
+    }
+
+    /**
+     * @return LanguageService
+     */
+    protected function getLanguageService()
+    {
+        return $GLOBALS['LANG'];
     }
 
     /**
