@@ -94,6 +94,12 @@ call_user_func(
                 ]
             ]
         );
+
+        $additionalColumns = [
+            'nav_image' => [
+
+            ],
+        ];
     },
     'theme',
     'pages'
