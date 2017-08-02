@@ -43,7 +43,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     protected function isDevelopmentEnvironment(): bool
     {
-        if(GeneralUtility::getApplicationContext()->isDevelopment()
+        if (GeneralUtility::getApplicationContext()->isDevelopment()
             || (GeneralUtility::getApplicationContext()->isProduction()
                 && GeneralUtility::getApplicationContext()->__toString() === 'Production/Dev')) {
             return true;
