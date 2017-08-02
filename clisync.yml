@@ -157,6 +157,7 @@ sync:
                 #- "ct typo3:domain --list typo3"
                 - "echo 'http://localprojectdomain.vm/ http://localprojectdomain.vm/typo3'"
                 - "echo 'http://localprojectdomain.docker/ http://localprojectdomain.docker/typo3'"
+                #- "ct docker:cli extbase solr:updateconnections"
 
 
     ##################
