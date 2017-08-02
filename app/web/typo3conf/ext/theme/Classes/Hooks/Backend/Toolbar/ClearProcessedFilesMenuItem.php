@@ -67,7 +67,7 @@ class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
     }
 
     /**
-     * Check if current applicationContext is Development
+     * Check if current applicationContext is a development specific context
      *
      * @return bool
      */
