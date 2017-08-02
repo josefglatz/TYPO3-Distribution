@@ -11,6 +11,9 @@ editor:
       maxWordCount: -1
       maxCharCount: -1
       pasteWarningDuration: 0
+    # Register own project specific plugin for ckeditor for modifying table specific limitations
+    tableModifications:
+      resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/tableModifications/"
     # Register own nbsp plugin for ckeditor for adding ctrl+space support to insert a non-breaking-space
     nbsp:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/nbsp/"
