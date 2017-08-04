@@ -1,6 +1,8 @@
 // Default TypoScript located at
 // 		app/vendor/typo3/cms/typo3/sysext/felogin/ext_localconf.php L:5ff (Constants) L:65 (Setup)
 
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:felogin/ext_typoscript_setup.txt">
+
 [userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('felogin')]
 	plugin.tx_felogin_pi1 {
 		// set infinite storagePid

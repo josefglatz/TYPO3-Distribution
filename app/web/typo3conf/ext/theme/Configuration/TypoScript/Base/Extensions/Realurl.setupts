@@ -1,3 +1,2 @@
-[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')]
-	config.tx_realurl_enable = 1
-[global]
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:realurl/ext_typoscript_setup.txt">
+config.tx_realurl_enable = 1

@@ -1,4 +1,5 @@
 [userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')]
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/ext_typoscript_setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:news/Configuration/TypoScript/Styles/Twb/setup.txt">
 
