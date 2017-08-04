@@ -1,3 +1,0 @@
-[userFunc = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('form')]
-
-[global]
