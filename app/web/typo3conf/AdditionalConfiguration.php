@@ -245,6 +245,48 @@ $customChanges = [
 
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
 
+// Logging
+$GLOBALS['TYPO3_CONF_VARS']['MONOLOG'] = [
+    'processorConfiguration' => array(
+        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => array()
+    ),
+    'handlerConfiguration' => [
+        'name' => 'General',
+        'handlers' => [
+            \Monolog\Handler\StreamHandler::class => [
+                'configuration' => [
+                    PATH_site . 'typo3temp/var/logs/general.log',
+                    \Monolog\Logger::WARNING
+                ]
+            ]
+        ]
+    ]
+];
+$GLOBALS['TYPO3_CONF_VARS']['MONOLOG']['JosefGlatz']['Theme']['Error'] = [
+    'processorConfiguration' => array(
+        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => array()
+    ),
+    'handlerConfiguration' => [
+        'name' => 'Page errors',
+        'handlers' => [
+            \Monolog\Handler\NativeMailerHandler::class => [
+                'configuration' => [
+                    'admin@example.org',
+                    'Error from website',
+                    'no-reply@example.org',
+                    \Monolog\Logger::DEBUG
+                ]
+            ],
+            \Monolog\Handler\StreamHandler::class => [
+                'configuration' => [
+                    PATH_site . 'typo3temp/var/logs/pageerror.log',
+                    \Monolog\Logger::DEBUG
+                ]
+            ]
+        ]
+    ]
+];
+
 /*
  * include the most general file e.g. "AdditionalConfiguration_Staging.php
  */

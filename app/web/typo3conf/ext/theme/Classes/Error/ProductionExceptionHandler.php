@@ -8,6 +8,7 @@ namespace JosefGlatz\Theme\Error;
  */
 use GeorgRinger\Logging\Log\MonologManager;
 use JosefGlatz\Theme\Controller\ErrorPageController;
+use Psr\Log\LoggerInterface;
 use Throwable;
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -44,9 +45,18 @@ class ProductionExceptionHandler extends \TYPO3\CMS\Core\Error\ProductionExcepti
      */
     protected function logError(Throwable $exception)
     {
+        $this->getLogger()->alert(sprintf($errorMessage, $code), ['exception' => $exception]);
+    }
+
+    /**
+     * @return LoggerInterface
+     */
+    protected function getLogger()
+    {
         if (ExtensionManagementUtility::isLoaded('logging')) {
-            $logger = GeneralUtility::makeInstance(MonologManager::class)->getLogger(__CLASS__);
-            $logger->error($exception->getMessage());
+            return GeneralUtility::makeInstance(\GeorgRinger\Logging\Log\MonologManager::class)->getLogger(__CLASS__);
+        } else {
+            return GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__);
         }
     }
 }
