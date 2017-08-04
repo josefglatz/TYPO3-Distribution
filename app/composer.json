@@ -104,7 +104,8 @@
 		"minifranske/gravatar": "dev-master",
 		"reelworx/rx-shariff": "dev-master",
 		"spooner-web/be_secure_pw": "dev-master",
-		"t3monitor/t3monitoring_client": "dev-master"
+		"t3monitor/t3monitoring_client": "dev-master",
+		"dmitryd/typo3-dd-googlesitemap": "^2.1"
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
@@ -118,7 +119,6 @@
 		"cpsit/mask-export": "dev-master",
 		"cedricziel/transladder": "dev-master",
 		"dl/yag": "dev-master",
-		"dmitryd/typo3-dd-googlesitemap": "dev-master",
 		"GeorgRinger/maildebug": "dev-master",
 		"georgringer/autoswitchtolistview": "dev-master",
 		"gridelementsteam/gridelements": "dev-master",
