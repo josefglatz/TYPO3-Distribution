@@ -247,9 +247,9 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
 
 // Logging
 $GLOBALS['TYPO3_CONF_VARS']['MONOLOG'] = [
-    'processorConfiguration' => array(
-        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => array()
-    ),
+    'processorConfiguration' => [
+        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => []
+    ],
     'handlerConfiguration' => [
         'name' => 'General',
         'handlers' => [
@@ -263,9 +263,9 @@ $GLOBALS['TYPO3_CONF_VARS']['MONOLOG'] = [
     ]
 ];
 $GLOBALS['TYPO3_CONF_VARS']['MONOLOG']['JosefGlatz']['Theme']['Error'] = [
-    'processorConfiguration' => array(
-        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => array()
-    ),
+    'processorConfiguration' => [
+        \GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::class => []
+    ],
     'handlerConfiguration' => [
         'name' => 'Page errors',
         'handlers' => [
