@@ -1,3 +1,5 @@
+
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:shariff/ext_typoscript_setup.txt">
 // Check EXT:rx_shariff/Configuration/TypoScript for available options on how to integrate extension:
 // You also find some infos about the possibilities in the manual EXT:rx_shariff/Documentation/Installation/Index.rst
 
