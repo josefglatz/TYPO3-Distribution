@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * Commands to be executed by typo3, where the key of the array
  * is the name of the command (to be called as the first argument after typo3).
