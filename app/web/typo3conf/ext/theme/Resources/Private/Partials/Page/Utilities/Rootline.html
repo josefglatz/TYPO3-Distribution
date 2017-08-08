@@ -1,0 +1,14 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:section name="RootlineValue"><f:spaceless>
+	<f:if condition="{propertyName}">
+		{v:page.rootline()
+		-> v:iterator.column(columnKey: '{propertyName}')
+		-> v:iterator.filter(invert: 1, nullFilter: 1)
+		-> v:iterator.first()}
+	</f:if>
+</f:spaceless></f:section>
+
+</html>
