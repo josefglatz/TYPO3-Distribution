@@ -2,7 +2,6 @@ preset: psr2
 
 enabled:
     - concat_with_spaces
-    - declare_strict_types
     - function_typehint_space
     - hash_to_slash_comment
     - lowercase_cast
