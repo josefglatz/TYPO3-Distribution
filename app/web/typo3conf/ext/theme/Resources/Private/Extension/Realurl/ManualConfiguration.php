@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * Use this file for adding your manual realurl configuration.
  *
