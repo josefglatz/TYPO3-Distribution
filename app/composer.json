@@ -97,6 +97,7 @@
 		"typo3/cms-wizard-sortpages": "dev-TYPO3_8-7 as 8.7.1",
 		"causal/image_autoresize": "dev-master",
 		"dmitryd/typo3-realurl": "dev-master",
+		"fluidtypo3/vhs": "dev-master",
 		"georgringer/logging": "dev-master",
 		"georgringer/news": "dev-master",
 		"georgringer/page_speed": "dev-master",
