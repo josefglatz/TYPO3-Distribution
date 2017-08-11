@@ -124,12 +124,15 @@
 		"georgringer/autoswitchtolistview": "dev-master",
 		"gridelementsteam/gridelements": "dev-master",
 		"helhum/typoscript-rendering": "dev-master",
+		"ichhabrecht/content-defender": "dev-master as 2.2.3",
 		"in2code/in2publish_core": "dev-master",
 		"in2code/powermail": "dev-master",
+		"jousch/beuser-fastswitch": "dev-master",
 		"koninklijke-collective/my-redirects": "dev-master",
 		"mask/mask": "dev-master",
 		"rlmp/rlmp-language-detection": "dev-master",
 		"sjbr/sr-language-menu": "dev-master",
+		"sup7even/benefits": "dev-master",
 		"t3g/blog": "dev-master"
 	},
 	"extra": {
