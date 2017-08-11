@@ -150,6 +150,7 @@
 		],
 		"psr-4": {
 			"JosefGlatz\\Theme\\": "web/typo3conf/ext/theme/Classes"
+			"JosefGlatz\\ThemeProject\\": "web/typo3conf/ext/theme/Classes"
 		}
 	},
 	"scripts": {
