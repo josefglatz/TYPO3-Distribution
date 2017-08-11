@@ -1,0 +1,10 @@
+TCEFORM.sys_file_metadata {
+	description {
+		label = Caption
+		label.de = Bildunterschrift
+	}
+	caption {
+		label = Additional Caption (not used)
+		label.de = Erweiterte Bildunterschrift (nicht verwendet)
+	}
+}

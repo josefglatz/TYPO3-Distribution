@@ -50,6 +50,11 @@ call_user_func(
         // Only backend relevant stuff
         if (TYPO3_MODE === 'BE') {
 
+            // Add PageTSConfig which is valid for the entire TYPO3 instance (e.g. Filelist > Metadata > formEngine labels overwrite)
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+                '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TSConfig/Page/General/Tceform/SysFileMetadata.tsc">'
+            );
+
             // Add custom cache action item: delete realurl configuration file
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
             // Add custom cache action item: clear processed files
