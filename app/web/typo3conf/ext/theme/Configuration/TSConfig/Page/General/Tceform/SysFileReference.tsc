@@ -1,4 +1,8 @@
 TCEFORM.sys_file_reference {
+	description {
+		label = Caption (Description)
+		label.de = Bildunterschrift (Beschreibung)
+	}
 
 	// The default cropVariants could be set via TSConfig. I generally tend to set those
 	// configuration via TCA/Overrides.
