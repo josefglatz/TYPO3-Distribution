@@ -121,6 +121,21 @@ $customChanges = [
                 'extIgnore' => '/^(CVS|.svn|.git|csh_)/',
                 'changeXlfDate' => 1,
             ]),
+            'mask' => serialize([
+                'json' => 'typo3conf/ext/theme_project/Resources/Private/Mask/mask.json',                   // Path of generated ext:mask config file
+                'backendlayout_pids' => '0,1',                                                              // PageIds from where the in PageTS defined backend layouts should be loaded (comma separated)
+                'content' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Templates/Content/',            // Folder for Content Fluid Templates (with trailing slash)
+                'layouts' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Layouts/',                      // Folder for Content Fluid Layouts (with trailing slash)
+                'partials' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Partials/',                    // Folder for Content Fluid Partials (with trailing slash)
+                'backend' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Backend/Templates/',            // Folder for Backend Preview Templates (with trailing slash)
+                'layouts_backend' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Backend/Layouts/',      // Folder for Backend Preview Layouts (with trailing slash)
+                'partials_backend' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Backend/Partials/',    // Folder for Backend Preview Partials (with trailing slash)
+                'preview' => 'typo3conf/ext/theme_project/Resources/Private/Mask/Backend/PreviewImages/',        // Folder for preview-images (with trailing slash)
+            ]),
+            'mask_export' => serialize([
+                'contentElementIcons' => 1,    // If enabled the export includes icons for content elements.
+                'backendPreview' => 1,         // If enabled the export contains some PHP and Fluid files to show a record preview in the page layout.
+            ]),
             'news' => serialize([
                 'archiveDate' => 'date',
                 'rteForTeaser' => 0,
