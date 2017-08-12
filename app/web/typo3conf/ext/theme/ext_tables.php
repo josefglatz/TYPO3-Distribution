@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * !!!!!!!!
  * HAVE IN MIND that ext_tables.php **ISN'T** loaded in a frontend request
