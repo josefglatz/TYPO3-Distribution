@@ -92,6 +92,7 @@
 		"typo3/cms-taskcenter": "dev-master as 8.7.4",
 		"typo3/cms-tstemplate": "dev-master as 8.7.4",
 		"typo3/cms-viewpage": "dev-master as 8.7.4",
+		"apache-solr-for-typo3/solr": "7.0.x-dev as 7.0.0",
 		"causal/image_autoresize": "dev-master",
 		"cpsit/mask-export": "dev-master as 0.9.1",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1",
@@ -116,6 +117,7 @@
 		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
+		"apache-solr-for-typo3/solr": "7.0.x-dev as 7.0.0",
 		"causal/extractor": "dev-master",
 		"cpsit/mask-export": "dev-master as 0.9.1",
 		"cedricziel/transladder": "dev-master",
