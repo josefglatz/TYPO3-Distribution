@@ -1,9 +1,4 @@
 <?php
-/**
- * This file is part of the TYPO3 CMS distribution "jousch/TYPO3-Distribution".
- *
- *
- */
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Project specific theme modification extension',
     'description' => 'Sitepackage-/Theme-/Modification-Extension of this great website.',

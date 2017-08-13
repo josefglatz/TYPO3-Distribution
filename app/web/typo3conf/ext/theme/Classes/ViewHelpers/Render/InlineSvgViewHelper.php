@@ -1,10 +1,5 @@
 <?php declare(strict_types=1);
 
-/**
- * This file is part of the "theme" Extension which is part of
- * the jousch/TYPO3-Distribution for TYPO3 CMS.
- */
-
 namespace JosefGlatz\Theme\ViewHelpers\Render;
 
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;

@@ -44,7 +44,7 @@ config {
 	pageTitleSeparator.noTrimWrap = | | |
 	noPageTitle = 2
 
-	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/jousch/TYPO3-Distribution
+	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution
 
 	debug = 0
 	admPanel = 1
