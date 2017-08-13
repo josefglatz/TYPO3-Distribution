@@ -101,7 +101,7 @@
 		"dmitryd/typo3-realurl": "dev-master",
 		"fluidtypo3/vhs": "dev-master",
 		"georgringer/logging": "dev-master",
-		"georgringer/deprecationloganalyzer": "dev-master as 2.*",
+		"georgringer/deprecationloganalyzer": "dev-master as 2.0.2",
 		"georgringer/news": "dev-master",
 		"georgringer/page_speed": "dev-master",
 		"helhum/typo3-console": "dev-master",
