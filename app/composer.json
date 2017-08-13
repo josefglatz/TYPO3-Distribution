@@ -94,6 +94,7 @@
 		"typo3/cms-viewpage": "dev-TYPO3_8-7 as 8.7.1",
 		"causal/image_autoresize": "dev-master",
 		"cpsit/mask-export": "dev-master as 0.9.1",
+		"dmitryd/typo3-dd-googlesitemap": "^2.1",
 		"dmitryd/typo3-realurl": "dev-master",
 		"fluidtypo3/vhs": "dev-master",
 		"georgringer/logging": "dev-master",
@@ -104,8 +105,7 @@
 		"minifranske/gravatar": "dev-master",
 		"reelworx/rx-shariff": "dev-master",
 		"spooner-web/be_secure_pw": "dev-master",
-		"t3monitor/t3monitoring_client": "dev-master",
-		"dmitryd/typo3-dd-googlesitemap": "^2.1"
+		"t3monitor/t3monitoring_client": "dev-master"
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
