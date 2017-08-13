@@ -33,9 +33,9 @@ class TypoScriptHook
     public function addCustomTypoScriptTemplate($parameters, $parentObject)
     {
         // Disable the inclusion of default TypoScript set via TYPO3_CONF_VARS
-//        $parameters['isDefaultTypoScriptAdded'] = true;
+        //        $parameters['isDefaultTypoScriptAdded'] = true;
         // Disable the inclusion of ext_typoscript_setup.txt of all extensions
-//        $parameters['processExtensionStatics'] = false;
+        //        $parameters['processExtensionStatics'] = false;
 
         // No template was found in rootline so far, so a custom "fake" sys_template record is added
         if ($parentObject->outermostRootlineIndexWithTemplate === 0) {
