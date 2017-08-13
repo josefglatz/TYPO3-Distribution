@@ -28,6 +28,7 @@
 /phpunit
 /typo3
 /typo3cms
+/php-parse
 /rmversion
 /setversion
 /upload
