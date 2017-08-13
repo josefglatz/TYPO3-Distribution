@@ -21,7 +21,7 @@
 			}
 		}
 	],
-	"name": "jousch/typo3-distribution",
+	"name": "josefglatz/typo3-distribution",
 	"description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
 	"keywords": [
 		"TYPO3 CMS",
@@ -54,7 +54,7 @@
 	],
 	"license": "GPL-3.0+",
 	"support": {
-		"issues": "https://github.com/jousch/TYPO3-Distribution/issues"
+		"issues": "https://github.com/josefglatz/TYPO3-Distribution/issues"
 	},
 	"minimum-stability": "beta",
 	"config": {
@@ -128,7 +128,7 @@
 		"ichhabrecht/content-defender": "dev-master as 2.2.3",
 		"in2code/in2publish_core": "dev-master",
 		"in2code/powermail": "dev-master",
-		"jousch/beuser-fastswitch": "dev-master",
+		"josefglatz/beuser-fastswitch": "dev-master",
 		"koninklijke-collective/my-redirects": "dev-master",
 		"mask/mask": "dev-master as 3.0.0",
 		"rlmp/rlmp-language-detection": "dev-master",

@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-/**
- * This file is part of the TYPO3 CMS distribution "jousch/TYPO3-Distribution".
- *
- *
- */
-
 namespace JosefGlatz\Theme\Hooks\Backend\Toolbar;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;

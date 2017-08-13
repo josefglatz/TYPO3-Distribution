@@ -22,7 +22,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 ### Let's start
 
 1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate
-1. `git clone --depth=1 https://github.com/jousch/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
+1. `git clone --depth=1 https://github.com/josefglatz/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
 1. `cd YourProject` Navigate to newly created project dir
 1. `rsync -av --progress --exclude '/README.md .git .github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
 1. `rm -rf ../YourProjectTemp` Remove the temporary folder

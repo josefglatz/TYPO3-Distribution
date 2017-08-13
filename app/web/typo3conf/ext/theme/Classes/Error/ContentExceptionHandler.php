@@ -2,10 +2,6 @@
 
 namespace JosefGlatz\Theme\Error;
 
-/**
- * This file is part of the "theme" Extension which is part of
- * the jousch/TYPO3-Distribution for TYPO3 CMS.
- */
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Crypto\Random;
 use TYPO3\CMS\Core\Log\LogManager;

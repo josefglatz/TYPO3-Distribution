@@ -19,6 +19,6 @@ conf.py:
     pointsize: 10pt
     preamble: \usepackage{typo3}
   html_theme_options:
-    github_repository: jousch/TYPO3-Distribution
+    github_repository: josefglatz/TYPO3-Distribution
     github_branch: master
 ...
