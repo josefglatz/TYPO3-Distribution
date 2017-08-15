@@ -11,7 +11,7 @@ call_user_func(
             'JosefGlatz\\Theme\\Hooks\\Frontend\\Realurl\\RealUrlAutoConfiguration->addThemeConfig';
 
         // Disable ext:news realurl hook
-//        unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
+        //unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
 
         // Add general UserTSConfig
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
@@ -29,12 +29,12 @@ call_user_func(
         $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['robotstxt'] = \JosefGlatz\Theme\Controller\RobotsTxtController::class . '::processRequest';
 
         // Custom translations https://docs.typo3.org/typo3cms/CoreApiReference/Internationalization/Translation/Index.html?highlight=locallangxmloverride#custom-translations
-//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:cms/locallang_tca.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/custom.xlf';
-//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:news/Resources/Private/Language/locallang_modadministration.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/Overrides/de.locallang_modadministration.xlf';
+        //$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:cms/locallang_tca.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/custom.xlf';
+        //$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:news/Resources/Private/Language/locallang_modadministration.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/Overrides/de.locallang_modadministration.xlf';
 
         // Hook for changing output before showing it
-//        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
-//            = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
+        //$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
+        //   = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
 
         // Register own RTE (ckeditor) presets
         $rtePresets = [                             // Final preset identifier:
