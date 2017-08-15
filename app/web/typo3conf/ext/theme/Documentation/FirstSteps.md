@@ -63,7 +63,7 @@ any other table to/from yaml.
 
 
 ## Backend User/-group
-./typo3cms export:backendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/be_groups.yml
+./typo3cms export:backendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,hide_in_lists --file=/app/Build/DefaultDatabaseRecords/be_groups.yml
 ./typo3cms import:backendgroups "uid" "/app/Build/DefaultDatabaseRecords/be_groups.yml"
 
 ./typo3cms export:backendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin,tx_news_categorymounts,lfeditor_change_editing_modes,tx_besecurepw_lastpwchange --file=/app/Build/DefaultDatabaseRecords/be_users.yml
