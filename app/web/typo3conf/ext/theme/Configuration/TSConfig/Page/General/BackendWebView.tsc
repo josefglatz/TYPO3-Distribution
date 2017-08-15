@@ -4,8 +4,41 @@ mod.web_view {
 	type = 0
 
 	previewFrameWidths {
+		iphone6plus < .iphone7plus
+		iphone6plus {
+			label = iPhone 6 Plus
 		}
 
 		// Bootstrap defaults
+		xs {
+			label = Bootstrap Extra Small <544
+			type = desktop
+			width = 543
+			height = 100%
+		}
+		sm {
+			label = Bootstrap Small ≧544
+			type = desktop
+			width = 544
+			height = 100%
+		}
+		md {
+			label = Bootstrap Medium ≧768
+			type = desktop
+			width = 768
+			height = 100%
+		}
+		lg {
+			label = Bootstrap Large ≧992
+			type = desktop
+			width = 992
+			height = 100%
+		}
+		xl {
+			label = Bootstrap Extra Large ≧992
+			type = desktop
+			width = 992
+			height = 100%
+		}
 	}
 }
