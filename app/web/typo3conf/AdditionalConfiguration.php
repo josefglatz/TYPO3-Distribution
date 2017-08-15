@@ -200,6 +200,9 @@ $customChanges = [
             'static_info_tables' => serialize([
                 'enableManager' => 0,
             ]),
+            'theme' =>  serialize([
+                'pageLayoutViewEnrichmentFooter' => 1,
+            ]),
             't3monitoring_client' => serialize([
                 'secret' => 'Provide some secret password',
                 'allowedIps' => '2a03:2a00:1100:2::ac10:29bc,172.17.0.1,188.94.251.75',
