@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
+use JosefGlatz\Theme\Utility\EmConfiguration;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Lang\LanguageService;
@@ -21,7 +22,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
     {
         $languageFilePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang.xlf:';
 
-        if ($this->isDevelopmentEnvironment() || $this->getBackendUser()->isAdmin()) {
+        if ($this->isEnabled() && ($this->isDevelopmentEnvironment() || $this->getBackendUser()->isAdmin())) {
             $info[] = '<span 
                             style="display: block;text-align: right;opacity: .4" 
 	                        title="Only visible in Development applicationContext"
@@ -43,6 +44,17 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                 && GeneralUtility::getApplicationContext()->__toString() === 'Production/Dev')) {
             return true;
         }
+    }
+
+    /**
+     * Check if feature is enabled
+     *
+     * @return bool
+     */
+    protected function isEnabled(): bool
+    {
+        $extConf = EmConfiguration::getSettings();
+        return $extConf->isPageLayoutViewEnrichmentFooter();
     }
 
     /**

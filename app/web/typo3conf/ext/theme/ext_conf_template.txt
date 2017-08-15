@@ -1,2 +1,2 @@
-# cat=backend/enable/103; type=boolean; label=Enable page module hooks
+# cat=backend/enable/103; type=boolean; label=Enable page module footer hooks
 pageLayoutViewEnrichmentFooter = 1
