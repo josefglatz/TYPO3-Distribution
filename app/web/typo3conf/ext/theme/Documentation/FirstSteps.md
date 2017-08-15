@@ -71,7 +71,7 @@ any other table to/from yaml.
 
 
 ## Page
-./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED --file=/app/Build/DefaultDatabaseRecords/pages.yml
+./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED,tx_ddgooglesitemap_lastmod --file=/app/Build/DefaultDatabaseRecords/pages.yml
 ./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
 
 
