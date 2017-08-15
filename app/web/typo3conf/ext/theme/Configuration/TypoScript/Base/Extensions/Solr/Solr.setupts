@@ -1,0 +1,56 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:solr/Configuration/TypoScript/Solr/setup.txt">
+
+plugin.tx_solr {
+	view {
+		templateRootPaths {
+			100 = {$theme.resPrivate}/Extension/Solr/Main/Templates/
+		}
+
+		partialRootPaths {
+			100 = {$theme.resPrivate}/Extension/Solr/Main/Partials/
+		}
+
+		layoutRootPaths {
+			100 = {$theme.resPrivate}/Extension/Solr/Main/Layouts/
+		}
+	}
+
+	enableDebugMode = 1
+
+	index {
+		fieldProcessingInstructions {
+
+		}
+
+		queue {
+
+		}
+	}
+
+	search {
+		spellchecking = 1
+		spellchecking {
+			searchUsingSpellCheckerSuggestion = 1
+		}
+
+		lastSearches = 0
+		frequentSearches = 0
+		sorting = 0
+		faceting = 1
+		variants = 0
+
+		faceting {
+
+		}
+
+		results {
+			resultsHighlighting = 1
+			siteHighlighting = 0
+			showDocumentScoreAnalysis = 0
+		}
+	}
+
+	logging.indexing.queue {
+
+	}
+}
