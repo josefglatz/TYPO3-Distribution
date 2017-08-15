@@ -72,16 +72,6 @@
 			<trans-unit id="clearcacheaction.clear.processedfiles.description">
 				<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
 			</trans-unit>
-
-			<trans-unit id="toolbar.beuser.fastswitch.dropdown.title">
-				<source>Fast backend user switch</source>
-			</trans-unit>
-			<trans-unit id="toolbar.beuser.fastswitch.dropdown.noUsers">
-				<source>No available editor user!</source>
-			</trans-unit>
-			<trans-unit id="toolbar.beuser.fastswitch.dropdown.user.userNameTitle">
-				<source>Edit user record</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
