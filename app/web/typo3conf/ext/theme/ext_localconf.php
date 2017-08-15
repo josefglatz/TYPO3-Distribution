@@ -18,11 +18,6 @@ call_user_func(
             '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TSConfig/UserGeneral.tsc">'
         );
 
-        // Add EXT:solr CommandController support for older versions
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('solr') && !class_exists(\ApacheSolrForTypo3\Solr\Command\SolrCommandController::class)) {
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \JosefGlatz\Theme\Command\SolrCommandController::class;
-        }
-
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Core/TypoScript/TemplateService']['runThroughTemplatesPostProcessing'][1500546787] =
             \JosefGlatz\Theme\Hooks\Frontend\TypoScriptHook::class . '->addCustomTypoScriptTemplate';
 

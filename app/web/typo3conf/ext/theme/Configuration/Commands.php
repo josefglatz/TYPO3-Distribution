@@ -8,7 +8,7 @@
  * example: bin/typo3 backend:lock
  */
 return [
-//    'solr:updateconnectinos' => [
+//    'solr:updateconnections' => [
 //        'class' => JosefGlatz\Theme\Command\SolrCommandController::class
 //    ]
 ];
