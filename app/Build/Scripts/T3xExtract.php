@@ -28,7 +28,6 @@ function showHelp( $name ) {
   --quiet             Do not display anything.
   --force             Perform actions that would otherwise abort the script.
   --update            Tries to update the script to the latest version.
-  --update-check      Checks if a newer version of the script is available.
   --export-config     Prints the default configuration of this script.
   --extract-config    Extracts configuration parameters from TYPO3.
   --base=PATH         The name of the base path where TYPO3 is 
@@ -132,93 +131,6 @@ function consoleWriteLineVerbose( $args ) {
 // The base location from where to retrieve new versions of this script
 $UPDATE_BASE = "https://raw.github.com/oliversalzburg/typo3scripts/master";
 
-/**
- * Update check
- */
-function updateCheck() {
-    global $UPDATE_BASE, $SUM_SELF, $SUM_LATEST;
-    $_contentVersions = file_get_contents( $UPDATE_BASE . "/versions" );
-    $_contentSelf     = explode( "\n", file_get_contents( INVNAME ), 2 );
-    $_sumSelf         = md5( $_contentSelf[ 1 ] );
-
-    consoleWriteLineVerbose( "Remote hash source: '" . $UPDATE_BASE . "/versions'" );
-    consoleWriteLineVerbose( "Own hash: '" . $SUM_SELF . "' Remote hash: '" . $SUM_LATEST . "'" );
-
-    $_isListed = preg_match( "/^" . SELF . " (?P<sum>[0-9a-zA-Z]{32})/ms", $_contentVersions, $_sumLatest );
-    if( !$_isListed ) {
-        consoleWriteLine( "No update information is available for '" . SELF . "'." );
-        consoleWriteLine( "Please check the project home page https://github.com/oliversalzburg/typo3scripts." );
-        return 2;
-
-    } else if( $_sumSelf != $_sumLatest[ 1 ] ) {
-        consoleWriteLine( "NOTE: New version available!" );
-        return 1;
-    }
-    return 0;
-}
-
-/**
- * Self-update
- */
-function runSelfUpdate() {
-    echo "Performing self-update...\n";
-
-    $_tempFileName = INVNAME . ".tmp";
-
-    // Download new version
-    echo "Downloading latest version...";
-    global $UPDATE_BASE;
-    $_fileContents = @file_get_contents( $UPDATE_BASE . "/" . SELF );
-    if( strlen( $_fileContents ) <= 0 ) {
-        echo "Failed: Error while trying to download new version!\n";
-        echo "File requested: " . $UPDATE_BASE . "/" . SELF . "\n";
-        exit( 1 );
-    }
-    $_payload = explode( "\n", $_fileContents, 2 );
-    echo "Done.\n";
-
-    // Restore shebang
-    $_selfContent = explode( "\n", file_get_contents( INVNAME ), 2 );
-    $_interpreter = $_selfContent[ 0 ];
-    file_put_contents( $_tempFileName, $_interpreter . "\n" );
-    file_put_contents( $_tempFileName, $_payload[ 1 ], FILE_APPEND );
-
-    // Copy over modes from old version
-    $_octalMode = fileperms( INVNAME );
-    if( FALSE == chmod( $_tempFileName, $_octalMode ) ) {
-        echo "Failed: Error while trying to set mode on $_tempFileName.\n";
-        exit( 1 );
-    }
-
-    // Spawn update script
-    $_name = INVNAME;
-    $_updateScript = <<<EOS
-#!/bin/bash
-# Overwrite old file with new
-if mv "$_tempFileName" "$_name"; then
-  echo "Done."
-  echo "Update complete."
-  rm -- $0
-else
-  echo "Failed!"
-fi
-EOS;
-    file_put_contents( "updateScript.sh", $_updateScript );
-
-    echo "Inserting update process...";
-    file_put_contents( "updateScript.sh", $_updateScript );
-    chmod( "updateScript.sh", 0700 );
-
-    if( function_exists( "pcntl_exec" ) ) {
-        pcntl_exec( "/bin/bash", array( "./updateScript.sh" ) );
-
-    } else if( function_exists( "passthru" ) ) {
-        die( passthru( "./updateScript.sh" ) );
-
-    } else {
-        die( "Please execute ./updateScript.sh now." );
-    }
-}
 
 # Make a quick run through the command line arguments to see if the user wants
 # to print the help. This saves us a lot of headache with respecting the order
@@ -269,13 +181,6 @@ foreach( $argv as $_option ) {
 
     } else if( $_option == "--force" ) {
         $FORCE = "true";
-
-    } else if( $_option == "--update" ) {
-        runSelfUpdate();
-
-    } else if( $_option == "--update-check" ) {
-        $returnValue = updateCheck();
-        exit( $returnValue );
 
     } else if( 0 === strpos( $_option, "--base=" ) ) {
         $BASE = substr( $_option, strpos( $_option, "=" ) + 1 );
