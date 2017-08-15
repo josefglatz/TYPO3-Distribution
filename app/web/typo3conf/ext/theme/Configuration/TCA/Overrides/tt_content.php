@@ -27,6 +27,19 @@ call_user_func(
             'after'
         );
         $tca = [
+            'columns' => [
+                'header_link' => [
+                    'config' => [
+                        'fieldControl' => [
+                            'linkPopup' => [
+                                'options' => [
+                                    'blindLinkFields' => 'class'
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'types' => [
                 'theme_inheritance_stop' => [
                     'showitem' => '
