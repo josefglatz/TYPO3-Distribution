@@ -39,11 +39,13 @@ site {
         footerNav = 10
     }
 
+
     felogin {
         emailFrom =
         emailFromName =
         replyTo =
     }
+
 
     ext {
         news {
@@ -77,11 +79,22 @@ site {
         robotsAdditional = ,follow,noarchive
         googleSiteVerification =
         author =
+		// Open Graph
+		og {
+			// article or website
+			type = website
+			// Overwrite $site.titleTag.sitename in opengraph site_name tag
+			site_name =
+			image {
+				enable = 1
+				// name of database column to fetch image
+				fieldName = opengraph_image
+			}
+		}
     }
 
 
     tracking {
-
         google {
             enable = 0
             id =
@@ -99,7 +112,6 @@ site {
             // Piwik host without schema and trailing slash like "//my.piwik.host"
             host = //piwik.domain.tld
         }
-
     }
 
 

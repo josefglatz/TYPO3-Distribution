@@ -3,6 +3,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
     function ($extKey, $table) {
+        $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
         $pathSegment = 'Configuration/TSConfig/';
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
@@ -99,7 +100,53 @@ call_user_func(
             'nav_image' => [
 
             ],
+            'tx_theme_opengraph_image' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.opengraph_image',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('opengraph_image', [
+                    // Use the imageoverlayPalette instead of the basicoverlayPalette
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
+                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                    crop,--linebreak--,
+                                    --palette--;;filePalette'
+                            ],
+                        ],
+                    ],
+                    'maxitems' => 1,
+                ],
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                )
+            ],
         ];
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            '--div--;' . $languageFileBePrefix . 'div.pages.seo,
+            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,',
+            '',
+            'after:TSconfig'
+        );
+
+        /**
+         * Set TCA palettes
+         */
+        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+            $GLOBALS['TCA'][$table]['palettes'],
+            [
+                'tx-theme-opengraph' => [
+                    'showitem' => '
+                        tx_theme_opengraph_image
+                    '
+                ],
+            ]
+        );
     },
     'theme',
     'pages'
