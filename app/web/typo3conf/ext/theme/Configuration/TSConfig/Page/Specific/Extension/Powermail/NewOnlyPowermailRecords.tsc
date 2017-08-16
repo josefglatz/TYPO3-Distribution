@@ -1,0 +1,1 @@
+mod.web_list.allowedNewTables = tx_powermail_domain_model_answer,tx_powermail_domain_model_field,tx_powermail_domain_model_form,tx_powermail_domain_model_page,sys_note
