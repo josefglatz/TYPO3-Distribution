@@ -1,0 +1,9 @@
+[adminUser = 0]
+TCEFORM.tt_content.pi_flexform.powermail_pi1 {
+	receiver {
+		settings\.flexform\.receiver\.type {
+			keepItems = 0
+		}
+	}
+}
+[global]

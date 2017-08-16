@@ -1,0 +1,7 @@
+[adminUser = 0]
+TCEFORM.tx_powermail_domain_model_field {
+	type {
+		keepItems = input,textarea,select,check,radio,submit,text,hidden,date,
+	}
+}
+[global]
