@@ -1,0 +1,2 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:powermail/Configuration/TypoScript/Main/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:powermail/Configuration/TypoScript/BootstrapClassesAndLayout/setup.txt">
