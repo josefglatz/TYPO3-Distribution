@@ -64,6 +64,7 @@ $EM_CONF[$_EXTKEY] = [
                     'vhs' => '',
                     'yag' => '',
                     'yaml_configuration' => '',
+                    'yoast_seo' => '',
                 ],
         ],
     'autoload' =>

@@ -140,7 +140,8 @@
 		"rlmp/rlmp-language-detection": "dev-master",
 		"sjbr/sr-language-menu": "dev-master",
 		"sup7even/benefits": "dev-master",
-		"t3g/blog": "dev-master"
+		"t3g/blog": "dev-master",
+		"yoast-seo-for-typo3/yoast_seo": "dev-master"
 	},
 	"extra": {
 		"typo3/cms": {
