@@ -46,6 +46,7 @@ page {
 		viewport = width=device-width, initial-scale=1, shrink-to-fit=no
 		SKYPE_TOOLBAR = SKYPE_TOOLBAR_PARSER_COMPATIBLE
 		format-detection = telephone=no
+		apple-mobile-web-app-capable = no
 
 		description = TEXT
 		description {
@@ -93,6 +94,19 @@ page {
 			// @TODO: Add author support for ext:news per default
 		}
 
+		date = TEXT
+		date {
+			data = page:SYS_LASTCHANGED // page:crdate
+			date = Y-m-d
+			// @TODO: meta tag data an detailpages and news list views?
+		}
+
+		// OpenGraph Tags
+
+		og:type {
+			attribute = property
+			value = {$site.meta.og.type}
+		}
 
 		og:title {
 			attribute = property
@@ -101,7 +115,11 @@ page {
 
 		og:site_name {
 			attribute = property
-			data = {$site.titleTag.sitename}
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				value = {$site.meta.og.site_name}
+				ifEmpty = {$site.titleTag.sitename}
+			}
 		}
 
 		og:description {
@@ -115,11 +133,43 @@ page {
 			}
 		}
 
-		date = TEXT
-		date {
-			data = page:SYS_LASTCHANGED // page:crdate
-			date = Y-m-d
-			// @TODO: meta tag data an detailpages and news list views?
+		og:image {
+			attribute = property
+			stdWrap.cObject = COA
+			stdWrap.cObject {
+				if.isTrue = {$site.meta.og.image.enable}
+				10 = FILES
+				10 {
+					references {
+						#data = levelfield:-1, {$site.meta.og.image.fieldName}, slide
+						table = pages
+						uid.data = page:uid
+						fieldName = {$site.meta.og.image.fieldName}
+					}
+
+					maxItems = 1
+					renderObj = COA
+					renderObj {
+						10 = IMG_RESOURCE
+						10 {
+							file {
+								import.data = file:current:publicUrl
+								crop.data = file:current:crop
+								maxW = 1920
+								maxH = 1080
+							}
+
+							stdWrap {
+								typolink {
+									parameter.data = TSFE:lastImgResourceInfo|3
+									returnLast = url
+									forceAbsoluteUrl = 1
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		// Add DC tags like the following example:
