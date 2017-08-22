@@ -109,7 +109,7 @@
 		"josefglatz/beuser-fastswitch": "^1.0.2",
 		"mask/mask": "dev-master as 3.0.0",
 		"minifranske/gravatar": "dev-master",
-		"reelworx/rx-shariff": "dev-master",
+		"reelworx/rx-shariff": "^9.0.1",
 		"spooner-web/be_secure_pw": "dev-master",
 		"t3monitor/t3monitoring_client": "dev-master"
 	},
