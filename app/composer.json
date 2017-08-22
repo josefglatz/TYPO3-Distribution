@@ -56,7 +56,7 @@
 	"support": {
 		"issues": "https://github.com/josefglatz/TYPO3-Distribution/issues"
 	},
-	"minimum-stability": "beta",
+	"minimum-stability": "stable",
 	"config": {
 		"optimize-autoloader": true,
 		"secure-http": true,
