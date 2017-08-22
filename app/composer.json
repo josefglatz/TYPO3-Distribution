@@ -106,7 +106,7 @@
 		"georgringer/news": "dev-master",
 		"georgringer/page_speed": "dev-master",
 		"helhum/typo3-console": "dev-master",
-		"josefglatz/beuser-fastswitch": ">=1.0 <2.0.0",
+		"josefglatz/beuser-fastswitch": "^1.0.2",
 		"mask/mask": "dev-master as 3.0.0",
 		"minifranske/gravatar": "dev-master",
 		"reelworx/rx-shariff": "dev-master",
