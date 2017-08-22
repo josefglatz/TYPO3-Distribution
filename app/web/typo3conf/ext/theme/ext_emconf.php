@@ -37,6 +37,7 @@ $EM_CONF[$_EXTKEY] = [
                     'gridelements' => '',
                     'image_autoresize' => '',
                     'in2publish_core' => '',
+                    'infogram' => '',
                     'lfeditor' => '',
                     'linkvalidator' => '',
                     'logging' => '',
