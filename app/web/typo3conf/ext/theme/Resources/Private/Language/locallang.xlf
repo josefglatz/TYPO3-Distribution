@@ -32,6 +32,9 @@
 			<trans-unit id="cookieLaw.revokeBtn">
 				<source>Cookie Policy</source>
 			</trans-unit>
+			<trans-unit id="screenreader.skiplink">
+				<source>Skip to main content</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
