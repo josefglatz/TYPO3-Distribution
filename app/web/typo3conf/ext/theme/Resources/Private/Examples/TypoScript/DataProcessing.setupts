@@ -1,4 +1,4 @@
-lib.foobaluu {
+page.10 {
 	dataProcessing {
 		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 		10 {
@@ -15,6 +15,14 @@ lib.foobaluu {
 					references.fieldName = media
 				}
 			}
+		}
+
+#		PAGES.MEDIA AS FLUID VARIABLE {KeyVisual} if field is not empty
+		10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+		10 {
+			references.fieldName = media
+			as = KeyVisual
+			if.isTrue.field = media
 		}
 	}
 }
