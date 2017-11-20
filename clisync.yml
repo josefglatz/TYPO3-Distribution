@@ -104,6 +104,7 @@ GLOBAL:
             - "AdditionalConfiguration_custom.php"
             - "AdditionalConfiguration_Development_Docker.php"
             - "/Build"
+            - "/sgc-core"
 
     ## commands
     command:
