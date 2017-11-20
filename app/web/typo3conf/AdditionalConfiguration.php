@@ -104,6 +104,10 @@ $customChanges = [
                 'mapping_base_directory' => 'EXT:extractor/Configuration/Services/',
                 'mapping_configuration' => ''
             ]),
+            'extensionmanager' => serialize([
+                'automaticInstallation' => 1,
+                'offlineMode' => 0,
+            ]),
             'fluid_styled_content' => serialize([
                 'loadContentElementWizardTsConfig' => 1,
             ]),
