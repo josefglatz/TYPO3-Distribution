@@ -66,6 +66,9 @@ config {
 	inlineStyle2TempFile = 1
 	removeDefaultCss = 0
 
+	// Overwrite PageRenderer template file (e.g. for sgc (shop.sgalinski.de)
+	#pageRendererTemplateFile = EXT:theme/Resources/Private/Templates/Page/AboveTheFold/Dist/PageRenderTemplate.html
+
 	// No indexing, we're not using a search
 	index_enable = 0
 
