@@ -217,6 +217,9 @@ $customChanges = [
                 'allowedIps' => '2a03:2a00:1100:2::ac10:29bc,172.17.0.1,188.94.251.75',
                 'enableDebugForErrors' => 0,
             ]),
+            'vhs' => serialize([
+                'disableAssetHandling' => 1,
+            ]),
         ],
     ],
     'FE' => [
