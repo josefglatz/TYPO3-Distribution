@@ -60,6 +60,7 @@
 	"config": {
 		"optimize-autoloader": true,
 		"secure-http": true,
+		"sort-packages": true,
 		"bin-dir": "."
 	},
 	"require": {
