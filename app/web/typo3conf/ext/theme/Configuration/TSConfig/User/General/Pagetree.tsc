@@ -1,10 +1,13 @@
 options {
 	pageTree {
+		// TYPO3-9 Option was removed http://ift.tt/2AaOGYr The filter is always shown, this feature should not be available on a per-user basis.
 		hideFilter = 0
 
+		// TYPO3-9 Option was removed http://ift.tt/2AaOGYr and is always activated
 		disableIconLinkToContextmenu = 0
 		showPageIdWithTitle = 1
 		showNavTitle = 1
+		//  TYPO3-9 Option was removed http://ift.tt/2AaOGYr Alias is now always searched for.
 		searchInAlias = 1
 		separateNotinmenuPages = 0
 		alphasortNotinmenuPages = 0
@@ -16,6 +19,7 @@ options {
 #        backgroundColor {
 #        }
         showPathAboveMounts = 1
+		// TODO TYPO3-9 Option was removed http://ift.tt/2AaOGYr no doctypes are excluded  anymore in search
 #        excludeDoktypes =
 		// @TODO Inform about options.pageTree.altElementBrowserMountPoints and discuss if we should use it for a better backend experience
 #        altElementBrowserMountPoints = 20,31
