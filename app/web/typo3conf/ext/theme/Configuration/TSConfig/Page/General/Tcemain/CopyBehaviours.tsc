@@ -21,6 +21,12 @@ TCEMAIN {
 			// set copied element visible by default
 			disableHideAtCopy = 1
 		}
+		be_groups {
+			// add suffix to copied element
+			disablePrependAtCopy = 0
+			// set copied element visible by default
+			disableHideAtCopy = 1
+		}
 		pages {
 			// add suffix to copied element
 			disablePrependAtCopy = 0
@@ -50,3 +56,12 @@ TCEMAIN {
 		}
 	}
 }
+
+// Disable hideAtCopy for common tables on development specific environments
+[applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
+TCEMAIN.table {
+	pages.disableHideAtCopy = 1
+	tt_content.disableHideAtCopy = 1
+	tx_news_domain_model_news.disableHideAtCopy = 1
+}
+[global]
