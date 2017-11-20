@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = [
                 [
                     'autoswitchtolistview' => '',
                     'be_secure_pw' => '',
+                    'beuser_fastswitch' => '',
                     'blog' => '',
                     'dd_googlesitemap' => '',
                     'extractor' => '',

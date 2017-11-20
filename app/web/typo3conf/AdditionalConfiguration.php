@@ -80,6 +80,15 @@ $customChanges = [
                 'specialChar' => true,
                 'patterns' => 4, // Fitting patterns: How many patterns from above must fit to make the password secure
             ]),
+            'beuser_fastswitch' => serialize([
+                'allowedUserNamePattern' => '',
+                'allowedUserEmailAddressPattern' => '',
+                'allowedUserGroupUids' => '',
+                'allowedUserGroupNamePattern' => '',
+                'showAdminUsers' => 0,
+                'activeSearchbox' => 0,
+                'defaultListing' => 'default',
+            ]),
             'extractor' => serialize([
                 'enable_tika' => 0,
                 'enable_tools_exiftool' => 0,
