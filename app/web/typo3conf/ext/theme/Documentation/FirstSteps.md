@@ -20,6 +20,7 @@
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`
 - set backend view page module widths to your projectspecific frontend breakpoints
 - configure cookie consent (EU cookie law stuff) `EXT:theme/Configuration/TypoScript/Base/Page/CookieLaw.setupts`
+- ext:lfeditor: limit available languages in extConf
 - ....
 
 ## Cookie Consent
