@@ -1,0 +1,74 @@
+################################################
+#### COUNT CONTENT LIB FOR USAGE IN FLUID ####
+################################################
+#
+#  EXAMPLE: amount of content elements in colPos 1 of actual PID
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.countContent" data="{colPos: 1}" />
+#  {f:cObject(typoscriptObjectPath: 'lib.countContent', data: '{colPos: 1}')}
+#
+#
+#
+#
+#  Usage examples:
+#  --------------
+#
+#  <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.countContent', data: '{colPos: 1}')}">
+#	   <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1', wrap: '<aside class=\"l-aside\">|</aside>'}" />
+#  </f:if>
+#
+#
+#  <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.countContent', data: '{colPos: 1}')}">
+#      <aside class="l-aside">
+#		  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+#      </aside>
+#  </f:if>
+#
+#
+###############
+lib.countContent = COA
+lib.countContent {
+	5 = LOAD_REGISTER
+	5 {
+		colPos.cObject = TEXT
+		colPos.cObject {
+			field = colPos
+			ifEmpty.cObject = TEXT
+			ifEmpty.cObject {
+				value.current = 1
+				ifEmpty = 0
+			}
+		}
+		pageUid.cObject = TEXT
+		pageUid.cObject {
+			field = pageUid
+			ifEmpty.data = TSFE:id
+		}
+		contentFromPid.cObject = TEXT
+		contentFromPid.cObject {
+			data = DB:pages:{register:pageUid}:content_from_pid
+			data.insertData = 1
+		}
+	}
+	20 = CONTENT
+	20 {
+		table = tt_content
+		select {
+			selectFields = count(uid) AS counter
+			where = {#colPos}={register:colPos}
+			where.insertData = 1
+			pidInList.data = register:pageUid
+			pidInList.override.data = register:contentFromPid
+			andWhere = (deleted = 0 AND hidden = 0)
+		}
+
+		renderObj = COA
+		renderObj {
+			10 = TEXT
+			10 {
+				data = field:counter
+			}
+		}
+	}
+	90 = RESTORE_REGISTER
+}
