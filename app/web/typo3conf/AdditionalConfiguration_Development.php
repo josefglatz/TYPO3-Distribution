@@ -25,6 +25,8 @@ $customChanges = [
         'debug' => true,
     ],
     'MAIL' => [
+        'transport' => 'sendmail',
+        'transport_sendmail_command' => '/usr/sbin/sendmail -t -i ',
 //        'transport' => 'mbox',
 //        'transport_mbox_file' => dirname(PATH_site) . 'mails.txt',
     ],
