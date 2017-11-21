@@ -1,0 +1,15 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/Sup7even/Theme/ViewHelpers">
+<f:if condition="{SocialNavigation}">
+	<ul class="nav-social">
+	<f:for each="{SocialNavigation}" as="item" iteration="SocialIteration">
+		<li class="nav-social__item">
+			<a class="nav-social__item__link {theme:format.domainName(url: item.link)}" href="{item.link}" target="_blank">
+				<span>{item.title}</span>
+			</a>
+		</li>
+	</f:for>
+	</ul>
+</f:if>
+</html>

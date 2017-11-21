@@ -104,6 +104,16 @@ page {
 			}
 			150 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			150 {
+				special = {$site.nav.social.navigationType}
+				special.value = {$site.uid.socialNav}
+				includeNotInMenu = {$site.nav.social.includeNotInMenu}
+				as = SocialNavigation
+				if {
+					isTrue = {$site.uid.socialNav}
+				}
+			}
+			500 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			500 {
 				special = language
 				special.value = {$site.nav.language.languageValue}
 				as = LanguageNavigation

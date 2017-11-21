@@ -20,6 +20,12 @@ site {
             navigationType = directory
             includeNotInMenu = 1
         }
+        // social navigation configuration
+        social {
+            // Set navigation menu type special: "directory" or "list"
+            navigationType = directory
+            includeNotInMenu = 0
+        }
 		// language navigation configuration
 		language {
 			// Enable Language Navigation
@@ -37,6 +43,8 @@ site {
         metaNav = 9
         // footer navigation menu value
         footerNav = 10
+        // social pages navigation menu value
+        socialNav =
     }
 
 
