@@ -62,6 +62,7 @@ $EM_CONF[$_EXTKEY] = [
                     'sr_language_menu' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
+                    'theme_project' => '',
                     'transladder' => '',
                     'tt_address' => '',
                     'typoscript_rendering' => '',

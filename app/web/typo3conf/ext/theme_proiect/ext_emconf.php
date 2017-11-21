@@ -22,7 +22,6 @@ $EM_CONF[$_EXTKEY] = [
                 ],
             'suggests' =>
                 [
-                    'theme' => '',
                 ],
         ],
     'autoload' =>
