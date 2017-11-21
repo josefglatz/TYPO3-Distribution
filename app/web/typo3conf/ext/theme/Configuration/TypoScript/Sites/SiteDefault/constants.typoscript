@@ -10,15 +10,15 @@ site {
         breadcrumbEnableLevel = 2
         // meta navigation configuration
         meta {
-            // Set meta navigation menu type special: "directory" or "list"
+            // Set navigation menu type special: "directory" or "list"
             navigationType = directory
-            includeNotInMenu = 1
+            includeNotInMenu = 0
         }
         // footer navigation configuration
         footer {
-            // Set meta navigation menu type special: "directory" or "list"
+            // Set navigation menu type special: "directory" or "list"
             navigationType = directory
-            includeNotInMenu = 1
+            includeNotInMenu = 0
         }
         // social navigation configuration
         social {
