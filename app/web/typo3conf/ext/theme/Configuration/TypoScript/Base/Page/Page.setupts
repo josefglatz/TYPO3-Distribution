@@ -344,7 +344,7 @@ popup {
 #######################
 #### DUMMY WEBSITE ####
 #######################
-[globalVar = LIT:1 = {$site.dummyFrontend}]
+[globalVar = LIT:1 = {$site.dummyFrontend}] && [globalVar = GP:preview != 1]
 	config {
 		// force inline javascript for dummy website
 		removeDefaultJS = 0
