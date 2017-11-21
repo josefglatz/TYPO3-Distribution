@@ -2,8 +2,8 @@
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
@@ -37,7 +37,6 @@ class DomainNameViewHelper extends AbstractViewHelper implements CompilableInter
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-
         try {
             return self::parseUrl($arguments['url'], $arguments);
         } catch (\Exception $e) {
@@ -54,10 +53,10 @@ class DomainNameViewHelper extends AbstractViewHelper implements CompilableInter
         $n = count($tmp);
         if ($n >= 2) {
             if ($n == 4 || ($n == 3 && strlen($tmp[($n - 2)]) <= 3)) {
-                $d['domain'] = $tmp[($n - 3)] . "." . $tmp[($n - 2)] . "." . $tmp[($n - 1)];
+                $d['domain'] = $tmp[($n - 3)] . '.' . $tmp[($n - 2)] . '.' . $tmp[($n - 1)];
                 $d['domainX'] = $tmp[($n - 3)];
             } else {
-                $d['domain'] = $tmp[($n - 2)] . "." . $tmp[($n - 1)];
+                $d['domain'] = $tmp[($n - 2)] . '.' . $tmp[($n - 1)];
                 $d['domainX'] = $tmp[($n - 2)];
             }
         }
