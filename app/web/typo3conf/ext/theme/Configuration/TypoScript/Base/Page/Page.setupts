@@ -217,7 +217,6 @@ page {
 				wrap = tmpl-|
 				data < page.10.templateName.stdWrap.cObject.data
 				split < page.10.templateName.stdWrap.cObject.split
-				case = lower
 			}
 
 			# Add uid of optional FE-layout
