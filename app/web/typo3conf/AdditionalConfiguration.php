@@ -221,6 +221,15 @@ $customChanges = [
                 'allowedIps' => '2a03:2a00:1100:2::ac10:29bc,172.17.0.1,188.94.251.75',
                 'enableDebugForErrors' => 0,
             ]),
+            'unroll' => serialize([
+                'buttons' => '_savedok,_savedokview,_savedoknew,_saveandclosedok',
+                'unroll' => 1,
+                'showLabelSave' => 1,
+                'showLabelSaveDokView' => 1,
+                'showLabelSaveDokNew' => 1,
+                'showLabelSaveAndClose' => 1,
+                'allowUserSettings' => 0,
+            ]),
             'vhs' => serialize([
                 'disableAssetHandling' => 1,
             ]),
