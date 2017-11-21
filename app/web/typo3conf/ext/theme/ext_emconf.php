@@ -66,6 +66,7 @@ $EM_CONF[$_EXTKEY] = [
                     'transladder' => '',
                     'tt_address' => '',
                     'typoscript_rendering' => '',
+                    'unroll' => '',
                     'vhs' => '',
                     'yag' => '',
                     'yaml_configuration' => '',
