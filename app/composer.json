@@ -136,7 +136,7 @@
 		"georgringer/autoswitchtolistview": "dev-master",
 		"gridelementsteam/gridelements": "dev-master",
 		"helhum/typoscript-rendering": "dev-master",
-		"ichhabrecht/content-defender": "dev-master as 2.2.3",
+		"ichhabrecht/content-defender": "^2",
 		"instituteweb/unroll": "^2.0",
 		"in2code/in2publish_core": "dev-master",
 		"in2code/powermail": "dev-master",
