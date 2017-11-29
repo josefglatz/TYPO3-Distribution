@@ -24,5 +24,27 @@ page.10 {
 			as = KeyVisual
 			if.isTrue.field = media
 		}
+
+#		Example with custom pages field and MM table
+		10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+		10 {
+			table = pages
+			pidInList.data = leveluid : 0
+			recursive = 99
+			join = tx_articles_related_pages_mm ON tx_articles_related_pages_mm.uid_local = pages.uid
+			where.data = field:uid
+			where.intval = 1
+			where.wrap = tx_articles_related_pages_mm.uid_foreign=|
+			as = RelatedArticles
+			dataProcessing {
+				10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+				10 {
+					references.fieldName = image
+				}
+			}
+			if {
+				isTrue.field = tx_articles_related
+			}
+		}
 	}
 }
