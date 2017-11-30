@@ -4,6 +4,8 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 
 // @TODO: redis backend pConnect feature (7d0c8befc5999627edefb340cef270707c2956bd)
+// TODO: Add central password config for redis configs
+// TODO: generate config via simple foreach iterations (check https://www.mittwald.de/faq/frage/apcu-mit-typo3-verwenden therefore)
 
 
 // Override configuration of LocalConfiguration
@@ -61,12 +63,11 @@ $customChanges = [
 
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], $customChanges);
 
-if (extension_loaded('apc') && PHP_SAPI !== 'cli') {
+if (extension_loaded('apcu') && PHP_SAPI !== 'cli') {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_rootline']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_datamapfactory_datamap']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_reflection']['backend'] =
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_typo3dbbackend_tablecolumns']['backend'] =
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['l10n']['backend'] =
-        \TYPO3\CMS\Core\Cache\Backend\ApcBackend::class;
+        \TYPO3\CMS\Core\Cache\Backend\ApcuBackend::class;
 }
