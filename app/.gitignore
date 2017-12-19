@@ -47,6 +47,8 @@ node_modules
 /web/fileadmin/**/*
 /web/uploads/**/*
 
+# Ignore EXT:documentation files
+/web/typo3conf/Documentation/**/*
 
 # Initially ignore all local TYPO3 extensions
 /web/typo3conf/ext/*
