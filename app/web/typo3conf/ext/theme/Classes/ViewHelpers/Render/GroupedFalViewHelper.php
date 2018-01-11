@@ -5,10 +5,10 @@ namespace JosefGlatz\Theme\ViewHelpers\Render;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -50,7 +50,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  */
 class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInterface
 {
-
     use CompileWithRenderStatic;
 
     /** @var bool */
@@ -83,7 +82,7 @@ class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInter
 
         // File Collections
         if (!empty($arguments['collections'])) {
-            $collections = GeneralUtility::intExplode(',', $arguments['collections'], TRUE);
+            $collections = GeneralUtility::intExplode(',', $arguments['collections'], true);
             if (!empty($collections)) {
                 $fileCollector->addFilesFromFileCollections($collections);
             }
@@ -141,7 +140,6 @@ class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInter
                     break;
             }
             $groupedItems[$firstLetter][] = $file;
-
         }
 
         $as = $arguments['as'];
