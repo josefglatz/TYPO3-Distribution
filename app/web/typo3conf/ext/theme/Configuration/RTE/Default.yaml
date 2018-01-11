@@ -119,6 +119,9 @@ editor:
     toolbarStartupExpanded: true
     toolbarLocation: "top"
 
+    # Quicktable plugin configuration https://github.com/ufdada/quicktable/blob/master/plugin.js#L5
+    qtClass: "table table-striped table-responsive table-bordered"
+
 
 ############################
 ### Set the proc options ###

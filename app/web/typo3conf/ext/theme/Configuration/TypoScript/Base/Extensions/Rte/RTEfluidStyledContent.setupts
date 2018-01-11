@@ -7,10 +7,17 @@ lib.parseFunc_RTE {
 	externalBlocks := addToList(table)
 	externalBlocks {
 		table.stdWrap {
-			wrap = <div class="table-responsive">|</div>
-			HTMLparser.tags.table.fixAttrib.class {
-				default = table
-				list = table, table-bordered, table-condensed, table-striped
+			// Activate wrap stdWrap function if you want to wrap a <table/> no matter which class the table has
+#			wrap = <div class="table-responsive">|</div>
+			HTMLparser.tags.table {
+				fixAttrib.class {
+					// Add default class to table (if no one is given)
+					default = table table-striped table-responsive,table-bordered
+					// List of allowed table classes
+					list = table, table-striped, table-responsive, table-bordered
+				}
+				// Allowed attributes for frontend
+				allowedAttribs = class
 			}
 		}
 	}
