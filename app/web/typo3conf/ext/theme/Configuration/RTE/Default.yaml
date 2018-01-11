@@ -23,6 +23,9 @@ editor:
     contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css", "EXT:theme/Resources/Public/Css/rte.css" ]
 #    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
 
+    # Add disallowed content rules
+    disallowedContent: "table[style,border]"
+
     stylesSet: []
 
     # Semicolon seperated list of items to be displayed in the Format drop-down list of block levelin the toolbar http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_tags
@@ -136,6 +139,15 @@ processing:
 
   ## allowed default attributes
   allowAttributes: [class, id, title, dir, lang, xml:lang, itemscope, itemtype, itemprop]
+
+  ## CONTENT TO DATABASE
+  HTMLparser_db:
+    noAttrib: br
+    tags:
+      table:
+        allowedAttribs:
+          - class
+
 # @TODO Check/Add CKEDITOR.config.copyFormatting_* features
 # @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-find_highlight
 # @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_address if it has to be used or only class in css is enough
