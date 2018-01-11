@@ -145,6 +145,7 @@
 		"mask/mask": "dev-master as 3.0.0",
 		"rlmp/rlmp-language-detection": "dev-master",
 		"roave/security-advisories": "dev-master",
+		"schnitzler/fluid-styled-responsive-images": "^8.7.0",
 		"sjbr/sr-language-menu": "dev-master",
 		"sup7even/benefits": "dev-master",
 		"t3g/blog": "dev-master",
