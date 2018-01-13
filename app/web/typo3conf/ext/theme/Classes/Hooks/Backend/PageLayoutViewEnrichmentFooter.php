@@ -44,7 +44,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                 && GeneralUtility::getApplicationContext()->__toString() === 'Production/Dev')) {
             return true;
         }
-        
+
         return false;
     }
 
