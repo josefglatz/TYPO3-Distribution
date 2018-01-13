@@ -59,7 +59,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 ## Features
 
-* TYPO3 v8 dev-master in Composer mode
+* TYPO3 8.7 LTS in Composer mode
 * custom composer tasks
 * typo3-console support
 * PackageStates.php is excluded in git repository
