@@ -9,6 +9,8 @@ The goal of this package is to give an example of how a TYPO3 project could
 be configured and structured. It is updated on a regular basis to reflect the
 current developments of TYPO3 CMS.
 
+Branch **master**: Support for TYPO3 8.7 LTS
+
 ---
 
 ## First setup in combination with webdevops/TYPO3-docker-boilerplate and webdevops/vagrant-docker-vm (Ubuntu 14.04 non reverse-proxy magic)
