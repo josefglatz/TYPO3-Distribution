@@ -23,18 +23,18 @@ $customChanges = [
     ],
     'GFX' => [
     ],
-    'SYS' => [
-        'displayErrors' => false,
-        'enableDeprecationLog' => '',
-        'sqlDebug' => 0,
-        'systemLogLevel' => 4,
-    ],
     'LOG' => [
         'writerConfiguration' => [
             \TYPO3\CMS\Core\Log\LogLevel::DEBUG => [
                 \TYPO3\CMS\Core\Log\Writer\NullWriter::class => []
             ]
         ],
+    ],
+    'SYS' => [
+        'displayErrors' => false,
+        'enableDeprecationLog' => '',
+        'sqlDebug' => 0,
+        'systemLogLevel' => 4,
     ],
 ];
 
