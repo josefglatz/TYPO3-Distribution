@@ -30,6 +30,14 @@ $customChanges = [
             ]
         ],
     ],
+    'MAIL' => [
+//        'transport' => 'smtp',
+//        'transport_smtp_server' => 'SmtpServerHostname',
+//        'transport_smtp_port' => 25,
+//        'transport_smtp_encrypt' => 'tls',
+//        'transport_smtp_username' => 'SmtpUser',
+//        'transport_smtp_password' => 'SmtpPassword',
+    ],
     'SYS' => [
         'displayErrors' => false,
         'enableDeprecationLog' => '',
