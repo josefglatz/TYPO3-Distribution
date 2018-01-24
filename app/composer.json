@@ -73,7 +73,7 @@
 		"fluidtypo3/vhs": "^4.3",
 		"georgringer/deprecationloganalyzer": "^2.0",
 		"georgringer/logging": "dev-master",
-		"georgringer/news": "^6.1",
+		"georgringer/news": "^6.2",
 		"georgringer/page_speed": "dev-master",
 		"helhum/typo3-console": "^5.0.3",
 		"instituteweb/unroll": "^2.0",
