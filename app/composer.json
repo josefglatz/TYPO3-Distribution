@@ -61,7 +61,10 @@
 		"optimize-autoloader": true,
 		"secure-http": true,
 		"sort-packages": true,
-		"bin-dir": "."
+		"bin-dir": ".",
+		"COMMENTEDOUT:platform": {
+			"php": "7.2"
+		}
 	},
 	"require": {
 		"php": "^7.1 || ^7.2",
