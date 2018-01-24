@@ -375,12 +375,3 @@ if ($contextMainPart === 'Development') {
         $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
 }
-
-/*
- * add composer autoloader
- */
-$composerAutoloader = realpath(__DIR__ . '/../../vendor/autoload.php');
-
-if (!empty($composerAutoloader) && is_file($composerAutoloader)) {
-    include_once($composerAutoloader);
-}
