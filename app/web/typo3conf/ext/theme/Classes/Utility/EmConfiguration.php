@@ -34,7 +34,7 @@ class EmConfiguration
     public static function parseSettings(): array
     {
         $settings = unserialize(
-            $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['theme'],
+            (string)$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['theme'],
             []
         );
 
