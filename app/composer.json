@@ -118,7 +118,7 @@
 		"typo3/cms-viewpage": "~8.7",
 		"typo3/cms-wizard-crpages": "~8.7",
 		"typo3/cms-wizard-sortpages": "~8.7",
-		"w8tcha/CKEditor-WordCount-Plugin": "dev-master#e70499b0873f745098b1a569efd6fb31103b9d51",
+		"w8tcha/CKEditor-WordCount-Plugin": "^1.17",
 		"yoast-seo-for-typo3/yoast_seo": "^1.4"
 	},
 	"require-dev": {
