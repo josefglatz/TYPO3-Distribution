@@ -4,10 +4,12 @@ editor:
     wordcount:
       resource: "EXT:theme/Resources/Public/RTE/Plugins/wordcount/plugin.js"
       showParagraphs: true
+      showRemaining: false
       showWordCount: true
       showCharCount: true
       countSpacesAsChars: false
       countHTML: false
+      countLineBreaks: false
       maxWordCount: -1
       maxCharCount: -1
       pasteWarningDuration: 0
