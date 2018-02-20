@@ -1,0 +1,27 @@
+//
+// Custom salutation for EXT:powermail in thx.body or email
+//
+// # Example: How to use within Fluid:
+//
+//		{f:cObject(typoscriptObjectPath:'lib.salutation',data:'{geschlecht}')} {nachname}
+//		{f:cObject(typoscriptObjectPath:'lib.salutation',data:'{salutation}')} {lastname}
+//
+//
+lib.salutation = CASE
+lib.salutation {
+	# Passed value
+	key.field = 0
+
+	# Values can alternatively retrieved directly from GET- or POST-Parameters
+	#key.data = GP:tx_powermail_pi1|field|13
+
+	Herr = TEXT
+	Herr.value = Sehr geehrter Herr
+	Herr.noTrimWrap = || |
+
+	Frau = TEXT
+	Frau.value = Sehr geehrte Frau
+	Frau.noTrimWrap = || |
+}
+
+// Further details: http://wiki.sklein-medien.de/doku.php?id=typo3:powermail
