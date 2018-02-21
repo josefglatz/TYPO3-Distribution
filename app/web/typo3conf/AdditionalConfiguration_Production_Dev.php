@@ -21,6 +21,16 @@ $customChanges = [
     ],
     'EXT' => [
         'extConf' => [
+            'be_secure_pw' => serialize([
+                'validUntil' => '316 years', // Period to remind the user (after login) for setting a new password. Please use english (e.g. "14 days")
+                'forcePasswordChange' => 0, // Force changing the password: This disables all modules except user_setup to force a change of the password when the validUntil period is over or the checkbox in the be_user record  is set
+                'passwordLength' => 12, // Length of the password: Here you can set the minimal length of the BE user password. If nothing is set, default is 8.
+                'lowercaseChar' => true,
+                'capitalChar' => true,
+                'digit' => true,
+                'specialChar' => true,
+                'patterns' => 4, // Fitting patterns: How many patterns from above must fit to make the password secure
+            ]),
             'page_speed' => serialize([
                 'key' => '',
                 'cacheTime' => 30,
