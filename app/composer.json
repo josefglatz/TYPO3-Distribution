@@ -123,6 +123,7 @@
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
+		"georgringer/backend-debug": "^1.0",
 		"macopedia/mess_detector": "dev-master",
 		"maxserv/yaml_configuration": "dev-master",
 		"pyrech/composer-changelogs": "dev-master",
