@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Run this script with your desired vendor name in UpperCaseCamelCase:
+# ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
+
 # define existing/new vendor name
 Vendor="JosefGlatz"
 VendorLowercase="$(echo ${Vendor} | tr '[A-Z]' '[a-z]')"
