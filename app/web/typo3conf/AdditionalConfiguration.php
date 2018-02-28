@@ -149,6 +149,9 @@ $customChanges = [
                 'contentElementIcons' => 1,    // If enabled the export includes icons for content elements.
                 'backendPreview' => 1,         // If enabled the export contains some PHP and Fluid files to show a record preview in the page layout.
             ]),
+            'multicolumn' => serialize([
+                'checkCompatibility' => 1,
+            ]),
             'news' => serialize([
                 'archiveDate' => 'date',
                 'rteForTeaser' => 0,
