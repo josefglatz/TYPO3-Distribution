@@ -76,3 +76,8 @@ indent_size = 2
 [{package.json,.travis.yml}]
 indent_style = space
 indent_size = 2
+
+# SQL-Files
+[*.sql]
+indent_style = tab
+indent_size = 2
