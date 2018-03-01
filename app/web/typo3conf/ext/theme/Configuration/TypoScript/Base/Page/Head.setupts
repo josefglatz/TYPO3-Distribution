@@ -229,7 +229,6 @@ page {
 
 		)
 	}
-[global]
 
 
 // Overwrite robots meta tag for specific environments (as an additional security layer!)
