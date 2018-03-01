@@ -238,7 +238,7 @@ page {
 
 		meta {
 			robots >
-			robots = noindex,nofollow,noarchive
+			robots = noindex,nofollow,noarchive,NonProductionOverrideActive-PleaseCheckYourTypoScriptIfThisIsNoDevelopmentEnvironment
 		}
 
 	}
