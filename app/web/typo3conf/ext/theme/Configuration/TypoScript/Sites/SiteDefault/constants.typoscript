@@ -84,7 +84,10 @@ site {
 
 
     meta {
-        robotsAdditional = ,follow,noarchive
+		// Add following string always to robots meta-tag (e.g. `,noimageindex`).
+		// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?csw=1
+        robotsAdditional =
+
         googleSiteVerification =
         author =
 		// Open Graph

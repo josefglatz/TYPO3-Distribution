@@ -101,6 +101,22 @@ call_user_func(
             'nav_image' => [
 
             ],
+            'tx_theme_robot_index' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.robot_index',
+                'config' => [
+                    'type' => 'check',
+                    'default' => 1
+                ],
+            ],
+            'tx_theme_robot_follow' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.robot_follow',
+                'config' => [
+                    'type' => 'check',
+                    'default' => 1
+                ],
+            ],
             'tx_theme_opengraph_image' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.opengraph_image',
@@ -127,13 +143,6 @@ call_user_func(
             ],
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-            $table,
-            '--div--;' . $languageFileBePrefix . 'div.pages.seo,
-            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,',
-            '',
-            'after:TSconfig'
-        );
 
         /**
          * Set TCA palettes
@@ -146,7 +155,31 @@ call_user_func(
                         tx_theme_opengraph_image
                     '
                 ],
+                'tx-theme-robot-instructions' => [
+                    'showitem' => '
+                        tx_theme_robot_index, tx_theme_robot_follow
+                    '
+                ],
             ]
+        );
+
+        /**
+         * Make further adoptions to table
+         */
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            '--div--;' . $languageFileBePrefix . 'div.pages.seo,
+            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,',
+            '',
+            'after:TSconfig'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions,',
+            (string)\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
+            'after:description'
         );
     },
     'theme',

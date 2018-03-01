@@ -33,7 +33,6 @@
 			<trans-unit id="tt_content.header_layout.100">
 				<source>Hidden Header</source>
 			</trans-unit>
-
 			<trans-unit id="icon.pagetree.opendigital">
 				<source>Test Icon</source>
 			</trans-unit>
@@ -58,30 +57,35 @@
 			<trans-unit id="icon.pagetree.drafts">
 				<source>Folder/Page with Drafts</source>
 			</trans-unit>
-
 			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
 				<source>Reset realurl automatic configuration</source>
 			</trans-unit>
 			<trans-unit id="clearcacheaction.realurl.autoConfDescription">
 				<source>Delete automatic generated realurl configuration file.</source>
 			</trans-unit>
-
 			<trans-unit id="clearcacheaction.clear.processedfiles.title">
 				<source>Clear all processed files</source>
 			</trans-unit>
 			<trans-unit id="clearcacheaction.clear.processedfiles.description">
 				<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
 			</trans-unit>
-
 			<trans-unit id="field.pages.opengraph_image">
 				<source>Image (Min. 1200px x 630px recommended)</source>
 			</trans-unit>
-
+			<trans-unit id="field.pages.robot_index">
+				<source>Index current page</source>
+			</trans-unit>
+			<trans-unit id="field.pages.robot_follow">
+				<source>Follow links on current page</source>
+			</trans-unit>
 			<trans-unit id="div.pages.seo">
 				<source>SEO</source>
 			</trans-unit>
 			<trans-unit id="palette.pages.opengraph">
 				<source>Open Graph</source>
+			</trans-unit>
+			<trans-unit id="palette.pages.robot_instructions">
+				<source>Robot settings</source>
 			</trans-unit>
 		</body>
 	</file>

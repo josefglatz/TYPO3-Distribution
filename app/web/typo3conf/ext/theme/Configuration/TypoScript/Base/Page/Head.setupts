@@ -66,15 +66,25 @@ page {
 
 			stdWrap.cObject = COA
 			stdWrap.cObject {
-				10 = LOAD_REGISTER
+				10 = TEXT
 				10 {
-					seoIndex.cObject = TEXT
-					seoIndex.cObject.value = index
-					seoIndex.cObject.override = noindex,noarchive
-					seoIndex.cObject.override.if.isTrue.field = no_search
+					value = noindex
+					override = index
+					override {
+						if.isTrue.field = tx_theme_robot_index
+					}
+					wrap = |,
 				}
 				20 = TEXT
-				20.dataWrap = {register:seoIndex}{$site.meta.robotsAdditional}
+				20 {
+					value = nofollow
+					override = follow
+					override {
+						if.isTrue.field = tx_theme_robot_follow
+					}
+				}
+				100 = TEXT
+				100.value = {$site.meta.robotsAdditional}
 			}
 		}
 
@@ -222,7 +232,7 @@ page {
 [global]
 
 
-
+// Overwrite robots meta tag for specific environments (as an additional security layer!)
 [applicationContext = Production/Staging, Production/Testing] || [applicationContext = /^Production\/Dev/] || [globalVar = LIT:1 = {$site.dummyFrontend}]
 	page {
 
