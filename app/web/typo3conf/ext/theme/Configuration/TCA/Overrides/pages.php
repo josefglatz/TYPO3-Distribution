@@ -101,6 +101,19 @@ call_user_func(
             'nav_image' => [
 
             ],
+            'tx_theme_hide_page_heading' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_hide_page_heading.label',
+                'config' => [
+                    'type' => 'check',
+                    'default' => '0',
+                    'items' => [
+                        '1' => [
+                            '0' => $languageFileBePrefix . 'field.pages.tx_theme_hide_page_heading.check_0'
+                        ]
+                    ]
+                ]
+            ],
             'tx_theme_sharing_enabled' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.sharing_enabled',
@@ -210,6 +223,13 @@ call_user_func(
             'editorial',
             '--linebreak--,tx_theme_sharing_enabled,',
             'after:lastUpdated'
+        );
+        // Extend core's "layout" palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'layout',
+            'tx_theme_hide_page_heading,',
+            'after:layout'
         );
     },
     'theme',
