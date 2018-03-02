@@ -279,18 +279,11 @@ call_user_func(
         /**
          * Make further adoptions to table
          */
-        // Extend core's "title" palette
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-            $table,
-            'title',
-            '--linebreak--,tx_theme_link_label',
-            'after:subtitle'
-        );
         // Extend core's "abstract" palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,
             'abstract',
-            '--linebreak--,tx_theme_nav_image',
+            '--linebreak--,tx_theme_link_label,tx_theme_nav_image',
             ''
         );
         // Add opengraph palette
