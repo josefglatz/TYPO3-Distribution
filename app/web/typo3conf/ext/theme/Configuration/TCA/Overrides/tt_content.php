@@ -34,7 +34,19 @@ call_user_func(
                 // Add 'imageposition' to search fields - so its included in the backend search results
                 'searchFields' => $GLOBALS['TCA'][$table]['ctrl']['searchFields'] . ',imageposition',
             ],
+            /*
+             * Columns configuration
+             */
             'columns' => [
+                'bodytext' => [
+                    'config' => [
+                        // Make bodytext searchable in all cTypes (Backend Search)
+                        'search' => [
+                            'pidonly' => 0,
+                            'case' => 0,
+                        ],
+                    ],
+                ],
                 'header_link' => [
                     'config' => [
                         'fieldControl' => [
@@ -47,6 +59,9 @@ call_user_func(
                     ],
                 ],
             ],
+            /*
+             * Types configuration
+             */
             'types' => [
                 'theme_inheritance_stop' => [
                     'showitem' => '
