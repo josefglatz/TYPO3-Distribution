@@ -78,6 +78,9 @@
 			<trans-unit id="field.pages.robot_follow">
 				<source>Follow links on current page</source>
 			</trans-unit>
+			<trans-unit id="field.pages.sharing_enabled">
+				<source>Sharing Functionalities</source>
+			</trans-unit>
 			<trans-unit id="div.pages.seo">
 				<source>SEO</source>
 			</trans-unit>

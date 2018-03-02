@@ -101,6 +101,19 @@ call_user_func(
             'nav_image' => [
 
             ],
+            'tx_theme_sharing_enabled' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.sharing_enabled',
+                'config' => [
+                    'type' => 'check',
+                    'default' => '1',
+                    'items' => [
+                        '1' => [
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        ]
+                    ]
+                ]
+            ],
             'tx_theme_robot_index' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.robot_index',
@@ -180,6 +193,13 @@ call_user_func(
             '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions,',
             (string)\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
             'after:description'
+        );
+        // Extend core's "editorial" palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'editorial',
+            '--linebreak--,tx_theme_sharing_enabled,',
+            'after:lastUpdated'
         );
     },
     'theme',
