@@ -189,7 +189,7 @@ call_user_func(
         /**
          * Make further adoptions to table
          */
-
+        // Add opengraph palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--div--;' . $languageFileBePrefix . 'div.pages.seo,
@@ -197,7 +197,7 @@ call_user_func(
             '',
             'after:TSconfig'
         );
-
+        // Add robots meta tag palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions,',
