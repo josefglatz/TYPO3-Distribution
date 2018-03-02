@@ -119,16 +119,26 @@ call_user_func(
                 'label' => $languageFileBePrefix . 'field.pages.robot_index',
                 'config' => [
                     'type' => 'check',
-                    'default' => 1
-                ],
+                    'default' => '1',
+                    'items' => [
+                        '1' => [
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        ]
+                    ]
+                ]
             ],
             'tx_theme_robot_follow' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.robot_follow',
                 'config' => [
                     'type' => 'check',
-                    'default' => 1
-                ],
+                    'default' => '1',
+                    'items' => [
+                        '1' => [
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        ]
+                    ]
+                ]
             ],
             'tx_theme_opengraph_image' => [
                 'exclude' => true,
