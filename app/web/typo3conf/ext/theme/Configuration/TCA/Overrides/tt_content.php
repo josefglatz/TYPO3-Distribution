@@ -27,6 +27,13 @@ call_user_func(
             'after'
         );
         $tca = [
+            /*
+             * ['ctrl'] configuration
+             */
+            'ctrl' => [
+                // Add 'imageposition' to search fields - so its included in the backend search results
+                'searchFields' => $GLOBALS['TCA'][$table]['ctrl']['searchFields'] . ',imageposition',
+            ],
             'columns' => [
                 'header_link' => [
                     'config' => [
