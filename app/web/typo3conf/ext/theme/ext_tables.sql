@@ -6,6 +6,7 @@ CREATE TABLE tt_content (
 CREATE TABLE pages (
 	tx_theme_hide_page_heading tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	tx_theme_link_label tinytext,
+	tx_theme_nav_image int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_theme_robot_index tinyint(4) unsigned DEFAULT '1' NOT NULL,
 	tx_theme_robot_follow tinyint(4) unsigned DEFAULT '1' NOT NULL,
 	tx_theme_sharing_enabled tinyint(4) unsigned DEFAULT '1' NOT NULL,

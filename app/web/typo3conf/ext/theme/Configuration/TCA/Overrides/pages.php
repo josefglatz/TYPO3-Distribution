@@ -8,6 +8,39 @@ call_user_func(
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
 
+        // @TODO: RWD images project
+        $defaultCropArea = [
+            'x' => '0.0',
+            'y' => '0.0',
+            'width' => '1.0',
+            'height' => '1.0',
+        ];
+        // @TODO: RWD images project
+        $navImageCropConfig = [
+            'columns' => [
+                'crop' => [
+                    'config' => [
+                        'cropVariants' => [
+                            'default' => [
+                                'disabled' => true,
+                            ],
+                            'navimage_desktop' => [
+                                'title' => 'Navigation Image Default',
+                                'coverAreas' => [],
+                                'cropArea' => $defaultCropArea,
+                                'allowedAspectRatios' => [
+                                    '3:2' => [
+                                        'title' => '3:2',
+                                        'value' => 3 / 2
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
         // register elements (path/filename without extension, label without prefix)
         $elements = [
             'PageGeneral' => 'General PageTSConfig',
@@ -98,9 +131,6 @@ call_user_func(
         );
 
         $additionalColumns = [
-            'nav_image' => [
-
-            ],
             'tx_theme_hide_page_heading' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_hide_page_heading.label',
@@ -124,6 +154,29 @@ call_user_func(
                     'eval' => 'trim',
                     'max' => 40
                 ],
+            ],
+            'tx_theme_nav_image' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.label',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_theme_nav_image', [
+                    // Use the imageoverlayPalette instead of the basicoverlayPalette
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                alternative,title,
+                                --linebreak--,crop,
+                                --palette--;;filePalette',
+                                'columnsOverrides' => [
+                                    'crop' => $navImageCropConfig['columns']['crop'],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'maxitems' => 1,
+                ],
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                )
             ],
             'tx_theme_sharing_enabled' => [
                 'exclude' => true,
@@ -232,6 +285,13 @@ call_user_func(
             'title',
             '--linebreak--,tx_theme_link_label',
             'after:subtitle'
+        );
+        // Extend core's "abstract" palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'abstract',
+            '--linebreak--,tx_theme_nav_image',
+            ''
         );
         // Add opengraph palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
