@@ -11,5 +11,10 @@ CREATE TABLE pages (
 	tx_theme_robot_follow tinyint(4) unsigned DEFAULT '1' NOT NULL,
 	tx_theme_sharing_enabled tinyint(4) unsigned DEFAULT '1' NOT NULL,
 	tx_theme_show_in_secondary_navigation tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	tx_theme_opengraph_image int(11) unsigned DEFAULT '0' NOT NULL
+	tx_theme_opengraph_title varchar(255) DEFAULT '' NOT NULL,
+	tx_theme_opengraph_description varchar(255) DEFAULT '' NOT NULL,
+	tx_theme_opengraph_image int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_twitter_title varchar(255) DEFAULT '' NOT NULL,
+	tx_theme_twitter_description varchar(255) DEFAULT '' NOT NULL,
+	tx_theme_twitter_image int(11) unsigned DEFAULT '0' NOT NULL
 );

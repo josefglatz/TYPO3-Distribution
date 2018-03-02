@@ -8,14 +8,14 @@ call_user_func(
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
 
-        // @TODO: RWD images project
+        // @TODO: TYPO3-Distribution: RWD images project
         $defaultCropArea = [
             'x' => '0.0',
             'y' => '0.0',
             'width' => '1.0',
             'height' => '1.0',
         ];
-        // @TODO: RWD images project
+        // @TODO: TYPO3-Distribution: RWD images project
         $navImageCropConfig = [
             'columns' => [
                 'crop' => [
@@ -32,6 +32,56 @@ call_user_func(
                                     '3:2' => [
                                         'title' => '3:2',
                                         'value' => 3 / 2
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+        // @TODO: TYPO3-Distribution: RWD images project
+        $opengraphImageCropConfig = [
+            'columns' => [
+                'crop' => [
+                    'config' => [
+                        'cropVariants' => [
+                            'default' => [
+                                'disabled' => true,
+                            ],
+                            'facebook_variant1' => [
+                                'title' => 'Facebook Opengraph',
+                                'coverAreas' => [],
+                                'cropArea' => $defaultCropArea,
+                                'allowedAspectRatios' => [
+                                    '1.91:1' => [
+                                        'title' => '1.91:1 (Suggestion by Facebook)',
+                                        'value' => 1.91 / 1
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+        // @TODO: TYPO3-Distribution: RWD images project
+        $twitterImageCropConfig = [
+            'columns' => [
+                'crop' => [
+                    'config' => [
+                        'cropVariants' => [
+                            'default' => [
+                                'disabled' => true,
+                            ],
+                            'twitter_variant1' => [
+                                'title' => 'Twitter Opengraph',
+                                'coverAreas' => [],
+                                'cropArea' => $defaultCropArea,
+                                'allowedAspectRatios' => [
+                                    '1.91:1' => [
+                                        'title' => '1.91:1 (Suggestion by Twitter Business, based on Facebook Image Dimensions)',
+                                        'value' => 1.91 / 1
                                     ],
                                 ],
                             ],
@@ -230,28 +280,97 @@ call_user_func(
                     ]
                 ]
             ],
+            'tx_theme_opengraph_title' => [
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_title.label',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                ]
+            ],
+            'tx_theme_opengraph_description' => [
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_description.label',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                ]
+            ],
             'tx_theme_opengraph_image' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.opengraph_image',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('opengraph_image', [
-                    // Use the imageoverlayPalette instead of the basicoverlayPalette
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    crop,--linebreak--,
-                                    --palette--;;filePalette'
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_image.label',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                    'tx_theme_opengraph_image',
+                    [
+                        'overrideChildTca' => [
+                            'types' => [
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                    'columnsOverrides' => [
+                                        'crop' => $opengraphImageCropConfig['columns']['crop'],
+                                    ],
+                                ],
                             ],
                         ],
+                        // Use only crop field instead of the imageverlayPalette
+                        'foreign_types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                crop,
+                                --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
+                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                --palette--;;filePalette'
+                            ],
+                        ],
+                        'maxitems' => 1,
                     ],
-                    'maxitems' => 1,
-                ],
-                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['sharing']['opengraph']['allowedImageFileExt']
+                )
+            ],
+            'tx_theme_twitter_title' => [
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_title.label',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                    'max' => 70,
+                ]
+            ],
+            'tx_theme_twitter_description' => [
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_description.label',
+                'config' => [
+                    'type' => 'input',
+                    'eval' => 'trim',
+                ]
+            ],
+            'tx_theme_twitter_image' => [
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_image.label',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                    'tx_theme_twitter_image',
+                    [
+                        'overrideChildTca' => [
+                            'types' => [
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                    'columnsOverrides' => [
+                                        'crop' => $twitterImageCropConfig['columns']['crop'],
+                                    ],
+                                ],
+                            ],
+                        ],
+                        // Use only crop field instead of the imageverlayPalette
+                        'foreign_types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                crop,
+                                --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
+                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                --palette--;;filePalette'
+                            ],
+                        ],
+                        'maxitems' => 1,
+                    ],
+                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['sharing']['opengraph']['allowedImageFileExt']
                 )
             ],
         ];
@@ -265,7 +384,14 @@ call_user_func(
             [
                 'tx-theme-opengraph' => [
                     'showitem' => '
-                        tx_theme_opengraph_image
+                        tx_theme_opengraph_title,tx_theme_opengraph_description,
+                        --linebreak--,tx_theme_opengraph_image
+                    '
+                ],
+                'tx-theme-twitter' => [
+                    'showitem' => '
+                        tx_theme_twitter_title,tx_theme_twitter_description,
+                        --linebreak--,tx_theme_twitter_image
                     '
                 ],
                 'tx-theme-robot-instructions' => [
@@ -286,11 +412,12 @@ call_user_func(
             '--linebreak--,tx_theme_link_label,tx_theme_nav_image',
             ''
         );
-        // Add opengraph palette
+        // Add seo focused palettes
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--div--;' . $languageFileBePrefix . 'div.pages.seo,
-            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph',
+            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,
+            --palette--;' . $languageFileBePrefix . 'palette.pages.twitter;tx-theme-twitter',
             '',
             'after:TSconfig'
         );

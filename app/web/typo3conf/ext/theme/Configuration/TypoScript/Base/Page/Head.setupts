@@ -120,7 +120,22 @@ page {
 
 		og:title {
 			attribute = property
-			field = title
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				field = tx_theme_facebook_title
+				ifEmpty.field = title
+				htmlSpecialChars = 1
+			}
+		}
+
+		twitter:title {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				field = tx_theme_twitter_title
+				if.isTrue.field = tx_theme_twitter_title
+				htmlSpecialChars = 1
+			}
 		}
 
 		og:site_name {
@@ -138,46 +153,98 @@ page {
 			stdWrap.cObject {
 				data = register:newsTeaser
 				#		ifEmpty.data = register:yourExtension
+				ifEmpty.field = tx_theme_facebook_description
 				ifEmpty.ifEmpty.field = description
+				htmlSpecialChars = 1
+			}
+		}
+
+		twitter:description {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				field = tx_theme_twitter_description
+				if.isTrue.field = tx_theme_twitter_description
 				htmlSpecialChars = 1
 			}
 		}
 
 		og:image {
 			attribute = property
-			stdWrap.cObject = COA
+			stdWrap.cObject = FILES
 			stdWrap.cObject {
-				if.isTrue = {$site.meta.og.image.enable}
-				10 = FILES
-				10 {
-					references {
-						#data = levelfield:-1, {$site.meta.og.image.fieldName}, slide
-						table = pages
-						uid.data = page:uid
-						fieldName = {$site.meta.og.image.fieldName}
-					}
-
-					maxItems = 1
-					renderObj = COA
-					renderObj {
-						10 = IMG_RESOURCE
-						10 {
-							file {
-								import.data = file:current:publicUrl
-								crop.data = file:current:crop
-								maxW = 1920
-								maxH = 1080
-							}
-
-							stdWrap {
-								typolink {
-									parameter.data = TSFE:lastImgResourceInfo|3
-									returnLast = url
-									forceAbsoluteUrl = 1
+				references {
+					table = pages
+					uid.data = uid
+					fieldName = tx_theme_opengraph_image
+				}
+				begin = 0
+				maxItems = 1
+				renderObj = TEXT
+				renderObj {
+					stdWrap.typolink {
+						parameter.stdWrap {
+							cObject = IMG_RESOURCE
+							cObject {
+								file {
+									crop.data = file:current:crop
+									cropVariant = facebook_variant1
+									import.data = file:current:uid
+									treatIdAsReference = 1
 								}
 							}
 						}
+						returnLast = url
+						forceAbsoluteUrl = 1
 					}
+					required = 1
+				}
+			}
+		}
+		og:image:width {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				data = TSFE:lastImgResourceInfo|0
+			}
+			stdWrap.if.isTrue.field = tx_theme_opengraph_image
+		}
+		og:image:height {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				data = TSFE:lastImgResourceInfo|1
+			}
+			stdWrap.if.isTrue.field = tx_theme_opengraph_image
+		}
+		og:image:type {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				data = TSFE:lastImgResourceInfo|2
+				stdWrap.wrap = image/|
+				required = 1
+			}
+			stdWrap.if.isTrue.field = tx_theme_opengraph_image
+		}
+
+		twitter:image < .og:image
+		twitter:image {
+			stdWrap.cObject {
+				references.fieldName = tx_theme_twitter_image
+				renderObj.stdWrap.typolink.parameter.stdWrap.cObject.file.cropVariant = twitter_variant1
+			}
+		}
+
+		twitter:card {
+			attribute = property
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				value = summary
+				override.cObject = TEXT
+				override.cObject {
+					value = summary_large_image
+					if.isTrue.field = tx_theme_twitter_image
 				}
 			}
 		}

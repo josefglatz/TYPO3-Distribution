@@ -58,6 +58,13 @@ $customChanges = [
                 'de',
             ],
         ],
+        'theme' => [
+            'sharing' => [
+                'opengraph' => [
+                    'allowedImageFileExt' => 'gif,jpg,jpeg,png',
+                ],
+            ],
+        ],
     ],
     'EXT' => [
         'extConf' => [
