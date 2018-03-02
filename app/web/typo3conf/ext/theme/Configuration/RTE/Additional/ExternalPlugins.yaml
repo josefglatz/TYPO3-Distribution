@@ -12,7 +12,7 @@ editor:
       countLineBreaks: false
       maxWordCount: -1
       maxCharCount: -1
-      pasteWarningDuration: 0
+      pasteWarningDuration: 3000
     # Register own project specific plugin for ckeditor for modifying table specific limitations
     tableModifications:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/tableModifications/"
