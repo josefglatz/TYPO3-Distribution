@@ -87,6 +87,9 @@
 			<trans-unit id="field.pages.tx_theme_hide_page_heading.label">
 				<source>Disable Default Page Header (H1)</source>
 			</trans-unit>
+			<trans-unit id="field.pages.tx_theme_show_in_secondary_navigation.label">
+				<source>Show Page in Secondary Navigation (meta navigation)</source>
+			</trans-unit>
 			<trans-unit id="div.pages.seo">
 				<source>SEO</source>
 			</trans-unit>

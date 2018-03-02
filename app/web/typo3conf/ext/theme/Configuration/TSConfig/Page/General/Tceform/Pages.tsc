@@ -13,4 +13,11 @@ TCEFORM.pages {
 		// Remove default fe layouts
 		removeItems = 1,2,3
 	}
+
+	tx_theme_show_in_secondary_navigation.disabled = 1
 }
+[treeLevel = 2]
+	TCEFORM.pages {
+		tx_theme_show_in_secondary_navigation.disabled = 0
+	}
+[global]

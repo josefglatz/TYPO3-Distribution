@@ -127,6 +127,19 @@ call_user_func(
                     ]
                 ]
             ],
+            'tx_theme_show_in_secondary_navigation' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_show_in_secondary_navigation.label',
+                'config' => [
+                    'type' => 'check',
+                    'default' => '0',
+                    'items' => [
+                        '1' => [
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        ]
+                    ]
+                ]
+            ],
             'tx_theme_robot_index' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.robot_index',
@@ -230,6 +243,13 @@ call_user_func(
             'layout',
             'tx_theme_hide_page_heading,',
             'after:layout'
+        );
+        // Extend core's "visibility" palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'visibility',
+            'tx_theme_show_in_secondary_navigation',
+            'after:nav_hide'
         );
     },
     'theme',
