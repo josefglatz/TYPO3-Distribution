@@ -297,14 +297,14 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--div--;' . $languageFileBePrefix . 'div.pages.seo,
-            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,',
+            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph',
             '',
             'after:TSconfig'
         );
         // Add robots meta tag palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
-            '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions,',
+            '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions',
             (string)\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
             'after:description'
         );
@@ -312,14 +312,14 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,
             'editorial',
-            '--linebreak--,tx_theme_sharing_enabled,',
+            '--linebreak--,tx_theme_sharing_enabled',
             'after:lastUpdated'
         );
         // Extend core's "layout" palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,
             'layout',
-            'tx_theme_hide_page_heading,',
+            'tx_theme_hide_page_heading',
             'after:layout'
         );
         // Extend core's "visibility" palette
