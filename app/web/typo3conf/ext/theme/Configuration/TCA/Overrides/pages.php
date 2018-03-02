@@ -114,6 +114,17 @@ call_user_func(
                     ]
                 ]
             ],
+            'tx_theme_link_label' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_link_label.label',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 30,
+                    'default' => '',
+                    'eval' => 'trim',
+                    'max' => 40
+                ],
+            ],
             'tx_theme_sharing_enabled' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.sharing_enabled',
@@ -215,6 +226,13 @@ call_user_func(
         /**
          * Make further adoptions to table
          */
+        // Extend core's "title" palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'title',
+            '--linebreak--,tx_theme_link_label',
+            'after:subtitle'
+        );
         // Add opengraph palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,

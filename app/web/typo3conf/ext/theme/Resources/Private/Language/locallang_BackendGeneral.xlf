@@ -81,6 +81,9 @@
 			<trans-unit id="field.pages.sharing_enabled">
 				<source>Sharing Functionalities</source>
 			</trans-unit>
+			<trans-unit id="field.pages.tx_theme_link_label.label">
+				<source>Linktext in Call-To-Action/Teaser Elements (which links to this page)</source>
+			</trans-unit>
 			<trans-unit id="field.pages.tx_theme_hide_page_heading.check_0">
 				<source>Disabled</source>
 			</trans-unit>
