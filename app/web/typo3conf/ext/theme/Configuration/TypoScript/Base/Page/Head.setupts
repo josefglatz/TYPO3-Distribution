@@ -289,7 +289,7 @@ page {
 	   Sys_language_uid:     {TSFE:sys_language_uid}
 	   Sys_language_content: {TSFE:sys_language_content}
 	   Level:                {level:0}
-
+	   Application Context:	 {getenv:TYPO3_CONTEXT}
 
 	-->
 
