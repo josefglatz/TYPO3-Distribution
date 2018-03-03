@@ -304,7 +304,7 @@ page {
 
 		meta {
 			robots-IN-NONPRODUCTION-MODE < page.meta.robots
-			robots-IN-NONPRODUCTION-MODE.noTrimWrap = |The value of robots meta tag would become '|' in an production environment.
+			robots-IN-NONPRODUCTION-MODE.noTrimWrap = |The value of robots meta tag would become '|' in a production environment.
 			robots >
 			robots = noindex,nofollow,noarchive
 		}
