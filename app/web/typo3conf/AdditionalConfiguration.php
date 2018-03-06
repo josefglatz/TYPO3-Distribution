@@ -191,7 +191,7 @@ $customChanges = [
             ]),
             'realurl' => serialize([
                 'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
-                'enableAutoConf' => 1,
+                'enableAutoConf' => 0,
                 'autoConfFormat' => 0,
                 'enableDevLog' => 0,
                 'moduleIcon' => 0,

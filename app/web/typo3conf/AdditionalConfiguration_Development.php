@@ -23,12 +23,6 @@ $customChanges = [
                 'specialChar' => true,
                 'patterns' => 1, // Fitting patterns: How many patterns from above must fit to make the password secure
             ]),
-            'realurl' => serialize([
-                'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
-                'enableAutoConf' => 1,
-                'autoConfFormat' => 1,
-                'enableDevLog' => 0,
-            ]),
         ],
     ],
     'FE' => [

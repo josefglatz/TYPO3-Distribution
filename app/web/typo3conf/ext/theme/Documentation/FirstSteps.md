@@ -11,6 +11,7 @@
 - make sure that productive host can handle utf8 file system and correct system locales are set
 - Set sys_domains (1. production domain, 2. staging domain, ..., 10. dev domain)
 - Set `TCEMAIN.previewDomain` (DEV, STAGING, ...)
+- Set your domains in EXT:realurl manual configuration file (if you use the default setting) ``
 - Set backendLogin logo, color and image in AdditionalConfiguration.php
 - add great favicons http://realfavicongenerator.net
 - configure linkvalidator scheduler job (receiver email, ...)

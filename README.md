@@ -66,7 +66,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 * activated extensions are controlled by root composer.json
 * easy vendor name change script
 * DB-less sys_template record support (via hook)
-* ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration)
+* ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration) (manual is set by default)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
 * Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
@@ -91,8 +91,12 @@ new limitations I recommend to read at least [the install section of realurl's w
 
 #### Configuration
 
-Realurl operates in "auto configuration mode". Therefore you don't need to write the realurl configuration manually.
-Instead, you can add your desired changes in `EXT:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php`.
+Realurl operates in "manual configuration mode". You have to set up the realurl configuration manually in
+`EXT:ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php`.
+
+If you want to activate the "auto configuration mode", you have to disable it via realurl's extConf.
+You can add your desired changes in `EXT:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php` after you've
+activated the "auto configuration mode".
 As already mentioned, read the [realurl v2 manual](https://github.com/dmitryd/typo3-realurl/wiki)! The automatic resulting
 configuration is saved to `app/web/typo3conf/realurl_autoconf.php`.
 
