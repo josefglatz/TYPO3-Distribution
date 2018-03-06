@@ -159,6 +159,8 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 ### Table `pages`
 
+#### New columns
+
 | Column | Title | Description | Excluded |
 |--------|-------|-------------|----------|
 | `tx_theme_hide_page_heading` | Hide primary heading (H1) | Can be used by integrator for pages where the default H1 shouldn't be rendered in frontend. (E.g. EXT:news plugin detailAction) [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/e4af938c4e63564207b2631e5ab2242996435fd2) | ✔ |
@@ -178,10 +180,28 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 ### Table `sys_file_reference`
 
+#### Customized existing columns
+
 | Column | Title | Description | Excluded |
 |--------|-------|-------------|----------|
 | `link` (core field) | Unnecessary link field `class` removed |  | - |
-| `crop` (core field) | Overwrite core's default cropVariants | The default cropVariants are overwritten. Set you default cropVariants for your project in `/app/web/typo3conf/ext/theme/Configuration/TCA/Overrides/sys_file_reference.php` | - |
+| `crop` (core field) | Overwrite core's default cropVariants | The default cropVariants are overwritten. Set you default cropVariants for your project in EXT:theme's `/TCA/Overrides/sys_file_reference.php`. | - |
+
+### Table `tt_content`
+
+#### Customized existing columns
+
+| Column | Title | Description | Excluded |
+|--------|-------|-------------|----------|
+| `header_link` (core field) | Unnecessary link field `class` removed |  | - |
+
+
+#### New types (content elements)
+
+| Type | Title | Description |
+|--------|-------|-------------|
+| `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend) |
+
 ## Recommended Tools/Software/Plugins
 
 * PhpStorm
