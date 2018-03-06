@@ -65,7 +65,8 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 * PackageStates.php is excluded in git repository
 * activated extensions are controlled by root composer.json
 * easy vendor name change script
-* ext:realurl (helhum/realurl) (with automatic configuration and ready-to-edit-hook configuration)
+* DB-less sys_template record support (via hook)
+* ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration)
 * Simple dynamic robots.txt
 * RealFaviconGenerator.net gulp integration
 * Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
