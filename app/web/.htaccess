@@ -275,7 +275,9 @@ AddDefaultCharset utf-8
 	#RewriteCond %{HTTP_HOST} ^www\.example\.com$
 	#RewriteRule .? - [E=TYPO3_CONTEXT:Production]
 
+### josefglatz/TYPO3-Distribution CUSTOM CHANGE begin
 	RewriteRule ^robots.txt index.php?eID=robotstxt [L]
+### josefglatz/TYPO3-Distribution CUSTOM CHANGE end
 
 	# Rule for versioned static files, configured through:
 	# - $GLOBALS['TYPO3_CONF_VARS']['BE']['versionNumberInFilename']
