@@ -222,7 +222,8 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 Thanks for your support, ideas, issues and shared code
 
-* [Georg Ringer](http://www.ringer.it)
-* [Volker Kemeter](https://twitter.com/volkizzl)
 * [Benjamin Kott](https://twitter.com/benjaminkott)
+* [Boris Schauer](https://twitter.com/bschauer)
+* [Georg Ringer](http://www.ringer.it)
 * [Sup7even Digital](http://www.supseven.at)
+* [Volker Kemeter](https://twitter.com/volkizzl)
