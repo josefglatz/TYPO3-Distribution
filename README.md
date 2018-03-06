@@ -206,7 +206,6 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 * PhpStorm
 * PhpStorm Plugin DynamicReturnTypePlugin
-* PhpStorm Plugin .ignore
 * PhpStorm Plugin String Manipulation
 * PhpStorm Plugin Shifter
 * PhpStorm Plugin Dash (or alternative devdocs.io)
