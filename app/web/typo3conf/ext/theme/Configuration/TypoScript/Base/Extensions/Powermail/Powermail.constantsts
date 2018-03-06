@@ -1,2 +1,21 @@
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:powermail/Configuration/TypoScript/Main/constants.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:powermail/Configuration/TypoScript/BootstrapClassesAndLayout/constants.txt">
+
+plugin.tx_powermail {
+	settings {
+		// disable automatic include for powermail bootstrap support (see @todo in scss file: EXT:powermail/Resources/Private/Sass/*.scss)
+		BasicCss =
+
+		javascript {
+			// disable powermail's jquery lib
+			powermailJQuery =
+			// do not load additional ext:powermail js automatically
+			addAdditionalJavaScript = 0
+		}
+	}
+	view {
+		templateRootPath = EXT:theme/Resources/Private/Extension/Powermail/Templates/
+		partialRootPath = EXT:theme/Resources/Private/Extension/Powermail/Partials/
+		layoutRootPath = EXT:theme/Resources/Private/Extension/Powermail/Layouts/
+	}
+}

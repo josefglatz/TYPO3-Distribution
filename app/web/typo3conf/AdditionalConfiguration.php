@@ -179,6 +179,16 @@ $customChanges = [
                 'cacheTime' => 86400,
                 'demo' => 1,
             ]),
+            'powermail' => serialize([
+                'disableIpLog' => 0,
+                'disableMarketingInformation' => 1,
+                'disableBackendModule' => 0,
+                'disablePluginInformation' => 0,
+                'disablePluginInformationMailPreview' => 0,
+                'enableCaching' => 0,
+                'l10n_mode_merge' => 0,
+                'replaceIrreWithElementBrowser' => 0
+            ]),
             'realurl' => serialize([
                 'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
                 'enableAutoConf' => 1,
