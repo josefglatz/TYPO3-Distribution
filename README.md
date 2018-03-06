@@ -175,6 +175,13 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 | `tx_theme_twitter_image` | `twitter:image` | With official suggested image ratio (cropVariant) | ✔ |
 | `tx_theme_twitter_title` | `twitter:title` | | ✔ |
 
+
+### Table `sys_file_reference`
+
+| Column | Title | Description | Excluded |
+|--------|-------|-------------|----------|
+| `link` (core field) | Unnecessary link field `class` removed |  | - |
+| `crop` (core field) | Overwrite core's default cropVariants | The default cropVariants are overwritten. Set you default cropVariants for your project in `/app/web/typo3conf/ext/theme/Configuration/TCA/Overrides/sys_file_reference.php` | - |
 ## Recommended Tools/Software/Plugins
 
 * PhpStorm
