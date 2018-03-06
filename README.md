@@ -201,7 +201,7 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 | Type | Title | Description |
 |--------|-------|-------------|
-| `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend) |
+| `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
 
 ## Recommended Tools/Software/Plugins
 
