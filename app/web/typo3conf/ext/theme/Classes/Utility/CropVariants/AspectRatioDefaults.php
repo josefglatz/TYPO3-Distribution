@@ -66,7 +66,7 @@ class AspectRatioDefaults
             'value' => 0.0
         ]
     ];
-    
+
     const defaultAspectRatios = [
         '3:2',
         '2:3',
@@ -98,7 +98,7 @@ class AspectRatioDefaults
 
     /**
      * Retrieve default aspect ratios
-     * 
+     *
      * @return array all default aspect ratios
      */
     public static function getDefaultAspectRatios(): array
