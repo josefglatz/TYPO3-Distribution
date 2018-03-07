@@ -254,6 +254,28 @@ call_user_func(
                     ]
                 ]
             ],
+            'tx_theme_related' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'pages.tx_theme_related.label',
+                'config' => [
+                    'type' => 'group',
+                    'internal_type' => 'db',
+                    'allowed' => 'pages',
+                    'foreign_table' => 'pages',
+                    'MM_opposite_field' => 'related_from',
+                    'size' => 3,
+                    'MM' => 'tx_theme_related_pages_mm',
+                    'wizards' => [
+                        'suggest' => [
+                            'type' => 'suggest',
+                            'default' => [
+                                'searchWholePhrase' => true,
+                                'addWhere' => ' AND pages.uid != ###THIS_UID###'
+                            ]
+                        ],
+                    ],
+                ]
+            ],
             'tx_theme_robot_index' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.robot_index',
@@ -394,6 +416,11 @@ call_user_func(
                         --linebreak--,tx_theme_twitter_image
                     '
                 ],
+                'tx-theme-related' => [
+                    'showitem' => '
+                        tx_theme_related
+                    '
+                ],
                 'tx-theme-robot-instructions' => [
                     'showitem' => '
                         tx_theme_robot_index, tx_theme_robot_follow
@@ -425,7 +452,7 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions',
-            (string)\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
+            (string) \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
             'after:description'
         );
         // Extend core's "editorial" palette
@@ -434,6 +461,13 @@ call_user_func(
             'editorial',
             '--linebreak--,tx_theme_sharing_enabled',
             'after:lastUpdated'
+        );
+        // Add related palette
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            '--palette--;' . $languageFileBePrefix . 'palette.pages.related;tx-theme-related',
+            (string) \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
+            'after:tx_theme_sharing_enabled'
         );
         // Extend core's "layout" palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(

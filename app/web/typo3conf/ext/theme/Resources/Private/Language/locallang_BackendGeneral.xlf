@@ -99,6 +99,9 @@
 			<trans-unit id="field.pages.sharing_enabled">
 				<source>Sharing Functionalities</source>
 			</trans-unit>
+			<trans-unit id="field.pages.tx_theme_related.label">
+				<source>Related Pages</source>
+			</trans-unit>
 			<trans-unit id="field.pages.tx_theme_link_label.label">
 				<source>Linktext in Call-To-Action/Teaser Elements (which links to this page)</source>
 			</trans-unit>
@@ -119,6 +122,9 @@
 			</trans-unit>
 			<trans-unit id="palette.pages.twitter">
 				<source>Twitter</source>
+			</trans-unit>
+			<trans-unit id="palette.pages.related">
+				<source>Related</source>
 			</trans-unit>
 			<trans-unit id="palette.pages.robot_instructions">
 				<source>Robot settings</source>
