@@ -22,7 +22,7 @@ class CropAreaDefaults
      * @param string $name
      * @return array cropArea (default cropArea if no parameter was hand over)
      */
-    public static function getCropArea(string $name = 'default'): array
+    public static function get(string $name = 'default'): array
     {
         if (isset(self::$cropAreas[$name]) && \is_array(self::$cropAreas[$name])) {
             return self::$cropAreas[$name];

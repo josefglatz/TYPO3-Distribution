@@ -82,7 +82,7 @@ class AspectRatioDefaults
      * @param array $keys
      * @return array desired aspect ratios
      */
-    public static function getAspectRatios(array $keys): array
+    public static function get(array $keys): array
     {
         $ratios = [];
         foreach ($keys as $key) {
@@ -101,7 +101,7 @@ class AspectRatioDefaults
      *
      * @return array all default aspect ratios
      */
-    public static function getDefaultAspectRatios(): array
+    public static function getDefaults(): array
     {
         // Check if every default aspect ratio exists
         if (\is_array(self::defaultAspectRatios)) {
@@ -115,6 +115,6 @@ class AspectRatioDefaults
             throw new \UnexpectedValueException('Given default aspectRatios configuration isn\'t type array.', 1520426754);
         }
 
-        return self::getAspectRatios(self::defaultAspectRatios);
+        return self::get(self::defaultAspectRatios);
     }
 }

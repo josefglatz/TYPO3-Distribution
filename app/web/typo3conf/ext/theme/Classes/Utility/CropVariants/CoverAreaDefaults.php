@@ -52,7 +52,7 @@ class CoverAreaDefaults
      * @param array $keys
      * @return array all retrieved cover areas
      */
-    public static function getCoverAreas(array $keys): array
+    public static function get(array $keys): array
     {
         $coverAreas = [];
         foreach ($keys as $key) {
