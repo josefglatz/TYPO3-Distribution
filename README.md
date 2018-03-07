@@ -233,6 +233,12 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 | --- | ----------- |
 | `default` | Default (biggest possible) (X0, Y0, W1.0, H1.0) |
 
+### Predefined coverAreas
+
+| Key | Usage Scenario |
+| `1_1_circle` | Can be used for square images with CSS `border-radius: 50%` for example. |
+| `lower_third` | Can be used for images where the lower third of the image area is overlayed by a DOM element. |
+
 ## Recommended Tools/Software/Plugins
 
 * PhpStorm
