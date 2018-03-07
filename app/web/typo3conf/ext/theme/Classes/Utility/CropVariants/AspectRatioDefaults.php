@@ -60,7 +60,7 @@ class AspectRatioDefaults
             'title' => '4:5',
             'value' => 4 / 5
         ],
-        // Free ratio aka no ratio limitation
+        // Free ratio / no ratio limitation
         'NaN' => [
             'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
             'value' => 0.0

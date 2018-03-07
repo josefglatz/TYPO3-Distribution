@@ -208,6 +208,25 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 |--------|-------|-------------|
 | `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
 
+## Responsive Image preparations
+
+### TCA: Predefined Aspect Ratios
+
+| Key | Description |
+| --- | -------------------------- |
+| `3:1` | Often used for wide sujet images |
+| `2:1` | Often used for wide sujet images |
+| `1.91:1` | Suggested by Facebook (and Twitter) for open graph / twitter card images |
+| `16:9` | Common video standard |
+| `3:2` | Common D-/SLR format photography |
+| `2:3` |  |
+| `4:3` | Common point and shoot format photography |
+| `3:4` |  |
+| `5:4` | Common large and medium format photography |
+| `4:5` |  |
+| `1:1` | Square image format |
+| `NaN` | Free ratio (no ratio limitation) |
+
 ## Recommended Tools/Software/Plugins
 
 * PhpStorm
