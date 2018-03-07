@@ -227,6 +227,12 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 | `1:1` | Square image format |
 | `NaN` | Free ratio (no ratio limitation) |
 
+### TCA: Predefined cropArea Presets
+
+| Key | Description |
+| --- | ----------- |
+| `default` | Default (biggest possible) (X0, Y0, W1.0, H1.0) |
+
 ## Recommended Tools/Software/Plugins
 
 * PhpStorm
