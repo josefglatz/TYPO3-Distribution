@@ -260,6 +260,7 @@ call_user_func(
                 ]
             ],
             'tx_theme_opengraph_image' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_image.label',
                 'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_theme_opengraph_image',
@@ -317,6 +318,7 @@ call_user_func(
                 ]
             ],
             'tx_theme_twitter_image' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_image.label',
                 'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_theme_twitter_image',
