@@ -48,13 +48,13 @@ class CropVariantsBuilder
 
     public function addCropVariants(array $cropVariants)
     {
-// @TODO: TYPO3-Distribution: addCropVariants() functionality
-//        $this->cropVariants[] = $cropVariant;
+        // @TODO: TYPO3-Distribution: addCropVariants() functionality
+        //    $this->cropVariants[] = $cropVariant;
 
         // Check if parameter isn't empty
 
         // Foreach
-            // Check
+        //     Check
 
         return $this;
     }
