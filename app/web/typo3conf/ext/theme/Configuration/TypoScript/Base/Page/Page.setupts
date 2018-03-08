@@ -42,6 +42,8 @@ page {
 		// and: sysext:frontend/Classes/DataProcessing/MenuProcessor.php
 
 		dataProcessing {
+
+			# Main Navigation
 			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			100 {
 				levels = 2
@@ -54,6 +56,8 @@ page {
 #					}
 #				}
 			}
+
+			# Sub Navigation
 			110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			110 {
 				entryLevel = 1
@@ -62,6 +66,8 @@ page {
 				includeSpacer = 1
 				as = SubNavigation
 			}
+
+			# Breadcrumb Navigation
 			120 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			120 {
 				special = rootline
@@ -82,6 +88,7 @@ page {
 				// @TODO: Add news detail breadcrumb item to breadcrumb navigation
 			}
 
+			# MetaNavigation
 			130 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			130 {
 				special = {$site.nav.meta.navigationType}
@@ -92,6 +99,8 @@ page {
 					isTrue = {$site.uid.metaNav}
 				}
 			}
+
+			# Footer Navigation
 			140 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			140 {
 				special = {$site.nav.footer.navigationType}
@@ -102,6 +111,8 @@ page {
 					isTrue = {$site.uid.footerNav}
 				}
 			}
+
+			# Social Navigation
 			150 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			150 {
 				special = {$site.nav.social.navigationType}
@@ -112,6 +123,8 @@ page {
 					isTrue = {$site.uid.socialNav}
 				}
 			}
+
+			# Language Navigation
 			500 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			500 {
 				special = language
