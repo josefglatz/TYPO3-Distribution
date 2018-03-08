@@ -84,6 +84,7 @@ editor:
     removePlugins:
       - image
 #      - elementspath
+#      - scayt
 
     # Toolbar button names that must not be rendered
     removeButtons:
@@ -121,6 +122,11 @@ editor:
     toolbarCanCollapse: true
     toolbarStartupExpanded: true
     toolbarLocation: "top"
+
+    # Configure scayt spell check
+    scayt_autoStartup: false
+    # Configure default language https://docs.ckeditor.com/ckeditor4/latest/guide/dev_howtos_scayt.html#how-do-i-change-the-default-language-for-spell-check-as-you-type-scayt
+    scayt_sLang: "de_DE"
 
     # Quicktable plugin configuration https://github.com/ufdada/quicktable/blob/master/plugin.js#L5
     qtClass: "table table-striped table-responsive table-bordered"
