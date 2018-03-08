@@ -272,7 +272,7 @@ page {
 }
 
 
-[globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*]
+[globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
 	// show some debug infos in <head>
 	page.headerData.666999 = TEXT
 	page.headerData.666999 {
