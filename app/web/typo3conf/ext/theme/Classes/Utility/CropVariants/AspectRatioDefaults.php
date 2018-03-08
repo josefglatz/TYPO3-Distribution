@@ -109,7 +109,6 @@ class AspectRatioDefaults
                 if (!isset(self::$aspectRatios[$ratio])) {
                     throw new \UnexpectedValueException('Wanted default aspectRatio "' . $ratio . '" not configured.', 1520426750);
                 }
-
             }
         } else {
             throw new \UnexpectedValueException('Given default aspectRatios configuration isn\'t type array.', 1520426754);
