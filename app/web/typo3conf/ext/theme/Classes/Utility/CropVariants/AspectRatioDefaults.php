@@ -87,7 +87,7 @@ class AspectRatioDefaults
         $ratios = [];
         foreach ($keys as $key) {
             if (isset(self::$aspectRatios[$key])) {
-                $ratios[] = self::$aspectRatios[$key];
+                $ratios[$key] = self::$aspectRatios[$key];
             } else {
                 throw new \UnexpectedValueException('Given aspectRatio "' . $key . '" not found."', 1520426705);
             }
