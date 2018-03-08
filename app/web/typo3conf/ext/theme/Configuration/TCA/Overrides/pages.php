@@ -8,89 +8,6 @@ call_user_func(
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
 
-        // @TODO: TYPO3-Distribution: RWD images project
-        $defaultCropArea = [
-            'x' => '0.0',
-            'y' => '0.0',
-            'width' => '1.0',
-            'height' => '1.0',
-        ];
-        // @TODO: TYPO3-Distribution: RWD images project
-        $navImageCropConfig = [
-            'columns' => [
-                'crop' => [
-                    'config' => [
-                        'cropVariants' => [
-                            'default' => [
-                                'disabled' => true,
-                            ],
-                            'navimage_desktop' => [
-                                'title' => 'Navigation Image Default',
-                                'coverAreas' => [],
-                                'cropArea' => $defaultCropArea,
-                                'allowedAspectRatios' => [
-                                    '3:2' => [
-                                        'title' => '3:2',
-                                        'value' => 3 / 2
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ];
-        // @TODO: TYPO3-Distribution: RWD images project
-        $opengraphImageCropConfig = [
-            'columns' => [
-                'crop' => [
-                    'config' => [
-                        'cropVariants' => [
-                            'default' => [
-                                'disabled' => true,
-                            ],
-                            'facebook_variant1' => [
-                                'title' => 'Facebook Opengraph',
-                                'coverAreas' => [],
-                                'cropArea' => $defaultCropArea,
-                                'allowedAspectRatios' => [
-                                    '1.91:1' => [
-                                        'title' => '1.91:1 (Suggestion by Facebook)',
-                                        'value' => 1.91 / 1
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ];
-        // @TODO: TYPO3-Distribution: RWD images project
-        $twitterImageCropConfig = [
-            'columns' => [
-                'crop' => [
-                    'config' => [
-                        'cropVariants' => [
-                            'default' => [
-                                'disabled' => true,
-                            ],
-                            'twitter_variant1' => [
-                                'title' => 'Twitter Opengraph',
-                                'coverAreas' => [],
-                                'cropArea' => $defaultCropArea,
-                                'allowedAspectRatios' => [
-                                    '1.91:1' => [
-                                        'title' => '1.91:1 (Suggestion by Twitter Business, based on Facebook Image Dimensions)',
-                                        'value' => 1.91 / 1
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ];
-
         // register elements (path/filename without extension, label without prefix)
         $elements = [
             'PageGeneral' => 'General PageTSConfig',
@@ -209,7 +126,6 @@ call_user_func(
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.label',
                 'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_theme_nav_image', [
-                    // Use the imageoverlayPalette instead of the basicoverlayPalette
                     'overrideChildTca' => [
                         'types' => [
                             \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
@@ -217,8 +133,35 @@ call_user_func(
                                 alternative,title,
                                 --linebreak--,crop,
                                 --palette--;;filePalette',
-                                'columnsOverrides' => [
-                                    'crop' => $navImageCropConfig['columns']['crop'],
+                                'columnsOverrides' => [],
+                            ],
+                        ],
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => [
+                                        'default' => [
+                                            'disabled' => true,
+                                        ],
+                                        'mobile' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.mobile.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
+                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
+                                        ],
+                                        'tablet' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.tablet.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
+                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
+                                        ],
+                                        'desktop' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.desktop.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
+                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -324,23 +267,33 @@ call_user_func(
                         'overrideChildTca' => [
                             'types' => [
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'columnsOverrides' => [
-                                        'crop' => $opengraphImageCropConfig['columns']['crop'],
-                                    ],
+                                    'showitem' => '
+                                    crop,
+                                    --palette--;;filePalette',
+                                    'columnsOverrides' => [],
                                 ],
-                            ],
-                        ],
-                        // Use only crop field instead of the imageverlayPalette
-                        'foreign_types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                crop,
-                                --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                'showitem' => '
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                    'showitem' => '
                                 --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                 --palette--;;filePalette'
+                                ],
+                            ],
+                            'columns' => [
+                                'crop' => [
+                                    'config' => [
+                                        'cropVariants' => [
+                                            'default' => [
+                                                'disabled' => true,
+                                            ],
+                                            'opengraph' => [
+                                                'title' => $languageFileBePrefix . 'crop_variants.opengraph.label',
+                                                'coverAreas' => [],
+                                                'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
+                                                'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['1.91:1']),
+                                            ]
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                         'maxitems' => 1,
@@ -371,23 +324,33 @@ call_user_func(
                         'overrideChildTca' => [
                             'types' => [
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'columnsOverrides' => [
-                                        'crop' => $twitterImageCropConfig['columns']['crop'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                        // Use only crop field instead of the imageverlayPalette
-                        'foreign_types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
+                                    'showitem' => '
                                 crop,
-                                --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                'showitem' => '
+                                --palette--;;filePalette',
+                                    'columnsOverrides' => []
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                    'showitem' => '
                                 --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                 --palette--;;filePalette'
+                                ],
+                            ],
+                            'columns' => [
+                                'crop' => [
+                                    'config' => [
+                                        'cropVariants' => [
+                                            'default' => [
+                                                'disabled' => true,
+                                            ],
+                                            'opengraph' => [
+                                                'title' => $languageFileBePrefix . 'crop_variants.twitterimage.label',
+                                                'coverAreas' => [],
+                                                'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
+                                                'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['1.91:1']),
+                                            ]
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                         'maxitems' => 1,
