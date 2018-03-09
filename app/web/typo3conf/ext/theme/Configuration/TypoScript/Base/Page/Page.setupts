@@ -43,7 +43,7 @@ page {
 
 		dataProcessing {
 
-			# Main Navigation
+			# Main Navigation (WITHOUT checking tx_theme_show_in_secondary_navigation=0)
 			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			100 {
 				levels = 2
@@ -57,9 +57,55 @@ page {
 #				}
 			}
 
-			# Sub Navigation
+			# Primary Main Navigation (where only pages with tx_theme_show_in_secondary_navigation=0 on 1st level are considered)
+			105 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			105 {
+				levels = {$site.nav.main.primary.levels}
+				maxItems = {$site.nav.main.primary.maxItems}
+				includeSpacer = 1
+				as = PrimaryMainNavigation
+				special = list
+				special.value.cObject = CONTENT
+				special.value.cObject {
+					table = pages
+					select {
+						pidInList.data = leveluid : 0
+						where.stdWrap.dataWrap = tx_theme_show_in_secondary_navigation=0
+					}
+					renderObj = TEXT
+					renderObj {
+						field = uid
+						wrap = |,
+					}
+				}
+			}
+
+			# Secondary Main Navigation (where only pages with tx_theme_show_in_secondary_navigation=1 on 1st level are considered)
 			110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			110 {
+				levels = {$site.nav.main.secondary.levels}
+				maxItems = {$site.nav.main.secondary.maxItems}
+				includeSpacer = 1
+				as = SecondaryMainNavigation
+				special = list
+				special.value.cObject = CONTENT
+				special.value.cObject {
+					table = pages
+					select {
+						pidInList.data = leveluid : 0
+						where.stdWrap.dataWrap = tx_theme_show_in_secondary_navigation=1
+					}
+					renderObj = TEXT
+					renderObj {
+						field = uid
+						wrap = |,
+					}
+				}
+			}
+
+			# Sub Navigation
+			200 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			200 {
 				entryLevel = 1
 				levels = 2
 				expandAll = 0
@@ -68,8 +114,8 @@ page {
 			}
 
 			# Breadcrumb Navigation
-			120 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-			120 {
+			250 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			250 {
 				special = rootline
 				special.range = 0|-1
 				includeNotInMenu = 1
@@ -89,8 +135,8 @@ page {
 			}
 
 			# MetaNavigation
-			130 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-			130 {
+			300 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			300 {
 				special = {$site.nav.meta.navigationType}
 				special.value = {$site.uid.metaNav}
 				includeNotInMenu = {$site.nav.meta.includeNotInMenu}
@@ -101,8 +147,8 @@ page {
 			}
 
 			# Footer Navigation
-			140 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-			140 {
+			350 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			350 {
 				special = {$site.nav.footer.navigationType}
 				special.value = {$site.uid.footerNav}
 				includeNotInMenu = {$site.nav.footer.includeNotInMenu}
@@ -113,8 +159,8 @@ page {
 			}
 
 			# Social Navigation
-			150 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-			150 {
+			400 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			400 {
 				special = {$site.nav.social.navigationType}
 				special.value = {$site.uid.socialNav}
 				includeNotInMenu = {$site.nav.social.includeNotInMenu}
@@ -125,8 +171,8 @@ page {
 			}
 
 			# Language Navigation
-			500 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-			500 {
+			450 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			450 {
 				special = language
 				special.value = {$site.nav.language.languageValue}
 				as = LanguageNavigation
@@ -362,9 +408,9 @@ popup {
 			// Main Navigation: generate more menu levels for dummy website
 			100.levels = 3
 			// Breadcrumb Navigation: generate rootline beginning at level 1
-			120.if.value = 1
+			250.if.value = 1
 			// Language Navigation: show language navigation even if there is only one language available
-			150.if >
+			450.if >
 		}
 
 		javascriptLibs {
