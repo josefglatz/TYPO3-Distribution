@@ -1,0 +1,13 @@
+TCAdefaults {
+	pages {
+
+	}
+}
+
+[applicationContext = Development*] || [applicationContext = /^Production\/Dev/] || [applicationContext = Production/Staging, Production/Testing]
+	TCAdefaults {
+		pages {
+			hidden = 0
+		}
+	}
+[global]
