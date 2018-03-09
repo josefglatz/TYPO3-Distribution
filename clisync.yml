@@ -103,6 +103,7 @@ GLOBAL:
             - "realurl_autoconf.php"
             - "AdditionalConfiguration_custom.php"
             - "AdditionalConfiguration_Development_Docker.php"
+            - "AdditionalConfiguration_Development_Mamp.php"
             - "/Build"
             - "/sgc-core"
 
