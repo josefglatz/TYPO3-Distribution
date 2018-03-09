@@ -41,8 +41,8 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `rm app/web/index.php` Delete the dummy index.php (which is responsible for the php info) since you know that the webserver works as expected.
 1. `cd app` switch to the app folder
 1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
-1. `cd ./Build && ./ChangeVendor.sh Sup7even` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `./ChangeHeaderComment.php by Sup7even Digital - www.supseven.at` Replace the comment within the head of the website.
+1. `cd ./Build && ./ChangeVendor.sh Supseven` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
+1. `./ChangeHeaderComment.php by supseven Digital - www.supseven.at` Replace the comment within the head of the website.
 1. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
 1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
@@ -262,5 +262,5 @@ Thanks for your support, ideas, issues and shared code
 * [Benjamin Kott](https://twitter.com/benjaminkott)
 * [Boris Schauer](https://twitter.com/bschauer)
 * [Georg Ringer](http://www.ringer.it)
-* [Sup7even Digital](http://www.supseven.at)
+* [supseven](http://www.supseven.at)
 * [Volker Kemeter](https://twitter.com/volkizzl)
