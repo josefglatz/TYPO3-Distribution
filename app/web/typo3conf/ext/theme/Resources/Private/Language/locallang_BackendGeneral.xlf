@@ -75,10 +75,10 @@
 			<trans-unit id="field.pages.tx_theme_opengraph_image.label">
 				<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
 			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_tx_theme_opengraph_title.label">
+			<trans-unit id="field.pages.tx_theme_opengraph_title.label">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="field.pages.opengraph_description.label">
+			<trans-unit id="field.pages.tx_theme_opengraph_description.label">
 				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="field.pages.tx_theme_twitter_image.label">
