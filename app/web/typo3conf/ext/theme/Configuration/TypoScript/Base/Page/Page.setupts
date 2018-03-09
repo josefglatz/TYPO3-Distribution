@@ -46,7 +46,7 @@ page {
 			# Main Navigation (WITHOUT checking tx_theme_show_in_secondary_navigation=0)
 			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			100 {
-				levels = 2
+				levels = 3
 				includeSpacer = 1
 				as = MainNavigation
 #				dataProcessing {
@@ -405,8 +405,6 @@ popup {
 		10.templateRootPaths.30 = {$theme.resTemplates}/Page/Dummy
 		// Adopt dataProcessing processors for dummy website
 		10.dataProcessing {
-			// Main Navigation: generate more menu levels for dummy website
-			100.levels = 3
 			// Breadcrumb Navigation: generate rootline beginning at level 1
 			250.if.value = 1
 			// Language Navigation: show language navigation even if there is only one language available
