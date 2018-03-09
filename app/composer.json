@@ -65,7 +65,7 @@
 	"require": {
 		"php": "^7.1 || ^7.2",
 		"apache-solr-for-typo3/solr": "~7.5",
-		"causal/image_autoresize": "^1.8",
+		"causal/image_autoresize": "dev-master#8c9ce1c1e5bc2b103a186e5d8040bc5a3077d401",
 		"cpsit/mask-export": "^0.9.1",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
 		"dmitryd/typo3-realurl": "^2.3",
