@@ -70,7 +70,7 @@ page {
 					table = pages
 					select {
 						pidInList.data = leveluid : 0
-						where.stdWrap.dataWrap = tx_theme_show_in_secondary_navigation=0
+						where = tx_theme_show_in_secondary_navigation=0
 					}
 					renderObj = TEXT
 					renderObj {
@@ -93,7 +93,7 @@ page {
 					table = pages
 					select {
 						pidInList.data = leveluid : 0
-						where.stdWrap.dataWrap = tx_theme_show_in_secondary_navigation=1
+						where = tx_theme_show_in_secondary_navigation=1
 					}
 					renderObj = TEXT
 					renderObj {
