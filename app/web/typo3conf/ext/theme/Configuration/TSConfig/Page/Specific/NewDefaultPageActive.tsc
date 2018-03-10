@@ -1,0 +1,5 @@
+TCAdefaults {
+	pages {
+		hidden = 0
+	}
+}

@@ -25,6 +25,7 @@ call_user_func(
             'Page/Specific/Extension/News/NewsMediaDefaultShowinpreviewOn' => 'News->Default "show in preview" per default on',
             'Page/Specific/Extension/News/PreviewRecordsNewsDetailDefault' => 'News->Preview Record (Default)',
             'Page/Specific/Extension/Powermail/NewOnlyPowermailRecords' => 'New: Restrict page(s) to Powermail/SysNote',
+            'Page/Specific/NewDefaultPageActive' => 'New: Set any new sub page active per default',
         ];
         // register each $elements item as PageTSConfig file
         foreach ($elements as $fileName => $label) {
