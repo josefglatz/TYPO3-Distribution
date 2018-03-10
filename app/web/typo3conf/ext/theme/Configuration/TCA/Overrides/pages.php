@@ -199,7 +199,7 @@ call_user_func(
             ],
             'tx_theme_related' => [
                 'exclude' => true,
-                'label' => $languageFileBePrefix . 'pages.tx_theme_related.label',
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_related.label',
                 'config' => [
                     'type' => 'group',
                     'internal_type' => 'db',
