@@ -23,6 +23,19 @@ TCEFORM.pages {
 	newUntil.disabled = 1
 	fe_login_mode.disabled = 1
 
+	// EXT:yoast_seo
+	tx_yoastseo_title.disabled = 0
+	tx_yoastseo_focuskeyword.disabled = 0
+	tx_yoastseo_canonical_url.disabled = 1
+	tx_yoastseo_robot_instructions.disabled = 1
+	tx_yoastseo_dont_use.disabled = 0
+	tx_yoastseo_facebook_title.disabled = 1
+	tx_yoastseo_facebook_description.disabled = 1
+	tx_yoastseo_facebook_image.disabled = 1
+	tx_yoastseo_twitter_title.disabled = 1
+	tx_yoastseo_twitter_description.disabled = 1
+	tx_yoastseo_twitter_image.disabled = 1
+
 
 	// disable field only for specific treeLevel
 	tx_theme_show_in_secondary_navigation.disabled = 1
