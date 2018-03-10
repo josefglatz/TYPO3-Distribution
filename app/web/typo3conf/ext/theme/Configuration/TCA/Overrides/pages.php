@@ -19,6 +19,7 @@ call_user_func(
             'Page/Specific/DisableTranslateButtons' => 'Disable Backend Translate Buttons',
             'Page/Specific/Extension/News/NewOnlyNews' => 'New: Restrict page(s) to News/SysCategories/SysNote',
             'Page/Specific/Extension/News/ClearCacheNews' => 'ClearCacheCmd->cacheTag:tx_news',
+            'Page/Specific/Extension/News/NewDefaultTypeSysFolderNews' => 'New: Set News Page Icon',
             'Page/Specific/Extension/News/NewsLimitCategories' => 'News->Limit Categories',
             'Page/Specific/Extension/News/NewsLimitMedia' => 'News->Limit Media',
             'Page/Specific/Extension/News/NewsMediaDefaultShowinpreviewOn' => 'News->Default "show in preview" per default on',
