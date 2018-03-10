@@ -14,3 +14,6 @@ mod.web_layout.allowInconsistentLanguageHandling = 0
 
 // Set to 0 if translated content should not be hidden after translation
 TCEMAIN.translateToHidden = 1
+[applicationContext = Development*] || [applicationContext = /^Production\/Dev/] || [applicationContext = Production/Staging, Production/Testing]
+	TCEMAIN.translateToHidden = 0
+[global]
