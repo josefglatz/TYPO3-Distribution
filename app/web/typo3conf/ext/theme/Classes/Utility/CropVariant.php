@@ -108,6 +108,9 @@ class CropVariant
 
     public function addCoverAreas(array $coverAreas)
     {
+        foreach ($coverAreas as $coverArea) {
+            $this->coverAreas[] = $coverArea;
+        }
 
         return $this;
     }

@@ -2,7 +2,8 @@
 
 namespace JosefGlatz\Theme\Service;
 
-use JosefGlatz\Theme\Utility\CropVariants;
+use JosefGlatz\Theme\Utility\CropVariant;
+use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class CropVariantsBuilder
@@ -41,12 +42,12 @@ class CropVariantsBuilder
         $this->type = $type;
     }
 
-    public static function getInstance($table, $field, $type = '')
+    public static function getInstance(string $table, string $field, string $type = '')
     {
         return GeneralUtility::makeInstance(self::class, $table, $field, $type);
     }
 
-    public function addCropVariants(array $cropVariants)
+    public function addCropVariant(array $cropVariant)
     {
         // @TODO: TYPO3-Distribution: addCropVariants() functionality
         //    $this->cropVariants[] = $cropVariant;
@@ -70,7 +71,7 @@ class CropVariantsBuilder
      */
     public function disableDefaultCropVariants()
     {
-        $defaultCropVariants = CropVariants::getDefaultCropVariants();
+        $defaultCropVariants = CropVariantDefaults::getDefaultCropVariants();
         $cropVariants = $this->cropVariants;
 
         if (isset($defaultCropVariants) && \is_array($defaultCropVariants) && !empty($defaultCropVariants)) {
@@ -114,7 +115,7 @@ class CropVariantsBuilder
      * @param string $customPath
      *
      */
-    public function persistToTca(string $customPath)
+    public function persistToTca(string $customPath = '')
     {
         // @TODO: TYPO3-Distribution: add persistToTca functionality
 //          a) Default, if no type is given:
