@@ -74,10 +74,10 @@ class CropVariant
      * Instantiation of class
      *
      * @param string $name name/key for this cropVariant
-     * @return CropVariant
+     * @return self
      * @throws \InvalidArgumentException
      */
-    public static function create(string $name): CropVariant
+    public static function create(string $name): self
     {
         return GeneralUtility::makeInstance(self::class, $name);
     }
@@ -200,12 +200,14 @@ class CropVariant
      * Try to set the title
      *  - a) based on per convention defined localized strings in specific xlf file
      *  - b) use $this->name as fallback title
+     *
+     * @throws \InvalidArgumentException
      */
     protected function setDefaultTitle(): void
     {
         $title = '';
         if ($this->name !== '') {
-            // Try a) if name has no space charactar
+            // Try a) if name has no space character
             if (!strrpos($this->name, ' ')) {
                 $title = $this->defaultLocalizationAttempt($this->name);
             }

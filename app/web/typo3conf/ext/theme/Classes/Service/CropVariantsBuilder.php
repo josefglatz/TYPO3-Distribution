@@ -42,7 +42,13 @@ class CropVariantsBuilder
         $this->type = $type;
     }
 
-    public static function getInstance(string $table, string $field, string $type = '')
+    /**
+     * @param string $table
+     * @param string $field
+     * @param string $type
+     * @return self
+     */
+    public static function getInstance(string $table, string $field, string $type = ''): self
     {
         return GeneralUtility::makeInstance(self::class, $table, $field, $type);
     }
