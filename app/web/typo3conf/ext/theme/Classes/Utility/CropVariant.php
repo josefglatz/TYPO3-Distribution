@@ -34,6 +34,13 @@ class CropVariant
     protected $cropArea = [];
 
     /**
+     * focusArea configuration
+     *
+     * @var array
+     */
+    protected $focusArea = [];
+
+    /**
      * coverAreas configuration
      *
      * @var array
@@ -88,7 +95,7 @@ class CropVariant
      * @param string $title
      * @return $this
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): self
     {
         $this->title = trim($title);
 
@@ -101,9 +108,28 @@ class CropVariant
      * @param array $cropArea
      * @return $this
      */
-    public function setCropArea(array $cropArea)
+    public function setCropArea(array $cropArea): self
     {
         $this->cropArea = $cropArea;
+
+        return $this;
+    }
+
+    /**
+     * Set focusArea
+     *
+     * @param array $focusArea
+     * @return $this
+     * @throws \UnexpectedValueException
+     */
+    public function setFocusArea(array $focusArea): self
+    {
+        if (!empty($focusArea) && !$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
+            throw new \UnexpectedValueException(
+                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys set.', 1520894420
+            );
+        }
+        $this->focusArea = $focusArea;
 
         return $this;
     }
@@ -126,15 +152,21 @@ class CropVariant
     /**
      * Add allowedAspectRatio(s)
      *
-     * @TODO: TYPO3-Distribution: check for already existing
-     *
      * @param array $ratios
      * @return $this
+     * @throws \RuntimeException
      */
     public function addAllowedAspectRatios(array $ratios)
     {
         if (!empty($ratios)) {
             foreach ($ratios as $key => $ratio) {
+                if (\array_key_exists(trim($key), $this->allowedAspectRatios)) {
+                    throw new \RuntimeException(
+                        'allowedAspectRatio "' . trim($ratio) . '" already exists in the configuration. Please remove it with removeAllowedAspectRatio()
+                        before adding new with same name.',
+                        1520891285
+                    );
+                }
                 $this->allowedAspectRatios[$key] = $ratio;
             }
         }
@@ -168,14 +200,17 @@ class CropVariant
     /**
      * Set selectedRatio for cropVariant (optional)
      *
-     * @TODO: TYPO3-Distribution: Check if ratio is already added to allowedAspectRatios
-     *
      * @param string $ratio
      * @return $this
+     * @throws \UnexpectedValueException
      */
     public function setSelectedRatio(string $ratio)
     {
-        $this->selectedRatio = $ratio;
+        if (\array_key_exists(trim($ratio), $this->allowedAspectRatios)) {
+            $this->selectedRatio = $ratio;
+        } else {
+            throw new \UnexpectedValueException('selectedRatio "' . trim($ratio) . '" key does not exists in cropVariants configuration.', 1520891907);
+        }
 
         return $this;
     }
@@ -205,6 +240,11 @@ class CropVariant
             throw new \UnexpectedValueException(
                 'cropArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520732819);
         }
+        if (!empty($this->focusArea) && !$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
+            throw new \UnexpectedValueException(
+                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520892162
+            );
+        }
         if (!empty($this->coverAreas)) {
             foreach ($this->coverAreas as $coverArea) {
                 if (!$this->arrayKeysExists(['x', 'y', 'width', 'height'], $coverArea)) {
@@ -219,6 +259,7 @@ class CropVariant
             $this->name => [
                 'title' => $this->title,
                 'cropArea' => $this->cropArea,
+                'focusArea' => $this->focusArea,
                 'coverAreas' => $this->coverAreas,
                 'allowedAspectRatios' => $this->allowedAspectRatios,
                 'selectedRatio' => $this->selectedRatio

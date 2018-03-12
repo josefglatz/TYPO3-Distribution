@@ -74,14 +74,21 @@ class CropVariantsBuilder
     /** Add cropVariant
      *
      * @TODO: TYPO3-Distribution: check if cropVariant have at least minimum config keys
-     * @TODO: TYPO3-Distribution: check if cropVariant is already set – if yes – throw exception
      *
      * @param array $cropVariant
      * @return CropVariantsBuilder
+     * @throws \RuntimeException
      */
     public function addCropVariant(array $cropVariant): self
     {
         foreach ($cropVariant as $key => $item) {
+            if (\array_key_exists($key, $this->cropVariants)) {
+                throw new \RuntimeException(
+                    'cropVariant "' . $key . '" already exists in the cropVariants configuration
+                    for "' . $this->table . '.' . $this->fieldName . '".',
+                    1520892669
+                );
+            }
             $this->cropVariants[$key] = $item;
         }
 
