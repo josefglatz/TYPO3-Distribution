@@ -141,6 +141,10 @@ class CropVariantsBuilder
      */
     public function persistToTca(int $customChildType = null, bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
     {
+        if (empty($this->cropVariants)) {
+            throw new \RuntimeException('Persisting cropVariants configuration not possible. The cropVariants configuration is empty.', 1520887257);
+        }
+
         $config = [
             $imageManipulationField => [
                 'config' => [
@@ -149,7 +153,7 @@ class CropVariantsBuilder
             ]
         ];
 
-        if ($this->table = 'sys_file_reference') {
+        if ($this->table === 'sys_file_reference') {
             throw new \RuntimeException('Persisting cropVariants configuration not possible for table sys_file_reference! Please use method persistToTcaForDefaultTable().', 1520885631);
         }
 
@@ -175,7 +179,6 @@ class CropVariantsBuilder
 
             return $this;
         }
-
 
         if ($customChildType === null) {
             if (empty($this->type)) {
