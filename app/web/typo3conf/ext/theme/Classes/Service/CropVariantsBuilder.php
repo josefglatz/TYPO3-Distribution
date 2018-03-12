@@ -118,7 +118,10 @@ class CropVariantsBuilder
                 $cropVariants[$defaultCropVariant]['disabled'] = true;
             }
         } else {
-            throw new \UnexpectedValueException('Removing default cropVariants not possible. Default cropVariants can\'t be processed.', 1520488435);
+            throw new \UnexpectedValueException(
+                'Removing default cropVariants not possible. Default cropVariants can\'t be processed.',
+                1520488435
+            );
         }
 
         $this->cropVariants = $cropVariants;
@@ -138,7 +141,10 @@ class CropVariantsBuilder
     public function get(): array
     {
         if (empty($this->cropVariants)) {
-            throw new \UnexpectedValueException('Final cropVariants configuration could not be queried. The property cropVariants contains an empty array.', 1520861189);
+            throw new \UnexpectedValueException(
+                'Final cropVariants configuration could not be queried. The property cropVariants contains an empty array.',
+                1520861189
+            );
         }
         return $this->cropVariants;
     }
@@ -157,10 +163,17 @@ class CropVariantsBuilder
     {
 
         if ($this->isTableForDefaultCropVariants()) {
-            throw new \RuntimeException('Persisting cropVariants configuration not possible for table sys_file_reference! Please use method persistToTcaForDefaultTable() instead.', 1520885631);
+            throw new \RuntimeException(
+                'Persisting cropVariants configuration not possible for table sys_file_reference!
+                Please use method persistToTcaForDefaultTable() instead.',
+                1520885631
+            );
         }
         if (empty($this->cropVariants)) {
-            throw new \RuntimeException('Persisting cropVariants configuration not possible. The cropVariants configuration is empty.', 1520887257);
+            throw new \RuntimeException(
+                'Persisting cropVariants configuration not possible. The cropVariants configuration is empty.',
+                1520887257
+            );
         }
 
         $config = [

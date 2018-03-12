@@ -162,8 +162,8 @@ class CropVariant
             foreach ($ratios as $key => $ratio) {
                 if (\array_key_exists(trim($key), $this->allowedAspectRatios)) {
                     throw new \RuntimeException(
-                        'allowedAspectRatio "' . trim($ratio) . '" already exists in the configuration. Please remove it with removeAllowedAspectRatio()
-                        before adding new with same name.',
+                        'allowedAspectRatio "' . trim($ratio) . '" already exists in the configuration.
+                        Please remove it with removeAllowedAspectRatio() before adding new with same name.',
                         1520891285
                     );
                 }
@@ -209,7 +209,10 @@ class CropVariant
         if (\array_key_exists(trim($ratio), $this->allowedAspectRatios)) {
             $this->selectedRatio = $ratio;
         } else {
-            throw new \UnexpectedValueException('selectedRatio "' . trim($ratio) . '" key does not exists in cropVariants configuration.', 1520891907);
+            throw new \UnexpectedValueException(
+                'selectedRatio "' . trim($ratio) . '" key does not exists in cropVariants configuration.',
+                1520891907
+            );
         }
 
         return $this;
