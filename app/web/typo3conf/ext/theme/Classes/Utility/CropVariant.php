@@ -5,6 +5,7 @@ namespace JosefGlatz\Theme\Utility;
 use JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults;
 use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility;
 use TYPO3\CMS\Lang\LanguageService;
 
 class CropVariant
@@ -46,7 +47,7 @@ class CropVariant
      *
      * @var array
      */
-    protected $allowedAspectRatios = [];
+    protected $allowedAspectRatios;
 
     /**
      * selectedRatio
@@ -106,6 +107,10 @@ class CropVariant
         return $this;
     }
 
+    /**
+     * @param array $coverAreas
+     * @return $this
+     */
     public function addCoverAreas(array $coverAreas)
     {
         foreach ($coverAreas as $coverArea) {
@@ -115,6 +120,10 @@ class CropVariant
         return $this;
     }
 
+    /**
+     * @param array $ratios
+     * @return $this
+     */
     public function addAllowedAspectRatios(array $ratios)
     {
         $this->allowedAspectRatios = $ratios;
@@ -122,6 +131,10 @@ class CropVariant
         return $this;
     }
 
+    /**
+     * @param string $ratio
+     * @return $this
+     */
     public function setSelectedRatio(string $ratio)
     {
         $this->selectedRatio = $ratio;
@@ -129,11 +142,47 @@ class CropVariant
         return $this;
     }
 
+    /**
+     * Return final cropVariant configuration
+     *  and throw exceptions if some necessary options aren't set
+     *
+     * @return array
+     * @throws \UnexpectedValueException
+     */
     public function get(): array
     {
+        // Check if title is set
+        if (empty($this->title)) {
+            throw new \UnexpectedValueException(
+                'Title for cropVariant "' . $this->name . '" not set.', 1520731261);
+        }
+        // Check if necessary keys are set
+        if (empty($this->cropArea)) {
+            throw new \UnexpectedValueException(
+                'cropArea array for cropVariant "' . $this->name . '" not set.', 1520731402);
+        }
+        if (!$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->cropArea)) {
+            throw new \UnexpectedValueException(
+                'cropArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520732819);
+        }
+        if (!empty($this->coverAreas)) {
+            foreach ($this->coverAreas as $coverArea) {
+                if (!$this->arrayKeysExists(['x', 'y', 'width', 'height'], $coverArea)) {
+                    throw new \UnexpectedValueException(
+                        'coverAreas array for cropVariant "' . $this->name . '" are not configured correctly. \
+                        Not every coverArea is configured correctly.', 1520733632);
+                }
+            }
+        }
+        // @TODO: TYPO3-Distribution: Check if other cropVariants (at least one) are set when a cropVariant is disabled.
+
         return [
             $this->name => [
-                'title' => $this->title
+                'title' => $this->title,
+                'cropArea' => $this->cropArea,
+                'coverAreas' => $this->coverAreas,
+                'allowedAspectRatios' => $this->allowedAspectRatios,
+                'selectedRatio' => $this->selectedRatio
             ]
         ];
     }
@@ -196,7 +245,28 @@ class CropVariant
      * @return LanguageService
      */
     protected function getLanguageService(): LanguageService
+
     {
-        return $GLOBALS['LANG'];
+        /** @var LanguageService $languageService */
+        return $languageService = Utility\GeneralUtility::makeInstance(LanguageService::class);
+    }
+
+
+
+    /**
+     * Check for existing keys in an array
+     *
+     * @param $requiredKeys
+     * @param $arrayToCheck
+     * @return bool
+     */
+    protected function arrayKeysExists($requiredKeys, $arrayToCheck): bool
+    {
+        foreach($requiredKeys as $key){
+            if(!array_key_exists($key, $arrayToCheck)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

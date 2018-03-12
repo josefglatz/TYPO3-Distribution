@@ -49,6 +49,10 @@ class CropVariantsBuilder
 
     public function addCropVariant(array $cropVariant)
     {
+        foreach ($cropVariant as $key => $item) {
+            $this->cropVariants[$key] = $item;
+        }
+
         // @TODO: TYPO3-Distribution: addCropVariants() functionality
         //    $this->cropVariants[] = $cropVariant;
 
@@ -117,6 +121,8 @@ class CropVariantsBuilder
      */
     public function persistToTca(string $customPath = '')
     {
+//DebuggerUtility::var_dump($this->cropVariants, 'cropVariants');
+//die('cropvariantbuilder get');
         // @TODO: TYPO3-Distribution: add persistToTca functionality
 //          a) Default, if no type is given:
 //              possible if crop is based on ChildTca's type: $GLOBALS['TCA']['a_table']['columns'][$this->fieldName]['config']['overrideChildTca']['types'][\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE]['columnsOverrides']['crop']['config']['cropVariants'] = "set all cropVariants"

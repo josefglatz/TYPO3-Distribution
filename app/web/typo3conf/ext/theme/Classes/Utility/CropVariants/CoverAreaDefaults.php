@@ -55,14 +55,15 @@ class CoverAreaDefaults
     public static function get(array $keys): array
     {
         $coverAreas = [];
-        foreach ($keys as $key) {
-            if (isset(self::$coverAreaPresets['key']) && \is_array(self::$coverAreaPresets['key'])) {
-                $coverAreas[] = self::$coverAreaPresets[$key];
+        foreach ($keys as $key => $item) {
+            if (isset(self::$coverAreaPresets[$item]) && \is_array(self::$coverAreaPresets[$item])) {
+                foreach (self::$coverAreaPresets[$item] as $coverAreaPresetArray) {
+                    $coverAreas[] = $coverAreaPresetArray;
+                }
             } else {
                 throw new \UnexpectedValueException('Given coverArea preset "' . $key . '" not found or not from type array."', 1520430221);
             }
         }
-
         return $coverAreas;
     }
 }

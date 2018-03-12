@@ -67,7 +67,7 @@ class AspectRatioDefaults
         ]
     ];
 
-    const defaultAspectRatios = [
+    protected const defaultAspectRatios = [
         '3:2',
         '2:3',
         '4:3',
