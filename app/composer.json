@@ -69,7 +69,7 @@
 		"cpsit/mask-export": "^0.9.1",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
 		"dmitryd/typo3-realurl": "^2.3",
-		"fluidtypo3/vhs": "^4.3",
+		"fluidtypo3/vhs": "^4.4",
 		"georgringer/deprecationloganalyzer": "^2.0",
 		"georgringer/logging": "dev-master",
 		"georgringer/news": "^6.2",
