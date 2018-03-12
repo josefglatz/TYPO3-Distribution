@@ -5,7 +5,6 @@ namespace JosefGlatz\Theme\Utility;
 use JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults;
 use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility;
 use TYPO3\CMS\Lang\LanguageService;
 
 class CropVariant
@@ -76,8 +75,9 @@ class CropVariant
      *
      * @param string $name name/key for this cropVariant
      * @return CropVariant
+     * @throws \InvalidArgumentException
      */
-    public static function create(string $name)
+    public static function create(string $name): CropVariant
     {
         return GeneralUtility::makeInstance(self::class, $name);
     }
@@ -174,7 +174,6 @@ class CropVariant
                 }
             }
         }
-        // @TODO: TYPO3-Distribution: Check if other cropVariants (at least one) are set when a cropVariant is disabled.
 
         return [
             $this->name => [
@@ -224,6 +223,7 @@ class CropVariant
      *
      * @param string $key
      * @return string Localized string or empty string if localization wasn't successful
+     * @throws \InvalidArgumentException
      */
     protected function defaultLocalizationAttempt(string $key): string
     {
@@ -243,27 +243,25 @@ class CropVariant
      * Returns LanguageService
      *
      * @return LanguageService
+     * @throws \InvalidArgumentException
      */
     protected function getLanguageService(): LanguageService
-
     {
-        /** @var LanguageService $languageService */
-        return $languageService = Utility\GeneralUtility::makeInstance(LanguageService::class);
+        return GeneralUtility::makeInstance(LanguageService::class);
     }
-
 
 
     /**
      * Check for existing keys in an array
      *
-     * @param $requiredKeys
+     * @param array $requiredKeys
      * @param $arrayToCheck
      * @return bool
      */
-    protected function arrayKeysExists($requiredKeys, $arrayToCheck): bool
+    protected function arrayKeysExists(array $requiredKeys, $arrayToCheck): bool
     {
-        foreach($requiredKeys as $key){
-            if(!array_key_exists($key, $arrayToCheck)) {
+        foreach ($requiredKeys as $key) {
+            if (!array_key_exists($key, $arrayToCheck)) {
                 return false;
             }
         }
