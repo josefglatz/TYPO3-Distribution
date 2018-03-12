@@ -45,6 +45,13 @@ class CropVariantsBuilder
      */
     protected $cropVariants = [];
 
+    /**
+     * CropVariantsBuilder constructor.
+     *
+     * @param string $tableName
+     * @param string $fieldName
+     * @param string $type
+     */
     public function __construct(string $tableName, string $fieldName, string $type = '')
     {
         $this->table = $tableName;
@@ -133,14 +140,18 @@ class CropVariantsBuilder
      * Persist the cropVariants configuration for specific a) table, b) column, (possibly) c) type
      * to Table Configuration Array (TCA)
      *
-     * @param int $customChildType
      * @param bool $force
+     * @param int|null $customChildType
      * @param string $imageManipulationField
      * @return self
      * @throws \Exception
      */
-    public function persistToTca(int $customChildType = null, bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
+    public function persistToTca(bool $force = false, int $customChildType = null, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
     {
+
+        if ($this->isTableForDefaultCropVariants()) {
+            throw new \RuntimeException('Persisting cropVariants configuration not possible for table sys_file_reference! Please use method persistToTcaForDefaultTable() instead.', 1520885631);
+        }
         if (empty($this->cropVariants)) {
             throw new \RuntimeException('Persisting cropVariants configuration not possible. The cropVariants configuration is empty.', 1520887257);
         }
@@ -152,10 +163,6 @@ class CropVariantsBuilder
                 ]
             ]
         ];
-
-        if ($this->table === 'sys_file_reference') {
-            throw new \RuntimeException('Persisting cropVariants configuration not possible for table sys_file_reference! Please use method persistToTcaForDefaultTable().', 1520885631);
-        }
 
         // Unset existing existing cropVariants configuration
         if ($force) {
@@ -215,5 +222,57 @@ class CropVariantsBuilder
         }
 
         return $this;
+    }
+
+    /**
+     * Persist the cropVariants configuration for default cropVariants table.
+     *
+     * @param bool $force
+     * @param string $imageManipulationField
+     * @return CropVariantsBuilder
+     * @throws \RuntimeException
+     */
+    public function persistToDefaultTableTca(bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
+    {
+        if (!$this->isTableForDefaultCropVariants()) {
+            throw new \RuntimeException('Persisting cropVariants configuration not possible for a non-default table cropVariants table!
+            Please use method persistToTca() instead.', 1520888498);
+        }
+        if (empty($this->cropVariants)) {
+            throw new \RuntimeException('Persisting cropVariants configuration not possible. The cropVariants configuration is empty.', 1520888495);
+        }
+
+        $config = [
+            $imageManipulationField => [
+                'config' => [
+                    'cropVariants' => $this->cropVariants
+                ]
+            ]
+        ];
+
+        if ($force) {
+            unset($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants']);
+            $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+
+            return $this;
+        }
+
+        if (!empty($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants'])) {
+            throw new \RuntimeException('cropVariants configuration can not be persisted.
+                    cropVariants configuration already exists for ' . $this->table . '.' . $this->fieldName . '.', 1520890145);
+        }
+        $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+
+        return $this;
+    }
+
+    /**
+     * Check table for default cropVariants table
+     *
+     * @return bool
+     */
+    protected function isTableForDefaultCropVariants(): bool
+    {
+        return trim($this->table) === self::DEFAULT_CROP_VARIANTS_TABLE;
     }
 }
