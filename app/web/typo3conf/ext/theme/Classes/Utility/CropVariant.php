@@ -148,6 +148,7 @@ class CropVariant
      *
      * @param string $ratio name of allowed aspect ratio
      * @return $this
+     * @throws \UnexpectedValueException
      */
     public function removeAllowedAspectRatio(string $ratio)
     {
@@ -155,7 +156,7 @@ class CropVariant
             unset($this->allowedAspectRatios[$ratio]);
         } else {
             throw new \UnexpectedValueException(
-                'Aspect ratio "' . htmlspecialchars(trim($ratio)) . '" for cropVariant "'  . $this->name . '" can\'t be removed.
+                'Aspect ratio "' . htmlspecialchars(trim($ratio)) . '" for cropVariant "' . $this->name . '" can\'t be removed.
                 It isn\'t defined in allowedAspectRatios for this cropVariant.',
                 1520854115
             );
