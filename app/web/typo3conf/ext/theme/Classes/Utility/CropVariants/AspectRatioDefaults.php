@@ -107,11 +107,11 @@ class AspectRatioDefaults
         if (\is_array(self::defaultAspectRatios)) {
             foreach (self::defaultAspectRatios as $ratio) {
                 if (!isset(self::$aspectRatios[$ratio])) {
-                    throw new \UnexpectedValueException('Wanted default aspectRatio "' . $ratio . '" not configured.', 1520426750);
+                    throw new \UnexpectedValueException('Wanted default aspectRatio "' . $ratio . '" is not configured.', 1520426750);
                 }
             }
         } else {
-            throw new \UnexpectedValueException('Given default aspectRatios configuration isn\'t type array.', 1520426754);
+            throw new \UnexpectedValueException('The given default aspectRatios configuration isn\'t from type array.', 1520426754);
         }
 
         return self::get(self::defaultAspectRatios);

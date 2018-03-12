@@ -3,7 +3,6 @@
 namespace JosefGlatz\Theme\Utility;
 
 use JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults;
-use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Lang\LanguageService;
 
@@ -37,7 +36,7 @@ class CropVariant
     /**
      * coverAreas configuration
      *
-     * @var
+     * @var array
      */
     protected $coverAreas = [];
 
@@ -58,10 +57,11 @@ class CropVariant
     /**
      * CropVariant constructor.
      *  - set provided name
-     *  - try to set title based on LLL strings
+     *  - try to set title based on LLL strings (per convention)
      *  - set default cropArea
      *
      * @param string $name name of this cropVariant
+     * @throws \InvalidArgumentException
      */
     public function __construct(string $name)
     {
@@ -90,7 +90,7 @@ class CropVariant
      */
     public function setTitle(string $title)
     {
-        $this->title = $title;
+        $this->title = trim($title);
 
         return $this;
     }
@@ -104,10 +104,13 @@ class CropVariant
     public function setCropArea(array $cropArea)
     {
         $this->cropArea = $cropArea;
+
         return $this;
     }
 
     /**
+     * Add coverAreas
+     *
      * @param array $coverAreas
      * @return $this
      */
@@ -121,17 +124,51 @@ class CropVariant
     }
 
     /**
+     * Add allowedAspectRatio(s)
+     *
+     * @TODO: TYPO3-Distribution: check for already existing
+     *
      * @param array $ratios
      * @return $this
      */
     public function addAllowedAspectRatios(array $ratios)
     {
+        if (!empty($ratios)) {
+            foreach ($ratios as $key => $ratio) {
+                $this->allowedAspectRatios[$key] = $ratio;
+            }
+        }
         $this->allowedAspectRatios = $ratios;
 
         return $this;
     }
 
     /**
+     * Remove a allowedAspectRatio
+     *
+     * @param string $ratio name of allowed aspect ratio
+     * @return $this
+     */
+    public function removeAllowedAspectRatio(string $ratio)
+    {
+        if (\array_key_exists(trim($ratio), $this->allowedAspectRatios)) {
+            unset($this->allowedAspectRatios[$ratio]);
+        } else {
+            throw new \UnexpectedValueException(
+                'Aspect ratio "' . htmlspecialchars(trim($ratio)) . '" for cropVariant "'  . $this->name . '" can\'t be removed.
+                It isn\'t defined in allowedAspectRatios for this cropVariant.',
+                1520854115
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set selectedRatio for cropVariant (optional)
+     *
+     * @TODO: TYPO3-Distribution: Check if ratio is already added to allowedAspectRatios
+     *
      * @param string $ratio
      * @return $this
      */
@@ -145,6 +182,8 @@ class CropVariant
     /**
      * Return final cropVariant configuration
      *  and throw exceptions if some necessary options aren't set
+     *
+     * @TODO: TYPO3-Distribution: Reduce checks by moving them to specific classes (after hey are introduced)
      *
      * @return array
      * @throws \UnexpectedValueException
@@ -187,19 +226,10 @@ class CropVariant
     }
 
     /**
-     * Retrieve as default declared cropVariants
-     *
-     * @return array default cropVariants (only key)
-     */
-    protected function getDefaultCropVariants(): array
-    {
-        return CropVariantDefaults::getDefaultCropVariants();
-    }
-
-    /**
      * Try to set the title
-     *  - a) based on per convention defined localized strings in specific xlf file
-     *  - b) use $this->name as fallback title
+     *
+     *  - a) ...based on per convention defined localized strings in specific xlf file
+     *  - b) by value of $this->name as a fallback
      *
      * @throws \InvalidArgumentException
      */
@@ -221,21 +251,19 @@ class CropVariant
 
     /**
      * Translation attempt
+     *
      *  based on label convention key `crop_variants.$key.label`
      *
      * @param string $key
-     * @return string Localized string or empty string if localization wasn't successful
+     * @return string 'LLL:...' string or empty string if localization wasn't successful
      * @throws \InvalidArgumentException
      */
     protected function defaultLocalizationAttempt(string $key): string
     {
         $result = '';
-        $translated = $this->getLanguageService()->sL(
-            self::LLPATH . self::LLPATHPREFIX . trim(htmlspecialchars($key)) . self::LLPATHSUFFIX
-        );
-
-        if (!empty($translated)) {
-            $result = $translated;
+        $lllKeyToCheck = self::LLPATH . self::LLPATHPREFIX . trim(htmlspecialchars($key)) . self::LLPATHSUFFIX;
+        if (!empty($this->getLanguageService()->sL($lllKeyToCheck))) {
+            return $lllKeyToCheck;
         }
 
         return $result;
@@ -251,7 +279,6 @@ class CropVariant
     {
         return GeneralUtility::makeInstance(LanguageService::class);
     }
-
 
     /**
      * Check for existing keys in an array

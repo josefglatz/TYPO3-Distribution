@@ -2,12 +2,16 @@
 
 namespace JosefGlatz\Theme\Service;
 
-use JosefGlatz\Theme\Utility\CropVariant;
 use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class CropVariantsBuilder
 {
+    /**
+     * Default used imageManipulationField name
+     */
+    public const DEFAULT_IMAGE_MANIPULATION_FIELD = 'crop';
+
     /**
      * TCA table name
      *
@@ -24,6 +28,7 @@ class CropVariantsBuilder
 
     /**
      * TCA type name
+     *
      * @var string
      */
     protected $type = '';
@@ -47,25 +52,26 @@ class CropVariantsBuilder
      * @param string $field
      * @param string $type
      * @return self
+     * @throws \InvalidArgumentException
      */
     public static function getInstance(string $table, string $field, string $type = ''): self
     {
         return GeneralUtility::makeInstance(self::class, $table, $field, $type);
     }
 
-    public function addCropVariant(array $cropVariant)
+    /** Add cropVariant
+     *
+     * @TODO: TYPO3-Distribution: check if cropVariant have at least minimum config keys
+     * @TODO: TYPO3-Distribution: check if cropVariant is already set – if yes – throw exception
+     *
+     * @param array $cropVariant
+     * @return CropVariantsBuilder
+     */
+    public function addCropVariant(array $cropVariant): self
     {
         foreach ($cropVariant as $key => $item) {
             $this->cropVariants[$key] = $item;
         }
-
-        // @TODO: TYPO3-Distribution: addCropVariants() functionality
-        //    $this->cropVariants[] = $cropVariant;
-
-        // Check if parameter isn't empty
-
-        // Foreach
-        //     Check
 
         return $this;
     }
@@ -78,13 +84,14 @@ class CropVariantsBuilder
      * For example: if you want to allow only specific cropVariants for a particular field configuration.
      *
      * @return $this
+     * @throws \UnexpectedValueException
      */
     public function disableDefaultCropVariants()
     {
         $defaultCropVariants = CropVariantDefaults::getDefaultCropVariants();
         $cropVariants = $this->cropVariants;
 
-        if (isset($defaultCropVariants) && \is_array($defaultCropVariants) && !empty($defaultCropVariants)) {
+        if ((null !== $defaultCropVariants) && \is_array($defaultCropVariants) && !empty($defaultCropVariants)) {
             foreach ($defaultCropVariants as $defaultCropVariant) {
                 // remove possible existing cropVariant configuration
                 unset($cropVariants[$defaultCropVariant]);
@@ -107,47 +114,49 @@ class CropVariantsBuilder
      * is not covered by the CropVariantsBuilder class.
      *
      * @return array
+     * @throws \UnexpectedValueException
      */
-    public function getAll(): array
+    public function get(): array
     {
-//        @TODO: TYPO3-Distribution: add the final configuration for further "local" changes (if `persistToTCA()` is to generic)
-
-        return [];
+        if (empty($this->cropVariants)) {
+            throw new \UnexpectedValueException('Final cropVariants configuration couldn\'t be queried. The property cropVariants contains an empty array.', 1520861189);
+        }
+        return $this->cropVariants;
     }
 
     /**
      * Persist the cropVariants configuration for specific a) table, b) column, (possibly) c) type
      * to Table Configuration Array (TCA)
      *
-     * @TODO:TYPO3-Distribution: add option/feature to allow custom TCA array path for persisting. E.g. if you want to add crop config based on ChildTca type for example.
+     * @TODO: TYPO3-Distribution: check if any cropVariants configuration is already applied to TCA – otherwise throw an exception
+     * @TODO: TYPO3-Distribution: force-feature: unset already configured cropVariants configuration
      *
-     *
-     * @param string $customPath
-     *
+     * @param int $customChildType
+     * @param bool $force
+     * @param string $imageManipulationField
+     * @return self
+     * @throws \Exception
      */
-    public function persistToTca(string $customPath = '')
+    public function persistToTca(int $customChildType = null, bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
     {
-//DebuggerUtility::var_dump($this->cropVariants, 'cropVariants');
-//die('cropvariantbuilder get');
-        // @TODO: TYPO3-Distribution: add persistToTca functionality
-//          a) Default, if no type is given:
-//              possible if crop is based on ChildTca's type: $GLOBALS['TCA']['a_table']['columns'][$this->fieldName]['config']['overrideChildTca']['types'][\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE]['columnsOverrides']['crop']['config']['cropVariants'] = "set all cropVariants"
-//              better and easier AND most common: $GLOBALS['TCA'][$this->table]['columns'][$this->fieldName]['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = "set all cropVariants"
-//
-//
-//          b) If a type is given:
-//
-//        $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$this->fieldName]['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = "set all cropVariants"
+        if ($force) {
+            throw new \RuntimeException('Implementation of persistToTca() with FORCE support must be implemented', 1520861570);
+        } else {
+            if (empty($this->type)) {
+                if ($customChildType === null) {
+                    $GLOBALS['TCA'][$this->table]['columns'][$this->fieldName]['config']['overrideChildTca']['columns'][$imageManipulationField]['config']['cropVariants'] = $this->cropVariants;
+                } else {
+                    $GLOBALS['TCA'][$this->table]['columns'][$this->fieldName]['config']['overrideChildTca']['types'][$customChildType]['columnsOverrides'][$imageManipulationField]['config']['cropVariants'] = $this->cropVariants;
+                }
+            } else {
+                if ($customChildType === null) {
+                    $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$this->fieldName]['config']['overrideChildTca']['columns'][$imageManipulationField]['config']['cropVariants'] = $this->cropVariants;
+                } else {
+                    $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$this->fieldName]['config']['overrideChildTca']['types'][$customChildType]['columnsOverrides'][$imageManipulationField]['config']['cropVariants'] = $this->cropVariants;
+                }
+            }
+        }
 
-        /*
-            What should/can the final array contain?
-                - cropVariants
-                    - title
-                    - cropArea
-                    - coverAreas
-                    - allowedAspectRatios
-                    - selectedRatio
-
-         */
+        return $this;
     }
 }
