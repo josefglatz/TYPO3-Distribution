@@ -1,8 +1,9 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Utility;
+namespace JosefGlatz\Theme\Backend\CropVariants;
 
-use JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults;
+use JosefGlatz\Theme\Utility\ArrayTool;
+use JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Lang\LanguageService;
 
@@ -74,7 +75,7 @@ class CropVariant
     {
         $this->name = $name;
         $this->setDefaultTitle();
-        $this->cropArea = CropAreaDefaults::get();
+        $this->cropArea = CropArea::get();
     }
 
     /**

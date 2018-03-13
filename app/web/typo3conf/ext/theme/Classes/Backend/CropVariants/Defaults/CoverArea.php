@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Utility\CropVariants;
+namespace JosefGlatz\Theme\Backend\CropVariants\Defaults;
 
-class CoverAreaDefaults
+class CoverArea
 {
     /**
      * @var array cropArea configuration
@@ -48,6 +48,8 @@ class CoverAreaDefaults
 
     /**
      * Retrieve cover area presets
+     *
+     * @TODO: split single vs multiple (get, getMultiple)
      *
      * @param array $keys
      * @return array all retrieved cover areas

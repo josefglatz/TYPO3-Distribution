@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Utility\CropVariants;
+namespace JosefGlatz\Theme\Backend\CropVariants\Defaults;
 
-class CropVariantDefaults
+class CropVariant
 {
     /**
      *

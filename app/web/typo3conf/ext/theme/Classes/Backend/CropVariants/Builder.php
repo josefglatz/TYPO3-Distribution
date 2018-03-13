@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Service;
+namespace JosefGlatz\Theme\Backend\CropVariants;
 
 use JosefGlatz\Theme\Utility\ArrayTool;
-use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
+use JosefGlatz\Theme\Backend\CropVariants\Defaults\CropVariant;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class CropVariantsBuilder
+class Builder
 {
     /**
      * Default used imageManipulationField name
@@ -75,7 +75,7 @@ class CropVariantsBuilder
     /** Add cropVariant
      *
      * @param array $cropVariant
-     * @return CropVariantsBuilder
+     * @return self
      * @throws \RuntimeException
      */
     public function addCropVariant(array $cropVariant): self
@@ -123,7 +123,7 @@ class CropVariantsBuilder
      */
     public function disableDefaultCropVariants()
     {
-        $defaultCropVariants = CropVariantDefaults::getDefaultCropVariants();
+        $defaultCropVariants = CropVariant::getDefaultCropVariants();
         $cropVariants = $this->cropVariants;
 
         if ((null !== $defaultCropVariants) && \is_array($defaultCropVariants) && !empty($defaultCropVariants)) {
@@ -264,7 +264,7 @@ class CropVariantsBuilder
      *
      * @param bool $force
      * @param string $imageManipulationField
-     * @return CropVariantsBuilder
+     * @return Builder
      * @throws \RuntimeException
      */
     public function persistToDefaultTableTca(bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self

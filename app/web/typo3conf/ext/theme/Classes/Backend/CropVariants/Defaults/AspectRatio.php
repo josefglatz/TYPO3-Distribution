@@ -1,8 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Utility\CropVariants;
+namespace JosefGlatz\Theme\Backend\CropVariants\Defaults;
 
-class AspectRatioDefaults
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+
+class AspectRatio
 {
     /**
      * @var array Default aspect ratios configuration
@@ -99,21 +101,27 @@ class AspectRatioDefaults
     /**
      * Retrieve default aspect ratios
      *
+     * @param bool $keysOnly
      * @return array all default aspect ratios
      */
-    public static function getDefaults(): array
+    public static function getDefaults(bool $keysOnly = false): array
     {
+        $ratios = [];
         // Check if every default aspect ratio exists
         if (\is_array(self::defaultAspectRatios)) {
             foreach (self::defaultAspectRatios as $ratio) {
                 if (!isset(self::$aspectRatios[$ratio])) {
                     throw new \UnexpectedValueException('Wanted default aspectRatio "' . $ratio . '" is not configured.', 1520426750);
                 }
+                $ratios[$ratio] = self::$aspectRatios[$ratio];
             }
         } else {
             throw new \UnexpectedValueException('The given default aspectRatios configuration isn\'t from type array.', 1520426754);
         }
 
-        return self::get(self::defaultAspectRatios);
+        if ($keysOnly) {
+            return self::get(self::defaultAspectRatios);
+        }
+        return $ratios;
     }
 }
