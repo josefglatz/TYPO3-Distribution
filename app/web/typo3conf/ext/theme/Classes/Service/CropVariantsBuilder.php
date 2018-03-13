@@ -177,7 +177,6 @@ class CropVariantsBuilder
      */
     public function persistToTca(bool $force = false, int $customChildType = null, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
     {
-
         if ($this->isTableForDefaultCropVariants()) {
             throw new \RuntimeException(
                 'Persisting cropVariants configuration not possible for table sys_file_reference!
@@ -317,7 +316,6 @@ class CropVariantsBuilder
             }
             $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][array_shift(array_keys($config))] = $config;
         }
-
 
         return $this;
     }
