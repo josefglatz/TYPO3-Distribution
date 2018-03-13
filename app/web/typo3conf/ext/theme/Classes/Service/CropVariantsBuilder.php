@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\Service;
 
+use JosefGlatz\Theme\Utility\ArrayTool;
 use JosefGlatz\Theme\Utility\CropVariants\CropVariantDefaults;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -73,8 +74,6 @@ class CropVariantsBuilder
 
     /** Add cropVariant
      *
-     * @TODO: TYPO3-Distribution: check if cropVariant have at least minimum config keys
-     *
      * @param array $cropVariant
      * @return CropVariantsBuilder
      * @throws \RuntimeException
@@ -82,11 +81,28 @@ class CropVariantsBuilder
     public function addCropVariant(array $cropVariant): self
     {
         foreach ($cropVariant as $key => $item) {
+            // Check for existing cropVariant with same name
             if (\array_key_exists($key, $this->cropVariants)) {
                 throw new \RuntimeException(
                     'cropVariant "' . $key . '" already exists in the cropVariants configuration
                     for "' . $this->table . '.' . $this->fieldName . '".',
                     1520892669
+                );
+            }
+            // Check if cropVariant has no configuration at all
+            if (empty($item)) {
+                throw new \UnexpectedValueException(
+                    'An empty cropVariant "' . $key . '" can not be added to the cropVariants configuration
+                    for "' . $this->table . '.' . $this->fieldName . '".',
+                    1520906531
+                );
+            }
+            // Check whether minimum of keys has been defined for cropVariant
+            if (!ArrayTool::arrayKeysExists(['title', 'cropArea', 'allowedAspectRatios'], $item)) {
+                throw new \UnexpectedValueException(
+                    'cropVariant "' . $key . '" without minimum set of configuration can not be added to the cropVariants
+                    configuration for "' . $this->table . '.' . $this->fieldName . '".',
+                    1520906581
                 );
             }
             $this->cropVariants[$key] = $item;
@@ -246,6 +262,8 @@ class CropVariantsBuilder
 
     /**
      * Persist the cropVariants configuration for default cropVariants table.
+     *
+     * @TODO: TYPO3-Distribution: Add missing type specific cropVariants persistence
      *
      * @param bool $force
      * @param string $imageManipulationField

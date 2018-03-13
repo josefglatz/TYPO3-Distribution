@@ -52,7 +52,7 @@ class CropVariant
      *
      * @var array
      */
-    protected $allowedAspectRatios;
+    protected $allowedAspectRatios = [];
 
     /**
      * selectedRatio
@@ -124,7 +124,7 @@ class CropVariant
      */
     public function setFocusArea(array $focusArea): self
     {
-        if (!empty($focusArea) && !$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
+        if (!empty($focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
             throw new \UnexpectedValueException(
                 'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys set.', 1520894420
             );
@@ -160,9 +160,10 @@ class CropVariant
     {
         if (!empty($ratios)) {
             foreach ($ratios as $key => $ratio) {
-                if (\array_key_exists(trim($key), $this->allowedAspectRatios)) {
+                // Check wether aspectRatio with same name ($key) is already set
+                if (\array_key_exists($key, $this->allowedAspectRatios)) {
                     throw new \RuntimeException(
-                        'allowedAspectRatio "' . trim($ratio) . '" already exists in the configuration.
+                        'allowedAspectRatio "' . $ratio . '" already exists in the configuration.
                         Please remove it with removeAllowedAspectRatio() before adding new with same name.',
                         1520891285
                     );
@@ -222,7 +223,7 @@ class CropVariant
      * Return final cropVariant configuration
      *  and throw exceptions if some necessary options aren't set
      *
-     * @TODO: TYPO3-Distribution: Reduce checks by moving them to specific classes (after hey are introduced)
+     * @TODO: TYPO3-Distribution: Reduce checks by moving them to their classes (still needs introduced)
      *
      * @return array
      * @throws \UnexpectedValueException
@@ -239,18 +240,18 @@ class CropVariant
             throw new \UnexpectedValueException(
                 'cropArea array for cropVariant "' . $this->name . '" not set.', 1520731402);
         }
-        if (!$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->cropArea)) {
+        if (!ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->cropArea)) {
             throw new \UnexpectedValueException(
                 'cropArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520732819);
         }
-        if (!empty($this->focusArea) && !$this->arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
+        if (!empty($this->focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
             throw new \UnexpectedValueException(
                 'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520892162
             );
         }
         if (!empty($this->coverAreas)) {
             foreach ($this->coverAreas as $coverArea) {
-                if (!$this->arrayKeysExists(['x', 'y', 'width', 'height'], $coverArea)) {
+                if (!ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $coverArea)) {
                     throw new \UnexpectedValueException(
                         'coverAreas array for cropVariant "' . $this->name . '" are not configured correctly. \
                         Not every coverArea is configured correctly.', 1520733632);
@@ -323,22 +324,5 @@ class CropVariant
     protected function getLanguageService(): LanguageService
     {
         return GeneralUtility::makeInstance(LanguageService::class);
-    }
-
-    /**
-     * Check for existing keys in an array
-     *
-     * @param array $requiredKeys
-     * @param $arrayToCheck
-     * @return bool
-     */
-    protected function arrayKeysExists(array $requiredKeys, $arrayToCheck): bool
-    {
-        foreach ($requiredKeys as $key) {
-            if (!array_key_exists($key, $arrayToCheck)) {
-                return false;
-            }
-        }
-        return true;
     }
 }
