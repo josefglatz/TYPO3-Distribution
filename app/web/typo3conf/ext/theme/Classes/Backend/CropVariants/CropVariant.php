@@ -224,6 +224,7 @@ class CropVariant
      * Return final cropVariant configuration
      *  and throw exceptions if some necessary options aren't set
      *
+     * @TODO: TYPO3-Distribution: Only return non emtpy sub-arrays
      * @TODO: TYPO3-Distribution: Reduce checks by moving them to their classes (still needs introduced)
      *
      * @return array
