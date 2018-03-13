@@ -18,24 +18,22 @@ call_user_func(
                         ],
                     ],
                 ],
-                'crop' => [
-                    'config' => [
-                        'cropVariants' => [
-                            'default' => [
-                                'title' => $languageFileBePrefix . 'crop_variants.default.label',
-                                'coverAreas' => [],
-                                'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::getDefaults(),
-                                'selectedRatio' => 'NaN'
-                            ],
-                        ],
-                    ],
-                ],
             ],
             'types' => [
             ],
         ];
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
+
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'crop')
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('default')
+                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::getDefaults())
+                    ->setSelectedRatio('NaN')
+                    ->get()
+            )
+            ->persistToDefaultTableTca();
+
     },
     'theme',
     'sys_file_reference'
