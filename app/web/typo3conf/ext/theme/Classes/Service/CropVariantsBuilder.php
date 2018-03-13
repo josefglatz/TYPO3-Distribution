@@ -200,7 +200,7 @@ class CropVariantsBuilder
             ]
         ];
 
-        // Unset existing existing cropVariants configuration
+        // Unset existing cropVariants configuration
         if ($force) {
             if ($customChildType === null) {
                 if (empty($this->type)) {
@@ -263,8 +263,6 @@ class CropVariantsBuilder
     /**
      * Persist the cropVariants configuration for default cropVariants table.
      *
-     * @TODO: TYPO3-Distribution: Add missing type specific cropVariants persistence
-     *
      * @param bool $force
      * @param string $imageManipulationField
      * @return CropVariantsBuilder
@@ -273,7 +271,7 @@ class CropVariantsBuilder
     public function persistToDefaultTableTca(bool $force = false, string $imageManipulationField = self::DEFAULT_IMAGE_MANIPULATION_FIELD): self
     {
         if (!$this->isTableForDefaultCropVariants()) {
-            throw new \RuntimeException('Persisting cropVariants configuration not possible for a non-default table cropVariants table!
+            throw new \RuntimeException('Persisting default cropVariants configuration not possible for a non-default table cropVariants table!
             Please use method persistToTca() instead.', 1520888498);
         }
         if (empty($this->cropVariants)) {
@@ -288,18 +286,38 @@ class CropVariantsBuilder
             ]
         ];
 
+        /**
+         * Persist to TCA (force mode)
+         */
         if ($force) {
-            unset($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants']);
-            $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+            if (empty($this->type)) {
+                unset($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants']);
+                $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+            } else {
+                unset($GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$imageManipulationField]['config']['cropVariants']);
+                $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][array_shift(array_keys($config))] = $config;
+            }
 
             return $this;
         }
 
-        if (!empty($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants'])) {
-            throw new \RuntimeException('cropVariants configuration can not be persisted.
+        /**
+         * Persist to TCA (check wether configuration key exists)
+         */
+        if (empty($this->type)) {
+            if (!empty($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants'])) {
+                throw new \RuntimeException('cropVariants configuration can not be persisted.
                     cropVariants configuration already exists for ' . $this->table . '.' . $this->fieldName . '.', 1520890145);
+            }
+            $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+        } else {
+            if (!empty($GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$imageManipulationField]['config']['cropVariants'])) {
+                throw new \RuntimeException('cropVariants configuration can not be persisted.
+                    cropVariants configuration already exists for ' . $this->table . '.' . $this->fieldName . ' (type: ' . $this->type . ').', 1520890145);
+            }
+            $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][array_shift(array_keys($config))] = $config;
         }
-        $GLOBALS['TCA'][$this->table]['columns'][array_shift(array_keys($config))] = $config;
+
 
         return $this;
     }
