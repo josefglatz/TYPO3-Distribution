@@ -1,0 +1,49 @@
+body.staging,
+body.dev-only {
+	content: "#{implode($grid-breakpoints, ',')}";
+
+	&:after {
+		@each $breakpoint in map-keys($grid-breakpoints) {
+			@include media-breakpoint-up($breakpoint) {
+				content: '#{$breakpoint}';
+			}
+		}
+
+		position: fixed;
+		line-height: 15px;
+		font-size: 10px;
+		color: #fff;
+		bottom: 0;
+		left: 0;
+		padding: 3px 10px;
+		background: rgba(#000, .75);
+		border: 1px solid rgba(#000, .9);
+		box-shadow: 0 0 20px rgba(#000, .6);
+		text-transform: uppercase;
+		opacity: .9;
+		z-index: 777;
+	}
+}
+
+head {
+	content: "#{implode($grid-breakpoints, ',')}";
+}
+body.staging {
+	&:before {
+		content: 'Dev/Staging';
+		top: 0;
+		left: calc(50% - 25px);
+		width: 50px;
+		height: 12px;
+		background: rgba(0,0,0,.2);
+		z-index: 300;
+		position: fixed;
+		border-radius: 0px 0px 5px 5px;
+		font-size: 7px;
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		line-height: 12px;
+		text-transform: uppercase;
+	}
+}

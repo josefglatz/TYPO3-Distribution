@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	} @else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+	#{$context} & {
+		@content;
+	}
+}
+
+/// Make font smoothing
+///
+@mixin font-smoothing() {
+	-webkit-text-size-adjust: 100%;
+	/* Font varient */
+	font-variant-ligatures: none;
+	-webkit-font-variant-ligatures: none;
+	/* Smoothing */
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+/// Make thin Arrows
+/// @param {string} $direction [up] - Direction of arrow up, right, down, left
+/// @param {string} $size - size of arrow
+/// @param {string} $border-width - width of arrow-line
+@mixin arrow($direction, $size, $border-width, $color) {
+	content: ""; // ensures the arrows are visible
+
+	// ensures the size of the arrows is correct:
+	width: 0;
+	height: 0;
+
+	border: solid $color;
+	border-width: 0 $border-width $border-width 0;
+	display: inline-block;
+	padding: $size;
+
+	@if $direction == up {
+		transform: rotate(-135deg);
+	} @else if $direction == right {
+		transform: rotate(-45deg);
+	} @else if $direction == down {
+		transform: rotate(45deg);
+	} @else if $direction == left {
+		transform: rotate(135deg);
+	}
+}
+
+/// Make fixed aspect ratio
+///
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+	&:before {
+		display: block;
+		content: " ";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}

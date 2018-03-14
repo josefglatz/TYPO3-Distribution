@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+@function implode($pieces, $glue: "") {
+	$result: null;
+	@for $i from 1 through length($pieces) {
+		$piece: nth($pieces, $i);
+		@if type-of($piece) == list {
+			$result: unquote("#{$result}#{$glue}#{implode($piece, $glue)}");
+		} @else {
+			$result: unquote("#{$result}#{$glue}#{$piece}");
+		}
+	}
+	@if $result != null {
+		$result: str-slice($result, str-length($glue) + 1, -1);
+	}
+	@return $result;
+}
+
+/// removes units from strings
+/// {string} the number/string we need
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
