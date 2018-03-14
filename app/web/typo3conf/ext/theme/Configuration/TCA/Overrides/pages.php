@@ -221,6 +221,7 @@ call_user_func(
                 ]
             ],
             'tx_theme_opengraph_title' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_title.label',
                 'config' => [
                     'type' => 'input',
@@ -228,6 +229,7 @@ call_user_func(
                 ]
             ],
             'tx_theme_opengraph_description' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_description.label',
                 'config' => [
                     'type' => 'input',
@@ -263,6 +265,7 @@ call_user_func(
                 )
             ],
             'tx_theme_twitter_title' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_title.label',
                 'config' => [
                     'type' => 'input',
@@ -271,6 +274,7 @@ call_user_func(
                 ]
             ],
             'tx_theme_twitter_description' => [
+                'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_description.label',
                 'config' => [
                     'type' => 'input',
