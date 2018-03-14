@@ -5,24 +5,36 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="col.intro">
-			<source>Introduction</source>
-		</trans-unit>
-		<trans-unit id="col.main">
-			<source>Main Content</source>
-		</trans-unit>
-		<trans-unit id="col.sidebar">
-			<source>Sidebar</source>
-		</trans-unit>
-		<trans-unit id="col.sidebarSlide">
-			<source>Sidebar (sliding elements from parent pages)</source>
-		</trans-unit>
-		<trans-unit id="default.title">
-			<source>Default</source>
-		</trans-unit>
-		<trans-unit id="homepage.title">
-			<source>Homepage</source>
-		</trans-unit>
+			<trans-unit id="col.contentTeasers">
+				<source>Content Teaser Section</source>
+			</trans-unit>
+			<trans-unit id="col.headerSlider">
+				<source>Header Slider Section</source>
+			</trans-unit>
+			<trans-unit id="col.intro">
+				<source>Introduction Section</source>
+			</trans-unit>
+			<trans-unit id="col.main">
+				<source>Main Content Section</source>
+			</trans-unit>
+			<trans-unit id="col.newsLatest">
+				<source>Latest News Section (automatic)</source>
+			</trans-unit>
+			<trans-unit id="col.related">
+				<source>Show related pages/articles (if any)</source>
+			</trans-unit>
+			<trans-unit id="col.sidebar">
+				<source>Sidebar</source>
+			</trans-unit>
+			<trans-unit id="col.sidebarSlide">
+				<source>Sidebar (sliding elements from parent pages)</source>
+			</trans-unit>
+			<trans-unit id="default.title">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="homepage.title">
+				<source>Homepage</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
