@@ -1,38 +1,194 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="theme">
-		<header/>
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-03-14T22:52:58Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
 		<body>
-			<trans-unit id="tt_content.layout.1">
-				<target>Aussehen 1</target>
-			</trans-unit>
-			<trans-unit id="tt_content.layout.2">
-				<target>Aussehen 2</target>
-			</trans-unit>
-			<trans-unit id="tt_content.layout.3">
-				<target>Aussehen 3</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.0">
-				<target>Überschrift H2 (Standard)</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.1">
-				<target>Überschrift H1</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.2">
-				<target>Überschrift H2</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.3">
-				<target>Überschrift H3</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.4">
-				<target>Überschrift H4</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.5">
-				<target>Überschrift H5</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.100">
-				<target>Versteckte Überschrift</target>
-			</trans-unit>
+		<trans-unit id="clearcacheaction.clear.processedfiles.description" approved="yes">
+			<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
+			<target>Leere die Tabelle sys_file_processedfile und lösche alle physischen Dateien auf lokal angehängten Dateisystemen.</target>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.clear.processedfiles.title" approved="yes">
+			<source>Clear all processed files</source>
+			<target>Leere alle verarbeiteten Dateien</target>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.realurl.autoConfDescription" approved="yes">
+			<source>Delete automatic generated realurl configuration file.</source>
+			<target>Automatisch generiertes RealUrl Konfigurationsdatei löschen.</target>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.realurl.autoConfTitle" approved="yes">
+			<source>Reset realurl automatic configuration</source>
+			<target>Automatische RealUrl Konfiguration zurücksetzen</target>
+		</trans-unit>
+		<trans-unit id="crop_variants.default.label" approved="yes">
+			<source>Default</source>
+			<target>Standard</target>
+		</trans-unit>
+		<trans-unit id="crop_variants.opengraph.label" approved="yes">
+			<source>Open Graph (Official Suggestion 2018)</source>
+			<target>Open Graph (Offizielle Empfehlung aus 2018)</target>
+		</trans-unit>
+		<trans-unit id="crop_variants.twitterimage.label" approved="yes">
+			<source>Twitter Image (Official Suggestion 2018)</source>
+			<target>Twitter Bild (Offizielle Empfehlung aus 2018)</target>
+		</trans-unit>
+		<trans-unit id="div.pages.seo" approved="yes">
+			<source>SEO</source>
+			<target>SEO</target>
+		</trans-unit>
+		<trans-unit id="field.pages.robot_follow" approved="yes">
+			<source>Follow links on current page (SEO)</source>
+			<target>Links auf Seite folgen (SEO)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.robot_index" approved="yes">
+			<source>Index current page (SEO)</source>
+			<target>Aktuelle Seite indexieren (SEO)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.sharing_enabled" approved="yes">
+			<source>Sharing Functionalities</source>
+			<target>Teilen-Funktion</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_hide_page_heading.check_0" approved="yes">
+			<source>Disabled</source>
+			<target>Deaktiviert</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_hide_page_heading.label" approved="yes">
+			<source>Disable Default Page Header (H1)</source>
+			<target>Deaktiviere Standard Hauptüberschrift (H1)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_link_label.label" approved="yes">
+			<source>Linktext in Call-To-Action/Teaser Elements (which links to this page)</source>
+			<target>Linktext in Call-To-Action/Teaser Elementen (welche zu dieser Seite verlinken)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_nav_image.label" approved="yes">
+			<source>Navigation Image</source>
+			<target>Navigationsbild</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_description.label" approved="yes">
+			<source>Description</source>
+			<target>Beschreibung</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_image.label" approved="yes">
+			<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
+			<target>Open Graph Bild (Min. 1200px x 630px empfohlen)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_title.label" approved="yes">
+			<source>Title</source>
+			<target>Titel</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_related.label" approved="yes">
+			<source>Related Pages</source>
+			<target>Verwandte Seiten</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_show_in_secondary_navigation.label" approved="yes">
+			<source>Show Page in Secondary Navigation (meta navigation)</source>
+			<target>Zeige Seite in sekundärer Navigation (Meta Navigation)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_description.label" approved="yes">
+			<source>Description</source>
+			<target>Beschreibung</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_image.label" approved="yes">
+			<source>Twitter Image (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</source>
+			<target>Twitter Bild (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_title.label" approved="yes">
+			<source>Title</source>
+			<target>Titel</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.attention" approved="yes">
+			<source>Page with exclamation sign</source>
+			<target>Seite mit Ausrufezeichen Symbol</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.drafts" approved="yes">
+			<source>Folder/Page with Drafts</source>
+			<target>Ordner/Seite mit Entwurfs-Icon (Drafts Bereich)</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.envelope" approved="yes">
+			<source>Page with envelope icon</source>
+			<target>Seite mit Briefumschlag Symbol</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.impress" approved="yes">
+			<source>Page with paragraph icon</source>
+			<target>Seite mit Paragraph Glyph Symbol</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.news" approved="yes">
+			<source>Page with news plugins</source>
+			<target>Seite mit News Plugin Icon</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.opendigital" approved="yes">
+			<source>Test Icon</source>
+			<target>Test Icon</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.pages" approved="yes">
+			<source>Folder with Pages</source>
+			<target>Order mit Seiten Symbol</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.search" approved="yes">
+			<source>Page with loupe/search icon</source>
+			<target>Seite mit Lupen Symbol</target>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.storage" approved="yes">
+			<source>Folder with Storage</source>
+			<target>Ordner mit Speicher</target>
+		</trans-unit>
+		<trans-unit id="palette.pages.opengraph" approved="yes">
+			<source>Open Graph</source>
+			<target>Open Graph</target>
+		</trans-unit>
+		<trans-unit id="palette.pages.related" approved="yes">
+			<source>Related</source>
+			<target>Verwandt</target>
+		</trans-unit>
+		<trans-unit id="palette.pages.robot_instructions" approved="yes">
+			<source>Search robot settings</source>
+			<target>Suchroboter Einstellungen</target>
+		</trans-unit>
+		<trans-unit id="palette.pages.twitter" approved="yes">
+			<source>Twitter</source>
+			<target>Twitter</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.0" approved="yes">
+			<source>Header H2 (default)</source>
+			<target>Überschrift H2 (Standard)</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.1" approved="yes">
+			<source>Header H1</source>
+			<target>Überschrift H1</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.100" approved="yes">
+			<source>Hidden Header</source>
+			<target>Versteckte Überschrift</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.2" approved="yes">
+			<source>Header H2</source>
+			<target>Überschrift H2</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.3" approved="yes">
+			<source>Header H3</source>
+			<target>Überschrift H3</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.4" approved="yes">
+			<source>Header H4</source>
+			<target>Überschrift H4</target>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.5" approved="yes">
+			<source>Header H5</source>
+			<target>Überschrift H5</target>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.1" approved="yes">
+			<source>Layout 1</source>
+			<target>Aussehen 1</target>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.2" approved="yes">
+			<source>Layout 2</source>
+			<target>Aussehen 2</target>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.3" approved="yes">
+			<source>Layout 3</source>
+			<target>Aussehen 3</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

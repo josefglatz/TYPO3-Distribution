@@ -1,197 +1,199 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" product-name="theme">
-		<header/>
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-14T22:52:58Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
 		<body>
-			<trans-unit id="tt_content.layout.1">
-				<source>Layout 1</source>
-			</trans-unit>
-			<trans-unit id="tt_content.layout.2">
-				<source>Layout 2</source>
-			</trans-unit>
-			<trans-unit id="tt_content.layout.3">
-				<source>Layout 3</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.0">
-				<source>Header H2 (default)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.1">
-				<source>Header H1</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.2">
-				<source>Header H2</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.3">
-				<source>Header H3</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.4">
-				<source>Header H4</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.5">
-				<source>Header H5</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_layout.100">
-				<source>Hidden Header</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.opendigital">
-				<source>Test Icon</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.storage">
-				<source>Folder with Storage</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.pages">
-				<source>Folder with Pages</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.impress">
-				<source>Page with paragraph</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.attention">
-				<source>Page with exclamation sign</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.search">
-				<source>Page with loupe/search icon</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.envelope">
-				<source>Page with envelope icon</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.news">
-				<source>Page with news plugins</source>
-			</trans-unit>
-			<trans-unit id="icon.pagetree.drafts">
-				<source>Folder/Page with Drafts</source>
-			</trans-unit>
-			<trans-unit id="clearcacheaction.realurl.autoConfTitle">
-				<source>Reset realurl automatic configuration</source>
-			</trans-unit>
-			<trans-unit id="clearcacheaction.realurl.autoConfDescription">
-				<source>Delete automatic generated realurl configuration file.</source>
-			</trans-unit>
-			<trans-unit id="clearcacheaction.clear.processedfiles.title">
-				<source>Clear all processed files</source>
-			</trans-unit>
-			<trans-unit id="clearcacheaction.clear.processedfiles.description">
-				<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_nav_image.label">
-				<source>Navigation Image</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_opengraph_image.label">
-				<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_opengraph_title.label">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_opengraph_description.label">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_twitter_image.label">
-				<source>Twitter Image (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_twitter_title.label">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_twitter_description.label">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="field.pages.robot_index">
-				<source>Index current page</source>
-			</trans-unit>
-			<trans-unit id="field.pages.robot_follow">
-				<source>Follow links on current page</source>
-			</trans-unit>
-			<trans-unit id="field.pages.sharing_enabled">
-				<source>Sharing Functionalities</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_related.label">
-				<source>Related Pages</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_link_label.label">
-				<source>Linktext in Call-To-Action/Teaser Elements (which links to this page)</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_hide_page_heading.check_0">
-				<source>Disabled</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_hide_page_heading.label">
-				<source>Disable Default Page Header (H1)</source>
-			</trans-unit>
-			<trans-unit id="field.pages.tx_theme_show_in_secondary_navigation.label">
-				<source>Show Page in Secondary Navigation (meta navigation)</source>
-			</trans-unit>
-			<trans-unit id="div.pages.seo">
-				<source>SEO</source>
-			</trans-unit>
-			<trans-unit id="palette.pages.opengraph">
-				<source>Open Graph</source>
-			</trans-unit>
-			<trans-unit id="palette.pages.twitter">
-				<source>Twitter</source>
-			</trans-unit>
-			<trans-unit id="palette.pages.related">
-				<source>Related</source>
-			</trans-unit>
-			<trans-unit id="palette.pages.robot_instructions">
-				<source>Robot settings</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.default.label">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.mobile.label">
-				<source>Mobile &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.tablet.label">
-				<source>Tablet &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.desktop.label">
-				<source>Desktop &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.mobile-xs.label">
-				<source>Mobile (Portrait) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.mobile-sm.label">
-				<source>Mobile (Landscape) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.tablet-md.label">
-				<source>Tablet (Portrait) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.tablet-lg.label">
-				<source>Tablet (Landscape) &#8673; / Desktop  &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.desktop-tablet-lg.label">
-				<source>Desktop &#8673; / Tablet (Landscape) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.desktop-lg.label">
-				<source>Desktop (Large) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.desktop-xl.label">
-				<source>Desktop (Extra Large) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.desktop-xxl.label">
-				<source>Desktop (XXL) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.xs.label">
-				<source>Extra Small (xs) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.sm.label">
-				<source>Small (sm) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.md.label">
-				<source>Medium (md) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.lg.label">
-				<source>Large (lg) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.xl.label">
-				<source>Extra Large (xl) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.xxl.label">
-				<source>Extra Extra Large (xxl) &#8673;</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.opengraph.label">
-				<source>Open Graph (Official Suggestion 2018)</source>
-			</trans-unit>
-			<trans-unit id="crop_variants.twitterimage.label">
-				<source>Twitter Image (Official Suggestion 2018)</source>
-			</trans-unit>
+		<trans-unit id="clearcacheaction.clear.processedfiles.description">
+			<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.clear.processedfiles.title">
+			<source>Clear all processed files</source>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.realurl.autoConfDescription">
+			<source>Delete automatic generated realurl configuration file.</source>
+		</trans-unit>
+		<trans-unit id="clearcacheaction.realurl.autoConfTitle">
+			<source>Reset realurl automatic configuration</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.default.label">
+			<source>Default</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.desktop-lg.label">
+			<source>Desktop (Large) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.desktop-tablet-lg.label">
+			<source>Desktop &#8673; / Tablet (Landscape) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.desktop-xl.label">
+			<source>Desktop (Extra Large) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.desktop-xxl.label">
+			<source>Desktop (XXL) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.desktop.label">
+			<source>Desktop &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.lg.label">
+			<source>Large (lg) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.md.label">
+			<source>Medium (md) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.mobile-sm.label">
+			<source>Mobile (Landscape) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.mobile-xs.label">
+			<source>Mobile (Portrait) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.mobile.label">
+			<source>Mobile &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.opengraph.label">
+			<source>Open Graph (Official Suggestion 2018)</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.sm.label">
+			<source>Small (sm) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.tablet-lg.label" xml:space="preserve">
+			<source>Tablet (Landscape) &#8673; / Desktop  &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.tablet-md.label">
+			<source>Tablet (Portrait) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.tablet.label">
+			<source>Tablet &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.twitterimage.label">
+			<source>Twitter Image (Official Suggestion 2018)</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.xl.label">
+			<source>Extra Large (xl) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.xs.label">
+			<source>Extra Small (xs) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="crop_variants.xxl.label">
+			<source>Extra Extra Large (xxl) &#8673;</source>
+		</trans-unit>
+		<trans-unit id="div.pages.seo">
+			<source>SEO</source>
+		</trans-unit>
+		<trans-unit id="field.pages.robot_follow">
+			<source>Follow links on current page (SEO)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.robot_index">
+			<source>Index current page (SEO)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.sharing_enabled">
+			<source>Sharing Functionalities</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_hide_page_heading.check_0">
+			<source>Disabled</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_hide_page_heading.label">
+			<source>Disable Default Page Header (H1)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_link_label.label">
+			<source>Linktext in Call-To-Action/Teaser Elements (which links to this page)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_nav_image.label">
+			<source>Navigation Image</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_description.label">
+			<source>Description</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_image.label">
+			<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_title.label">
+			<source>Title</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_related.label">
+			<source>Related Pages</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_show_in_secondary_navigation.label">
+			<source>Show Page in Secondary Navigation (meta navigation)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_description.label">
+			<source>Description</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_image.label">
+			<source>Twitter Image (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_title.label">
+			<source>Title</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.attention">
+			<source>Page with exclamation sign</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.drafts">
+			<source>Folder/Page with Drafts</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.envelope">
+			<source>Page with envelope icon</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.impress">
+			<source>Page with paragraph icon</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.news">
+			<source>Page with news plugins</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.opendigital">
+			<source>Test Icon</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.pages">
+			<source>Folder with Pages</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.search">
+			<source>Page with loupe/search icon</source>
+		</trans-unit>
+		<trans-unit id="icon.pagetree.storage">
+			<source>Folder with Storage</source>
+		</trans-unit>
+		<trans-unit id="palette.pages.opengraph">
+			<source>Open Graph</source>
+		</trans-unit>
+		<trans-unit id="palette.pages.related">
+			<source>Related</source>
+		</trans-unit>
+		<trans-unit id="palette.pages.robot_instructions">
+			<source>Search robot settings</source>
+		</trans-unit>
+		<trans-unit id="palette.pages.twitter">
+			<source>Twitter</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.0">
+			<source>Header H2 (default)</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.1">
+			<source>Header H1</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.100">
+			<source>Hidden Header</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.2">
+			<source>Header H2</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.3">
+			<source>Header H3</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.4">
+			<source>Header H4</source>
+		</trans-unit>
+		<trans-unit id="tt_content.header_layout.5">
+			<source>Header H5</source>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.1">
+			<source>Layout 1</source>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.2">
+			<source>Layout 2</source>
+		</trans-unit>
+		<trans-unit id="tt_content.layout.3">
+			<source>Layout 3</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
