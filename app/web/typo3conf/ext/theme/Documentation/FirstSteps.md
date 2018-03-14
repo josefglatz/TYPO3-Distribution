@@ -73,7 +73,7 @@ any other table to/from yaml.
 
 
 ## Page
-./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED,tx_impexp_origuid,tx_ddgooglesitemap_lastmod --file=/app/Build/DefaultDatabaseRecords/pages.yml
+./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED,tx_impexp_origuid,tx_ddgooglesitemap_lastmod,tx_theme_nav_image,tx_theme_opengraph_image,tx_theme_related,tx_theme_twitter_image,tx_yoastseo_title,tx_yoastseo_focuskeyword,tx_yoastseo_canonical_url,tx_yoastseo_robot_instructions,tx_yoastseo_dont_use,tx_yoastseo_facebook_title,tx_yoastseo_facebook_description,tx_yoastseo_facebook_image,tx_yoastseo_twitter_title,tx_yoastseo_twitter_description,tx_yoastseo_twitter_image --file=/app/Build/DefaultDatabaseRecords/pages.yml
 ./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
 
 
