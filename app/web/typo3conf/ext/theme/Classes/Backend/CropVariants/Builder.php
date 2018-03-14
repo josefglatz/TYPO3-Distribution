@@ -273,7 +273,6 @@ class Builder
 
         $config = $this->cropVariants;
 
-
         /**
          * Persist to TCA (force mode)
          */
@@ -281,7 +280,6 @@ class Builder
             if (empty($this->type)) {
                 unset($GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants']);
                 $GLOBALS['TCA'][$this->table]['columns'][$imageManipulationField]['config']['cropVariants'] = $config;
-
             } else {
                 unset($GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$imageManipulationField]['config']['cropVariants']);
                 $GLOBALS['TCA'][$this->table]['types'][$this->type]['columnsOverrides'][$imageManipulationField]['config']['cropVariants'] = $config;
