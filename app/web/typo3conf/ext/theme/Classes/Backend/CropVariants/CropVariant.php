@@ -260,6 +260,12 @@ class CropVariant
                 }
             }
         }
+        if (empty($this->allowedAspectRatios)) {
+            throw new \UnexpectedValueException(
+                'No allowedAspectRatios set for cropVariant "' . $this->name . '". Seems like you forgot to add allowedAspectRatios via addAllowedAspectRatios().',
+                1520962836
+            );
+        }
 
         return [
             $this->name => [
