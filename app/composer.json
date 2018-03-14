@@ -125,6 +125,7 @@
 		"macopedia/mess_detector": "dev-master",
 		"mask/mask": "^3.0",
 		"maxserv/yaml_configuration": "dev-master",
+		"namelesscoder/typo3-repository-client": "^2.0",
 		"pyrech/composer-changelogs": "dev-master",
 		"sgalinski/lfeditor": "dev-master"
 	},
