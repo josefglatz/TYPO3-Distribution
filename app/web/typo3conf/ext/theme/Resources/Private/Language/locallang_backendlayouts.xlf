@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-12T09:51:18Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-14T22:43:35Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-			<trans-unit id="col.contentTeasers">
-				<source>Content Teaser Section</source>
-			</trans-unit>
-			<trans-unit id="col.headerSlider">
-				<source>Header Slider Section</source>
-			</trans-unit>
-			<trans-unit id="col.intro">
-				<source>Introduction Section</source>
-			</trans-unit>
-			<trans-unit id="col.main">
-				<source>Main Content Section</source>
-			</trans-unit>
-			<trans-unit id="col.newsLatest">
-				<source>Latest News Section (automatic)</source>
-			</trans-unit>
-			<trans-unit id="col.related">
-				<source>Show related pages/articles (if any)</source>
-			</trans-unit>
-			<trans-unit id="col.sidebar">
-				<source>Sidebar</source>
-			</trans-unit>
-			<trans-unit id="col.sidebarSlide">
-				<source>Sidebar (sliding elements from parent pages)</source>
-			</trans-unit>
-			<trans-unit id="default.title">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="homepage.title">
-				<source>Homepage</source>
-			</trans-unit>
+		<trans-unit id="col.contentTeasers">
+			<source>Content Teaser Section</source>
+		</trans-unit>
+		<trans-unit id="col.headerSlider">
+			<source>Header Slider Section</source>
+		</trans-unit>
+		<trans-unit id="col.intro">
+			<source>Introduction Section</source>
+		</trans-unit>
+		<trans-unit id="col.main">
+			<source>Main Content Section</source>
+		</trans-unit>
+		<trans-unit id="col.newsLatest">
+			<source>Latest News Section (automatic)</source>
+		</trans-unit>
+		<trans-unit id="col.related">
+			<source>Show related pages/articles (if any)</source>
+		</trans-unit>
+		<trans-unit id="col.sidebar">
+			<source>Sidebar</source>
+		</trans-unit>
+		<trans-unit id="col.sidebarSlide">
+			<source>Sidebar (sliding elements from parent pages)</source>
+		</trans-unit>
+		<trans-unit id="default.title">
+			<source>Default</source>
+		</trans-unit>
+		<trans-unit id="homepage.title">
+			<source>Homepage</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
