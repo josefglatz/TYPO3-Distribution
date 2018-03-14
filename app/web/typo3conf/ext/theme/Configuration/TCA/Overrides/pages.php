@@ -59,6 +59,11 @@ call_user_func(
                 'apps-pagetree-page-contains-attention',
             ],
             [
+                'envelope',
+                'envelope',
+                'apps-pagetree-page-contains-envelope',
+            ],
+            [
                 'search',
                 'search',
                 'apps-pagetree-page-contains-search',
@@ -89,6 +94,7 @@ call_user_func(
                     'typeicon_classes' => [
                         'contains-impress' => 'apps-pagetree-page-contains-impress',
                         'contains-attention' => 'apps-pagetree-page-contains-attention',
+                        'contains-envelope' => 'apps-pagetree-page-contains-envelope',
                         'contains-search' => 'apps-pagetree-page-contains-search',
                         'contains-newsplugins' => 'apps-pagetree-page-contains-newsplugins',
                         'contains-records' => 'apps-pagetree-folder-contains-records',

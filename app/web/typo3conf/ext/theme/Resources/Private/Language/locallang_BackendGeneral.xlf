@@ -51,6 +51,9 @@
 			<trans-unit id="icon.pagetree.search">
 				<source>Page with loupe/search icon</source>
 			</trans-unit>
+			<trans-unit id="icon.pagetree.envelope">
+				<source>Page with envelope icon</source>
+			</trans-unit>
 			<trans-unit id="icon.pagetree.news">
 				<source>Page with news plugins</source>
 			</trans-unit>
