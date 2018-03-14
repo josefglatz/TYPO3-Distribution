@@ -13,12 +13,25 @@ mod {
 									1 {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.sidebar
 										colPos = 1
+#										allowed {
+#										    CType = theme_sidebarteaser
+#										}
+#										maxitems = 3
 									}
 									2 {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.main
 										colPos = 0
 										colspan = 3
 										rowspan = 2
+#										allowed {
+#										    CType =
+#										    list_type = ,
+#										}
+#										disallowed {
+#										    CType =
+#										    list_type =
+#										}
+#										maxitems =
 									}
 
 								}
@@ -28,6 +41,10 @@ mod {
 									1 {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.sidebarSlide
 										colPos = 2
+#										allowed {
+#										    CType = theme_sidebarteaser
+#										}
+#										maxitems = 3
 									}
 								}
 							}

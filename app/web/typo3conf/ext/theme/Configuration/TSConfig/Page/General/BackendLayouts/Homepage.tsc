@@ -14,7 +14,16 @@ mod {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.intro
 										colPos = 3
 										colspan = 12
-									}
+#										allowed {
+#										    CType = theme_headerimage
+#										    list_type = ,
+#										}
+#										disallowed {
+#										    CType =
+#										    list_type =
+#										}
+#										maxitems = 3
+#									}
 								}
 							}
 							2 {
@@ -23,6 +32,15 @@ mod {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.main
 										colPos = 0
 										colspan = 12
+#										allowed {
+#										    CType =
+#										    list_type = ,
+#										}
+#										disallowed {
+#										    CType = theme_headerimage
+#										    list_type =
+#										}
+#										maxitems =
 									}
 								}
 							}
@@ -51,6 +69,15 @@ mod {
 										name = LLL:EXT:theme/Resources/Private/Language/locallang_backendlayouts.xlf:col.main
 										colPos = 4
 										colspan = 12
+#										allowed {
+#										    CType =
+#										    list_type = ,
+#										}
+#										disallowed {
+#										    CType = theme_headerimage
+#										    list_type =
+#										}
+#										maxitems =
 									}
 								}
 							}

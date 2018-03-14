@@ -75,6 +75,7 @@
 		"georgringer/news": "^6.2",
 		"georgringer/page_speed": "dev-master",
 		"helhum/typo3-console": "^5.0.3",
+		"ichhabrecht/content-defender": "^3.0",
 		"instituteweb/unroll": "^2.0",
 		"josefglatz/beuser-fastswitch": "^1.0.2",
 		"mask/mask": "^3.0",
