@@ -85,6 +85,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 | EXT | Reason/Description | for editor | for dev/integrator |
 |-----|--------------------|------------|--------------------|
+| autoswitchtolistview | If page module and a sys folder is selected, a redirect to the list module is done. | :white_check_mark: | :white_check_mark: |
 | backend_debug | Easier the life while integrating a TYPO3 project | :x: | :white_check_mark:¹ |
 | be_secure_pw | Password rules and Password reminder | :white_check_mark: | :white_check_mark: |
 | beuser_fastswitch | Admins can switch to specific test-editors with 2 clicks | :x: | :white_check_mark: |

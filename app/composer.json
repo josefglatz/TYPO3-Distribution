@@ -69,6 +69,7 @@
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
 		"dmitryd/typo3-realurl": "^2.3",
 		"fluidtypo3/vhs": "^4.4",
+		"georgringer/autoswitchtolistview": "^2.0",
 		"georgringer/deprecationloganalyzer": "^2.0",
 		"georgringer/logging": "dev-master",
 		"georgringer/news": "^6.2",
