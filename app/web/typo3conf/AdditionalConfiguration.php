@@ -126,7 +126,7 @@ $customChanges = [
             ]),
             'iconcheck' => serialize([
                 'listAllIconIdentifiers' => 1,
-                'listIconsWithPrefix' => 'theme, content',
+                'listIconsWithPrefix' => 'theme-backend, theme-content, theme-belayout, content',
                 'enableModuleForEverybody' => 0,
                 'disableModule' => 0,
             ]),
