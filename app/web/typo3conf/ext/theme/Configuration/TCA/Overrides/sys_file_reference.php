@@ -33,7 +33,6 @@ call_user_func(
                     ->get()
             )
             ->persistToDefaultTableTca();
-
     },
     'theme',
     'sys_file_reference'

@@ -2,8 +2,8 @@
 
 namespace JosefGlatz\Theme\Backend\CropVariants;
 
-use JosefGlatz\Theme\Utility\ArrayTool;
 use JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea;
+use JosefGlatz\Theme\Utility\ArrayTool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Lang\LanguageService;
 

@@ -2,8 +2,8 @@
 
 namespace JosefGlatz\Theme\Backend\CropVariants;
 
-use JosefGlatz\Theme\Utility\ArrayTool;
 use JosefGlatz\Theme\Backend\CropVariants\Defaults\CropVariant;
+use JosefGlatz\Theme\Utility\ArrayTool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class Builder

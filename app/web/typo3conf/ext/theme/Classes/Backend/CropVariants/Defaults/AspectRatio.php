@@ -2,8 +2,6 @@
 
 namespace JosefGlatz\Theme\Backend\CropVariants\Defaults;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-
 class AspectRatio
 {
     /**
