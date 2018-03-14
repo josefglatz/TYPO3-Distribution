@@ -23,7 +23,7 @@ call_user_func(
                 'theme_inheritance_stop',
                 'apps-pagetree-drag-place-denied'
             ],
-            'menu_subpages',
+            'list',
             'after'
         );
         $tca = [
