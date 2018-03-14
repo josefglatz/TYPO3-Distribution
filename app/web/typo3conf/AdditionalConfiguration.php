@@ -124,6 +124,12 @@ $customChanges = [
                 'forceProvider' => false, // Use Gravatar service even if email address is empty: Normally the Gravatar service is only requested when a email address is set. With this setting you can also enable is for BE users without email address. The above fallback will always be used then.
                 'useProxy' => true, // Improve privacy by proxying the image request
             ]),
+            'iconcheck' => serialize([
+                'listAllIconIdentifiers' => 1,
+                'listIconsWithPrefix' => 'theme, content',
+                'enableModuleForEverybody' => 0,
+                'disableModule' => 0,
+            ]),
             'image_autoresize_ff' => serialize([
                 'directories' => 'fileadmin/,uploads/',
                 'file_types' => 'jpg,jpeg,png',
