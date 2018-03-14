@@ -1,0 +1,13 @@
+//$mfp-overlay-color: #ffffff;
+//$mfp-controls-text-color: #444;
+//$mfp-controls-color: #000;
+//$mfp-controls-border-color: #000;
+
+@import "../../../../Build/node_modules/magnific-popup/src/css/main";
+
+.mfp-wrap * {
+	outline: 0 !important;
+}
+
+// override some mfp settings if you need to override it ;-] (app/web/typo3conf/ext/theme/Build/node_modules/magnific-popup/src/css/_settings.scss)
+

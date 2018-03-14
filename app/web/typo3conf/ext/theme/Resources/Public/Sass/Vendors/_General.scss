@@ -1,0 +1,19 @@
+/**
+	Import all general used vendor libraries which should be loaded right before our project variables file.
+ */
+// Only import bootstrap/functions first. All other the bootstrap vendor files are added later via Vendors/Additional
+@import "../../../../Build/node_modules/bootstrap/scss/functions";
+@import "../../../../Build/node_modules/family.scss/source/src/family";
+@import "../../../../Build/node_modules/sassdash/scss/sassdash";
+//@import "../../../../Build/node_modules/hover.css/scss/hover.scss";
+//@import "../../../../Build/node_modules/typi/scss/typi";
+
+// @TODO: Slick-carousel, slicknav,
+
+/**
+slick-carousel
+/Volumes/D/TYPO3/Projects/Kolping/app/web/typo3conf/ext/theme/Build/node_modules/slick-carousel/slick/slick.scss
+/Volumes/D/TYPO3/Projects/Kolping/app/web/typo3conf/ext/theme/Build/node_modules/slick-carousel/slick/slick-theme.scss
+ */
+
+@import "MagnificPopup";

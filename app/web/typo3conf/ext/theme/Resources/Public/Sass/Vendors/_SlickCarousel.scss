@@ -1,0 +1,52 @@
+// Import Vendor
+@import "../../../../Build/node_modules/slick-carousel/slick/slick.scss";
+/**
+Import basic theme and overwrite default variables
+ */
+@import "../../../../Build/node_modules/slick-carousel/slick/slick-theme.scss";
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+.slick-list {
+	.slick-loading & {
+		background: transparent; //  disable ajax-loader.gif
+	}
+}
+
+.slick-next,
+.slick-prev {
+
+}
+
+.slick-next {
+
+}
+
+.slick-prev {
+
+}
+
+.slick-dots {
+	li {
+		button {
+
+		}
+		&.slick-active {
+			button {
+
+			}
+		}
+	}
+}
