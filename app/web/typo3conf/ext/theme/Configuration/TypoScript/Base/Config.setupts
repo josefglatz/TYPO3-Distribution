@@ -87,12 +87,13 @@ config {
 	extTarget = _blank
 	fileTarget =
 
-	// Linkhandler Frontend Configuration
-	config.recordLinks {
+	// Linkhandler Frontend Configuration app/vendor/typo3/cms/typo3/sysext/core/Documentation/Changelog/8.6/Feature-79626-IntegrateRecordLinkHandler.rst
+	recordLinks {
 		// Keep in mind: you can setup multiple identifiers for just one table/extension
 
 		// Identifier "newsDefault"
 		newsDefault {
+			force = 0
 			typolink {
 				parameter = {$site.ext.news.defaultDetailPid}
 				additionalParams.data = field:uid
