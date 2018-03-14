@@ -139,33 +139,6 @@ call_user_func(
                             ],
                         ],
                         'columns' => [
-                            'crop' => [
-                                'config' => [
-                                    'cropVariants' => [
-                                        'default' => [
-                                            'disabled' => true,
-                                        ],
-                                        'mobile' => [
-                                            'title' => $languageFileBePrefix . 'crop_variants.mobile.label',
-                                            'coverAreas' => [],
-                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
-                                        ],
-                                        'tablet' => [
-                                            'title' => $languageFileBePrefix . 'crop_variants.tablet.label',
-                                            'coverAreas' => [],
-                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
-                                        ],
-                                        'desktop' => [
-                                            'title' => $languageFileBePrefix . 'crop_variants.desktop.label',
-                                            'coverAreas' => [],
-                                            'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                            'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['4:3']),
-                                        ],
-                                    ],
-                                ],
-                            ],
                         ],
                     ],
                     'maxitems' => 1,
@@ -282,21 +255,6 @@ call_user_func(
                                 ],
                             ],
                             'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => [
-                                            'default' => [
-                                                'disabled' => true,
-                                            ],
-                                            'opengraph' => [
-                                                'title' => $languageFileBePrefix . 'crop_variants.opengraph.label',
-                                                'coverAreas' => [],
-                                                'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                                'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['1.91:1']),
-                                            ]
-                                        ],
-                                    ],
-                                ],
                             ],
                         ],
                         'maxitems' => 1,
@@ -340,21 +298,6 @@ call_user_func(
                                 ],
                             ],
                             'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => [
-                                            'default' => [
-                                                'disabled' => true,
-                                            ],
-                                            'opengraph' => [
-                                                'title' => $languageFileBePrefix . 'crop_variants.twitterimage.label',
-                                                'coverAreas' => [],
-                                                'cropArea' => \JosefGlatz\Theme\Utility\CropVariants\CropAreaDefaults::get(),
-                                                'allowedAspectRatios' => \JosefGlatz\Theme\Utility\CropVariants\AspectRatioDefaults::get(['1.91:1']),
-                                            ]
-                                        ],
-                                    ],
-                                ],
                             ],
                         ],
                         'maxitems' => 1,
@@ -364,6 +307,46 @@ call_user_func(
             ],
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
+
+        /**
+         * Set cropVariants configuration
+         */
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_nav_image')
+            ->disableDefaultCropVariants()
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('md')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('lg')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->persistToTca();
+
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_opengraph_image')
+            ->disableDefaultCropVariants()
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('opengraph')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['1.91:1']))
+                    ->get()
+            )
+            ->persistToTca();
+
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_twitter_image')
+            ->disableDefaultCropVariants()
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('twitterimage')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['1.91:1']))
+                    ->get()
+            )
+            ->persistToTca();
 
         /**
          * Set TCA palettes
