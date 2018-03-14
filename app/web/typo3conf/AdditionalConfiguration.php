@@ -47,7 +47,6 @@ $customChanges = [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
                 'driver' => 'mysqli',
             ],
         ],

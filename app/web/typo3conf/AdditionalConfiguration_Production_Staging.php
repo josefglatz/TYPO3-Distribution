@@ -6,7 +6,6 @@ $customChanges = [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
                 'dbname' => '',
                 'driver' => 'mysqli',
                 'host' => '',

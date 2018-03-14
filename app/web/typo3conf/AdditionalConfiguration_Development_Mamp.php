@@ -32,7 +32,6 @@ $customChanges = [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
                 'dbname' => getenv('MYSQL_DATABASE'),
                 'driver' => 'mysqli',
                 'host' => 'localhost',
