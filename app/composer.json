@@ -58,8 +58,8 @@
 		"secure-http": true,
 		"sort-packages": true,
 		"bin-dir": ".",
-		"COMMENTEDOUT:platform": {
-			"php": "7.2"
+		"platform": {
+			"php": "7.1"
 		}
 	},
 	"require": {
