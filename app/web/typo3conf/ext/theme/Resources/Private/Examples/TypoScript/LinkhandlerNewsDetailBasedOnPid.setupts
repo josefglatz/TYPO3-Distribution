@@ -1,0 +1,65 @@
+config {
+	recordLinks {
+		// Identifier "newsDefault"
+		newsDefault {
+			force = 0
+			typolink {
+				parameter.stdWrap.cObject = CASE
+				parameter.stdWrap.cObject {
+					// sysFolder UID of current news record
+					key.field = pid
+
+					// if current news record ist stored in sysFolder with UID 29 link to an alternative detail page
+					29 = TEXT
+					29.value = {$site.ext.news.alternativeDetailPid}
+
+					// fallback/default detail page
+					default = TEXT
+					default.value = {$site.ext.news.defaultDetailPid}
+				}
+				additionalParams.data = field:uid
+				additionalParams.wrap = &tx_news_pi1[news]=|
+				useCacheHash = 1
+			}
+		}
+	}
+}
+
+
+// https://www.comuno.net/blog/detail/eigene-linkhandler-fuer-links-auf-datensaetze-in-typo3/
+// https://stackoverflow.com/questions/44378613/linkhandler-hook-on-typo3-8
+// https://docs.typo3.org/typo3cms/extensions/core/Changelog/8.6/Feature-79121-ImplementHookInTypolinkForModificationOfPageParams.html
+// https://usetypo3.com/linkhandler.html
+
+// @TODO: TYPO3-Distribution: Add example where detail link is fetched from category like
+#
+#plugin.tx_linkhandler {
+#	tt_news {
+#		forceLink = 1
+#		parameter.stdWrap.cObject = CONTENT
+#		parameter.stdWrap.cObject {
+#			table = tt_news_cat
+#			select {
+#				fields = tt_news_cat.single_pid
+#				join = tt_news_cat_mm ON tt_news_cat_mm.uid_foreign = tt_news_cat.uid INNER JOIN tt_news ON tt_news.uid = tt_news_cat_mm.uid_local
+#				where = 1
+#				andWhere = tt_news.uid = '{field:uid}'
+#				andWhere.insertData = 1
+#				# PID der Kategorien (bzw. des Seitenbaum)
+#				pidInList = 1
+#				# ggf. notwendig, wenn Kategorien über den Seitenbaum verteilt sind
+#				#recursive = 5
+#				max = 1
+#				orderBy = tt_news_cat_mm.sorting
+#			}
+#			renderObj = COA
+#			renderObj {
+#				10 = TEXT
+#				10.field = single_pid
+#			}
+#		}
+#		additionalParams = &tx_ttnews[tt_news]={field:uid}
+#		additionalParams.insertData = 1
+#		useCacheHash = 1
+#	}
+#}
