@@ -38,10 +38,10 @@ class CoverArea
         // Cover lower third of image
         'lower_third' => [
             [
-                'x' => 0.75,
-                'y' => 0.0,
+                'x' => 0.0,
+                'y' => 0.67,
                 'width' => 1.0,
-                'height' => 0.25
+                'height' => 0.33
             ]
         ]
     ];
