@@ -100,6 +100,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 | mask_export | Alternative Content Element Generator Exporter | :x: | :white_check_mark:¹ |
 | mess_detector | How messed up is your TYPO3 instance | :x: | :white_check_mark:¹ |
 | page_speed | Google Page Speed Module | :x: | :white_check_mark:² |
+| querybuilder | Backend extension for query builder in list module. | :x: | :white_check_mark: |
 | t3monitoring_client | Client extension for the t3monitoring service | :x: | :white_check_mark: |
 | unroll | Enhanced TYPO3 save buttons (configurable) | :white_check_mark: | :white_check_mark: |
 | yaml_configuration | Configure your TYPO3 site using YAML files | :x: | :white_check_mark:¹ |
