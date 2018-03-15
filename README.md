@@ -109,6 +109,19 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 _¹) Only activated in composer --dev mode_
 _²) Only usable if the fronted is reachable from public internet_
 
+#### CKEditor presets (based on real world scenarios)
+
+One central configuration place with limited set of CKEditor buttons. Easy project specific configuration.
+Custom CKEditor plugins activated (even custom ones). You can set preset for every field of a table (even based on type).
+
+##### Preset overview
+
+| Preset | Extend from | Description |
+|--------|-------------|-------------|
+| `theme_default` | - | Default CKEditor configuration |
+| `theme_defaultNoTables` | `theme_default` | Options on top of parent |
+| `theme_minimal` | - | Very minimal preset (as a base for other minimal custom project specific presets) |
+
 ### Linkvalidator (sysext)
 
 To enable the linkvalidator, adopt the prepared configuration first to your needs (`EXT:theme/Configuration/TSConfig/Page/General/Linkvalidator.tsc`)
