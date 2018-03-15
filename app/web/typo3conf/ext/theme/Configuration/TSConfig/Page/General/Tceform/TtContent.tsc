@@ -24,7 +24,7 @@ TCEFORM.tt_content {
 	}
 
 	header_layout {
-		removeItems = 5
+		removeItems := addToList(1,5)
 		// disable the "default header layout"
 		removeItems := addToList(0)
 
