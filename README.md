@@ -137,8 +137,62 @@ With Twitter Bootstrap activated fluid template.
 
 ### Additional useful custom icons for the backend
 
-Some useful icons for the backend for e.g. custom content elements, grid elements, ... `EXT:theme/Resources/Public/Icons/Backend`
+Some useful icons for the backend for e.g. custom content elements, grid elements, ... `EXT:theme/Resources/Public/Icons/Backend` and an own backend module to list all registerd icon identifiers.
 
+
+### Frontend
+
+This TYPO3-Distribution does not provide an ready frontend out-of-the-box. It is not intended therefore! BUT it provides a fundamental base for integrating your website. All the default database
+records helps you to start developing/integrating the frontend of your new TYPO3 website.
+
+**Necessary steps are basically:**
+
+* Finalize your page tree
+* Finalize backendLayouts
+* Integrate your frontend via Fluid
+* Write Scss/Css
+* Write Javascript
+* Configure Yarn/Gulp setup
+
+#### Out-of-the-box frontend features (Pages)
+
+| Group | Title | Reason |
+|-------|-------|--------|
+| **Fluid variables** | ||
+| | `{RootUid}` | Dynamic UID of the actual root page |
+| | `{Level1Title}` | Title of level 1 of current page |
+| | `{MainNavigation}` | Main Navigation |
+| | `{PrimaryMainNavigation}` | Main Navigation (for main navigation) |
+| | `{SecondaryMainNavigation}` | Main Navigation (for meta navigation) |
+| | `{SubNavigation}` | Sub Navigation (entryLevel 1) |
+| | `{BreadcrumbNavigation}` | Breadcrumb with level dependent switch |
+| | `{MetaNavigation}` | Good old Meta Navigation (subpages of specific PID) |
+| | `{FooterNavigation}` | Footer Navigation (subpages of specific PID) |
+| | `{SocialNavigation}` | Social Links Navigation (subpages of specific PID) |
+| | `{LanguageNavigation}` | Language Navigation |
+| | `{BreadcrumbNavigationDetail}` | for EXT:news |
+| **Body classes** | ||
+| | `language-<syslanguageUid>` |
+| | `languagecontent-<sysLanguageContent>` |
+| | `level-<levelOfActualPage>` |
+| | `tmpl-<ActualBackendLayout>` |
+| | `layout-<pagesLayoutField>` |
+| | `root-<UidOfRootPage>` |
+| | `rootpage` | class is added if actual page is the root page |
+| | custom beLayout CASE | Optional: ready2use TypoScript CASE config to add custom belayout/FeTemplate class mapping |
+| **Body attribute** | `data-page-uid` | actual page uid |
+| **Replacements** | ||
+| | `###CURRENTYEAR###` | four-digit year |
+| | `###SPACE###` | Space charactar "32" |
+| **TypoScript Lib's** | ||
+| | `lib.dynamicContent` | retrieve colPos content via VH |
+| | `lib.dynamicContentSlide` | -"- (sliding/inheritance active) |
+| | `lib.dynamicContentFirst` | -"- (only first content element) |
+| | `lib.countContent` | retrieve amount of content elements in a colPos via VH |
+| | `lib.googleAnalyticsBasic` | Simple GA snippet |
+| | `lib.googleTagManagerBasic` | Simple GTM snippet |
+| | `lib.matomoBasic` | Simple Matomo (former Piwik) snippet |
+| | `lib.titleTag.default` | Simple configurable title tag setup |
 
 ## Tools
 
