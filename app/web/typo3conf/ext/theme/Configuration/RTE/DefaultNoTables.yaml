@@ -19,6 +19,7 @@ editor:
       - table
       - tabletools
       - tableselection
+      - tableModifications
 
 
     # Toolbar button names that must not be rendered
