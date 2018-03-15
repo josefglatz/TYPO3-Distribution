@@ -59,6 +59,7 @@ call_user_func(
                 'theme-belayout-content'                => 'BackendLayouts/content.svg',
                 'theme-belayout-content-empty'          => 'BackendLayouts/content-empty.svg',
                 'theme-belayout-content-homepage'       => 'BackendLayouts/content-homepage.svg',
+                'theme-belayout-content-rubric'         => 'BackendLayouts/content-rubric.svg',
                 'theme-belayout-content-menu'           => 'BackendLayouts/content-menu.svg',
                 'theme-belayout-content-menu-sidebar'   => 'BackendLayouts/content-menu-sidebar.svg',
                 'theme-belayout-content-sidebar'        => 'BackendLayouts/content-sidebar.svg',
