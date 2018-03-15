@@ -39,7 +39,8 @@
       <path value="$PROJECT_DIR$/app/vendor/pyrech/composer-changelogs" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/class-alias-loader" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/cms-composer-installers" />
+      <path value="$PROJECT_DIR$/app/vendor/namelesscoder/typo3-repository-client" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
 </project>
