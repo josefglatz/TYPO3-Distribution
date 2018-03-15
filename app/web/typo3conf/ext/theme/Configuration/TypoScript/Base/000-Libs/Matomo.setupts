@@ -1,5 +1,5 @@
-lib.piwikBasic = COA
-lib.piwikBasic {
+lib.matomoBasic = COA
+lib.matomoBasic {
 	if.isTrue = {$site.tracking.piwik.enable}
 	stdWrap.cObject = COA
 	stdWrap.cObject {

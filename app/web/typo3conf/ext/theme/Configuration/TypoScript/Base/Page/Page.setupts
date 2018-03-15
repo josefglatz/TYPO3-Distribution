@@ -346,7 +346,7 @@ page {
 
 
 	// basic Piwik
-	20 < lib.piwikBasic
+	20 < lib.matomoBasic
 
 
 	stdWrap.replacement {
