@@ -56,6 +56,9 @@
 		<trans-unit id="title.rubric" approved="yes">
 			<target>Rubrik (Bereichseinstiegsseite)</target>
 		</trans-unit>
+		<trans-unit id="title.product" approved="yes">
+			<target>Produkt</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

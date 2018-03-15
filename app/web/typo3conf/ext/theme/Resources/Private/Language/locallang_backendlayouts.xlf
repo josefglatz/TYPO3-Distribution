@@ -44,6 +44,9 @@
 		<trans-unit id="title.rubric">
 			<source>Rubric</source>
 		</trans-unit>
+		<trans-unit id="title.product">
+			<source>Product</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
