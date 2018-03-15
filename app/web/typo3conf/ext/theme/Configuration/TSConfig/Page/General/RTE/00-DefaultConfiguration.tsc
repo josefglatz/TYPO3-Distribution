@@ -23,10 +23,10 @@ RTE.default.preset = theme_defaultNoTables
 //
 // Applying config to rte enabled fields
 //
-	#
-	#	RTE.config.table.column.preset = presetIdentifier
-	#	RTE.config.table.column.types.typeName.preset = presetIdentifier
-	#
+#
+#	RTE.config.table.column.preset = presetIdentifier
+#	RTE.config.table.column.types.typeName.preset = presetIdentifier
+#
 RTE.config {
 
 	tt_content {
@@ -34,7 +34,7 @@ RTE.config {
 		bodytext {
 			preset = theme_defaultNoTables
 			types {
-				text.preset = theme_default
+				text.preset = theme_defaultNoTables
 				textmedia.preset = theme_default
 			}
 		}

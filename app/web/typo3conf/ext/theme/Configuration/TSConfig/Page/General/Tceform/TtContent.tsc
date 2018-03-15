@@ -43,7 +43,6 @@ TCEFORM.tt_content {
 	imageborder.disabled = 1
 
 	imagecols {
-
 		// remove default imagecol values >= 1
 		removeItems := addToList(2,3,4,5,6,7,8)
 
