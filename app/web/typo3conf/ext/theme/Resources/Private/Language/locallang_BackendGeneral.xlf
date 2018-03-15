@@ -137,6 +137,9 @@
 		<trans-unit id="icon.pagetree.impress">
 			<source>Page with paragraph icon</source>
 		</trans-unit>
+		<trans-unit id="icon.pagetree.landingpages">
+			<source>Folder with Landingpages</source>
+		</trans-unit>
 		<trans-unit id="icon.pagetree.news">
 			<source>Page with news plugins</source>
 		</trans-unit>

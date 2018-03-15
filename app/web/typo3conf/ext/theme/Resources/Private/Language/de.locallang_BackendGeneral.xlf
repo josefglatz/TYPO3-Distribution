@@ -113,6 +113,10 @@
 			<source>Page with paragraph icon</source>
 			<target>Seite mit Paragraph Glyph Symbol</target>
 		</trans-unit>
+		<trans-unit id="icon.pagetree.landingpages" approved="yes">
+			<source>Folder with Landingpages</source>
+			<target>Ordner mit Icons Landingpages</target>
+		</trans-unit>
 		<trans-unit id="icon.pagetree.news" approved="yes">
 			<source>Page with news plugins</source>
 			<target>Seite mit News Plugin Icon</target>

@@ -78,6 +78,11 @@ call_user_func(
                 'drafts',
                 'apps-pagetree-folder-contains-drafts',
             ],
+            [
+                'landingpages',
+                'landingpages',
+                'apps-pagetree-folder-contains-landingpages',
+            ],
         ];
         foreach ($customPageTreeIcons as $customPageTreeIcon) {
             $GLOBALS['TCA'][$table]['columns']['module']['config']['items'][] = [
@@ -100,6 +105,7 @@ call_user_func(
                         'contains-records' => 'apps-pagetree-folder-contains-records',
                         'contains-pages' => 'apps-pagetree-folder-contains-pages',
                         'contains-drafts' => 'apps-pagetree-folder-contains-drafts',
+                        'contains-landingpages' => 'apps-pagetree-folder-contains-landingpages',
                     ],
                 ]
             ]
