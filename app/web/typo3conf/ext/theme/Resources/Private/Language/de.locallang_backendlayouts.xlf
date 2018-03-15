@@ -37,6 +37,14 @@
 			<source>Sidebar (sliding elements from parent pages)</source>
 			<target>Seitenleiste (von Elternseiten vererbte Elemente werden ausgegeben)</target>
 		</trans-unit>
+		<trans-unit id="col.teasersOfSubpages" approved="yes">
+			<source>Teasers of Subpages (of actual page)</source>
+			<target>Teaser der Unterseiten (der aktuellen Seite)</target>
+		</trans-unit>
+		<trans-unit id="col.teasersOfSubpages.automatic" approved="yes">
+			<source>Teasers of Subpages (of actual page) (automatic)</source>
+			<target>Teaser der Unterseiten (der aktuellen Seite) (automatisch)</target>
+		</trans-unit>
 		<trans-unit id="default.title" approved="yes">
 			<source>Default</source>
 			<target>Standard</target>

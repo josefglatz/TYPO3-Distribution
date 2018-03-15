@@ -29,6 +29,12 @@
 		<trans-unit id="col.sidebarSlide">
 			<source>Sidebar (sliding elements from parent pages)</source>
 		</trans-unit>
+		<trans-unit id="col.teasersOfSubpages">
+			<source>Teasers of Subpages (of actual page)</source>
+		</trans-unit>
+		<trans-unit id="col.teasersOfSubpages.automatic">
+			<source>Teasers of Subpages (of actual page) (automatic)</source>
+		</trans-unit>
 		<trans-unit id="default.title">
 			<source>Default</source>
 		</trans-unit>
