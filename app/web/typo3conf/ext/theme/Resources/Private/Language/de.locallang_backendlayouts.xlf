@@ -45,6 +45,9 @@
 			<source>Homepage</source>
 			<target>Startseite (Homepage)</target>
 		</trans-unit>
+		<trans-unit id="title.rubric" approved="yes">
+			<target>Rubrik (Bereichseinstiegsseite)</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
