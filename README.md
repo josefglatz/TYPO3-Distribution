@@ -13,6 +13,10 @@ Branch **master**: Support for TYPO3 8.7 LTS
 
 ---
 
+## [Work in Progress: Initial documentation (markdown)](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
+
+---
+
 ## First setup in combination with webdevops/TYPO3-docker-boilerplate and webdevops/vagrant-docker-vm (Ubuntu 14.04 non reverse-proxy magic)
 
 Basically the folder structure of this TYPO3 distribution is built to work with webdevops/TYPO3-docker-boilerplate. It could be used even without it.
@@ -167,46 +171,6 @@ records helps you to start developing/integrating the frontend of your new TYPO3
 * Write Scss/Css
 * Write Javascript
 * Configure Yarn/Gulp setup
-
-#### Out-of-the-box frontend features (Pages)
-
-| Group | Title | Reason |
-|-------|-------|--------|
-| **Fluid variables** | ||
-| | `{RootUid}` | Dynamic UID of the actual root page |
-| | `{Level1Title}` | Title of level 1 of current page |
-| | `{MainNavigation}` | Main Navigation |
-| | `{PrimaryMainNavigation}` | Main Navigation (for main navigation) |
-| | `{SecondaryMainNavigation}` | Main Navigation (for meta navigation) |
-| | `{SubNavigation}` | Sub Navigation (entryLevel 1) |
-| | `{BreadcrumbNavigation}` | Breadcrumb with level dependent switch |
-| | `{MetaNavigation}` | Good old Meta Navigation (subpages of specific PID) |
-| | `{FooterNavigation}` | Footer Navigation (subpages of specific PID) |
-| | `{SocialNavigation}` | Social Links Navigation (subpages of specific PID) |
-| | `{LanguageNavigation}` | Language Navigation |
-| | `{BreadcrumbNavigationDetail}` | for EXT:news |
-| **Body classes** | ||
-| | `language-<syslanguageUid>` |
-| | `languagecontent-<sysLanguageContent>` |
-| | `level-<levelOfActualPage>` |
-| | `tmpl-<ActualBackendLayout>` |
-| | `layout-<pagesLayoutField>` |
-| | `root-<UidOfRootPage>` |
-| | `rootpage` | class is added if actual page is the root page |
-| | custom beLayout CASE | Optional: ready2use TypoScript CASE config to add custom belayout/FeTemplate class mapping |
-| **Body attribute** | `data-page-uid` | actual page uid |
-| **Replacements** | ||
-| | `###CURRENTYEAR###` | four-digit year |
-| | `###SPACE###` | Space charactar "32" |
-| **TypoScript Lib's** | ||
-| | `lib.dynamicContent` | retrieve colPos content via VH |
-| | `lib.dynamicContentSlide` | -"- (sliding/inheritance active) |
-| | `lib.dynamicContentFirst` | -"- (only first content element) |
-| | `lib.countContent` | retrieve amount of content elements in a colPos via VH |
-| | `lib.googleAnalyticsBasic` | Simple GA snippet |
-| | `lib.googleTagManagerBasic` | Simple GTM snippet |
-| | `lib.matomoBasic` | Simple Matomo (former Piwik) snippet |
-| | `lib.titleTag.default` | Simple configurable title tag setup |
 
 ## Tools
 
