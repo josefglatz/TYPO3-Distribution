@@ -13,51 +13,8 @@ Branch **master**: Support for TYPO3 8.7 LTS
 
 ---
 
-## [Work in Progress: Initial documentation (markdown)](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
+## Open the [DOCUMENTATION](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md) (work in progress)
 
----
-
-## First setup in combination with webdevops/TYPO3-docker-boilerplate and webdevops/vagrant-docker-vm (Ubuntu 14.04 non reverse-proxy magic)
-
-Basically the folder structure of this TYPO3 distribution is built to work with webdevops/TYPO3-docker-boilerplate. It could be used even without it.
-
-### Just a few things to mention
-
-`app/web` is the webserver document root. All files directly in the root of this repo are for git ignoring and handling file within git, CGLs like `.editorconfig` and `dynamicReturnTypeMeta.json` for PhpStorm helper plugin.
-
-### Let's start
-
-1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate
-1. `git clone --depth=1 https://github.com/josefglatz/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
-1. `cd YourProject` Navigate to newly created project dir
-1. `rsync -av --progress --exclude '/README.md .git .github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
-1. `rm -rf ../YourProjectTemp` Remove the temporary folder
-1. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
-1. Edit your `docker-compose.yml` to your needs. E.g. set your active containers (and proper links) by un-/commenting lines
-1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one from the values mentioned in the comments above within the same file)
-1. Edit environment variables in `etc/environment.development.yml` `etc/environment.yml`.
-1. Set the correct path to the web document root (based on project requirements) in `etc/environment.yml` (default: `WEB_DOCUMENT_ROOT=/app/web/`).
-1. Set the correct path to the TYPO3 CLI executable (based on your TYPO3 version) in `etc/environment.yml` (e.g. `CLI_SCRIPT=php /app/web/typo3/sysext/core/bin/typo3`).
-1. Adopt your php.ini settings for your project within `etc/php/development.ini`
-1. To start your environment take care that no other TYPO3-docker-boilerplate is running on your development environment with `docker ps`. If some other of your projects is running navigate to the folder and stop them by running `docker-compose stop`.
-1. Start your machines (basically webserver + mysql server) by running `docker-compose up -d` (make sure you're still in the same folder `YourProject`)
-1. Open `yourproject.vm/` in the browser - it should show the php info if all is running correct.
-1. `rm app/web/index.php` Delete the dummy index.php (which is responsible for the php info) since you know that the webserver works as expected.
-1. `cd app` switch to the app folder
-1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
-1. `cd ./Build && ./ChangeVendor.sh Supseven` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `./ChangeHeaderComment.php by supseven Digital - www.supseven.at` Replace the comment within the head of the website.
-1. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
-1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
-1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
-1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
-1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
-1. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
-1. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
-1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
-1. Add/remove backend users and set strong passwords for all real backend users.
-1. Have fun developing another great TYPO3 website!
-1. Read on: [First steps](app/web/typo3conf/ext/theme/Documentation/FirstSteps.md)
 
 ---
 
@@ -180,54 +137,6 @@ script too which change it to your needs (or edit [manually](app/web/typo3conf/e
 ```bash
 cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 ```
-
-## Custom enhancements to tables
-
-### Table `pages`
-
-#### New columns
-
-| Column | Title | Description | Excluded |
-|--------|-------|-------------|----------|
-| `tx_theme_hide_page_heading` | Hide primary heading (H1) | Can be used by integrator for pages where the default H1 shouldn't be rendered in frontend. (E.g. EXT:news plugin detailAction) [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/e4af938c4e63564207b2631e5ab2242996435fd2) | ✔ |
-| `tx_theme_link_label` | Linktext for CTAs/Teasers  | Can be used by integrator as a linktext in Call-To-Action/Teaser Elements which links to this page (for more personalized or better "READMORE" buttons) [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/9b61cbd6f188080cba4955b9f29b883ef665b1ec) | ✔ |
-| `tx_theme_nav_image` | Navigation Image  | Can be used by integrator in Call-To-Action/Teaser Elements which links to this page. The default cropVariant(s) can be easily overwritten! [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/6ba8185a6ea0be7b074f06244b6a1058d96564b0) | ✔ |
-| `tx_theme_opengraph_description` | `og:description`  | | ✔ |
-| `tx_theme_opengraph_image` | `og:image` | Following meta tags are generated automatically `og:image:height`, `og:image:width`, `og:image:type`. Support for only one Open Graph image actually. With official suggested image ratio (cropVariant) | ✔ |
-| `tx_theme_opengraph_title` | `og:title` | | ✔ |
-| `tx_theme_related` | Related Pages | Backend editors can set related page records (could be extended to support other record types). This can be used in the frontend e.g. for displaying related pages/articles. | ✔ |
-| `tx_theme_robot_follow` | Follow links on current page | Robots meta tag value `follow`/`nofollow` can be set per page. | ✔ |
-| `tx_theme_robot_index` | Index current page | Robots meta tag value `index`/`noindex` can be set per page. | ✔ |
-| `tx_theme_sharing_enabled` | Sharing Functionalities | Frontend sharing features can be dis-/enabled per page. E.g. in a condition in your Fluid template. [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/c38706b864cf205fd451dcbcddb7d7bcd20e5617) | ✔ |
-| `tx_theme_show_in_secondary_navigation` | Show Page in Secondary Navigation | Can be used by integrator to not render specific pages in main navigation and instead in meta navigation. [Initial commit](https://github.com/josefglatz/TYPO3-Distribution/commit/1f38003485ecf434ee2149b6013215dc2c2eaf42) | ✔ |
-| `tx_theme_twitter_description` | `twitter:description`  | | ✔ |
-| `tx_theme_twitter_image` | `twitter:image` | With official suggested image ratio (cropVariant) | ✔ |
-| `tx_theme_twitter_title` | `twitter:title` | | ✔ |
-
-
-### Table `sys_file_reference`
-
-#### Customized existing columns
-
-| Column | Title | Description | Excluded |
-|--------|-------|-------------|----------|
-| `link` (core field) | Unnecessary link field `class` removed |  | - |
-| `crop` (core field) | Overwrite core's default cropVariants | The default cropVariants are overwritten. Set you default cropVariants for your project in EXT:theme's `/TCA/Overrides/sys_file_reference.php`. | - |
-
-### Table `tt_content`
-
-#### Customized existing columns
-
-| Column | Title | Description | Excluded |
-|--------|-------|-------------|----------|
-| `header_link` (core field) | Unnecessary link field `class` removed |  | - |
-
-
-#### New types (content elements)
-
-| Type | Title | Description |
-|--------|-------|-------------|
-| `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
 
 ## Responsive Image preparations
 
