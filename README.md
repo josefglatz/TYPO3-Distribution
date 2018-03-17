@@ -85,34 +85,6 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 ### TYPO3 Backend Modifications/Improvements
 
-#### 3rd Party Extensions
-
-| EXT | Reason/Description | for editor | for dev/integrator |
-|-----|--------------------|------------|--------------------|
-| autoswitchtolistview | If page module and a sys folder is selected, a redirect to the list module is done. | :white_check_mark: | :white_check_mark: |
-| backend_debug | Easier the life while integrating a TYPO3 project | :x: | :white_check_mark:¹ |
-| be_secure_pw | Password rules and Password reminder | :white_check_mark: | :white_check_mark: |
-| beuser_fastswitch | Admins can switch to specific test-editors with 2 clicks | :x: | :white_check_mark: |
-| content_defender | Limit colPos's | :white_check_mark: | :white_check_mark: |
-| deprecationloganalyzer |  | :x: | :white_check_mark: |
-| gravatar | Backend user gravatar avatar support | :white_check_mark: | :white_check_mark: |
-| iconcheck | Overview of custom registered icons for backend users. | :x: | :white_check_mark: |
-| image_autoresize | Resize/Process images on upload | :white_check_mark: | :white_check_mark: |
-| lfeditor | Editing xliff files | :x: | :white_check_mark:¹ |
-| logging | Advanced logging | :x: | :white_check_mark: |
-| mask | Alternative Content Element Generator | :x: | :white_check_mark:¹ |
-| mask_export | Alternative Content Element Generator Exporter | :x: | :white_check_mark:¹ |
-| mess_detector | How messed up is your TYPO3 instance | :x: | :white_check_mark:¹ |
-| page_speed | Google Page Speed Module | :x: | :white_check_mark:² |
-| querybuilder | Backend extension for query builder in list module. | :x: | :white_check_mark: |
-| t3monitoring_client | Client extension for the t3monitoring service | :x: | :white_check_mark: |
-| unroll | Enhanced TYPO3 save buttons (configurable) | :white_check_mark: | :white_check_mark: |
-| yaml_configuration | Configure your TYPO3 site using YAML files | :x: | :white_check_mark:¹ |
-| yoast_seo | Yoast SEO for TYPO3 | :white_check_mark:² | :white_check_mark:² |
-
-_¹) Only activated in composer --dev mode_
-_²) Only usable if the fronted is reachable from public internet_
-
 
 ### Linkvalidator (sysext)
 
