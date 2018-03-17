@@ -113,18 +113,6 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 _¹) Only activated in composer --dev mode_
 _²) Only usable if the fronted is reachable from public internet_
 
-#### CKEditor presets (based on real world scenarios)
-
-One central configuration place with limited set of CKEditor buttons. Easy project specific configuration.
-Custom CKEditor plugins activated (even custom ones). You can set preset for every field of a table (even based on type).
-
-##### Preset overview
-
-| Preset | Extend from | Description |
-|--------|-------------|-------------|
-| `theme_default` | - | Default CKEditor configuration |
-| `theme_defaultNoTables` | `theme_default` | Options on top of parent |
-| `theme_minimal` | - | Very minimal preset (as a base for other minimal custom project specific presets) |
 
 ### Linkvalidator (sysext)
 
@@ -302,26 +290,17 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 
 ## Recommended Tools/Software/Plugins
 
-* PhpStorm
-* PhpStorm Plugin DynamicReturnTypePlugin
-* PhpStorm Plugin String Manipulation
-* PhpStorm Plugin Shifter
-* PhpStorm Plugin Dash (or alternative devdocs.io)
-* PhpStorm Plugin PHP composer.json support
-* PhpStorm Plugin Markup to SCSS
-* PhpStorm Plugin TypoScript Plugin - Enterprise
-* PhpStorm Plugin Fluid Plugin - Enterprise
-* PhpStorm Plugin EditorConfig
+
 * Git Tower (or GitKraken)
 * SequelPro (or HeidiSQL)
 * https://www.getpostman.com/ (Easily test APIs, AJAX requests with postman (Chrome App))
 
 ## Credits
 
-Thanks for your support, ideas, issues and shared code
+Thanks for your contribution, ideas, issues and shared code
 
+* [Georg Ringer](http://www.ringer.it)
+* [Volker Kemeter](https://twitter.com/volkizzl)
+* [supseven](http://www.supseven.at)
 * [Benjamin Kott](https://twitter.com/benjaminkott)
 * [Boris Schauer](https://twitter.com/bschauer)
-* [Georg Ringer](http://www.ringer.it)
-* [supseven](http://www.supseven.at)
-* [Volker Kemeter](https://twitter.com/volkizzl)
