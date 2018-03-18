@@ -8,16 +8,28 @@ Back to [Index](../Index.md) / Back to [Images Index](Index.md)
 
 
 1. [Example 1](#example-1-set-a-global-or-default-cropvariants-configuration)
-1. [aspectRatio presets](#predefined-aspect-ratios)
+1. [aspectRatio presets](#predefined-aspectratios)
 1. [coverArea presets](#predefined-coverareas)
 1. [cropArea presets](#predefined-cropareas)
 1. [List of default cropVariants]()
+
+You get a nice overview just by comparing before/after configuration scenarios.
 
 ---
 
 ## Example 1: Set a global-or-default cropVariants configuration
 
-### Before `EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
+The "default" cropVariants configuration is set as a project default. 6 allowed aspect ratios are configured.
+
+### Before
+`EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
+
+***The downside:*
+* All options are set without defaults
+* writing the configuration is error-prone (because you have no autocompletion)
+* the cropArea is set manually (no centralized preset)
+* allowed aspect ratios are set manually (no centralized presets)
+* manual title option string
 
 ```php
 <?php
@@ -81,7 +93,20 @@ call_user_func(
 );
 ```
 
-### Afterwards `EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
+### Afterwards
+`EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
+
+**The advantages:**
+* Enjoying IDE auto completion
+* easy to read
+* adding a cropVariant..
+** the cropVariant constructor tries to set title LLL strings based on the given CropVariant name
+** the desired cropArea preset is automatically set to default (of course, you can set the cropArea based on presets)
+** all default allowedAspectRatios are set with one line of code
+** setting the selectedRatio is super easy
+** Retrieve final cropVariant configuration with `get()` method
+* finally persist the configuration just via one line of code
+
 
 ```php
 <?php
