@@ -6,10 +6,10 @@ Back to [Index](../Index.md)
 
 This TYPO3 distribution tries to help you as much with image handling in different situations:
 
-- [Resize/Process images on upload](#resize/process-images-on-upload)
-- [Simplified cropVariants configuration](#simplified-cropvariants-configuration-for-the-table-configuration-array) (custom CropVariantsBuilder)
-- [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-images)
-- [Unlocalize crop configuration](#unlocalize-crop-configuration)
+1. [Resize/Process images on upload](#resize/process-images-on-upload)
+1. [Simplified cropVariants configuration](#simplified-cropvariants-configuration-for-the-table-configuration-array) (custom CropVariantsBuilder)
+1. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-images)
+1. [Unlocalize crop configuration](#unlocalize-crop-configuration)
 
 ---
 
@@ -29,7 +29,7 @@ You found a predefined extConf in `typo3conf/AdditionalConfiguration.php` and al
 
 ## Simplified cropVariants configuration for the Table Configuration Array
 
-TYPO3 has some really powerful features to allow TYPO3 backend editors to crop images. You actually have the following possibilities to configure cropVariants for a field in following contexts (so far what I know and what I use in real projects):
+TYPO3 has some really powerful features to allow TYPO3 backend editors to crop images. You actually have the following possibilities to configure cropVariants for a field in following contexts (far as I know and I've use in real world TYPO3 projects):
 
 ### Primary usage scenarios
 
@@ -44,17 +44,15 @@ TYPO3 has some really powerful features to allow TYPO3 backend editors to crop i
 1. Set a cropVariants configuration for a *specific field childTca's type of a specific table* (where you optionally can disable (parts of) the default/global cropVariants configuration)
 1. Set a cropVariants configuration for a *specific field childTca's type of a specific type of a table* (where you optionally can disable (parts of) the default/global cropVariants configuration)
 
-### What exactly simplifies this TYPO3 distribution?
+### And what exactly simplifies this TYPO3 distribution?
 
-You can set up default
+You can set up default/s
 * for aspectRatios
 * for coverArea
 * for cropAreas
 * list of default cropVariants
 
-A custom CropVariantsBuilder helps you intuitively to write cropVariants configurations based on mentioned defaults.
-
-@TODO: CropVariantsBuilder docu (additional markdown file)
+[A custom CropVariants Builder](CropVariantsBuilder.md) helps you to write cropVariants configurations based on mentioned defaults with IDE auto completion intuitively.
 
 ---
 

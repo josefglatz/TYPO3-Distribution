@@ -9,6 +9,9 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 > **Extending/Adopting the CKEditor in TYPO3 is much easier and makes more fun – Try it out!**
 
+- [Predefined CKEditor presets](#overview-of-shipped-ckeditor-presets)
+- [Custom CKEditor plugins]()
+
 ## Overview of shipped CKEditor presets
 
 | Preset key | Extend from | Description |

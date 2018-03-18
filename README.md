@@ -138,36 +138,6 @@ script too which change it to your needs (or edit [manually](app/web/typo3conf/e
 cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 ```
 
-## Responsive Image preparations
-
-### TCA: Predefined Aspect Ratios
-
-| Key | Description |
-| --- | -------------------------- |
-| `3:1` | Often used for wide sujet images |
-| `2:1` | Often used for wide sujet images |
-| `1.91:1` | Suggested by Facebook (and Twitter) for open graph / twitter card images |
-| `16:9` | Common video standard |
-| `3:2` | Common D-/SLR format photography |
-| `2:3` |  |
-| `4:3` | Common point and shoot format photography |
-| `3:4` |  |
-| `5:4` | Common large and medium format photography |
-| `4:5` |  |
-| `1:1` | Square image format |
-| `NaN` | Free ratio (no ratio limitation) |
-
-### TCA: Predefined cropArea Presets
-
-| Key | Description |
-| --- | ----------- |
-| `default` | Default (biggest possible) (X0, Y0, W1.0, H1.0) |
-
-### Predefined coverAreas
-
-| Key | Usage Scenario |
-| `1_1_circle` | Can be used for square images with CSS `border-radius: 50%` for example. |
-| `lower_third` | Can be used for images where the lower third of the image area is overlayed by a DOM element. |
 
 ## Recommended Tools/Software/Plugins
 

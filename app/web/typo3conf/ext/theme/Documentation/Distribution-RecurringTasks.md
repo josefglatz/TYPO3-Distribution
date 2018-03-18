@@ -11,3 +11,6 @@
 - https://github.com/bmack/site-importer
 - https://github.com/CMSExperts/bolt
 - https://github.com/CMSExperts/unlocalizedcrop/
+- CKEditor development
+- CKEditor plugins
+- CKEditor releases
