@@ -2,29 +2,34 @@ Back to [Index](../Index.md) / Back to [Images Index](Index.md)
 
 ---
 
-# CropVariants Builder
+# CropVariants Builder :construction_worker_man:
 
-> `JosefGlatz\Theme\Backend\CropVariants\Builder->getInstance()` FTW :-]
+> `JosefGlatz\Theme\Backend\CropVariants\Builder->getInstance()` **FTW :+1:**
 
+**Learn the usage of CropVariants Builder by reading the code examples!** You will get a good overview just by comparing both possibilities:
 
-1. [Example 1](#example-1-set-a-global-or-default-cropvariants-configuration)
+1. [Example 1](#example-1-set-a-global-or-default-cropvariants-configuration): Global/Default cropVariants configuration for TYPO3 instance
+1. [Example 2](#example-2-set-custom-cropvariants-for-a-specific-field-of-a-specific-table-pagestx_theme_nav_image): Custom cropVariants configuration for a specific field of a specific table
+1. [Example 3]():
+
+**Overview of defaults and predefined presets:**
+
 1. [aspectRatio presets](#predefined-aspectratios)
 1. [coverArea presets](#predefined-coverareas)
 1. [cropArea presets](#predefined-cropareas)
 1. [List of default cropVariants]()
 
-You get a nice overview just by comparing before/after configuration scenarios.
-
 ---
 
 ## Example 1: Set a global-or-default cropVariants configuration
 
-The "default" cropVariants configuration is set as a project default. 6 allowed aspect ratios are configured.
-
-### Before
 `EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
 
-***The downside:*
+The "default" cropVariants configuration is set as a project default. 6 allowed aspect ratios are configured.
+
+### Before (TYPO3 Core only)
+
+**The downside:**
 * All options are set without defaults
 * writing the configuration is error-prone (because you have no autocompletion)
 * the cropArea is set manually (no centralized preset)
@@ -93,19 +98,19 @@ call_user_func(
 );
 ```
 
-### Afterwards
-`EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
+### Afterwards (with CropVariants Builder)
 
 **The advantages:**
-* Enjoying IDE auto completion
+* Enjoy IDE auto completion
 * easy to read
-* adding a cropVariant..
-** the cropVariant constructor tries to set title LLL strings based on the given CropVariant name
-** the desired cropArea preset is automatically set to default (of course, you can set the cropArea based on presets)
-** all default allowedAspectRatios are set with one line of code
-** setting the selectedRatio is super easy
-** Retrieve final cropVariant configuration with `get()` method
-* finally persist the configuration just via one line of code
+* add a cropVariant..
+    * the cropVariant constructor tries to set title LLL strings based on the given CropVariant name
+    * the desired cropArea preset is automatically set to default (of course, you can set the cropArea based on presets)
+    * all default allowedAspectRatios are set with one line of code
+    * setting the selectedRatio is super easy
+    * Retrieve final cropVariant configuration with `get()` method
+* finally persist the cropVariants configuration just with the oneliner
+    * keep in mind: you have to use `persistToDefaultTableTca()` for `sys_file_reference` table
 
 
 ```php
@@ -128,6 +133,88 @@ call_user_func(
     'sys_file_reference'
 );
 ```
+---
+
+
+## Example 2: Set custom cropVariants for a specific field of a specific table (`pages.tx_theme_nav_image`)
+
+`EXT:theme/Configuration/TCA/Overrides/pages.php`
+
+A common usecase: You add a custom field to the `pages` table and want a custom cropVariants configuration for this particular field.
+
+### Before (TYPO3 Core only)
+
+
+### Afterwards (with CropVariants Builder)
+
+**The advantages:**
+* add cropVariants configuration after adding the custom TCA column
+* Enjoy IDE auto completion
+* easy to read
+* add cropVariants with much fewer lines of code
+* finally persist the cropVariants configuration with a oneliner (`persistToTca()`)
+* combine other cropVariants configurations to this code block, so you have a good overview
+
+```php
+<?php
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function ($extKey, $table) {
+        $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
+
+        $additionalColumns = [
+            'tx_theme_nav_image' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.label',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_theme_nav_image', [
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                alternative,title,
+                                --linebreak--,crop,
+                                --palette--;;filePalette',
+                                'columnsOverrides' => [],
+                            ],
+                        ],
+                    ],
+                    'maxitems' => 1,
+                ],
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                )
+            ],
+        ];
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
+
+        /**
+         * Set cropVariants configuration
+         */
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_nav_image')
+            ->disableDefaultCropVariants()
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('md')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->addCropVariant(
+                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('lg')
+                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                    ->get()
+            )
+            ->persistToTca();
+    },
+    'theme',
+    'pages'
+);
+```
+
+
 ---
 
 ## Predefined aspectRatios
