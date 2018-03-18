@@ -135,6 +135,7 @@
 		"causal/extractor": "dev-master",
 		"causal/image_autoresize": "dev-master",
 		"cedricziel/transladder": "dev-master",
+		"cmsexperts/unlocalizedcrop": "^1.0",
 		"cpsit/mask-export": "dev-master as 0.9.1",
 		"cweagans/composer-patches": "dev-master",
 		"dl/yag": "dev-master",
