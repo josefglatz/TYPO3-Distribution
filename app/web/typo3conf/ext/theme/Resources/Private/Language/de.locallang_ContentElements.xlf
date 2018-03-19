@@ -25,6 +25,10 @@
 			<source>Stops the sliding of content elements from upper pages. </source>
 			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>
 		</trans-unit>
+		<trans-unit id="theme_inheritance_stop.backendpreview" approved="yes">
+			<source>Stops the sliding of content elements from upper pages in this content column.</source>
+			<target>Unterbricht die Vererbung von Content dieser Contentspalte aus überliegender Seiten</target>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.title" approved="yes">
 			<source>Stop inheritance</source>
 			<target>Vererbung deaktivieren</target>

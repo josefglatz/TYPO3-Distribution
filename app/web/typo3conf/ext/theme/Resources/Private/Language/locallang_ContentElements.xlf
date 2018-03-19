@@ -18,7 +18,10 @@
 			<source>Collapsible Text (Accordion)</source>
 		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description">
-			<source>Stops the sliding of content elements from upper pages. </source>
+			<source>Stops the sliding of content elements from upper pages.</source>
+		</trans-unit>
+		<trans-unit id="theme_inheritance_stop.backendpreview">
+			<source>Stops the sliding of content elements from upper pages in this content column.</source>
 		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.title">
 			<source>Stop inheritance</source>

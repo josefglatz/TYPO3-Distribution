@@ -1,0 +1,3 @@
+mod.web_layout.tt_content.preview {
+	theme_inheritance_stop = EXT:theme/Resources/Private/Templates/Content/BackendPreview/InheritanceStop.html
+}
