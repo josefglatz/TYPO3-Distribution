@@ -54,29 +54,31 @@ and I've use in real world TYPO3 projects):
    type of a table* (where you optionally can disable the default/global
    cropVariants configuration)
 
-**I know that may seem confusing - but once you thought through the
-options, it makes makes sense for real world scenarios.**
+**I know that may seem confusing - but once you understand, how the
+options are working, it makes makes sense for real world scenarios.**
 
 ### Additional usage scenarios
 
 1. Set a cropVariants configuration for a *specific field childTca's
    type of a specific table* (where you optionally can disable (parts
-   of) the default/global cropVariants configuration)
+   of) the default/global cropVariants configuration) - as used in IRRE
+   elements for example.
 2. Set a cropVariants configuration for a *specific field childTca's
    type of a specific type of a table* (where you optionally can disable
-   (parts of) the default/global cropVariants configuration)
+   (parts of) the default/global cropVariants configuration) - as used
+   in IRRE elements for example.
 
 ### And what exactly simplifies this TYPO3 distribution?
 
-You can set up default/s
+a) You can set up default/s
 * for aspectRatios
 * for coverArea
 * for cropAreas
 * list of default cropVariants
 
-[A custom CropVariants Builder](CropVariantsBuilder.md) helps you to
-write cropVariants configurations based on mentioned defaults with IDE
-auto completion intuitively.
+b) [A custom CropVariants Builder](CropVariantsBuilder.md) helps you
+writing cropVariants configurations based on mentioned defaults with IDE
+auto completion support.
 
 ---
 
@@ -86,7 +88,7 @@ All listed defaults/presets can be actually configured as arrays within
 `JosefGlatz\Theme\Backend\CropVariants\Defaults` namespace.
 
 >*The actual plan is to make them configurable via a simple yaml file.
-([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
+>([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
 
 [**Overview of defaults and predefined presets**](DefaultsAndPresets.md)
 
@@ -100,6 +102,7 @@ All listed defaults/presets can be actually configured as arrays within
 ## Unlocalize crop configuration
 
 Unlocalize `sys_file_reference.crop` per default. Most of the time, this
-is what I want for translated websites. **Just run `composer uninstall
-cmsexperts/unlocalizedcrop` if you want to remove this behaviour and
-activate TYPO3 Core's default.**
+is what I need for translated websites.
+
+**Just run `composer uninstall cmsexperts/unlocalizedcrop` if you want
+to remove this behaviour and activate TYPO3 Core's default.**
