@@ -83,6 +83,11 @@ TCEFORM.tt_content {
 
 	// Only keep default value for frame_class (this field was introduced in TYPO3 8 LTS)
 	frame_class {
+		// disable the field generally and only enable it for specific types
+		disabled = 1
+		types {
+#			text.disabled = 0
+		}
 		keepItems = default
 	}
 
