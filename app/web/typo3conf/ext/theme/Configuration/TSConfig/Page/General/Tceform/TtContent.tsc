@@ -11,6 +11,12 @@ TCEFORM.tt_content {
 		// First possible option is selected if current value isn't allowed
 		disableNoMatchingValueElement = 1
 
+		// disable the field generally and only enable it for specific types
+		disabled = 1
+		types {
+#			text.disabled = 0
+		}
+
 		altLabels {
 			1 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.1
 			2 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.layout.2
