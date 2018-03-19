@@ -55,7 +55,7 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 * Many TYPO3 frontend improvements
     * ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration)
     * Simple dynamic robots.txt via eID
-    * RealFaviconGenerator.net gulp script
+    * Quick and ready2use RealFaviconGenerator.net gulp script (just upload svg, adjust colors, run tasks, commit favicons and you're done)
     * Support for Heise's Shariff (to enable sharing favorite content without compromising visitors privacy) via reelworx/rx-shariff
     * Prepared Linkvalidator configuration (TYPO3 core feature)
     * Basic Bootstrap v4 website frontend
