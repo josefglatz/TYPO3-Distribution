@@ -29,7 +29,6 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 - [TYPO3 Extensions](app/web/typo3conf/ext/theme/Documentation/Markdown/Extensions/Index.md)
 - [(PhpStorm) Productivity](app/web/typo3conf/ext/theme/Documentation/Markdown/PhpStorm/Index.md)
 - [Code Quality](app/web/typo3conf/ext/theme/Documentation/Markdown/CodeQuality/Index.md)
-- [Credits](app/web/typo3conf/ext/theme/Documentation/Markdown/Other/Credits/Index.md)
 
 
 ---
