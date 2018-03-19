@@ -62,6 +62,9 @@ TCEFORM.tt_content {
 
 	// disable barely used fields even for admins initially
 	imageborder.disabled = 1
+	header_position.disabled = 1
+	date.disabled = 1
+	header_link.disabled = 1
 
 	imagecols {
 		// remove default imagecol values >= 1
