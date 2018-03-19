@@ -55,7 +55,7 @@ and I've use in real world TYPO3 projects):
    cropVariants configuration)
 
 **I know that may seem confusing - but once you understand, how the
-options are working, it makes makes sense for real world scenarios.**
+options are working, it makes sense for real world scenarios.**
 
 ### Additional usage scenarios
 
