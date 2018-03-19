@@ -63,6 +63,9 @@ call_user_func(
             // Add custom cache action item: clear processed files
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearProcessedFilesMenuItem::class;
 
+            // Hook for adding custom CSS file to page module
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][] = \JosefGlatz\Theme\Hooks\Backend\PageLayoutView::class . '->render';
+
             // Hook for enriching content element preview footer in BE with additional data
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
                 \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;

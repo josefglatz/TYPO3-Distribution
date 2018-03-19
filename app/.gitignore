@@ -60,6 +60,7 @@ node_modules
 !/web/typo3conf/ext/theme/Resources/Public/JavaScript/Dist/.gitkeep
 /web/typo3conf/ext/theme/Resources/Public/Css/**/*
 !/web/typo3conf/ext/theme/Resources/Public/Css/.gitkeep
+!/web/typo3conf/ext/theme/Resources/Public/Css/Backend/PageLayoutView.css
 /web/typo3conf/ext/theme/Resources/Public/StyleSheets/**/*
 !/web/typo3conf/ext/theme/Resources/Public/StyleSheets/.gitkeep
 /web/typo3conf/ext/theme/Resources/Private/Templates/Page/AboveTheFold/Dist/
