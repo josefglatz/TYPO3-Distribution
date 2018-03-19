@@ -1,14 +1,4 @@
 mod.wizards.newContentElement.wizardItems {
-	common {
-		elements {
-
-		}
-	}
-	plugins {
-		elements {
-
-		}
-	}
 	special {
 		elements {
 			theme_inheritance_stop {

@@ -43,6 +43,12 @@ TCEFORM.tt_content {
 			5 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.5
 			100 = LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:tt_content.header_layout.100
 		}
+
+		types {
+			theme_collapsible_text {
+				keepItems = 2,3,4
+			}
+		}
 	}
 
 	// disable imageborder initially

@@ -1,0 +1,6 @@
+tt_content {
+	theme_collapsible_text < .text
+	theme_collapsible_text {
+		templateName = CollapsibleText
+	}
+}

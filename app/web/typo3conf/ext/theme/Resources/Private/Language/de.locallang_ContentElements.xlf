@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-01-07T23:33:11Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-03-19T17:34:37Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="theme_collapsible_text.description" approved="yes">
+			<source>A regular text element with header (toggle open/close) and bodytext field (toggleable content). Sequentially arranged elements of this type form an accordion block.</source>
+			<target>Ein reguläres Text Element mit Überschrift (die Überschrift dient zum Auf-/Zuklappen des Fließtextes). Nacheinander gereihte Elemente vom gleichen Typ bilden einen Akkordeon Block.</target>
+		</trans-unit>
+		<trans-unit id="theme_collapsible_text.label.bodytext" approved="yes">
+			<source>Text (toggleable content)</source>
+			<target>Auf-/zuklappbarer Textbereich</target>
+		</trans-unit>
+		<trans-unit id="theme_collapsible_text.label.header" approved="yes">
+			<source>Header (open / close text)</source>
+			<target>Überschrift (Textbereich auf-/zuklappen)</target>
+		</trans-unit>
+		<trans-unit id="theme_collapsible_text.title" approved="yes">
+			<source>Collapsible Text (Accordion)</source>
+			<target>Aufklappbarer Text (Akkordeon)</target>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description" approved="yes">
 			<source>Stops the sliding of content elements from upper pages. </source>
 			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>

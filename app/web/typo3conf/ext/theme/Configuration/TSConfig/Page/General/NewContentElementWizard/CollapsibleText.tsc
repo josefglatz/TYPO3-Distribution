@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_collapsible_text {
+				iconIdentifier = theme-content-accordion
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_collapsible_text.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_collapsible_text.description
+				tt_content_defValues {
+					CType = theme_collapsible_text
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

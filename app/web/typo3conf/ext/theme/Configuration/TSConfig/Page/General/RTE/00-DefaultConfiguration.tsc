@@ -34,6 +34,7 @@ RTE.config {
 		bodytext {
 			preset = theme_defaultNoTables
 			types {
+				theme_collapsible_text = theme_defaultNoTables
 				text.preset = theme_defaultNoTables
 				textmedia.preset = theme_default
 			}
