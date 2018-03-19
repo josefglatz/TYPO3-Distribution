@@ -93,6 +93,7 @@ All listed defaults/presets can be actually configured as arrays within
 1. [aspectRatio presets](DefaultsAndPresets.md#predefined-aspectratios)
 2. [coverArea presets](DefaultsAndPresets.md#predefined-coverareas)
 3. [cropArea presets](DefaultsAndPresets.md#predefined-cropareas)
+4. [List of default cropVariants](DefaultsAndPresets.md#list-of-default-cropvariants)
 
 ---
 

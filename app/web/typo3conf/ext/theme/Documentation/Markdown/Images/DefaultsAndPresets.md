@@ -10,6 +10,15 @@ All listed defaults/presets can be configured as arrays within
 >*The actual plan is to make them configurable via a simple yaml file.
 ([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
 
+---
+
+1. [Predefined aspectRatios](#predefined-aspectratios)
+2. [Predefined coverAreas](#predefined-coverareas)
+3. [Predefined cropAreas](#predefined-cropareas)
+4. [List of default cropVariants](#list-of-default-cropvariants)
+
+---
+
 ### Predefined aspectRatios
 
 |   Key    |                               Description                                |
@@ -27,6 +36,8 @@ All listed defaults/presets can be configured as arrays within
 | `1:1`    | Square image format                                                      |
 | `NaN`    | Free ratio (no ratio limitation)                                         |
 
+> Adjust/Add/Remove aspectRatios to meet your needs
+
 ### Predefined coverAreas
 
 |      Key      |                                        Usage Scenario                                         |
@@ -34,11 +45,15 @@ All listed defaults/presets can be configured as arrays within
 | `1_1_circle`  | Can be used for square images with CSS `border-radius: 50%` for example.                      |
 | `lower_third` | Can be used for images where the lower third of the image area is overlayed by a DOM element. |
 
+> Adjust/Add/Remove coverArea presets to meet your needs
+
 ### Predefined cropAreas
 
 |    Key    |                   Description                   |
 |:----------|:------------------------------------------------|
 | `default` | Default (biggest possible) (X0, Y0, W1.0, H1.0) |
+
+> Adjust/Add/Remove cropAreas to meet your needs
 
 ### List of default cropVariants
 
@@ -49,6 +64,9 @@ the cropVariants configuration of `sys_file_reference.crop` TCA configuration.
 |    Key    |
 |:----------|
 | `default` |
+
+> Adjust/Add/Remove aspectRatios to meet your needs. **This array must reflect
+> the cropVariants configuration of `sys_file_reference.crop` TCA configuration.**
 
 > The list of default cropVariants is actually used if you use
 > `disableDefaultCropVariants()` method.
