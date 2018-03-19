@@ -54,11 +54,12 @@ Back to [Index](../Index.md)
 | `header_link` (core) | linkPopup: unnecessary option `class` removed |  | - |
 
 
-### New types (content elements)
+### Additional content element types
 
-| Type | Icon | Title | Description |
-|------|------|-------|-------------|
-| `theme_inheritance_stop` | ![CE logo](https://github.com/josefglatz/TYPO3-Distribution/blob/master/app/web/typo3conf/ext/theme/Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg "CE Icon") | **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
+| Type                     | Icon                                                                                                                                     | Title                | Description                                                                                                                                                                                                                              |
+|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `theme_collapsible_text` | ![theme-content-gridelement-accordion.svg](../../../Resources/Public/Icons/Backend/GridElements/theme-content-gridelement-accordion.svg) | **Collapsible Text** | A regular text element with header (toggle open/close) and bodytext field (toggleable content).                                                                                                                                          |
+| `theme_inheritance_stop` | ![theme-content-inheritance-stop.svg](../../../Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg)                        | **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
 
 
 
