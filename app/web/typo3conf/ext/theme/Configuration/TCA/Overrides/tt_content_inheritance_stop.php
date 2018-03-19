@@ -12,7 +12,7 @@ call_user_func(
             $table,
             'CType',
             [
-                $languageFileCePrefix . $type .'.title',
+                $languageFileCePrefix . $type . '.title',
                 $type,
                 'theme-content-inheritance-stop'
             ],
