@@ -48,10 +48,19 @@ TCEFORM.tt_content {
 			theme_collapsible_text {
 				keepItems = 2,3,4
 			}
+			theme_lead_text {
+				keepItems = 100
+			}
 		}
 	}
 
-	// disable imageborder initially
+	subheader {
+		types {
+			theme_lead_text.disabled = 1
+		}
+	}
+
+	// disable barely used fields even for admins initially
 	imageborder.disabled = 1
 
 	imagecols {
@@ -89,6 +98,18 @@ TCEFORM.tt_content {
 #			text.disabled = 0
 		}
 		keepItems = default
+	}
+
+	linkToTop {
+		types {
+			theme_lead_text.disabled = 1
+		}
+	}
+
+	sectionIndex {
+		types {
+			theme_lead_text.disabled = 1
+		}
 	}
 
 	// not used anymore in FSC -> but anyway remove items

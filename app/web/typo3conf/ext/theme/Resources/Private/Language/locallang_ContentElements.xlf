@@ -26,6 +26,12 @@
 		<trans-unit id="theme_inheritance_stop.title">
 			<source>Stop inheritance</source>
 		</trans-unit>
+		<trans-unit id="theme_lead_text.description">
+			<source>Stand out paragraph especially at the beginning of a page.</source>
+		</trans-unit>
+		<trans-unit id="theme_lead_text.title">
+			<source>Lead Text</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

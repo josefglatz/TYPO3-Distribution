@@ -14,10 +14,10 @@ call_user_func(
             [
                 $languageFileCePrefix . $type . '.title',
                 $type,
-                'theme-content-accordion'
+                'theme-content-text-lead'
             ],
             'text',
-            'after'
+            'before'
         );
 
         $tca = [
@@ -29,10 +29,8 @@ call_user_func(
                     'showitem' => '
                         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                            header;' . $languageFileCePrefix . 'theme_collapsible_text.label.header,
-                            --linebreak--,
-                            header_layout;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout_formlabel,
-                            bodytext;' . $languageFileCePrefix . 'theme_collapsible_text.label.bodytext,
+                            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+                            bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
                         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -54,6 +52,11 @@ call_user_func(
                                 'richtextConfiguration' => 'default'
                             ]
                         ],
+                        'header_layout' => [
+                            'config' => [
+                                'readOnly' => 1,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -63,9 +66,9 @@ call_user_func(
         /**
          * Assign Icon
          */
-        $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes'][$type] = 'theme-content-accordion';
+        $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes'][$type] = 'theme-content-text-lead';
     },
     'theme',
     'tt_content',
-    'theme_collapsible_text'
+    'theme_lead_text'
 );

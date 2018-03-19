@@ -1,0 +1,6 @@
+tt_content {
+	theme_lead_text < .text
+	theme_lead_text {
+		templateName = LeadText
+	}
+}

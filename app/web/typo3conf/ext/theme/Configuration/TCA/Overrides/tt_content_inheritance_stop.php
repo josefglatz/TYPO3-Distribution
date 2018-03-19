@@ -6,7 +6,7 @@ call_user_func(
         $languageFileCePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:';
 
         /**
-         * Add CE: stop inheritance
+         * Add CE
          */
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
             $table,

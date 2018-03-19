@@ -23,6 +23,7 @@ class PageLayoutView
 
     /**
      * Initialize the page renderer
+     * and add custom css file
      *
      * @return void
      */

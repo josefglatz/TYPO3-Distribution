@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_lead_text {
+				iconIdentifier = theme-content-text-lead
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_lead_text.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_lead_text.description
+				tt_content_defValues {
+					CType = theme_lead_text
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

@@ -33,6 +33,14 @@
 			<source>Stop inheritance</source>
 			<target>Vererbung deaktivieren</target>
 		</trans-unit>
+		<trans-unit id="theme_lead_text.description" approved="yes">
+			<source>Stand out paragraph especially at the beginning of a page.</source>
+			<target>Hervorgehobene Textpassage speziell am Anfang einer Seite.</target>
+		</trans-unit>
+		<trans-unit id="theme_lead_text.title" approved="yes">
+			<source>Lead Text</source>
+			<target>Leittext / Einleitungstext</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
