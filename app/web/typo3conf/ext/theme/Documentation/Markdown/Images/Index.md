@@ -7,11 +7,11 @@ Back to [Index](../Index.md)
 This TYPO3 distribution tries to help you as much with image handling in
 different situations:
 
-1. [Resize/Process images on upload](#resize/process-images-on-upload)
+1. [Resize/Process images on upload](#resizeprocess-images-on-upload)
 2. [Simplified cropVariants configuration](#simplified-cropvariants-configuration-for-the-table-configuration-array)
    (custom CropVariantsBuilder)
    1. [Custom CropVariants Builder details](CropVariantsBuilder.md)
-3. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-images)
+3. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-aspectratio-cover-croparea-presets-and-cropvariant-definitions)
 4. [Unlocalize crop configuration](#unlocalize-crop-configuration)
 
 ---
@@ -80,11 +80,19 @@ auto completion intuitively.
 
 ---
 
-## Centralized configuration for images
+## Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions
 
-### This feature is still work-in-progress
+All listed defaults/presets can be actually configured as arrays within
+`JosefGlatz\Theme\Backend\CropVariants\Defaults` namespace.
 
-@TODO
+>*The actual plan is to make them configurable via a simple yaml file.
+([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
+
+[**Overview of defaults and predefined presets**](DefaultsAndPresets.md)
+
+1. [aspectRatio presets](DefaultsAndPresets.md#predefined-aspectratios)
+2. [coverArea presets](DefaultsAndPresets.md#predefined-coverareas)
+3. [cropArea presets](DefaultsAndPresets.md#predefined-cropareas)
 
 ---
 
