@@ -1,0 +1,140 @@
+############################################################
+### Load default processing options / Import other files ###
+############################################################
+imports:
+    # Core's Processing.yaml contains the instructions for the code processing, when it is written to the database. The options are the same as in the RTE.default.proc. section of the pageTS config.
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    # Core's Base.yaml contains some basic settings like the width and height of the rte, buttons, which should be removed by default and so on.
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    # Core's Plugins.yaml registers custom plugins for ckeditor
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+    # Additional plugins for ckeditor
+    - { resource: "EXT:theme/Configuration/RTE/Additional/ExternalPlugins.yaml" }
+
+
+######################################################################################
+### Add configuration for the editor                                               ###
+### For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config ###
+######################################################################################
+editor:
+  config:
+
+    # Custom stylesheets are provided with the option contentsCss. These styles are used in the RTE and should (must?) also be available in the frontend.
+    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css", "EXT:theme/Resources/Public/Css/rte.css" ]
+#    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
+
+    stylesSet: []
+
+    # Semicolon seperated list of items to be displayed in the Format drop-down list of block levelin the toolbar http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_tags
+    format_tags: "p"
+
+
+
+    # List of classes to use for aligning the contents in the following order: left, center, right, justify http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-justifyClasses
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+#      - align-left
+#      - align-center
+#      - align-right
+#      - align-justify
+
+    # Group all buttons http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups
+    toolbarGroups:
+#      - { name: styles, groups: [ styles, format ] }
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: links, groups: [ links ] }
+      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+      - { name: editing, groups: [ spellchecker ] }
+      - { name: insert, groups: [ insert ] }
+      - { name: tools, groups: [ specialchar,insertcharacters, find ] }
+#      - { name: others}
+      - { name: document, groups: [ mode ] }
+
+    # toolbar is an alternative to toolbarGroups
+#    toolbar:
+#      - [ 'Link', 'Unlink', 'Anchor', 'Table', 'SpecialChar', 'CodeSnippet', 'Youtube' ]
+#      - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ]
+#      - [ 'NumberedList', 'BulletedList']
+#      - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord' ]
+#      - [ 'Undo', 'Redo', 'RemoveFormat', 'ShowBlocks' ]
+#      - "/"
+#      - [ 'Format', 'Styles' ]
+#      - [ 'Bold', 'Italic', 'Underline', 'Blockquote', 'Subscript', 'Superscript']
+#      - [ 'Source', 'Maximize', 'About', 'Find']
+
+    # Additional plugins to be loaded
+    extraPlugins:
+
+    # Plugins that must not be loaded
+    removePlugins:
+      - image
+      - quicktable
+      - table
+      - tabletools
+      - tableselection
+      - tableModifications
+      - maximize
+      - horizontalrule
+#      - elementspath
+
+    # Toolbar button names that must not be rendered
+    removeButtons:
+      - Anchor
+#      - Italic
+      - Underline
+#      - Superscript
+#      - Subscript
+      - Table
+      - Strike
+#      - Styles
+
+    # Clipboard/Pasting behaviour
+    forcePasteAsPlainText: true
+    clipboard_defaultContentType: "text"
+    undoStackSize: 20
+    pasteFromWordRemoveFontStyles: true
+
+    # Editor sizing and misc settings
+    width: "auto"
+    height: 300
+    resize_enabled: true
+    resize_dir: "both"
+    resize_maxWidth: "100%"
+    resize_minWidth: 320
+    resize_maxHeight: 1200
+#    uiColor: "#F8F8F8"
+    defaultLanguage: "de"
+    defaultContentLanguage: "de"
+    enableContextMenu: true
+    browserContextMenuOnCtrl: true
+    enterMode: 1
+    shiftEnterMode: 2
+#    startupMode: 'source'
+    toolbarCanCollapse: true
+    toolbarStartupExpanded: true
+    toolbarLocation: "top"
+
+
+############################
+### Set the proc options ###
+############################
+processing:
+  # Tags that are allowed in the content (see also upstream sysext:rte_ckeditor/Configuration/RTE/Processing.yaml)
+  allowTags:
+#    - s
+
+  ## Tags that are allowed outside of paragraphs
+#  allowTagsOutside: []
+
+  ## allowed default attributes
+  allowAttributes: [class, id, title, dir, lang, xml:lang, itemscope, itemtype, itemprop]
+# @TODO Check/Add CKEDITOR.config.copyFormatting_* features
+# @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-find_highlight
+# @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_address if it has to be used or only class in css is enough
+# @TODO Check /Add CKEDITOR.config.format_(h1-h6|p|pre)
+# @TODO Check/Add http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-indentClasses
+# @TODO Add/Import extraPlugin wordcount https://github.com/mschwemer/rte_ckeditor_wordcount
+# @TODO Develop a plugin based on the dialog plugin like the about plugin to display useful links for working with the RTE

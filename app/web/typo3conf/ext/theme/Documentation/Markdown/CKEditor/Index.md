@@ -14,11 +14,12 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 ## Overview of shipped CKEditor presets
 
-| Preset key              | Extend from     | Description                                                                       |
-|:------------------------|:----------------|:----------------------------------------------------------------------------------|
-| `theme_default`         | -               | Default CKEditor configuration                                                    |
-| `theme_defaultNoTables` | `theme_default` | Disables table plugin                                                             |
-| `theme_minimal`         | -               | Very minimal preset (as a base for other minimal custom project specific presets) |
+| Preset key               | Extend from     | Description                                                                       |
+|:-------------------------|:----------------|:----------------------------------------------------------------------------------|
+| `theme_default`          | -               | Default CKEditor configuration                                                    |
+| `theme_defaultNoTables`  | `theme_default` | Disables table plugin                                                             |
+| `theme_minimal`          | -               | Very minimal preset (as a base for other minimal custom project specific presets) |
+| `theme_minimalWithLinks` | -               | Very minimal preset with link support                                             |
 
 ### The configuration could be found inside `EXT:theme`
 

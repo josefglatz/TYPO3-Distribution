@@ -32,10 +32,11 @@ call_user_func(
         //   = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
 
         // Register own RTE (ckeditor) presets
-        $rtePresets = [                             // Final preset identifier:
-            'default' => 'Default',                 //  'theme_default'
-            'defaultNoTables' => 'DefaultNoTables', //  'theme_defaultNoTables'
-            'minimal' => 'Minimal',                 //  'theme_minimal'
+        $rtePresets = [                                 // Final preset identifier:
+            'default' => 'Default',                     //  'theme_default'
+            'defaultNoTables' => 'DefaultNoTables',     //  'theme_defaultNoTables'
+            'minimal' => 'Minimal',                     //  'theme_minimal'
+            'minimalWithLinks' => 'MinimalWithLinks',   //  'theme_minimalWithLinks'
         ];
         foreach ($rtePresets as $identifier => $fileName) {
             $finalFileName = '/Configuration/RTE/' . $fileName . '.yaml';
