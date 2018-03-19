@@ -2,9 +2,11 @@ Back to [Index](../Index.md)
 
 ---
 
-# Plugins, Tipps and Tricks while developing your website with JetBrains PhpStorm
+# Plugins, Tipps and Tricks while developing your website with JetBrains PhpStorm and other tools
 
-## Recommended Plugins
+## PhpStorm
+
+### Recommended Plugins
 
 * DynamicReturnTypePlugin
 * String Manipulation
@@ -15,3 +17,11 @@ Back to [Index](../Index.md)
 * TypoScript Plugin - Enterprise
 * Fluid Plugin - Enterprise
 * EditorConfig
+
+---
+
+## Recommended Tools/Software/Plugins
+
+* Git Tower (or GitKraken)
+* SequelPro (or HeidiSQL)
+* https://www.getpostman.com/ (Easily test APIs, AJAX requests with postman (Chrome App))

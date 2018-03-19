@@ -5,74 +5,69 @@
 This repository delivers a full configured, bare metal TYPO3 distribution
 based on my best practices.
 
-The goal of this package is to give an example of how a TYPO3 project could
-be configured and structured. It is updated on a regular basis to reflect the
-current developments of TYPO3 CMS.
+The goal of this package is to give an example of how a TYPO3 project could be
+configured and structured for real world scenarios. It is updated on a regular
+basis to reflect the current developments of TYPO3 CMS.
 
-Branch **master**: Support for TYPO3 8.7 LTS
 
----
-
-## Open the [DOCUMENTATION](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md) (work in progress)
-
+##### Which TYPO3 version is actually supported?
+Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 
 ---
 
-## Features
+## DOCUMENTATION
 
-* TYPO3 8.7 LTS in Composer mode
-* custom composer tasks
-* typo3-console support
-* PackageStates.php is excluded in git repository
+> The documentation is actually work in progress
+
+- [Introduction](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
+- [Installation/Usage](app/web/typo3conf/ext/theme/Documentation/Markdown/Installation/Index.md)
+- [Frontend](app/web/typo3conf/ext/theme/Documentation/Markdown/Frontend/Index.md)
+- [Backend](app/web/typo3conf/ext/theme/Documentation/Markdown/Backend/Index.md)
+- [Basic Enhancements](app/web/typo3conf/ext/theme/Documentation/Markdown/BasicEnhancements/Index.md)
+- [CKEditor](app/web/typo3conf/ext/theme/Documentation/Markdown/CKEditor/Index.md)
+- [Images](app/web/typo3conf/ext/theme/Documentation/Markdown/Images/Index.md)
+- [TYPO3 Extensions](app/web/typo3conf/ext/theme/Documentation/Markdown/Extensions/Index.md)
+- [(PhpStorm) Productivity](app/web/typo3conf/ext/theme/Documentation/Markdown/PhpStorm/Index.md)
+
+
+---
+
+## Some of the Features
+
+* TYPO3 in Composer mode
+* Useful custom composer tasks
+* helhum/TYPO3-console support
+* PackageStates.php is excluded in git repository and written automatically
 * activated extensions are controlled by root composer.json
-* easy vendor name change script
-* DB-less sys_template record support (via hook)
-* ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration) (manual is set by default)
-* Simple dynamic robots.txt
-* RealFaviconGenerator.net gulp integration
-* Support for heise's shariff (to enable sharing favorite content without compromising visitors privacy)
-* Prepared Linkvalidator configuration
-* Support for ext:yaml_configuration
-* Support for automatic image resizing when uploading too large images.
-* Simple cookieconsent v3 support
-* Easy language file editing in the backend [sgalinski/lfeditor](https://packagist.org/packages/sgalinski/lfeditor) (Development context)
-* TYPO3 backend password policies with secure default configuration
-* News extension
-* Additional useful custom icons for the backend
+* development context specific extensions are controlled by root composer.json's require-dev section
+* Vendor name change script
+* Support for ext:yaml_configuration (To import default database records and getting a working fully configured pagetree in just seconds)
+* DB-less sys_template record support (no more sys_template records!!!)
+* Many TYPO3 backend improvements
+    * Support for automatic image resizing when uploading too large images
+    * Simplified cropVariants configuration (custom CropVariants Builder)
+    * Unlocalized crop configuration (per default – can be disabled)
+    * Easy language file editing in the backend [sgalinski/lfeditor](https://packagist.org/packages/sgalinski/lfeditor) (Development context)
+    * TYPO3 backend password policies with secure default configuration
+    * Additional useful custom icons for the backend
+    * Module for listing all registered icon identifiers and showing specific icons as overview
+* Many TYPO3 frontend improvements
+    * ext:realurl (with both a) automatic configuration and ready-to-edit-hook configuration or b) manual configuration)
+    * Simple dynamic robots.txt via eID
+    * RealFaviconGenerator.net gulp script
+    * Support for Heise's Shariff (to enable sharing favorite content without compromising visitors privacy) via reelworx/rx-shariff
+    * Prepared Linkvalidator configuration (TYPO3 core feature)
+    * Basic Bootstrap v4 website frontend
+    * Simple cookieconsent v3 support (multilanguage)
+    * Preconfigured extension georgringer/news
 
-### TYPO3 Backend Modifications/Improvements
-
-
-### Linkvalidator (sysext)
-
-To enable the linkvalidator, adopt the prepared configuration first to your needs (`EXT:theme/Configuration/TSConfig/Page/General/Linkvalidator.tsc`)
-and then add a Linkvalidator Scheduler Task to activate the linkvalidator on a regular base.
-
-### RealUrl
-
-This distribution uses the the rewritten version [2](https://github.com/dmitryd/typo3-realurl). As there are some changes and
-new limitations I recommend to read at least [the install section of realurl's wiki](https://github.com/dmitryd/typo3-realurl/wiki/Installing-and-enabling-the-extension).
-
-#### Configuration
-
-Realurl operates in "manual configuration mode". You have to set up the realurl configuration manually in
-`EXT:ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php`.
-
-If you want to activate the "auto configuration mode", you have to disable it via realurl's extConf.
-You can add your desired changes in `EXT:theme/Classes/Hooks/Frontend/Realurl/RealUrlAutoConfiguration.php` after you've
-activated the "auto configuration mode".
-As already mentioned, read the [realurl v2 manual](https://github.com/dmitryd/typo3-realurl/wiki)! The automatic resulting
-configuration is saved to `app/web/typo3conf/realurl_autoconf.php`.
+> **Of course, this is just an excerpt** – Get a good overview by browsing the source code and reading the [documentation](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md).
 
 
-### News
 
-With Twitter Bootstrap activated fluid template.
+---
 
 
-### Additional useful custom icons for the backend
-
-Some useful icons for the backend for e.g. custom content elements, grid elements, ... `EXT:theme/Resources/Public/Icons/Backend` and an own backend module to list all registerd icon identifiers.
 
 
 ### Frontend
@@ -139,19 +134,3 @@ cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
 ```
 
 
-## Recommended Tools/Software/Plugins
-
-
-* Git Tower (or GitKraken)
-* SequelPro (or HeidiSQL)
-* https://www.getpostman.com/ (Easily test APIs, AJAX requests with postman (Chrome App))
-
-## Credits
-
-Thanks for your contribution, ideas, issues and shared code
-
-* [Georg Ringer](http://www.ringer.it)
-* [Volker Kemeter](https://twitter.com/volkizzl)
-* [supseven](http://www.supseven.at)
-* [Benjamin Kott](https://twitter.com/benjaminkott)
-* [Boris Schauer](https://twitter.com/bschauer)

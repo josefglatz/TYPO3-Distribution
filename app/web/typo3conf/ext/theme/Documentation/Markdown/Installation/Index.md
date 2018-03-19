@@ -11,22 +11,31 @@ Back to [Index](../Index.md)
 
 ## First Words
 
-I think every TYPO3 integrator should maintain its own distribution / base. Take your distribution always seriously! It makes no sense to over-engineer it, or to add stuff you never need in the real word.
-At least the badest thing would be if you build such distribution once and then you neglect them. Then comes the point in a couple of months: It has accumulated a lot of old stuff. Really stupid: if you have a lot of old code/integration that does not even work anymore – because you treated it like your toilet brush over the years.
+My opinion: I think every TYPO3 integrator should maintain its own distribution / base.
+Take your distribution always seriously! It makes no sense to over-engineer it, or to add
+stuff you never need in the real word. At least the badest thing would be if you build such
+distribution once and then you neglect them. Then comes the point in a couple of months: It
+has accumulated a lot of old stuff.
 
-> **Treat your TYPO3-Distribution like your best friend**
+And really stupid: if you have a lot of old code/integration that does not even work anymore –
+because you treated it like your toilet brush over the years.
+
+> Therefore: **Treat your TYPO3-Distribution like your best friend**
+
+This is also my personal reason, why I don't ship my TYPO3-Distribution as
+a TYPO3 "distribution" extension. Apart from that, the maintenance would be more extensive.
 
 ## Installation Methods
 
-My opinion: every integrator/company should maintain his/her own base for TYPO3 projects. This is my personal reason, why I don't ship my TYPO3-Distribution as a TYPO3 "distribution" extension. For me it's actually an overhead which I don't want maintain.
-
-**Anyway – here are some options explained to use this TYPO3-Distribution**
-
----
+**Here are some options explained to use this TYPO3-Distribution as a Base for your
+TYPO3 project:**
 
 
 # MAMP Pro macOS version
 
+@TODO
+
+---
 
 # WebDevOps TYPO3-docker-boilerplate
 
@@ -77,8 +86,14 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 ## with vagrant-docker-vm Ubuntu 16.04 (with Dory Reverse proxy)
 
+@TODO
+
 ## with macOS Dinghy
 
+@TODO
 
+---
 
-# Any LAMP stack
+# Any other LAMP stack
+
+@TODO

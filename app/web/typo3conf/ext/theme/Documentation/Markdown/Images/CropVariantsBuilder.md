@@ -6,7 +6,7 @@ Back to [Index](../Index.md) / Back to [Images Index](Index.md)
 
 > `JosefGlatz\Theme\Backend\CropVariants\Builder->getInstance()` **FTW :+1:**
 
-**Learn the usage of CropVariants Builder by reading the code examples!** You will get a good overview just by comparing both possibilities:
+**Learn the usage of CropVariants Builder by reading the code examples!** You get a good overview just by comparing with/-out the builder:
 
 1. [Example 1](#example-1-set-a-global-or-default-cropvariants-configuration): Global/Default cropVariants configuration for TYPO3 instance
 1. [Example 2](#example-2-set-custom-cropvariants-for-a-specific-field-of-a-specific-table-pagestx_theme_nav_image): Custom cropVariants configuration for a specific field of a specific table
@@ -25,7 +25,7 @@ Back to [Index](../Index.md) / Back to [Images Index](Index.md)
 
 `EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php`
 
-The "default" cropVariants configuration is set as a project default. 6 allowed aspect ratios are configured.
+The "default" cropVariants configuration is set as a project default. 6 allowed aspect ratios are configured in this example.
 
 ### Before (TYPO3 Core only)
 
@@ -103,6 +103,7 @@ call_user_func(
 **The advantages:**
 * Enjoy IDE auto completion
 * easy to read
+* 36 lines of code less
 * add a cropVariant..
     * the cropVariant constructor tries to set title LLL strings based on the given CropVariant name
     * the desired cropArea preset is automatically set to default (of course, you can set the cropArea based on presets)
@@ -140,9 +141,113 @@ call_user_func(
 
 `EXT:theme/Configuration/TCA/Overrides/pages.php`
 
-A common usecase: You add a custom field to the `pages` table and want a custom cropVariants configuration for this particular field.
+A common usecase: You add a custom field to the `pages` table and want a custom cropVariants configuration for this particular field. The TYPO3 editor can add 1 image per page and have to set 3 crops for breakpoint xs, md and lg. All three with same allowed aspectRatios.
 
 ### Before (TYPO3 Core only)
+
+**The downside:**
+* All options are set without defaults and aren't configured centralized
+* writing the configuration is error-prone (because you have no autocompletion)
+* cropAreas are always set manually (no centralized preset, no automatic fallback to default cropArea)
+* e.g. if you add some additional cropVariant for the project as default, you have to disable the new default cropVariant here (and in every other file)
+* allowed aspect ratios are set manually (no centralized presets)
+* cropVariant title LLL string isn't automatically fetched from you xliff file
+
+```php
+<?php
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function ($extKey, $table) {
+        $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
+
+        $additionalColumns = [
+            'tx_theme_nav_image' => [
+                'exclude' => true,
+                'label' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.label',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_theme_nav_image', [
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                alternative,title,
+                                --linebreak--,crop,
+                                --palette--;;filePalette',
+                                'columnsOverrides' => [],
+                            ],
+                        ],
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => [
+                                        'default' => [
+                                            'disabled' => true
+                                        ],
+                                        'xs' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.xs.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => [
+                                                'x' => '0.0',
+                                                'y' => '0.0',
+                                                'width' => '1.0',
+                                                'height' => '1.0'
+                                            ],
+                                            'allowedAspectRatios' => [
+                                                '4:3' => [
+                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'value' => 4 / 3
+                                                ],
+                                            ],
+                                        ],
+                                        'md' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.md.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => [
+                                                'x' => '0.0',
+                                                'y' => '0.0',
+                                                'width' => '1.0',
+                                                'height' => '1.0'
+                                            ],
+                                            'allowedAspectRatios' => [
+                                                '4:3' => [
+                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'value' => 4 / 3
+                                                ],
+                                            ],
+                                        ],
+                                        'lg' => [
+                                            'title' => $languageFileBePrefix . 'crop_variants.lg.label',
+                                            'coverAreas' => [],
+                                            'cropArea' => [
+                                                'x' => '0.0',
+                                                'y' => '0.0',
+                                                'width' => '1.0',
+                                                'height' => '1.0'
+                                            ],
+                                            'allowedAspectRatios' => [
+                                                '4:3' => [
+                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'value' => 4 / 3
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'maxitems' => 1,
+                ],
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                )
+            ],
+        ];
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
+    },
+    'theme',
+    'pages'
+);
+```
 
 
 ### Afterwards (with CropVariants Builder)
@@ -150,6 +255,7 @@ A common usecase: You add a custom field to the `pages` table and want a custom 
 **The advantages:**
 * add cropVariants configuration after adding the custom TCA column
 * Enjoy IDE auto completion
+* 32 lines of code less
 * easy to read
 * add cropVariants with much fewer lines of code
 * finally persist the cropVariants configuration with a oneliner (`persistToTca()`)
