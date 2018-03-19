@@ -18,6 +18,17 @@ Back to [Index](../Index.md)
 * Fluid Plugin - Enterprise
 * EditorConfig
 
+### Run a single PHP script locally
+
+Check my tutorial for executing single PHP scripts within PhpStorm at
+https://productiveness.josefglatz.at/phpstorm-run-a-single-php-script-locally-6e294dfccaf9
+
+---
+
+### Creating scratch files in PhpStorm
+
+https://productiveness.josefglatz.at/creating-scratch-files-in-phpstorm-in-no-time-68f4811a715d
+
 ---
 
 ## Recommended Tools/Software/Plugins
