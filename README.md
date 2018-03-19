@@ -19,7 +19,7 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 
 > The documentation is actually work in progress
 
-- [Introduction](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
+- [Overview](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
 - [Installation/Usage](app/web/typo3conf/ext/theme/Documentation/Markdown/Installation/Index.md)
 - [Frontend](app/web/typo3conf/ext/theme/Documentation/Markdown/Frontend/Index.md)
 - [Backend](app/web/typo3conf/ext/theme/Documentation/Markdown/Backend/Index.md)
@@ -28,6 +28,8 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 - [Images](app/web/typo3conf/ext/theme/Documentation/Markdown/Images/Index.md)
 - [TYPO3 Extensions](app/web/typo3conf/ext/theme/Documentation/Markdown/Extensions/Index.md)
 - [(PhpStorm) Productivity](app/web/typo3conf/ext/theme/Documentation/Markdown/PhpStorm/Index.md)
+- [Code Quality](app/web/typo3conf/ext/theme/Documentation/Markdown/CodeQuality/Index.md)
+- [Credits](app/web/typo3conf/ext/theme/Documentation/Markdown/Other/Credits/Index.md)
 
 
 ---
