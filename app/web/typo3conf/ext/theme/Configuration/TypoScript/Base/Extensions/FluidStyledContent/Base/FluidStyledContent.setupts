@@ -15,11 +15,3 @@ lib.contentElement.extbase.controllerExtensionName = {$theme.name}
 // adjust default lightbox settings
 #lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}" class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" rel="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
 
-
-
-// Custom content configuration
-tt_content {
-
-	theme_inheritance_stop = TEXT
-	theme_inheritance_stop.stdWrap.prefixComment = 2 | Content slide stopped, uid:{field:uid}/{field:CType}
-}
