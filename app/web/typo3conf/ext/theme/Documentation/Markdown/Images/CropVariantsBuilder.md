@@ -347,8 +347,10 @@ call_user_func(
 ## Overview of defaults/predefined presets
 
 All listed defaults/presets can be configured as arrays within
-`JosefGlatz\Theme\Backend\CropVariants\Defaults`. *The actual plan is to
-make them configurable via a simple yaml file. ([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
+`JosefGlatz\Theme\Backend\CropVariants\Defaults`.
+
+>*The actual plan is to make them configurable via a simple yaml file.
+([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
 
 ### Predefined aspectRatios
 
