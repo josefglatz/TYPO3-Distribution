@@ -5,12 +5,12 @@
 This repository delivers a full configured, bare metal TYPO3 distribution
 based on my best practices.
 
-The goal of this package is to give an example of how a TYPO3 project could be
-configured and structured for real world scenarios. It is updated on a regular
-basis to reflect the current developments of TYPO3 CMS.
+> The goal of this package is to give an example of how a TYPO3 project could be
+> configured and structured for real world scenarios. It is updated on a regular
+> basis to reflect the current developments of TYPO3 CMS.
 
 
-##### Which TYPO3 version is actually supported?
+#### Which TYPO3 version is actually supported?
 Branch **master**: TYPO3 8.7 LTS *(regular further development)*
 
 ---
@@ -62,75 +62,5 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
     * Preconfigured extension georgringer/news
 
 > **Of course, this is just an excerpt** – Get a good overview by browsing the source code and reading the [documentation](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md).
-
-
-
----
-
-
-
-
-### Frontend
-
-This TYPO3-Distribution does not provide an ready frontend out-of-the-box. It is not intended therefore! BUT it provides a fundamental base for integrating your website. All the default database
-records helps you to start developing/integrating the frontend of your new TYPO3 website.
-
-**Necessary steps are basically:**
-
-* Finalize your page tree
-* Finalize backendLayouts
-* Integrate your frontend via Fluid
-* Write Scss/Css
-* Write Javascript
-* Configure Yarn/Gulp setup
-
-## Tools
-
-### php-cs-fixer
-
-Execute php-cs-fixer: (php-cs-fixer must be already installed)
-```bash
-cd ./app && php-cs-fixer fix --config-file Build/.php_cs
-
-## alternative:
-cd ./app && composer php-cs-fixer
-```
-(Check app/Build/.php_cs for instructions how to install php-cs-fixer)
-
-### Gulp powered RealFaviconGenerator.net
-
-* Install dependencies `cd ./app/web/typo3conf/ext/theme/Build && npm install`
-* Replace dummy favicon with your Favicon `./app/web/typo3conf/ext/theme/Resources/Public/Icons/Favicon/FaviconMaster.svg`
-* Configure the task in the gulpfile.js `./app/web/typo3conf/ext/theme/Build/gulpfile.js` ([details and instructions](https://realfavicongenerator.net/favicon/gulp))
-* Generate/Update favicon `cd ./app/web/typo3conf/ext/theme/Build && gulp generate-favicon`
-* Inject favicon markup `cd ./app/web/typo3conf/ext/theme/Build && gulp inject-favicon-markups`
-
-As the favicon doesn't change often and generation takes some seconds, all the generated files are included in git
-repository and could be deployed as-is. The reasons why the favicons are saved in document root are described
-[in the realfavicongenerator.net faq section](https://realfavicongenerator.net/faq).
-
-### Change vendor name and other brand marks
-
-#### Vendor Name
-
-Initially, the vendor is `JosefGlatz`. If you want to change that at all affected places you can run a small script
-which can do that for you:
-
-```bash
-cd ./Build && ./ChangeVendor.sh YourNewUpperCamelCaseVendorName
-```
-
-[Details about the script](app/Build/ChangeVendor.sh)
-
-Additionally, backup files with an suffixed "-e" are created. (You can safely delete them, if the renaming was successful)
-
-#### Head comment
-
-Initially, the `config.headerComment` is mentioning this distribution. If you want to change that you can run a small
-script too which change it to your needs (or edit [manually](app/web/typo3conf/ext/theme/Configuration/TypoScript/Base/Config.setupts):
-
-```bash
-cd ./Build && ./ChangeHeaderComment.php Your new single lined header comment FTW
-```
 
 

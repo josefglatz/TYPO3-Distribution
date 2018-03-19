@@ -79,7 +79,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
 1. Add/remove backend users and set strong passwords for all real backend users.
 1. Have fun developing another great TYPO3 website!
-1. Read on: [First steps](app/web/typo3conf/ext/theme/Documentation/FirstSteps.md)
+1. Read on: [First steps](../../FirstSteps.md)
 
 
 
