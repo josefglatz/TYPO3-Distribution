@@ -1,7 +1,8 @@
 mod.wizards.newContentElement.wizardItems {
 
 	common {
-		show := addToList()
+#		show := addToList()
+		show = *
 		elements {
 			// Improve default CType uploads by settings target to _blank for download item link
 			uploads {
@@ -13,7 +14,8 @@ mod.wizards.newContentElement.wizardItems {
 	}
 
 	special {
-		show := addToList(theme-inheritance-stop)
+#		show := addToList()
+		show = *
 		elements {
 			div {
 				tt_content_defValues {
