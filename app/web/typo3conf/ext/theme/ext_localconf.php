@@ -38,8 +38,16 @@ call_user_func(
             'minimal' => 'Minimal',                 //  'theme_minimal'
         ];
         foreach ($rtePresets as $identifier => $fileName) {
-            $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $identifier . '']
-                = 'EXT:' . $extKey . '/Configuration/RTE/' . $fileName . '.yaml';
+            $finalFileName = '/Configuration/RTE/' . $fileName . '.yaml';
+            if (is_file(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($extKey, $finalFileName))) {
+                $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $identifier . '']
+                    = 'EXT:' . $extKey . $finalFileName;
+            } else {
+                throw new \UnexpectedValueException(
+                    'Custom CKEditor preset "EXT:' . $extKey . $finalFileName . '" not found and can therefore not loaded',
+                    1521468329
+                );
+            }
         }
 
         // Only backend relevant stuff
