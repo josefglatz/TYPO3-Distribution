@@ -15,8 +15,20 @@ This repository delivers a full configured, bare metal TYPO3 distribution based 
 - [TYPO3 Extensions](Extensions/Index.md)
 - [PhpStorm Productivity](PhpStorm/Index.md)
 - [Code Quality](CodeQuality/Index.md)
-- [Credits](Other/Credits/Index.md)
 
 ---
 
 - [Contributing to josefglatz/TYPO3-Distribution](Contribution/Index.md)
+
+---
+
+#### Credits
+
+Thanks for your contribution, ideas, issues and shared code
+
+* [Georg Ringer](http://www.ringer.it)
+* [Volker Kemeter](https://twitter.com/volkizzl)
+* [supseven](http://www.supseven.at)
+* [Benjamin Kott](https://twitter.com/benjaminkott)
+* [Boris Schauer](https://twitter.com/bschauer)
+* [Helmut Hummel](https://twitter.com/helhum)
