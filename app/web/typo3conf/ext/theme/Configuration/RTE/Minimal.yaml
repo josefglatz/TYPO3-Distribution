@@ -73,6 +73,7 @@ editor:
       - table
       - tabletools
       - tableselection
+      - tableModifications
       - maximize
       - horizontalrule
 #      - elementspath
@@ -84,7 +85,7 @@ editor:
       - Underline
 #      - Superscript
 #      - Subscript
-#      - Table
+      - Table
       - Strike
 #      - Styles
 
