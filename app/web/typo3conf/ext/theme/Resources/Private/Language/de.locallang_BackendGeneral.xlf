@@ -65,6 +65,10 @@
 			<source>Navigation Image</source>
 			<target>Navigationsbild</target>
 		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_nav_image.irre.new.label" approved="yes">
+			<source>Add Navigation Image</source>
+			<target>Navigationsbild hinzufügen</target>
+		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_opengraph_description.label" approved="yes">
 			<source>Description</source>
 			<target>Beschreibung</target>
@@ -72,6 +76,10 @@
 		<trans-unit id="field.pages.tx_theme_opengraph_image.label" approved="yes">
 			<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
 			<target>Open Graph Bild (Min. 1200px x 630px empfohlen)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_image.irre.new.label" approved="yes">
+			<source>Add Open Graph Image</source>
+			<target>Open Graph Bild hinzufügen</target>
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_opengraph_title.label" approved="yes">
 			<source>Title</source>
@@ -92,6 +100,10 @@
 		<trans-unit id="field.pages.tx_theme_twitter_image.label" approved="yes">
 			<source>Twitter Image (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</source>
 			<target>Twitter Bild (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</target>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_image.irre.new.label" approved="yes">
+			<source>Add Twitter Image</source>
+			<target>Twitter Bild hinzufügen</target>
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_twitter_title.label" approved="yes">
 			<source>Title</source>

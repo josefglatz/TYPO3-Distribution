@@ -139,7 +139,12 @@ call_user_func(
             'tx_theme_nav_image' => [
                 'exclude' => true,
                 'label' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.label',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_theme_nav_image', [
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                    'tx_theme_nav_image',
+                    [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.pages.tx_theme_nav_image.irre.new.label',
+                    ],
                     'overrideChildTca' => [
                         'types' => [
                             \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
@@ -254,6 +259,9 @@ call_user_func(
                 'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_theme_opengraph_image',
                     [
+                        'appearance' => [
+                            'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_image.irre.new.label',
+                        ],
                         'overrideChildTca' => [
                             'types' => [
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
@@ -299,6 +307,9 @@ call_user_func(
                 'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_theme_twitter_image',
                     [
+                        'appearance' => [
+                            'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_image.irre.new.label',
+                        ],
                         'overrideChildTca' => [
                             'types' => [
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [

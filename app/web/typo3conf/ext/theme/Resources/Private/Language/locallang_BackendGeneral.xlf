@@ -101,11 +101,17 @@
 		<trans-unit id="field.pages.tx_theme_nav_image.label">
 			<source>Navigation Image</source>
 		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_nav_image.irre.new.label">
+			<source>Add Navigation Image</source>
+		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_opengraph_description.label">
 			<source>Description</source>
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_opengraph_image.label">
 			<source>Open Graph Image (Min. 1200px x 630px recommended)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_opengraph_image.irre.new.label">
+			<source>Add Open Graph Image</source>
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_opengraph_title.label">
 			<source>Title</source>
@@ -121,6 +127,9 @@
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_twitter_image.label">
 			<source>Twitter Image (Min. 300px x 157 px / Max. 4096px x 2143px, max 5MB)</source>
+		</trans-unit>
+		<trans-unit id="field.pages.tx_theme_twitter_image.irre.new.label">
+			<source>Add Twitter Image</source>
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_twitter_title.label">
 			<source>Title</source>
