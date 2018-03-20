@@ -4,9 +4,10 @@ Back to [Index](../Index.md) / Back to [Backend Index](Index.md)
 
 # Backend ViewHelpers
 
-| Name                            | Purpose of ViewHelper                                                           |
-|:--------------------------------|:--------------------------------------------------------------------------------|
-| `theme.backend.contentEditLink` | Used in Backend Preview templates to wrap the preview with an record edit link. |
+| Name                               | Purpose of ViewHelper                                                                                                                                |
+|:-----------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `theme.backend.contentEditLink`    | Used in Backend Preview templates to wrap the preview with an record edit link. Link is generated if the actual backend user has enough permissions. |
+| `theme.backend.contentEditLinkUrl` | Used in Backend Preview templates to retrieve the URL for an record edit link. Returns the url if the actual backend user has enough permissions.    |
 
 ## Namespace declaration
 
