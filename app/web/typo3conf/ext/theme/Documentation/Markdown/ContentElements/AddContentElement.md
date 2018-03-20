@@ -17,6 +17,7 @@ Back to [Index](../Index.md) / Back to
    configuration
 8. PHP: FormDataProvider: specific formEngine modifications for this
    type
+9. Optional: PageLayout DrawItem hook if simple backend preview is not enough
 
 ## Helper method `\JosefGlatz\Theme\Utility\Tca::getShowitemDefault()`
 

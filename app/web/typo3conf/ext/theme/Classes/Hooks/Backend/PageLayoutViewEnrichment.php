@@ -8,6 +8,7 @@ use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Lang\LanguageService;
 
 class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface
@@ -33,6 +34,12 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface
     {
         // General enrichments
         $row['_extras']['editLink'] = $this->getEditLink($row);
+
+        // Custom content element specific enrichments
+        if (StringUtility::beginsWith($row['CType'], 'theme')) {
+            // Prevent the header value from the tt_content element from showing up above the $itemContent
+            $headerContent = '';
+        }
     }
 
     /**

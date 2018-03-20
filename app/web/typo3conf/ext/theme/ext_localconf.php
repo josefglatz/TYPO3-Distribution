@@ -67,6 +67,10 @@ call_user_func(
             // Hook for adding custom CSS file to page module
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][] = \JosefGlatz\Theme\Hooks\Backend\PageLayoutView::class . '->render';
 
+            // Hook for enriching content element preview body in BE
+            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] =
+                \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichment::class;
+
             // Hook for enriching content element preview footer in BE with additional data
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawFooter'][] =
                 \JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter::class;
