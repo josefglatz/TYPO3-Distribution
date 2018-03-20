@@ -3,10 +3,11 @@
 namespace JosefGlatz\Theme\Hooks\Backend;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class PageLayoutView
+class PageLayoutView implements SingletonInterface
 {
     /**
      * @var PageRenderer
