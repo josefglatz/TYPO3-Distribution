@@ -34,10 +34,16 @@ call_user_func(
                             ' . \JosefGlatz\Theme\Utility\Tca::getShowitemDefault(2)
                     ,
                     'columnsOverrides' => [
+                        'header' => [
+                            'config' => [
+                                'eval' => 'required'
+                            ],
+                        ],
                         'bodytext' => [
                             'config' => [
                                 'enableRichtext' => true,
-                                'richtextConfiguration' => 'default'
+                                'richtextConfiguration' => 'default',
+                                'eval' => 'required'
                             ]
                         ],
                     ],
