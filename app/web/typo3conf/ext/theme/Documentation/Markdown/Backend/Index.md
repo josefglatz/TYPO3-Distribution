@@ -4,6 +4,10 @@ Back to [Index](../Index.md)
 
 # Backend
 
+- [Backend ViewHelpers](BackendViewHelpers.md)
+
+---
+
 > This section is work in progress!!
 
 ## Linkvalidator (sysext)
