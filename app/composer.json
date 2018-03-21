@@ -117,8 +117,7 @@
 		"typo3/cms-viewpage": "~8.7",
 		"typo3/cms-wizard-crpages": "~8.7",
 		"typo3/cms-wizard-sortpages": "~8.7",
-		"w8tcha/CKEditor-WordCount-Plugin": "^1.17",
-		"yoast-seo-for-typo3/yoast_seo": "^1.4"
+		"w8tcha/CKEditor-WordCount-Plugin": "^1.17"
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
@@ -160,7 +159,7 @@
 		"sjbr/sr-language-menu": "dev-master",
 		"sup7even/benefits": "dev-master",
 		"t3g/blog": "dev-master",
-		"yoast-seo-for-typo3/yoast_seo": "dev-master"
+		"yoast-seo-for-typo3/yoast_seo": "^1.4"
 	},
 	"extra": {
 		"typo3/cms": {
