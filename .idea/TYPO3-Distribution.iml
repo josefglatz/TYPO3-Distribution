@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/app/web/typo3conf/ext/theme/Classes" isTestSource="false" packagePrefix="JosefGlatz\Theme\" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/namelesscoder/typo3-repository-client" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin/_processed_" />
