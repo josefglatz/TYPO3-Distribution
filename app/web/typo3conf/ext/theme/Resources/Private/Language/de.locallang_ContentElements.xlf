@@ -21,6 +21,9 @@
 			<source>Collapsible Text (Accordion)</source>
 			<target>Aufklappbarer Text (Akkordeon)</target>
 		</trans-unit>
+		<trans-unit id="theme_collapsible_text.backendpreview.infotext-hidden" approved="yes">
+			<target>Zugeklappten Text aufklappen/anzeigen</target>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description" approved="yes">
 			<source>Stops the sliding of content elements from upper pages. </source>
 			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>

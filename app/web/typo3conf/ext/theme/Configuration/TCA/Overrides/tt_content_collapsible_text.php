@@ -24,19 +24,27 @@ call_user_func(
             'columns' => [
 
             ],
+            'palettes' => [
+                'tx-' . $extKey . '-' . $type . '-layout' => [
+                    'showitem' => '
+                        header_layout;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout_formlabel,
+                        tx_theme_unfolded,
+                    ',
+                ],
+            ],
             'types' => [
                 $type => [
                     'showitem' => \JosefGlatz\Theme\Utility\Tca::getShowitemDefault(1) . '
                             header;' . $languageFileCePrefix . 'theme_collapsible_text.label.header,
-                            --linebreak--,
-                            header_layout;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout_formlabel,
+                            --palette--;;tx-' . $extKey . '-' . $type . '-layout,
                             bodytext;' . $languageFileCePrefix . 'theme_collapsible_text.label.bodytext,
                             ' . \JosefGlatz\Theme\Utility\Tca::getShowitemDefault(2)
                     ,
                     'columnsOverrides' => [
                         'header' => [
                             'config' => [
-                                'eval' => 'required'
+                                'eval' => 'required',
+                                'max' => 120,
                             ],
                         ],
                         'bodytext' => [

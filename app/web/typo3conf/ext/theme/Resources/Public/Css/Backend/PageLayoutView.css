@@ -1,3 +1,32 @@
-.theme  {
+/* =================================================
+ *  Custom PageLayoutView CSS provided by EXT:theme
+ * =================================================
+ * @TODO: TYPO3-Distribution: Integrate PageLayoutView.css into gulp build pipeline
+ */
 
+
+/*
+ * Generic Bootstrap Helper classes
+ * 	- bootstrap classes which aren't provided by TYPO3 core
+ */
+.text-left {
+	text-align: left;
+}
+
+
+/*
+ * Generic Bootstrap Helper classes
+ * 	- bootstrap classes which aren't provided by TYPO3 core
+ */
+.theme-opacity-5 {
+	opacity: .5;
+}
+
+
+/*
+ * CE theme_collapsible_text
+ */
+.theme-backendpreview-theme_collapsible_text .collapsing + .theme-infotext-hidden,
+.theme-backendpreview-theme_collapsible_text .collapse.in + .theme-infotext-hidden {
+	opacity: 0;
 }

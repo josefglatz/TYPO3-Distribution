@@ -1,6 +1,8 @@
 CREATE TABLE tt_content (
 	bodytext_1 text,
-	bodytext_2 text
+	bodytext_2 text,
+
+	tx_theme_unfolded int(11) unsigned DEFAULT '0',
 );
 
 CREATE TABLE pages (

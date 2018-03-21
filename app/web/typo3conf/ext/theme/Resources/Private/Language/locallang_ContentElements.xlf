@@ -14,6 +14,9 @@
 		<trans-unit id="theme_collapsible_text.label.header">
 			<source>Header (open / close text)</source>
 		</trans-unit>
+		<trans-unit id="theme_collapsible_text.backendpreview.infotext-hidden">
+			<source>Click to show collapsed content</source>
+		</trans-unit>
 		<trans-unit id="theme_collapsible_text.title">
 			<source>Collapsible Text (Accordion)</source>
 		</trans-unit>

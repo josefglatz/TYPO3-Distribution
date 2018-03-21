@@ -1,8 +1,34 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<div class="theme-backendpreview-collapsible-text">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#">{header}</a></li>
-		</ul>
-		<div class="panel">{bodytext -> f:format.stripTags()}</div>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<div class="panel">
+		<f:if condition="{theme:backend.contentEditLinkUrl(uid: uid)}">
+			<div class="btn-group btn-group-sm">
+				<a href="{theme:backend.contentEditLinkUrl(uid: uid)}" class="btn btn-default">
+					<core:icon identifier="actions-open"/>
+				</a>
+			</div>
+		</f:if>
+		<button class="btn text-left{f:if(condition: tx_theme_unfolded, then: '', else: ' collapsed')}"
+				type="button" data-toggle="collapse" data-target="#collapse{uid}"
+				aria-expanded="{f:if(condition: tx_theme_unfolded, then: 'true', else: 'false')}"
+				aria-controls="collapse{uid}">
+			<strong>{header}</strong> <span class="caret"></span>
+		</button>
+
 	</div>
+
+	<div class="collapse{f:if(condition: tx_theme_unfolded, then: ' in', else: '')}" id="collapse{uid}">
+		<div class="panel" style="padding: 6px;">
+			{bodytext -> f:format.stripTags() -> theme:backend.contentEditLink(uid: uid)}
+		</div>
+	</div>
+	<span class="theme-infotext-hidden text-muted btn btn-default btn-xs theme-opacity-5" data-toggle="collapse" data-target="#collapse{uid}">
+		<f:translate
+		key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_collapsible_text.backendpreview.infotext-hidden"/>
+	</span>
+</div>
+
 </html>

@@ -3,6 +3,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
     function ($extKey, $table) {
+        $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
         $languageFileCePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:';
 
         $tca = [
@@ -46,6 +47,25 @@ call_user_func(
             ],
         ];
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
+
+        /**
+         * Additional columns
+         */
+        $additionalColumns = [
+            'tx_theme_unfolded' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_unfolded.label',
+                'config' => [
+                    'type' => 'check',
+                    'default' => 0,
+                    'items' => [
+                        '1' => [
+                            '0' => $languageFileBePrefix . 'field.tt_content.tx_theme_unfolded.check_0'
+                        ]
+                    ]
+                ],
+            ],
+        ];
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
 
         // Default Content Element
         $GLOBALS['TCA'][$table]['columns']['CType']['config']['default'] = 'text';

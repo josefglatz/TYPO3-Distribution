@@ -109,6 +109,14 @@
 			<source>Title</source>
 			<target>Titel</target>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_unfolded.label" approved="yes">
+			<source>Initial unfolded</source>
+			<target>Initial ausgeklappt</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_unfolded.check_0" approved="yes">
+			<source>Unfolded</source>
+			<target>Ausgeklappt</target>
+		</trans-unit>
 		<trans-unit id="icon.pagetree.attention" approved="yes">
 			<source>Page with exclamation sign</source>
 			<target>Seite mit Ausrufezeichen Symbol</target>

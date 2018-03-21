@@ -134,6 +134,12 @@
 		<trans-unit id="field.pages.tx_theme_twitter_title.label">
 			<source>Title</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_unfolded.label">
+			<source>Initially unfolded</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_unfolded.check_0">
+			<source>Unfolded</source>
+		</trans-unit>
 		<trans-unit id="icon.pagetree.attention">
 			<source>Page with exclamation sign</source>
 		</trans-unit>
