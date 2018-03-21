@@ -52,6 +52,32 @@ call_user_func(
          * Additional columns
          */
         $additionalColumns = [
+            'tx_theme_bodytext_1' => [
+                'l10n_mode' => 'prefixLangTitle',
+                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',
+                'config' => [
+                    'type' => 'text',
+                    'cols' => '80',
+                    'rows' => '15',
+                    'softref' => 'typolink_tag,images,email[subst],url',
+                    'search' => [
+                        'andWhere' => '{#CType}=\'text\' OR {#CType}=\'textpic\' OR {#CType}=\'textmedia\''
+                    ]
+                ]
+            ],
+            'tx_theme_bodytext_2' => [
+                'l10n_mode' => 'prefixLangTitle',
+                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',
+                'config' => [
+                    'type' => 'text',
+                    'cols' => '80',
+                    'rows' => '15',
+                    'softref' => 'typolink_tag,images,email[subst],url',
+                    'search' => [
+                        'andWhere' => '{#CType}=\'text\' OR {#CType}=\'textpic\' OR {#CType}=\'textmedia\''
+                    ]
+                ]
+            ],
             'tx_theme_unfolded' => [
                 'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_unfolded.label',
                 'config' => [

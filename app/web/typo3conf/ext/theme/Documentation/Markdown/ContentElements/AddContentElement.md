@@ -18,6 +18,7 @@ Back to [Index](../Index.md) / Back to
 8. PHP: FormDataProvider: specific formEngine modifications for this
    type
 9. Optional: PageLayout DrawItem hook if simple backend preview is not enough
+10. TCA field: extend config.search.andWhere
 
 ## Helper method `\JosefGlatz\Theme\Utility\Tca::getShowitemDefault()`
 

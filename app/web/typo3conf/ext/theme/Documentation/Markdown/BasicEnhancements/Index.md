@@ -47,6 +47,14 @@ Back to [Index](../Index.md)
 
 ## Table `tt_content`
 
+### New columns
+
+| Column                | Title                           | Type  | Description                                                        | Excluded |
+|:----------------------|:--------------------------------|:------|:-------------------------------------------------------------------|:---------|
+| `tx_theme_bodytext_1` | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field | -        |
+| `tx_theme_bodytext_2` | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field | -        |
+| `tx_theme_unfolded`   | Initially unfolded              | check | Can be used for content elements with collapsing content           | -        |
+
 ### Customized existing columns
 
 | Column | Title | Description | Excluded |
