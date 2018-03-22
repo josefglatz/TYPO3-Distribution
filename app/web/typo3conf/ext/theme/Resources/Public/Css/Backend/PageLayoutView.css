@@ -15,11 +15,14 @@
 
 
 /*
- * Generic Bootstrap Helper classes
- * 	- bootstrap classes which aren't provided by TYPO3 core
+ * Generic  Helper classes
  */
 .theme-opacity-5 {
 	opacity: .5;
+}
+
+.white-space-normal {
+	white-space: normal;
 }
 
 
