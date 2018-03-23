@@ -31,6 +31,7 @@ call_user_func(
                 'theme-content-badge'            => 'theme-content-badge.svg',
                 'theme-content-call-to-action'   => 'theme-content-call-to-action.svg',
                 'theme-content-carousel'         => 'GridElements/theme-content-gridelement-carousel.svg',
+                'theme-content-download'         => 'theme-content-download.svg',
                 'theme-content-factbox'          => 'theme-content-factbox.svg',
                 'theme-content-facts-figures'    => 'theme-content-facts-figures.svg',
                 'theme-content-form'             => 'theme-content-form.svg',
