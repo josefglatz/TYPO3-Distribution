@@ -41,6 +41,8 @@ a particular property of the content element like:
 - Wide/Narrow video with
 - ...
 
+![pagelayoutview-ce-footer-badges.png](../../Images/pagelayoutview-ce-footer-badges.png)
+
 ### Supported types
 
 | Type  | Description                                  |
