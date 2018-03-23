@@ -31,11 +31,10 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  */
 class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
 {
-
     use CompileWithRenderStatic;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeOutput = false;
 
@@ -58,8 +57,7 @@ class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ): string
-    {
+    ): string {
         $url = '';
         // Check first whether the user has permissions to edit this record
         if (self::getBackendUser()->recordEditAccessInternals('tt_content', $arguments['uid'])) {

@@ -107,7 +107,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     protected function enrichmentConfigExists(): bool
     {
-        return (\is_array($this->enrichtmentConfiguration) && !empty($this->enrichtmentConfiguration));
+        return \is_array($this->enrichtmentConfiguration) && !empty($this->enrichtmentConfiguration);
     }
 
     /**
@@ -118,7 +118,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
     protected function badgesConfigExists(): bool
     {
         $config = $this->enrichtmentConfiguration;
-        return (ArrayTool::arrayKeysExists(['badges'], $config) && \is_array($config['badges']) && !empty($config['badges']));
+        return ArrayTool::arrayKeysExists(['badges'], $config) && \is_array($config['badges']) && !empty($config['badges']);
     }
 
     /**

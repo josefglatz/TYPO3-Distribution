@@ -41,16 +41,15 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderS
  */
 class ContentEditLinkViewHelper extends AbstractBackendViewHelper
 {
-
     use CompileWithContentArgumentAndRenderStatic;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeChildren = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeOutput = false;
 
@@ -74,8 +73,7 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ): string
-    {
+    ): string {
         $content = $renderChildrenClosure();
         // Check first whether the user has permissions to edit this record
         if (self::getBackendUser()->recordEditAccessInternals('tt_content', $arguments['uid'])) {
