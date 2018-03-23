@@ -55,6 +55,13 @@ call_user_func(
                             ]
                         ],
                     ],
+                    'pageLayoutViewEnrichment' => [
+                        'footer' => [
+                            'badges' => [
+                                'isUnfolded',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];

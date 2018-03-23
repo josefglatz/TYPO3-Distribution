@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Backend/PageLayout/Footer/Default"/>
+<f:section name="Main">
+	<f:if condition="{badges}">
+		<div class="theme-footer-badges">
+			<f:for each="{badges}" as="badge">
+				<f:render
+					partial="Backend/PageLayout/Badges/Type{badge.badgeType -> v:format.case(case: 'ucfirst')}"
+					arguments="{badge: badge}"
+				/>
+			</f:for>
+		</div>
+	</f:if>
+	<f:render partial="Backend/PageLayout/CType" arguments="{_all}"/>
+</f:section>
+</html>

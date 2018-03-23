@@ -25,6 +25,57 @@
 	white-space: normal;
 }
 
+/*
+ * tt_content_drawFooter Enrichment
+ */
+.t3-page-ce-info > br:first-child {
+	display: none; /* Remove superfluous first br tag in footer section */
+}
+.theme-footer {
+
+}
+.theme-footer > * {
+	margin-bottom: 3px;
+}
+.theme-footer > *:last-child {
+	margin-bottom: 0px;
+}
+.theme-footer-ctype {
+	text-align: right;
+	margin-bottom: -4px;
+}
+.theme-footer-ctype-text {
+	opacity: .3;
+	font-size: 10px;
+}
+.theme-footer-ctype-text:hover {
+	opacity: 1;
+}
+.theme-footer-badges {
+	text-align: right;
+}
+.theme-footer-badges .badge {
+	font-weight: normal;
+	background: #fff;
+	color:#444;
+	font-size: 10px;
+	padding: 4px 8px;
+	margin-left: 4px;
+	margin-bottom: 3px;
+	cursor: default;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px #eee;
+}
+.theme-footer-badges .badge.bg-info {
+	background: rgb(218, 237, 255);
+	border-color: transparent;
+}
+.theme-footer-badges .badge:hover {
+	background-color: #737373;
+	color: #fff;
+	border-color: transparent;
+	box-shadow: none;
+}
 
 /*
  * CE theme_collapsible_text
@@ -32,4 +83,9 @@
 .theme-backendpreview-theme_collapsible_text .collapsing + .theme-infotext-hidden,
 .theme-backendpreview-theme_collapsible_text .collapse.in + .theme-infotext-hidden {
 	opacity: 0;
+}
+.theme-backendpreview-theme_collapsible_text .collapse.in + .theme-infotext-hidden {
+	height: 0;
+	padding: 0;
+	margin: 0;
 }
