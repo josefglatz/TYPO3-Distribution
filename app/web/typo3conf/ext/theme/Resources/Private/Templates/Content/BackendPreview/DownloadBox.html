@@ -4,9 +4,11 @@
 
 <div class="theme-backendpreview-{CType}">
 	<theme:backend.contentEditLink uid="{uid}">
-		<div class="theme-backendpreview-heading">
-			<strong>{header -> theme:or(alternative: 'Download Box')}</strong>
-		</div>
+		<f:if condition="{header}">
+			<div class="theme-backendpreview-heading">
+				<strong>{header}</strong>
+			</div>
+		</f:if>
 		<f:if condition="!{media} && !{file_collections}">
 			<f:then>
 				<div class="theme-notification bg-danger">
