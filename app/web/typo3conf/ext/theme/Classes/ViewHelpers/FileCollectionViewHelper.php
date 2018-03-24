@@ -64,7 +64,7 @@ class FileCollectionViewHelper extends AbstractViewHelper
         }
 
         $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
-        $collections = GeneralUtility::trimExplode(',',$row[$field], true);
+        $collections = GeneralUtility::trimExplode(',', $row[$field], true);
         $fileCollector->addFilesFromFileCollections($collections);
 
         $this->templateVariableContainer->add($as, $fileCollector->getFiles());
