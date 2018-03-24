@@ -6,17 +6,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class Tca
- *
- * this class moves items in a showitem string to a specific position
- *
- * = Example
- *
- * $GLOBALS['TCA']['pages']['types']['4']['showitem'] =
- *      JosefGlatz\Theme\Utility\Tca::moveShowitemItems(
- *          $GLOBALS['TCA']['pages']['types']['4']['showitem'],
- *          '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut',
- *          2
- *      );
  */
 class Tca
 {
@@ -48,6 +37,17 @@ class Tca
     ];
 
     /**
+     * Move items in a showitem string to a specific position
+     *
+     * = Example
+     *
+     * $GLOBALS['TCA']['pages']['types']['4']['showitem'] =
+     *      JosefGlatz\Theme\Utility\Tca::moveShowitemItems(
+     *          $GLOBALS['TCA']['pages']['types']['4']['showitem'],
+     *          '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut',
+     *          2
+     *      );
+     *
      * @param string $showitem Existing showitem string
      * @param string $value String which should repositioned
      * @param int $finalPosition Final position of $value
