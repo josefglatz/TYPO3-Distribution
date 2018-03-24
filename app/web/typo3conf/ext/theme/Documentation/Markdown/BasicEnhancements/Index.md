@@ -49,11 +49,12 @@ Back to [Index](../Index.md)
 
 ### New columns
 
-| Column                | Title                           | Type  | Description                                                        | Excluded |
-|:----------------------|:--------------------------------|:------|:-------------------------------------------------------------------|:---------|
-| `tx_theme_bodytext_1` | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field | -        |
-| `tx_theme_bodytext_2` | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field | -        |
-| `tx_theme_unfolded`   | Initially unfolded              | check | Can be used for content elements with collapsing content           | -        |
+| Column                     | Title                           | Type  | Description                                                                         | Excluded |
+|:---------------------------|:--------------------------------|:------|:------------------------------------------------------------------------------------|:---------|
+| `tx_theme_bodytext_1`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                  | -        |
+| `tx_theme_bodytext_2`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                  | -        |
+| `tx_theme_unfolded`        | Initially unfolded              | check | Can be used for content elements with collapsing content                            | -        |
+| `tx_theme_prefer_download` | Prefer download of files        | check | Can be used for content elements with file downloads and HTML5 attribute "download" | -        |
 
 ### Customized existing columns
 
@@ -69,6 +70,7 @@ Back to [Index](../Index.md)
 | `theme_lead_text`        | ![theme-content-text-lead.svg](../../../Resources/Public/Icons/Backend/theme-content-text-lead.svg)                                      | **Lead Text**        | Stand out paragraph especially at the beginning of a page or a section.                                                                                                                                                                  |
 | `theme_collapsible_text` | ![theme-content-gridelement-accordion.svg](../../../Resources/Public/Icons/Backend/GridElements/theme-content-gridelement-accordion.svg) | **Collapsible Text** | A regular text element with header (toggle open/close) and bodytext field (toggleable content).                                                                                                                                          |
 | `theme_inheritance_stop` | ![theme-content-inheritance-stop.svg](../../../Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg)                        | **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
+| `theme_download_box`     | ![theme-content-download.svg](../../../Resources/Public/Icons/Backend/theme-content-download.svg)                                        | **Download Box**     | Basic download list with HTML5 download attribute support. (Adopted fork of FSC `uploads` content element)                                                                                                                               |
 
 
 

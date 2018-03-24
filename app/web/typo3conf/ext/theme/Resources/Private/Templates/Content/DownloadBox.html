@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>
+	<!--@TODO: TYPO3-Distribution: CE Download Box finalize for Bootstrap 4 -->
+	- Check whether files are loaded
+	- differentiate between html5 download and not
+		- and download_name overwrite
+	- file icons
+</f:comment>
+
+<f:if condition="!{media} && !{file_collections}">
+	<f:then></f:then>
+	<f:else>{files -> f:debug(inline:1)}</f:else>
+</f:if>
+
+</html>

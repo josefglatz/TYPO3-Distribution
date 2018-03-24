@@ -8,7 +8,9 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
 
 /**
- * Class FalViewHelper
+ * Class FalCollectionViewHelper
+ *
+ * Retrieve file references from file one or multiple file_collections
  *
  * = Example =
  *
@@ -17,7 +19,7 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * </code>
  *
  * <code title="default notation">
- * <theme:fal table="pages" field="image" id="{row.uid}" as="references">
+ * <theme:fileCollection table="tt_content" field="file_collections" id="{row.uid}" as="references">
  * <f:if condition="{references}">
  *  <f:then>
  *    <f:media file="{references.0}" class="foobar" title="{references.0.propertiesOfFileReference.title}"/>
@@ -26,11 +28,11 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  *    <img class="dummy" src="https://dummyimage.com/600x600/444/fff" alt="">
  *  </f:else>
  * </f:if>
- * </theme:fal>
+ * </theme:fileCollection>
  * </code>
  *
  */
-class FalViewHelper extends AbstractViewHelper
+class FileCollectionViewHelper extends AbstractViewHelper
 {
 
     /**
@@ -62,7 +64,8 @@ class FalViewHelper extends AbstractViewHelper
         }
 
         $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
-        $fileCollector->addFilesFromRelation($table, $field, $row);
+        $collections = GeneralUtility::trimExplode(',',$row[$field], true);
+        $fileCollector->addFilesFromFileCollections($collections);
 
         $this->templateVariableContainer->add($as, $fileCollector->getFiles());
         $output = $this->renderChildren();

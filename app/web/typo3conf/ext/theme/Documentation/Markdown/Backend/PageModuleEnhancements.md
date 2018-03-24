@@ -22,7 +22,7 @@ is.
 
 ![pagelayoutview-ce-footer-ctype.png](../../Images/pagelayoutview-ce-footer-ctype.png)
 
-This feature is enabled if on of the scenarios applies:
+This feature is enabled if one of the scenarios applies:
 - The backend user is an administrator
 - If it is a development environment
   - `Development/*`

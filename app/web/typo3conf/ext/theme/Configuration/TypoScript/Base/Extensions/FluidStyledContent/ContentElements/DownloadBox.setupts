@@ -1,0 +1,6 @@
+tt_content {
+	theme_download_box < .uploads
+	theme_download_box {
+		templateName = DownloadBox
+	}
+}

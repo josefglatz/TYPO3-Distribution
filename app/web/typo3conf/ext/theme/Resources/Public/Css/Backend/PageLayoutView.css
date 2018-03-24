@@ -25,6 +25,13 @@
 	white-space: normal;
 }
 
+.theme-area-text {
+	font-size: 0.9em;
+	color: #c8c8c8;
+	margin: 0 0 3px;
+	display: block;
+}
+
 /*
  * tt_content_drawFooter Enrichment
  */
@@ -78,6 +85,40 @@
 }
 
 /*
+ * tt_content_drawItem Enrichment
+ */
+.theme-section {
+	margin: 15px 0;
+}
+.theme-notification {
+	padding: 20px;
+	display: block;
+	font-weight: bold;
+}
+.theme-fileicon {
+	background: #858585;
+	border-radius: 3px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	padding: 3px 3px;
+}
+.theme-file {
+	padding-bottom: 4px;
+}
+.theme-file-left {
+	min-width: 41px;
+	text-align: right;
+}
+.theme-file-body {
+
+}
+.theme-file-additionalinfo {
+	font-size: 0.9em;
+	padding-left: 5px;
+}
+
+/*
  * CE theme_collapsible_text
  */
 .theme-backendpreview-theme_collapsible_text .collapsing + .theme-infotext-hidden,
@@ -88,4 +129,11 @@
 	height: 0;
 	padding: 0;
 	margin: 0;
+}
+
+/*
+ * CE theme_download_box
+ */
+.theme-backedpreview-theme_download_box {
+
 }

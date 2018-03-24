@@ -1,0 +1,3 @@
+mod.web_layout.tt_content.preview {
+	theme_download_box = EXT:theme/Resources/Private/Templates/Content/BackendPreview/DownloadBox.html
+}

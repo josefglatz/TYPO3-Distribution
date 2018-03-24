@@ -20,6 +20,21 @@
 		<trans-unit id="theme_collapsible_text.title">
 			<source>Collapsible Text (Accordion)</source>
 		</trans-unit>
+		<trans-unit id="theme_download_box.title">
+			<source>Download Box</source>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.infotext-nofiles">
+			<source>No file(s) or file collection(s) selected for this content element!</source>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.area.files">
+			<source>Direct selected files for download</source>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.area.filecollections">
+			<source>Selected files for download via File Collections</source>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.infotext.nodescription">
+			<source>No Description set for this file. Consider setting a better file link text by add a description.</source>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description">
 			<source>Stops the sliding of content elements from upper pages.</source>
 		</trans-unit>

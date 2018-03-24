@@ -1,0 +1,17 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_download_box {
+				iconIdentifier = theme-content-download
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.description
+				description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_filelinks_description
+				tt_content_defValues {
+					CType = theme_download_box
+					target = _blank
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

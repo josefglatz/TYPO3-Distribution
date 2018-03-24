@@ -117,6 +117,18 @@
 			<source>Unfolded</source>
 			<target>Ausgeklappt</target>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_prefer_download.label">
+			<target>Datei-Download bevorzugen</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_prefer_download.label.badge">
+			<target>Bevorzuge Datei-Download bei Klick</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.target.label.badge" approved="yes">
+			<target>Ziel gesetzt</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.filelink_sorting.label.badge" approved="yes">
+			<target>Sortierung aktiv</target>
+		</trans-unit>
 		<trans-unit id="icon.pagetree.attention" approved="yes">
 			<source>Page with exclamation sign</source>
 			<target>Seite mit Ausrufezeichen Symbol</target>

@@ -24,6 +24,18 @@
 		<trans-unit id="theme_collapsible_text.backendpreview.infotext-hidden" approved="yes">
 			<target>Zugeklappten Text aufklappen/anzeigen</target>
 		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.infotext-nofiles" approved="yes">
+			<target>Keine Datei(en) oder Dateisammlung(en) ausgewählt für dieses Inhaltselement!</target>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.area.files" approved="yes">
+			<target>Direkt ausgewählte Dateien zum Herunterladen</target>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.area.filecollections" approved="yes">
+			<target>Ausgewählte Dateien zum Herunterladen durch Dateisammlungen</target>
+		</trans-unit>
+		<trans-unit id="theme_download_box.backendpreview.infotext.nodescription" approved="yes">
+			<target>Keine Beschreibung gesetzt für diese Datei. Füge eine Beschreibung hinzu um diese statt dem Dateinamen darzustellen.</target>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description" approved="yes">
 			<source>Stops the sliding of content elements from upper pages. </source>
 			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>

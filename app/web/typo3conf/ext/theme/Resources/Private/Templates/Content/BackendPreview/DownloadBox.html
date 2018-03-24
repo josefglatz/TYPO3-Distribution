@@ -1,0 +1,82 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<theme:backend.contentEditLink uid="{uid}">
+		<div class="theme-backendpreview-heading">
+			<strong>{header -> theme:or(alternative: 'Download Box')}</strong>
+		</div>
+		<f:if condition="!{media} && !{file_collections}">
+			<f:then>
+				<div class="theme-notification bg-danger">
+					<f:translate
+						key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.infotext-nofiles"/>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="container-fluid theme-section">
+					<div class="row">
+						<f:if condition="{media}">
+							<div class="col-md-6">
+								<theme:fal table="tt_content" field="media" id="{uid}" as="files">
+									<f:if condition="{files}">
+										<span class="theme-area-text"><f:translate
+											key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.area.files"/></span>
+										<ul class="list-unstyled">
+											<f:for each="{files}" as="file">
+												<f:render section="File" arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
+											</f:for>
+										</ul>
+									</f:if>
+								</theme:fal>
+							</div>
+						</f:if>
+						<f:if condition="{file_collections}">
+							<div class="col-md-6">
+								<theme:fileCollection table="tt_content" field="file_collections" id="{uid}"
+													  as="filesViaCollections">
+									<f:if condition="{filesViaCollections}">
+										<span class="theme-area-text"><f:translate
+											key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.area.filecollections"/></span>
+										<ul class="list-unstyled">
+											<f:for each="{filesViaCollections}" as="file">
+												<f:render section="File" arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
+											</f:for>
+										</ul>
+									</f:if>
+								</theme:fileCollection>
+							</div>
+						</f:if>
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+	</theme:backend.contentEditLink>
+</div>
+
+<f:section name="File">
+	<li title="{file.properties.title}">
+		<div class="media theme-file" data-placement="bottom" data-toggle="tooltip"
+			 data-title="{f:if(condition: file.description, else: '{f:translate(key: \'LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.infotext.nodescription\')}')}">
+			<div class="media-left theme-file-left">
+				<span class="theme-fileicon theme-fileicon-{file.extension}">{file.extension}</span>
+			</div>
+			<div class="media-body theme-file-body">
+				<span>{file.description -> theme:or(alternative: file.name)}</span>
+				<div class="text-muted theme-file-additionalinfo">
+					<f:if condition="{file.description}">
+						{file.name},
+					</f:if>
+					<small class="theme-opacity-5">
+						<f:format.bytes value="{file.properties.size}"/>
+					</small>
+					<f:if condition="{tx_theme_prefer_download}">
+						<br><small title="HTML5 prefered download name">{file.properties.download_name}</small>
+					</f:if>
+				</div>
+			</div>
+		</div>
+	</li>
+</f:section>
+</html>

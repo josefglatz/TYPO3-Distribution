@@ -90,6 +90,18 @@ call_user_func(
                     ]
                 ],
             ],
+            'tx_theme_prefer_download' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_prefer_download.label',
+                'config' => [
+                    'type' => 'check',
+                    'default' => 0,
+                    'items' => [
+                        '1' => [
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        ]
+                    ]
+                ],
+            ],
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
 
