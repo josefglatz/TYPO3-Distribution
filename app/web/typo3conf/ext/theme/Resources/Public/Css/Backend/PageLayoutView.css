@@ -90,6 +90,12 @@
 .theme-section {
 	margin: 15px 0;
 }
+.theme-section:last-child {
+	margin-bottom: 0;
+}
+.theme-section :last-child {
+	margin-bottom: 0;
+}
 .theme-notification {
 	padding: 20px;
 	display: block;
