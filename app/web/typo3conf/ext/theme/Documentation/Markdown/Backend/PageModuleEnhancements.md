@@ -42,6 +42,7 @@ a particular property of the content element like:
 - ...
 
 ![pagelayoutview-ce-footer-badges.png](../../Images/pagelayoutview-ce-footer-badges.png)
+![pagelayoutview-ce-footer-badges1.png](../../Images/pagelayoutview-ce-footer-badges1.png)
 
 ### Supported types
 
