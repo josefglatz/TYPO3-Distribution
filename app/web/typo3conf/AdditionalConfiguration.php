@@ -358,35 +358,38 @@ if (class_exists(\GeorgRinger\Logging\Log\Monolog\Processor\Typo3Processor::clas
     ];
 }
 
-/*
- * include the most general file e.g. "AdditionalConfiguration_Staging.php
- */
-$file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '.php';
-if (is_file($file)) {
-    /** @noinspection PhpIncludeInspection */
-    include_once($file);
-    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
-}
+// Load application context specific additional configuration
+if ($context) {
+    /*
+     * include the most general file e.g. "AdditionalConfiguration_Staging.php
+     */
+    $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '.php';
+    if (is_file($file)) {
+        /** @noinspection PhpIncludeInspection */
+        include_once($file);
+        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
+    }
 
-/*
- * check for a more specific configuration as well e.g. "AdditionalConfiguration_Development_Profiling.php"
- */
-$file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1 . '.php';
-if (is_file($file)) {
-    /** @noinspection PhpIncludeInspection */
-    include_once($file);
-    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
-}
+    /*
+     * check for a more specific configuration as well e.g. "AdditionalConfiguration_Development_Profiling.php"
+     */
+    $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1 . '.php';
+    if (is_file($file)) {
+        /** @noinspection PhpIncludeInspection */
+        include_once($file);
+        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
+    }
 
-/*
- * check for a more specific configuration as well, e.g. "AdditionalConfiguration_Production_Live_Server4.php"
- */
-$file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1
-    . '_' . $contextSubPart2 . '.php';
-if (is_file($file)) {
-    /** @noinspection PhpIncludeInspection */
-    include_once($file);
-    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
+    /*
+     * check for a more specific configuration as well, e.g. "AdditionalConfiguration_Production_Live_Server4.php"
+     */
+    $file = realpath(__DIR__) . '/AdditionalConfiguration_' . $contextMainPart . '_' . $contextSubPart1
+        . '_' . $contextSubPart2 . '.php';
+    if (is_file($file)) {
+        /** @noinspection PhpIncludeInspection */
+        include_once($file);
+        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
+    }
 }
 
 /*
