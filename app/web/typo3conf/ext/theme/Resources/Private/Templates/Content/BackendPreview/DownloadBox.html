@@ -25,7 +25,8 @@
 											key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.area.files"/></span>
 										<ul class="list-unstyled">
 											<f:for each="{files}" as="file">
-												<f:render section="File" arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
+												<f:render section="File"
+														  arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
 											</f:for>
 										</ul>
 									</f:if>
@@ -37,11 +38,17 @@
 								<theme:fileCollection table="tt_content" field="file_collections" id="{uid}"
 													  as="filesViaCollections">
 									<f:if condition="{filesViaCollections}">
-										<span class="theme-area-text"><f:translate
+										<f:for each="{collectionInfos}" as="collection" iteration="i">
+											<f:variable name="collectionTitleList">{collectionTitleList}{f:if(condition: i.isFirst, then: '', else: ', ')}{collection.title}</f:variable>
+										</f:for>
+
+										<span data-placement="bottom" data-toggle="tooltip"
+											  data-title="{collectionTitleList}" class="theme-area-text"><f:translate
 											key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_download_box.backendpreview.area.filecollections"/></span>
 										<ul class="list-unstyled">
 											<f:for each="{filesViaCollections}" as="file">
-												<f:render section="File" arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
+												<f:render section="File"
+														  arguments="{file: file, tx_theme_prefer_download: tx_theme_prefer_download}"/>
 											</f:for>
 										</ul>
 									</f:if>
@@ -72,7 +79,8 @@
 						<f:format.bytes value="{file.properties.size}"/>
 					</small>
 					<f:if condition="{tx_theme_prefer_download}">
-						<br><small title="HTML5 prefered download name">{file.properties.download_name}</small>
+						<br>
+						<small title="HTML5 prefered download name">{file.properties.download_name}</small>
 					</f:if>
 				</div>
 			</div>

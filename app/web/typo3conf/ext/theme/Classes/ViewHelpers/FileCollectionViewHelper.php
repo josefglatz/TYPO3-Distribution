@@ -3,6 +3,7 @@
 namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Resource\FileCollectionRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
@@ -46,6 +47,7 @@ class FileCollectionViewHelper extends AbstractViewHelper
      * @param int $id
      * @param string $as
      * @return string
+     * @throws \TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException
      */
     public function render(string $table, string $field, int $id, string $as = 'references')
     {
@@ -67,7 +69,17 @@ class FileCollectionViewHelper extends AbstractViewHelper
         $collections = GeneralUtility::trimExplode(',', $row[$field], true);
         $fileCollector->addFilesFromFileCollections($collections);
 
+        $fileCollectionRepository = GeneralUtility::makeInstance(FileCollectionRepository::class);
+        $fileCollections = [];
+        foreach ($collections as $collection) {
+            $fileCollection = $fileCollectionRepository->findByUid($collection);
+            $fileCollections[] = [
+                'title' => $fileCollection->getTitle()
+            ];
+        }
+
         $this->templateVariableContainer->add($as, $fileCollector->getFiles());
+        $this->templateVariableContainer->add('collectionInfos', $fileCollections);
         $output = $this->renderChildren();
         $this->templateVariableContainer->remove($as);
 
