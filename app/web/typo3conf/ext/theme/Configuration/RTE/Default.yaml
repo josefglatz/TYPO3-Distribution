@@ -47,7 +47,7 @@ editor:
     # Group all buttons http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups
     toolbarGroups:
       - { name: styles, groups: [ styles, format ] }
-      - { name: links, groups: [ links ] }
+      - { name: links, groups: [ links, anchor ] }
       - { name: basicstyles, groups: [ basicstyles ] }
 #      - { name: paragraph, groups: [ list, indent, blocks, align ] }
       - { name: paragraph, groups: [ list ] }
@@ -90,7 +90,7 @@ editor:
 
     # Toolbar button names that must not be rendered
     removeButtons:
-      - Anchor
+#      - Anchor
       - Italic
       - Underline
 #      - Superscript
