@@ -7,7 +7,7 @@ Back to [Index](../Index.md)
 This TYPO3 distribution comes with some really useful real world scenario presets. It also ships some custom modifications
 with external plugins and a custom project specific plugin to limit the tables plugin.
 
-> **Extending/Adopting the CKEditor in TYPO3 is much easier and makes more fun – Try it out!**
+> **Extending/Adopting the CKEditor in TYPO3 is easy and makes fun – Try it out or check out my custom built CKEditor plugins in this TYPO3 distribution!**
 
 - [Predefined CKEditor presets](#overview-of-shipped-ckeditor-presets)
 - [Additional 3rd party CKEditor plugins](#additional-3rd-party-ckeditor-plugins)
@@ -35,9 +35,9 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 ## Additional 3rd party CKEditor plugins
 
-| Name      | Description                                         |
-|:----------|:----------------------------------------------------|
-| wordcount | https://github.com/w8tcha/CKEditor-WordCount-Plugin |
+| Name      | Description                                         | Usage                                                                                                    |
+|:----------|:----------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
+| wordcount | https://github.com/w8tcha/CKEditor-WordCount-Plugin | Activated in all CKEditor presets. Could be used to limit content length (for specific CKEditor presets) |
 
 ## Custom CKEditor plugins
 
