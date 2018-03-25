@@ -10,7 +10,8 @@ with external plugins and a custom project specific plugin to limit the tables p
 > **Extending/Adopting the CKEditor in TYPO3 is much easier and makes more fun – Try it out!**
 
 - [Predefined CKEditor presets](#overview-of-shipped-ckeditor-presets)
-- [Custom CKEditor plugins]()
+- [Additional 3rd party CKEditor plugins](#additional-3rd-party-ckeditor-plugins)
+- [Custom CKEditor plugins](#custom-ckeditor-plugins)
 
 ## Overview of shipped CKEditor presets
 
@@ -32,3 +33,17 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 ![ckeditor-preset-theme_defaultNoTables-TYPO3-8LTS.png](../../Images/ckeditor-preset-theme_defaultNoTables-TYPO3-8LTS.png)
 
+## Additional 3rd party CKEditor plugins
+
+| Name      | Description                                         |
+|:----------|:----------------------------------------------------|
+| wordcount | https://github.com/w8tcha/CKEditor-WordCount-Plugin |
+
+## Custom CKEditor plugins
+
+| Name                                                                                            | Description                                                                                                                                                                | Usage                                                        |
+|:------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
+| [deleteall](../../../Resources/Public/RTE/ProjectPlugins/deleteall/plugin.js)                   | Button to clear/reset whole CKEditor content with one click                                                                                                                | Activated in all CKEditor presets                            |
+| [nbsp](../../../Resources/Public/RTE/ProjectPlugins/nbsp/plugin.js)                             | Insert `&nbsp;` with keystroke "CTRL + Space"                                                                                                                              | Activated in all CKEditor presets                            |
+| [softhyphen](../../../Resources/Public/RTE/ProjectPlugins/softhyphen/plugin.js)                 | Insert Softhyphen character `&shy;` with button and "CTRL + - (Dash)". The shortcut can be deactivated.                                                                    | Activated in all CKEditor presets                            |
+| [tableModifications](../../../Resources/Public/RTE/ProjectPlugins/tableModifications/plugin.js) | Limit/Modificate table dialog of CKEditor table plugin. **Treat the current configuration only as a starting point for your specific project** and adopt it to your needs. | Activated in all CKEditor presets with enabled table plugin. |
