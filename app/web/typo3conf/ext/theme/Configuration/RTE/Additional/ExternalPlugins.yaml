@@ -23,3 +23,6 @@ editor:
     softhyphen:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/softhyphen/"
       enableShortcut: true
+    # Register own deleteall plugin for ckeditor to delete actual content of editor with one click
+    deleteall:
+      resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/deleteall/"

@@ -50,6 +50,7 @@ editor:
       - { name: editing, groups: [ spellchecker ] }
       - { name: insert, groups: [ insert ] }
       - { name: tools, groups: [ specialchar,insertcharacters, find ] }
+      - { name: othertools, groups: [ deleteall ] }
 #      - { name: others}
       - { name: document, groups: [ mode ] }
 

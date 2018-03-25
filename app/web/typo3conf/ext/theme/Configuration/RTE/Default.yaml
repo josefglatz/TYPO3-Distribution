@@ -51,6 +51,7 @@ editor:
       - { name: basicstyles, groups: [ basicstyles ] }
 #      - { name: paragraph, groups: [ list, indent, blocks, align ] }
       - { name: paragraph, groups: [ list ] }
+      - { name: othertools, groups: [ deleteall ] }
       - "/"
       - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
       - { name: editing, groups: [ spellchecker ] }
