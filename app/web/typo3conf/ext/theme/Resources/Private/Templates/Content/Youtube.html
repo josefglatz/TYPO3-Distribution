@@ -8,6 +8,8 @@
 	- with cover image/text/title caption support
 </f:comment>
 
+{data.bodytext -> f:format.html()}
+
 <f:if condition="!{videos}">
 	<f:then>
 		<!-- CE {data.CType} with UID {data.uid} could not render YouTube video. (tt_content.assets === {data.assets}) --></f:then>

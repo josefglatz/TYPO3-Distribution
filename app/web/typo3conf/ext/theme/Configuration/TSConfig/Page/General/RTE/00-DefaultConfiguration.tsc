@@ -36,6 +36,7 @@ RTE.config {
 			types {
 				theme_collapsible_text = theme_defaultNoTables
 				theme_lead_text.preset = theme_minimalWithLinks
+				theme_youtube.preset = theme_defaultNoTables
 				text.preset = theme_defaultNoTables
 				textmedia.preset = theme_default
 			}

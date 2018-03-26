@@ -30,10 +30,18 @@ call_user_func(
                 $type => [
                     'showitem' => \JosefGlatz\Theme\Utility\Tca::getShowitemDefault(1) . '
                             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+                            bodytext,
                             assets,
                             ' . \JosefGlatz\Theme\Utility\Tca::getShowitemDefault(2)
                     ,
                     'columnsOverrides' => [
+                        'bodytext' => [
+                            'config' => [
+                                'enableRichtext' => true,
+                                'richtextConfiguration' => 'default',
+                                'eval' => 'required'
+                            ]
+                        ],
                         'assets' => [
                             'label' => $languageFileBePrefix . 'field.tt_content.assets.label.type.youtube',
                             'config' => [

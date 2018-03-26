@@ -4,6 +4,7 @@
 
 <div class="theme-backendpreview-{CType}">
 	<f:render section="Heading" arguments="{_all}"/>
+	<p>{bodytext -> f:format.stripTags() -> f:format.htmlspecialchars()}</p>
 	<f:if condition="!{assets}">
 		<f:then>
 			<f:comment><!-- Warning if no youtube video is set --></f:comment>
