@@ -77,7 +77,17 @@ call_user_func(
                 'label' => $languageFileBePrefix . 'field.sys_file_reference.tx_theme_video_startsecond.label',
                 'config' => [
                     'type' => 'input',
-                    'size' => '5',
+                    'size' => '10',
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => 0,
+                        'upper' => 59,
+                    ],
+                    'default' => 0,
+                    'slider' => [
+                        'step' => 1,
+                        'width' => 120,
+                    ],
                 ],
             ],
             'tx_theme_video_ratio' => [
