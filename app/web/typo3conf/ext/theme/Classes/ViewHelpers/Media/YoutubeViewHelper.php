@@ -212,7 +212,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
         }
 
         if (false === $this->arguments['legacyCode']) {
-            $src .= '/embed/'. $videoId;
+            $src .= '/embed/' . $videoId;
             $seperator = '?';
         } else {
             $src .= '/v/' . $videoId . '?version=3';
@@ -231,7 +231,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      *
      * @param string $tagName
      * @param array $attributes
-     * @param boolean $forceClosingTag
+     * @param bool $forceClosingTag
      * @return string
      */
     private function renderChildTag($tagName, $attributes = [], $forceClosingTag = false)

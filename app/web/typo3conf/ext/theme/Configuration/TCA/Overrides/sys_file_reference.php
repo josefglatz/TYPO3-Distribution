@@ -222,7 +222,6 @@ call_user_func(
                     ->get()
             )
             ->persistToTca();
-
     },
     'theme',
     'sys_file_reference'
