@@ -40,6 +40,7 @@ call_user_func(
                 'theme-content-inheritance-stop' => 'theme-content-inheritance-stop.svg',
                 'theme-content-logos'            => 'theme-content-logos.svg',
                 'theme-content-map'              => 'theme-content-map.svg',
+                'theme-content-person'           => 'theme-content-person.svg',
                 'theme-content-testimonial'      => 'theme-content-testimonial.svg',
                 'theme-content-text-lead'        => 'theme-content-text-lead.svg',
                 'theme-content-timeline'         => 'theme-content-timeline.svg',
