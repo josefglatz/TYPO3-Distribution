@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-11-08T22:47:43Z" product-name="news">
+		<header/>
+		<body>
+			<trans-unit id="tx_theme_video_autoplay.description" xml:space="preserve">
+				<source>Start video playback automatically on page load. (If user device supports this feature)</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_showinfo.description" xml:space="preserve">
+				<source>Show information (title, etc.) from YouTube in YouTube player.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_rel.description" xml:space="preserve">
+				<source>Show related videos from YouTube at the end of the video.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_startminute.description" xml:space="preserve">
+				<source>Start video at selected minute.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_startsecond.description" xml:space="preserve">
+				<source>Start video at selected second.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_ratio.description" xml:space="preserve">
+				<source>Set the correct aspect ratio of the YouTube video (width and height ratio).</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_fullscreen.description" xml:space="preserve">
+				<source>Disable and enables fullscreen option.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_loop.description" xml:space="preserve">
+				<source>Set looping on and off. (If user device supports this feature)</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_covertitle.description" xml:space="preserve">
+				<source>Title shown over the custom cover image.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_covertext.description" xml:space="preserve">
+				<source>Text shown over the custom cover image (under the title).</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_video_coverimage.description" xml:space="preserve">
+				<source>Custom cover image which is used in the frontend if it's implemented and enabled.</source>
+			</trans-unit>
+			<trans-unit id="tx_theme_youtube_color.description" xml:space="preserve">
+				<source>This parameter specifies the color that will be used in the player's video progress bar to
+					highlight the amount of the video that the viewer has already seen. Valid parameter values are red
+					and white, and, by default, the player uses the color red. Setting the color parameter to white
+					will disable the modestbranding option.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

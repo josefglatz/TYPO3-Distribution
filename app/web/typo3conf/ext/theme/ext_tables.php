@@ -95,6 +95,9 @@ call_user_func(
                     }
                 }
             }
+            // Add CSH descriptions
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+                'sys_file_reference', 'EXT:' . $extKey . '/Resources/Private/Language/locallang_csh_sys_file_reference.xlf');
         }
     },
     $_EXTKEY
