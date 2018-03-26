@@ -99,3 +99,10 @@ any other table to/from yaml.
 ./typo3cms export:table sys_be_shortcuts --include-hidden=true --include-deleted=false --skip-columns=userid --file=/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml
 ./typo3cms import:table "sys_be_shortcuts" "uid" "/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml"
 ```
+
+#### Running mentioned CLI tasks on macOS with MAMP PRO (Example)
+
+```bash
+MYSQL_USER=distri MYSQL_PASSWORD=distri MYSQL_DATABASE=distri MYSQL_PORT=8889 TYPO3_CONTEXT=Development/Mamp /Applications/MAMP/bin/php/php7.1.12/bin/php ./typo3cms export:table ...
+
+```

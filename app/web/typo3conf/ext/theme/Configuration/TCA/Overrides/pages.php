@@ -12,6 +12,7 @@ call_user_func(
         $elements = [
             'PageGeneral' => 'General PageTSConfig',
             'Page/Specific/NewOnlyFeUsers' => 'New: Restrict page(s) to FeUsers/FeGroups/SysNote',
+            'Page/Specific/NewPagePermissions-G-show-editcontent' => 'New: Permissions: Group: show, editcontent',
             'Page/Specific/ClearCachePages' => 'ClearCacheCmd->pages',
             'Page/Specific/ClearCacheRegistrationSpecific' => 'ClearCacheCmd->cacheTag:customregistration,pages',
             'Page/Specific/HideTableTtContent' => 'Hide table TtContent',
