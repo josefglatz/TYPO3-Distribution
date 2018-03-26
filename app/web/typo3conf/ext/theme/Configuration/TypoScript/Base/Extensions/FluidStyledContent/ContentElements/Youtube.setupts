@@ -1,0 +1,13 @@
+tt_content {
+	theme_youtube =< lib.contentElement
+	theme_youtube {
+		templateName = Youtube
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				references.fieldName = assets
+				as = videos
+			}
+		}
+	}
+}

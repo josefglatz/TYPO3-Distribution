@@ -26,15 +26,20 @@
 	<div class="theme-youtube-video">
 		<div class="container-fluid theme-section">
 			<div class="row">
-				<div class="col-sm-12"><h4 class="theme-youtube-video-heading text-muted ">{file.title}</h4></div>
+				<div class="col-sm-12">
+					<theme:backend.contentEditLink uid="{uid}"><h4 class="theme-youtube-video-heading text-muted ">
+						{file.title}</h4></theme:backend.contentEditLink>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-12 col-sm-6 col-md-5 col-lg-4">
 					<f:if condition="{file.publicUrl}">
-						<h5 class="text-muted theme-margin-top-0 theme-opacity-5">
-							<f:translate
-								key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.videopreview"/>
-						</h5>
+						<theme:backend.contentEditLink uid="{uid}">
+							<h5 class="text-muted theme-margin-top-0 theme-opacity-5">
+								<f:translate
+									key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.videopreview"/>
+							</h5>
+						</theme:backend.contentEditLink>
 						<div
 							class="embed-responsive embed-responsive-{f:render(section: 'VideoAspectRatio', arguments: {file: file}) -> theme:format.trim()}">
 							<f:variable name="startMinuteInSeconds"
@@ -60,54 +65,48 @@
 					</f:if>
 				</div>
 				<div class="col-12 col-sm-6 col-md-7 col-lg-8">
+					<theme:backend.contentEditLink uid="{uid}">
+						<dl>
+							<f:if condition="{file.properties.description}">
+								<dt>
+									<f:translate
+										key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description"/>
+								</dt>
+								<dd>{file.properties.description}</dd>
+							</f:if>
+							<f:if condition="{file.properties.tx_theme_video_covertitle}">
+								<dt>
+									<f:translate
+										key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertitle.label"/>
+								</dt>
+								<dd>{file.properties.tx_theme_video_covertitle}</dd>
+							</f:if>
+							<f:if condition="{file.properties.tx_theme_video_covertext}">
+								<dt>
+									<f:translate
+										key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertext.label"/>
+								</dt>
+								<dd>{file.properties.tx_theme_video_covertext}</dd>
+							</f:if>
+							<dt>
+								<f:translate
+									key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.start"/>
+							</dt>
+							<dt>
+								{file.properties.tx_theme_video_startminute}:{file.properties.tx_theme_video_startsecond}
+							</dt>
+						</dl>
+					</theme:backend.contentEditLink>
 					<dl>
-						<f:if condition="{file.properties.description}">
-							<dt>
-								<f:translate
-									key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description"/>
-							</dt>
-							<dd>{file.properties.description}</dd>
-						</f:if>
-						<f:if condition="{file.properties.tx_theme_video_covertitle}">
-							<dt>
-								<f:translate
-									key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertitle.label"/>
-							</dt>
-							<dd>{file.properties.tx_theme_video_covertitle}</dd>
-						</f:if>
-						<f:if condition="{file.properties.tx_theme_video_covertext}">
-							<dt>
-								<f:translate
-									key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertext.label"/>
-							</dt>
-							<dd>{file.properties.tx_theme_video_covertext}</dd>
-						</f:if>
 						<dt>Public URL <code class="text-muted">{theme:format.youtubeVideoId(url:
 							file.publicUrl)}</code></dt>
 						<dd>{file.publicUrl}</dd>
-						<dt>
-							<f:translate
-								key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.start"/>
-						</dt>
-						<dt>{file.properties.tx_theme_video_startminute}:{file.properties.tx_theme_video_startsecond}
-						</dt>
 					</dl>
 				</div>
 			</div>
 		</div>
 	</div>
 
-</f:section>
-<f:section name="Heading">
-	<f:if condition="{header}">
-		<div class="theme-backendpreview-heading">
-			<h1>{header}
-				<f:if condition="{subheader}"><br>
-					<small>{subheader}</small>
-				</f:if>
-			</h1>
-		</div>
-	</f:if>
 </f:section>
 <f:section name="VideoAspectRatio">
 	<f:spaceless>
@@ -119,10 +118,36 @@
 	</f:spaceless>
 </f:section>
 <f:section name="CoverImage">
-	<h5 class="text-muted theme-opacity-5">
-		<f:translate
-			key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_coverimage.label"/>
-	</h5>
-	<f:image image="{references.0}" cropVariant="video" class="img-fluid" maxWidth="600"/>
+	<theme:backend.contentEditLink uid="{uid}">
+		<h5 class="text-muted theme-opacity-5">
+			<f:translate
+				key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_coverimage.label"/>
+		</h5>
+		<f:image image="{references.0}" cropVariant="video" class="img-fluid" maxWidth="600"/>
+	</theme:backend.contentEditLink>
 </f:section>
+<f:section name="Heading">
+	<f:if condition="{header}">
+		<theme:backend.contentEditLink uid="{uid}">
+			<div class="theme-backendpreview-heading">
+				<h2 class="h{f:render(section: 'HeadingType', arguments: '{_all}')}">{header}
+					<f:if condition="{subheader}"><br>
+						<small>{subheader}</small>
+					</f:if>
+				</h2>
+			</div>
+		</theme:backend.contentEditLink>
+	</f:if>
+</f:section>
+<f:section name="HeadingType"><f:spaceless>
+	<f:switch expression="{header_layout}">
+		<f:case value="1">1</f:case>
+		<f:case value="2">2</f:case>
+		<f:case value="3">3</f:case>
+		<f:case value="4">4</f:case>
+		<f:case value="5">5</f:case>
+		<f:case value="6">6</f:case>
+		<f:defaultCase>2</f:defaultCase>
+	</f:switch>
+</f:spaceless></f:section>
 </html>

@@ -20,14 +20,14 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      *
      * @var string
      */
-    const YOUTUBE_BASEURL = '//www.youtube.com';
+    const YOUTUBE_BASEURL = 'https://www.youtube.com';
 
     /**
      * Base url for extended privacy
      *
      * @var string
      */
-    const YOUTUBE_PRIVACY_BASEURL = '//www.youtube-nocookie.com';
+    const YOUTUBE_PRIVACY_BASEURL = 'https://www.youtube-nocookie.com';
 
     /**
      * @var string

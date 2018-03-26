@@ -4,12 +4,48 @@
 <f:comment>
 	<!--@TODO: TYPO3-Distribution: CE Youtube finalize for Bootstrap 4 -->
 	- Check whether files are loaded
-	- add JS/CSS based integration
+	- add custom JS/CSS based integration
+	- with cover image/text/title caption support
 </f:comment>
 
-<f:if condition="!{assets}">
-	<f:then></f:then>
-	<f:else>{files -> f:debug(inline:1)}</f:else>
+<f:if condition="!{videos}">
+	<f:then>
+		<!-- CE {data.CType} with UID {data.uid} could not render YouTube video. (tt_content.assets === {data.assets}) --></f:then>
+	<f:else>
+		<f:for each="{videos}" as="video" iteration="i">
+			<f:render section="Video" arguments="{_all}"/>
+		</f:for>
+	</f:else>
 </f:if>
+
+<f:section name="Video">
+
+	<f:if condition="{video.publicUrl}">
+		<div
+			class="embed-responsive embed-responsive-{f:render(section: 'VideoAspectRatio', arguments: {file: file}) -> theme:format.trim()}">
+			<f:variable name="startMinuteInSeconds"
+						value="{theme:math.simpleMultiply(a: '{video.properties.tx_theme_video_startminute}', b: '60')}"/>
+			<theme:media.youtube
+				videoId="{theme:format.youtubeVideoId(url: '{video.publicUrl}')}"
+				class="embed-responsive-item"
+				hideInfo="!{video.properties.tx_theme_video_autoplay}"
+				showRelated="{video.properties.tx_theme_video_rel}"
+				loop="{video.properties.tx_theme_video_loop}"
+				start="{theme:math.simpleSum(a: '{startMinuteInSeconds}', b: '{video.properties.tx_theme_video_startsecond}')}"
+				autoplay="{video.properties.tx_theme_video_autoplay}"
+				color="{video.properties.tx_theme_youtube_color}"
+			/>
+		</div>
+	</f:if>
+</f:section>
+<f:section name="VideoAspectRatio">
+	<f:spaceless>
+		<f:switch expression="{file.properties.tx_theme_video_ratio}">
+			<f:case value="0">16by9</f:case>
+			<f:case value="1">4by3</f:case>
+			<f:defaultCase>16by9</f:defaultCase>
+		</f:switch>
+	</f:spaceless>
+</f:section>
 
 </html>
