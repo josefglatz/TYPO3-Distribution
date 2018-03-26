@@ -77,8 +77,65 @@
 		<trans-unit id="crop_variants.xxl.label">
 			<source>Extra Extra Large (xxl) &#8673;</source>
 		</trans-unit>
+		<trans-unit id="crop_variants.video.label">
+			<source>Video</source>
+		</trans-unit>
 		<trans-unit id="div.pages.seo">
 			<source>SEO</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_autoplay.label">
+		    <source>Autoplay</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_showinfo.label">
+		    <source>Video Info</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_rel.label">
+		    <source>Related Videos</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_startminute.label">
+		    <source>Start at Minute</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_startsecond.label">
+		    <source>Start at Second</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_ratio.label">
+		    <source>Aspect Ratio of Video</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_fullscreen.label">
+		    <source>Fullscreen Option</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_fullscreen.check_0">
+		    <source>Disabled</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_loop.label">
+		    <source>Loop</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.label">
+		    <source>Color Branding</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.check_red">
+		    <source>Red (YouTube Default)</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.check_white">
+		    <source>White</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_covertitle.label">
+		    <source>Cover Title</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_covertext.label">
+		    <source>Cover Text</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_coverimage.label">
+		    <source>Cover Image</source>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_coverimage.irre.new.label">
+		    <source>Add Cover Image</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube">
+			<source>Add YouTube video</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.assets.label.type.youtube">
+			<source>YouTube video(s)</source>
 		</trans-unit>
 		<trans-unit id="field.pages.robot_follow">
 			<source>Follow links on current page (SEO)</source>
@@ -193,6 +250,12 @@
 		</trans-unit>
 		<trans-unit id="palette.pages.twitter">
 			<source>Twitter</source>
+		</trans-unit>
+		<trans-unit id="palette.sys_file_reference.tx-theme-video-settings">
+		    <source>Video Settings</source>
+		</trans-unit>
+		<trans-unit id="palette.sys_file_reference.tx-theme-video-cover">
+		    <source>Cover</source>
 		</trans-unit>
 		<trans-unit id="tt_content.header_layout.0">
 			<source>Header H2 (default)</source>

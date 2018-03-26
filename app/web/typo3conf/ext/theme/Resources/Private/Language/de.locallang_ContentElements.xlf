@@ -56,6 +56,21 @@
 			<source>Lead Text</source>
 			<target>Leittext / Einleitungstext</target>
 		</trans-unit>
+		<trans-unit id="theme_youtube.description" approved="yes">
+			<target>Responsives YouTube Video mit nützlichen Einstellmöglichkeiten.</target>
+		</trans-unit>
+		<trans-unit id="theme_youtube.title" approved="yes">
+			<target>YouTube Video</target>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.infotext-novideo" approved="yes">
+			<target>Kein YouTube Video ausgewählt für dieses Inhaltselement!</target>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.videopreview" approved="yes">
+			<target>YouTube Video Vorschau</target>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.start" approved="yes">
+			<target>Startposition</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

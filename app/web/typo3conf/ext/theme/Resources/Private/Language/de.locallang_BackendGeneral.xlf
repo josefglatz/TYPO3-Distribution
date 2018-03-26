@@ -37,6 +37,57 @@
 			<source>SEO</source>
 			<target>SEO</target>
 		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_autoplay.label">
+			<target>Automatische Wiedergabe</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_showinfo.label">
+			<target>Video Info</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_rel.label">
+			<target>Verwandte Videos</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_startminute.label">
+			<target>Start bei Minute</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_startsecond.label">
+			<target>Start bei Sekunde</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_ratio.label">
+			<target>Seitenverhältnis des Videos</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_fullscreen.label">
+			<target>Vollbild Option</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_fullscreen.check_0">
+			<target>Deaktiviert</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_loop.label">
+			<target>Fortwährend wiederholen</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.label">
+			<target>YT Player Stil</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.check_red">
+			<target>Rot (YouTube Standard)</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_youtube_color.check_white">
+			<target>Weiß</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_covertitle.label">
+			<target>Cover-Titel</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_covertext.label">
+			<target>Cover-Text</target>
+		</trans-unit>
+		<trans-unit id="field.sys_file_reference.tx_theme_video_coverimage.label">
+			<target>Cover-Bild</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube" approved="yes">
+			<target>YouTube Video hinzufügen</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.assets.label.type.youtube">
+			<target>YouTube Video(s)</target>
+		</trans-unit>
 		<trans-unit id="field.pages.robot_follow" approved="yes">
 			<source>Follow links on current page (SEO)</source>
 			<target>Links auf Seite folgen (SEO)</target>

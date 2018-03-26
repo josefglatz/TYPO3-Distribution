@@ -63,6 +63,13 @@ $customChanges = [
                     'allowedImageFileExt' => 'gif,jpg,jpeg,png',
                 ],
             ],
+            'content' => [
+                'youtube' => [
+                    'coverImage' => [
+                        'allowedImageFileExt' => 'jpg,jpeg,png',
+                    ],
+                ],
+            ],
         ],
     ],
     'EXT' => [

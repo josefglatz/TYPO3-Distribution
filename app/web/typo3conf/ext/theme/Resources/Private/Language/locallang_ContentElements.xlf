@@ -50,6 +50,21 @@
 		<trans-unit id="theme_lead_text.title">
 			<source>Lead Text</source>
 		</trans-unit>
+		<trans-unit id="theme_youtube.description">
+			<source>Responsive YouTube video with useful options.</source>
+		</trans-unit>
+		<trans-unit id="theme_youtube.title">
+			<source>YouTube Video</source>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.infotext-novideo">
+			<source>No YouTube video selected for this content element!</source>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.videopreview">
+			<source>YouTube Video Preview</source>
+		</trans-unit>
+		<trans-unit id="theme_youtube.backendpreview.start">
+			<source>Start Position</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

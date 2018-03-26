@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_youtube {
+				iconIdentifier = theme-content-youtube
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.description
+				tt_content_defValues {
+					CType = theme_youtube
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

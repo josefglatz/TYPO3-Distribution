@@ -23,6 +23,21 @@ CREATE TABLE pages (
 	tx_theme_twitter_title varchar(255) DEFAULT '' NOT NULL
 );
 
+CREATE TABLE sys_file_reference (
+	tx_theme_video_autoplay tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_showinfo tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_rel tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_startminute int(11) DEFAULT '0' NOT NULL,
+	tx_theme_video_startsecond int(11) DEFAULT '0' NOT NULL,
+	tx_theme_video_ratio tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_fullscreen tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_loop tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_video_covertitle tinytext,
+	tx_theme_video_covertext tinytext,
+	tx_theme_video_coverimage int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_theme_youtube_color tinytext
+);
+
 CREATE TABLE tx_theme_related_pages_mm (
 	uid_local int(11) DEFAULT '0' NOT NULL,
 	uid_foreign int(11) DEFAULT '0' NOT NULL,

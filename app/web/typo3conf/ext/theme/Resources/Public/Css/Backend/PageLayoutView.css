@@ -32,6 +32,10 @@
 	display: block;
 }
 
+.theme-margin-top-0 {
+	margin-top: 0 !important;
+}
+
 /*
  * tt_content_drawFooter Enrichment
  */
@@ -45,7 +49,7 @@
 	margin-bottom: 3px;
 }
 .theme-footer > *:last-child {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 .theme-footer-ctype {
 	text-align: right;
@@ -93,7 +97,7 @@
 .theme-section:last-child {
 	margin-bottom: 0;
 }
-.theme-section :last-child {
+.theme-section > .row:last-child > [class^="col"] > :last-child {
 	margin-bottom: 0;
 }
 .theme-notification {
@@ -143,3 +147,15 @@
 .theme-backedpreview-theme_download_box {
 
 }
+
+/*
+ * CE theme_youtube
+ */
+
+/* Div around every youtube video element */
+.theme-youtube-video {
+
+}
+	.theme-youtube-video-heading {
+		margin-bottom: .7em;
+	}

@@ -103,7 +103,7 @@ call_user_func(
                 ],
             ],
         ];
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
 
         // Default Content Element
         $GLOBALS['TCA'][$table]['columns']['CType']['config']['default'] = 'text';

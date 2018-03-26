@@ -13,7 +13,7 @@ Back to [Index](../Index.md)
 
 ## Table `pages`
 
-### New columns
+### New columns for `pages`
 
 | Column | Title | Description | Excluded |
 |--------|-------|-------------|----------|
@@ -36,7 +36,7 @@ Back to [Index](../Index.md)
 
 ## Table `sys_file_reference`
 
-### Customized existing columns
+### Customized existing columns for `sys_file_reference`
 
 | Column | Title | Description | Excluded |
 |--------|-------|-------------|----------|
@@ -47,7 +47,7 @@ Back to [Index](../Index.md)
 
 ## Table `tt_content`
 
-### New columns
+### New columns for `tt_content`
 
 | Column                     | Title                           | Type  | Description                                                                         | Excluded |
 |:---------------------------|:--------------------------------|:------|:------------------------------------------------------------------------------------|:---------|
@@ -56,7 +56,7 @@ Back to [Index](../Index.md)
 | `tx_theme_unfolded`        | Initially unfolded              | check | Can be used for content elements with collapsing content                            | -        |
 | `tx_theme_prefer_download` | Prefer download of files        | check | Can be used for content elements with file downloads and HTML5 attribute "download" | -        |
 
-### Customized existing columns
+### Customized existing columns for `tt_content`
 
 | Column | Title | Description | Excluded |
 |--------|-------|-------------|----------|
@@ -65,13 +65,13 @@ Back to [Index](../Index.md)
 
 ### Additional content element types
 
-| Type                     | Icon                                                                                                                                     | Title                | Description                                                                                                                                                                                                                              |
-|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `theme_lead_text`        | ![theme-content-text-lead.svg](../../../Resources/Public/Icons/Backend/theme-content-text-lead.svg)                                      | **Lead Text**        | Stand out paragraph especially at the beginning of a page or a section.                                                                                                                                                                  |
-| `theme_collapsible_text` | ![theme-content-gridelement-accordion.svg](../../../Resources/Public/Icons/Backend/GridElements/theme-content-gridelement-accordion.svg) | **Collapsible Text** | A regular text element with header (toggle open/close) and bodytext field (toggleable content).                                                                                                                                          |
-| `theme_inheritance_stop` | ![theme-content-inheritance-stop.svg](../../../Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg)                        | **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says)) |
-| `theme_download_box`     | ![theme-content-download.svg](../../../Resources/Public/Icons/Backend/theme-content-download.svg)                                        | **Download Box**     | Basic download list with HTML5 download attribute support. (Adopted fork of FSC `uploads` content element)                                                                                                                               |
-
+| Type                     | Icon                                                                                                                                     | Title                | Description                                                                                                                                                                                                                                                            |
+|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `theme_lead_text`        | ![theme-content-text-lead.svg](../../../Resources/Public/Icons/Backend/theme-content-text-lead.svg)                                      | **Lead Text**        | Stand out paragraph especially at the beginning of a page or a section.                                                                                                                                                                                                |
+| `theme_collapsible_text` | ![theme-content-gridelement-accordion.svg](../../../Resources/Public/Icons/Backend/GridElements/theme-content-gridelement-accordion.svg) | **Collapsible Text** | A regular text element with header (toggle open/close) and bodytext field (toggleable content).                                                                                                                                                                        |
+| `theme_inheritance_stop` | ![theme-content-inheritance-stop.svg](../../../Resources/Public/Icons/Backend/theme-content-inheritance-stop.svg)                        | **Stop inheritance** | Stops the sliding of content elements from upper pages. For a colPos where CEs "slides" from upper pages until any content is placed on a page. (This CE renders nothing in frontend. It just stops the inheritance (as the title says))                               |
+| `theme_download_box`     | ![theme-content-download.svg](../../../Resources/Public/Icons/Backend/theme-content-download.svg)                                        | **Download Box**     | Basic download list with HTML5 download attribute support. (Adopted fork of FSC `uploads` content element)                                                                                                                                                             |
+| `theme_youtube`          | ![theme-content-youtube.svg](../../../Resources/Public/Icons/Backend/theme-content-youtube.svg)                                          | **YouTube Video**    | YouTube video content element with responsive template, Caption, cover-image/-title/-text with and detailed video options (aspect ratio, Start time, Autoplay, VideoInfo, Related Videos, Fullscreen, Loop, Alternative Color) (inspired by t3brightside/youtubevideo) |
 
 
 

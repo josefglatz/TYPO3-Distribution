@@ -1,0 +1,128 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<f:render section="Heading" arguments="{_all}"/>
+	<f:if condition="!{assets}">
+		<f:then>
+			<f:comment><!-- Warning if no youtube video is set --></f:comment>
+			<div class="theme-notification bg-danger">
+				<f:translate
+					key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.infotext-novideo"/>
+			</div>
+		</f:then>
+		<f:else>
+			<f:comment><!-- @TODO: TYPO3-Distribution: Finalize backendPreview CE Youtube --></f:comment>
+			<theme:fal table="tt_content" field="assets" id="{uid}" as="files">
+				<f:for each="{files}" as="file" iteration="i">
+					<f:render section="Video" arguments="{_all}"/>
+				</f:for>
+			</theme:fal>
+		</f:else>
+	</f:if>
+</div>
+<f:section name="Video">
+	<div class="theme-youtube-video">
+		<div class="container-fluid theme-section">
+			<div class="row">
+				<div class="col-sm-12"><h4 class="theme-youtube-video-heading text-muted ">{file.title}</h4></div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-sm-6 col-md-5 col-lg-4">
+					<f:if condition="{file.publicUrl}">
+						<h5 class="text-muted theme-margin-top-0 theme-opacity-5">
+							<f:translate
+								key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.videopreview"/>
+						</h5>
+						<div
+							class="embed-responsive embed-responsive-{f:render(section: 'VideoAspectRatio', arguments: {file: file}) -> theme:format.trim()}">
+							<f:variable name="startMinuteInSeconds"
+										value="{theme:math.simpleMultiply(a: '{file.properties.tx_theme_video_startminute}', b: '60')}"/>
+							<theme:media.youtube
+								class="embed-responsive-item"
+								videoId="{theme:format.youtubeVideoId(url: file.publicUrl)}"
+								hideInfo="!{file.properties.tx_theme_video_autoplay}"
+								showRelated="{file.properties.tx_theme_video_rel}"
+								loop="{file.properties.tx_theme_video_loop}"
+								start="{theme:math.simpleSum(a: '{startMinuteInSeconds}', b: '{file.properties.tx_theme_video_startsecond}')}"
+								autoplay="{file.properties.tx_theme_video_autoplay}"
+								color="{file.properties.tx_theme_youtube_color}"
+							/>
+						</div>
+					</f:if>
+					<f:if condition="{file.properties.tx_theme_video_coverimage}">
+						<theme:fal field="tx_theme_video_coverimage" id="{file.uid}" table="sys_file_reference">
+							<f:if condition="{references}">
+								<f:render section="CoverImage" arguments="{_all}" optional="true"/>
+							</f:if>
+						</theme:fal>
+					</f:if>
+				</div>
+				<div class="col-12 col-sm-6 col-md-7 col-lg-8">
+					<dl>
+						<f:if condition="{file.properties.description}">
+							<dt>
+								<f:translate
+									key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description"/>
+							</dt>
+							<dd>{file.properties.description}</dd>
+						</f:if>
+						<f:if condition="{file.properties.tx_theme_video_covertitle}">
+							<dt>
+								<f:translate
+									key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertitle.label"/>
+							</dt>
+							<dd>{file.properties.tx_theme_video_covertitle}</dd>
+						</f:if>
+						<f:if condition="{file.properties.tx_theme_video_covertext}">
+							<dt>
+								<f:translate
+									key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_covertext.label"/>
+							</dt>
+							<dd>{file.properties.tx_theme_video_covertext}</dd>
+						</f:if>
+						<dt>Public URL <code class="text-muted">{theme:format.youtubeVideoId(url:
+							file.publicUrl)}</code></dt>
+						<dd>{file.publicUrl}</dd>
+						<dt>
+							<f:translate
+								key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_youtube.backendpreview.start"/>
+						</dt>
+						<dt>{file.properties.tx_theme_video_startminute}:{file.properties.tx_theme_video_startsecond}
+						</dt>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</f:section>
+<f:section name="Heading">
+	<f:if condition="{header}">
+		<div class="theme-backendpreview-heading">
+			<h1>{header}
+				<f:if condition="{subheader}"><br>
+					<small>{subheader}</small>
+				</f:if>
+			</h1>
+		</div>
+	</f:if>
+</f:section>
+<f:section name="VideoAspectRatio">
+	<f:spaceless>
+		<f:switch expression="{file.properties.tx_theme_video_ratio}">
+			<f:case value="0">16by9</f:case>
+			<f:case value="1">4by3</f:case>
+			<f:defaultCase>16by9</f:defaultCase>
+		</f:switch>
+	</f:spaceless>
+</f:section>
+<f:section name="CoverImage">
+	<h5 class="text-muted theme-opacity-5">
+		<f:translate
+			key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.sys_file_reference.tx_theme_video_coverimage.label"/>
+	</h5>
+	<f:image image="{references.0}" cropVariant="video" class="img-fluid" maxWidth="600"/>
+</f:section>
+</html>
