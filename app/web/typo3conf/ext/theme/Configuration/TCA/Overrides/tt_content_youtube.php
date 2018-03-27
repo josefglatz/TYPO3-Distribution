@@ -38,8 +38,7 @@ call_user_func(
                         'bodytext' => [
                             'config' => [
                                 'enableRichtext' => true,
-                                'richtextConfiguration' => 'default',
-                                'eval' => 'required'
+                                'richtextConfiguration' => 'theme_defaultNoTables',
                             ]
                         ],
                         'assets' => [
