@@ -73,8 +73,18 @@ Back to [Index](../Index.md)
 | `theme_download_box`     | ![theme-content-download.svg](../../../Resources/Public/Icons/Backend/theme-content-download.svg)                                        | **Download Box**     | Basic download list with HTML5 download attribute support. (Adopted fork of FSC `uploads` content element)                                                                                                                                                             |
 | `theme_youtube`          | ![theme-content-youtube.svg](../../../Resources/Public/Icons/Backend/theme-content-youtube.svg)                                          | **YouTube Video**    | YouTube video content element with responsive template, Caption, cover-image/-title/-text with and detailed video options (aspect ratio, Start time, Autoplay, VideoInfo, Related Videos, Fullscreen, Loop, Alternative Color) (inspired by t3brightside/youtubevideo) |
 
+### Page TSConfig `tt_content`
 
+TYPO3 has a lot of features were not all are of them are necessary for
+every website project. Over the years, a standard has emerged from this
+for me. You get a real overview by looking into the configuration files:
 
+- [TCAdefaults.tt_content Configuration](../../../Configuration/TSConfig/Page/General/Tcadefaults/TtContent.tsc)
+- [TCEFORM.tt_content Configuration](../../../Configuration/TSConfig/Page/General/Tceform/TtContent.tsc)
+
+> Consider setting up a fresh TYPO3 instance without any TYPO3 extension
+> installed and activated if you want to get an real overview of what
+> TYPO3 has to offer!
 
 ---
 
