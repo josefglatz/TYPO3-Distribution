@@ -73,13 +73,13 @@ call_user_func(
             ->addCropVariant(
                 \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
                     ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
-                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get('0.5'))
+                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
                     ->get()
             )
             ->addCropVariant(
                 \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('md')
                     ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
-                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get('0.75'))
+                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
                     ->get()
             )
             ->addCropVariant(
