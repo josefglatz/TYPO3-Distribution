@@ -32,7 +32,6 @@ class Configuration
     public static function isTrue($column): string
     {
         return PageLayoutViewEnrichmentFooter::BADGETYPE_IS . GeneralUtility::underscoredToUpperCamelCase(trim($column));
-
     }
 
     /**
@@ -53,7 +52,6 @@ class Configuration
     public static function isFalse($column): string
     {
         return PageLayoutViewEnrichmentFooter::BADGETYPE_ISNOT . GeneralUtility::underscoredToUpperCamelCase(trim($column));
-
     }
 
     /**
@@ -74,7 +72,6 @@ class Configuration
     public static function info($column): string
     {
         return PageLayoutViewEnrichmentFooter::BADGETYPE_INFO . GeneralUtility::underscoredToUpperCamelCase(trim($column));
-
     }
 
     /**
@@ -95,8 +92,5 @@ class Configuration
     public static function showValue($column): string
     {
         return PageLayoutViewEnrichmentFooter::BADGETYPE_SHOW_VALUE . GeneralUtility::underscoredToUpperCamelCase(trim($column));
-
     }
-
-
 }
