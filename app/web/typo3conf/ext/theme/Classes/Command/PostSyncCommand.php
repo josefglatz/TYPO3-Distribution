@@ -12,6 +12,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Class PostSyncCommand
  *
  * @TODO: TYPO3-Distribution: Add output which tasks were executed and which not
+ * @TODO: TYPO3-Distribution: TYPO3v9LTS: check if PostSyncCommand->enableDevSysDomains is still needed
  *
  */
 class PostSyncCommand extends Command
