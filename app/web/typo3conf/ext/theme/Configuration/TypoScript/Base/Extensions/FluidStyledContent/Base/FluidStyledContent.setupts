@@ -15,3 +15,11 @@ lib.contentElement.extbase.controllerExtensionName = {$theme.name}
 // adjust default lightbox settings
 #lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = data-gallery="{field:uid}" data-parent=".csc-textpic-imagewrap" data-toggle="lightbox" data-title="{file:current:title}" data-footer="{file:current:description}" class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" rel="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
 
+// set default breakpoints configuration
+lib.contentElement {
+	settings {
+		breakpoints {
+
+		}
+	}
+}

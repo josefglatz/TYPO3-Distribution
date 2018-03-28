@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+	<f:if condition="{file}">
+		<f:if condition="{breakpoints}">
+			<f:else>
+				<f:variable name="breakpoints" value="{settings.breakpoints}"/>
+			</f:else>
+		</f:if>
+		<f:link.typolink parameter="{file.link}" class="picturelink">
+			<picture>
+				<f:for each="{breakpoints}" as="breakpoint" iteration="i_breakpoints" reverse="true">
+					<f:if condition="{breakpoint.media}">
+						<f:variable name="mediaAttribute">({breakpoint.media}: {breakpoint.size}px)</f:variable>
+						<f:variable name="mediaAttributeX2">only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 2), only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 192dpi),</f:variable>
+					</f:if>
+						<source
+							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 2)}', cropVariant: breakpoint.cropVariant)}"
+							media="{mediaAttributeX2}">
+						<source
+							srcset="{f:uri.image(image: file, maxWidth: breakpoint.maxWidth, cropVariant: breakpoint.cropVariant)}"
+							media="{mediaAttribute}">
+				</f:for>
+				<img class="{class -> theme:or(alternative: 'img-fluid')}"
+					 src="{f:uri.image(image: file, maxWidth: settings.defaultImageMaxWidth, cropVariant: '{defaultCropVariant -> theme:or(alternative: \'default\')}')}"
+					 alt="{file.alternative}" title="{file.title}">
+			</picture>
+		</f:link.typolink>
+	</f:if>
+
+
+	<f:comment>
+
+		<!---Render Image with custom sizes from TS settings--->
+		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints}"/>
+		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, class: 'custom-img-tag-css-class'}"/>
+		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg'}"/>
+
+		<!---Render Image with custom sizes -- START --->
+		<f:variable name="breakpoints" value="{
+							0:{media:'max-width', size:375, maxWidth:375, cropVariant:'mobile'},
+							1:{media:'max-width', size:480, maxWidth:480, cropVariant:'mobile'},
+							2:{media:'max-width', size:767, maxWidth:767, cropVariant:'tablet'},
+							3:{media:'max-width', size:991, maxWidth:991, cropVariant:'tablet'},
+							4:{media:'max-width', size:1279, maxWidth:1279, cropVariant:'default'},
+							5:{media:'max-width', size:1479, maxWidth:1479, cropVariant:'default'},
+							6:{media:'min-width', size:1480, maxWidth:2000, cropVariant:'default'}
+						}"/>
+
+		<f:render partial="ImageRender" arguments="{file:image, breakpoints:breakpoints}"/>
+		<!---Render Image with custom sizes -- END --->
+
+		<!---Render Image with default sizes -- START --->
+		<f:render partial="ImageRender" arguments="{file:image}"/>
+
+	</f:comment>
+</f:spaceless>
+</html>

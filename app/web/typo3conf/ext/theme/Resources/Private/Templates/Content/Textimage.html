@@ -2,9 +2,7 @@
 	{data.bodytext -> f:format.html()}
 	<f:if condition="{images}">
 		<f:for each="{images}" as="image">
-			<f:image image="{image}" cropVariant="xs" />
-			<f:image image="{image}" cropVariant="md" />
-			<f:image image="{image}" cropVariant="lg" />
+			<f:render partial="Content/ImageRender" arguments="{file: image, breakpoints: breakpoints}" />
 		</f:for>
 	</f:if>
 </html>

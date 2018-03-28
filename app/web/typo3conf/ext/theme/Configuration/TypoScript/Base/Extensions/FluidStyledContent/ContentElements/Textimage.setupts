@@ -15,5 +15,35 @@ tt_content {
 				iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
 			}
 		}
+		settings {
+			breakpoints >
+			breakpoints {
+				0 {
+					media = min-width
+					size = {$site.breakpoints.xs}
+					maxWidth = 480
+					cropVariant = xs
+				}
+				1 {
+					media = min-width
+					size = {$site.breakpoints.md}
+					maxWidth = 570
+					cropVariant = md
+				}
+				2 {
+					media = min-width
+					size = {$site.breakpoints.lg}
+					maxWidth = 530
+					cropVariant = lg
+				}
+				3 {
+					media = min-width
+					size = {$site.breakpoints.xxl}
+					maxWidth = 660
+					cropVariant = lg
+				}
+			}
+		}
+		defaultImageMaxWidth = 800
 	}
 }
