@@ -2,7 +2,6 @@
 
 namespace JosefGlatz\Theme\Backend\Enrichment\Badge;
 
-
 use JosefGlatz\Theme\Hooks\Backend\PageLayoutViewEnrichmentFooter;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

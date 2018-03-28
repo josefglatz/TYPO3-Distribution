@@ -13,7 +13,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *
  * @TODO: TYPO3-Distribution: Add output which tasks were executed and which not
  *
- * @package JosefGlatz\Theme\Command
  */
 class PostSyncCommand extends Command
 {
