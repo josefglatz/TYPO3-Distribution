@@ -24,6 +24,7 @@ class SimpleMultiplyViewHelper extends AbstractViewHelper implements CompilableI
     {
         $this->registerArgument('a', 'string', 'First number', true);
         $this->registerArgument('b', 'string', 'Second number', true);
+        $this->registerArgument('round', 'bool', 'Round result', false);
     }
 
     /**
@@ -32,11 +33,14 @@ class SimpleMultiplyViewHelper extends AbstractViewHelper implements CompilableI
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     * @return int
+     * @return float
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
         try {
+            if ($arguments['round']) {
+                return round(self::multiplication($arguments));
+            }
             return self::multiplication($arguments);
         } catch (\Exception $e) {
             // @TODO: TYPO3-Distribution: VH math.SimpleSum logging when calculation is not possible
@@ -44,8 +48,8 @@ class SimpleMultiplyViewHelper extends AbstractViewHelper implements CompilableI
         }
     }
 
-    protected static function multiplication($arguments): int
+    protected static function multiplication($arguments): float
     {
-        return (int)$arguments['a'] * (int)$arguments['b'];
+        return (float)$arguments['a'] * (float)$arguments['b'];
     }
 }
