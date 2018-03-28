@@ -1,8 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	{data.bodytext -> f:format.html()}
-	<f:if condition="{images}">
-		<f:for each="{images}" as="image">
-			<f:render partial="Content/ImageRender" arguments="{file: image, breakpoints: breakpoints}" />
-		</f:for>
-	</f:if>
+{data.bodytext -> f:format.html()}
+<f:if condition="{images}">
+	<f:for each="{images}" as="image">
+		<f:if condition="{data.tx_theme_big_media}">
+			<f:then>
+				<f:render partial="Content/ImageRender" arguments="{file: image, breakpoints: settings.breakpoints.override.tx_theme_big_media}"/>
+			</f:then>
+			<f:else>
+				<f:render partial="Content/ImageRender" arguments="{file: image, breakpoints: settings.breakpoints.type}"/>
+			</f:else>
+		</f:if>
+
+	</f:for>
+</f:if>
 </html>

@@ -2,7 +2,6 @@
 	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 <f:spaceless>
-
 	<f:if condition="{file}">
 		<f:if condition="{breakpoints}">
 			<f:else>
@@ -37,6 +36,7 @@
 		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints}"/>
 		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, class: 'custom-img-tag-css-class'}"/>
 		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg'}"/>
+		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg', class: 'custom-img-tag-css-class'}"/>
 
 		<!---Render Image with custom sizes -- START --->
 		<f:variable name="breakpoints" value="{
