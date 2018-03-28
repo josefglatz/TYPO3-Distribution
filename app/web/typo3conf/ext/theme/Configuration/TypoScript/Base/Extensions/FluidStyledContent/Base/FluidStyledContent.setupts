@@ -18,8 +18,35 @@ lib.contentElement.extbase.controllerExtensionName = {$theme.name}
 // set default breakpoints configuration
 lib.contentElement {
 	settings {
+		breakpoints >
 		breakpoints {
-
+			0 {
+				media = min-width
+				size = {$site-breakpoints.xs}
+				maxWidth = 767
+				cropVariant = xs
+			}
+			1 {
+				media = min-width
+				size = {$site-breakpoints.md}
+				maxWidth = 991
+			}
+			2 {
+				media = min-width
+				size = {$site-breakpoints.lg}
+				maxWidth = 1199
+			}
+			3 {
+				media = min-width
+				size = {$site-breakpoints.xl}
+				maxWidth = 1439
+			}
+			4 {
+				media = min-width
+				size = {$site-breakpoints.xxl}
+				maxWidth = 1920
+			}
 		}
+		defaultImageMaxWidth = 800
 	}
 }
