@@ -78,6 +78,18 @@ call_user_func(
                     ]
                 ]
             ],
+            'tx_theme_big_media' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_big_media.label',
+                'config' => [
+                    'type' => 'check',
+                    'default' => 0,
+                    'items' => [
+                        '1' => [
+                            '0' => $languageFileBePrefix . 'field.tt_content.tx_theme_big_media.check_0'
+                        ]
+                    ]
+                ],
+            ],
             'tx_theme_unfolded' => [
                 'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_unfolded.label',
                 'config' => [

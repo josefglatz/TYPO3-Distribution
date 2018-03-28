@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	{data.bodytext -> f:format.html()}
+	<f:if condition="{images}">
+		<f:for each="{images}" as="image">
+			<f:image image="{image}" cropVariant="xs" />
+			<f:image image="{image}" cropVariant="md" />
+			<f:image image="{image}" cropVariant="lg" />
+		</f:for>
+	</f:if>
+</html>

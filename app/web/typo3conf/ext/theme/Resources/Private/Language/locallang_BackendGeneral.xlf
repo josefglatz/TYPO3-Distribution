@@ -131,11 +131,26 @@
 		<trans-unit id="field.sys_file_reference.tx_theme_video_coverimage.irre.new.label">
 		    <source>Add Cover Image</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
+			<source>Add Image next to Textblock</source>
+		</trans-unit>
 		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube">
 			<source>Add YouTube video</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.assets.label.type.youtube">
 			<source>YouTube video(s)</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.image.label.type.textimage">
+			<source>Image next to the Text</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
+			<source>Text next to the Image</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.bodytext.backendpreview.info.missing">
+			<source>Text not set. Please add a text to this content element</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.image.backendpreview.info.missing">
+			<source>Image not set. Please add an image to this content element</source>
 		</trans-unit>
 		<trans-unit id="field.pages.robot_follow">
 			<source>Follow links on current page (SEO)</source>
@@ -190,6 +205,15 @@
 		</trans-unit>
 		<trans-unit id="field.pages.tx_theme_twitter_title.label">
 			<source>Title</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.label">
+			<source>Bigger/wider media</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.label.badge">
+			<source>Big/wide media active</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.check_0">
+			<source>Active</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.tx_theme_unfolded.label">
 			<source>Initially unfolded</source>
@@ -256,6 +280,9 @@
 		</trans-unit>
 		<trans-unit id="palette.sys_file_reference.tx-theme-video-cover">
 		    <source>Cover</source>
+		</trans-unit>
+		<trans-unit id="tabs.label.single-image">
+		    <source>Image</source>
 		</trans-unit>
 		<trans-unit id="tt_content.header_layout.0">
 			<source>Header H2 (default)</source>

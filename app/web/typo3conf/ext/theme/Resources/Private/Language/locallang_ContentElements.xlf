@@ -56,6 +56,15 @@
 		<trans-unit id="theme_youtube.title">
 			<source>YouTube Video</source>
 		</trans-unit>
+		<trans-unit id="theme_textimage.description">
+			<source>An image wrapped right around a regular text element.</source>
+		</trans-unit>
+		<trans-unit id="theme_textimage.title">
+			<source>Text &amp; Image</source>
+		</trans-unit>
+		<trans-unit id="theme_textimage.title.ncew.tx_theme_big_media">
+			<source>Text &amp; Big Image</source>
+		</trans-unit>
 		<trans-unit id="theme_youtube.backendpreview.infotext-novideo">
 			<source>No YouTube video selected for this content element!</source>
 		</trans-unit>

@@ -88,6 +88,20 @@
 		<trans-unit id="field.tt_content.assets.label.type.youtube">
 			<target>YouTube Video(s)</target>
 		</trans-unit>
+		<trans-unit id="field.tt_content.image.label.type.textimage">
+			<source>Image</source>
+			<target>Bild neben dem Text</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.bodytext.backendpreview.info.missing">
+			<target>Dieses Inhaltselement enthält keinen Text. Bitte füge einen hinzu.</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.image.backendpreview.info.missing">
+			<target>Dieses Inhaltselement enthält kein Bild. Bitte füge eines hinzu.</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
+			<source>Text next to the Image</source>
+			<target>Text neben dem Bild</target>
+		</trans-unit>
 		<trans-unit id="field.pages.robot_follow" approved="yes">
 			<source>Follow links on current page (SEO)</source>
 			<target>Links auf Seite folgen (SEO)</target>
@@ -159,6 +173,17 @@
 		<trans-unit id="field.pages.tx_theme_twitter_title.label" approved="yes">
 			<source>Title</source>
 			<target>Titel</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.label" approved="yes">
+			<source>Big/wide media</source>
+			<target>Große Darstellung Bild/Video</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.label.badge" approved="yes">
+			<source>Big/wide media active</source>
+			<target>Große Medien</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_big_media.check_0" approved="yes">
+			<source>Aktiv</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.tx_theme_unfolded.label" approved="yes">
 			<source>Initial unfolded</source>
@@ -235,6 +260,9 @@
 		<trans-unit id="palette.pages.twitter" approved="yes">
 			<source>Twitter</source>
 			<target>Twitter</target>
+		</trans-unit>
+		<trans-unit id="tabs.label.single-image" approved="yes">
+			<target>Bild</target>
 		</trans-unit>
 		<trans-unit id="tt_content.header_layout.0" approved="yes">
 			<source>Header H2 (default)</source>

@@ -1,0 +1,25 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_textimage {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.description
+				tt_content_defValues {
+					CType = theme_textimage
+					sectionIndex = 0
+				}
+			}
+			theme_textimage-bigmedia {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.title.ncew.tx_theme_big_media
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.description
+				tt_content_defValues {
+					CType = theme_textimage
+					sectionIndex = 0
+					tx_theme_big_media = 1
+				}
+			}
+		}
+	}
+}

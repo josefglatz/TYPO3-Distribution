@@ -1,0 +1,19 @@
+tt_content {
+	theme_textimage =< lib.contentElement
+	theme_textimage {
+		templateName = Textimage
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				references.fieldName = image
+				as = images
+			}
+		}
+		stdWrap {
+			editIcons = tt_content: header [header_layout], bodytext, image
+			editIcons {
+				iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
+			}
+		}
+	}
+}

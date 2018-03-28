@@ -1,0 +1,74 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<theme:backend.contentEditLink uid="{uid}">
+		<f:render section="Heading" arguments="{_all}"/>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8 col-lg-10">
+					<f:render section="Text" arguments="{_all}" />
+				</div>
+				<div class="col-md-4 col-lg-2">
+					<f:render section="Media" arguments="{_all}" />
+				</div>
+			</div>
+		</div>
+	</theme:backend.contentEditLink>
+</div>
+
+<f:section name="Media">
+	<f:if condition="{image}">
+		<f:then>
+			<theme:fal table="tt_content" field="image" id="{uid}" as="images">
+				<f:image image="{images.0}" />
+			</theme:fal>
+		</f:then>
+		<f:else>
+			<div class="callout callout-danger">
+				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.title" /></h4>
+				<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.tt_content.image.backendpreview.info.missing" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+<f:section name="Text">
+	<f:if condition="{bodytext}">
+		<f:then>
+			<p>{bodytext -> f:format.stripTags() -> f:format.htmlspecialchars()}</p>
+		</f:then>
+		<f:else>
+			<div class="callout callout-danger">
+				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_textimage.title" /></h4>
+				<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.tt_content.bodytext.backendpreview.info.missing" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Heading">
+	<f:if condition="{header}">
+		<div class="theme-backendpreview-heading">
+			<h2 class="h{f:render(section: 'HeadingType', arguments: '{_all}')}">{header}
+				<f:if condition="{subheader}"><br>
+					<small>{subheader}</small>
+				</f:if>
+			</h2>
+		</div>
+	</f:if>
+</f:section>
+
+<f:section name="HeadingType"><f:spaceless>
+	<f:switch expression="{header_layout}">
+		<f:case value="1">1</f:case>
+		<f:case value="2">2</f:case>
+		<f:case value="3">3</f:case>
+		<f:case value="4">4</f:case>
+		<f:case value="5">5</f:case>
+		<f:case value="6">6</f:case>
+		<f:defaultCase>2</f:defaultCase>
+	</f:switch>
+</f:spaceless></f:section>
+</html>
