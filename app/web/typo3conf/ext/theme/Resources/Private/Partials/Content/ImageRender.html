@@ -12,12 +12,36 @@
 			<picture>
 				<f:for each="{breakpoints}" as="breakpoint" iteration="i_breakpoints" reverse="true">
 					<f:if condition="{breakpoint.media}">
-						<f:variable name="mediaAttribute">({breakpoint.media}: {breakpoint.size}px)</f:variable>
-						<f:variable name="mediaAttributeX2">only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 2), only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 192dpi),</f:variable>
+						<f:variable name="mediaAttribute">only screen and ({breakpoint.media}: {breakpoint.size}px)</f:variable>
+						<f:variable name="mediaAttributeX1-25">
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.25),
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 120dpi),
+						</f:variable>
+						<f:variable name="mediaAttributeX1-3">
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.3),
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 124.8dpi),
+						</f:variable>
+						<f:variable name="mediaAttributeX1-5">
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.5),
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 144dpi),
+						</f:variable>
+						<f:variable name="mediaAttributeX2">
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 2),
+							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 192dpi),
+						</f:variable>
 					</f:if>
 						<source
-							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 2)}', cropVariant: breakpoint.cropVariant)}"
+							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 2, round: true)}', cropVariant: breakpoint.cropVariant)}"
 							media="{mediaAttributeX2}">
+						<source
+							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.5, round: true)}', cropVariant: breakpoint.cropVariant)}"
+							media="{mediaAttributeX1-5}">
+						<source
+							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.3, round: true)}', cropVariant: breakpoint.cropVariant)}"
+							media="{mediaAttributeX1-3}">
+						<source
+							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.25, round: true)}', cropVariant: breakpoint.cropVariant)}"
+							media="{mediaAttributeX1-25}">
 						<source
 							srcset="{f:uri.image(image: file, maxWidth: breakpoint.maxWidth, cropVariant: breakpoint.cropVariant)}"
 							media="{mediaAttribute}">
