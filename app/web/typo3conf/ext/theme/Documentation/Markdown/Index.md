@@ -10,6 +10,7 @@ This repository delivers a full configured, bare metal TYPO3 distribution based 
 - [Frontend](Frontend/Index.md)
 - [Backend](Backend/Index.md)
 - [Basic Enhancements](BasicEnhancements/Index.md)
+- [Content Elements](ContentElements/Index.md)
 - [CKEditor](CKEditor/Index.md)
 - [Images](Images/Index.md)
 - [TYPO3 Extensions](Extensions/Index.md)
