@@ -5,26 +5,32 @@ namespace JosefGlatz\Theme\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class PostSyncCommand
  *
- * @TODO: TYPO3-Distribution: Add output which tasks were executed and which not
  * @TODO: TYPO3-Distribution: TYPO3v9LTS: check if PostSyncCommand->enableDevSysDomains is still needed
  *
  */
 class PostSyncCommand extends Command
 {
-    private $VirtualHostTld = '';
+    private $virtualHostTld = '';
 
     protected function configure(): void
     {
-        $description = 'PostSync Commands';
-
-        $this->setDescription($description);
-        $this->setVirtualHostTld($this->getEnvVarValue('VIRTUAL_HOST'));
+        $this
+            ->setDescription('PostSync Commands')
+            ->setHelp('
+Assumptions:
+- you run this command on local development environments
+- you know what each of the executed methods do
+- you want to sort you devDomain (sys_domain) to the first position in all page trees
+- you have set your devDomain via environment variable "VIRTUAL_HOST" 
+- you must run the this command controller with correct ApplicationContext/TYPO3_CONTEXT')
+            ->virtualHostTld = $this->getEnvVarValue('VIRTUAL_HOST');
     }
 
     /**
@@ -35,27 +41,30 @@ class PostSyncCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
+        $io = new SymfonyStyle($input, $output);
+        $io->title($this->getDescription() . ' Results:');
         if (GeneralUtility::getApplicationContext()->isDevelopment()) {
-            $this->enableDevSysDomains();
+            $this->enableDevSysDomains($io);
         }
+        $io->newLine(1);
     }
 
     /**
      *
-     * @throws \InvalidArgumentException
+     * @param SymfonyStyle $io necessary for outputting information
      */
-    private function enableDevSysDomains(): void
+    private function enableDevSysDomains($io): void
     {
-        if ($this->getVirtualHostTld() !== '') {
+        if ($this->virtualHostTld !== '') {
             $table = 'sys_domain';
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
                 ->getQueryBuilderForTable($table);
-            $queryBuilder->update($table)
+            $updatedRows = $queryBuilder->update($table)
                 ->where(
                     $queryBuilder->expr()->like(
                         'domainName',
                         $queryBuilder->createNamedParameter(
-                            '%.' . $queryBuilder->escapeLikeWildcards($this->getVirtualHostTld()),
+                            '%.' . $queryBuilder->escapeLikeWildcards($this->virtualHostTld),
                             \PDO::PARAM_STR
                         )
                     )
@@ -63,6 +72,14 @@ class PostSyncCommand extends Command
                 ->set('hidden', 0)
                 ->set('sorting', 0)
                 ->execute();
+            if ($updatedRows > 0) {
+                $io->success(sprintf('%d %s records were enabled and sorting was set to 0.', $updatedRows, $table));
+
+                return;
+            }
+            $io->note(sprintf('No %s records were enabled or re-sorted', $table));
+
+            return;
         }
     }
 
@@ -78,21 +95,5 @@ class PostSyncCommand extends Command
             return array_values(\array_slice(explode('.', array_values(\array_slice(explode(' ', $_SERVER[$environmentVariable]), -1))[0]), -1))[0];
         }
         return '';
-    }
-
-    /**
-     * @return string
-     */
-    public function getVirtualHostTld(): string
-    {
-        return $this->VirtualHostTld;
-    }
-
-    /**
-     * @param string $VirtualHostTld
-     */
-    public function setVirtualHostTld(string $VirtualHostTld): void
-    {
-        $this->VirtualHostTld = $VirtualHostTld;
     }
 }
