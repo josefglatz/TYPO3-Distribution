@@ -8,10 +8,10 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-8 col-lg-10">
+				<div class="{f:if(condition: tx_theme_big_media, then: 'col-md-7 col-lg-8 col-xl-7', else: 'col-md-8 col-lg-10')}">
 					<f:render section="Text" arguments="{_all}" />
 				</div>
-				<div class="col-md-4 col-lg-2">
+				<div class="{f:if(condition: tx_theme_big_media, then: 'col-md-5 col-lg-4 col-xl-5', else: 'col-md-4 col-lg-2')}">
 					<f:render section="Media" arguments="{_all}" />
 				</div>
 			</div>
