@@ -2,9 +2,9 @@
 
 namespace JosefGlatz\Theme\Signals\Backend;
 
+use TYPO3\CMS\Backend\Controller\EditDocumentController;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Backend\Controller\EditDocumentController;
 
 class EditDocumentControllerInitSlot
 {
