@@ -81,6 +81,21 @@ call_user_func(
                     \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class
                 ]
             ];
+
+            /**
+             * Instantiate SignalSlot Dispatcher
+             *
+             * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher
+             */
+            $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
+
+            // Edit restriction for specific new records
+            $signalSlotDispatcher->connect(
+                \TYPO3\CMS\Backend\Controller\EditDocumentController::class,
+                'preInitAfter',
+                \JosefGlatz\Theme\Signals\Backend\EditDocumentControllerInitSlot::class,
+                'adjustEditDocumentController'
+            );
         }
     },
     $_EXTKEY
