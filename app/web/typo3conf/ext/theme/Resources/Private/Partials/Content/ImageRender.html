@@ -3,49 +3,57 @@
 	  data-namespace-typo3-fluid="true">
 <f:spaceless>
 	<f:if condition="{file}">
+
+
+		<f:comment><!-- Set variable breakpoints if argument not explicitly handed over --></f:comment>
 		<f:if condition="{breakpoints}">
 			<f:else>
 				<f:variable name="breakpoints" value="{settings.breakpoints}"/>
 			</f:else>
 		</f:if>
+		<f:comment><!-- Set variable pixelDensities if argument not explicitly handed over --></f:comment>
+		<f:if condition="{pixelDensities}">
+			<f:else>
+				<f:if condition="{settings.pixelDensities.type -> f:count()} > 0">
+					<f:then>
+						<f:comment><!-- Set type specific pixel density configuration (if it's set for actual content type) --></f:comment>
+						<f:variable name="pixelDensities" value="{settings.pixelDensities.type}" />
+					</f:then>
+					<f:else>
+						<f:comment><!-- Set default pixel density configuration --></f:comment>
+						<f:variable name="pixelDensities" value="{settings.pixelDensities.default}" />
+					</f:else>
+				</f:if>
+			</f:else>
+		</f:if>
+
+
+		<f:comment><!-- Optionally wrap link around the <picture> tag --></f:comment>
 		<f:link.typolink parameter="{file.link}" class="picturelink">
 			<picture>
 				<f:for each="{breakpoints}" as="breakpoint" iteration="i_breakpoints" reverse="true">
 					<f:if condition="{breakpoint.media}">
+						<f:alias map="{pds: pixelDensities}">
+							<f:for each="{pds}" as="pd">
+								<f:variable name="AttributeMediaValue"><theme:format.cleanupString tabs="true" lineBreaks="true" unixBreaks="true" windowsBreaks="true">
+									only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: {pd.min-ratio}),
+									only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: {pd.min-resolution}dpi)
+								</theme:format.cleanupString></f:variable>
+								<f:variable name="resultingMaxWidth"><theme:math.simpleMultiply a="{breakpoint.maxWidth}" b="{pd.min-ratio}" /></f:variable>
+								<source
+									srcset="{f:uri.image(image: file, maxWidth: '{resultingMaxWidth}', cropVariant: breakpoint.cropVariant)}"
+									media="{AttributeMediaValue}">
+							</f:for>
+						</f:alias>
 						<f:variable name="mediaAttribute">only screen and ({breakpoint.media}: {breakpoint.size}px)</f:variable>
-						<f:variable name="mediaAttributeX1-25">
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.25),
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 120dpi),
-						</f:variable>
-						<f:variable name="mediaAttributeX1-3">
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.3),
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 124.8dpi),
-						</f:variable>
-						<f:variable name="mediaAttributeX1-5">
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 1.5),
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 144dpi),
-						</f:variable>
-						<f:variable name="mediaAttributeX2">
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: 2),
-							only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: 192dpi),
-						</f:variable>
-					</f:if>
-						<source
-							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 2, round: true)}', cropVariant: breakpoint.cropVariant)}"
-							media="{mediaAttributeX2}">
-						<source
-							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.5, round: true)}', cropVariant: breakpoint.cropVariant)}"
-							media="{mediaAttributeX1-5}">
-						<source
-							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.3, round: true)}', cropVariant: breakpoint.cropVariant)}"
-							media="{mediaAttributeX1-3}">
-						<source
-							srcset="{f:uri.image(image: file, maxWidth: '{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: 1.25, round: true)}', cropVariant: breakpoint.cropVariant)}"
-							media="{mediaAttributeX1-25}">
 						<source
 							srcset="{f:uri.image(image: file, maxWidth: breakpoint.maxWidth, cropVariant: breakpoint.cropVariant)}"
 							media="{mediaAttribute}">
+					</f:if>
 				</f:for>
+
+				<f:comment><!-- Fallback Image --></f:comment>
+
 				<img class="{class -> theme:or(alternative: 'img-fluid')}"
 					 src="{f:uri.image(image: file, maxWidth: settings.defaultImageMaxWidth, cropVariant: '{defaultCropVariant -> theme:or(alternative: \'default\')}')}"
 					 alt="{file.alternative}" title="{file.title}">
@@ -57,10 +65,12 @@
 	<f:comment>
 
 		<!---Render Image with custom sizes from TS settings--->
-		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints}"/>
-		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, class: 'custom-img-tag-css-class'}"/>
-		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg'}"/>
-		<f:render partial="ImageRender" arguments="{file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg', class: 'custom-img-tag-css-class'}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, class: 'custom-img-tag-css-class'}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg'}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg', class: 'custom-img-tag-css-class'}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.custom}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.breakpoints.type}"/>
 
 		<!---Render Image with custom sizes -- START --->
 		<f:variable name="breakpoints" value="{
@@ -73,12 +83,14 @@
 							6:{media:'min-width', size:1480, maxWidth:2000, cropVariant:'default'}
 						}"/>
 
-		<f:render partial="ImageRender" arguments="{file:image, breakpoints:breakpoints}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:image, breakpoints:breakpoints}"/>
 		<!---Render Image with custom sizes -- END --->
 
-		<!---Render Image with default sizes -- START --->
-		<f:render partial="ImageRender" arguments="{file:image}"/>
+		<!---Render Image with default sizes--->
+		<f:render partial="ImageRender" arguments="{settings: settings, file:image}"/>
 
+
+		<!-- Get an overview of real device pixel ratios: https://mydevice.io/devices/ -->
 	</f:comment>
 </f:spaceless>
 </html>

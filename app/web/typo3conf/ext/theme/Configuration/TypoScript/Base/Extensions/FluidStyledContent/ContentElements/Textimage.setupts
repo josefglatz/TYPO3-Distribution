@@ -72,6 +72,18 @@ tt_content {
 				}
 			}
 			defaultImageMaxWidth = 800
+			pixelDensities {
+				// Specify all TYPE SPECIFIC pixel densities, which should be processed by the Content/ImageRender fluid partial
+				//
+				// Defaults: EXT:theme/Configuration/TypoScript/Base/Extensions/FluidStyledContent/Base/FluidStyledContent.setupts
+				//
+				// KEEP IN MIND: each additional pixel density needs potentially more server resources (if no external image service is used)
+				//   - generating processed image (slow down if requested image sizes (while page request) must be generated)
+				//   - disk space used by processed image (by potentially more files)
+				type {
+					// pixel density ratio 1.0 is always generated and must be therefore not added to this list
+				}
+			}
 		}
 
 	}

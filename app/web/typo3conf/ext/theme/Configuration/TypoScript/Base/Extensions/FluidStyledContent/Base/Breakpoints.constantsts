@@ -1,3 +1,5 @@
+//  @TODO: TYPO3-Distribution: Move configuration to central yaml file and write this configuration with node/npm/yarn
+
 site.breakpoints {
 	xs = 0
 	xs-max = 575
