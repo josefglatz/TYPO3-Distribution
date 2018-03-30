@@ -32,7 +32,6 @@ class EditDocumentControllerInitSlot
 
                 // Return to previous url without saving anything
                 $editDocumentController->closeDocument();
-
             }
         }
     }
