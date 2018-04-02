@@ -9,7 +9,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Enrich/Customize EditDocumentController via SignalSlot usage
- * @package JosefGlatz\Theme\Signals\Backend
  */
 class EditDocumentControllerInitSlot
 {

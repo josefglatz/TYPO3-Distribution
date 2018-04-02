@@ -43,6 +43,5 @@ class ProcessDatamapDataHandler
             header('Location: ' . GeneralUtility::locationHeaderUrl($redirectUri));
             die();
         }
-
     }
 }
