@@ -7,6 +7,7 @@ use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Tstemplate\Controller\TypoScriptTemplateInformationModuleFunctionController;
 
 class ProcessDatamapDataHandler
 {
@@ -34,9 +35,10 @@ class ProcessDatamapDataHandler
             $messageQueue->addMessage($message);
 
             $redirectUri = BackendUtility::getModuleUrl(
-                'web_list',
+                'web_ts',
                 [
                     'id' => (int)$parentObject->datamap['sys_template']['NEW']['pid'],
+                    'function' => TypoScriptTemplateInformationModuleFunctionController::class
                 ]
             );
             @ob_end_clean();
