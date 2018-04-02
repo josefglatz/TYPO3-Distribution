@@ -71,6 +71,7 @@
 		"dmitryd/typo3-realurl": "^2.3",
 		"fluidtypo3/vhs": "^4.4",
 		"georgringer/autoswitchtolistview": "^2.0",
+		"georgringer/backend-debug": "^1.1.0",
 		"georgringer/deprecationloganalyzer": "^2.0",
 		"georgringer/logging": "dev-master",
 		"georgringer/news": "^6.2",
@@ -122,7 +123,6 @@
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
 		"cpsit/mask-export": "^0.9.1",
-		"georgringer/backend-debug": "^1.0",
 		"macopedia/mess_detector": "dev-master",
 		"mask/mask": "^3.0",
 		"maxserv/yaml_configuration": "dev-master",
