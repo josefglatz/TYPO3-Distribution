@@ -51,7 +51,7 @@ call_user_func(
             }
         }
 
-        // Edit restriction for specific records
+        // Edit restriction for specific records / Enrich DataHandler while updating specific records
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['theme'] =
             \JosefGlatz\Theme\Hooks\Backend\ProcessDatamapDataHandler::class;
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][TYPO3\CMS\Tstemplate\Controller\TypoScriptTemplateModuleController::class]['newStandardTemplateHandler'] =

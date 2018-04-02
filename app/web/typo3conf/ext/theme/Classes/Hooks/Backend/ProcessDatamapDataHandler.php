@@ -46,4 +46,30 @@ class ProcessDatamapDataHandler
             die();
         }
     }
+
+    /**
+     * Hook into DataHandler for enrich formEngine while editing records
+     *
+     * @param $status
+     * @param $table
+     * @param $id
+     * @param $fieldArray
+     * @param DataHandler $pObj
+     */
+    function processDatamap_postProcessFieldArray($status, $table, $id, &$fieldArray, &$pObj): void
+    {
+        // Add warning message, if somebody add or edit PageTSConfig directly.
+        if ($table == 'pages' && isset($fieldArray['TSconfig']) && ($fieldArray['TSconfig'] !== '')) {
+            $message = GeneralUtility::makeInstance(FlashMessage::class,
+                'Read EXT:theme/Configuration/TSConfig/Page/Specific/README.md for instructions ' .
+                'how to add page specific TSConfig with an alternative way.',
+                'Please consider NOT saving Page TS Config directly to database!',
+                FlashMessage::WARNING,
+                true
+            );
+            $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
+            $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
+            $messageQueue->addMessage($message);
+        }
+    }
 }
