@@ -55,12 +55,12 @@ class Tca
      */
     public static function moveShowitemItems(string $showitem, string $value, int $finalPosition): string
     {
-        $showitem = GeneralUtility::trimExplode(',', $showitem, true);
-        $key = array_search(trim($value), array_map('trim', $showitem), true);
-        $insert = $showitem[$key];
-        unset($showitem[$key]);
-        array_splice($showitem, $finalPosition, 0, $insert);
-        return implode(',', $showitem);
+        $showitemArray = GeneralUtility::trimExplode(',', $showitem, true);
+        $key = array_search(trim($value), array_map('trim', $showitemArray), true);
+        $insert = $showitemArray[$key];
+        unset($showitemArray[$key]);
+        array_splice($showitemArray, $finalPosition, 0, $insert);
+        return implode(',', $showitemArray);
     }
 
     /**
