@@ -98,6 +98,9 @@
 		<trans-unit id="field.tt_content.image.backendpreview.info.missing">
 			<target>Dieses Inhaltselement enthält kein Bild. Bitte füge eines hinzu.</target>
 		</trans-unit>
+		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
+			<target>Bild neben Text hinzufügen</target>
+		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
 			<source>Text next to the Image</source>
 			<target>Text neben dem Bild</target>
