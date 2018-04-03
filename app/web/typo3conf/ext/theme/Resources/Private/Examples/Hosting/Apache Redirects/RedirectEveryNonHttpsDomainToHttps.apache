@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+	# Enable URL rewriting
+	RewriteEngine On
+
+# Begin custom lines for common TYPO3 .htaccess:
+
+	# Redirect every non-https (not port 443) to https scheme
+    RewriteCond %{SERVER_PORT}     !^443$
+    RewriteRule (.*)  https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+# Stop custom lines for common TYPO3 .htaccess
+
+</IfModule>
+
