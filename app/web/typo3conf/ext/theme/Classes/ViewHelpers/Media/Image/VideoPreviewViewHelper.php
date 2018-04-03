@@ -28,6 +28,7 @@ class VideoPreviewViewHelper extends AbstractViewHelper
     /**
      * @return string
      * @throws \RuntimeException
+     * @throws \TYPO3\CMS\Core\Resource\Exception\InsufficientFolderAccessPermissionsException
      */
     public function render() : string
     {
