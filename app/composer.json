@@ -71,7 +71,7 @@
 		"dmitryd/typo3-realurl": "^2.3",
 		"fluidtypo3/vhs": "^4.4",
 		"georgringer/autoswitchtolistview": "^2.0",
-		"georgringer/backend-debug": "^1.1.0",
+		"georgringer/backend-debug": "^1",
 		"georgringer/deprecationloganalyzer": "^2.0",
 		"georgringer/logging": "dev-master",
 		"georgringer/news": "^6.2",
