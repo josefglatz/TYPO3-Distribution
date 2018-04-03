@@ -76,7 +76,6 @@ class ProcessDatamapDataHandler
         }
     }
 
-
     /**
      * @return LanguageService
      */
