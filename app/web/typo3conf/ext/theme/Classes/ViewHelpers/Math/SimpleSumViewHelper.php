@@ -32,7 +32,7 @@ class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterf
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     * @return int
+     * @return float
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
@@ -44,8 +44,8 @@ class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterf
         }
     }
 
-    protected static function sum($arguments): int
+    protected static function sum($arguments): float
     {
-        return (int)$arguments['a'] + (int)$arguments['b'];
+        return (float)$arguments['a'] + (float)$arguments['b'];
     }
 }
