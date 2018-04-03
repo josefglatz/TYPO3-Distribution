@@ -6,6 +6,7 @@ use TYPO3\CMS\Backend\Controller\EditDocumentController;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Lang\LanguageService;
 
 /**
  * Enrich/Customize EditDocumentController via SignalSlot usage
@@ -28,10 +29,10 @@ class EditDocumentControllerInitSlot
                  * @var FlashMessage $message Error message to inform the backend user about the barrier
                  */
                 $message = GeneralUtility::makeInstance(FlashMessage::class,
-                    'while sys_template records are created via runThroughTemplatesPostProcessing ' .
-                    'hook in EXT:theme/Classes/Hooks/Frontend/TypoScriptHook.php. ' .
-                    'Records in the database can not be versioned and offer potential for technical debt.',
-                    'Creating a sys_template record in the database is not allowed!',
+                    $this->getLanguageService()
+                        ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description', true),
+                    $this->getLanguageService()
+                        ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title', true),
                     FlashMessage::ERROR,
                     true
                 );
@@ -43,5 +44,13 @@ class EditDocumentControllerInitSlot
                 $editDocumentController->closeDocument();
             }
         }
+    }
+
+    /**
+     * @return LanguageService
+     */
+    protected function getLanguageService(): LanguageService
+    {
+        return $GLOBALS['LANG'];
     }
 }

@@ -2,18 +2,18 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
-use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Lang\LanguageService;
 use TYPO3\CMS\Tstemplate\Controller\TypoScriptTemplateInformationModuleFunctionController;
 use TYPO3\CMS\Tstemplate\Controller\TypoScriptTemplateModuleController;
 
 class NewStandardTemplateHandler
 {
     /**
-     * Prevent creating a new sys_template record for a new website
+     * Prevent creating a new sys_template record for a new website (TypoScriptTemplateModuleController)
      *
      * @param array $params
      * @param TypoScriptTemplateModuleController $parentObject
@@ -25,16 +25,18 @@ class NewStandardTemplateHandler
          * @var FlashMessage $message Error message to inform the backend user about the barrier
          */
         $message = GeneralUtility::makeInstance(FlashMessage::class,
-            'while sys_template records are created via runThroughTemplatesPostProcessing hook' .
-            'in EXT:theme/Classes/Hooks/Frontend/TypoScriptHook.php. ' .
-            'Records in the database can not be versioned and offer potential for technical debt.',
-            'Creating a sys_template record in the database is not allowed!',
+            $this->getLanguageService()
+                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description', true),
+            $this->getLanguageService()
+                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title', true),
             FlashMessage::ERROR,
             true
         );
         $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
         $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
         $messageQueue->addMessage($message);
+
+        // Simply redirect back to web_ts module on same page ID
         $redirectUri = BackendUtility::getModuleUrl(
             'web_ts',
             [
@@ -43,15 +45,16 @@ class NewStandardTemplateHandler
             ]
         );
         @ob_end_clean();
+        // Core's HttpUtility isn't used here – it would load the entire backend in the content frame of TYPO3 backend
         header('Location: ' . GeneralUtility::locationHeaderUrl($redirectUri));
         die();
     }
 
     /**
-     * @return UriBuilder
+     * @return LanguageService
      */
-    protected function getUriBuilder(): UriBuilder
+    protected function getLanguageService(): LanguageService
     {
-        return GeneralUtility::makeInstance(UriBuilder::class);
+        return $GLOBALS['LANG'];
     }
 }
