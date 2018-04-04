@@ -1,0 +1,11 @@
+// Disable all CSS animations and transitions if the browser supports
+// media query and browser setting is set accordingly
+//
+// https://css-tricks.com/introduction-reduced-motion-media-query/
+// noinspection CssInvalidMediaFeature
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
