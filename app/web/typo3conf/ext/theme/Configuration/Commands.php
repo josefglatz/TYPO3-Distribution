@@ -9,6 +9,6 @@
  */
 return [
     'dev:postSyncTasks' => [
-        'class' => JosefGlatz\Theme\Command\PostSyncCommand::class
+        'class' => \JosefGlatz\Theme\Command\PostSyncCommand::class
     ]
 ];
