@@ -68,10 +68,11 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 | Name                          | Purpose of ViewHelper                                                                                                                                                                |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `theme.or`                    | If content is empty use alternative text (can also be LLL:labelname shortcut or LLL:EXT: file paths). Initially copied from EXT:vhs to get rid of dependencies for backend previews. |
-| `theme.fal`                   | FAL file relations. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                                           |
-| `theme.fileCollection`        | FAL file relations from file collections. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                     |
-| `theme.format.cleanupString`  | Cleanup a string depending on the arguments. Supported is the removal of whitespace, tabs, combined line breaks, unix line breaks, windows line breaks                               |
-| `theme.format.youtubeVideoId` | Returns the videoId from a YouTube Url (a wide range is supported so far)                                                                                                            |
+| `theme.:or`                   | If content is empty use alternative text (can also be LLL:labelname shortcut or LLL:EXT: file paths). Initially copied from EXT:vhs to get rid of dependencies for backend previews. |
+| `theme.:fal`                  | FAL file relations. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                                           |
+| `theme.:fileCollection`       | FAL file relations from file collections. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                     |
+| `theme:debug.typoScript`      | Debug full TypoScript configuration array. (The ViewHelper only works in development application context)                                                                            |
+| `theme:format.cleanupString`  | Cleanup a string depending on the arguments. Supported is the removal of whitespace, tabs, combined line breaks, unix line breaks, windows line breaks                               |
+| `theme:format.youtubeVideoId` | Returns the videoId from a YouTube Url (a wide range is supported so far)                                                                                                            |
 
 > See [Backend ViewHelpers overview](../Backend/BackendViewHelpers.md) for a list of backend specific ViewHelpers.
