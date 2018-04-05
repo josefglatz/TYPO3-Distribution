@@ -81,3 +81,8 @@ indent_size = 2
 [*.sql]
 indent_style = tab
 indent_size = 2
+
+# HTACCESS-Files
+[.htaccess]
+indent_style = tab
+indent_size = 4
