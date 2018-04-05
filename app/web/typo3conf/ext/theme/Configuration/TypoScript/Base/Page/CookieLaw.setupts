@@ -14,14 +14,7 @@ page.jsFooterInline {
 		10 = FLUIDTEMPLATE
 		10 {
 			extbase.controllerExtensionName = {$theme.key}
-			templateName = TEXT
-			templateName.stdWrap {
-				cObject = TEXT
-				cObject {
-					value = {$site.cookieLaw.customTemplateName}
-				}
-				ifEmpty = Default
-			}
+			templateName = {$site.cookieLaw.customTemplateName}
 			templateRootPaths.10 = {$theme.resTemplates}/CookieLaw
 			partialRootPaths.10 = {$theme.resPartials}
 			layoutRootPaths.10 = {$theme.resLayouts}

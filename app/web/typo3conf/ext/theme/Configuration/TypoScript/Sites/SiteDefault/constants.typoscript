@@ -181,7 +181,7 @@ site {
                 border =
             }
         }
-        customTemplateName =
+        customTemplateName = Default
     }
 }
 
