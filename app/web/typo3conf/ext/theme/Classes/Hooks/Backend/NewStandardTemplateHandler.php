@@ -36,6 +36,7 @@ class NewStandardTemplateHandler
         $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
         $messageQueue->addMessage($message);
 
+        // @TODO: TYPO3-Distribution: TYPO3v9LTS: Check whether the BackendUtility:getModuleUrl is deprecated and probably switch to implementation like ViewHelpers/Be/UriViewHelper.php
         // Simply redirect back to web_ts module on same page ID
         $redirectUri = BackendUtility::getModuleUrl(
             'web_ts',

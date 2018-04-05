@@ -34,7 +34,7 @@ class ProcessDatamapDataHandler
             $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
             $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
             $messageQueue->addMessage($message);
-
+            // @TODO: TYPO3-Distribution: TYPO3v9LTS: Check whether the BackendUtility:getModuleUrl is deprecated and probably switch to implementation like ViewHelpers/Be/UriViewHelper.php
             $redirectUri = BackendUtility::getModuleUrl(
                 'web_ts',
                 [
