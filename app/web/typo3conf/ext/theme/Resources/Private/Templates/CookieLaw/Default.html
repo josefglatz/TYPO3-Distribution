@@ -28,8 +28,8 @@ window.cookieconsent.initialise({
 			"border": "{settings.color.button.border}"
 		}
 	},
-	"theme": "{settings.theme}",
+	<f:if condition="{settings.theme} != ''">"theme": '{settings.theme}',</f:if>
 	"static": {settings.static},
-	"showLink": {settings.showLink},
-	"position": "{settings.position}"
+	<f:if condition="{settings.showLink} != ''">"showLink": '{settings.showLink}',</f:if>
+	<f:if condition="{settings.position} != ''">"position": '{settings.position}',</f:if>
 })});<f:comment>/* Visit https://cookieconsent.insites.com/documentation/javascript-api/ for all javascript options! */</f:comment>

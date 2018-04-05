@@ -167,7 +167,7 @@ site {
         position = bottom-right
         // true = static position, false = fixed position
         static = false
-        // classic, edgeless
+		// '' (empty), 'classic' or 'edgeless'
         theme = edgeless
         color {
             popup {
