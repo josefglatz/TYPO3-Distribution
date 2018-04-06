@@ -68,7 +68,7 @@ call_user_func(
         ];
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
 
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'image')
+        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'image', $type)
             ->disableDefaultCropVariants()
             ->addCropVariant(
                 \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
