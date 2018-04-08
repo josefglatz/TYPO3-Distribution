@@ -144,44 +144,19 @@ site {
     }
 
 
+	// site specific cookie consent configuration
+	// (set all default configuration (e.g. accross multiple pagetrees) in ./../Defaults/constants.typoscript)
     cookieLaw {
-        enabled = 1
-        appendToHtmlElement = document.getElementById("content")
-        appendToHtmlElement =
+#		enabled = 0
         // custom link used for f:uri.typolink() (page id or external url)
         link =
         showLink = true
-        container = body
-        theme = false
-        path = /
+#        path = /
         // The domain that the cookie ‘name’ belongs to (http://erik.io/blog/2014/03/04/definitive-guide-to-cookie-domains/)
-        domain =
+#        domain =
         // set expireDays to "-1" for no expiry
-        expiryDays = 365
-        revokable = true
-        // false|integer in scroll range
-        dismissOnScroll = false
-        // false|integer in milliseconds
-        dismissOnTimeout = false
-        // bottom, top, top-left, top-right, bottom-left, bottom-right
-        position = bottom-right
-        // true = static position, false = fixed position
-        static = false
-		// '' (empty), 'classic' or 'edgeless'
-        theme = edgeless
-        color {
-            popup {
-                background = #000
-                text = #fff
-                link = #fff
-            }
-            button {
-                background = #f1d600
-                text = #000
-                border =
-            }
-        }
-        customTemplateName = Default
+#        expiryDays = 365
+#        revokable = true
     }
 }
 
