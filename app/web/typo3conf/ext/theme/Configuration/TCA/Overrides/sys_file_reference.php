@@ -193,6 +193,13 @@ call_user_func(
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
 
+        // Add palette "tx-theme-image-nolink"
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'tx-' . $extKey . '-image-nolink',
+            'title,alternative,--linebreak--,
+            description,--linebreak--,crop'
+        );
         // Add palette "tx-theme-video-cover"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,

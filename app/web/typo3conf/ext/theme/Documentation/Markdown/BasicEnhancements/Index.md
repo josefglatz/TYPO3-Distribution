@@ -43,6 +43,12 @@ Back to [Index](../Index.md)
 | `link` (core field) | Unnecessary link field `class` removed |  | - |
 | `crop` (core field) | Overwrite core's default cropVariants | The default cropVariants are overwritten. Set you default cropVariants for your project in EXT:theme's `/TCA/Overrides/sys_file_reference.php`. | - |
 
+### Custom predefined TCA palette for `sys_file_reference`
+
+| Name                  | Usage                                      | Fields                                                                |
+|:----------------------|:-------------------------------------------|:----------------------------------------------------------------------|
+| tx-theme-image-nolink | All common image meta fields except a link | `title, alternative, --linebreak--, description, --linebreak--, crop` |
+
 
 
 ## Table `tt_content`
