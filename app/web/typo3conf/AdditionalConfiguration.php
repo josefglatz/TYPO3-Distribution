@@ -303,6 +303,11 @@ $customChanges = [
         ],
         'defaultCategorizedTables' => '',
         'sitename' => htmlspecialchars($site['sitenameBase']) . ' [' . $context . ']',
+        'fal' => [
+            'registeredCollections' => [
+                'tx_theme_images' => \TYPO3\CMS\Core\Resource\Collection\StaticFileCollection::class,
+            ],
+        ],
         'fluid' => [
             'namespaces' => [
                 'theme' => [

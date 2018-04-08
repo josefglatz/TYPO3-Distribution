@@ -83,6 +83,9 @@
 		<trans-unit id="div.pages.seo">
 			<source>SEO</source>
 		</trans-unit>
+		<trans-unit id="field.sys_file_collection.types.tx_theme_images.label">
+		    <source>Static selection of supported image files</source>
+		</trans-unit>
 		<trans-unit id="field.sys_file_reference.tx_theme_video_autoplay.label">
 		    <source>Autoplay</source>
 		</trans-unit>

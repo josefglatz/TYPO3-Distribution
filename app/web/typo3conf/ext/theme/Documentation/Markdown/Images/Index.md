@@ -13,6 +13,7 @@ different situations:
    1. [Custom CropVariants Builder details](CropVariantsBuilder.md)
 3. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-aspectratio-cover-croparea-presets-and-cropvariant-definitions)
 4. [Unlocalize crop configuration](#unlocalize-crop-configuration)
+5. [Image Only File Collection](#image-only-file-collection)
 
 ---
 
@@ -106,3 +107,10 @@ is what I need for translated websites.
 
 **Just run `composer uninstall cmsexperts/unlocalizedcrop` if you want
 to remove this behaviour and activate TYPO3 Core's default.**
+
+---
+
+## Image Only File Collection
+
+A static file collection type which only supports supported image file types
+makes working with file collections much easier.

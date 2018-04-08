@@ -37,6 +37,10 @@
 			<source>SEO</source>
 			<target>SEO</target>
 		</trans-unit>
+		<trans-unit id="field.sys_file_collection.types.tx_theme_images.label">
+			<source>Static selection of image files</source>
+			<target>Statische Auswahl an unterstützten Bilddateien</target>
+		</trans-unit>
 		<trans-unit id="field.sys_file_reference.tx_theme_video_autoplay.label">
 			<target>Automatische Wiedergabe</target>
 		</trans-unit>
