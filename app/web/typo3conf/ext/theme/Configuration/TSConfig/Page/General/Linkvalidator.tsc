@@ -1,6 +1,8 @@
 // Extend default sysext:linkvalidator configuration FILE:EXT:linkvalidator/Configuration/TsConfig/Page/pagetsconfig.txt
 mod.linkvalidator {
 	searchFields {
+		tt_content := addToList(tx_theme_bodytext_1, tx_theme_bodytext_2)
+
 		// ext:news
 		tx_news_domain_model_news = bodytext,internalurl,externalurl
 		tx_news_domain_model_link = uri
