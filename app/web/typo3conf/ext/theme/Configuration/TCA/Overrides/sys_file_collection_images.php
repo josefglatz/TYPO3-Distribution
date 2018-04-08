@@ -60,7 +60,6 @@ call_user_func(
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
 
         $GLOBALS['TCA'][$table]['ctrl']['typeicon_classes'][$type] = 'theme-content-gallery';
-
     },
     'theme',
     'sys_file_collection',
