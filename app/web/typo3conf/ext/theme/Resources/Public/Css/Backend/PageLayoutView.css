@@ -47,6 +47,9 @@
 	border: 1px solid rgba(0,0,0,.4);
 	background: rgba(0,0,0,.4);
 }
+.theme-danger {
+	background-color: #efc7c7 !important;
+}
 
 /*
  * tt_content_drawFooter Enrichment

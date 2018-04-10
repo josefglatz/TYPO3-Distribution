@@ -5,6 +5,14 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="backendpreview.general.info.missing.necessary">
+			<source>Necessary fields are not filled out. The element could not be rendered (correctly) on the website frontend.</source>
+			<target>Nicht alle notwendigen Felder sind korrekt ausgefüllt. Das Element kann daher auf der Website nicht (korrekt) ausgegeben werden.</target>
+		</trans-unit>
+		<trans-unit id="backendpreview.general.info.missing.necessary.fields">
+			<source>Please add content to following fields:</source>
+			<target>Bitte befülle folgende Felder mit Inhalt:</target>
+		</trans-unit>
 		<trans-unit id="clearcacheaction.clear.processedfiles.description" approved="yes">
 			<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
 			<target>Leere die Tabelle sys_file_processedfile und lösche alle physischen Dateien auf lokal angehängten Dateisystemen.</target>

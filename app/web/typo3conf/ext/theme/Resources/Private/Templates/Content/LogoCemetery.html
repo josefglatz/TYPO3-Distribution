@@ -7,7 +7,9 @@
 </f:comment>
 <f:if condition="{logos}">
 	<f:for each="{logos}" as="image">
-		<f:render partial="Content/ImageRender" arguments="{settings: settings, file: image, breakpoints: settings.breakpoints.type}"/>
+		<f:if condition="{image.title} && {image.alternative}">
+			<f:render partial="Content/ImageRender" arguments="{settings: settings, file: image, breakpoints: settings.breakpoints.type}"/>
+		</f:if>
 	</f:for>
 </f:if>
 </html>
