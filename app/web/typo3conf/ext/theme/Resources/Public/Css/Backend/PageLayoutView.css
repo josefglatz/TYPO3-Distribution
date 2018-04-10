@@ -50,6 +50,9 @@
 .theme-danger {
 	background-color: #efc7c7 !important;
 }
+.theme-text-bold {
+	font-weight: bold;
+}
 
 /*
  * tt_content_drawFooter Enrichment

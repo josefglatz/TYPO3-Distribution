@@ -45,6 +45,19 @@
 	<f:variable name="fullfilledRequirements" value="{f:if(condition: '{image.title} && {image.alternative}', then: '1', else: '0')}" />
 	<div class="theme-style-boxed {f:if(condition: '{fullfilledRequirements}', else: 'theme-danger')}">
 		<f:image image="{image}" cropVariant="logo" class="theme-margin-bottom-15 theme-border-hover{f:if(condition: '{fullfilledRequirements}', else: ' theme-opacity-5')}" />
+
+		<f:if condition="!{fullfilledRequirements}">
+			<h5 class="theme-text-bold"><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary" /></h5>
+			<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary.fields" />
+			<f:if condition="{image.title} == ''">
+				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" />
+			</f:if>
+			<f:if condition="{image.alternative} == ''">
+				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" />
+			</f:if>
+			<hr>
+		</f:if>
+
 		<f:if condition="{image.title} || {image.alternative} || {image.description}">
 			<dl>
 				<f:if condition="{image.title}">
@@ -61,17 +74,6 @@
 				</f:if>
 				<f:comment><!-- @TODO: TYPO3-Distribution: CE theme_logo_cemetery: render link url --></f:comment>
 			</dl>
-		</f:if>
-		<f:if condition="!{fullfilledRequirements}">
-			<p></p>
-			<h5><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary" /></h5>
-			<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary.fields" />
-			<f:if condition="{image.title} == ''">
-				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" />
-			</f:if>
-			<f:if condition="{image.alternative} == ''">
-				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" />
-			</f:if>
 		</f:if>
 	</div>
 </f:section>
