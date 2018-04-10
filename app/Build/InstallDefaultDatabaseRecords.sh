@@ -8,17 +8,17 @@
 echo "Begin importing default database records"
 echo " "
 echo " "
-/app/typo3cms import:table "tx_scheduler_task_group" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml"
-/app/typo3cms import:table "tx_scheduler_task" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml"
-/app/typo3cms import:table "sys_filemounts" "uid" "/app/Build/DefaultDatabaseRecords/sys_filemounts.yml"
-/app/typo3cms import:backendgroups "uid" "/app/Build/DefaultDatabaseRecords/be_groups.yml"
-/app/typo3cms import:backendusers "username" "/app/Build/DefaultDatabaseRecords/be_users.yml"
-/app/typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
-/app/typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
-/app/typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"
-/app/typo3cms import:frontendusers "username" "/app/Build/DefaultDatabaseRecords/fe_users.yml"
-/app/typo3cms import:table "sys_be_shortcuts" "uid" "/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml"
-/app/typo3cms import:table "tt_content" "uid" "/app/Build/DefaultDatabaseRecords/tt_content.yml"
+/app/typo3cms import:table 'tx_scheduler_task_group' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml'
+/app/typo3cms import:table 'tx_scheduler_task' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml'
+/app/typo3cms import:table 'sys_filemounts' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/sys_filemounts.yml'
+/app/typo3cms import:backendgroups --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/be_groups.yml'
+/app/typo3cms import:backendusers --match-fields='username' --file='/app/Build/DefaultDatabaseRecords/be_users.yml' --be-user-match-group-be-title='false'
+/app/typo3cms import:table 'pages' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/pages.yml'
+/app/typo3cms import:table 'sys_domain' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/sys_domain.yml'
+/app/typo3cms import:frontendgroups --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/fe_groups.yml'
+/app/typo3cms import:frontendusers --match-fields='username' --file='/app/Build/DefaultDatabaseRecords/fe_users.yml'
+/app/typo3cms import:table 'sys_be_shortcuts' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml'
+/app/typo3cms import:table 'tt_content' --match-fields='uid' --file='/app/Build/DefaultDatabaseRecords/tt_content.yml'
 echo " "
 echo " "
 echo "Finalized the import of default database records"
