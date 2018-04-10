@@ -53,6 +53,9 @@
 		<trans-unit id="crop_variants.mobile.label">
 			<source>Mobile &#8673;</source>
 		</trans-unit>
+		<trans-unit id="crop_variants.teaser.label">
+			<source>Teaser</source>
+		</trans-unit>
 		<trans-unit id="crop_variants.opengraph.label">
 			<source>Open Graph (Official Suggestion 2018)</source>
 		</trans-unit>
