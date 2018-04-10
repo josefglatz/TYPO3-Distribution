@@ -36,6 +36,18 @@
 	margin-top: 0 !important;
 }
 
+.theme-margin-bottom-15:not(:last-child) {
+	margin-bottom: 15px !important;
+}
+
+.theme-border-hover {
+	border: 1px solid transparent;
+}
+.theme-border-hover:hover {
+	border: 1px solid rgba(0,0,0,.4);
+	background: rgba(0,0,0,.4);
+}
+
 /*
  * tt_content_drawFooter Enrichment
  */
@@ -151,7 +163,7 @@
 /*
  * CE theme_download_box
  */
-.theme-backedpreview-theme_download_box {
+.theme-backendpreview-theme_download_box {
 
 }
 
@@ -166,3 +178,53 @@
 	.theme-youtube-video-heading {
 		margin-bottom: .7em;
 	}
+
+/*
+ * CE theme_logo_cemetery
+ */
+.theme-backendpreview-flexboxgrid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+.theme-backendpreview-flexboxgrid > * {
+	flex: 0 1 98%;
+}
+
+@media screen and (min-width: 576px) {
+	.theme-backendpreview-flexboxgrid > * {
+		flex: 0 0 48%;
+	}
+}
+@media screen and (min-width: 768px) {
+	.theme-backendpreview-flexboxgrid > * {
+		flex: 0 0 32%;
+	}
+}
+@media screen and (min-width: 992px) {
+	.theme-backendpreview-flexboxgrid > * {
+		flex: 0 0 23%;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.theme-backendpreview-flexboxgrid > * {
+		flex: 0 0 20%;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.theme-backendpreview-flexboxgrid > * {
+		flex: 0 0 16%;
+	}
+}
+
+.theme-backendpreview-flexboxgrid-item {
+
+}
+
+.theme-style-boxed {
+	border: 1px solid rgba(0,0,0,.1);
+	padding: 15px 15px;
+	background-color: rgba(0,0,0,.01);
+}

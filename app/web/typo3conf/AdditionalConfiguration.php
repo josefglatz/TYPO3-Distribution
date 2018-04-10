@@ -69,6 +69,11 @@ $customChanges = [
                         'allowedImageFileExt' => 'jpg,jpeg,png',
                     ],
                 ],
+                'theme_logo_cemetery' => [
+                    'logoImage' => [
+                        'allowedImageFileExt' => 'gif,jpg,jpeg,png,svg',
+                    ],
+                ],
             ],
         ],
     ],

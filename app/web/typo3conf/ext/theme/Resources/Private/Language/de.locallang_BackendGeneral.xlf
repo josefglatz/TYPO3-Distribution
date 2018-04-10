@@ -25,6 +25,9 @@
 			<source>Default</source>
 			<target>Standard</target>
 		</trans-unit>
+		<trans-unit id="crop_variants.logo.label" approved="yes">
+			<target>Logo spezifischer Crop</target>
+		</trans-unit>
 		<trans-unit id="crop_variants.opengraph.label" approved="yes">
 			<source>Open Graph (Official Suggestion 2018)</source>
 			<target>Open Graph (Offizielle Empfehlung aus 2018)</target>
@@ -104,6 +107,9 @@
 		</trans-unit>
 		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
 			<target>Bild neben Text hinzufügen</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_cemetery">
+			<target>Logo hinzufügen</target>
 		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
 			<source>Text next to the Image</source>

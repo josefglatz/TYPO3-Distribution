@@ -56,6 +56,10 @@
 			<source>Lead Text</source>
 			<target>Leittext / Einleitungstext</target>
 		</trans-unit>
+		<trans-unit id="theme_logo_cemetery.description">
+			<source>Display logos in a defined grid (with describing text for each logo).</source>
+			<target>Darstellen mehrerer Logos. (Jedes davon mit beschreibenden Text).</target>
+		</trans-unit>
 		<trans-unit id="theme_textimage.description" approved="yes">
 			<target>Ein Bild in Kombination mit einem normalen Textelement.</target>
 		</trans-unit>

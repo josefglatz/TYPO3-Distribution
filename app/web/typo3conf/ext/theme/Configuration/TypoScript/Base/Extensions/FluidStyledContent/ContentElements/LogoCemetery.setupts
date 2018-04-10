@@ -1,0 +1,45 @@
+tt_content {
+	theme_logo_cemetery =< lib.contentElement
+	theme_logo_cemetery {
+		templateName = LogoCemetery
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				references.fieldName = image
+				as = logos
+			}
+		}
+		stdWrap {
+			editIcons = tt_content: header [header_layout], image
+			editIcons {
+				iconTitle.data = LLL:EXT:theme/Resources/Private/Language/locallang_FrontendEditing.xlf:editIcon.generic
+			}
+		}
+		settings {
+			breakpoints >
+			breakpoints {
+				type {
+					0 {
+						media = min-width
+						size = {$site.breakpoints.xs}
+						maxWidth = 300
+						cropVariant = logo
+					}
+				}
+			}
+			defaultImageMaxWidth = 800
+			pixelDensities {
+				// Specify all TYPE SPECIFIC pixel densities, which should be processed by the Content/ImageRender fluid partial
+				//
+				// Defaults: EXT:theme/Configuration/TypoScript/Base/Extensions/FluidStyledContent/Base/FluidStyledContent.setupts
+				//
+				// KEEP IN MIND: each additional pixel density needs potentially more server resources (if no external image service is used)
+				//   - generating processed image (slow down if requested image sizes (while page request) must be generated)
+				//   - disk space used by processed image (by potentially more files)
+				type {
+					// pixel density ratio 1.0 is always generated and must be therefore not added to this list
+				}
+			}
+		}
+	}
+}

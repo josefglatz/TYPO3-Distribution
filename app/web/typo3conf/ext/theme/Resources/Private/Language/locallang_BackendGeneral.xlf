@@ -38,6 +38,9 @@
 		<trans-unit id="crop_variants.lg.label">
 			<source>Large (lg) &#8673;</source>
 		</trans-unit>
+		<trans-unit id="crop_variants.logo.label">
+			<source>Logo specific Crop</source>
+		</trans-unit>
 		<trans-unit id="crop_variants.md.label">
 			<source>Medium (md) &#8673;</source>
 		</trans-unit>
@@ -137,6 +140,9 @@
 		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
 			<source>Add Image next to Textblock</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_cemetery">
+			<source>Add logo</source>
+		</trans-unit>
 		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube">
 			<source>Add YouTube video</source>
 		</trans-unit>
@@ -145,6 +151,9 @@
 		</trans-unit>
 		<trans-unit id="field.tt_content.image.label.type.textimage">
 			<source>Image next to the Text</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.image.label.type.theme_logo_cemetery">
+			<source>Logos</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
 			<source>Text next to the Image</source>

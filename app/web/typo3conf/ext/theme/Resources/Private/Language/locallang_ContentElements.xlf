@@ -50,6 +50,12 @@
 		<trans-unit id="theme_lead_text.title">
 			<source>Lead Text</source>
 		</trans-unit>
+		<trans-unit id="theme_logo_cemetery.description">
+			<source>Display logos in a defined grid (with describing text for each logo).</source>
+		</trans-unit>
+		<trans-unit id="theme_logo_cemetery.title">
+			<source>Logos</source>
+		</trans-unit>
 		<trans-unit id="theme_youtube.description">
 			<source>Responsive YouTube video with useful options.</source>
 		</trans-unit>
