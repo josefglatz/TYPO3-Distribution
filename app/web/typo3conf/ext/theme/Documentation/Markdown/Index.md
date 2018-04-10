@@ -14,7 +14,8 @@ This repository delivers a full configured, bare metal TYPO3 distribution based 
 - [CKEditor](CKEditor/Index.md)
 - [Images](Images/Index.md)
 - [TYPO3 Extensions](Extensions/Index.md)
-- [PhpStorm Productivity](PhpStorm/Index.md)
+- [Productivity](Productivity/Index.md)
+- [PhpStorm Productivity](Productivity/PhpStorm/Index.md)
 - [Code Quality](CodeQuality/Index.md)
 
 ---
