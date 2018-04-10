@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app/web/typo3conf/ext/theme/Classes" isTestSource="false" packagePrefix="JosefGlatz\Theme\" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/namelesscoder/typo3-repository-client" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/w8tcha/ckeditor-wordcount-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin/_processed_" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin/_temp_" />

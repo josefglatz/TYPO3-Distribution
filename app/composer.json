@@ -118,7 +118,7 @@
 		"typo3/cms-viewpage": "~8.7",
 		"typo3/cms-wizard-crpages": "~8.7",
 		"typo3/cms-wizard-sortpages": "~8.7",
-		"w8tcha/CKEditor-WordCount-Plugin": "^1.17"
+		"w8tcha/ckeditor-wordcount-plugin": "1.17.2"
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
@@ -170,7 +170,7 @@
 			"install-extension-dummy": false
 		},
 		"copy-file": {
-			"vendor/w8tcha/CKEditor-WordCount-Plugin/wordcount/": "web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/wordcount/"
+			"vendor/w8tcha/ckeditor-wordcount-plugin/wordcount/": "web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/wordcount/"
 		}
 	},
 	"autoload": {

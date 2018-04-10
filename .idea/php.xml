@@ -3,7 +3,6 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/app/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/app/vendor/w8tcha/CKEditor-WordCount-Plugin" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/cms" />
       <path value="$PROJECT_DIR$/app/vendor/rmccue/requests" />
       <path value="$PROJECT_DIR$/app/vendor/mso/idna-convert" />
@@ -35,11 +34,11 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/cms-cli" />
       <path value="$PROJECT_DIR$/app/vendor/composer" />
-      <path value="$PROJECT_DIR$/app/vendor/pyrech/composer-changelogs" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/class-alias-loader" />
       <path value="$PROJECT_DIR$/app/vendor/typo3/cms-composer-installers" />
       <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/app/vendor/namelesscoder/typo3-repository-client" />
+      <path value="$PROJECT_DIR$/app/vendor/w8tcha/ckeditor-wordcount-plugin" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
