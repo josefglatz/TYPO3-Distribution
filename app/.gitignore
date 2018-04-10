@@ -14,7 +14,6 @@
 /web/typo3temp/**/*
 /web/typo3conf/PackageStates.php
 /web/typo3conf/temp_*.php
-/web/typo3conf/deprecation_*.log
 /web/typo3conf/realurl_autoconf.php
 /web/typo3conf/autoload/
 /web/typo3conf/.tx_imageautoresize
@@ -37,8 +36,7 @@
 
 .php_cs.cache
 node_modules
-
-/typo3log.log
+*.log
 
 /web/typo3conf/ext/*.zip
 /web/typo3conf/ext/*.tgz
