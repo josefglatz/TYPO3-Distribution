@@ -26,6 +26,12 @@
 				</f:if>
 			</f:else>
 		</f:if>
+		<f:comment><!-- Set variable defaultImageMaxWidth if argument was not explicitly handed over --></f:comment>
+		<f:if condition="{defaultImageMaxWidth}">
+			<f:else>
+				<f:variable name="defaultImageMaxWidth" value="{settings.defaultImageMaxWidth}" />
+			</f:else>
+		</f:if>
 
 
 		<f:comment><!-- Optionally wrap link around the <picture> tag --></f:comment>
@@ -71,6 +77,7 @@
 		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg', class: 'custom-img-tag-css-class'}"/>
 		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.custom}"/>
 		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.breakpoints.type}"/>
+		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.breakpoints.type, defaultImageMaxWidth: '800'}"/>
 
 		<!---Render Image with custom sizes -- START --->
 		<f:variable name="breakpoints" value="{
@@ -85,6 +92,14 @@
 
 		<f:render partial="ImageRender" arguments="{settings: settings, file:image, breakpoints:breakpoints}"/>
 		<!---Render Image with custom sizes -- END --->
+
+		<!---Render Image with custom pixelDensities -- START --->
+		<f:variable name="pixelDensities" value="{
+					0:{media: '2.0', min-resolution: 192}
+				}" />
+
+		<f:render partial="ImageRender" arguments="{settings: settings, file:image, pixelDensities: pixelDensities}"/>
+		<!---Render Image with custom pixelDensities -- END --->
 
 		<!---Render Image with default sizes--->
 		<f:render partial="ImageRender" arguments="{settings: settings, file:image}"/>
