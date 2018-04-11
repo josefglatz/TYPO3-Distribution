@@ -28,8 +28,8 @@ call_user_func(
         //$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:news/Resources/Private/Language/locallang_modadministration.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/Overrides/de.locallang_modadministration.xlf';
 
         // Hook for changing output before showing it
-        //$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
-        //   = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][]
+           = \JosefGlatz\Theme\Hooks\Frontend\ContentPostProc::class . '->run';
 
         // Register own RTE (ckeditor) presets
         $rtePresets = [                                 // Final preset identifier:
