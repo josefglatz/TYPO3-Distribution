@@ -13,6 +13,7 @@ need/want for a specific project.
 
 - [Default activated extensions](#default-activated-extensions)
 - [Suggested extensions](#suggested-extensions)
+- [Overview of ready2use preconfigured extensions](#suggested-extensions-with-ready2use-configuration-snippets)
 
 ---
 
