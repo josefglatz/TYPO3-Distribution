@@ -150,6 +150,7 @@
 		"in2code/powermail": "dev-master",
 		"josefglatz/beuser-fastswitch": "dev-master",
 		"koninklijke-collective/my-redirects": "dev-master",
+		"lochmueller/sourceopt": "^1.0",
 		"mask/mask": "dev-master as 3.0.0",
 		"namelesscoder/typo3-cms-fluid-debug": "dev-master",
 		"rlmp/rlmp-language-detection": "dev-master",

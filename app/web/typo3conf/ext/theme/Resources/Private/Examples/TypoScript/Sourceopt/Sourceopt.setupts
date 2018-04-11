@@ -3,5 +3,10 @@
 config.sourceopt {
 	removeComments.keep {
 
+		// Keep Google Page Speed exclude comments
+		1523420981 = /^gps(e|s)/usi
+
+		// Disable the TYPO3 head comment
+#		87 >
 	}
 }
