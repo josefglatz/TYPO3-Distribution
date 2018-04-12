@@ -6,6 +6,11 @@ call_user_func(
         $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
         $languageFileCePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_ContentElements.xlf:';
 
+        /***************
+         * CE feature flags
+         */
+        $maxAmountVideos = 1;
+
         /**
          * Add CE
          */
@@ -45,7 +50,7 @@ call_user_func(
                             'label' => $languageFileBePrefix . 'field.tt_content.assets.label.type.youtube',
                             'config' => [
                                 'minitems' => 1,
-                                'maxitems' => 1,
+                                'maxitems' => (int)$maxAmountVideos,
                                 'overrideChildTca' => [
                                     'types' => [
                                         \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
@@ -75,6 +80,15 @@ call_user_func(
                                 'appearance' => [
                                     'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.tt_content.assets.irre.new.label.type.youtube',
                                     'collapseAll' => false,
+                                ],
+                                'filter' => [
+                                    [
+                                        'userFunc' => \TYPO3\CMS\Core\Resource\Filter\FileExtensionFilter::class . '->filterInlineChildren',
+                                        'parameters' => [
+                                            'allowedFileExtensions' => 'youtube',
+                                            'disallowedFileExtensions' => ''
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
