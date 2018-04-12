@@ -4,8 +4,12 @@ site.breakpoints {
 	xs = 0
 	xs-max = 575
 	sm = 576
+	sm-max = 767
 	md = 768
+	md-max = 991
 	lg = 992
+	lg-max = 1199
 	xl = 1200
+	xl-max = 1439
 	xxl = 1440
 }
