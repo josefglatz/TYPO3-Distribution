@@ -30,7 +30,7 @@ Back to [Index](../Index.md) / Back to
    2. (Simple) Frontend Template
    3. New ViewHelper (if something could be really improved in Fluid)
 5. **PHP FormDataProvider**
-   1. specific formEngine modifications for this type (if necessary
+   1. specific formEngine modifications for this type (if necessary only!) Consider using PageTSConfig first!!!
 
 ## Helper method `\JosefGlatz\Theme\Utility\Tca::getShowitemDefault()`
 
