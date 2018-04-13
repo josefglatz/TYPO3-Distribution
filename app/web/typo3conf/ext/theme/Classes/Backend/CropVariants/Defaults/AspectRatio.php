@@ -64,7 +64,10 @@ class AspectRatio
         'NaN' => [
             'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
             'value' => 0.0
-        ]
+        ],
+        /*********
+         * Add additional project specific aspectRatios here:
+         */
     ];
 
     protected const defaultAspectRatios = [
