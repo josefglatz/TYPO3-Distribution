@@ -45,6 +45,8 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 * breakpoints, pixelDensities and defaultImageMaxWidth is gathered from
   default configuration (TypoScript)
 
+---
+
 ### Render image with explicit breakpoints configuration (example 1)
 
 ```html
@@ -54,12 +56,15 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 * breakpoints configuration is gathered from TypoScript setup
   `settings.breakpoints.default` (exemplary)
 
+---
+
 ### Render image with explicit breakpoints configuration (example 2)
 
 ```html
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints.specialconfiguration}"/>
 ```
 
+---
 
 ### Render image with custom `<img />` HTML tag css class
 
@@ -67,11 +72,15 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, class: 'custom-img-tag-css-class'}"/>
 ```
 
+---
+
 ### Render image with custom `<picture />` HTML tag css class
 
 ```html
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, pictureClass: 'custom-picture-tag-css-class'}"/>
 ```
+
+---
 
 ### Render image where fallback image processing is using the existing cropVariant `lg`
 
@@ -81,6 +90,8 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 
 > The value of the `defaultCropVariant` must be set via TCA or TSConfig
 
+---
+
 ### Render image where fallback image processing is using a custom defaultImageMaxWidth value
 
 ```html
@@ -89,6 +100,8 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 
 > The value of `defaultImageMaxWidth` argument is used for the
 > "fallback" img tag.
+
+---
 
 ### Render image with custom `{breakpoints}` configuration
 
@@ -115,6 +128,8 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
   * `cropVariant` (the cropVariant which should be used for the
     resulting breakpoint image source)
 
+---
+
 ### Render image with custom `{pixelDensities}` configuration
 
 ```html
@@ -124,6 +139,8 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
     
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:image, pixelDensities: pixelDensities}"/>
 ```
+
+---
 
 ### Render image with custom configuration (non content element context – where no ImageRender specific TypoScript `settings` configuration was defined for fluid rendering)
 
