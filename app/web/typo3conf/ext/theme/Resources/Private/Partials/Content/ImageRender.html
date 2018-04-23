@@ -34,8 +34,8 @@
 						<f:alias map="{pds: pixelDensities}">
 							<f:for each="{pds}" as="pd">
 								<f:variable name="AttributeMediaValue"><theme:format.cleanupString tabs="true" lineBreaks="true" unixBreaks="true" windowsBreaks="true">
-									only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: {pd.min-ratio}),
-									only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: {pd.min-resolution}dpi)
+									only screen and ({breakpoint.media -> theme:or(alternative: 'min-width')}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: {pd.min-ratio}),
+									only screen and ({breakpoint.media -> theme:or(alternative: 'min-width'}: {breakpoint.size}px) and (min-resolution: {pd.min-resolution}dpi)
 								</theme:format.cleanupString></f:variable>
 								{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: pd.min-ratio) -> f:variable(name: 'resultingMaxWidth')}
 								<source
@@ -43,7 +43,7 @@
 									media="{AttributeMediaValue}">
 							</f:for>
 						</f:alias>
-						<f:variable name="mediaAttribute">only screen and ({breakpoint.media}: {breakpoint.size}px)</f:variable>
+						<f:variable name="mediaAttribute">only screen and ({breakpoint.media -> theme:or(alternative: 'min-width'}: {breakpoint.size}px)</f:variable>
 						<source
 							srcset="{f:uri.image(image: file, maxWidth: breakpoint.maxWidth, cropVariant: breakpoint.cropVariant)}"
 							media="{mediaAttribute}">

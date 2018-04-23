@@ -42,17 +42,24 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:image}"/>
 ```
 
-### Render image with explicit breakpoints configuration
+* breakpoints, pixelDensities and defaultImageMaxWidth is gathered from
+  default configuration (TypoScript)
+
+### Render image with explicit breakpoints configuration (example 1)
 
 ```html
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints.default}"/>
 ```
 
-### Render image with explicit breakpoints configuration
+* breakpoints configuration is gathered from TypoScript setup
+  `settings.breakpoints.default` (exemplary)
+
+### Render image with explicit breakpoints configuration (example 2)
 
 ```html
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints.specialconfiguration}"/>
 ```
+
 
 ### Render image with custom `<img />` HTML tag css class
 
@@ -63,7 +70,7 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 ### Render image with custom `<picture />` HTML tag css class
 
 ```html
-<f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, pictureClass: 'custom-pciture-tag-css-class'}"/>
+<f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, pictureClass: 'custom-picture-tag-css-class'}"/>
 ```
 
 ### Render image where fallback image processing is using the existing cropVariant `lg`
@@ -72,27 +79,41 @@ Back to [Index](../../Index.md) / Back to [Frontend Index](../Index.md)
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, defaultCropVariant: 'lg'}"/>
 ```
 
+> The value of the `defaultCropVariant` must be set via TCA or TSConfig
+
 ### Render image where fallback image processing is using a custom defaultImageMaxWidth value
 
 ```html
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:file, defaultImageMaxWidth: '1600'}"/>
 ```
 
+> The value of `defaultImageMaxWidth` argument is used for the
+> "fallback" img tag.
+
 ### Render image with custom `{breakpoints}` configuration
 
 ```html
 <f:variable name="breakpoints" value="{
-        0:{media:'max-width', size:375, maxWidth:375, cropVariant:'mobile'},
-        1:{media:'max-width', size:480, maxWidth:480, cropVariant:'mobile'},
-        2:{media:'max-width', size:767, maxWidth:767, cropVariant:'tablet'},
-        3:{media:'max-width', size:991, maxWidth:991, cropVariant:'tablet'},
-        4:{media:'max-width', size:1279, maxWidth:1279, cropVariant:'default'},
-        5:{media:'max-width', size:1479, maxWidth:1479, cropVariant:'default'},
-        6:{media:'min-width', size:1480, maxWidth:2000, cropVariant:'default'}
+        0:{media:'min-width', size:0, maxWidth:575, cropVariant:'mobile'},
+        1:{media:'min-width', size:576, maxWidth:767, cropVariant:'mobile'},
+        2:{media:'min-width', size:768, maxWidth:991, cropVariant:'tablet'},
+        3:{media:'min-width', size:992, maxWidth:1199, cropVariant:'tablet'},
+        4:{media:'min-width', size:1200, maxWidth:1439, cropVariant:'default'},
+        5:{media:'min-width', size:1440, maxWidth:1479, cropVariant:'default'}
     }"/>
     
 <f:render partial="Content/ImageRender" arguments="{settings: settings, file:image, breakpoints:breakpoints}"/>
 ```
+
+* breakpoints must be defined mobile-first
+* each breakpoint configuration needs following properties
+  * `media` (normally you use key value `min-width` (which is also used
+    as fallback))
+  * `size` (pixel value (without units) of media)
+  * `maxWidth` (maximum width of the processed image (used in `<f:img>`
+    viewhelper))
+  * `cropVariant` (the cropVariant which should be used for the
+    resulting breakpoint image source)
 
 ### Render image with custom `{pixelDensities}` configuration
 
@@ -159,6 +180,11 @@ pixel ratios**
     templates)
 
 ### 4. Support for set up `defaultImageMaxWidth` via argument
+
+### 5. Default fallback for `breakpoint.media` key
+
+**If the media property of a breakpoint is not set, `min-width` will be
+used as fallback.**
 
 ---
 
