@@ -206,6 +206,14 @@
 		<trans-unit id="field.tt_content.tx_theme_big_media.check_0" approved="yes">
 			<source>Aktiv</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_link.label" approved="yes">
+			<source>Link</source>
+			<target>Link</target>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_link_label.label" approved="yes">
+			<source>Link Label</source>
+			<target>Linktext</target>
+		</trans-unit>
 		<trans-unit id="field.tt_content.tx_theme_unfolded.label" approved="yes">
 			<source>Initial unfolded</source>
 			<target>Initial ausgeklappt</target>

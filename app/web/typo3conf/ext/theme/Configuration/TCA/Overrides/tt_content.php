@@ -11,8 +11,15 @@ call_user_func(
              * ['ctrl'] configuration
              */
             'ctrl' => [
-                // Add 'imageposition' to search fields - so its included in the backend search results
-                'searchFields' => $GLOBALS['TCA'][$table]['ctrl']['searchFields'] . ',imageposition',
+                // Add columns to search fields - so its included in the backend search results
+                'searchFields' => $GLOBALS['TCA'][$table]['ctrl']['searchFields'] . ',imageposition,tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_link_label,tx_theme_link',
+            ],
+            /*
+             * ['interface'] configuration
+             */
+            'interface' => [
+                // Extend showRecordFieldList
+                'showRecordFieldList' => $GLOBALS['TCA'][$table]['ctrl']['interface']['showRecordFieldList'] . ',tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_big_media,tx_theme_link_label,tx_theme_link,tx_theme_unfolded,tx_theme_prefer_download',
             ],
             /*
              * Columns configuration
@@ -90,6 +97,34 @@ call_user_func(
                     ]
                 ],
             ],
+            'tx_theme_link_label' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_link_label.label',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 15,
+                    'default' => '',
+                    'eval' => 'trim',
+                    'max' => 30,
+                ],
+            ],
+            'tx_theme_link' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_link.label',
+                'config' => [
+                    'type' => 'input',
+                    'renderType' => 'inputLink',
+                    'size' => 50,
+                    'max' => 1024,
+                    'eval' => 'trim',
+                    'fieldControl' => [
+                        'linkPopup' => [
+                            'options' => [
+                                'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
+                            ],
+                        ],
+                    ],
+                    'softref' => 'typolink'
+                ],
+            ],
             'tx_theme_unfolded' => [
                 'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_unfolded.label',
                 'config' => [
@@ -116,6 +151,17 @@ call_user_func(
             ],
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
+
+        /**
+         * Make further adoptions to table
+         */
+        // Add palette "tx-theme-link"
+        // (Usage example in showitem: "--palette--;' . $languageFileBePrefix . 'palette.' . $table . '.tx-theme-link;tx-theme-link,")
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'tx-' . $extKey . '-link',
+            'tx_theme_link, tx_theme_link_label'
+        );
 
         // Default Content Element
         $GLOBALS['TCA'][$table]['columns']['CType']['config']['default'] = 'text';

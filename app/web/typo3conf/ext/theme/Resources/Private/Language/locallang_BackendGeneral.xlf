@@ -236,6 +236,12 @@
 		<trans-unit id="field.tt_content.tx_theme_big_media.check_0">
 			<source>Active</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_link.label">
+			<source>Link</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_link_label.label">
+			<source>Link Label</source>
+		</trans-unit>
 		<trans-unit id="field.tt_content.tx_theme_unfolded.label">
 			<source>Initially unfolded</source>
 		</trans-unit>
@@ -301,6 +307,9 @@
 		</trans-unit>
 		<trans-unit id="palette.sys_file_reference.tx-theme-video-cover">
 		    <source>Cover</source>
+		</trans-unit>
+		<trans-unit id="palette.tt_content.tx-theme-link">
+			<source>Link</source>
 		</trans-unit>
 		<trans-unit id="tabs.label.single-image">
 		    <source>Image</source>

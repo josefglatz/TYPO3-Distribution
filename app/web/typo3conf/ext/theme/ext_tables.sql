@@ -1,10 +1,12 @@
 CREATE TABLE tt_content (
-	bodytext_1 text,
-	bodytext_2 text,
+	tx_theme_bodytext_1 text,
+	tx_theme_bodytext_2 text,
 
 	tx_theme_big_media int(11) unsigned DEFAULT '0',
 	tx_theme_unfolded int(11) unsigned DEFAULT '0',
-	tx_theme_prefer_download int(11) unsigned DEFAULT '0'
+	tx_theme_prefer_download int(11) unsigned DEFAULT '0',
+	tx_theme_link varchar(1024) DEFAULT '' NOT NULL,
+	tx_theme_link_label tinytext
 );
 
 CREATE TABLE pages (
