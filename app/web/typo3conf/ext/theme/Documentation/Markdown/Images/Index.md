@@ -14,6 +14,7 @@ different situations:
 3. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-aspectratio-cover-croparea-presets-and-cropvariant-definitions)
 4. [Unlocalize crop configuration](#unlocalize-crop-configuration)
 5. [Image Only File Collection](#image-only-file-collection)
+6. [Frontend Image Rendering](#frontend-image-rendering)
 
 ---
 
@@ -114,3 +115,11 @@ to remove this behaviour and activate TYPO3 Core's default.**
 
 A static file collection type which only supports supported image file types
 makes working with file collections much easier.
+
+---
+
+## Frontend Image Rendering
+
+> All primary frontend relevant documentation is placed
+
+* [see Fluid Image Render Partial](../Frontend/Fluid/FluidImageRenderPartial.md)
