@@ -65,6 +65,8 @@ site {
         socialNav =
     }
 
+	defaultImageMaxWidth = 800
+
 
     felogin {
         emailFrom =

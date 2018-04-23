@@ -1,7 +1,5 @@
 Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
----
-
 # Overview: Fluid variables, CSS classes, TypoScript Libs, Important to know stuff
 
 ## Fluid variables

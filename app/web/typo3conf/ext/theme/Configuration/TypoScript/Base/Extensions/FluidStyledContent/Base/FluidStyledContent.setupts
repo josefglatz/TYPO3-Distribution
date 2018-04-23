@@ -57,7 +57,7 @@ lib.contentElement {
 				}
 			}
 		}
-		defaultImageMaxWidth = 800
+		defaultImageMaxWidth = {$site.defaultImageMaxWidth}
 
 		pixelDensities {
 			// Specify all pixel densities, which should be processed by the Content/ImageRender fluid partial

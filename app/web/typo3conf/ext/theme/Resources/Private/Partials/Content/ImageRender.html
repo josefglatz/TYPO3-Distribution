@@ -5,38 +5,30 @@
 	<f:if condition="{file}">
 
 
-		<f:comment><!-- Set variable breakpoints if argument not explicitly handed over --></f:comment>
-		<f:if condition="{breakpoints}">
-			<f:else>
-				<f:variable name="breakpoints" value="{settings.breakpoints}"/>
-			</f:else>
-		</f:if>
-		<f:comment><!-- Set variable pixelDensities if argument not explicitly handed over --></f:comment>
-		<f:if condition="{pixelDensities}">
-			<f:else>
-				<f:if condition="{settings.pixelDensities.type -> f:count()} > 0">
-					<f:then>
-						<f:comment><!-- Set type specific pixel density configuration (if it's set for actual content type) --></f:comment>
-						<f:variable name="pixelDensities" value="{settings.pixelDensities.type}" />
-					</f:then>
-					<f:else>
-						<f:comment><!-- Set default pixel density configuration --></f:comment>
-						<f:variable name="pixelDensities" value="{settings.pixelDensities.default}" />
-					</f:else>
-				</f:if>
-			</f:else>
-		</f:if>
-		<f:comment><!-- Set variable defaultImageMaxWidth if argument was not explicitly handed over --></f:comment>
-		<f:if condition="{defaultImageMaxWidth}">
-			<f:else>
-				<f:variable name="defaultImageMaxWidth" value="{settings.defaultImageMaxWidth}" />
-			</f:else>
+		<f:if condition="!{breakpoints}">
+			{f:variable(name: 'breakpoints', value: '{settings.breakpoints.default}')}
 		</f:if>
 
 
-		<f:comment><!-- Optionally wrap link around the <picture> tag --></f:comment>
-		<f:link.typolink parameter="{file.link}" class="picturelink">
-			<picture>
+		<f:if condition="!{pixelDensities}">
+			<f:if condition="{settings.pixelDensities.type -> f:count()} > 0">
+				<f:then>
+					{f:variable(name: 'pixelDensities', value: settings.pixelDensities.type)}
+				</f:then>
+				<f:else>
+					{f:variable(name: 'pixelDensities', value: settings.pixelDensities.default)}
+				</f:else>
+			</f:if>
+		</f:if>
+
+
+		<f:if condition="!{defaultImageMaxWidth}">
+			{f:variable(name: 'defaultImageMaxWidth', value: '{settings.defaultImageMaxWidth -> theme:or(alternative: \'800\')}')}
+		</f:if>
+
+
+		<f:link.typolink parameter="{file.link}" class="{linkClass -> theme:or(alternative: 'picturelink')}">
+			<picture class="{pictureClass}">
 				<f:for each="{breakpoints}" as="breakpoint" iteration="i_breakpoints" reverse="true">
 					<f:if condition="{breakpoint.media}">
 						<f:alias map="{pds: pixelDensities}">
@@ -45,7 +37,7 @@
 									only screen and ({breakpoint.media}: {breakpoint.size}px) and (-webkit-min-device-pixel-ratio: {pd.min-ratio}),
 									only screen and ({breakpoint.media}: {breakpoint.size}px) and (min-resolution: {pd.min-resolution}dpi)
 								</theme:format.cleanupString></f:variable>
-								<f:variable name="resultingMaxWidth"><theme:math.simpleMultiply a="{breakpoint.maxWidth}" b="{pd.min-ratio}" /></f:variable>
+								{theme:math.simpleMultiply(a: breakpoint.maxWidth, b: pd.min-ratio) -> f:variable(name: 'resultingMaxWidth')}
 								<source
 									srcset="{f:uri.image(image: file, maxWidth: '{resultingMaxWidth}', cropVariant: breakpoint.cropVariant)}"
 									media="{AttributeMediaValue}">
@@ -58,54 +50,11 @@
 					</f:if>
 				</f:for>
 
-				<f:comment><!-- Fallback Image --></f:comment>
-
 				<img class="{class -> theme:or(alternative: 'img-fluid')}"
-					 src="{f:uri.image(image: file, maxWidth: settings.defaultImageMaxWidth, cropVariant: '{defaultCropVariant -> theme:or(alternative: \'default\')}')}"
+					 src="{f:uri.image(image: file, maxWidth: defaultImageMaxWidth, cropVariant: '{defaultCropVariant -> theme:or(alternative: \'default\')}')}"
 					 alt="{file.alternative}" title="{file.title}">
 			</picture>
 		</f:link.typolink>
 	</f:if>
-
-
-	<f:comment>
-
-		<!---Render Image with custom sizes from TS settings--->
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, class: 'custom-img-tag-css-class'}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg'}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, breakpoints:settings.breakpoints, defaultCropVariant: 'lg', class: 'custom-img-tag-css-class'}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.custom}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.breakpoints.type}"/>
-		<f:render partial="ImageRender" arguments="{settings: settings, file:file, pixelDensities:settings.breakpoints.type, defaultImageMaxWidth: '800'}"/>
-
-		<!---Render Image with custom sizes -- START --->
-		<f:variable name="breakpoints" value="{
-							0:{media:'max-width', size:375, maxWidth:375, cropVariant:'mobile'},
-							1:{media:'max-width', size:480, maxWidth:480, cropVariant:'mobile'},
-							2:{media:'max-width', size:767, maxWidth:767, cropVariant:'tablet'},
-							3:{media:'max-width', size:991, maxWidth:991, cropVariant:'tablet'},
-							4:{media:'max-width', size:1279, maxWidth:1279, cropVariant:'default'},
-							5:{media:'max-width', size:1479, maxWidth:1479, cropVariant:'default'},
-							6:{media:'min-width', size:1480, maxWidth:2000, cropVariant:'default'}
-						}"/>
-
-		<f:render partial="ImageRender" arguments="{settings: settings, file:image, breakpoints:breakpoints}"/>
-		<!---Render Image with custom sizes -- END --->
-
-		<!---Render Image with custom pixelDensities -- START --->
-		<f:variable name="pixelDensities" value="{
-					0:{media: '2.0', min-resolution: 192}
-				}" />
-
-		<f:render partial="ImageRender" arguments="{settings: settings, file:image, pixelDensities: pixelDensities}"/>
-		<!---Render Image with custom pixelDensities -- END --->
-
-		<!---Render Image with default sizes--->
-		<f:render partial="ImageRender" arguments="{settings: settings, file:image}"/>
-
-
-		<!-- Get an overview of real device pixel ratios: https://mydevice.io/devices/ -->
-	</f:comment>
 </f:spaceless>
 </html>
