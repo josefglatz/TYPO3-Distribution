@@ -43,6 +43,12 @@ page {
 		// and: sysext:frontend/Classes/DataProcessing/MenuProcessor.php
 
 		dataProcessing {
+			# Make specific TypoScript constants available in fluid template
+			10 = JosefGlatz\Theme\DataProcessing\ConstantsProcessor
+			10 {
+				as = theme
+				key = site
+			}
 
 			# Main Navigation (WITHOUT checking tx_theme_show_in_secondary_navigation=0)
 			100 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
