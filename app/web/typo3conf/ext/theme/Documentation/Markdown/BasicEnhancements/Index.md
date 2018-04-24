@@ -55,13 +55,15 @@ Back to [Index](../Index.md)
 
 ### New columns for `tt_content`
 
-| Column                     | Title                           | Type  | Description                                                                         | Excluded |
-|:---------------------------|:--------------------------------|:------|:------------------------------------------------------------------------------------|:---------|
-| `tx_theme_bodytext_1`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                  | -        |
-| `tx_theme_bodytext_2`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                  | -        |
-| `tx_theme_big_media`       | Big Media (Video, Images, ...)  | check | Can be used for content elements where media should be displayed big optionally     | -        |
-| `tx_theme_unfolded`        | Initially unfolded              | check | Can be used for content elements with collapsing content                            | -        |
-| `tx_theme_prefer_download` | Prefer download of files        | check | Can be used for content elements with file downloads and HTML5 attribute "download" | -        |
+| Column                     | Title                           | Type  | Description                                                                                           | Excluded |
+|:---------------------------|:--------------------------------|:------|:------------------------------------------------------------------------------------------------------|:---------|
+| `tx_theme_bodytext_1`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                                    | -        |
+| `tx_theme_bodytext_2`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                                    | -        |
+| `tx_theme_big_media`       | Big Media (Video, Images, ...)  | check | Can be used for content elements where media should be displayed big optionally                       | -        |
+| `tx_theme_link`            | Link field                      | input | Can be used for content elements where a link can be added by the editor (like `header_link`)         | -        |
+| `tx_theme_link_label`      | Link field label                | input | Can be used for content elements where you can set a link label (e.g. in addition to `tx_theme_link`) | -        |
+| `tx_theme_unfolded`        | Initially unfolded              | check | Can be used for content elements with collapsing content                                              | -        |
+| `tx_theme_prefer_download` | Prefer download of files        | check | Can be used for content elements with file downloads and HTML5 attribute "download"                   | -        |
 
 ### Customized existing columns for `tt_content`
 
