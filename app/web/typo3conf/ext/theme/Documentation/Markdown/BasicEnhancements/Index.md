@@ -45,9 +45,10 @@ Back to [Index](../Index.md)
 
 ### Custom predefined TCA palette for `sys_file_reference`
 
-| Name                  | Usage                                      | Fields                                                                |
-|:----------------------|:-------------------------------------------|:----------------------------------------------------------------------|
-| tx-theme-image-nolink | All common image meta fields except a link | `title, alternative, --linebreak--, description, --linebreak--, crop` |
+| Name                                | Usage                                                              | Fields                                                                |
+|:------------------------------------|:-------------------------------------------------------------------|:----------------------------------------------------------------------|
+| tx-theme-image-nolink               | All common image meta fields except a link                         | `title, alternative, --linebreak--, description, --linebreak--, crop` |
+| tx-theme-image-nolink-nodescription | All common image meta fields except a link and description/caption | `title, alternative, --linebreak--, --linebreak--, crop`              |
 
 
 

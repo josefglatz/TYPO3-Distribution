@@ -200,6 +200,13 @@ call_user_func(
             'title,alternative,--linebreak--,
             description,--linebreak--,crop'
         );
+        // Add palette "tx-theme-image-nolink-nodescription"
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'tx-' . $extKey . '-image-nolink-nodescription',
+            'title,alternative,--linebreak--,
+            --linebreak--,crop'
+        );
         // Add palette "tx-theme-video-cover"
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,
