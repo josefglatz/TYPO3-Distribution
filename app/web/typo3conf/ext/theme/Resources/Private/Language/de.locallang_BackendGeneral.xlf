@@ -333,6 +333,14 @@
 			<source>Layout 3</source>
 			<target>Aussehen 3</target>
 		</trans-unit>
+		<trans-unit id="genericlabel.image" approved="yes">
+			<source>Image</source>
+			<target>Bild</target>
+		</trans-unit>
+		<trans-unit id="genericlabel.sliderimage" approved="yes">
+			<source/>Slider Image
+			<target>Slider Bild</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>
