@@ -26,7 +26,7 @@ class Div implements FormDataProviderInterface
                 'linkToTop',
             ];
             foreach ($columnsToHide as $column) {
-                unset($result['processedTca']['columns']['' . $column . '']);
+                unset($result['processedTca']['columns'][$column]);
             }
         }
 
