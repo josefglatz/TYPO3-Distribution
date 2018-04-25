@@ -98,6 +98,7 @@ GLOBAL:
             - "*.log"
             - "/web/typo3temp"
             - "/web/fileadmin/_processed_"
+            - "/web/.well-known"
             - "ENABLE_INSTALL_TOOL"
             - "FIRST_INSTALL"
             - "realurl_autoconf.php"
