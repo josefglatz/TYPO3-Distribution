@@ -278,11 +278,10 @@ page {
 			}
 
 			# Add backend-layout
-			30 = TEXT
+			30 = COA
 			30 {
+				10 =< page.10.templateName.stdWrap.cObject
 				wrap = tmpl-|
-				data < page.10.templateName.stdWrap.cObject.data
-				split < page.10.templateName.stdWrap.cObject.split
 			}
 
 			# Add uid of optional FE-layout
