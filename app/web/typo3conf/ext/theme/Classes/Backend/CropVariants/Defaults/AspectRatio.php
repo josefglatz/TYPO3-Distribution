@@ -2,100 +2,35 @@
 
 namespace JosefGlatz\Theme\Backend\CropVariants\Defaults;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use UnexpectedValueException;
+
 class AspectRatio
 {
-    /**
-     * @var array Default aspect ratios configuration
-     */
-    protected static $aspectRatios = [
-        // Open Graph, Facebook, Twitter Image (official @ early 2018)
-        '1.91:1' => [
-            'title' => '1.91:1 (Open Graph, Facebook, Twitter)',
-            'value' => 1.91 / 1
-        ],
-        // Common used for wide sujet images
-        '3:1' => [
-            'title' => '3:1',
-            'value' => 3 / 1
-        ],
-        // Common video format
-        '16:9' => [
-            'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
-            'value' => 16 / 9
-        ],
-        // Common DSLR/SLR format
-        '3:2' => [
-            'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2',
-            'value' => 3 / 2
-        ],
-        '2:3' => [
-            'title' => '2:3',
-            'value' => 2 / 3
-        ],
-        // Common used for wide sujet images
-        '2:1' => [
-            'title' => '2:1',
-            'value' => 2 / 1
-        ],
-        // Common Point'n'Shoot camera format
-        '4:3' => [
-            'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
-            'value' => 4 / 3
-        ],
-        '3:4' => [
-            'title' => '3:4',
-            'value' => 3 / 4
-        ],
-        // Square image format
-        '1:1' => [
-            'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1',
-            'value' => 1.0
-        ],
-        // Common large/medium camera format
-        '5:4' => [
-            'title' => '5:4',
-            'value' => 5 / 4
-        ],
-        '4:5' => [
-            'title' => '4:5',
-            'value' => 4 / 5
-        ],
-        // Free ratio / no ratio limitation
-        'NaN' => [
-            'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-            'value' => 0.0
-        ],
-        /*********
-         * Add additional project specific aspectRatios here:
-         */
-    ];
-
-    protected const defaultAspectRatios = [
-        '3:2',
-        '2:3',
-        '4:3',
-        '3:4',
-        '1:1',
-        'NaN'
-    ];
-
     /**
      * Retrieve aspect ratios
      *
      * @param array $keys
      * @return array desired aspect ratios
+     * @throws \UnexpectedValueException
      */
     public static function get(array $keys): array
     {
+        $aspectRatios = Configuration::defaultConfiguration('aspectRatios');
         $ratios = [];
         foreach ($keys as $key) {
-            if (isset(self::$aspectRatios[$key])) {
-                $ratios[$key] = self::$aspectRatios[$key];
+            if (isset($aspectRatios[$key])) {
+                $new = $aspectRatios[$key];
+                $ratios[$key] = [
+                    'title' => $new['title'],
+                    'value' => self::ratioCalculations((string)$new['value'])
+                ];
             } else {
-                throw new \UnexpectedValueException('Given aspectRatio "' . $key . '" not found."', 1520426705);
+                throw new UnexpectedValueException(
+                    'Given aspectRatio "' . $key . '" not found."',
+                    1520426705);
             }
         }
-
         return $ratios;
     }
 
@@ -104,25 +39,52 @@ class AspectRatio
      *
      * @param bool $keysOnly
      * @return array all default aspect ratios
+     * @throws \UnexpectedValueException
      */
     public static function getDefaults(bool $keysOnly = false): array
     {
+        $defaultAspectRatios = Configuration::defaultConfiguration('defaultAspectRatios');
         $ratios = [];
         // Check if every default aspect ratio exists
-        if (\is_array(self::defaultAspectRatios)) {
-            foreach (self::defaultAspectRatios as $ratio) {
-                if (!isset(self::$aspectRatios[$ratio])) {
-                    throw new \UnexpectedValueException('Wanted default aspectRatio "' . $ratio . '" is not configured.', 1520426750);
-                }
-                $ratios[$ratio] = self::$aspectRatios[$ratio];
+        if (\is_array($defaultAspectRatios)) {
+            foreach ($defaultAspectRatios as $ratio) {
+                $new = self::get([$ratio]);
+                $ratios[$ratio] = $new[$ratio];
             }
         } else {
-            throw new \UnexpectedValueException('The given default aspectRatios configuration isn\'t from type array.', 1520426754);
+            throw new UnexpectedValueException(
+                'The given default aspectRatios configuration isn\'t from type array.',
+                1520426754);
         }
 
         if ($keysOnly) {
-            return self::get(self::defaultAspectRatios);
+            return $defaultAspectRatios;
         }
         return $ratios;
+    }
+
+    /**
+     * Calculate ratio of given string.
+     * (Used for aspectRatio['value'] value)
+     *
+     * Supports following value syntax:
+     * - "123 / 456"
+     * - "0.45"
+     * - "1"
+     *
+     * @param string $value
+     * @return float
+     * @throws \UnexpectedValueException
+     */
+    private static function ratioCalculations(string $value): float
+    {
+        $value = GeneralUtility::trimExplode('/', $value, true);
+        if (\count($value) === 1) {
+            return (float)$value;
+        }
+        if (\count($value) === 2) {
+            return $value[0] / $value[1];
+        }
+        throw new UnexpectedValueException('AspectRatio value not valid! Please provide a division or a float number.', 1524838980);
     }
 }

@@ -1,0 +1,137 @@
+#################################################################
+### Configuration for image manipulation defaults and options ###
+#################################################################
+imageManipulation:
+  cropVariants:
+    defaults:
+
+
+      ##################################################################################################################
+      ### Set all your default cropVariants (basically the same you've configured for sys_file_reference.columns.crop)
+      ###
+      ###     Each defaultCropVaraints must be set up in EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php
+      ###     for sys_file_reference.columns.crop (Look for "persistToDefaultTableTca")
+      ###
+      defaultCropVariants:
+        - default
+
+      ##################################################################################################################
+      ### Set all your default cropVariants (basically the same you've configured for sys_file_reference.columns.crop)
+      ###
+      ###     Each defaultAspectRatio must be set up in imageManipulation.cropVariants.defaults.aspectRatios (in this file)
+      ###
+      defaultAspectRatios:
+       - 3:2
+       - 2:3
+       - 4:3
+       - 3:4
+       - 1:1
+       - NaN
+
+      ##################################################################################################################
+      ### Set all your available aspectRatios (add/remove as you need it in you specific project)
+      aspectRatios:
+        # Open Graph, Facebook, Twitter Image (official @ early 2018)
+        1.91:1:
+            title: 1.91:1 (Open Graph, Facebook, Twitter)
+            value: 1.91 / 1
+        # Common used for wide sujet images
+        3:1:
+            title: 3:1
+            value: 3 / 1
+        # Common video format
+        16:9:
+            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9
+            value: 16 / 9
+        # Common DSLR/SLR format
+        3:2:
+            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2
+            value: 3 / 2
+        2:3:
+            title: 2:3
+            value: 2 / 3
+        # Common used for wide sujet images
+        2:1:
+            title: 2:1
+            value: 2 / 1
+        # Common Point'n'Shoot camera format
+        4:3:
+            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3
+            value: 4 / 3
+        3:4:
+            title: 3:4
+            value: 3 / 4
+        # Square image format
+        1:1:
+            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1
+            value: 1.0
+        # Common large/medium camera format
+        5:4:
+            title: 5:4
+            value: 5 / 4
+        4:5:
+            title: 4:5
+            value: 4 / 5
+        # Free ratio / no ratio limitation
+        NaN:
+            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free
+            value: 0.0
+
+
+      ##################################################################################################################
+      ### Set all your available coverAreas (add/remove as you need it in you specific project)
+      coverAreas:
+        # 1_1_circle can be used for square image (1:1) with CSS `border-radius: 50%` (Tries to cover edges)
+        1_1_circle:
+          - { x: 0.0, y: 0.0, width: 0.25, height: 0.25 }
+          - { x: 0.75, y: 0.0, width: 0.25, height: 0.25 }
+          - { x: 0.0, y: 0.75, width: 0.25, height: 0.25 }
+          - { x: 0.75, y: 0.75, width: 0.25, height: 0.25 }
+        # Cover lower third of image
+        lower_third:
+          - { x: 0.0, y: 0.67, width: 1.0, height: 0.33 }
+
+
+      ##################################################################################################################
+      ### Set all your available coverAreas (add/remove as you need it in you specific project)
+      cropAreas:
+        default:
+          x: 0.0
+          y: 0.0
+          width: 1.0
+          height: 1.0
+        0.75:
+          x: 0.125
+          y: 0.125
+          width: 0.75
+          height: 0.75
+        0.5:
+          x: 0.25
+          y: 0.25
+          width: 0.5
+          height: 0.5
+        0.25:
+          x: 0.375
+          y: 0.375
+          width: 0.25
+          height: 0.2
+
+
+      ##################################################################################################################
+      ### Set all your available focusAreas (add/remove as you need it in you specific project)
+      focusAreas:
+        0.75:
+          x: 0.125
+          y: 0.125
+          width: 0.75
+          height: 0.75
+        0.5:
+           x: 0.25
+           y: 0.25
+           width: 0.5
+           height: 0.5
+        0.25:
+          x: 0.375
+          y: 0.375
+          width: 0.25
+          height: 0.25

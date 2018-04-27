@@ -125,7 +125,7 @@ class CropVariant
      */
     public function setFocusArea(array $focusArea): self
     {
-        if (!empty($focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
+        if (!empty($focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $focusArea)) {
             throw new \UnexpectedValueException(
                 'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys set.', 1520894420
             );
