@@ -58,19 +58,15 @@ All listed defaults/presets can be configured within
 ### List of default cropVariants
 
 The list of default cropVariants contains a simple array with all as
-default defined cropVariants for this TYPO3 instance/project. This array
-must reflect the cropVariants configuration of `sys_file_reference.crop`
-TCA configuration.
+default defined cropVariants for this TYPO3 instance/project. Every default
+cropVariant must have at least one allowed aspect ratio activated.
 
-| Key       |
-|:----------|
-| `default` |
+| Key       | allowedAspectRatios          |
+|:----------|:-----------------------------|
+| `default` | 3:2, 2:3, 4:3, 3:4, 1:1, NaN |
 
-> Adjust/Add/Remove aspectRatios to meet your needs. **This array must
-> reflect the cropVariants configuration of `sys_file_reference.crop`
-> TCA configuration
-> [sys_file_reference.php](../../../Configuration/TCA/Overrides/sys_file_reference.php).**
+> Adjust/Add/Remove default cropVariants to meet your needs.
 
-> The list of default cropVariants is actually used if you use
+> The list of default cropVariants is also used if you use
 > `disableDefaultCropVariants()` method.
 
