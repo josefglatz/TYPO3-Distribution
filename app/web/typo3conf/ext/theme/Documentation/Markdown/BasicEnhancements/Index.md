@@ -58,6 +58,7 @@ Back to [Index](../Index.md)
 
 | Column                     | Title                           | Type  | Description                                                                                           | Excluded |
 |:---------------------------|:--------------------------------|:------|:------------------------------------------------------------------------------------------------------|:---------|
+| `tx_theme_author`          | Author field                    | input | Can be used for content elements where you want to display an (author) name                           | -        |
 | `tx_theme_bodytext_1`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                                    | -        |
 | `tx_theme_bodytext_2`      | Additional bodytext (RTE) field | text  | Can be used for content elements with more than one bodytext field                                    | -        |
 | `tx_theme_big_media`       | Big Media (Video, Images, ...)  | check | Can be used for content elements where media should be displayed big optionally                       | -        |

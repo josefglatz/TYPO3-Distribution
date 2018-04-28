@@ -227,6 +227,9 @@
 		<trans-unit id="field.pages.tx_theme_twitter_title.label">
 			<source>Title</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_author.label">
+			<source>Author</source>
+		</trans-unit>
 		<trans-unit id="field.tt_content.tx_theme_big_media.label">
 			<source>Bigger/wider media</source>
 		</trans-unit>

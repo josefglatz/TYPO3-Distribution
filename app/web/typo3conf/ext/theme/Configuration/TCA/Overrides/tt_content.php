@@ -59,6 +59,16 @@ call_user_func(
          * Additional columns
          */
         $additionalColumns = [
+            'tx_theme_author' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_author.label',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 20,
+                    'default' => '',
+                    'eval' => 'trim',
+                    'max' => 30,
+                ],
+            ],
             'tx_theme_bodytext_1' => [
                 'l10n_mode' => 'prefixLangTitle',
                 'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',

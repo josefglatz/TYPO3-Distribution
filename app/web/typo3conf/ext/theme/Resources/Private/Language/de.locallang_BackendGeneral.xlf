@@ -97,6 +97,9 @@
 		<trans-unit id="field.sys_file_reference.tx_theme_video_coverimage.label">
 			<target>Cover-Bild</target>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_author.label" approved="yes">
+			<target>Autor</target>
+		</trans-unit>
 		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube" approved="yes">
 			<target>YouTube Video hinzufügen</target>
 		</trans-unit>
