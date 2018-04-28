@@ -15,7 +15,6 @@ class FocusArea
     {
         $focusAreas = Configuration::defaultConfiguration('focusAreas');
         if (isset($focusAreas[$name]) && \is_array($focusAreas[$name])) {
-
             return $focusAreas[$name];
         }
         throw new \UnexpectedValueException('Given focus area "' . $name . '" not found."', 1522992127);
