@@ -4,11 +4,8 @@ Back to [Index](../Index.md) / Back to [Images Index](Index.md)
 
 # Overview of defaults/predefined presets
 
-All listed defaults/presets can be configured as arrays within
-`JosefGlatz\Theme\Backend\CropVariants\Defaults`.
-
->*The actual plan is to make them configurable via a simple yaml file.
-([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
+All listed defaults/presets can be configured within
+[CropVariants.yaml](../../../Configuration/ImageManipulation/CropVariants.yaml).
 
 ---
 
@@ -21,7 +18,7 @@ All listed defaults/presets can be configured as arrays within
 
 ### Predefined aspectRatios
 
-|   Key    |                               Description                                |
+| Key      | Description                                                              |
 |:---------|:-------------------------------------------------------------------------|
 | `3:1`    | Often used for wide sujet images                                         |
 | `2:1`    | Often used for wide sujet images                                         |
@@ -40,7 +37,7 @@ All listed defaults/presets can be configured as arrays within
 
 ### Predefined coverAreas
 
-|      Key      |                                        Usage Scenario                                         |
+| Key           | Usage Scenario                                                                                |
 |:--------------|:----------------------------------------------------------------------------------------------|
 | `1_1_circle`  | Can be used for square images with CSS `border-radius: 50%` for example.                      |
 | `lower_third` | Can be used for images where the lower third of the image area is overlayed by a DOM element. |
@@ -49,24 +46,31 @@ All listed defaults/presets can be configured as arrays within
 
 ### Predefined cropAreas
 
-|    Key    |                   Description                   |
+| Key       | Description                                     |
 |:----------|:------------------------------------------------|
 | `default` | Default (biggest possible) (X0, Y0, W1.0, H1.0) |
+| `0.75`    | 75% of the selected aspectRatio                 |
+| `0.5`     | 50% of the selected aspectRatio                 |
+| `0.25`    | 25% of the selected aspectRatio                 |
 
 > Adjust/Add/Remove cropAreas to meet your needs
 
 ### List of default cropVariants
 
-The list of default cropVariants contains a simple array with all as default
-defined cropVariants for this TYPO3 instance/project. This array must reflect
-the cropVariants configuration of `sys_file_reference.crop` TCA configuration.
+The list of default cropVariants contains a simple array with all as
+default defined cropVariants for this TYPO3 instance/project. This array
+must reflect the cropVariants configuration of `sys_file_reference.crop`
+TCA configuration.
 
-|    Key    |
+| Key       |
 |:----------|
 | `default` |
 
-> Adjust/Add/Remove aspectRatios to meet your needs. **This array must reflect
-> the cropVariants configuration of `sys_file_reference.crop` TCA configuration.**
+> Adjust/Add/Remove aspectRatios to meet your needs. **This array must
+> reflect the cropVariants configuration of `sys_file_reference.crop`
+> TCA configuration
+> [sys_file_reference.php](../../../Configuration/TCA/Overrides/sys_file_reference.php).**
 
 > The list of default cropVariants is actually used if you use
 > `disableDefaultCropVariants()` method.
+
