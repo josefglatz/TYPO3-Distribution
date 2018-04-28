@@ -7,26 +7,20 @@ imageManipulation:
 
 
       ##################################################################################################################
-      ### Set all your default cropVariants (basically the same you've configured for sys_file_reference.columns.crop)
+      ### Set up your default cropVariants configuration for sys_file_reference.columns.crop
       ###
-      ###     Each defaultCropVaraints must be set up in EXT:theme/Configuration/TCA/Overrides/sys_file_reference.php
+      ###     Each cropVariant must have a minimum of one aspectRatio
       ###     for sys_file_reference.columns.crop (Look for "persistToDefaultTableTca")
       ###
-      defaultCropVariants:
-        - default
-
-      ##################################################################################################################
-      ### Set all your default cropVariants (basically the same you've configured for sys_file_reference.columns.crop)
-      ###
-      ###     Each defaultAspectRatio must be set up in imageManipulation.cropVariants.defaults.aspectRatios (in this file)
-      ###
-      defaultAspectRatios:
-       - 3:2
-       - 2:3
-       - 4:3
-       - 3:4
-       - 1:1
-       - NaN
+      defaultCropVariantsConfiguration:
+        default:
+          aspectRatios:
+            - 3:2
+            - 2:3
+            - 4:3
+            - 3:4
+            - 1:1
+            - NaN
 
       ##################################################################################################################
       ### Set all your available aspectRatios (add/remove as you need it in you specific project)

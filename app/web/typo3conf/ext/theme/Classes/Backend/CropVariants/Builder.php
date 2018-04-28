@@ -123,7 +123,7 @@ class Builder
      */
     public function disableDefaultCropVariants()
     {
-        $defaultCropVariants = CropVariant::getDefaultCropVariants();
+        $defaultCropVariants = CropVariant::getDefaultCropVariantsNames();
         $cropVariants = $this->cropVariants;
 
         if ((null !== $defaultCropVariants) && \is_array($defaultCropVariants) && !empty($defaultCropVariants)) {

@@ -10,7 +10,7 @@ class Configuration
     /**
      * Relative path to configuration file
      */
-    protected const CONFIGFILE = 'EXT:theme/Configuration/ImageManipulation/CropVariants.yaml';
+    public const CONFIGFILE = 'EXT:theme/Configuration/ImageManipulation/CropVariants.yaml';
 
     /**
      * Returns the plain configuration array from the YAML configuration file

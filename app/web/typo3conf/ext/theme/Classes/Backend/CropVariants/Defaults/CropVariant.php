@@ -9,9 +9,9 @@ class CropVariant
      *
      * @return array default cropVariants (only key)
      */
-    public static function getDefaultCropVariants(): array
+    public static function getDefaultCropVariantsNames(): array
     {
-        $defaultCropVariants = Configuration::defaultConfiguration('defaultCropVariants');
-        return $defaultCropVariants;
+        $defaultCropVariantsConfiguration = Configuration::defaultConfiguration('defaultCropVariantsConfiguration');
+        return array_keys($defaultCropVariantsConfiguration);
     }
 }

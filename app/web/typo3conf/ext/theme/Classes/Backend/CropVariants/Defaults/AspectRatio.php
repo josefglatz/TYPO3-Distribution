@@ -35,35 +35,6 @@ class AspectRatio
     }
 
     /**
-     * Retrieve default aspect ratios
-     *
-     * @param bool $keysOnly
-     * @return array all default aspect ratios
-     * @throws \UnexpectedValueException
-     */
-    public static function getDefaults(bool $keysOnly = false): array
-    {
-        $defaultAspectRatios = Configuration::defaultConfiguration('defaultAspectRatios');
-        $ratios = [];
-        // Check if every default aspect ratio exists
-        if (\is_array($defaultAspectRatios)) {
-            foreach ($defaultAspectRatios as $ratio) {
-                $new = self::get([$ratio]);
-                $ratios[$ratio] = $new[$ratio];
-            }
-        } else {
-            throw new UnexpectedValueException(
-                'The given default aspectRatios configuration isn\'t from type array.',
-                1520426754);
-        }
-
-        if ($keysOnly) {
-            return $defaultAspectRatios;
-        }
-        return $ratios;
-    }
-
-    /**
      * Calculate ratio of given string.
      * (Used for aspectRatio['value'] value)
      *
