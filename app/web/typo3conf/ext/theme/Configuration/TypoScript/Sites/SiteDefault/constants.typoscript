@@ -1,7 +1,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/constants.typoscript">
 
 site {
-
     // activate dummy website (rudimentary TYPO3 frontend and some feature testing)
     dummyFrontend = 1
 
