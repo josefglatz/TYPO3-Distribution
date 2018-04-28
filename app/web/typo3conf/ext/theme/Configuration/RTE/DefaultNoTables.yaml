@@ -27,9 +27,9 @@ editor:
       - Table
 
 
-############################
-### Set the proc options ###
-############################
+##################################
+### Set the processing options ###
+##################################
 processing:
   denyTags:
   - table

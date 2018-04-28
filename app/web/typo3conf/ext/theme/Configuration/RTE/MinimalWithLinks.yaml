@@ -119,9 +119,9 @@ editor:
     toolbarLocation: "top"
 
 
-############################
-### Set the proc options ###
-############################
+##################################
+### Set the processing options ###
+##################################
 processing:
   # Tags that are allowed in the content (see also upstream sysext:rte_ckeditor/Configuration/RTE/Processing.yaml)
   allowTags:
