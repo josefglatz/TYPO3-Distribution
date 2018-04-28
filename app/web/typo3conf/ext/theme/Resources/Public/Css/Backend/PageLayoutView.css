@@ -21,6 +21,7 @@
 	opacity: .5;
 }
 
+
 .white-space-normal {
 	white-space: normal;
 }
@@ -36,8 +37,17 @@
 	margin-top: 0 !important;
 }
 
-.theme-margin-bottom-15:not(:last-child) {
+.theme-margin-bottom-15:not(:last-child),
+.theme-mb-15:not(:last-child){
 	margin-bottom: 15px !important;
+}
+
+.theme-mb-10:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.theme-mb-5:not(:last-child) {
+	margin-bottom: 5px;
 }
 
 .theme-border-hover {
