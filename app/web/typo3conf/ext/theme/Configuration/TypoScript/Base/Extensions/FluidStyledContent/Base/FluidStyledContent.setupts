@@ -27,31 +27,31 @@ lib.contentElement {
 				//   - disk space used by processed image (by potentially more files)
 				0 {
 					media = min-width
-					size = {$site-breakpoints.xs}
+					size = {$site.breakpoints.xs}
 					maxWidth = 767
 					cropVariant = default
 				}
 				1 {
 					media = min-width
-					size = {$site-breakpoints.md}
+					size = {$site.breakpoints.md}
 					maxWidth = 991
 					cropVariant = default
 				}
 				2 {
 					media = min-width
-					size = {$site-breakpoints.lg}
+					size = {$site.breakpoints.lg}
 					maxWidth = 1199
 					cropVariant = default
 				}
 				3 {
 					media = min-width
-					size = {$site-breakpoints.xl}
+					size = {$site.breakpoints.xl}
 					maxWidth = 1439
 					cropVariant = default
 				}
 				4 {
 					media = min-width
-					size = {$site-breakpoints.xxl}
+					size = {$site.breakpoints.xxl}
 					maxWidth = 1920
 					cropVariant = default
 				}
