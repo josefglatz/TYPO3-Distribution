@@ -144,6 +144,7 @@
 		"georgringer/autoswitchtolistview": "dev-master",
 		"gridelementsteam/gridelements": "dev-master",
 		"helhum/typoscript-rendering": "dev-master",
+		"ichhabrecht/begroups_roles": "^3",
 		"ichhabrecht/content-defender": "^2",
 		"instituteweb/unroll": "^2.0",
 		"in2code/in2publish_core": "dev-master",
