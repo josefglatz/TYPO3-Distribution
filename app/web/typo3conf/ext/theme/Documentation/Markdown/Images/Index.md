@@ -1,7 +1,5 @@
 Back to [Index](../Index.md)
 
----
-
 # Handling of Images in TYPO3
 
 This TYPO3 distribution tries to help you as much with image handling in
@@ -11,7 +9,7 @@ different situations:
 2. [Simplified cropVariants configuration](#simplified-cropvariants-configuration-for-the-table-configuration-array)
    (custom CropVariantsBuilder)
    1. [Custom CropVariants Builder details](CropVariantsBuilder.md)
-3. [Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions](#centralized-configuration-for-aspectratio-cover-croparea-presets-and-cropvariant-definitions)
+3. [Centralized configuration for AspectRatio, Cover-/Crop-/FocusArea presets and CropVariant definitions](#centralized-configuration-for-aspectratio-cover-crop-focusarea-presets-and-cropvariant-definitions)
 4. [Unlocalize crop configuration](#unlocalize-crop-configuration)
 5. [Image Only File Collection](#image-only-file-collection)
 6. [Frontend Image Rendering](#frontend-image-rendering)
@@ -41,9 +39,9 @@ TYPO3 backend).
 ## Simplified cropVariants configuration for the Table Configuration Array
 
 TYPO3 has some really powerful features to allow TYPO3 backend editors
-to crop images. You actually have the following possibilities to
-configure cropVariants for a field in following contexts (far as I know
-and I've use in real world TYPO3 projects):
+to crop images. You have the following possibilities to configure
+cropVariants for a field in following contexts (as far as I know and
+I've use in real world TYPO3 projects):
 
 ### Primary usage scenarios
 
@@ -72,25 +70,40 @@ options are working, it makes sense for real world scenarios.**
 
 ### And what exactly simplifies this TYPO3 distribution?
 
-a) You can set up default/s
-* for aspectRatios
-* for coverArea
-* for cropAreas
-* list of default cropVariants
+#### Configure all your cropVariants in a YAML file:
 
-b) [A custom CropVariants Builder](CropVariantsBuilder.md) helps you
+**a)** You can set up defaults (presets)
+* for aspectRatio,
+* for coverArea,
+* for cropArea,
+* for focusArea.
+
+**b)** You can define all default cropVariants based on your defaults.
+
+**c)** You can define cropVariants for specific columns (pages.media)
+
+**d)** You can define cropVariants for specific columns of specific
+types (tt_content.image for specific CType textpic)
+
+#### Or configure all or some of your cropVariants via TCA/Overrides and IDE autocompletion support
+
+[A custom CropVariants Builder](CropVariantsBuilder.md) helps you
 writing cropVariants configurations based on mentioned defaults with IDE
 auto completion support.
 
+> All the defaults in the YAML file can be used – even if you don't use
+> the CropVariants Builder and write only plain PHP TCA configuration
+> for your project.
+
+#### Last but not least: Write plain TCA configuration for your cropVariants
+
+You can still access the defaults. This allows you still to manage the standards centrally.
+
 ---
 
-## Centralized configuration for AspectRatio, Cover-/CropArea presets and CropVariant definitions
+## Centralized configuration for AspectRatio, Cover-/Crop-/FocusArea presets and CropVariant definitions
 
-All listed defaults/presets can be actually configured as arrays within
-`JosefGlatz\Theme\Backend\CropVariants\Defaults` namespace.
-
->*The actual plan is to make them configurable via a simple yaml file.
->([Issue 280](https://github.com/josefglatz/TYPO3-Distribution/issues/280))*
+All listed defaults/presets can be actually configured in one YAML file.
 
 [**Overview of defaults and predefined presets**](DefaultsAndPresets.md)
 
@@ -113,8 +126,8 @@ to remove this behaviour and activate TYPO3 Core's default.**
 
 ## Image Only File Collection
 
-A static file collection type which only supports supported image file types
-makes working with file collections much easier.
+A static file collection type which only supports supported image file
+types makes working with file collections much easier.
 
 ---
 
