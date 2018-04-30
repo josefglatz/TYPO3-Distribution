@@ -70,7 +70,7 @@ options are working, it makes sense for real world scenarios.**
 
 ### And what exactly simplifies this TYPO3 distribution?
 
-#### Configure all your cropVariants in a YAML file:
+#### I Configure all your cropVariants in a YAML file:
 
 **a)** You can set up defaults (presets)
 * for aspectRatio,
@@ -85,7 +85,7 @@ options are working, it makes sense for real world scenarios.**
 **d)** You can define cropVariants for specific columns of specific
 types (tt_content.image for specific CType textpic)
 
-#### Or configure all or some of your cropVariants via TCA/Overrides and IDE autocompletion support
+#### II Or configure all or some of your cropVariants via TCA/Overrides and IDE autocompletion support
 
 [A custom CropVariants Builder](CropVariantsBuilder.md) helps you
 writing cropVariants configurations based on mentioned defaults with IDE
@@ -95,9 +95,9 @@ auto completion support.
 > the CropVariants Builder and write only plain PHP TCA configuration
 > for your project.
 
-#### Last but not least: Write plain TCA configuration for your cropVariants
+#### III Last but not least: Write plain TCA configuration for your cropVariants
 
-You can still access the defaults. This allows you still to manage the standards centrally.
+You can still access the defaults. This allows you to still manage the standards centrally.
 
 ---
 
