@@ -137,7 +137,6 @@
 		"cmsexperts/unlocalizedcrop": "^1.0",
 		"cpsit/mask-export": "dev-master as 0.9.1",
 		"cweagans/composer-patches": "dev-master",
-		"dl/yag": "dev-master",
 		"in2code/realurlconflicts": "^1",
 		"georgringer/deprecationloganalyzer": "dev-master as 2.0.2",
 		"GeorgRinger/maildebug": "dev-master",
