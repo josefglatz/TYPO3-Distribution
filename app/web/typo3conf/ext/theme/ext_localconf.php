@@ -51,6 +51,21 @@ call_user_func(
             }
         }
 
+        /**
+         * Instantiate SignalSlot Dispatcher
+         *
+         * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher
+         */
+        $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
+
+        // Slot for generating cropVariants configuration
+        $signalSlotDispatcher->connect(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::class,
+            'tcaIsBeingBuilt',
+            \JosefGlatz\Theme\Signals\Tca::class,
+            'handleTcaIsBeingBuilt'
+        );
+
         // Edit restriction for specific records / Enrich DataHandler while updating specific records
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['theme'] =
             \JosefGlatz\Theme\Hooks\Backend\ProcessDatamapDataHandler::class;
@@ -87,13 +102,6 @@ call_user_func(
                     \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class
                 ]
             ];
-
-            /**
-             * Instantiate SignalSlot Dispatcher
-             *
-             * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher
-             */
-            $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
             // Edit restriction for specific new records
             $signalSlotDispatcher->connect(
