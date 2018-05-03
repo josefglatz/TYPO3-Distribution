@@ -33,6 +33,7 @@
 /setversion
 /upload
 /sgc
+/surf
 
 .php_cs.cache
 node_modules
