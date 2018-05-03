@@ -23,6 +23,61 @@ imageManipulation:
             - NaN
 
       ##################################################################################################################
+      ### Set up your non-default cropVariants configurations
+      ###
+      ###     Each cropVariant must have set one aspectRatio as a minimum
+      ###
+      cropVariantsConfiguration:
+
+        pages:
+          columns:
+
+            tx_theme_nav_image:
+              disableDefaults: true
+              cropVariants:
+                xs:
+                  allowedAspectRatios:
+                    - 4:3
+                md:
+                  allowedAspectRatios:
+                    - 4:3
+                lg:
+                  allowedAspectRatios:
+                    - 4:3
+
+            tx_theme_twitter_image:
+              disableDefaults: true
+              cropVariants:
+                twitterimage:
+                  allowedAspectRatios:
+                    - 1.91:1
+
+            tx_theme_opengraph_image:
+              disableDefaults: true
+              cropVariants:
+                opengraph:
+                  allowedAspectRatios:
+                    - 1.91:1
+
+          types:
+
+          tt_content:
+            columns:
+            types:
+
+
+      demo:
+        pages:
+          columns:
+            tx_theme_dome_column:
+              disabledDefaults: true
+              forceConfig: false
+              cropVariants:
+                myCropVariant:
+
+
+
+      ##################################################################################################################
       ### Set all your available aspectRatios (add/remove as you need it in you specific project)
       aspectRatios:
         # Open Graph, Facebook, Twitter Image (official @ early 2018)
@@ -129,3 +184,4 @@ imageManipulation:
           y: 0.375
           width: 0.25
           height: 0.25
+
