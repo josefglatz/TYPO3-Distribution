@@ -49,6 +49,9 @@ node_modules
 # Ignore EXT:documentation files
 /web/typo3conf/Documentation/**/*
 
+# Ignore docker-render-documentation
+Documentation-GENERATED-temp
+
 # Initially ignore all local TYPO3 extensions
 /web/typo3conf/ext/*
 # Ignore all ext's except project specific (or modified (you bad boy!)) extensions
