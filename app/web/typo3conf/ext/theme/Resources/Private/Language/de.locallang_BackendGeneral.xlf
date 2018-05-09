@@ -336,6 +336,10 @@
 			<source>Layout 3</source>
 			<target>Aussehen 3</target>
 		</trans-unit>
+		<trans-unit id="tt_content.tx_theme_facts_figures">
+			<source>Facts &amp; Figures Elements</source>
+			<target>Fakten und Zahlen Elemente</target>
+		</trans-unit>
 		<trans-unit id="genericlabel.image" approved="yes">
 			<source>Image</source>
 			<target>Bild</target>

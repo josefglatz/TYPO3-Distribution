@@ -107,6 +107,30 @@ call_user_func(
                     ]
                 ],
             ],
+            'tx_theme_facts_figures' => [
+                'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_facts_figures.label',
+                'config' => [
+                    'type' => 'inline',
+                    'foreign_table' => 'tx_theme_facts_figures',
+                    'foreign_field' => 'parentid',
+                    'foreign_table_field' => 'parenttable',
+                    'foreign_sortby' => 'sorting',
+                    'appearance' =>
+                        [
+                            'enabledControls' =>
+                                [
+                                    'dragdrop' => '1',
+                                ],
+                            'collapseAll' => '1',
+                            'expandSingle' => '1',
+                            'levelLinksPosition' => 'bottom',
+                            'useSortable' => '1',
+                        ],
+                    ],
+                'exclude' => '1',
+                'l10n_mode' => 'copy',
+
+            ],
             'tx_theme_link_label' => [
                 'label' => $languageFileBePrefix . 'field.tt_content.tx_theme_link_label.label',
                 'config' => [

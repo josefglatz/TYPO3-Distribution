@@ -1,0 +1,31 @@
+tt_content {
+	theme_facts_figures =< lib.contentElement
+	theme_facts_figures {
+		templateName = FactsFigures
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			10 {
+				if.isTrue.field = tx_theme_facts_figures
+				table = tx_theme_facts_figures
+				pidInList.field = pid
+				where = parentid=###uid### AND deleted=0 AND hidden=0
+				orderBy = sorting
+				markers {
+					uid.field = uid
+				}
+				as = factsFigures
+				dataProcessing {
+					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+					10 {
+						if.isTrue.field = icon
+						references {
+							fieldName = icon
+							table = tx_theme_facts_figures
+						}
+						as = icon
+					}
+				}
+			}
+		}
+	}
+}

@@ -112,6 +112,7 @@ TCEFORM.tt_content {
 	sectionIndex {
 		types {
 			theme_lead_text.disabled = 1
+			theme_facts_figures.disabled = 1
 		}
 	}
 

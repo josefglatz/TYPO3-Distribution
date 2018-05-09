@@ -99,6 +99,10 @@ call_user_func(
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
                 'sys_file_reference', 'EXT:' . $extKey . '/Resources/Private/Language/locallang_csh_sys_file_reference.xlf');
         }
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+            'tx_theme_facts_figures'
+        );
     },
     $_EXTKEY
 );

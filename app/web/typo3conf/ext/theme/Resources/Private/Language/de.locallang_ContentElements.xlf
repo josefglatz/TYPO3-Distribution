@@ -36,6 +36,14 @@
 		<trans-unit id="theme_download_box.backendpreview.infotext.nodescription" approved="yes">
 			<target>Keine Beschreibung gesetzt für diese Datei. Füge eine Beschreibung hinzu um diese statt dem Dateinamen darzustellen.</target>
 		</trans-unit>
+		<trans-unit id="theme_facts_figures.description">
+			<source>Display Facts which can by linked to subpages.</source>
+			<target>Fakten und Zahlen as Teaser darstellen. Elemente können verlinkt werden.</target>
+		</trans-unit>
+		<trans-unit id="theme_facts_figures.title">
+			<source>Facts &amp; Figures</source>
+			<target>Fakten und Zahlen</target>
+		</trans-unit>
 		<trans-unit id="theme_inheritance_stop.description" approved="yes">
 			<source>Stops the sliding of content elements from upper pages. </source>
 			<target>Unterbricht die Vererbung von Content überliegender Seiten.</target>

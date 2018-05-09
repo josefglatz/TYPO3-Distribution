@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-10-13T09:59:23Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="tx_theme_facts_figures">
+			<source>Facts &amp; Figures Elements</source>
+		</trans-unit>
+		<trans-unit id="tx_theme_facts_figures.icon">
+			<source>Icon</source>
+		</trans-unit>
+		<trans-unit id="tx_theme_facts_figures.label">
+			<source>Label</source>
+		</trans-unit>
+		<trans-unit id="tx_theme_facts_figures.link">
+			<source>Link</source>
+		</trans-unit>
+		<trans-unit id="tx_theme_facts_figures.value">
+			<source>Value</source>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

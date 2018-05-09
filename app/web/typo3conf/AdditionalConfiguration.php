@@ -74,6 +74,11 @@ $customChanges = [
                         'allowedImageFileExt' => 'gif,jpg,jpeg,png,svg',
                     ],
                 ],
+                'theme_facts_figures' => [
+                    'factImage' => [
+                        'allowedImageFileExt' => 'svg',
+                    ],
+                ],
             ],
         ],
     ],
