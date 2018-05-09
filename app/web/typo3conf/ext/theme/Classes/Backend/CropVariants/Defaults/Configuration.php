@@ -14,12 +14,14 @@ class Configuration
 
     /**
      * Returns the plain configuration array from the YAML configuration file
+     *  - no $key given: return default cropVariants
+     *  - $key is given: checks if key exists, checks if key is not empty and returns the desired configuration
      *
      * @param string $key specific configuration key
+     * @param bool $enableEmptyCheck throw exception if the requested $key doesn't contain any children
      * @return array
-     * @throws \UnexpectedValueException
      */
-    public static function defaultConfiguration(string $key = ''): array
+    public static function defaultConfiguration(string $key = '', $enableEmptyCheck = true): array
     {
         $fileLoader = GeneralUtility::makeInstance(YamlFileLoader::class);
         $configuration = $fileLoader->load(self::CONFIGFILE);
@@ -43,11 +45,13 @@ class Configuration
                 1524835641);
         }
 
-        // Check if requested key is set in the configuration
-        if (empty($defaults[trim($key)])) {
-            throw new \UnexpectedValueException(
-                'Requested key doesn\'t contain any children.  (Please take a look at ' . self::CONFIGFILE . ')',
-                1524835441);
+        // Check if requested key does contain any children
+        if ($enableEmptyCheck) {
+            if (empty($defaults[trim($key)])) {
+                throw new \UnexpectedValueException(
+                    'Requested key doesn\'t contain any children.  (Please take a look at ' . self::CONFIGFILE . ')',
+                    1524835441);
+            }
         }
 
         return $defaults[trim($key)];
