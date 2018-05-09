@@ -347,6 +347,12 @@
 		<trans-unit id="tt_content.layout.3">
 			<source>Layout 3</source>
 		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_facts_figures.label">
+			<source>Facts &amp; Figures Elements</source>
+		</trans-unit>
+		<trans-unit id="field.tt_content.tx_theme_facts_figures.irre.new.label.type.theme_facts_figures">
+			<source>Add Fact/Figure</source>
+		</trans-unit>
 		<trans-unit id="hooks.dataHandler.prevent.sys_template.title">
 			<source>Creating a sys_template record in the database is not allowed</source>
 		</trans-unit>

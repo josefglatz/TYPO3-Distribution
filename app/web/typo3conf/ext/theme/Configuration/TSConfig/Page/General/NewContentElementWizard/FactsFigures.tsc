@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_facts_figures {
+				iconIdentifier = theme-content-facts-figures
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_facts_figures.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_facts_figures.description
+				tt_content_defValues {
+					CType = theme_facts_figures
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,3 @@
+mod.web_layout.tt_content.preview {
+	theme_facts_figures = EXT:theme/Resources/Private/Templates/Content/BackendPreview/FactsFigures.html
+}
