@@ -27,5 +27,11 @@ tt_content {
 				}
 			}
 		}
+		stdWrap {
+			editIcons = tt_content: tx_theme_facts_figures
+			editIcons {
+				iconTitle.data = LLL:EXT:theme/Resources/Private/Language/locallang_FrontendEditing.xlf:editIcon.generic
+			}
+		}
 	}
 }
