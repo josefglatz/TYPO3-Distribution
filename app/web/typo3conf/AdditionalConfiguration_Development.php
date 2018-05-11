@@ -36,7 +36,7 @@ $customChanges = [
     ],
     'SYS' => [
         'devIPmask' => '*',
-        'displayErrors' => false,
+        'displayErrors' => true,
         'enableDeprecationLog' => 'file',
 //        'exceptionalErrors' => 28674,
         'sqlDebug' => 1,    // 0 = no debug; 1 = only failed queries; 2 = all queries
