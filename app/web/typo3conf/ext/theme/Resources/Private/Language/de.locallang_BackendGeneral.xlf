@@ -9,6 +9,10 @@
 			<source>Necessary fields are not filled out. The element could not be rendered (correctly) on the website frontend.</source>
 			<target>Nicht alle notwendigen Felder sind korrekt ausgefüllt. Das Element kann daher auf der Website nicht (korrekt) ausgegeben werden.</target>
 		</trans-unit>
+		<trans-unit id="backendpreview.general.info.missing.necessary.elements">
+			<source>Necessary elements are not added. The element could not be rendered (correctly) on the website frontend.</source>
+			<target>Benötigte Elemente wurden dem Inhaltselement nicht hinzugefügt. Das Element kann daher auf der Website nicht (korrekt) ausgegeben werden.</target>
+		</trans-unit>
 		<trans-unit id="backendpreview.general.info.missing.necessary.fields">
 			<source>Please add content to following fields:</source>
 			<target>Bitte befülle folgende Felder mit Inhalt:</target>

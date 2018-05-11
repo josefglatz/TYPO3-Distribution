@@ -13,6 +13,12 @@ call_user_func(
         $maxAmountFacts = 4;
         $factLinkRequired = true;
         $factValueMustBeInt = false;
+        $factIconActivated = true;
+
+        $foreignShowItemValue = 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,label,value,link,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime';
+        if ((bool)$factIconActivated) {
+            $foreignShowItemValue = str_replace('link,', 'link,icon,',$foreignShowItemValue);
+        }
 
         /***************
          * Add CE
@@ -56,6 +62,9 @@ call_user_func(
                                 ],
                                 'overrideChildTca' => [
                                     'types' => [
+                                        1 => [
+                                            'showitem' => $foreignShowItemValue,
+                                        ],
                                     ],
                                     'columns' => [
                                         'uid_local' => [
@@ -92,7 +101,7 @@ call_user_func(
         /***************
          * CE feature flags
          */
-        if ($factLinkRequired) {
+        if ((bool)$factLinkRequired) {
             $GLOBALS['TCA'][$table]['types'][$type]['columnsOverrides']['tx_theme_facts_figures']['config']['overrideChildTca'] = array_replace_recursive(
                 $GLOBALS['TCA'][$table]['types'][$type]['columnsOverrides']['tx_theme_facts_figures']['config']['overrideChildTca'],
                 [
@@ -106,7 +115,7 @@ call_user_func(
                 ]
             );
         }
-        if ($factValueMustBeInt) {
+        if ((bool)$factValueMustBeInt) {
             $GLOBALS['TCA'][$table]['types'][$type]['columnsOverrides']['tx_theme_facts_figures']['config']['overrideChildTca'] = array_replace_recursive(
                 $GLOBALS['TCA'][$table]['types'][$type]['columnsOverrides']['tx_theme_facts_figures']['config']['overrideChildTca'],
                 [
