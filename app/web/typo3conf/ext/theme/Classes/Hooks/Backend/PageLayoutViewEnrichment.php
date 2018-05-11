@@ -6,6 +6,7 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -31,7 +32,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
      * @param $itemContent
      * @param array $row
      */
-    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
+    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
     {
         // General enrichments
         $row['_extras']['editLink'] = $this->getEditLink($row);
@@ -80,5 +81,38 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
     protected function getBackendUser(): BackendUserAuthentication
     {
         return $GLOBALS['BE_USER'];
+    }
+
+    /**
+     * Fetch related IRRE elements
+     *
+     * @param string $localField local tt_content field of the IRRE relation
+     * @param int $localUid uid of tt_content row
+     * @param string $foreignField foreign field of relation
+     * @return array
+     */
+    protected function getIrreRecords($localField, $localUid, $foreignField = 'parentid'): array
+    {
+        // Read foreign table name from TCA
+        $foreignTable = $GLOBALS['TCA']['tt_content']['columns'][$localField]['config']['foreign_table'];
+        // process db query if foreign table could be fetched from TCA
+        if (!empty($foreignTable)) {
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+                ->getQueryBuilderForTable($foreignTable);
+            // Build Query
+            $queryBuilder
+                ->select('*')
+                ->from($foreignTable)
+                ->where(
+                    $queryBuilder->expr()->eq(
+                        $foreignField,
+                        $queryBuilder->createNamedParameter($localUid, \PDO::PARAM_INT)
+                    )
+                );
+
+            return $queryBuilder->execute()->fetchAll();
+        }
+
+        return [];
     }
 }
