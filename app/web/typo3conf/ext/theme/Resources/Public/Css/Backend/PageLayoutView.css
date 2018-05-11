@@ -163,6 +163,13 @@
 	margin-left: -30px;
 }
 
+[class^=theme-backendpreview-] > .container-fluid > .row .row,
+[class^=theme-backendpreview-] .container-fluid.theme-section > .row .row,
+[class^=theme-backendpreview-] > .theme-content-edit-link > .container-fluid > .row .row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
 /*
  * CE theme_collapsible_text
  */

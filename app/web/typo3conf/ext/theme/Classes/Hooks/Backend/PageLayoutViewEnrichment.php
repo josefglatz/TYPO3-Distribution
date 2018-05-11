@@ -25,7 +25,9 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
         $this->iconFactory = GeneralUtility::makeInstance(IconFactory::class);
     }
 
-    /** @noinspection MoreThanThreeArgumentsInspection
+    /**
+     * @noinspection MoreThanThreeArgumentsInspection
+     * @noinspection ReferencingObjectsInspection
      * @param PageLayoutView $parentObject
      * @param $drawItem
      * @param $headerContent
@@ -41,6 +43,11 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
         if (StringUtility::beginsWith($row['CType'], 'theme')) {
             // Prevent the header value from the tt_content element from showing up above the $itemContent
             $headerContent = '';
+        }
+
+        // CE theme_facts_figures: fetch related facts'n'figures elements
+        if ($row['tx_theme_facts_figures'] > 0) {
+            $row['_extras']['factsFigures'] = $this->getIrreRecords('tx_theme_facts_figures', $row['uid']);
         }
     }
 

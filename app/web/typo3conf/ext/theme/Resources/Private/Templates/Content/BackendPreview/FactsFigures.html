@@ -1,0 +1,76 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<theme:backend.contentEditLink uid="{uid}">
+		<f:render section="Heading" arguments="{_all}"/>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<f:render section="Content" arguments="{_all}" />
+				</div>
+			</div>
+		</div>
+	</theme:backend.contentEditLink>
+</div>
+
+<f:section name="Content">
+	<f:if condition="{_extras.factsFigures}">
+		<f:then>
+			<div class="row">
+				<f:for each="{_extras.factsFigures}" as="item">
+					<f:render section="Item" arguments="{_all}" />
+				</f:for>
+			</div>
+
+		</f:then>
+		<f:else>
+			<div class="callout callout-danger">
+				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_facts_figures.title" /></h4>
+				<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary.elements" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Item">
+	<div class="col-sm-6 col-md-3 text-center theme-style-boxed">
+		<f:if condition="{item.icon}">
+			<theme:fal table="tx_theme_facts_figures" field="icon" id="{item.uid}" as="icons">
+				<f:if condition="{icons}">
+					<f:image image="{icons.0}" maxWidth="300" />
+				</f:if>
+			</theme:fal>
+		</f:if>
+		<div class="h3">{item.value}</div>
+		<div class="strong">{item.label}</div>
+		<code>{item.link}</code>
+	</div>
+</f:section>
+
+<f:section name="Heading">
+	<f:if condition="{header}">
+		<div class="theme-backendpreview-heading">
+			<h2 class="h{f:render(section: 'HeadingType', arguments: '{_all}')}">{header}
+				<f:if condition="{subheader}"><br>
+					<small>{subheader}</small>
+				</f:if>
+			</h2>
+		</div>
+	</f:if>
+</f:section>
+
+<f:section name="HeadingType"><f:spaceless>
+	<f:switch expression="{header_layout}">
+		<f:case value="1">1</f:case>
+		<f:case value="2">2</f:case>
+		<f:case value="3">3</f:case>
+		<f:case value="4">4</f:case>
+		<f:case value="5">5</f:case>
+		<f:case value="6">6</f:case>
+		<f:defaultCase>2</f:defaultCase>
+	</f:switch>
+</f:spaceless></f:section>
+</html>
