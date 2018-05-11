@@ -15,9 +15,9 @@ call_user_func(
         $factValueMustBeInt = false;
         $factIconActivated = true;
 
-        $foreignShowItemValue = 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,label,value,link,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime';
+        $foreignShowItemValue = 'sys_language_uid,l10n_parent,l10n_diffsource,label,value,link,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime';
         if ((bool)$factIconActivated) {
-            $foreignShowItemValue = str_replace('link,', 'link,icon,',$foreignShowItemValue);
+            $foreignShowItemValue = str_replace('link,', 'link,icon,', $foreignShowItemValue);
         }
 
         /***************
