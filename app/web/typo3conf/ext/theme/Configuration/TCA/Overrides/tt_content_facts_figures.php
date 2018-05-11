@@ -97,7 +97,6 @@ call_user_func(
         ];
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
 
-
         /***************
          * CE feature flags
          */
