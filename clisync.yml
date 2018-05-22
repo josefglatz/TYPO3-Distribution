@@ -375,28 +375,28 @@ deploy:
 ###########################################################
 # Shared server (sharing between developers)
 ###########################################################
-share:
-
-    ##################
-    # Global config (for share)
-    ##################
-    GLOBAL:
-        mysql:
-            # List of databases for backup
-            database:
-                - typo3
-
-        rsync:
-            # List of directories for backup
-            directory:
-                - "/fileadmin/"
-                - "/uploads/"
-                - "/typo3conf/l10n/"
-
-   ##################
-   # Context "development"
-   ##################
-    development:
-        rsync:
-            # source/target directory or server via ssh (eg. backup-server:/backup/projectname)
-            path: "/tmp/foo/"
+#share:
+#
+#    ##################
+#    # Global config (for share)
+#    ##################
+#    GLOBAL:
+#        mysql:
+#            # List of databases for backup
+#            database:
+#                - typo3
+#
+#        rsync:
+#            # List of directories for backup
+#            directory:
+#                - "/fileadmin/"
+#                - "/uploads/"
+#                - "/typo3conf/l10n/"
+#
+#   ##################
+#   # Context "development"
+#   ##################
+#    development:
+#        rsync:
+#            # source/target directory or server via ssh (eg. backup-server:/backup/projectname)
+#            path: "/tmp/foo/"
