@@ -74,7 +74,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
                     $result = $this->getBadgeType($badge);
                     if ($result[0] && $this->columnExists($result[1])) {
                         $newElements['badges'][$badge] = [
-                            'badgeType' => $result[0],
+                            'badgeType' => ucfirst($result[0]),
                             'column' => $this->getColumnName($result[1]),
                             'value' => $row[$this->getColumnName($result[1])],
                             'lllString' => $this->defaultLocalizationAttempt($this->getColumnName($result[1]))

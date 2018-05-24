@@ -7,7 +7,7 @@
 		<div class="theme-footer-badges">
 			<f:for each="{badges}" as="badge">
 				<f:render
-					partial="Backend/PageLayout/Badges/Type{badge.badgeType -> v:format.case(case: 'ucfirst')}"
+					partial="Backend/PageLayout/Badges/Type{badge.badgeType}"
 					arguments="{badge: badge}"
 				/>
 			</f:for>
