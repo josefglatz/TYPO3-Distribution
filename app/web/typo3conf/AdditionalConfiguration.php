@@ -255,6 +255,21 @@ $customChanges = [
             'static_info_tables' => serialize([
                 'enableManager' => 0,
             ]),
+            'staticfilecache' => serialize([
+                'clearCacheForAllDomains' => 1,
+                'sendCacheControlHeader' => 1,
+                'sendCacheControlHeaderRedirectAfterCacheTimeout' => 0,
+                'sendTypo3Headers' => 0,
+                'enableStaticFileCompression' => 1,
+                'showGenerationSignature' => 1,
+                'fileTypes' => 'xml,rss',
+                'strftime' => '%d-%m-%y %H:%M',
+                'recreateURI' => 0,
+                'boostMode' => 0,
+                'backendDisplayMode' => 'current',
+                'disableInDevelopment' => 1,
+                'htaccessTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Htaccess.html'
+            ]),
             'theme' =>  serialize([
                 'pageLayoutViewEnrichmentFooter' => 1,
             ]),
