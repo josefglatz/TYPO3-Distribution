@@ -158,6 +158,7 @@
 		"sjbr/sr-language-menu": "dev-master",
 		"sup7even/benefits": "dev-master",
 		"t3g/blog": "dev-master",
+		"t3g/querybuilder": "dev-master",
 		"yoast-seo-for-typo3/yoast_seo": "^1.4"
 	},
 	"extra": {
