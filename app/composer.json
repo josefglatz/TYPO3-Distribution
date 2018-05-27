@@ -68,6 +68,7 @@
 		"causal/image_autoresize": "dev-master#8c9ce1c1e5bc2b103a186e5d8040bc5a3077d401",
 		"cmsexperts/unlocalizedcrop": "^1.0",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
+		"dmitryd/typo3-realurl": "dev-development",
 		"fluidtypo3/vhs": "dev-development",
 		"georgringer/autoswitchtolistview": "^2.0",
 		"georgringer/backend-debug": "^1",
