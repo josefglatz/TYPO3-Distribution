@@ -92,7 +92,6 @@
 		"typo3/cms-belog": "^8.7.15",
 		"typo3/cms-beuser": "^8.7.15",
 		"typo3/cms-context-help": "^8.7.15",
-		"typo3/cms-core": "^8.7.15",
 		"typo3/cms-felogin": "^8.7.15",
 		"typo3/cms-filelist": "^8.7.15",
 		"typo3/cms-filemetadata": "^8.7.15",
