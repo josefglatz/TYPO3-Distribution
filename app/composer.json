@@ -81,6 +81,7 @@
 		"instituteweb/unroll": "^2.0",
 		"josefglatz/beuser-fastswitch": "^1.0.2",
 		"josefglatz/iconcheck": "^1.0",
+		"lochmueller/staticfilecache": "^5.3",
 		"minifranske/gravatar": "^1.0",
 		"reelworx/rx-shariff": "^11",
 		"roave/security-advisories": "dev-master",
