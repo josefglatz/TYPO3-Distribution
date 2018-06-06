@@ -375,6 +375,19 @@ page {
 
 
 
+[applicationContext = Production/Dev, Development*]
+	page {
+		bodyTagCObject {
+			10 {
+				# Add class for development specific applicationContext
+				777 = TEXT
+				777 {
+					value = develop
+					noTrimWrap = | ||
+				}
+			}
+		}
+	}
 [applicationContext = Production/Staging, Production/Testing]
 	page {
 
