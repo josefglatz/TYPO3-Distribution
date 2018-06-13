@@ -23,13 +23,13 @@
 
 	<f:if condition="{video.publicUrl}">
 		<div
-			class="embed-responsive embed-responsive-{f:render(section: 'VideoAspectRatio', arguments: {file: file}) -> theme:format.trim()}">
+			class="embed-responsive embed-responsive-{f:render(section: 'VideoAspectRatio', arguments: {file: video}) -> theme:format.trim()}">
 			<f:variable name="startMinuteInSeconds"
 						value="{theme:math.simpleMultiply(a: '{video.properties.tx_theme_video_startminute}', b: '60')}"/>
 			<theme:media.youtube
 				videoId="{theme:format.youtubeVideoId(url: '{video.publicUrl}')}"
 				class="embed-responsive-item"
-				hideInfo="!{video.properties.tx_theme_video_autoplay}"
+				hideInfo="!{video.properties.tx_theme_video_showinfo}"
 				showRelated="{video.properties.tx_theme_video_rel}"
 				loop="{video.properties.tx_theme_video_loop}"
 				start="{theme:math.simpleSum(a: '{startMinuteInSeconds}', b: '{video.properties.tx_theme_video_startsecond}')}"
