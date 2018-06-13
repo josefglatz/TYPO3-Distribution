@@ -71,3 +71,4 @@ Documentation-GENERATED-temp
 !/web/typo3conf/ext/theme/Resources/Public/SourceMaps/.gitkeep
 /web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/
 !/web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/.gitkeep
+*.css.map
