@@ -6,7 +6,6 @@
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin/_processed_" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/fileadmin/_temp_" />
-      <excludeFolder url="file://$MODULE_DIR$/app/web/typo3" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/typo3conf/l10n" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/typo3temp" />
       <excludeFolder url="file://$MODULE_DIR$/app/web/uploads" />
