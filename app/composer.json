@@ -116,6 +116,7 @@
 		"typo3/cms-viewpage": "^8.7.15",
 		"typo3/cms-wizard-crpages": "^8.7.15",
 		"typo3/cms-wizard-sortpages": "^8.7.15",
+		"typo3/minimal": "^8.7",
 		"w8tcha/ckeditor-wordcount-plugin": "1.17.2"
 	},
 	"require-dev": {
