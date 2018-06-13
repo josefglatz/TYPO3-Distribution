@@ -4,7 +4,7 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## Fluid variables
 
-|            Variable            |                        Title                        |
+| Variable                       | Title                                               |
 |:-------------------------------|:----------------------------------------------------|
 | `{RootUid}`                    | Dynamic UID of the actual root page                 |
 | `{Level1Title}`                | Title of level 1 of current page                    |
@@ -21,7 +21,7 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## CSS Classes and Attributes
 
-|               Body class               |                                                   Description                                                   |       Prefix       |
+| Body class                             | Description                                                                                                     | Prefix             |
 |:---------------------------------------|:----------------------------------------------------------------------------------------------------------------|:-------------------|
 | `language-<syslanguageUid>`            | Class based on actual sys_language_uid                                                                          | `language-`        |
 | `languagecontent-<sysLanguageContent>` | Class based on actual content language                                                                          | `languagecontent-` |
@@ -34,14 +34,14 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## Body attributes
 
-|        Body attribute         |    Description     |
+| Body attribute                | Description        |
 |:------------------------------|:-------------------|
 | data-page-uid=`actualPageUid` | UID of actual page |
 
 
 ## Replacement Markers
 
-|   Body attribute    |      Description       |            Technically via            |
+| Body attribute      | Description            | Technically via                       |
 |:--------------------|:-----------------------|:--------------------------------------|
 | `###CURRENTYEAR###` | four-digit actual year | TypoScript `page.stdWrap.replacement` |
 | `###SPACE###`       | Space charactar "32"   | TypoScript `page.stdWrap.replacement` |
@@ -49,7 +49,7 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## Typoscript Libs
 
-|      TypoScript patch       |                        Description                        |                    Details                    |
+| TypoScript patch            | Description                                               | Details                                       |
 |:----------------------------|:----------------------------------------------------------|:----------------------------------------------|
 | `lib.fluidTemplate.default` | for primary `FLUIDTEMPLATE` configuration                 | is used as a standard in `PAGE` configuration |
 | `lib.dynamicContent`        | to retrieve content elements in Fluid via VH              | primary method to render content elements     |
@@ -64,13 +64,16 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## Frontend ViewHelpers (many of them could be used in TYPO3 backend context too)
 
-| Name                          | Purpose of ViewHelper                                                                                                                                                                |
-|:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `theme:or`                   | If content is empty use alternative text (can also be LLL:labelname shortcut or LLL:EXT: file paths). Initially copied from EXT:vhs to get rid of dependencies for backend previews. |
-| `theme:fal`                  | FAL file relations. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                                           |
-| `theme:fileCollection`       | FAL file relations from file collections. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                     |
-| `theme:debug.typoScript`      | Debug full TypoScript configuration array. (The ViewHelper only works in development application context)                                                                            |
-| `theme:format.cleanupString`  | Cleanup a string depending on the arguments. Supported is the removal of whitespace, tabs, combined line breaks, unix line breaks, windows line breaks                               |
-| `theme:format.youtubeVideoId` | Returns the videoId from a YouTube Url (a wide range is supported so far)                                                                                                            |
+| Name                          | Purpose of ViewHelper                                                                                                                                                                                                                                |
+|:------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `theme:or`                    | If content is empty use alternative text (can also be LLL:labelname shortcut or LLL:EXT: file paths). Initially copied from EXT:vhs to get rid of dependencies for backend previews.                                                                 |
+| `theme:fal`                   | FAL file relations. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                                                                                                           |
+| `theme:fileCollection`        | FAL file relations from file collections. E.g. for Fluid Standalone Views (where no dataProcessing is available)                                                                                                                                     |
+| `theme:debug.typoScript`      | Debug full TypoScript configuration array. (The ViewHelper only works in development application context)                                                                                                                                            |
+| `theme:format.cleanupString`  | Cleanup a string depending on the arguments. Supported is the removal of whitespace, tabs, combined line breaks, unix line breaks, windows line breaks                                                                                               |
+| `theme:format.youtubeVideoId` | Returns the videoId from a YouTube Url (a wide range is supported so far)                                                                                                                                                                            |
+| `theme:media.youtube`         | A YouTube ViewHelper with 2 modes. Mode 1 renders a ready2use iFrame HTML tag for embedding a YouTube video. Mode 2 makes it possible to hand over the final YouTube url to Fluid. You can write complete custom HTML markup for your YouTube video. |
 
-> See [Backend ViewHelpers overview](../Backend/BackendViewHelpers.md) for a list of backend specific ViewHelpers.
+> See [Backend ViewHelpers overview](../Backend/BackendViewHelpers.md)
+> for a list of backend specific ViewHelpers.
+

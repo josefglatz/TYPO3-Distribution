@@ -2,15 +2,13 @@
 
 namespace JosefGlatz\Theme\ViewHelpers\Media;
 
-/*
- * This file was imported from FluidTYPO3/Vhs project (v4.4.0)
- * and was imported to EXT:theme to reduce the dependence of EXT:vhs. (This VH was initially used for backendPreviews)
- */
-
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
-/**
- * Renders HTML code to embed a video from YouTube.
+/*
+ * YouTube Embed ViewHelper with 2 modes
+ *
+ * A) The Viewhelper renders a complete YouTube HTML markup, if the ViewHelper has no child HTML markup.
+ * B) The Viewhelper returns a fluid variable object with processed values if the ViewHelper has child HTML markup.
  */
 class YoutubeViewHelper extends AbstractTagBasedViewHelper
 {
@@ -40,10 +38,18 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      * @return void
      * @api
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerUniversalTagAttributes();
+        $this->registerArgument(
+            'as',
+            'string',
+            'This parameter specifies the name of the variable that will be used if you want to write the ' .
+            'the whole HTML markup by your own. E.g. useful if you want to embed a GDPR compliant YouTube video.',
+            false,
+            'processedVideo'
+        );
         $this->registerArgument('videoId', 'string', 'YouTube id of the video to embed.', true);
         $this->registerArgument(
             'width',
@@ -154,7 +160,24 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
             $this->tag->setContent($tagContent);
         }
 
-        return $this->tag->render();
+        // Return the final YouTube Embed HTML markup if the ViewHelper has no child markup
+        if (empty($this->renderChildren())) {
+            return $this->tag->render();
+        }
+
+        // Return available attributes as fluid variable if the ViewHelper has child markup
+        // This is used to build the HTML markup by your own.
+        $this->templateVariableContainer->add(
+            $this->arguments['as'],
+            [
+                'arguments' => $this->arguments,
+                'tag' => $this->tag->getAttributes()
+            ]
+        );
+        $output = $this->renderChildren();
+        $this->templateVariableContainer->remove($this->arguments['as']);
+
+        return $output;
     }
 
     /**
@@ -163,7 +186,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      * @param string $videoId
      * @return string
      */
-    private function getSourceUrl($videoId)
+    private function getSourceUrl(string $videoId): string
     {
         $src = $this->arguments['extendedPrivacy'] ? self::YOUTUBE_PRIVACY_BASEURL : self::YOUTUBE_BASEURL;
 
@@ -235,7 +258,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      * @param bool $forceClosingTag
      * @return string
      */
-    private function renderChildTag($tagName, $attributes = [], $forceClosingTag = false)
+    private function renderChildTag(string $tagName, array $attributes = [], bool $forceClosingTag = false): string
     {
         $tagBuilder = clone $this->tag;
         $tagBuilder->reset();
