@@ -24,4 +24,4 @@
 * Path to Script: `/html/TYPO3Scheduler.sh`
 * Parameter: no parameter needed
 * Inform via E-Mail on errors: if you want/need
-* select execution plan for the cronjob
+* select execution plan for the cronjob (select the timeframe as small as possible, depends on your plan)
