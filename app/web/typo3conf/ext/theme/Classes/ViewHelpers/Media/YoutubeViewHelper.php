@@ -18,14 +18,14 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      *
      * @var string
      */
-    const YOUTUBE_BASEURL = 'https://www.youtube.com';
+    public const YOUTUBE_BASEURL = 'https://www.youtube.com';
 
     /**
      * Base url for extended privacy
      *
      * @var string
      */
-    const YOUTUBE_PRIVACY_BASEURL = 'https://www.youtube-nocookie.com';
+    public const YOUTUBE_PRIVACY_BASEURL = 'https://www.youtube-nocookie.com';
 
     /**
      * @var string
@@ -117,7 +117,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
      *
      * @return string
      */
-    public function render()
+    public function render(): string
     {
         $videoId = $this->arguments['videoId'];
         $width = $this->arguments['width'];
