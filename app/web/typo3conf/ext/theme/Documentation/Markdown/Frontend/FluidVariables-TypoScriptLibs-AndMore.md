@@ -73,6 +73,7 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 | `theme:format.cleanupString`  | Cleanup a string depending on the arguments. Supported is the removal of whitespace, tabs, combined line breaks, unix line breaks, windows line breaks                                                                                               |
 | `theme:format.youtubeVideoId` | Returns the videoId from a YouTube Url (a wide range is supported so far)                                                                                                                                                                            |
 | `theme:media.youtube`         | A YouTube ViewHelper with 2 modes. Mode 1 renders a ready2use iFrame HTML tag for embedding a YouTube video. Mode 2 makes it possible to hand over the final YouTube url to Fluid. You can write complete custom HTML markup for your YouTube video. |
+| `theme:typoScript.constants`  | Retrieve a specific TypoScript constants path and make it available within Fluid (direct or as specific named variable).                                                                                                                             |
 
 > See [Backend ViewHelpers overview](../Backend/BackendViewHelpers.md)
 > for a list of backend specific ViewHelpers.
