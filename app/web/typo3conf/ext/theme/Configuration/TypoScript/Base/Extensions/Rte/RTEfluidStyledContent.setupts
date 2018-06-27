@@ -21,14 +21,4 @@ lib.parseFunc_RTE {
 			}
 		}
 	}
-
-	// icons for li
-	externalBlocks := addToList(li)
-	externalBlocks.ul {
-		callRecursive = 1
-		callRecursive.tagStdWrap.HTMLparser = 1
-		callRecursive.tagStdWrap.HTMLparser.tags.ul {
-			fixAttrib.class.default = icon-list
-		}
-	}
 }
