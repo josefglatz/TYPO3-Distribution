@@ -83,7 +83,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('extendedPrivacy', 'boolean', 'Whether to use cookie-less video player.', false, true);
         $this->registerArgument('hideControl', 'boolean', 'Hide video player\'s control bar.', false, false);
         $this->registerArgument('hideInfo', 'boolean', 'Hide video player\'s info bar.', false, false);
-        $this->registerArgument('disallowFullscreen', 'boolean', 'Whether to allow full screen mode.', false, false);
+        $this->registerArgument('disallowFullscreen', 'boolean', 'Whether to disallow full screen mode.', false, false);
         $this->registerArgument('enableJsApi', 'boolean', 'Enable YouTube JavaScript API', false, false);
         $this->registerArgument('playlist', 'string', 'Comma seperated list of video IDs to be played.');
         $this->registerArgument('loop', 'boolean', 'Play the video in a loop.', false, false);
