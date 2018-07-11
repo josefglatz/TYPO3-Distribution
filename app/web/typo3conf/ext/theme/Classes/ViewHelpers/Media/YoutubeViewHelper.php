@@ -132,9 +132,9 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
         if (false === (boolean) $this->arguments['legacyCode']) {
             $this->tag->addAttribute('src', $src);
             $this->tag->addAttribute('frameborder', 0);
-			if (false === (boolean) $this->arguments['disallowFullscreen']) {
-				$this->tag->addAttribute('allowFullScreen', 'allowFullScreen');
-			}
+            if (false === (boolean) $this->arguments['disallowFullscreen']) {
+                $this->tag->addAttribute('allowFullScreen', 'allowFullScreen');
+            }
             $this->tag->forceClosingTag(true);
         } else {
             $this->tag->setTagName('object');
