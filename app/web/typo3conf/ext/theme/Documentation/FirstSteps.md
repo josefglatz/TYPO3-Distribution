@@ -106,3 +106,10 @@ any other table to/from yaml.
 MYSQL_USER=distri MYSQL_PASSWORD=distri MYSQL_DATABASE=distri MYSQL_PORT=8889 TYPO3_CONTEXT=Development/Mamp /Applications/MAMP/bin/php/php7.1.12/bin/php ./typo3cms export:table ...
 
 ```
+
+###### Make sure to use the correct PHP CLI version
+
+```bash
+# Example: using PHP 7.2.1 MAMP PHP CLI binary (you have to install it before via MAMP Pro GUI)
+MYSQL_USER=distri MYSQL_PASSWORD=distri MYSQL_DATABASE=distri MYSQL_PORT=8889 TYPO3_CONTEXT=Development/Mamp /Applications/MAMP/bin/php/php7.2.1/bin/php ./typo3cms
+```
