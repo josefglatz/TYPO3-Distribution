@@ -1,4 +1,7 @@
 tt_content {
 	theme_inheritance_stop = TEXT
-	theme_inheritance_stop.stdWrap.prefixComment = 2 | Content slide stopped, uid:{field:uid}/{field:CType}
+	theme_inheritance_stop {
+		value = <!-- CE inheritance stopped at this position -->
+		stdWrap.prefixComment = 2 | Content slide stopped, uid:{field:uid}/{field:CType}
+	}
 }
