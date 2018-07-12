@@ -51,7 +51,7 @@ class AspectRatio
     {
         $value = GeneralUtility::trimExplode('/', $value, true);
         if (\count($value) === 1) {
-            return (float)$value;
+            return (float)$value[0];
         }
         if (\count($value) === 2) {
             return $value[0] / $value[1];
