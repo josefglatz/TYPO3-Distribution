@@ -8,6 +8,10 @@
 #  ---------------
 #  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
 #
+#  EXAMPLE: default
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"specialContentArea\">|</div>', elementWrap: '<div class=\"wrapAroundEachContentElement\">|</div>'}" />
+#
 #  EXAMPLE: slide
 #  ---------------
 #  <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
@@ -73,6 +77,10 @@ lib.dynamicContent {
 		wrap.cObject {
 			field = wrap
 		}
+		elementWrap.cObject = TEXT
+		elementWrap.cObject{
+			field = elementWrap
+		}
 		maxItems.cObject = TEXT
 		maxItems.cObject {
 			field = maxItems
@@ -92,6 +100,12 @@ lib.dynamicContent {
 			max.data = register:maxItems
 			// select.languageField setting is needed if you use this typoscript in TYPO3 < v7
 			// languageField = sys_language_uid
+		}
+		renderObj{
+			stdWrap{
+				dataWrap = {register:elementWrap}
+				required = 1
+			}
 		}
 		stdWrap {
 			dataWrap = {register:wrap}
