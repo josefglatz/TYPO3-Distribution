@@ -25,6 +25,14 @@ $customChanges = [
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',
     ],
+    // Configuration for mailhog container (running as "mail" docker container)
+    'MAIL' => [
+        'transport' => 'smtp',
+        'transport_smtp_encrypt' => '',
+        'transport_smtp_password' => '',
+        'transport_smtp_server' => 'mail:1025',
+        'transport_smtp_username' => '',
+    ],
 ];
 
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], $customChanges);
