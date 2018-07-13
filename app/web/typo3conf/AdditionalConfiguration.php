@@ -268,7 +268,8 @@ $customChanges = [
                 'boostMode' => 0,
                 'backendDisplayMode' => 'current',
                 'disableInDevelopment' => 1,
-                'htaccessTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Htaccess.html'
+                'htaccessTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Htaccess.html',
+                'saveCacheHook' => 'InsertPageIncache'
             ]),
             'theme' =>  serialize([
                 'pageLayoutViewEnrichmentFooter' => 1,
