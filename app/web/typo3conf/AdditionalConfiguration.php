@@ -41,7 +41,7 @@ if ($context) {
 $customChanges = [
     'BE' => [
         'explicitADmode' => 'explicitAllow',
-        'loginSecurityLevel' => 'rsa',
+        'loginSecurityLevel' => 'normal',
         'notificationPrefix' => '[' . htmlspecialchars($site['sitenameBase']) . ' TYPO3 Note]',
     ],
     'DB' => [
@@ -295,7 +295,7 @@ $customChanges = [
     ],
     'FE' => [
         'disableNoCacheParameter' => true,
-        'loginSecurityLevel' => 'rsa',
+        'loginSecurityLevel' => 'normal',
         'versionNumberInFilename' => 'querystring',
         'noPHPscriptInclude' => true,
         'cHashExcludedParameters' => $GLOBALS['TYPO3_CONF_VARS']['FE']['cHashExcludedParameters'] . ', gclid', // see app/vendor/typo3/cms/typo3/sysext/core/Configuration/DefaultConfiguration.php:995ff for default parameters // TODO TYPO3-9 TYPO3-8-7-9 Remove as it was merged into core http://ift.tt/2yy3hkh

@@ -7,8 +7,8 @@ distribution based on my best practices.
 
 > The goal of this package is to give an example of how a TYPO3 project
 > could be configured and structured for real world scenarios. It is
-> updated on a regular basis to reflect the current developments of
-> TYPO3 CMS.
+> updated on a regular basis to reflect the current development of TYPO3
+> CMS.
 
 ---
 
@@ -19,6 +19,9 @@ distribution based on my best practices.
 
 > **This TYPO3 distribution is an advanced, professional TYPO3
 > distribution which requires an all-encompassing TYPO3 know-how.**
+
+> **This distribution doesn't use rsaauth anymore (it's deprecated).
+> There are no reasons anymore to not use HTTPS!!!**
 
 ---
 
