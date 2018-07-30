@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+
+	# Enable URL rewriting
+	RewriteEngine On
+
+# Begin custom lines for common TYPO3 .htaccess:
+
+	# Rewrite Production/Live domain http://*.domainname.at to https scheme
+    RewriteCond %{HTTP_HOST} ^(www\.)?domainnameNotTheLast1.at$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^(www\.)?domainnameNotTheLast2.at$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^(www\.)?domainnameTheLast.at$ [NC]
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
+
+# Stop custom lines for common TYPO3 .htaccess
+
+</IfModule>
