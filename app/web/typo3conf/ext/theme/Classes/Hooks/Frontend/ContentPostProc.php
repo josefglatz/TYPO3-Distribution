@@ -38,6 +38,7 @@ class ContentPostProc
         if (!empty($this->simpleSearchReplacements)) {
             return str_replace(array_keys($this->simpleSearchReplacements), array_values($this->simpleSearchReplacements), $searchText);
         }
+
         return $searchText;
     }
 
@@ -53,6 +54,7 @@ class ContentPostProc
         preg_match($pattern, $searchText, $match);
 
         $stringReplacement = $match[1] . date('Y') . $match[3];
+
         return str_replace($match[0], $stringReplacement, $searchText);
     }
 }
