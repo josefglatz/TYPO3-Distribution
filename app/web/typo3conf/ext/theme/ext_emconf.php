@@ -58,7 +58,6 @@ $EM_CONF[$_EXTKEY] = [
                     'news' => '',
                     'news_gallery' => '',
                     'page_speed' => '',
-                    'piwik' => '',
                     'powermail' => '',
                     'querybuilder' => '',
                     'realurl' => '',
