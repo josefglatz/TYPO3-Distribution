@@ -41,7 +41,7 @@ call_user_func(
         foreach ($rtePresets as $identifier => $fileName) {
             $finalFileName = '/Configuration/RTE/' . $fileName . '.yaml';
             if (is_file(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($extKey, $finalFileName))) {
-                $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['' . $extKey . '_' . $identifier . '']
+                $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'][$extKey . '_' . $identifier]
                     = 'EXT:' . $extKey . $finalFileName;
             } else {
                 throw new \UnexpectedValueException(
