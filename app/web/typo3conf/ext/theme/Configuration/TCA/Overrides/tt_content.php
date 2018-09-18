@@ -34,6 +34,11 @@ call_user_func(
                         ],
                     ],
                 ],
+                'header' => [
+                    'config' => [
+                        'eval' => 'required',
+                    ],
+                ],
                 'header_link' => [
                     'config' => [
                         'fieldControl' => [
