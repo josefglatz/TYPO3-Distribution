@@ -68,7 +68,7 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 1. `cd app` switch to the app folder
 1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
 1. `cd ./Build && ./ChangeVendor.sh Supseven` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `./ChangeHeaderComment.php by supseven Digital - www.supseven.at` Replace the comment within the head of the website.
+1. `./ChangeHeaderComment.php by supseven - www.supseven.at` Replace the comment within the head of the website.
 1. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
 1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
 1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
