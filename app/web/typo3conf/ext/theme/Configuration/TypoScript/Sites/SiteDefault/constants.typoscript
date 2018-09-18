@@ -136,11 +136,11 @@ site {
             id = GTM-XXXXX
         }
 
-        piwik {
+        matomo {
             enable = 0
             id = -1
-            // Piwik host without schema and trailing slash like "//my.piwik.host"
-            host = //piwik.domain.tld
+            // Matomo (former called "Piwik") host without schema and trailing slash like "//my.piwik.host"
+            host = //matomo.domain.tld
         }
     }
 
@@ -190,7 +190,7 @@ site {
                 enable = 0
                 id = GTM-XXXXX
             }
-            piwik {
+            matomo {
                 enable = 0
             }
         }
@@ -208,7 +208,7 @@ site {
                 enable = 0
                 id = GTM-XXXXX
             }
-            piwik {
+            matomo {
                 enable = 0
             }
         }
@@ -225,7 +225,7 @@ site {
                 enable = 0
                 id = GTM-XXXXX
             }
-            piwik {
+            matomo {
                 enable = 0
             }
         }
@@ -234,6 +234,9 @@ site {
 [globalVar = TSFE : beUserLogin > 0]
     site {
         tracking {
+			matomo {
+				enable = 0
+			}
             google {
                 enable = 0
             }
