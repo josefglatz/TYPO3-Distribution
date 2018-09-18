@@ -65,7 +65,7 @@
 	"require": {
 		"php": "^7.1 || ^7.2",
 		"apache-solr-for-typo3/solr": "^8",
-		"causal/image_autoresize": "dev-master#8c9ce1c1e5bc2b103a186e5d8040bc5a3077d401",
+		"causal/image_autoresize": "dev-master#409259666691eaa6ddcdf60a19ac2dbdac28deb5",
 		"cmsexperts/unlocalizedcrop": "^1.0",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
 		"dmitryd/typo3-realurl": "dev-development",
@@ -81,10 +81,9 @@
 		"instituteweb/unroll": "^2.0",
 		"josefglatz/beuser-fastswitch": "^1.0.2",
 		"josefglatz/iconcheck": "^2",
-		"lochmueller/staticfilecache": "^5.3",
+		"lochmueller/staticfilecache": "^6.0",
 		"minifranske/gravatar": "^1.0",
 		"reelworx/rx-shariff": "^11",
-		"roave/security-advisories": "dev-master",
 		"slowprog/composer-copy-file": "^0.2.1",
 		"spooner-web/be_secure_pw": "~8",
 		"t3monitor/t3monitoring_client": "^1.0",
@@ -116,7 +115,7 @@
 		"typo3/cms-wizard-crpages": "^8.7.17",
 		"typo3/cms-wizard-sortpages": "^8.7.17",
 		"typo3/minimal": "^8.7",
-		"w8tcha/ckeditor-wordcount-plugin": "1.17.2"
+		"w8tcha/ckeditor-wordcount-plugin": "1.17.3"
 	},
 	"require-dev": {
 		"ckeditor/ckeditor-dev": "4.7.0",
@@ -126,6 +125,7 @@
 		"maxserv/yaml_configuration": "dev-master",
 		"namelesscoder/typo3-repository-client": "^2.0",
 		"neronmoon/scriptsdev": "^0.1.2",
+		"roave/security-advisories": "dev-master",
 		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
