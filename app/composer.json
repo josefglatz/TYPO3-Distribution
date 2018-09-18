@@ -125,6 +125,7 @@
 		"mask/mask": "^3.0",
 		"maxserv/yaml_configuration": "dev-master",
 		"namelesscoder/typo3-repository-client": "^2.0",
+		"neronmoon/scriptsdev": "^0.1.2",
 		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
@@ -171,6 +172,11 @@
 		},
 		"copy-file": {
 			"vendor/w8tcha/ckeditor-wordcount-plugin/wordcount/": "web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/wordcount/"
+		},
+		"scripts-dev": {
+			"post-autoload-dump": [
+				"@folder-structure"
+			]
 		}
 	},
 	"autoload": {
@@ -219,8 +225,7 @@
 			"./sgc build"
 		],
 		"post-autoload-dump": [
-			"@package-states",
-			"@folder-structure"
+			"@package-states"
 		],
 		"post-install-cmd": [
 			"SlowProg\\CopyFile\\ScriptHandler::copy"
