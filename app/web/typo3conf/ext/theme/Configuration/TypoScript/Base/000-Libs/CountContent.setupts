@@ -7,6 +7,11 @@
 #  <f:cObject typoscriptObjectPath="lib.countContent" data="{colPos: 1}" />
 #  {f:cObject(typoscriptObjectPath: 'lib.countContent', data: '{colPos: 1}')}
 #
+#  EXAMPLE: amount of content elements in more than one colPos of actual PID
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.countContent" data="{colPos: '1,2'}" />
+#  {f:cObject(typoscriptObjectPath: 'lib.countContent', data: '{colPos: \'1,2\'}')}
+#
 #
 #
 #
@@ -55,7 +60,7 @@ lib.countContent {
 		table = tt_content
 		select {
 			selectFields = count(uid) AS counter
-			where = {#colPos}={register:colPos}
+			where = {#colPos} IN({register:colPos})
 			where.insertData = 1
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid

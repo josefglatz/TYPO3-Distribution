@@ -49,17 +49,17 @@ Back to [Index](../Index.md) / Back to [Frontend Index](Index.md)
 
 ## Typoscript Libs
 
-| TypoScript patch            | Description                                               | Details                                       |
-|:----------------------------|:----------------------------------------------------------|:----------------------------------------------|
-| `lib.fluidTemplate.default` | for primary `FLUIDTEMPLATE` configuration                 | is used as a standard in `PAGE` configuration |
-| `lib.dynamicContent`        | to retrieve content elements in Fluid via VH              | primary method to render content elements     |
-| `lib.dynamicContentSlide`   | same as above with sliding/inheritance active             |                                               |
-| `lib.dynamicContentFirst`   | same as above with only first content element             |                                               |
-| `lib.countContent`          | retrieve amount of content elements for a specific colPos | primary used for Fluid If/Else conditions     |
-| `lib.googleAnalyticsBasic`  | Simple Google Analytics snippet                           |                                               |
-| `lib.googleTagManagerBasic` | Simple Google Tag Manager snippet                         |                                               |
-| `lib.matomoBasic`           | Simple Matomo (former Piwik) snippet                      |                                               |
-| `lib.titleTag.default`      | Simple configurable title tag setup                       |                                               |
+| TypoScript patch            | Description                                                      | Details                                       |
+|:----------------------------|:-----------------------------------------------------------------|:----------------------------------------------|
+| `lib.fluidTemplate.default` | for primary `FLUIDTEMPLATE` configuration                        | is used as a standard in `PAGE` configuration |
+| `lib.dynamicContent`        | to retrieve content elements in Fluid via VH                     | primary method to render content elements     |
+| `lib.dynamicContentSlide`   | same as above with sliding/inheritance active                    |                                               |
+| `lib.dynamicContentFirst`   | same as above with only first content element                    |                                               |
+| `lib.countContent`          | retrieve amount of content elements for a one or multiple colPos | primary used for Fluid If/Else conditions     |
+| `lib.googleAnalyticsBasic`  | Simple Google Analytics snippet                                  |                                               |
+| `lib.googleTagManagerBasic` | Simple Google Tag Manager snippet                                |                                               |
+| `lib.matomoBasic`           | Simple Matomo (former Piwik) snippet                             |                                               |
+| `lib.titleTag.default`      | Simple configurable title tag setup                              |                                               |
 
 
 ## Frontend ViewHelpers (many of them could be used in TYPO3 backend context too)
