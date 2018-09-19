@@ -2,5 +2,16 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/vendor/ckeditor/ckeditor-dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/image_autoresize" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/infogram" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/infogram/Resources/Private/Contrib/html_compress" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/lfeditor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/logging" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/mess_detector" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/page_speed" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/realurl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/vhs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/yaml_configuration" vcs="Git" />
   </component>
 </project>
