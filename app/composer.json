@@ -65,7 +65,7 @@
 	"require": {
 		"php": "^7.2",
 		"apache-solr-for-typo3/solr": "^8",
-		"causal/image_autoresize": "dev-master#3c3fde1e997c46506c1c2617099a3cea6d2bf537",
+		"causal/image_autoresize": "dev-master#3c3fde1",
 		"cmsexperts/unlocalizedcrop": "^1.0",
 		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
 		"dmitryd/typo3-realurl": "^2",
@@ -84,6 +84,7 @@
 		"lochmueller/staticfilecache": "^6.0",
 		"minifranske/gravatar": "^1.0",
 		"reelworx/rx-shariff": "^11",
+		"roave/security-advisories": "dev-master",
 		"slowprog/composer-copy-file": "^0.2.1",
 		"spooner-web/be_secure_pw": "~8",
 		"t3monitor/t3monitoring_client": "^1.0",
@@ -125,7 +126,6 @@
 		"maxserv/yaml_configuration": "dev-master",
 		"namelesscoder/typo3-repository-client": "^2.0",
 		"neronmoon/scriptsdev": "^0.1.2",
-		"roave/security-advisories": "dev-master",
 		"sgalinski/lfeditor": "dev-master"
 	},
 	"suggest": {
