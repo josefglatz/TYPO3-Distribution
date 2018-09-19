@@ -201,14 +201,11 @@ call_user_func(
                     'MM_opposite_field' => 'related_from',
                     'size' => 3,
                     'MM' => 'tx_theme_related_pages_mm',
-                    'wizards' => [
-                        'suggest' => [
-                            'type' => 'suggest',
-                            'default' => [
-                                'searchWholePhrase' => true,
-                                'addWhere' => ' AND pages.uid != ###THIS_UID###'
-                            ]
-                        ],
+                    'suggestOptions' => [
+                        'default' => [
+                            'searchWholePhrase' => true,
+                            'addWhere' => ' AND pages.uid != ###THIS_UID###'
+                        ]
                     ],
                 ]
             ],
