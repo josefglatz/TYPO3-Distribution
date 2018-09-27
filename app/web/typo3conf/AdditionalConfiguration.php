@@ -24,15 +24,15 @@ if ($context) {
         $backendLogoFileSuffix = '.svg';
         $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . $backendLogoFileSuffix;
         if (is_file($backendLogo)) {
-            $site['backendLogo'] .= '-' . $contextMainPart;
+            $site['backendLogo'] = $site['backendLogo'] . '-' . $contextMainPart;
         }
         $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . '-' . $contextSubPart1 . $backendLogoFileSuffix;
         if (is_file($backendLogo)) {
-            $site['backendLogo'] .= '-' . $contextMainPart . '-' . $contextSubPart1;
+            $site['backendLogo'] .= '-' . $contextSubPart1;
         }
         $backendLogo = $backendLogoFilePathAndFilePrefix . $contextMainPart . '-' . $contextSubPart1 . '-' . $contextSubPart2 . $backendLogoFileSuffix;
         if (is_file($backendLogo)) {
-            $site['backendLogo'] .= '-' . $contextMainPart . '-' . $contextSubPart1 . '-' . $contextSubPart2;
+            $site['backendLogo'] .= '-' . $contextSubPart2;
         }
     }
 }
