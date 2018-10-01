@@ -5,6 +5,9 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="col.pageWithoutContentElements">
+			<source>Page without content elements</source>
+		</trans-unit>
 		<trans-unit id="col.contentTeasers">
 			<source>Content Teaser Section</source>
 		</trans-unit>
