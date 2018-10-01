@@ -80,6 +80,13 @@ $customChanges = [
                     ],
                 ],
             ],
+            'pages' => [
+                'tx_theme_nav_image' => [
+                    'default' => [
+                        'allowedImageFileExt' => 'jpg,jpeg,png',
+                    ],
+                ],
+            ],
         ],
     ],
     'EXT' => [
