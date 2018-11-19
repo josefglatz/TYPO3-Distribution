@@ -122,7 +122,7 @@ config {
 	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
 }
 
-[globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0]
+[globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*]
 	config {
 		debug = 1
 		admPanel = 1
