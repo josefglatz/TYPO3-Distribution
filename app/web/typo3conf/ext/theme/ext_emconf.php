@@ -40,6 +40,7 @@ $EM_CONF[$_EXTKEY] = [
                     'fluid_styled_responsive_images' => '',
                     'form' => '',
                     'formhandler' => '',
+                    'gdpr' => '',
                     'gravatar' => '',
                     'iconcheck' => '',
                     'gridelements' => '',

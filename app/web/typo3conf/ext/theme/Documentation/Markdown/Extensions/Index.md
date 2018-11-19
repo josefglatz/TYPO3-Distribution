@@ -19,7 +19,7 @@ need/want for a specific project.
 
 ## Default activated extensions
 
-|          EXT           |                                 Reason/Description                                  |     for editor      | for dev/integrator  |
+| EXT                    | Reason/Description                                                                  | for editor          | for dev/integrator  |
 |:-----------------------|:------------------------------------------------------------------------------------|:--------------------|:--------------------|
 | autoswitchtolistview   | If page module and a sys folder is selected, a redirect to the list module is done. | :white_check_mark:  | :white_check_mark:  |
 | backend_debug          | Easier the life while integrating a TYPO3 project. Shows field name in formEngine   | :x:                 | :white_check_mark:¹ |
@@ -27,6 +27,7 @@ need/want for a specific project.
 | beuser_fastswitch      | Admins can switch to specific backend (test-)editors with just 2 clicks             | :x:                 | :white_check_mark:  |
 | content_defender       | Limit colPos's                                                                      | :white_check_mark:  | :white_check_mark:  |
 | deprecationloganalyzer |                                                                                     | :x:                 | :white_check_mark:  |
+| gdpr                   | GDPR relevant enhancements                                                          | :white_check_mark:  | :white_check_mark:  |
 | gravatar               | Backend user gravatar avatar support                                                | :white_check_mark:  | :white_check_mark:  |
 | iconcheck              | Overview of custom registered icons for backend users.                              | :x:                 | :white_check_mark:  |
 | image_autoresize       | Resize/Process images on upload                                                     | :white_check_mark:  | :white_check_mark:  |
@@ -62,5 +63,6 @@ extensions for reference in the list.
 
 This distribution ships my best practice configuration
 ([EXT:theme/Resources/Private/Examples/TypoScript/Sourceopt/](../../../Resources/Private/Examples/TypoScript/Sourceopt))
-which you only need to copy to `EXT:theme/Configuration/TypoScript/Base/Extensions`
-and require the extension via composer `composer require lochmueller/sourceopt`
+which you only need to copy to
+`EXT:theme/Configuration/TypoScript/Base/Extensions` and require the
+extension via composer `composer require lochmueller/sourceopt`
