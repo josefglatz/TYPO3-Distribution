@@ -123,7 +123,7 @@
 		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
 			<target>Bild neben Text hinzufügen</target>
 		</trans-unit>
-		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_cemetery">
+		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_list">
 			<target>Logo hinzufügen</target>
 		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">

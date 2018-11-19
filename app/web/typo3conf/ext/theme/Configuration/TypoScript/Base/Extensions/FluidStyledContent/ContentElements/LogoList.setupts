@@ -1,7 +1,7 @@
 tt_content {
-	theme_logo_cemetery =< lib.contentElement
-	theme_logo_cemetery {
-		templateName = LogoCemetery
+	theme_logo_list =< lib.contentElement
+	theme_logo_list {
+		templateName = LogoList
 		dataProcessing {
 			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 			10 {

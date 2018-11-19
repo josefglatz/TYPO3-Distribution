@@ -21,7 +21,7 @@
 		<f:then>
 			<theme:fal table="tt_content" field="image" id="{uid}" as="images">
 				<f:comment>
-					<!-- @TODO: TYPO3-Distribution: Finalize backend preview for theme_logo_cemetery -->
+					<!-- @TODO: TYPO3-Distribution: Finalize backend preview for theme_logo_list -->
 							- nice backend UI
 							- useful metadata
 				</f:comment>
@@ -34,7 +34,7 @@
 		</f:then>
 		<f:else>
 			<div class="callout callout-danger">
-				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_logo_cemetery.title" /></h4>
+				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_logo_list.title" /></h4>
 				<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.tt_content.image.backendpreview.info.missing" />
 			</div>
 		</f:else>
@@ -72,7 +72,7 @@
 					<dt><f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" /></dt>
 					<dd>{image.description}</dd>
 				</f:if>
-				<f:comment><!-- @TODO: TYPO3-Distribution: CE theme_logo_cemetery: render link url --></f:comment>
+				<f:comment><!-- @TODO: TYPO3-Distribution: CE theme_logo_list: render link url --></f:comment>
 			</dl>
 		</f:if>
 	</div>

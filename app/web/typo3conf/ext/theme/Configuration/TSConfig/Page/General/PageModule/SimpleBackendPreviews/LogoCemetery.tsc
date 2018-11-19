@@ -1,3 +1,0 @@
-mod.web_layout.tt_content.preview {
-	theme_logo_cemetery = EXT:theme/Resources/Private/Templates/Content/BackendPreview/LogoCemetery.html
-}

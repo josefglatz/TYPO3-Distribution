@@ -50,7 +50,7 @@ call_user_func(
                                 'filter' => [
                                     0 => [
                                         'parameters' => [
-                                            'allowedFileExtensions' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['content']['theme_logo_cemetery']['logoImage']['allowedImageFileExt']
+                                            'allowedFileExtensions' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['content']['theme_logo_list']['logoImage']['allowedImageFileExt']
                                         ],
                                     ],
                                 ],
@@ -61,7 +61,7 @@ call_user_func(
                                         'uid_local' => [
                                             'config' => [
                                                 'appearance' => [
-                                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['content']['theme_logo_cemetery']['logoImage']['allowedImageFileExt']
+                                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['content']['theme_logo_list']['logoImage']['allowedImageFileExt']
                                                 ],
                                             ],
                                         ],
@@ -77,7 +77,7 @@ call_user_func(
                     'pageLayoutViewEnrichment' => [
                         'footer' => [
                             'badges' => [
-                                // @TODO: TYPO3-Distribution: CE theme_logo_cemetery: enable value badge once it's finalized
+                                // @TODO: TYPO3-Distribution: CE theme_logo_list: enable value badge once it's finalized
                             ],
                         ],
                     ],
@@ -124,5 +124,5 @@ call_user_func(
     },
     'theme',
     'tt_content',
-    'theme_logo_cemetery'
+    'theme_logo_list'
 );
