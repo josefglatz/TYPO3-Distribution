@@ -15,7 +15,7 @@
 - Set backendLogin logo, color and image in AdditionalConfiguration.php
 - add great favicons http://realfavicongenerator.net
 - configure linkvalidator scheduler job (receiver email, ...)
-- set default language-flags and -name `EXT:theme/Configuration/TSConfig/Page/General/Language.tsc`
+- set default language-flags and -name `EXT:theme/Configuration/TsConfig/Page/General/Language.tsc`
 - set all known frontend languages `EXT:theme/Configuration/TypoScript/Tree/Base/constants.txt`
 - set ext:static_info_tables default lang (and langs for known alternative languages) `EXT:theme/Configuration/TypoScript/Base/Extensions/StaticInfoTables.constantsts`
 - set ext:news default constants `EXT:theme/Configuration/TypoScript/Base/600-Extensions/News/News.constantsts`

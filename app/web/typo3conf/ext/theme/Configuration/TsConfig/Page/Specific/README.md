@@ -1,4 +1,4 @@
-# TSConfig/Page/Specific
+# TsConfig/Page/Specific
 
 ## TL;DR
 

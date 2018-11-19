@@ -64,7 +64,7 @@ class ProcessDatamapDataHandler
         // Add warning message, if somebody add or edit PageTSConfig directly.
         if ($table === 'pages' && isset($fieldArray['TSconfig']) && ($fieldArray['TSconfig'] !== '')) {
             $message = GeneralUtility::makeInstance(FlashMessage::class,
-                'Read EXT:theme/Configuration/TSConfig/Page/Specific/README.md for instructions ' .
+                'Read EXT:theme/Configuration/TsConfig/Page/Specific/README.md for instructions ' .
                 'how to add page specific TSConfig with an alternative way.',
                 'Please consider NOT saving Page TS Config directly to database!',
                 FlashMessage::WARNING,

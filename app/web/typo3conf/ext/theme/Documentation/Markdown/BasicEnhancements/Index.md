@@ -94,8 +94,8 @@ TYPO3 has a lot of features were not all are of them are necessary for
 every website project. Over the years, a standard has emerged from this
 for me. You get a real overview by looking into the configuration files:
 
-- [TCAdefaults.tt_content Configuration](../../../Configuration/TSConfig/Page/General/Tcadefaults/TtContent.tsc)
-- [TCEFORM.tt_content Configuration](../../../Configuration/TSConfig/Page/General/Tceform/TtContent.tsc)
+- [TCAdefaults.tt_content Configuration](../../../Configuration/TsConfig/Page/General/Tcadefaults/TtContent.tsc)
+- [TCEFORM.tt_content Configuration](../../../Configuration/TsConfig/Page/General/Tceform/TtContent.tsc)
 
 > Consider setting up a fresh TYPO3 instance without any TYPO3 extension
 > installed and activated if you want to get an real overview of what

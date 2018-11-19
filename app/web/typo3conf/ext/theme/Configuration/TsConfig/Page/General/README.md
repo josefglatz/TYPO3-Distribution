@@ -1,4 +1,4 @@
-# TSConfig/Page/General
+# TsConfig/Page/General
 
 ## TL;DR
 

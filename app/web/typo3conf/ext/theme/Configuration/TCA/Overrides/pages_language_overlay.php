@@ -5,7 +5,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function ($extKey, $table) {
         $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
-        $pathSegment = 'Configuration/TSConfig/';
+        $pathSegment = 'Configuration/TsConfig/';
         $fileExt = '.tsc';
         $labelPrefix = 'theme :: ';
     },

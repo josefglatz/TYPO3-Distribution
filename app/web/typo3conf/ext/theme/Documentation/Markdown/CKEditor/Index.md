@@ -24,7 +24,7 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 ### The configuration could be found inside `EXT:theme`
 
-- `EXT:theme/Configuration/TSConfig/Page/General/RTE/` → PageTSConfig to assign available presets
+- `EXT:theme/Configuration/TsConfig/Page/General/RTE/` → PageTSConfig to assign available presets
 - `EXT:theme/Configuration/RTE/` → Every yaml file represents a preset
 - `EXT:theme/Configuration/RTE/Additional` → Every yaml file inside this subfolder is inteded to be imported into final CKEditor presets
 - `EXT:theme/ext_localconf.php` → `$rtePresets` array reflects all available custom CKEditor presets. (This is where the presets gets registered in TYPO3.)
