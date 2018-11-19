@@ -344,29 +344,29 @@ deploy:
     ##################
     # Context "Production/Dev"
     ##################
-    production-dev:
-        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
-        ssh:
-            hostname: serverhostnameProductionDev
-
-        # rsync for some directories
-        rsync:
-            # server and source directory (server host or name - see .ssh/config)
-            path: "serverhostnameProductionDev:/var/www/website/production/dev/htdocs"
-
-            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
-            exclude:
-
-        command:
-            startup:
-
-            finalize:
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms cache:flush --force' }
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
-                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
-                #- { type: 'remote', command: 'echo "Header set X-Robots-Tag \"noindex, nofollow, noarchive\"" >> ~/html/typo3/web/.htaccess' }
-                - "echo 'Deployed to Production/Dev domainProductionDev domainProductionDev/typo3'"
+#    production-dev:
+#        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+#        ssh:
+#            hostname: serverhostnameProductionDev
+#
+#        # rsync for some directories
+#        rsync:
+#            # server and source directory (server host or name - see .ssh/config)
+#            path: "serverhostnameProductionDev:/var/www/website/production/dev/htdocs"
+#
+#            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
+#            exclude:
+#
+#        command:
+#            startup:
+#
+#            finalize:
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms cache:flush --force' }
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Dev php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
+#                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
+#                #- { type: 'remote', command: 'echo "Header set X-Robots-Tag \"noindex, nofollow, noarchive\"" >> ~/html/typo3/web/.htaccess' }
+#                - "echo 'Deployed to Production/Dev domainProductionDev domainProductionDev/typo3'"
 
 
 
