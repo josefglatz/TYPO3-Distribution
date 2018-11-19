@@ -62,16 +62,19 @@ lib.dynamicContent {
 				value.current = 1
 				ifEmpty = 0
 			}
+			intval = 1
 		}
 		pageUid.cObject = TEXT
 		pageUid.cObject {
 			field = pageUid
 			ifEmpty.data = TSFE:id
+			intval = 1
 		}
 		contentFromPid.cObject = TEXT
 		contentFromPid.cObject {
 			data = DB:pages:{register:pageUid}:content_from_pid
 			data.insertData = 1
+			intval = 1
 		}
 		wrap.cObject = TEXT
 		wrap.cObject {
@@ -85,6 +88,7 @@ lib.dynamicContent {
 		maxItems.cObject {
 			field = maxItems
 			ifEmpty =
+			intval = 1
 		}
 	}
 	20 = CONTENT
