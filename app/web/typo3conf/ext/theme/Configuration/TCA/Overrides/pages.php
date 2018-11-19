@@ -161,7 +161,7 @@ call_user_func(
                     ],
                     'maxitems' => 1,
                 ],
-                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['pages']['tx_theme_nav_image']['default']['allowedImageFileExt']
                 )
             ],
             'tx_theme_sharing_enabled' => [

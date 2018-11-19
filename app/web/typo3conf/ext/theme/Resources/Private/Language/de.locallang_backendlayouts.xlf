@@ -5,6 +5,10 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="col.pageWithoutContentElements" approved="yes">
+			<source>Page without content elements</source>
+			<target>Seite ohne Content Elemente</target>
+		</trans-unit>
 		<trans-unit id="col.contentTeasers" approved="yes">
 			<source>Content Teaser Section</source>
 			<target>Content Teaser Bereich</target>
