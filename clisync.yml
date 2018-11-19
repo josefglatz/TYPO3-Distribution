@@ -317,28 +317,28 @@ deploy:
     ##################
     # Context "Production/Staging"
     ##################
-    production-staging:
-        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
-        ssh:
-            hostname: serverhostnameProductionStaging
-
-        # rsync for some directories
-        rsync:
-            # server and source directory (server host or name - see .ssh/config)
-            path: "serverhostnameProductionStaging:/var/www/website/production/staging/htdocs"
-
-            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
-            exclude:
-
-        command:
-            startup:
-
-            finalize:
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms cache:flush --force' }
-                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
-                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
-                - "echo 'Deployed to Production/Staging domainProductionStaging domainProductionStaging/typo3'"
+#    production-staging:
+#        # ssh server host or name (see .ssh/config, eg for mysql/mysqldump)
+#        ssh:
+#            hostname: serverhostnameProductionStaging
+#
+#        # rsync for some directories
+#        rsync:
+#            # server and source directory (server host or name - see .ssh/config)
+#            path: "serverhostnameProductionStaging:/var/www/website/production/staging/htdocs"
+#
+#            # directory exclude list/patterns (add all exclude's until https://github.com/webdevops/clitools/issues/60 is fixed/clarified)
+#            exclude:
+#
+#        command:
+#            startup:
+#
+#            finalize:
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms database:updateschema "*.add,*.change"' }
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms cache:flush --force' }
+#                #- { type: 'remote', command: 'TYPO3_CONTEXT=Production/Staging php_cli ~/html/typo3/typo3cms install:fixfolderstructure' }
+#                #- { type: 'remote', command: 'rm -rf ~/html/typo3/web/typo3conf/realurl_autoconf.php  || true' }
+#                - "echo 'Deployed to Production/Staging domainProductionStaging domainProductionStaging/typo3'"
 
 
     ##################
