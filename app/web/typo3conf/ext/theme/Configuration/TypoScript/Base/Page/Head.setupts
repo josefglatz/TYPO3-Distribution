@@ -17,6 +17,7 @@ page {
 			}
 			1 = TMENU
 			1.NO {
+				# @TODO Add URLs without Domain
 				allWrap = <link rel="prev" href="|"> |*| <link rel="next" href="|">
 				doNotLinkIt = 1
 				stdWrap {
