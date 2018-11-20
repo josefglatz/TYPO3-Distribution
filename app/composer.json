@@ -14,7 +14,7 @@
 		}
 	],
 	"name": "josefglatz/typo3-distribution",
-	"description": "A distribution package for TYPO3 CMS in composer mode",
+	"description": "A TYPO3 CMS kickstarter distribution package in composer mode",
 	"_comment": [
 		"This is my TYPO3 distribution",
 		"based on https://github.com/josefglatz/TYPO3-Distribution"
