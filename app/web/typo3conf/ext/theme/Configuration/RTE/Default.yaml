@@ -162,5 +162,4 @@ processing:
 # @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_address if it has to be used or only class in css is enough
 # @TODO Check /Add CKEDITOR.config.format_(h1-h6|p|pre)
 # @TODO Check/Add http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-indentClasses
-# @TODO Add/Import extraPlugin wordcount https://github.com/mschwemer/rte_ckeditor_wordcount
 # @TODO Develop a plugin based on the dialog plugin like the about plugin to display useful links for working with the RTE

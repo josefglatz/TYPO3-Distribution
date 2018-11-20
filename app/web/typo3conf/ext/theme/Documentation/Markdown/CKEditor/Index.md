@@ -35,9 +35,7 @@ with external plugins and a custom project specific plugin to limit the tables p
 
 ## Additional 3rd party CKEditor plugins
 
-| Name                                                                | Description                                                                        | Usage                                                                                                    |
-|:--------------------------------------------------------------------|:-----------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
-| [wordcount](../../Images/ckeditor-demo-plugin-wordcount-180325.png) | [WordCount GitHub Repository](https://github.com/w8tcha/CKEditor-WordCount-Plugin) | Activated in all CKEditor presets. Could be used to limit content length (for specific CKEditor presets) |
+None at the moment.
 
 ## Custom CKEditor plugins
 
