@@ -11,7 +11,6 @@ use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Lang\LanguageService;
 
 class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, SingletonInterface
