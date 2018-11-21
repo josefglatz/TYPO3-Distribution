@@ -20,12 +20,6 @@
 		<trans-unit id="clearcacheaction.clear.processedfiles.title">
 			<source>Clear all processed files</source>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfDescription">
-			<source>Delete automatic generated realurl configuration file.</source>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfTitle">
-			<source>Reset realurl automatic configuration</source>
-		</trans-unit>
 		<trans-unit id="crop_variants.default.label">
 			<source>Default</source>
 		</trans-unit>

@@ -25,14 +25,6 @@
 			<source>Clear all processed files</source>
 			<target>Leere alle verarbeiteten Dateien</target>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfDescription" approved="yes">
-			<source>Delete automatic generated realurl configuration file.</source>
-			<target>Automatisch generiertes RealUrl Konfigurationsdatei löschen.</target>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfTitle" approved="yes">
-			<source>Reset realurl automatic configuration</source>
-			<target>Automatische RealUrl Konfiguration zurücksetzen</target>
-		</trans-unit>
 		<trans-unit id="crop_variants.default.label" approved="yes">
 			<source>Default</source>
 			<target>Standard</target>

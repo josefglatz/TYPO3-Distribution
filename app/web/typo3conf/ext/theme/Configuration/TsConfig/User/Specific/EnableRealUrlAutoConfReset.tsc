@@ -1,2 +1,0 @@
-// Enable custom realurl reset autoconf clear cache entry provided by EXT:theme
-options.clearCache.realurl.autoconf = 1

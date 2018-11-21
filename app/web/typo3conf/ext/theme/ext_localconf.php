@@ -6,13 +6,6 @@ call_user_func(
         // Add fields to rootLineFields
         $GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= '';
 
-        // Hook for adding realurl custom configuration
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][] =
-            'JosefGlatz\\Theme\\Hooks\\Frontend\\Realurl\\RealUrlAutoConfiguration->addThemeConfig';
-
-        // Disable ext:news realurl hook
-        //unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
-
         // Add general UserTSConfig
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
             '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TsConfig/UserGeneral.tsc">'
@@ -65,8 +58,6 @@ call_user_func(
                 '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TsConfig/Page/General/Tceform/SysFileMetadata.tsc">'
             );
 
-            // Add custom cache action item: delete realurl configuration file
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
             // Add custom cache action item: clear processed files
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearProcessedFilesMenuItem::class;
 

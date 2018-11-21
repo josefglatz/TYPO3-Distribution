@@ -1,5 +1,5 @@
 TCEFORM.pages {
-	// Remove alias in times like this (where realurl is used)
+	// Remove alias in times like this
 	alias.disabled = 1
 
 	// Remove beLayout "None"

@@ -218,13 +218,6 @@ $customChanges = [
                 'l10n_mode_merge' => 0,
                 'replaceIrreWithElementBrowser' => 0
             ]),
-            'realurl' => serialize([
-                'configFile' => 'typo3conf/ext/theme/Resources/Private/Extension/Realurl/ManualConfiguration.php',
-                'enableAutoConf' => 0,
-                'autoConfFormat' => 0,
-                'enableDevLog' => 0,
-                'moduleIcon' => 0,
-            ]),
             'rsaauth' => serialize([
                 'temporaryDirectory' => '',
             ]),
