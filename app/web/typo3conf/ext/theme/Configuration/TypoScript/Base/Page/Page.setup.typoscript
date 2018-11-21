@@ -200,11 +200,16 @@ page {
 #		10 {
 #			media =
 #			title = Main CSS
-#			import = 0
 #			external = 0
 #			alternate = 0
 #			disableCompression = 0
 #			excludeFromConcatenation = 1
+#			import = 0
+#			inline {
+#				inline = 1
+#				forceOnTop = 1
+#				media = all
+#			}
 #			allWrap = allWrap = <!--[if lt IE 9]>|<![endif]-->
 #		}
 
