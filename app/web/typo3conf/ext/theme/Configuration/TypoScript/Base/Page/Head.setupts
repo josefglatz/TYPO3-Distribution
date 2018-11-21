@@ -132,10 +132,7 @@ page {
 
 		meta {
 			// @TODO: check TYPO3 v9 robots override in Development-Mode
-			robots-IN-NONPRODUCTION-MODE < page.meta.robots
-			robots-IN-NONPRODUCTION-MODE.noTrimWrap = |The value of robots meta tag would become '|' in a production environment.
-			robots >
-			robots = noindex,nofollow,noarchive
+			robots-IN-NONPRODUCTION-MODE = The value of robots meta tag would become '@TODO: check TYPO3 v9 robots override in Development-Mode' in a production environment.
 		}
 
 	}
