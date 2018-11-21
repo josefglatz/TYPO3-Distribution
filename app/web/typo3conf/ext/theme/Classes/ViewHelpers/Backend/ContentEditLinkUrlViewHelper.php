@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\ViewHelpers\Backend;
 
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -52,6 +53,7 @@ class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
      * @param RenderingContextInterface $renderingContext
      * @return string Empty or edit-link-url
      * @throws \UnexpectedValueException
+     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
      */
     public static function renderStatic(
         array $arguments,
@@ -69,8 +71,7 @@ class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
                 ],
                 'returnUrl' => GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') . '#element-tt_content-' . $arguments['uid'],
             ];
-            // only add link markup around content, if permissions have been granted
-            $url = BackendUtility::getModuleUrl('record_edit', $urlParameter);
+            $url = (string)GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute('record_edit', $urlParameter);
         }
 
         return $url;
