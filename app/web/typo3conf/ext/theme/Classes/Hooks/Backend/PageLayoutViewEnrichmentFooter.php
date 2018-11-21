@@ -6,9 +6,9 @@ use JosefGlatz\Theme\Utility\ArrayTool;
 use JosefGlatz\Theme\Utility\EmConfiguration;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Core\Localization\LanguageService;
 
 class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInterface
 {
