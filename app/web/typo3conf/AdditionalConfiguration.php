@@ -429,15 +429,3 @@ if ($context) {
         $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
 }
-
-/*
- * load custom configuration, that is not placed in git, e.g. for local development only changes
- */
-if ($contextMainPart === 'Development') {
-    $file = realpath(__DIR__) . '/AdditionalConfiguration_custom.php';
-    if (is_file($file)) {
-        /** @noinspection PhpIncludeInspection */
-        include_once($file);
-        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
-    }
-}
