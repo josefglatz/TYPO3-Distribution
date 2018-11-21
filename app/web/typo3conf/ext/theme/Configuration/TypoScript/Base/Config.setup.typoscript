@@ -115,6 +115,7 @@ config {
 	// !!! Please do NOT add `type` to config.linkVars !!!
 #	linkVars := addToList(L(0-1))
 #	linkVars := addToList(L(int))
+#	linkVars := addToList(tracking|green(0-5))
 #	linkVars := removeFromList()
 	linkVars =
 
