@@ -2,7 +2,7 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
-use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -25,10 +25,10 @@ class NewStandardTemplateHandler
          * @var FlashMessage $message Error message to inform the backend user about the barrier
          */
         $message = GeneralUtility::makeInstance(FlashMessage::class,
-            $this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description', true),
-            $this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title', true),
+            htmlspecialchars($this->getLanguageService()
+                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
+            htmlspecialchars($this->getLanguageService()
+                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
             FlashMessage::ERROR,
             true
         );
@@ -38,7 +38,7 @@ class NewStandardTemplateHandler
 
         // @TODO: TYPO3-Distribution: TYPO3v9LTS: Check whether the BackendUtility:getModuleUrl is deprecated and probably switch to implementation like ViewHelpers/Be/UriViewHelper.php
         // Simply redirect back to web_ts module on same page ID
-        $redirectUri = BackendUtility::getModuleUrl(
+        $redirectUri = (string)GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute(
             'web_ts',
             [
                 'id' => $params['id'],

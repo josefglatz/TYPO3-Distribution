@@ -20,14 +20,15 @@ class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
      *
      * @param array $cacheActions Array of CacheMenuItems
      * @param array $optionValues Array of AccessConfigurations-identifiers (typically  used by userTS with options.clearCache.identifier)
+     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
      */
     public function manipulateCacheActions(&$cacheActions, &$optionValues)
     {
         $backendUser = $this->getBackendUser();
         $languagePrefix = 'LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:clearcacheaction.clear.processedfiles.';
-        $menuItemPath = $this->getUriBuilder()->buildUriFromRoute('ajax_' . 'theme_clear_processedfiles');
+        $menuItemPath = (string)$this->getUriBuilder()->buildUriFromRoute('ajax_' . 'theme_clear_processedfiles');
 
-        if ($backendUser->isAdmin() && ($backendUser->getTSConfigVal('options.clearCache.processedfiles') || $this->applicationContextIsDevelopment())) {
+        if ($backendUser->isAdmin() && ((bool)($backendUser->getTSConfig()['options.']['clearCache.']['processedfiles'] ?? false) || $this->applicationContextIsDevelopment())) {
             $cacheActions[] = [
                 'id' => 'theme_clear_processedfiles',
                 'title' => $languagePrefix . 'title',

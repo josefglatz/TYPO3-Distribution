@@ -6,6 +6,7 @@ use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 
 class PageLayoutView implements SingletonInterface
 {
@@ -31,7 +32,7 @@ class PageLayoutView implements SingletonInterface
     public function render(): void
     {
         $this->pageRenderer->addCssFile(
-            '../' . ExtensionManagementUtility::siteRelPath('theme') . 'Resources/Public/Css/Backend/PageLayoutView.css'
+            '../' . PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath('theme')) . 'Resources/Public/Css/Backend/PageLayoutView.css'
         );
     }
 }

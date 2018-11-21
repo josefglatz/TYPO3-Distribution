@@ -2,7 +2,7 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
-use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
@@ -24,18 +24,17 @@ class ProcessDatamapDataHandler
              * @var FlashMessage $message Error message to inform the backend user about the barrier
              */
             $message = GeneralUtility::makeInstance(FlashMessage::class,
-                $this->getLanguageService()
-                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description', true),
-                $this->getLanguageService()
-                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title', true),
+                htmlspecialchars($this->getLanguageService()
+                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
+                htmlspecialchars($this->getLanguageService()
+                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
                 FlashMessage::ERROR,
                 true
             );
             $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
             $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
             $messageQueue->addMessage($message);
-            // @TODO: TYPO3-Distribution: TYPO3v9LTS: Check whether the BackendUtility:getModuleUrl is deprecated and probably switch to implementation like ViewHelpers/Be/UriViewHelper.php
-            $redirectUri = BackendUtility::getModuleUrl(
+            $redirectUri = (string)GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute(
                 'web_ts',
                 [
                     'id' => (int)$parentObject->datamap['sys_template']['NEW']['pid'],
