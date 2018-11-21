@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\Signals\Backend;
 
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Controller\EditDocumentController;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
@@ -17,9 +18,11 @@ class EditDocumentControllerInitSlot
      * preInitAfter SignalSlot
      *   - restrict creating sys_template records in database
      *
+     * @TODO: Use the ServerRequestInterface to interception
+     *
      * @param EditDocumentController $editDocumentController
      */
-    public function adjustEditDocumentController(EditDocumentController $editDocumentController): void
+    public function adjustEditDocumentController(EditDocumentController $editDocumentController, ServerRequestInterface $request): void
     {
         $editconf = $editDocumentController->editconf;
 
