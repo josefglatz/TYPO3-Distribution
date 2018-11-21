@@ -103,5 +103,5 @@ call_user_func(
             'tx_theme_facts_figures'
         );
     },
-    $_EXTKEY
+    'theme'
 );
