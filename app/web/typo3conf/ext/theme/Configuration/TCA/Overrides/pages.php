@@ -5,7 +5,7 @@ call_user_func(
     function ($extKey, $table) {
         $languageFileBePrefix = 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_BackendGeneral.xlf:';
         $pathSegment = 'Configuration/TsConfig/';
-        $fileExt = '.tsc';
+        $fileExt = '.tsconfig.typoscript';
         $labelPrefix = 'theme :: ';
 
         // register elements (path/filename without extension, label without prefix)

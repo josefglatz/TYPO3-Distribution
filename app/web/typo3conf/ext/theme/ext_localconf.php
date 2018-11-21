@@ -8,7 +8,7 @@ call_user_func(
 
         // Add general UserTSConfig
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TsConfig/UserGeneral.tsc">'
+            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TsConfig/UserGeneral.tsconfig.typoscript">'
         );
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Core/TypoScript/TemplateService']['runThroughTemplatesPostProcessing'][1500546787] =
@@ -53,7 +53,7 @@ call_user_func(
 
             // Add PageTSConfig which is valid for the entire TYPO3 instance (e.g. Filelist > Metadata > formEngine labels overwrite)
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-                '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TsConfig/Page/General/Tceform/SysFileMetadata.tsc">'
+                '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TsConfig/Page/General/Tceform/SysFileMetadata.tsconfig.typoscript">'
             );
 
             // Add custom cache action item: clear processed files

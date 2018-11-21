@@ -15,7 +15,7 @@ Back to [Index](../Index.md)
 
 ## Linkvalidator (sysext)
 
-To enable the linkvalidator, adopt the prepared configuration first to your needs (`EXT:theme/Configuration/TsConfig/Page/General/Linkvalidator.tsc`)
+To enable the linkvalidator, adopt the prepared configuration first to your needs (`EXT:theme/Configuration/TsConfig/Page/General/Linkvalidator.tsconfig.typoscript`)
 and then add a Linkvalidator Scheduler Task to activate the linkvalidator on a regular base.
 
 ## News
