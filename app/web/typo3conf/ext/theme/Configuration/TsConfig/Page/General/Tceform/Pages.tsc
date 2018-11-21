@@ -17,7 +17,6 @@ TCEFORM.pages {
 	// disable barely used fields even for admins
 	keywords.disabled = 1
 	php_tree_stop.disabled = 1
-	no_cache.disabled = 1
 	TSconfig.disabled = 1
 	lastUpdated.disabled = 1
 	newUntil.disabled = 1
