@@ -41,7 +41,6 @@ need/want for a specific project.
 | t3monitoring_client    | Client extension for the t3monitoring service                                       | :x:                 | :white_check_mark:  |
 | unroll                 | Enhanced TYPO3 save buttons (configurable)                                          | :white_check_mark:  | :white_check_mark:  |
 | yaml_configuration     | Configure your TYPO3 site using YAML files                                          | :x:                 | :white_check_mark:¹ |
-| yoast_seo              | Yoast SEO for TYPO3                                                                 | :white_check_mark:² | :white_check_mark:² |
 
 * _¹ Only activated in composer --dev mode_
 * _² Only usable if the fronted is reachable from public internet_
