@@ -80,20 +80,6 @@ site {
         }
     }
 
-
-    l10n {
-        locale_all = de_AT.UTF-8, de_DE.UTF-8, de_AT, de_DE, de
-        language = de
-        # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
-        sys_language_isocode = de
-        directionalityOfText = ltr
-        sys_language_uid = 0
-        language_mode = content_fallback; 0
-        sys_language_overlay = 1
-        sys_language_isocode_default = de
-    }
-
-
     htmlTag_additionalTagAttributes = itemscope="itemscope" itemtype="http://schema.org/WebPage"
 
 
@@ -151,20 +137,6 @@ site {
 #        revokable = true
     }
 }
-
-
-[globalVar = GP:L=1]
-    site {
-        l10n {
-            locale_all = en_US.UTF-8, en_US.utf8, en_GB.UTF-8, en_US, en_GB, en
-            language = en
-            # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
-            sys_language_isocode = en
-            directionalityOfText = ltr
-            sys_language_uid = 1
-            language_mode = content_fallback; 0
-        }
-    }
 
 [applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
     theme {

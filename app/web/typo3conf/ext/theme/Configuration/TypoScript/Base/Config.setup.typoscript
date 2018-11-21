@@ -1,43 +1,7 @@
-
-
 config {
 	doctype = html5
-	htmlTag_setParams = none
-	htmlTag_stdWrap {
-		setContentToCurrent = 1
-		cObject = COA
-		cObject {
-			10 = LOAD_REGISTER
-			10 {
-				newLine.char = 10
 
-				additionalHtmlTagAttributes {
-					cObject = TEXT
-					cObject {
-						value = {$site.htmlTag_additionalTagAttributes}
-						required = 1
-						noTrimWrap = | ||
-					}
-				}
-			}
-
-			20 = TEXT
-			20.value = <html class="no-js" dir="{$site.l10n.directionalityOfText}" lang="{$site.l10n.language}"{register:additionalHtmlTagAttributes}>{register:newLine}
-			20.insertData = 1
-
-			90 = RESTORE_REGISTER
-		}
-	}
-
-
-	// Language settings
 	//	Keep in mind to set also CKEditor's editor.config.defaultContentLanguage option in `EXT:theme/Configuration/RTE/Default.yaml`
-	locale_all = {$site.l10n.locale_all}
-	language = {$site.l10n.language}
-	sys_language_uid = {$site.l10n.sys_language_uid}
-	sys_language_mode = {$site.l10n.language_mode}
-	sys_language_isocode_default = {$site.l10n.sys_language_isocode_default}
-#	sys_language_overlay = {$site.l10n.sys_language_overlay}
 
 	pageTitleFirst = 1
 	pageTitleSeparator = -

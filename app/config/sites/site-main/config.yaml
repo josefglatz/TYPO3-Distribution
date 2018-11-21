@@ -8,11 +8,12 @@ languages:
     languageId: '0'
     base: /
     typo3Language: de
-    locale: de_DE.UTF-8
+    locale: 'de_AT.UTF-8, de_DE.UTF-8, de_AT, de_DE, de'
     iso-639-1: de
     navigationTitle: Deutsch
     hreflang: de-DE
     direction: ltr
+    fallbackType: strict
     flag: at
 errorHandling: {  }
 routes: {  }
