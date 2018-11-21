@@ -225,6 +225,7 @@ page {
 		#			allWrap = <!--[if lt IE 9]>|<![endif]-->
 		#			disableCompression = 1
 		#			crossorigin = anonymous
+		#			defer = 0
 		#		}
 
 	}
@@ -239,6 +240,7 @@ page {
 		#			excludeFromConcatenation = 1
 		#			allWrap = <!--[if lt IE 9]>|<![endif]-->
 		#			crossorigin = anonymous
+		#			defer = 0
 		#		}
 
 	}
