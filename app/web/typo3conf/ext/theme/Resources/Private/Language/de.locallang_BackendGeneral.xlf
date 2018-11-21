@@ -122,14 +122,6 @@
 			<source>Text next to the Image</source>
 			<target>Text neben dem Bild</target>
 		</trans-unit>
-		<trans-unit id="field.pages.robot_follow" approved="yes">
-			<source>Follow links on current page (SEO)</source>
-			<target>Links auf Seite folgen (SEO)</target>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_index" approved="yes">
-			<source>Index current page (SEO)</source>
-			<target>Aktuelle Seite indexieren (SEO)</target>
-		</trans-unit>
 		<trans-unit id="field.pages.sharing_enabled" approved="yes">
 			<source>Sharing Functionalities</source>
 			<target>Teilen-Funktion</target>
@@ -280,10 +272,6 @@
 		<trans-unit id="palette.pages.related" approved="yes">
 			<source>Related</source>
 			<target>Verwandt</target>
-		</trans-unit>
-		<trans-unit id="palette.pages.robot_instructions" approved="yes">
-			<source>Search robot settings</source>
-			<target>Suchroboter Einstellungen</target>
 		</trans-unit>
 		<trans-unit id="palette.pages.twitter" approved="yes">
 			<source>Twitter</source>

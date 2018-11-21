@@ -103,10 +103,6 @@ site {
 
 
     meta {
-		// Add following string always to robots meta-tag (e.g. `,noimageindex`).
-		// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?csw=1
-        robotsAdditional =
-
         googleSiteVerification =
         author =
 		// Open Graph
@@ -115,11 +111,6 @@ site {
 			type = website
 			// Overwrite $site.titleTag.sitename in opengraph site_name tag
 			site_name =
-			image {
-				enable = 1
-				// name of database column to fetch image
-				fieldName = opengraph_image
-			}
 		}
     }
 

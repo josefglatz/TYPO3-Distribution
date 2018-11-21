@@ -209,127 +209,6 @@ call_user_func(
                     ],
                 ]
             ],
-            'tx_theme_robot_index' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.robot_index',
-                'config' => [
-                    'type' => 'check',
-                    'default' => '1',
-                    'items' => [
-                        '1' => [
-                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
-                        ]
-                    ]
-                ]
-            ],
-            'tx_theme_robot_follow' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.robot_follow',
-                'config' => [
-                    'type' => 'check',
-                    'default' => '1',
-                    'items' => [
-                        '1' => [
-                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
-                        ]
-                    ]
-                ]
-            ],
-            'tx_theme_opengraph_title' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_title.label',
-                'config' => [
-                    'type' => 'input',
-                    'eval' => 'trim',
-                ]
-            ],
-            'tx_theme_opengraph_description' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_description.label',
-                'config' => [
-                    'type' => 'input',
-                    'eval' => 'trim',
-                ]
-            ],
-            'tx_theme_opengraph_image' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_image.label',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'tx_theme_opengraph_image',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.pages.tx_theme_opengraph_image.irre.new.label',
-                        ],
-                        'overrideChildTca' => [
-                            'types' => [
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
-                                    crop,
-                                    --palette--;;filePalette',
-                                    'columnsOverrides' => [],
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                --palette--;;filePalette'
-                                ],
-                            ],
-                            'columns' => [
-                            ],
-                        ],
-                        'maxitems' => 1,
-                    ],
-                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['sharing']['opengraph']['allowedImageFileExt']
-                )
-            ],
-            'tx_theme_twitter_title' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_title.label',
-                'config' => [
-                    'type' => 'input',
-                    'eval' => 'trim',
-                    'max' => 70,
-                ]
-            ],
-            'tx_theme_twitter_description' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_description.label',
-                'config' => [
-                    'type' => 'input',
-                    'eval' => 'trim',
-                ]
-            ],
-            'tx_theme_twitter_image' => [
-                'exclude' => true,
-                'label' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_image.label',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'tx_theme_twitter_image',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => $languageFileBePrefix . 'field.pages.tx_theme_twitter_image.irre.new.label',
-                        ],
-                        'overrideChildTca' => [
-                            'types' => [
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
-                                crop,
-                                --palette--;;filePalette',
-                                    'columnsOverrides' => []
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                --palette--;;filePalette'
-                                ],
-                            ],
-                            'columns' => [
-                            ],
-                        ],
-                        'maxitems' => 1,
-                    ],
-                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['theme']['sharing']['opengraph']['allowedImageFileExt']
-                )
-            ],
         ];
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $additionalColumns);
 
@@ -355,50 +234,15 @@ call_user_func(
             )
             ->persistToTca();
 
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_opengraph_image')
-            ->disableDefaultCropVariants()
-            ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('opengraph')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['1.91:1']))
-                    ->get()
-            )
-            ->persistToTca();
-
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_twitter_image')
-            ->disableDefaultCropVariants()
-            ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('twitterimage')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['1.91:1']))
-                    ->get()
-            )
-            ->persistToTca();
-
         /**
          * Set TCA palettes
          */
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
             $GLOBALS['TCA'][$table]['palettes'],
             [
-                'tx-theme-opengraph' => [
-                    'showitem' => '
-                        tx_theme_opengraph_title,tx_theme_opengraph_description,
-                        --linebreak--,tx_theme_opengraph_image
-                    '
-                ],
-                'tx-theme-twitter' => [
-                    'showitem' => '
-                        tx_theme_twitter_title,tx_theme_twitter_description,
-                        --linebreak--,tx_theme_twitter_image
-                    '
-                ],
                 'tx-theme-related' => [
                     'showitem' => '
                         tx_theme_related
-                    '
-                ],
-                'tx-theme-robot-instructions' => [
-                    'showitem' => '
-                        tx_theme_robot_index, tx_theme_robot_follow
                     '
                 ],
             ]
@@ -413,22 +257,6 @@ call_user_func(
             'abstract',
             '--linebreak--,tx_theme_link_label,tx_theme_nav_image',
             ''
-        );
-        // Add seo focused palettes
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-            $table,
-            '--div--;' . $languageFileBePrefix . 'div.pages.seo,
-            --palette--;' . $languageFileBePrefix . 'palette.pages.opengraph;tx-theme-opengraph,
-            --palette--;' . $languageFileBePrefix . 'palette.pages.twitter;tx-theme-twitter',
-            '',
-            'after:TSconfig'
-        );
-        // Add robots meta tag palette
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-            $table,
-            '--palette--;' . $languageFileBePrefix . 'palette.pages.robot_instructions;tx-theme-robot-instructions',
-            (string) \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
-            'after:description'
         );
         // Extend core's "editorial" palette
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(

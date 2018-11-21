@@ -57,35 +57,6 @@ page {
 		keywords.field = keywords
 		keywords.override.data = register:newsKeywords
 
-		// https://support.google.com/webmasters/answer/79812?hl=de
-		// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?csw=1
-		robots = TEXT
-		robots {
-
-			stdWrap.cObject = COA
-			stdWrap.cObject {
-				10 = TEXT
-				10 {
-					value = noindex
-					override = index
-					override {
-						if.isTrue.field = tx_theme_robot_index
-					}
-					wrap = |,
-				}
-				20 = TEXT
-				20 {
-					value = nofollow
-					override = follow
-					override {
-						if.isTrue.field = tx_theme_robot_follow
-					}
-				}
-				100 = TEXT
-				100.value = {$site.meta.robotsAdditional}
-			}
-		}
-
 		google-site-verification = TEXT
 		google-site-verification {
 			if.isTrue = {$site.meta.googleSiteVerification}
@@ -108,147 +79,6 @@ page {
 			date = Y-m-d
 			// @TODO: meta tag data an detailpages and news list views?
 		}
-
-		// OpenGraph Tags
-
-		og:type {
-			attribute = property
-			value = {$site.meta.og.type}
-		}
-
-		og:title {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				field = tx_theme_facebook_title
-				ifEmpty.field = title
-				htmlSpecialChars = 1
-			}
-		}
-
-		twitter:title {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				field = tx_theme_twitter_title
-				if.isTrue.field = tx_theme_twitter_title
-				htmlSpecialChars = 1
-			}
-		}
-
-		og:site_name {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				value = {$site.meta.og.site_name}
-				ifEmpty = {$site.titleTag.sitename}
-			}
-		}
-
-		og:description {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				data = register:newsTeaser
-				#		ifEmpty.data = register:yourExtension
-				ifEmpty.field = tx_theme_facebook_description
-				ifEmpty.ifEmpty.field = description
-				htmlSpecialChars = 1
-			}
-		}
-
-		twitter:description {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				field = tx_theme_twitter_description
-				if.isTrue.field = tx_theme_twitter_description
-				htmlSpecialChars = 1
-			}
-		}
-
-		og:image {
-			attribute = property
-			stdWrap.cObject = FILES
-			stdWrap.cObject {
-				references {
-					table = pages
-					uid.data = uid
-					fieldName = tx_theme_opengraph_image
-				}
-				begin = 0
-				maxItems = 1
-				renderObj = TEXT
-				renderObj {
-					stdWrap.typolink {
-						parameter.stdWrap {
-							cObject = IMG_RESOURCE
-							cObject {
-								file {
-									crop.data = file:current:crop
-									cropVariant = facebook_variant1
-									import.data = file:current:uid
-									treatIdAsReference = 1
-								}
-							}
-						}
-						returnLast = url
-						forceAbsoluteUrl = 1
-					}
-					required = 1
-				}
-			}
-		}
-		og:image:width {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				data = TSFE:lastImgResourceInfo|0
-			}
-			stdWrap.if.isTrue.field = tx_theme_opengraph_image
-		}
-		og:image:height {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				data = TSFE:lastImgResourceInfo|1
-			}
-			stdWrap.if.isTrue.field = tx_theme_opengraph_image
-		}
-		og:image:type {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				data = TSFE:lastImgResourceInfo|2
-				stdWrap.wrap = image/|
-				required = 1
-			}
-			stdWrap.if.isTrue.field = tx_theme_opengraph_image
-		}
-
-		twitter:image < .og:image
-		twitter:image {
-			stdWrap.cObject {
-				references.fieldName = tx_theme_twitter_image
-				renderObj.stdWrap.typolink.parameter.stdWrap.cObject.file.cropVariant = twitter_variant1
-			}
-		}
-
-		twitter:card {
-			attribute = property
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				value = summary
-				override.cObject = TEXT
-				override.cObject {
-					value = summary_large_image
-					if.isTrue.field = tx_theme_twitter_image
-				}
-			}
-		}
-
-		// Add DC tags like the following example:
-#		dc\.description = Inspiring people to share
 	}
 
 
@@ -301,6 +131,7 @@ page {
 	page {
 
 		meta {
+			// @TODO: check TYPO3 v9 robots override in Development-Mode
 			robots-IN-NONPRODUCTION-MODE < page.meta.robots
 			robots-IN-NONPRODUCTION-MODE.noTrimWrap = |The value of robots meta tag would become '|' in a production environment.
 			robots >

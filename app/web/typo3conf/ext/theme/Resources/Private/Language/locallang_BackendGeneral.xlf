@@ -170,12 +170,6 @@
 		<trans-unit id="field.tt_content.image.backendpreview.info.missing">
 			<source>Image not set. Please add an image to this content element</source>
 		</trans-unit>
-		<trans-unit id="field.pages.robot_follow">
-			<source>Follow links on current page (SEO)</source>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_index">
-			<source>Index current page (SEO)</source>
-		</trans-unit>
 		<trans-unit id="field.pages.sharing_enabled">
 			<source>Sharing Functionalities</source>
 		</trans-unit>
@@ -295,9 +289,6 @@
 		</trans-unit>
 		<trans-unit id="palette.pages.related">
 			<source>Related</source>
-		</trans-unit>
-		<trans-unit id="palette.pages.robot_instructions">
-			<source>Search robot settings</source>
 		</trans-unit>
 		<trans-unit id="palette.pages.twitter">
 			<source>Twitter</source>
