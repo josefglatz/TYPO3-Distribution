@@ -78,7 +78,6 @@ config {
 
 	// Links & content sharing across domains & jumpUrl & external target stuff
 	typolinkEnableLinksAcrossDomains = 1
-	typolinkCheckRootline = 1
 	content_from_pid_allowOutsideDomain = 1
 	disablePageExternalUrl = 0
 	jumpurl_enable = 0
