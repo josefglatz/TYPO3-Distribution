@@ -75,7 +75,7 @@ tt_content {
 			pixelDensities {
 				// Specify all TYPE SPECIFIC pixel densities, which should be processed by the Content/ImageRender fluid partial
 				//
-				// Defaults: EXT:theme/Configuration/TypoScript/Base/Extensions/FluidStyledContent/Base/FluidStyledContent.setupts
+				// Defaults: EXT:theme/Configuration/TypoScript/Base/Extensions/FluidStyledContent/Base/FluidStyledContent.setup.typoscript
 				//
 				// KEEP IN MIND: each additional pixel density needs potentially more server resources (if no external image service is used)
 				//   - generating processed image (slow down if requested image sizes (while page request) must be generated)

@@ -9,7 +9,7 @@ page {
 	######################
 	### FLUID TEMPLATE ###
 	######################
-	// Import desired FLUIDTEMPLATE (see EXT:theme/Configuration/TypoScript/Base/Libs/Fluidtemplate.setupts for available implementations)
+	// Import desired FLUIDTEMPLATE (see EXT:theme/Configuration/TypoScript/Base/Libs/Fluidtemplate.setup.typoscript for available implementations)
 	10 < lib.fluidTemplate.default
 	10 {
 		variables {
