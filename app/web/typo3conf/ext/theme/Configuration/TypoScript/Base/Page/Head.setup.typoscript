@@ -34,9 +34,8 @@ page {
 		1447083274 < lib.googleAnalyticsBasic
 
 		// realfavicongenerator.net powered favicon
-		1475270008 = FILE
+		1475270008 = FLUIDTEMPLATE
 		1475270008.file = {$theme.resPartials}/Page/Favicon/Dist/RealFavIcon.html
-
 	}
 
 
