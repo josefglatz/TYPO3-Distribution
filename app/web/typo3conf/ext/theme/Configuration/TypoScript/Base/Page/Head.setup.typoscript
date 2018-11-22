@@ -2,10 +2,6 @@ page {
 	headTag = <head>
 
 	headerData {
-
-		// custom titleTag
-		1 < lib.titleTag.default
-
 		// Flip ahead browsing for IE10/11
 		// http://msdn.microsoft.com/en-us/library/ie/jj883726(v=vs.85).aspx
 		// @TODO: Take care of link rel prev/next tags on pages where e.g. ext:news list is used.
