@@ -1,4 +1,4 @@
-<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
 // @TODO: Add info about the Default FSC frontend styling css
 
 // set override paths for custom fluid_styled_content
