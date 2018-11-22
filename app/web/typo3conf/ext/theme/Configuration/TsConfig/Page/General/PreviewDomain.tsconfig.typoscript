@@ -1,9 +1,0 @@
-[applicationContext = Development/Docker]
-TCEMAIN.previewDomain =
-[applicationContext = Development/Docker] && [globalVar = ENV:WEBDEVOPS_DEV_ENV = reverse-proxy]
-TCEMAIN.previewDomain =
-[applicationContext = Production/Staging]
-TCEMAIN.previewDomain = stage.project.foo
-[applicationContext = Production/Live]
-TCEMAIN.previewDomain = live.project.foo
-[global]

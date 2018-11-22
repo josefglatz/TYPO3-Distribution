@@ -10,7 +10,6 @@
 - Set activated languages and update/retrive them
 - make sure that productive host can handle utf8 file system and correct system locales are set
 - Set sys_domains (1. production domain, 2. staging domain, ..., 10. dev domain)
-- Set `TCEMAIN.previewDomain` (DEV, STAGING, ...)
 - @TODO: Add info about site configuration
 - Set backendLogin logo, color and image in AdditionalConfiguration.php
 - add great favicons http://realfavicongenerator.net
