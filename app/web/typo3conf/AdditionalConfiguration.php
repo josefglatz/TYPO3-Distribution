@@ -229,16 +229,10 @@ $customChanges = [
         'saltedpasswords' => [
             'BE.' => [
                 'saltedPWHashingMethod' => \TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt::class, // Default since 8-7 (for legacy reasons still here)
-                'forceSalted' => 0,
-                'onlyAuthService' => 0,
-                'updatePasswd' => 1,
             ],
             'FE.' => [
                 'enabled' => 1,
                 'saltedPWHashingMethod' => \TYPO3\CMS\Saltedpasswords\Salt\Pbkdf2Salt::class, // Default since 8-7 (for legacy reasons still here)
-                'forceSalted' => 0,
-                'onlyAuthService' => 0,
-                'updatePasswd' => 1,
             ],
         ],
         'scheduler' => [
