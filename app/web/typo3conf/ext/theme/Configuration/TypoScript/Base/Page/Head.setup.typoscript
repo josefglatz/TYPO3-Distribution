@@ -119,7 +119,7 @@ page {
 	   Level:                {level:0}
 	   Application Context:  {getenv:TYPO3_CONTEXT}
 	   Site Base:            {site:base}
-	   Site Root Page ID:    {site:identifier}
+	   Site Root Page ID:    {site:rootPageId}
 
 	-->
 
