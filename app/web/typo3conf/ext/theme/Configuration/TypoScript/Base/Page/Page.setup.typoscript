@@ -384,6 +384,7 @@ page {
 
 
 
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
 [applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/']
 	page {
 		bodyTagCObject {
@@ -433,7 +434,8 @@ popup {
 #######################
 #### DUMMY WEBSITE ####
 #######################
-["{$site.dummyFrontend}" == 1] && [globalVar('GP:preview') != 1]
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
+[{$site.dummyFrontend} == 1 && request.getQueryParams()['preview'] != 1]
 	config {
 		// force inline javascript for dummy website
 		removeDefaultJS = 0

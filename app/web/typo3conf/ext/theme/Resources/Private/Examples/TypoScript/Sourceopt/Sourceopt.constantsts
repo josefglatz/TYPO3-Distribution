@@ -14,7 +14,9 @@ sourceopt {
 	}
 
 // Disable ext:sourceopt if type isn't 0 (default) or the page is in Development Mode
-[globalVar = GP:type > 0]
+
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
+[request.getParsedBody()['type'] > 0] || [request.getQueryParams()['type'] > 0]
 	sourceopt.enabled = 0
 
 [applicationContext matches "/^Development/"]
