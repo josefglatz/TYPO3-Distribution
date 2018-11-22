@@ -15,5 +15,9 @@ languages:
     direction: ltr
     fallbackType: strict
     flag: at
-errorHandling: {  }
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=15'
 routes: {  }
