@@ -226,6 +226,7 @@ page {
 		#			disableCompression = 1
 		#			crossorigin = anonymous
 		#			defer = 0
+		#			async = 1
 		#		}
 
 	}
@@ -241,6 +242,7 @@ page {
 		#			allWrap = <!--[if lt IE 9]>|<![endif]-->
 		#			crossorigin = anonymous
 		#			defer = 0
+		#			async = 1
 		#		}
 
 	}
