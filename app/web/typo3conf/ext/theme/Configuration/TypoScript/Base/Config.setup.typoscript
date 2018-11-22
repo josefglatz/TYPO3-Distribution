@@ -17,7 +17,6 @@ config {
 
 	concatenateCss = 0
 	concatenateJs = 0
-#    concatenateJsAndCss = 0
 	compressJs = 0
 	compressCss = 0
 	moveJsFromHeaderToFooter = 0
