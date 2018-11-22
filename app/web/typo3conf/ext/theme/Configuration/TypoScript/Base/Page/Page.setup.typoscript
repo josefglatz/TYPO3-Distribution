@@ -384,11 +384,11 @@ page {
 
 
 
-[applicationContext = Production/Dev, Development*]
+[applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/']
 	page {
 		bodyTagCObject {
 			10 {
-				# Add class for development specific applicationContext
+				# Add helper class for development specific applicationContext
 				777 = TEXT
 				777 {
 					value = develop
@@ -397,9 +397,18 @@ page {
 			}
 		}
 	}
-[applicationContext = Production/Staging, Production/Testing]
+[applicationContext matches "/^Development/"]
 	page {
-
+		bodyTagCObject {
+			10 {
+				# Add helper class for local development specific applicationContext
+				778 = TEXT
+				778 {
+					value = develop-local
+					noTrimWrap = | ||
+				}
+			}
+		}
 	}
 [global]
 
@@ -424,7 +433,7 @@ popup {
 #######################
 #### DUMMY WEBSITE ####
 #######################
-[globalVar = LIT:1 = {$site.dummyFrontend}] && [globalVar = GP:preview != 1]
+["{$site.dummyFrontend}" == 1] && [globalVar('GP:preview') != 1]
 	config {
 		// force inline javascript for dummy website
 		removeDefaultJS = 0

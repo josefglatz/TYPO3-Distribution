@@ -64,7 +64,7 @@ lib.titleTag.default {
 
 
 }
-[treeLevel = 0]
+[tree.level == 0]
 	lib.titleTag.default {
 		// disable pageTitle on homepage/rootpage
 		5.stdWrap >

@@ -8,7 +8,7 @@ sourceopt {
 	formatHtml.tabSize = 1
 }
 
-[globalVar = TSFE : beUserLogin > 0]
+[getTSFE().beUserLogin === 1]
 	sourceopt {
 		removeComments = 0
 	}
@@ -17,7 +17,7 @@ sourceopt {
 [globalVar = GP:type > 0]
 	sourceopt.enabled = 0
 
-[applicationContext = Development*]
+[applicationContext matches "/^Development/"]
 	// Includes a comment at the end of the html source code that points the numbers of open html tags.
 	// (This will only work together with formatHtml)
 	sourceopt.formatHtml.debugComment = 1

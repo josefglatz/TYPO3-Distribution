@@ -138,7 +138,7 @@ site {
     }
 }
 
-[applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
+[applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/']
     theme {
         debug = 1
     }
@@ -159,7 +159,7 @@ site {
         }
     }
 
-[applicationContext = Production/Staging]
+[applicationContext matches '/^Production\\\\\\\\/Staging/']
     site {
         tracking {
             google {
@@ -176,7 +176,7 @@ site {
             }
         }
     }
-[applicationContext = Production/Testing]
+[applicationContext matches '/^Production\\\\\\\\/Testing/']
     site {
         tracking {
             google {
@@ -194,7 +194,7 @@ site {
         }
     }
 
-[globalVar = TSFE : beUserLogin > 0]
+[getTSFE().beUserLogin === 1]
     site {
         tracking {
 			matomo {

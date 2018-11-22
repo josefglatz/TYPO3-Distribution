@@ -85,8 +85,7 @@ config {
 
 	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
 }
-
-[globalVar = LIT:1 = {$theme.debug}] && [globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*]
+[{$theme.debug} == 1] && [getTSFE().beUserLogin === 1] || [applicationContext matches "/^Development/"]
 	config {
 		debug = 1
 		admPanel = 1
@@ -97,7 +96,7 @@ config {
 		contentObjectExceptionHandler = 0
 	}
 
-[globalVar = TSFE : beUserLogin > 0]
+[getTSFE().beUserLogin === 1]
 	// Force generation of links to hidden linkhandler "newsDefault" records
 	config.recordLinks.newsDefault.forceLink = 1
 [global]

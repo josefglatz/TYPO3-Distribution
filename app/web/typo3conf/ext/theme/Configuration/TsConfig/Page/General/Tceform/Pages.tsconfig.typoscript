@@ -26,7 +26,7 @@ TCEFORM.pages {
 	// disable field only for specific treeLevel
 	tx_theme_show_in_secondary_navigation.disabled = 1
 }
-[treeLevel = 2]
+[tree.level == 2]
 	TCEFORM.pages {
 		tx_theme_show_in_secondary_navigation.disabled = 0
 	}

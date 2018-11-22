@@ -100,7 +100,7 @@ page {
 }
 
 
-[globalVar = TSFE : beUserLogin > 0] || [applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
+[getTSFE().beUserLogin == 1] || [applicationContext matches "/^Development/"] || [applicationContext == "/^Production\/Dev/"]
 	// show some debug infos in <head>
 	page.headerData.666999 = TEXT
 	page.headerData.666999 {
@@ -127,7 +127,7 @@ page {
 
 
 // Overwrite robots meta tag for specific environments (as an additional security layer!)
-[applicationContext = Production/Staging, Production/Testing] || [applicationContext = /^Production\/Dev/] || [globalVar = LIT:1 = {$site.dummyFrontend}]
+[applicationContext matches '/^Production\\\\\\\\/Staging/'] || [applicationContext matches '/^Production\\\\\\\\/Testing/'] || [applicationContext matches '/^Production\\\\\\\\/Dev/'] || ["{$site.dummyFrontend}" == 1]
 	page {
 
 		meta {

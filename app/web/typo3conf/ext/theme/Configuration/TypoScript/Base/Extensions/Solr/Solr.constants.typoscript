@@ -11,7 +11,7 @@ plugin.tx_solr {
     }
 }
 // @TODO: ext:solr Move application context specific config to site config
-[applicationContext = Development/Docker]
+[applicationContext matches '/^Development\\\\\\\\/Docker/']
     plugin.tx_solr {
         solr {
             scheme = http
@@ -22,7 +22,7 @@ plugin.tx_solr {
             password =
         }
     }
-[applicationContext = Production/Dev]
+[applicationContext matches '/^Production\\\\\\\\/Dev/']
     plugin.tx_solr {
         solr {
             scheme =
