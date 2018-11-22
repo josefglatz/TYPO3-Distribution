@@ -80,6 +80,7 @@
 	"require-dev": {
 		"namelesscoder/typo3-repository-client": "^2.0",
 		"neronmoon/scriptsdev": "^0.1.2",
+		"psychomieze/adminpanel-extended": "dev-develop",
 		"roave/security-advisories": "dev-master"
 	},
 	"suggest": {
