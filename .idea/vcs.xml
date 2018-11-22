@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/vendor/ckeditor/ckeditor-dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/adminpanel_extended" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/autoswitchtolistview" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/image_autoresize" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/web/typo3conf/ext/infogram" vcs="Git" />
