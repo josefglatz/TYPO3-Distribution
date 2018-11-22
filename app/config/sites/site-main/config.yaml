@@ -1,6 +1,12 @@
 rootPageId: 1
-base: 'http://distri.mamp/'
-baseVariants: {  }
+base: 'http://distri.com/'
+baseVariants:
+  -
+    base: 'http://distri.mamp/'
+    condition: 'applicationContext == "Development/Mamp"'
+  -
+    base: 'http://distri.docker/'
+    condition: 'applicationContext == "Development/Docker"'
 languages:
   -
     title: German
