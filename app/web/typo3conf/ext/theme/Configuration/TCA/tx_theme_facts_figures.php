@@ -6,11 +6,14 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
+        'delete' => 'deleted',
+        'sortby' => 'sorting',
         'versioningWS' => true,
+        'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
+        'translationSource' => 'l10n_source',
         'transOrigDiffSourceField' => 'l10n_diffsource',
-        'delete' => 'deleted',
         'enablecolumns' =>
             [
                 'disabled' => 'hidden',
