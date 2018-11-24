@@ -178,10 +178,10 @@ page {
 			}
 
 			# Language Navigation
-			450 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			450 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
 			450 {
-				special = language
-				special.value = {$site.nav.language.languageValue}
+				// Load languages from site languages
+				languages = auto
 				as = LanguageNavigation
 				if {
 					isTrue = {$site.nav.language.enable}

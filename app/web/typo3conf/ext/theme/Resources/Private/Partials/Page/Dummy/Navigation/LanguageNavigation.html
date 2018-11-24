@@ -3,30 +3,15 @@
 <f:if condition="{LanguageNavigation}">
 	<ul id="lang-nav" class="metanav">
 	<f:for each="{LanguageNavigation}" as="item">
-
-		<li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'text-muted')}">
-			<f:switch expression="{item.languageUid}">
-				<f:case value="2">
-					<f:variable name="languageTitle">Language 2</f:variable>
-					<f:variable name="hreflang">xx-XX</f:variable>
-				</f:case>
-				<f:case value="1">
-					<f:variable name="languageTitle">Language 1</f:variable>
-					<f:variable name="hreflang">xx-XX</f:variable>
-				</f:case>
-				<f:defaultCase>
-					<f:variable name="languageTitle">Default Language</f:variable>
-					<f:variable name="hreflang">xx-XX</f:variable>
-				</f:defaultCase>
-			</f:switch>
+		<li class="{f:if(condition: item.active, then: 'active')}{f:if(condition: item.available, else: ' text-muted')}">
 			<f:if condition="{item.available}">
 				<f:then>
-					<a href="{item.link}" hreflang="{hreflang}" title="{languageTitle}">
-						<span>{languageTitle}</span>
+					<a href="{item.link}" hreflang="{item.hreflang}" title="{item.navigationTitle}">
+						<span>{item.navigationTitle}</span>
 					</a>
 				</f:then>
 				<f:else>
-					<span>{languageTitle}</span>
+					<span>{item.navigationTitle}</span>
 				</f:else>
 			</f:if>
 		</li>
