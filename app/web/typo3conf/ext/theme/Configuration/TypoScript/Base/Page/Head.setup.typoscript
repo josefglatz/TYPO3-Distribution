@@ -13,20 +13,24 @@ page {
 
 	meta {
 		viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+		viewport.replace = 1
+
 		SKYPE_TOOLBAR = SKYPE_TOOLBAR_PARSER_COMPATIBLE
+		SKYPE_TOOLBAR.replace = 1
+
 		format-detection = telephone=no
 		apple-mobile-web-app-capable = no
 
 		description = TEXT
 		description {
-			data = register:newsTeaser
-			#		ifEmpty.data = register:yourExtension
-			ifEmpty.ifEmpty.field = description
+			field = description
 			htmlSpecialChars = 1
 		}
 
-		keywords.field = keywords
-		keywords.override.data = register:newsKeywords
+		keywords = TEXT
+		keywords {
+			field = keywords
+		}
 
 		google-site-verification = TEXT
 		google-site-verification {
@@ -41,14 +45,12 @@ page {
 		author = {$site.meta.author}
 		author {
 			override.field = author
-			// @TODO: Add author support for ext:news per default
 		}
 
 		date = TEXT
 		date {
 			data = page:SYS_LASTCHANGED // page:crdate
 			date = Y-m-d
-			// @TODO: meta tag data an detailpages and news list views?
 		}
 	}
 
@@ -105,8 +107,10 @@ page {
 	page {
 
 		meta {
-			// @TODO: check TYPO3 v9 robots override in Development-Mode
-			robots-IN-NONPRODUCTION-MODE = The value of robots meta tag would become '@TODO: check TYPO3 v9 robots override in Development-Mode' in a production environment.
+			// @TODO: Improve TYPO3 v9 robots override in Development-Mode / Non-production-Mode
+			// 		- e.g. using a MetaTagProvider which shows the final production robots tag in a pseudo robots meta tag
+			robots = noindex, nofollow
+			robots.replace = 1
 		}
 
 	}
