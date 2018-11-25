@@ -1,6 +1,4 @@
 page {
-	headTag = <head>
-
 	headerData {
 		// basic Google Analytics
 		1447083274 < lib.googleAnalyticsBasic
