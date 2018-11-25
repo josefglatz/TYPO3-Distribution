@@ -13,6 +13,7 @@ $customChanges = [
     ],
     'FE' => [
         'debug' => true,
+        'sessionTimeout' => 31536000,
     ],
     'MAIL' => [
         'transport' => 'sendmail',
