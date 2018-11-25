@@ -3,7 +3,6 @@
 namespace JosefGlatz\Theme\Utility;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -22,16 +21,14 @@ class EmConfiguration
     public static function getSettings(): \JosefGlatz\Theme\Domain\Model\Dto\EmConfiguration
     {
         $configuration = self::parseSettings();
-        require_once ExtensionManagementUtility::extPath('theme') . 'Classes/Domain/Model/Dto/EmConfiguration.php';
         $settings = new \JosefGlatz\Theme\Domain\Model\Dto\EmConfiguration($configuration);
-
         return $settings;
     }
 
     /**
-     * Parse settings and return it as array
+     * Return extension configuration as array
      *
-     * @return array unserialized extConf settings
+     * @return array extension configuration as array
      * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException
      * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException
      */

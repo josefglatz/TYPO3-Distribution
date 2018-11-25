@@ -237,8 +237,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     protected function isEnabled(): bool
     {
-        $extConf = EmConfiguration::getSettings();
-        return $extConf->isPageLayoutViewEnrichmentFooter();
+        return  EmConfiguration::getSettings()->isPageLayoutViewEnrichmentFooter();
     }
 
     /**
