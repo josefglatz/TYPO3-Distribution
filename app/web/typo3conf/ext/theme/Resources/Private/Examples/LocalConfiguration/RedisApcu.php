@@ -23,7 +23,6 @@ $customChanges = [
     ],
     'SYS' => [
         'displayErrors' => false,
-        'enableDeprecationLog' => '',
         'sqlDebug' => 0,
         'systemLogLevel' => 4,
         'caching' => [
