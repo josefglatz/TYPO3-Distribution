@@ -8,6 +8,8 @@ $site = [
     'sitenameBase' => 'TYPO3 Distribution',
     'defaultMailFromAddress' => 'no-reply@example.at',
     'defaultMailFromName' => 'TYPO3 Distribution',
+    'defaultMailReplyToAddress' => 'office@example.at',
+    'defaultMailReplyToName' => 'TYPO3 Distribution',
     'backendLogo' => 'BackendLogo',
 ];
 
@@ -287,6 +289,8 @@ $customChanges = [
     'MAIL' => [
         'defaultMailFromAddress' => $site['defaultMailFromAddress'],
         'defaultMailFromName' => $site['defaultMailFromName'],
+        'defaultMailReplyToAddress' => $site['defaultMailReplyToAddress'],
+        'defaultMailReplyToName' => $site['defaultMailReplyToName'],
     ],
     'SYS' => [
         'caching' => [
