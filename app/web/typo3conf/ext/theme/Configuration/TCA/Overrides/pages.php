@@ -42,12 +42,12 @@ call_user_func(
             [
                 'storage',  // last string of LLL
                 'records',  // last part of typeicon_classes item
-                'apps-pagetree-folder-contains-records' // icon-identifier
+                'apps-pagetree-folder-dark' // icon-identifier
             ],
             [
                 'pages',
                 'pages',
-                'apps-pagetree-folder-contains-pages',
+                'apps-pagetree-page-shortcut',
             ],
             [
                 'impress',
@@ -60,24 +60,9 @@ call_user_func(
                 'apps-pagetree-page-contains-attention',
             ],
             [
-                'envelope',
-                'envelope',
-                'apps-pagetree-page-contains-envelope',
-            ],
-            [
-                'search',
-                'search',
-                'apps-pagetree-page-contains-search',
-            ],
-            [
                 'news',
                 'newsplugins',
                 'apps-pagetree-page-contains-newsplugins',
-            ],
-            [
-                'drafts',
-                'drafts',
-                'apps-pagetree-folder-contains-drafts',
             ],
             [
                 'landingpages',
@@ -100,12 +85,9 @@ call_user_func(
                     'typeicon_classes' => [
                         'contains-impress' => 'apps-pagetree-page-contains-impress',
                         'contains-attention' => 'apps-pagetree-page-contains-attention',
-                        'contains-envelope' => 'apps-pagetree-page-contains-envelope',
-                        'contains-search' => 'apps-pagetree-page-contains-search',
                         'contains-newsplugins' => 'apps-pagetree-page-contains-newsplugins',
-                        'contains-records' => 'apps-pagetree-folder-contains-records',
-                        'contains-pages' => 'apps-pagetree-folder-contains-pages',
-                        'contains-drafts' => 'apps-pagetree-folder-contains-drafts',
+                        'contains-records' => 'apps-pagetree-folder-dark',
+                        'contains-pages' => 'apps-pagetree-page-shortcut',
                         'contains-landingpages' => 'apps-pagetree-folder-contains-landingpages',
                     ],
                 ]

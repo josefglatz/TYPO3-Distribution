@@ -16,14 +16,10 @@ call_user_func(
         $iconsSvg = [
             'theme-backend-clear-processedfiles' => 'theme-backend-clear-processedfiles.svg',
 
-            'apps-pagetree-folder-contains-records'      => 'theme-pagetree-folder-contains-records.svg',
-            'apps-pagetree-folder-contains-pages'        => 'theme-pagetree-folder-contains-pages.svg',
-            'apps-pagetree-folder-contains-drafts'       => 'theme-pagetree-folder-contains-drafts.svg',
             'apps-pagetree-folder-contains-landingpages' => 'theme-pagetree-folder-contains-landingpages.svg',
-            'apps-pagetree-page-contains-envelope'       => 'theme-pagetree-page-contains-envelope.svg',
-            'apps-pagetree-page-contains-impress'        => 'theme-pagetree-page-contains-impress.svg',
+            'apps-pagetree-folder-dark'                  => 'theme-pagetree-folder-dark.svg',
             'apps-pagetree-page-contains-attention'      => 'theme-pagetree-page-contains-attention.svg',
-            'apps-pagetree-page-contains-search'         => 'theme-pagetree-page-contains-search.svg',
+            'apps-pagetree-page-contains-impress'        => 'theme-pagetree-page-contains-impress.svg',
             'apps-pagetree-page-contains-newsplugins'    => 'theme-pagetree-page-contains-news.svg',
 
             'theme-content-accordion'        => 'GridElements/theme-content-gridelement-accordion.svg',
