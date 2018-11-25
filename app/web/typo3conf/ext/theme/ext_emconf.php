@@ -19,6 +19,7 @@ $EM_CONF[$_EXTKEY] = [
                 ],
             'conflicts' =>
                 [
+                    'rsaauth' => '',
                 ],
             'suggests' =>
                 [
