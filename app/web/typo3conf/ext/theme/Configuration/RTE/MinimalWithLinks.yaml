@@ -32,14 +32,10 @@ editor:
 
     # List of classes to use for aligning the contents in the following order: left, center, right, justify http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-justifyClasses
     justifyClasses:
-      - text-left
-      - text-center
-      - text-right
-      - text-justify
-#      - align-left
-#      - align-center
-#      - align-right
-#      - align-justify
+      - "text-left"
+      - "text-center"
+      - "text-right"
+      - "text-justify"
 
     # Group all buttons http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups
     toolbarGroups:
@@ -132,9 +128,3 @@ processing:
 
   ## allowed default attributes
   allowAttributes: [class, id, title, dir, lang, xml:lang, itemscope, itemtype, itemprop]
-# @TODO Check/Add CKEDITOR.config.copyFormatting_* features
-# @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-find_highlight
-# @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_address if it has to be used or only class in css is enough
-# @TODO Check /Add CKEDITOR.config.format_(h1-h6|p|pre)
-# @TODO Check/Add http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-indentClasses
-# @TODO Develop a plugin based on the dialog plugin like the about plugin to display useful links for working with the RTE

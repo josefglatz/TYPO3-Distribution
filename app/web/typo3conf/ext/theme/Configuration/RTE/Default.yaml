@@ -35,14 +35,10 @@ editor:
 
     # List of classes to use for aligning the contents in the following order: left, center, right, justify http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-justifyClasses
     justifyClasses:
-      - text-left
-      - text-center
-      - text-right
-      - text-justify
-#      - align-left
-#      - align-center
-#      - align-right
-#      - align-justify
+      - "text-left"
+      - "text-center"
+      - "text-right"
+      - "text-justify"
 
     # Group all buttons http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups
     toolbarGroups:
