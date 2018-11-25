@@ -56,6 +56,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
      *
      * @param array $row
      * @return string
+     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
      */
     protected function getEditLink(array $row): string
     {
