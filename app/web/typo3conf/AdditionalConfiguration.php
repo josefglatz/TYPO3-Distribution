@@ -319,7 +319,7 @@ $customChanges = [
             'namespaces' => [
                 'theme' => [
                     'JosefGlatz\\Theme\\ViewHelpers',
-//                    'Sup7even\\ThemeOverride\\ViewHelpers',
+//                    'JosefGlatz\\ThemeProject\\ViewHelpers',
                 ],
             ],
         ],
