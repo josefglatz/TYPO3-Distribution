@@ -96,7 +96,7 @@ $customChanges = [
             'loginLogo' => 'EXT:theme/Resources/Public/Images/Backend/Login/LoginLogo.svg',
             'loginHighlightColor' => '#ff8700',
             'loginBackgroundImage' => 'EXT:theme/Resources/Public/Images/Backend/Login/Background.png',
-            'loginFootnote' => '',
+            'loginFootnote' => 'This is a demo TYPO3 backend login footnote.',
             'backendLogo' => 'EXT:theme/Resources/Public/Images/Backend/' . $site['backendLogo'] . '.svg', // custom backend logo should not by higher than 37px
             // @TODO: Backend Logo (Stage, Prod, Dev)
             'backendFavicon' => 'EXT:backend/Resources/Public/Icons/favicon.ico',
