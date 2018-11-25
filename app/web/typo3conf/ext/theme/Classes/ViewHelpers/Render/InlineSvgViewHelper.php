@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\ViewHelpers\Render;
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
@@ -51,7 +52,7 @@ class InlineSvgViewHelper extends AbstractViewHelper implements CompilableInterf
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-        $file = PATH_site . $arguments['source'];
+        $file = Environment::getPublicPath() . '/' . $arguments['source'];
 
         // return html comment, if file couldn't be found
         if (empty($arguments['source']) || !file_exists($file)) {

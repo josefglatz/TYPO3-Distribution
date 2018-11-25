@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\ViewHelpers\Media\Image;
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Type\File\ImageInfo;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -31,7 +32,7 @@ class OrientationViewHelper extends AbstractViewHelper implements CompilableInte
 
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
-        $child = PATH_site . $renderChildrenClosure();
+        $child = Environment::getPublicPath() . '/' . $renderChildrenClosure();
         $imageInfo = GeneralUtility::makeInstance(ImageInfo::class, $child);
         $height = $imageInfo->getHeight();
         $width = $imageInfo->getWidth();
