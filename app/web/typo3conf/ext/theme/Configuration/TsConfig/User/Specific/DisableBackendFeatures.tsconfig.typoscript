@@ -1,4 +1,4 @@
-mod.web_info.menu.function {
+page.mod.web_info.menu.function {
 	// disable "Page TSConfig" module
 	TYPO3\CMS\InfoPagetsconfig\Controller\InfoPageTyposcriptConfigController = 0
 
