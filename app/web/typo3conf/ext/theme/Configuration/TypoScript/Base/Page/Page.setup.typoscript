@@ -452,14 +452,6 @@ popup {
 			450.if >
 		}
 
-		javascriptLibs {
-#			jQuery = 1
-#			jQuery {
-#				version = latest
-#				source = local
-#				noConflict = 0
-#			}
-		}
 		includeJSFooterlibs {
 			10 = EXT:theme/Resources/Public/Dummy/JavaScript/jquery-3.1.1.min.js
 			10.disableCompression = 1
