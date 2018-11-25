@@ -50,10 +50,10 @@
 			<h5 class="theme-text-bold"><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary" /></h5>
 			<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary.fields" />
 			<f:if condition="{image.title} == ''">
-				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" />
+				<br>- <f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" />
 			</f:if>
 			<f:if condition="{image.alternative} == ''">
-				<br>- <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" />
+				<br>- <f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" />
 			</f:if>
 			<hr>
 		</f:if>
@@ -61,15 +61,15 @@
 		<f:if condition="{image.title} || {image.alternative} || {image.description}">
 			<dl>
 				<f:if condition="{image.title}">
-					<dt><f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" /></dt>
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" /></dt>
 					<dd>{image.title}</dd>
 				</f:if>
 				<f:if condition="{image.alternative}">
-					<dt><f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.alternative" /></dt>
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.alternative" /></dt>
 					<dd>{image.alternative}</dd>
 				</f:if>
 				<f:if condition="{image.description}">
-					<dt><f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" /></dt>
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" /></dt>
 					<dd>{image.description}</dd>
 				</f:if>
 				<f:comment><!-- @TODO: TYPO3-Distribution: CE theme_logo_list: render link url --></f:comment>

@@ -68,7 +68,7 @@ call_user_func(
                                 ],
                                 'allowedAspectRatios' => [
                                     '3:2' => [
-                                        'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2',
+                                        'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2',
                                         'value' => 3 / 2
                                     ],
                                     '2:3' => [
@@ -76,7 +76,7 @@ call_user_func(
                                         'value' => 2 / 3
                                     ],
                                     '4:3' => [
-                                        'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                        'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
                                         'value' => 4 / 3
                                     ],
                                     '3:4' => [
@@ -84,11 +84,11 @@ call_user_func(
                                         'value' => 3 / 4
                                     ],
                                     '1:1' => [
-                                        'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1',
+                                        'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1',
                                         'value' => 1.0
                                     ],
                                     'NaN' => [
-                                        'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+                                        'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
                                         'value' => 0.0
                                     ],
                                 ],
@@ -213,7 +213,7 @@ call_user_func(
                                             ],
                                             'allowedAspectRatios' => [
                                                 '4:3' => [
-                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
                                                     'value' => 4 / 3
                                                 ],
                                             ],
@@ -229,7 +229,7 @@ call_user_func(
                                             ],
                                             'allowedAspectRatios' => [
                                                 '4:3' => [
-                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
                                                     'value' => 4 / 3
                                                 ],
                                             ],
@@ -245,7 +245,7 @@ call_user_func(
                                             ],
                                             'allowedAspectRatios' => [
                                                 '4:3' => [
-                                                    'title' => 'LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+                                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
                                                     'value' => 4 / 3
                                                 ],
                                             ],

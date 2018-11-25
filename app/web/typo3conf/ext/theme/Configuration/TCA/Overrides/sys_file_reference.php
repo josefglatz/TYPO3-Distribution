@@ -35,7 +35,7 @@ call_user_func(
                     'type' => 'check',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
                         ],
                     ],
                 ],
@@ -47,7 +47,7 @@ call_user_func(
                     'type' => 'check',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.show',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.show',
                         ],
                     ],
                 ],
@@ -59,7 +59,7 @@ call_user_func(
                     'type' => 'check',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.show',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.show',
                         ],
                     ],
                 ],
@@ -120,7 +120,7 @@ call_user_func(
                     'type' => 'check',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
                         ],
                     ],
                 ],
