@@ -227,9 +227,6 @@ return [
                     ],
                     'fileUploadAllowed' => 'false',
                 ],
-                'behaviour' => [
-                    'localizeChildrenAtParentLocalization' => 'icon',
-                ],
                 'minitems' => '1',
                 'maxitems' => '1',
             ],
