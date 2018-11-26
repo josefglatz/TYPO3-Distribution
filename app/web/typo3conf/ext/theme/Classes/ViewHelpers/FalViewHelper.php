@@ -41,6 +41,9 @@ class FalViewHelper extends AbstractViewHelper
      */
     protected $escapeOutput = false;
 
+    /**
+     * Initialize arguments
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument(
