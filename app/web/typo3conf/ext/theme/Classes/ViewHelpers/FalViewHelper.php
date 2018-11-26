@@ -1,11 +1,14 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Class FalViewHelper
@@ -31,42 +34,80 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  */
 class FalViewHelper extends AbstractViewHelper
 {
+    use CompileWithRenderStatic;
 
     /**
      * @var bool
      */
     protected $escapeOutput = false;
 
+    public function initializeArguments(): void
+    {
+        $this->registerArgument(
+            'table',
+            'string',
+            'Table (Foreign table)',
+            true
+        );
+        $this->registerArgument(
+            'field',
+            'string',
+            'Field (Foreign field)',
+            true
+        );
+        $this->registerArgument(
+            'id',
+            'int',
+            'ID (Foreign uid)',
+            true
+        );
+        $this->registerArgument(
+            'as',
+            'string',
+            'This parameter specifies the name of the variable that will be used for the returned ' .
+            'ViewHelper result.',
+            false,
+            'references'
+        );
+    }
+
     /**
-     * @param string $table
-     * @param string $field
-     * @param int $id
-     * @param string $as
-     * @return string
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
+     * @return mixed
      */
-    public function render(string $table, string $field, int $id, string $as = 'references')
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
         // create query builder object
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable($table);
+            ->getQueryBuilderForTable($arguments['table']);
         // query
         $row = $queryBuilder
             ->select('*')
-            ->from($table)
-            ->where('uid=' . (int)$id)
+            ->from($arguments['table'])
+            ->where($queryBuilder->expr()->eq(
+                'uid',
+                $queryBuilder->createNamedParameter($arguments['id'], \PDO::PARAM_INT)
+            ))
             ->execute()
             ->fetch();
-        if (!$row) {
-            return '';
+
+        $templateVariableContainer = $renderingContext->getVariableProvider();
+
+        if ($row) {
+            $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
+            $fileCollector->addFilesFromRelation($arguments['table'], $arguments['field'], $row);
+
+            $templateVariableContainer->add($arguments['as'], $fileCollector->getFiles());
         }
 
-        $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
-        $fileCollector->addFilesFromRelation($table, $field, $row);
+        $content = $renderChildrenClosure();
 
-        $this->templateVariableContainer->add($as, $fileCollector->getFiles());
-        $output = $this->renderChildren();
-        $this->templateVariableContainer->remove($as);
+        if ($row) {
+            $templateVariableContainer->remove($arguments['as']);
+        }
 
-        return $output;
+        return $content;
     }
 }
