@@ -112,6 +112,7 @@
 		}
 	},
 	"scripts": {
+		"php-cs-fixer": "php-cs-fixer fix --config Build/.php_cs",
 		"clean-generated-files": [
 			"rm -rf ./web/typo3conf/PackageStates.php  || true"
 		],
