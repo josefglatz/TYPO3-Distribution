@@ -46,7 +46,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  *         </f:link.typolink>
  *     </div>
  * </f:section>
- *
  */
 class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInterface
 {

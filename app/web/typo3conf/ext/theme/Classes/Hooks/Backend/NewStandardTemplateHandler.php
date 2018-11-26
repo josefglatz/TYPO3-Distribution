@@ -17,14 +17,14 @@ class NewStandardTemplateHandler
      *
      * @param array $params
      * @param TypoScriptTemplateModuleController $parentObject
-     * @return void
      */
     public function restrict(array &$params, $parentObject): void
     {
         /**
          * @var FlashMessage $message Error message to inform the backend user about the barrier
          */
-        $message = GeneralUtility::makeInstance(FlashMessage::class,
+        $message = GeneralUtility::makeInstance(
+            FlashMessage::class,
             htmlspecialchars($this->getLanguageService()
                 ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
             htmlspecialchars($this->getLanguageService()

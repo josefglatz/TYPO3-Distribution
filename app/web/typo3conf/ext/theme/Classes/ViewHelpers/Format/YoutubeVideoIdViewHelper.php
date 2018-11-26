@@ -23,7 +23,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * <code title="inline notation">
  *  {theme:format.youtubeVideoId(url: {file.publicUrl})}
  * </code>
- *
  */
 class YoutubeVideoIdViewHelper extends AbstractViewHelper implements CompilableInterface
 {
@@ -33,7 +32,6 @@ class YoutubeVideoIdViewHelper extends AbstractViewHelper implements CompilableI
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

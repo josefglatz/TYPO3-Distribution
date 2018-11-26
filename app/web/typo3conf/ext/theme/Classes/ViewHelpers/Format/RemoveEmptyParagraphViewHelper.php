@@ -19,7 +19,6 @@ class RemoveEmptyParagraphViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

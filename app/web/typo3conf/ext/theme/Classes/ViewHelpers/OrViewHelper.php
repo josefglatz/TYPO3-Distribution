@@ -31,8 +31,6 @@ class OrViewHelper extends AbstractViewHelper
 
     /**
      * Initialize
-     *
-     * @return void
      */
     public function initializeArguments()
     {

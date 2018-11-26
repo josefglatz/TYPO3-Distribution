@@ -7,7 +7,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Utility class to get the settings from Extension Manager
- *
  */
 class EmConfiguration
 {

@@ -13,7 +13,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Class PostSyncCommand
  *
  * @TODO: TYPO3-Distribution: TYPO3v9LTS: check if PostSyncCommand->enableDevSysDomains is still needed
- *
  */
 class PostSyncCommand extends Command
 {
@@ -36,7 +35,6 @@ Assumptions:
     /**
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return void
      * @throws \InvalidArgumentException
      */
     protected function execute(InputInterface $input, OutputInterface $output): void
@@ -50,7 +48,6 @@ Assumptions:
     }
 
     /**
-     *
      * @param SymfonyStyle $io necessary for outputting information
      */
     private function enableDevSysDomains($io): void

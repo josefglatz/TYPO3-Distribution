@@ -18,7 +18,6 @@ class SimpleMultiplyViewHelper extends AbstractViewHelper implements CompilableI
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

@@ -18,7 +18,6 @@ class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterf
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

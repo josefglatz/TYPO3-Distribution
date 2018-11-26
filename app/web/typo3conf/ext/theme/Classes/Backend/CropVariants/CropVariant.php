@@ -127,7 +127,8 @@ class CropVariant
     {
         if (!empty($focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $focusArea)) {
             throw new \UnexpectedValueException(
-                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys set.', 1520894420
+                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys set.',
+                1520894420
             );
         }
         $this->focusArea = $focusArea;
@@ -235,20 +236,27 @@ class CropVariant
         // Check if title is set
         if (empty($this->title)) {
             throw new \UnexpectedValueException(
-                'Title for cropVariant "' . $this->name . '" not set.', 1520731261);
+                'Title for cropVariant "' . $this->name . '" not set.',
+                1520731261
+            );
         }
         // Check if necessary keys are set
         if (empty($this->cropArea)) {
             throw new \UnexpectedValueException(
-                'cropArea array for cropVariant "' . $this->name . '" not set.', 1520731402);
+                'cropArea array for cropVariant "' . $this->name . '" not set.',
+                1520731402
+            );
         }
         if (!ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->cropArea)) {
             throw new \UnexpectedValueException(
-                'cropArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520732819);
+                'cropArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.',
+                1520732819
+            );
         }
         if (!empty($this->focusArea) && !ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $this->focusArea)) {
             throw new \UnexpectedValueException(
-                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.', 1520892162
+                'focusArea array for cropVariant "' . $this->name . '" does not have set all necessary keys.',
+                1520892162
             );
         }
         if (!empty($this->coverAreas)) {
@@ -256,7 +264,9 @@ class CropVariant
                 if (!ArrayTool::arrayKeysExists(['x', 'y', 'width', 'height'], $coverArea)) {
                     throw new \UnexpectedValueException(
                         'coverAreas array for cropVariant "' . $this->name . '" are not configured correctly. \
-                        Not every coverArea is configured correctly.', 1520733632);
+                        Not every coverArea is configured correctly.',
+                        1520733632
+                    );
                 }
             }
         }

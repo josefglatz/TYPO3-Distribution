@@ -52,8 +52,6 @@ class ConstantsViewHelper extends AbstractViewHelper implements CompilableInterf
 
     /**
      * Initialize arguments.
-     *
-     * @return void
      */
     public function initializeArguments(): void
     {
@@ -62,7 +60,8 @@ class ConstantsViewHelper extends AbstractViewHelper implements CompilableInterf
             'string',
             'Path to TypoScript configuration array/key',
             false,
-            'site');
+            'site'
+        );
         $this->registerArgument(
             'as',
             'string',

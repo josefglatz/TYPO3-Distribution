@@ -31,6 +31,6 @@ class ProductionLiveViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): bool
     {
-        return (bool) StringUtility::beginsWith(GeneralUtility::getApplicationContext()->__toString(), 'Production/Live');
+        return (bool)StringUtility::beginsWith(GeneralUtility::getApplicationContext()->__toString(), 'Production/Live');
     }
 }

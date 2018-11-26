@@ -57,7 +57,6 @@ call_user_func(
             ],
         ];
         $GLOBALS['TCA']['tt_content'] = array_replace_recursive($GLOBALS['TCA']['tt_content'], $tca);
-
     },
     'theme'
 );

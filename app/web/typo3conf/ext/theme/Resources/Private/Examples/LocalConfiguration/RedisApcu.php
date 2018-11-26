@@ -2,11 +2,9 @@
 
 defined('TYPO3_MODE') || die('Access denied.');
 
-
 // @TODO: redis backend pConnect feature (7d0c8befc5999627edefb340cef270707c2956bd)
 // TODO: Add central password config for redis configs
 // TODO: generate config via simple foreach iterations (check https://www.mittwald.de/faq/frage/apcu-mit-typo3-verwenden therefore)
-
 
 // Override configuration of LocalConfiguration
 $customChanges = [

@@ -34,6 +34,6 @@ class GetViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
-        return (string) GeneralUtility::getApplicationContext();
+        return (string)GeneralUtility::getApplicationContext();
     }
 }

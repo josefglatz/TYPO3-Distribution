@@ -19,7 +19,6 @@ class CleanupStringViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments(): void
     {
@@ -65,7 +64,7 @@ class CleanupStringViewHelper extends AbstractViewHelper
      */
     protected static function eliminateWhitespace($content): string
     {
-        $content = (string) preg_replace('/\s+/', '', $content);
+        $content = (string)preg_replace('/\s+/', '', $content);
         return $content;
     }
 

@@ -15,7 +15,6 @@ class TrimViewHelper extends AbstractViewHelper
     use CompileWithContentArgumentAndRenderStatic;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

@@ -27,7 +27,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * <output>
  * {string}
  * </output>
- *
  */
 class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
 {
@@ -39,7 +38,6 @@ class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments(): void
     {

@@ -28,7 +28,6 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * </f:if>
  * </theme:fal>
  * </code>
- *
  */
 class FalViewHelper extends AbstractViewHelper
 {

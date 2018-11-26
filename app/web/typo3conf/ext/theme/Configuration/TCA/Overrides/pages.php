@@ -251,7 +251,7 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             $table,
             '--palette--;' . $languageFileBePrefix . 'palette.pages.related;tx-theme-related',
-            (string) \TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
+            (string)\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_DEFAULT,
             'after:tx_theme_sharing_enabled'
         );
         // Extend core's "layout" palette

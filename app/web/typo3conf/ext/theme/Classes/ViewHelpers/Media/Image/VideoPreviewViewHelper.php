@@ -30,7 +30,7 @@ class VideoPreviewViewHelper extends AbstractViewHelper
      * @throws \RuntimeException
      * @throws \TYPO3\CMS\Core\Resource\Exception\InsufficientFolderAccessPermissionsException
      */
-    public function render() : string
+    public function render(): string
     {
         $file = $this->arguments['video'];
         $video = null;

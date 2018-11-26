@@ -233,7 +233,8 @@ call_user_func(
         if (!\is_array($defaults)) {
             throw new \UnexpectedValueException(
                 'The defaultCropVariantsConfiguration configuration can\'t be retrieved from the configuration file. (Please take a look at ' . \JosefGlatz\Theme\Backend\CropVariants\Defaults\Configuration::CONFIGFILE . ')',
-                1524948477);
+                1524948477
+            );
         }
         // Overwrite the TYPO3 core default cropVariant configuration if the necessary configuration has at least one entry
         if (!empty($defaults)) {

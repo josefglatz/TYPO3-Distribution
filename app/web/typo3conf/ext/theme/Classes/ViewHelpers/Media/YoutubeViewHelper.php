@@ -35,7 +35,6 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
     /**
      * Initialize arguments.
      *
-     * @return void
      * @api
      */
     public function initializeArguments(): void
@@ -129,10 +128,10 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
 
         $src = $this->getSourceUrl($videoId);
 
-        if (false === (boolean) $this->arguments['legacyCode']) {
+        if (false === (boolean)$this->arguments['legacyCode']) {
             $this->tag->addAttribute('src', $src);
             $this->tag->addAttribute('frameborder', 0);
-            if (false === (boolean) $this->arguments['disallowFullscreen']) {
+            if (false === (boolean)$this->arguments['disallowFullscreen']) {
                 $this->tag->addAttribute('allowFullScreen', 'allowFullScreen');
             }
             $this->tag->forceClosingTag(true);
@@ -195,27 +194,27 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
 
         $params = [];
 
-        if (false === (boolean) $this->arguments['showRelated']) {
+        if (false === (boolean)$this->arguments['showRelated']) {
             $params[] = 'rel=0';
         }
-        if (true === (boolean) $this->arguments['autoplay']) {
+        if (true === (boolean)$this->arguments['autoplay']) {
             $params[] = 'autoplay=1';
         }
-        if (true === (boolean) $this->arguments['disallowFullscreen']) {
+        if (true === (boolean)$this->arguments['disallowFullscreen']) {
             $params[] = 'fs=0';
         } else {
             $params[] = 'fs=1';
         }
-        if (true === (boolean) $this->arguments['hideControl']) {
+        if (true === (boolean)$this->arguments['hideControl']) {
             $params[] = 'controls=0';
         }
-        if (true === (boolean) $this->arguments['hideInfo']) {
+        if (true === (boolean)$this->arguments['hideInfo']) {
             $params[] = 'showinfo=0';
         }
-        if (true === (boolean) $this->arguments['enableJsApi']) {
+        if (true === (boolean)$this->arguments['enableJsApi']) {
             $params[] = 'enablejsapi=1';
         }
-        if (true === (boolean) $this->arguments['modestbranding']) {
+        if (true === (boolean)$this->arguments['modestbranding']) {
             $params[] = 'modestbranding=1';
         }
         if (false === empty($this->arguments['playlist'])) {
@@ -224,7 +223,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
         if (false === empty($this->arguments['color'])) {
             $params[] = 'color=' . $this->arguments['color'];
         }
-        if (true === (boolean) $this->arguments['loop']) {
+        if (true === (boolean)$this->arguments['loop']) {
             $params[] = 'loop=1';
         }
         if (false === empty($this->arguments['start'])) {
@@ -233,7 +232,7 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
         if (false === empty($this->arguments['end'])) {
             $params[] = 'end=' . $this->arguments['end'];
         }
-        if (true === (boolean) $this->arguments['lightTheme']) {
+        if (true === (boolean)$this->arguments['lightTheme']) {
             $params[] = 'theme=light';
         }
         if (false === empty($this->arguments['videoQuality'])) {

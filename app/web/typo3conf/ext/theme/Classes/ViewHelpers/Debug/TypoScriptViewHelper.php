@@ -24,7 +24,8 @@ class TypoScriptViewHelper extends AbstractViewHelper
             DebuggerUtility::var_dump(
                 $extbaseFrameworkConfiguration,
                 'CONFIGURATION_TYPE_FULL_TYPOSCRIPT || Use the Adminpanel to view the final rendered TypoScript!',
-                500);
+                500
+            );
         }
     }
 }

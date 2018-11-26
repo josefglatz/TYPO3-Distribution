@@ -20,7 +20,6 @@ class DomainNameViewHelper extends AbstractViewHelper implements CompilableInter
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments()
     {

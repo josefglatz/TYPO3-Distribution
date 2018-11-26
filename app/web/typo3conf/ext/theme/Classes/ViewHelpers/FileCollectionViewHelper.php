@@ -31,7 +31,6 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * </f:if>
  * </theme:fileCollection>
  * </code>
- *
  */
 class FileCollectionViewHelper extends AbstractViewHelper
 {

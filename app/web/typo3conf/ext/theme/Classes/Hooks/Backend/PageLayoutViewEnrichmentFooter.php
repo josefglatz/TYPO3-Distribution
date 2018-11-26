@@ -48,7 +48,6 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      * @param \TYPO3\CMS\Backend\View\PageLayoutView $parentObject Calling parent object
      * @param string $info Processed values
      * @param array $row Record row of tt_content
-     * @return void
      * @throws \Exception
      */
     public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$info, array &$row)

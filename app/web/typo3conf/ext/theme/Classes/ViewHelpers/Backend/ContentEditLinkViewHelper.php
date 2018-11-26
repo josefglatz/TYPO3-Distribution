@@ -37,7 +37,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderS
  * <output>
  * <a href="..."> {string} </a>
  * </output>
- *
  */
 class ContentEditLinkViewHelper extends AbstractBackendViewHelper
 {
@@ -54,7 +53,6 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments(): void
     {

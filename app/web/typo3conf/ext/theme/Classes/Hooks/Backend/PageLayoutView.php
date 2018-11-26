@@ -26,8 +26,6 @@ class PageLayoutView implements SingletonInterface
     /**
      * Initialize the page renderer
      * and add custom css file
-     *
-     * @return void
      */
     public function render(): void
     {
