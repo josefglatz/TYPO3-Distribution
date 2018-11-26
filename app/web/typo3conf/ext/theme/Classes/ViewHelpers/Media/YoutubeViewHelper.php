@@ -1,8 +1,9 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Media;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /*
  * YouTube Embed ViewHelper with 2 modes
@@ -244,14 +245,14 @@ class YoutubeViewHelper extends AbstractTagBasedViewHelper
 
         if (false === $this->arguments['legacyCode']) {
             $src .= '/embed/' . $videoId;
-            $seperator = '?';
+            $separator = '?';
         } else {
             $src .= '/v/' . $videoId . '?version=3';
-            $seperator = '&';
+            $separator = '&';
         }
 
         if (false === empty($params)) {
-            $src .= $seperator . implode('&', $params);
+            $src .= $separator . implode('&', $params);
         }
 
         return $src;
