@@ -1,8 +1,9 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
@@ -15,11 +16,12 @@ class TrimViewHelper extends AbstractViewHelper
     use CompileWithContentArgumentAndRenderStatic;
 
     /**
+     * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('content', 'string', 'String to trim');
-        $this->registerArgument('characters', 'string', 'List of characters to trim, no separators, e.g. "abc123"');
+        $this->registerArgument('characters', 'string', 'List of characters to trim, no separators, e.g. "abc123".');
     }
 
     /**

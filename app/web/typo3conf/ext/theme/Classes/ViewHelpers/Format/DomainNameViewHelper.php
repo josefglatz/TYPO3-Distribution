@@ -1,9 +1,9 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
@@ -12,7 +12,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * returns only the domain name without TLD. This could be
  * easily extended of course by extending the VH.
  */
-class DomainNameViewHelper extends AbstractViewHelper implements CompilableInterface
+class DomainNameViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -20,8 +20,9 @@ class DomainNameViewHelper extends AbstractViewHelper implements CompilableInter
     protected $escapeOutput = false;
 
     /**
+     * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('url', 'string', 'Url where the domain must be extracted', true);
     }
@@ -34,7 +35,7 @@ class DomainNameViewHelper extends AbstractViewHelper implements CompilableInter
      * @param RenderingContextInterface $renderingContext
      * @return string
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?string
     {
         try {
             return self::parseUrl($arguments['url'], $arguments);

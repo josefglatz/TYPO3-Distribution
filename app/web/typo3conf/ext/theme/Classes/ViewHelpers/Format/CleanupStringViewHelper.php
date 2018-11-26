@@ -1,8 +1,9 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
@@ -19,6 +20,7 @@ class CleanupStringViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
+     * Initialize arguments
      */
     public function initializeArguments(): void
     {

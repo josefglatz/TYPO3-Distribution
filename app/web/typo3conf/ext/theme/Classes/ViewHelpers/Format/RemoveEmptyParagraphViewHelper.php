@@ -1,13 +1,18 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 /**
  * Remove empty P tags from $content by using preg_replace
+ *
+ * Removes only "two types" of an empty P tag:
+ *  - an actually empty P tag without really no child element(s)
+ *  - an P tag with one no-breaking-space HTML entity
  */
 class RemoveEmptyParagraphViewHelper extends AbstractViewHelper
 {
@@ -19,8 +24,9 @@ class RemoveEmptyParagraphViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
+     * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('content', 'string', 'String to be relieved of empty paragraphs');
     }
