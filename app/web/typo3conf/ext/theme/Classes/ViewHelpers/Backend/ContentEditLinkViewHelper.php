@@ -1,5 +1,5 @@
-<?php declare(strict_types = 1);
-
+<?php
+declare(strict_types = 1);
 namespace JosefGlatz\Theme\ViewHelpers\Backend;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;
@@ -64,7 +64,7 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
 
     /**
      * @param array $arguments
-     * @param callable $renderChildrenClosure
+     * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
      * @return string
      * @throws \UnexpectedValueException
