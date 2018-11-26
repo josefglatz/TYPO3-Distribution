@@ -37,14 +37,10 @@ class SimpleMultiplyViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?float
     {
-        try {
-            if ($arguments['round']) {
-                return round(self::multiplication($arguments));
-            }
-            return self::multiplication($arguments);
-        } catch (\Exception $e) {
-            return '';
+        if ($arguments['round']) {
+            return round(self::multiplication($arguments));
         }
+        return self::multiplication($arguments);
     }
 
     protected static function multiplication($arguments): float

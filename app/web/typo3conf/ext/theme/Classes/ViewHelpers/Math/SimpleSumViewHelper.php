@@ -36,12 +36,7 @@ class SimpleSumViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?float
     {
-        try {
-            return self::sum($arguments);
-        } catch (\Exception $e) {
-            // @TODO: TYPO3-Distribution: VH math.SimpleSum logging when calculation is not possible
-            return '';
-        }
+        return self::sum($arguments);
     }
 
     protected static function sum($arguments): float
