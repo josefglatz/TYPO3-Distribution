@@ -30,7 +30,7 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "# We do not distinguish between the browsers.\r\nUser-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /*?id=*\r\nDisallow: /*&id=*\r\n\r\n# L=0 is the default language\r\nDisallow: /*?L=0*\r\nDisallow: /*&L=0*\r\n\r\n# Should always be protected, but you know...\r\nDisallow: /*/Private/*\r\nDisallow: /*/Configuration/*\r\n\r\n# Disallow all files in /typo3temp/var/\r\nDisallow: /typo3temp/var/*\r\n\r\n# Disallow all kind of sql files\r\nDisallow: *.sql\r\nDisallow: *.sql.gz\r\n\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
+    content: "# We do not distinguish between the browsers.\r\nUser-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /*?id=*\r\nDisallow: /*&id=*\r\n\r\n# L=0 is the default language\r\nDisallow: /*?L=0*\r\nDisallow: /*&L=0*\r\n\r\n# Should always be protected, but you know...\r\nDisallow: /*/Private/*\r\nDisallow: /*/Configuration/*\r\n\r\n# Disallow all files in /typo3temp/var/\r\nDisallow: /typo3temp/var/*\r\n\r\n# Disallow all kind of sql files\r\nDisallow: *.sql\r\nDisallow: *.sql.gz\r\n\r\n# Disallow extension parameters\r\nDisallow: /*?tx_indexedsearch\r\n\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
 routeEnhancers:
   PageTypeSuffix:
     type: PageType
