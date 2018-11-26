@@ -37,8 +37,7 @@ class ArrayTool
         if ($lcfirstChar) {
             $camelCasedString = lcfirst($camelCasedString);
         }
-        $array = preg_split('/(?=[A-Z])/', $camelCasedString);
 
-        return $array;
+        return preg_split('/(?=[A-Z])/', $camelCasedString);
     }
 }
