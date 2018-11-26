@@ -1,10 +1,10 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Render;
 
 use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
@@ -21,19 +21,19 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * <svg><contentOfTheSvgFile</svg>
  * <output>
  */
-class InlineSvgViewHelper extends AbstractViewHelper implements CompilableInterface
+class InlineSvgViewHelper extends AbstractViewHelper
 {
+    use CompileWithRenderStatic;
+
     /**
      * @var bool
      */
     protected $escapeOutput = false;
 
-    use CompileWithRenderStatic;
-
     /**
      * Arguments initialization
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('source', 'string', 'Source of svg resource', true);
@@ -62,7 +62,6 @@ class InlineSvgViewHelper extends AbstractViewHelper implements CompilableInterf
         try {
             return self::getInlineSvg($file, $arguments);
         } catch (\Exception $e) {
-            // @todo logging
             return '<!-- SVG generation produced error! -->';
         }
     }
