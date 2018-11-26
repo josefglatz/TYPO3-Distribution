@@ -33,6 +33,11 @@
 /upload
 /sgc
 /surf
+/pdepend
+/php-cs-fixer
+/phpcbf
+/phpcs
+/phpmd
 
 .php_cs.cache
 node_modules
