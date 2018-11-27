@@ -4,8 +4,6 @@
 config {
 	doctype = html5
 
-	//	Keep in mind to set also CKEditor's editor.config.defaultContentLanguage option in `EXT:theme/Configuration/RTE/Default.yaml`
-
 	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution
 
 	debug = 0
@@ -28,10 +26,7 @@ config {
 	inlineStyle2TempFile = 1
 	removeDefaultCss = 0
 
-	// Overwrite PageRenderer template file (e.g. for sgc (shop.sgalinski.de)
-	#pageRendererTemplateFile = EXT:theme/Resources/Private/Templates/Page/AboveTheFold/Dist/PageRenderTemplate.html
-
-	// No indexing, we're not using a search
+	// No indexing, we're not using a search out of the box
 	index_enable = 0
 
 	#	absRefPrefix = auto
