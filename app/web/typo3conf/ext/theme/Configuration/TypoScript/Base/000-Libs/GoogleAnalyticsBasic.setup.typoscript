@@ -1,5 +1,13 @@
-// Basic google analytics
-// Add before closing </head> tag
+###################################
+#### TRACKING Google Analytics ####
+###################################
+
+/*
+	page.headerData.1447083274 < lib.googleAnalyticsBasic
+
+	Please take care of overriding other active tracking solutions!
+*/
+
 // @TODO: Move GA to inline js (like page.jsFooterInline)
 lib.googleAnalyticsBasic = COA
 lib.googleAnalyticsBasic {

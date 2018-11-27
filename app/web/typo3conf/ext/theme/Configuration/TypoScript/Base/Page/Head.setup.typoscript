@@ -1,7 +1,5 @@
 page {
 	headerData {
-		// basic Google Analytics
-		1447083274 < lib.googleAnalyticsBasic
 
 		// realfavicongenerator.net powered favicon
 		1475270008 = FLUIDTEMPLATE
