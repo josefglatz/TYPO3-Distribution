@@ -1,3 +1,7 @@
+#######################
+#### CookieConsent ####
+#######################
+
 page.jsFooterInline {
 	// CookieLaw (get some details about at https://www.cookiechoices.org/, some more translation sources https://localize.drupal.org/download?project=eu-cookie-compliance, https://github.com/valdecode/magento-cookielaw/tree/master/app/locale)
 	1448269198 = COA

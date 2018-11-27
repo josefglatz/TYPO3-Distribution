@@ -1,3 +1,6 @@
+################
+#### CONFIG ####
+################
 config {
 	doctype = html5
 
@@ -79,6 +82,16 @@ config {
 
 	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
 }
+
+
+[getTSFE().beUserLogin === 1]
+	// Force generation of links to hidden linkhandler "newsDefault" records
+	config.recordLinks.newsDefault.forceLink = 1
+
+
+#################################
+#### DEBUGGING / DEVELOPMENT ####
+#################################
 // @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
 [{$theme.debug} == 1] && [getTSFE().beUserLogin === 1] || [applicationContext matches "/^Development/"]
 	config {
@@ -91,7 +104,4 @@ config {
 		contentObjectExceptionHandler = 0
 	}
 
-[getTSFE().beUserLogin === 1]
-	// Force generation of links to hidden linkhandler "newsDefault" records
-	config.recordLinks.newsDefault.forceLink = 1
 [global]

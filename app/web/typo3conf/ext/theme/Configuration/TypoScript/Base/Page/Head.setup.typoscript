@@ -1,4 +1,12 @@
+##############
+#### PAGE ####
+##############
 page {
+
+
+#########################
+#### PAGE headerData ####
+#########################
 	headerData {
 
 		// realfavicongenerator.net powered favicon
@@ -7,6 +15,9 @@ page {
 	}
 
 
+###################
+#### PAGE meta ####
+###################
 	meta {
 		viewport = width=device-width, initial-scale=1, shrink-to-fit=no
 		viewport.replace = 1
@@ -51,8 +62,9 @@ page {
 	}
 
 
-
-
+#####################################
+#### PAGE JS translation strings ####
+#####################################
 	inlineLanguageLabelFiles {
 		themeFrontend = {$theme.resLanguage}/locallang_JavascriptFrontend.xlf
 		themeFrontend {
@@ -69,6 +81,9 @@ page {
 }
 
 
+#################################
+#### DEBUGGING / DEVELOPMENT ####
+#################################
 // @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
 [getTSFE().beUserLogin == 1] || [applicationContext matches "/^Development/"] || [applicationContext == "/^Production\/Dev/"]
 	// show some debug infos in <head>
