@@ -1,3 +1,14 @@
+#########################
+#### TRACKING Matomo ####
+#########################
+
+/*
+	Add lib.matomoBasic to your TypoScript configurationg
+	page.bodyTagCObject.stdWrap.append < lib.matomoBasic
+
+	Please take care of overriding other active tracking solutions!
+*/
+
 lib.matomoBasic = COA
 lib.matomoBasic {
 	if.isTrue = {$site.tracking.matomo.enable}

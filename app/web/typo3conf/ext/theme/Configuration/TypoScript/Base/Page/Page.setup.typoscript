@@ -335,10 +335,6 @@ page {
 	}
 
 
-	// basic Matomo
-	20 < lib.matomoBasic
-
-
 	stdWrap.replacement {
 		1 {
 			search = ###CURRENTYEAR###
