@@ -45,6 +45,7 @@
 		"ichhabrecht/content-defender": "^3",
 		"josefglatz/beuser-fastswitch": "^2",
 		"josefglatz/iconcheck": "^2",
+		"josefglatz/seo-aspect-ratios": "^1.0",
 		"lochmueller/staticfilecache": "^6.1",
 		"minifranske/gravatar": "^1",
 		"typo3/cms-about": "^9.5",
