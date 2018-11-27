@@ -319,33 +319,6 @@ page {
 				value = rootpage
 				noTrimWrap = | ||
 			}
-
-			# Add special class based on the template layout (needed when your frontend developer don't uses
-			# the same `tmpl-belayoutname`
-#			70 = COA
-#			70 {
-#				10 = CASE
-#				10 {
-#					key.cObject = TEXT
-#					key.cObject {
-#						data < page.10.templateName.stdWrap.cObject.data
-#						split < page.10.templateName.stdWrap.cObject.split
-#						case = lower
-#					}
-#					homepage = TEXT
-#					homepage {
-#						value = body-start-page
-#					}
-#					default = TEXT
-#					default {
-#						value = body-sub-page
-#					}
-#				}
-#				stdWrap {
-#					noTrimWrap = | ||
-#					required = 1
-#				}
-#			}
 		}
 
 		# attribute(s) data-*
