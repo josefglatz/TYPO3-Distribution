@@ -1,4 +1,7 @@
-// Basic google tag manager https://developers.google.com/tag-manager/quickstart
+##############################################################
+#### TRACKING Google Tag Manager                          ####
+#### https://developers.google.com/tag-manager/quickstart ####
+##############################################################
 
 /*
 	Add lib.googleTagManagerBasic.10 immediately after the opening <head> tag:
@@ -8,6 +11,8 @@
 		page.1 < lib.googleTagManagerBasic.20
 	or
 		page.bodyTagCObject.stdWrap.append < lib.googleTagManagerBasic.20
+
+	Please take care of overriding other active tracking solutions!
 */
 
 lib.googleTagManagerBasic = COA
