@@ -2,9 +2,11 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend\Toolbar;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Toolbar\ClearCacheActionsHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Http\Response;
 use TYPO3\CMS\Core\Resource\ProcessedFileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -45,10 +47,13 @@ class ClearProcessedFilesMenuItem implements ClearCacheActionsHookInterface
      *
      * The sys_file_processedfile table is truncated and the physical files of local storages are deleted.
      */
-    public function clearProcessedFiles()
+    public function clearProcessedFiles(): ResponseInterface
     {
         $repository = GeneralUtility::makeInstance(ProcessedFileRepository::class);
         $repository->removeAll();
+
+        $response = new Response();
+        return $response;
     }
 
     /**
