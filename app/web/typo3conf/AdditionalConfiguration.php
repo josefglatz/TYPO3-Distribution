@@ -18,7 +18,7 @@ $context = GeneralUtility::getApplicationContext()->__toString();
 
 if ($context) {
     // check for "Production/Live/Server123" etc
-    list($contextMainPart, $contextSubPart1, $contextSubPart2) = explode('/', $context);
+    [$contextMainPart, $contextSubPart1, $contextSubPart2] = explode('/', $context);
 
     // set context specific TYPO3 backend logo
     if (TYPO3_MODE === 'BE') {
