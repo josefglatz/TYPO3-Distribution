@@ -29,11 +29,7 @@ config {
 	// No indexing, we're not using a search out of the box
 	index_enable = 0
 
-	#	absRefPrefix = auto
-	absRefPrefix = /
-
-	// Links & content sharing across domains & jumpUrl & external target stuff
-	typolinkEnableLinksAcrossDomains = 1
+	// Content sharing across domains & jumpUrl & external target stuff
 	content_from_pid_allowOutsideDomain = 1
 	disablePageExternalUrl = 0
 	jumpurl_enable = 0
@@ -65,14 +61,11 @@ config {
 	spamProtectEmailAddresses_atSubst = &#64;
 	spamProtectEmailAddresses_lastDotSubst = &#46;
 
-	// https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#linkvars
-	// linkVars := addToList(L(0-1))
-	// until an additional fe language is used, no linkVars necessary
-	// !!! Please do NOT add `type` to config.linkVars !!!
-#	linkVars := addToList(L(0-1))
-#	linkVars := addToList(L(int))
+#	linkVars := addToList(MyVar(0-1))
+#	linkVars := addToList(F(int))
 #	linkVars := addToList(tracking|green(0-5))
 #	linkVars := removeFromList()
+	// !!! Please do NOT add `type` OR `L` to config.linkVars !!!
 	linkVars =
 
 	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
