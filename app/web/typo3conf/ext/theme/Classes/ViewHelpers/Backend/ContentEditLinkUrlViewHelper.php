@@ -1,5 +1,6 @@
 <?php
 declare(strict_types = 1);
+
 namespace JosefGlatz\Theme\ViewHelpers\Backend;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;

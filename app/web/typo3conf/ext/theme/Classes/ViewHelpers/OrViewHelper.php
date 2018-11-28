@@ -9,8 +9,8 @@ namespace JosefGlatz\Theme\ViewHelpers;
  */
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 /**
@@ -52,7 +52,6 @@ class OrViewHelper extends AbstractViewHelper
         $content = $renderChildrenClosure() ?: static::getAlternativeValue($arguments, $renderingContext);
         return $content;
     }
-
 
     /**
      * @param array $arguments
