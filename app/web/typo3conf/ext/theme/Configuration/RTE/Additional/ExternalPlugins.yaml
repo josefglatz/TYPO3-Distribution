@@ -1,17 +1,5 @@
 editor:
   externalPlugins:
-    # Configure wordcount plugin for ckeditor check details and all config options under https://github.com/w8tcha/CKEditor-wordcount-Plugin
-    wordcount:
-      showParagraphs: true
-      showRemaining: false
-      showWordCount: true
-      showCharCount: true
-      countSpacesAsChars: false
-      countHTML: false
-      countLineBreaks: false
-      maxWordCount: -1
-      maxCharCount: -1
-      pasteWarningDuration: 3000
     # Register own project specific plugin for ckeditor for modifying table specific limitations
     tableModifications:
       resource: "EXT:theme/Resources/Public/RTE/ProjectPlugins/tableModifications/"

@@ -75,7 +75,7 @@ editor:
       - specialchar
       - showblocks
       - about
-      - notification
+      - wordcount
 #      - devtools
 
     # Plugins that must not be loaded
@@ -129,6 +129,19 @@ editor:
 
     # Quicktable plugin configuration https://github.com/ufdada/quicktable/blob/master/plugin.js#L5
     qtClass: "table table-striped table-responsive table-bordered"
+
+    # Configure wordcount plugin for ckeditor check details and all config options under https://github.com/w8tcha/CKEditor-wordcount-Plugin
+    wordcount:
+      showParagraphs: true
+      showRemaining: false
+      showWordCount: true
+      showCharCount: true
+      countSpacesAsChars: false
+      countHTML: false
+      countLineBreaks: false
+      maxWordCount: -1
+      maxCharCount: -1
+      pasteWarningDuration: 3000
 
 
 ##################################

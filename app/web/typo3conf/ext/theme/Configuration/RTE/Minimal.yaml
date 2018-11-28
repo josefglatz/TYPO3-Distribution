@@ -62,6 +62,7 @@ editor:
 
     # Additional plugins to be loaded
     extraPlugins:
+      - wordcount
 
     # Plugins that must not be loaded
     removePlugins:
@@ -111,6 +112,19 @@ editor:
     toolbarCanCollapse: true
     toolbarStartupExpanded: true
     toolbarLocation: "top"
+
+    # Configure wordcount plugin for ckeditor check details and all config options under https://github.com/w8tcha/CKEditor-wordcount-Plugin
+    wordcount:
+      showParagraphs: true
+      showRemaining: false
+      showWordCount: true
+      showCharCount: true
+      countSpacesAsChars: false
+      countHTML: false
+      countLineBreaks: false
+      maxWordCount: -1
+      maxCharCount: -1
+      pasteWarningDuration: 3000
 
 
 ##################################
