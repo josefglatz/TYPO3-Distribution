@@ -48,6 +48,7 @@
 		"josefglatz/seo-aspect-ratios": "^1.0",
 		"lochmueller/staticfilecache": "^6.1",
 		"minifranske/gravatar": "^1",
+		"t3monitor/t3monitoring_client": "^9.0",
 		"typo3/cms-about": "^9.5",
 		"typo3/cms-adminpanel": "^9.5",
 		"typo3/cms-backend": "^9.5",
