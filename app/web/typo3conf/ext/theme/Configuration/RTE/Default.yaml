@@ -76,6 +76,7 @@ editor:
       - showblocks
       - about
       - wordcount
+      - selectall
 #      - devtools
 
     # Plugins that must not be loaded

@@ -63,6 +63,7 @@ editor:
     # Additional plugins to be loaded
     extraPlugins:
       - wordcount
+      - selectall
 
     # Plugins that must not be loaded
     removePlugins:
