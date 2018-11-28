@@ -1,3 +1,10 @@
+##################################
+#### FLUIDTEMPLATE Base Setup ####
+##################################
+#
+# used primary in page.10 < lib.fluidTemplate.default
+#
+###############
 lib.fluidTemplate {
 	base = FLUIDTEMPLATE
 	base {

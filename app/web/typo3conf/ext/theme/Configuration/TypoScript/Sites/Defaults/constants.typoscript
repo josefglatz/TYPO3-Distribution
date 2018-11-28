@@ -1,3 +1,6 @@
+##########################################
+#### CONFIGURATION for every pagetree ####
+##########################################
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:theme/Configuration/TypoScript/Base" extensions="constants.typoscript">
 
 theme {
