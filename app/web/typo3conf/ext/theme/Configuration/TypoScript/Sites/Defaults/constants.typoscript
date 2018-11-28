@@ -59,4 +59,8 @@ site {
 		}
 		customTemplateName = Default
 	}
+
+	meta {
+		google = notranslate
+	}
 }

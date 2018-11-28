@@ -39,6 +39,8 @@ page {
 			field = keywords
 		}
 
+		google = {$site.meta.google}
+
 		google-site-verification = TEXT
 		google-site-verification {
 			if.isTrue = {$site.meta.googleSiteVerification}
