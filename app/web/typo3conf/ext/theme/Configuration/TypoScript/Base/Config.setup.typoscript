@@ -54,6 +54,10 @@ config {
 		}
 	}
 
+	pageTitleFirst = 1
+	pageTitleSeparator = -
+	pageTitleSeparator.noTrimWrap = | | |
+
 	// E-Mail AntiSpam
 #    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
 #    spamProtectEmailAddresses = -3
