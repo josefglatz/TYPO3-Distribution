@@ -1,9 +1,9 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
+use JosefGlatz\Theme\Configuration\ExtensionConfiguration;
 use JosefGlatz\Theme\Utility\ArrayTool;
-use JosefGlatz\Theme\Utility\EmConfiguration;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Localization\LanguageService;
@@ -236,7 +236,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     protected function isEnabled(): bool
     {
-        return  EmConfiguration::getSettings()->isPageLayoutViewEnrichmentFooter();
+        return GeneralUtility::makeInstance(ExtensionConfiguration::class)->isPageLayoutViewEnrichmentFooter();
     }
 
     /**
