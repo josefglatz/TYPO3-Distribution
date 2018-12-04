@@ -42,60 +42,28 @@ RTFM and update the configuration to your needs.
 
 ## EXT:yaml_confiugration
 
-RTFM. With the help of Michiel Roos's extension it's possible to export/import backend/frontend-/-user/-groups and theoretically
-any other table to/from yaml.
+RTFM. With the help of Michiel Roos's extension it's possible to export/import
+any table to/from yaml.
 
 
 ### Scheduler tables
 ```bash
-## Scheduler
-./typo3cms export:table tx_scheduler_task_group --include-hidden=true --include-deleted=false --skip-columns=crdate,tstamp,cruser_id --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml
-./typo3cms import:table "tx_scheduler_task_group" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml"
-./typo3cms import:table "tx_scheduler_task_group" "groupName" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task_group.yml" # if https://github.com/MaxServ/t3ext-yaml-configuration/issues/19 is fixed
-
-./typo3cms export:table tx_scheduler_task --include-hidden=true --include-deleted=true --skip-columns=crdate,lastexecution_time,lastexecution_failure,lastexecution_context --file=/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml
-./typo3cms import:table "tx_scheduler_task" "uid" "/app/Build/DefaultDatabaseRecords/tx_scheduler_task.yml"
-
-
+# Scheduler
+./typo3cms yaml:export tx_scheduler_task_group /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/tx_scheduler_task_group.yaml --force-override
+./typo3cms yaml:export tx_scheduler_task /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/tx_scheduler_task.yaml
 ## Default Filemount (normally no need to import as it get's automatically created when installing TYPO3
-./typo3cms export:table sys_filemounts --include-hidden=true --include-deleted=false --skip-columns=tstamp --file=/app/Build/DefaultDatabaseRecords/sys_filemounts.yml
-./typo3cms import:table "sys_filemounts" "uid" "/app/Build/DefaultDatabaseRecords/sys_filemounts.yml"
-
-
-## Backend User/-group
-./typo3cms export:backendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/be_groups.yml
-./typo3cms import:backendgroups "uid" "/app/Build/DefaultDatabaseRecords/be_groups.yml"
-
-./typo3cms export:backendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin,tx_news_categorymounts,lfeditor_change_editing_modes,tx_besecurepw_lastpwchange --file=/app/Build/DefaultDatabaseRecords/be_users.yml
-./typo3cms import:backendusers "username" "/app/Build/DefaultDatabaseRecords/be_users.yml"
-
-
+./typo3cms yaml:export sys_filemounts /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/sys_filemounts.yaml
+## Backend Users/Groups
+./typo3cms yaml:export be_users /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/be_users.yaml --skip-columns=uid
+./typo3cms yaml:export be_groups /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/be_groups.yaml
 ## Page
-./typo3cms export:table pages --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id,SYS_LASTCHANGED,tx_impexp_origuid,tx_ddgooglesitemap_lastmod,tx_theme_nav_image,tx_theme_opengraph_image,tx_theme_related,tx_theme_twitter_image,tx_yoastseo_title,tx_yoastseo_focuskeyword,tx_yoastseo_canonical_url,tx_yoastseo_robot_instructions,tx_yoastseo_dont_use,tx_yoastseo_facebook_title,tx_yoastseo_facebook_description,tx_yoastseo_facebook_image,tx_yoastseo_twitter_title,tx_yoastseo_twitter_description,tx_yoastseo_twitter_image --file=/app/Build/DefaultDatabaseRecords/pages.yml
-./typo3cms import:table "pages" "uid" "/app/Build/DefaultDatabaseRecords/pages.yml"
-
-
+./typo3cms yaml:export pages /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/pages.yaml
 ## Page Content
-./typo3cms export:table tt_content --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/tt_content.yml
-./typo3cms import:table "tt_content" "uid" "/app/Build/DefaultDatabaseRecords/tt_content.yml"
-
-
-## Domain
-./typo3cms export:table sys_domain --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/sys_domain.yml
-./typo3cms import:table "sys_domain" "uid" "/app/Build/DefaultDatabaseRecords/sys_domain.yml"
-
-
-## Frontend user/-group
-./typo3cms export:frontendgroups --include-hidden=true --include-deleted=false --skip-columns=tstamp,crdate,cruser_id --file=/app/Build/DefaultDatabaseRecords/fe_groups.yml
-./typo3cms import:frontendgroups "uid" "/app/Build/DefaultDatabaseRecords/fe_groups.yml"
-
-./typo3cms export:frontendusers --include-hidden=true --include-deleted=false --skip-columns=uid,tstamp,crdate,cruser_id,lastlogin --file=/app/Build/DefaultDatabaseRecords/fe_users.yml
-./typo3cms import:frontendusers "username" "/app/Build/DefaultDatabaseRecords/fe_users.yml"
-
-
+./typo3cms yaml:export tt_content /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/tt_content.yaml
+./typo3cms yaml:export fe_groups /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/fe_groups.yaml
+./typo3cms yaml:export fe_users /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/fe_users.yaml
 ## Backend Bookmarks
-./typo3cms export:table sys_be_shortcuts --include-hidden=true --include-deleted=false --skip-columns=userid --file=/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml
-./typo3cms import:table "sys_be_shortcuts" "uid" "/app/Build/DefaultDatabaseRecords/sys_be_shortcuts.yml"
+./typo3cms yaml:export sys_be_shortcuts /Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/YamlConfiguration/sys_be_shortcuts.yaml --skip-columns=userid
 ```
 
 #### Running mentioned CLI tasks on macOS with MAMP PRO (Example)
@@ -103,6 +71,7 @@ any other table to/from yaml.
 ```bash
 MYSQL_USER=distri MYSQL_PASSWORD=distri MYSQL_DATABASE=distri MYSQL_PORT=8889 TYPO3_CONTEXT=Development/Mamp /Applications/MAMP/bin/php/php7.1.12/bin/php ./typo3cms export:table ...
 
+MYSQL_USER=distri MYSQL_PASSWORD=distri MYSQL_DATABASE=distri MYSQL_PORT=8889 TYPO3_CONTEXT=Development/Mamp /Applications/MAMP/bin/php/php7.2.8/bin/php ./typo3cms yaml:export
 ```
 
 ###### Make sure to use the correct PHP CLI version
