@@ -10,8 +10,11 @@ page {
 	headerData {
 
 		// realfavicongenerator.net powered favicon
-		1475270008 = FLUIDTEMPLATE
-		1475270008.file = {$theme.resPartials}/Page/Favicon/Dist/RealFavIcon.html
+		1475270008 = TEMPLATE
+		1475270008.template = FILE
+		1475270008.template {
+			file = {$theme.resPartials}/Page/Favicon/Dist/RealFavIcon.html
+		}
 	}
 
 
