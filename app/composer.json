@@ -85,7 +85,7 @@
 	"require-dev": {
 		"friendsofphp/php-cs-fixer": "^2.13",
 		"namelesscoder/typo3-repository-client": "^2.0",
-		"neronmoon/scriptsdev": "^0.1.2",
+		"neronmoon/scriptsdev": "^0.1.4",
 		"phpmd/phpmd": "^2.6",
 		"psychomieze/adminpanel-extended": "dev-develop",
 		"roave/security-advisories": "dev-master",
