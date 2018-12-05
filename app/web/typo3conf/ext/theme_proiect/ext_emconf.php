@@ -1,11 +1,11 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Project specific theme modification extension',
-    'description' => 'Sitepackage-/Theme-/Modification-Extension of this great website.',
+    'title' => 'Project sitepackage',
+    'description' => 'Project specific sitepackage of this great website.',
     'category' => 'Theme',
     'author' => 'Josef Glatz',
-    'author_email' => 'jousch@jousch.com',
-    'author_company' => 'http://jousch.com',
+    'author_email' => 'jousch@gmail.com',
+    'author_company' => 'https://jousch.com',
     'state' => 'excludeFromUpdates',
     'uploadfolder' => '0',
     'createDirs' => '',
@@ -16,6 +16,7 @@ $EM_CONF[$_EXTKEY] = [
             'depends' =>
                 [
                     'typo3' => '9.5.0-9.5.99',
+                    'theme' => '',
                 ],
             'conflicts' =>
                 [

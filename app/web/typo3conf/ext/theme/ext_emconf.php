@@ -1,16 +1,16 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Project specific theme extension',
-    'description' => 'Sitepackage/Theme/Extension of this great website.',
+    'title' => 'Base sitepackage',
+    'description' => 'Base sitepackage of another great website.',
     'category' => 'Theme',
     'author' => 'Josef Glatz',
-    'author_email' => 'jousch@jousch.com',
-    'author_company' => 'http://jousch.com',
-    'state' => 'excludeFromUpdates',
+    'author_email' => 'jousch@gmail.com',
+    'author_company' => 'https://jousch.com',
+    'state' => 'stable',
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 1,
-    'version' => '0.0.0',
+    'version' => '1.0.0',
     'constraints' =>
         [
             'depends' =>
@@ -70,7 +70,6 @@ $EM_CONF[$_EXTKEY] = [
                     'sr_language_menu' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
-                    'theme_project' => '',
                     'transladder' => '',
                     'tt_address' => '',
                     'typoscript_rendering' => '',
