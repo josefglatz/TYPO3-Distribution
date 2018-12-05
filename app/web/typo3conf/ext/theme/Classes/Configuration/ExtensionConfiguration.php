@@ -4,14 +4,13 @@ namespace JosefGlatz\Theme\Configuration;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration as ExtensionConfigurationCore;
 use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ExtensionConfiguration implements SingletonInterface
 {
 
     /**
      * Fill the properties properly
-     *
-     * @param array $configuration em configuration
      */
     public function __construct()
     {
@@ -19,7 +18,6 @@ class ExtensionConfiguration implements SingletonInterface
             $settings = GeneralUtility::makeInstance(ExtensionConfigurationCore::class)->get('theme');
             $this->pageLayoutViewEnrichmentFooter = (bool)$settings['pageLayoutViewEnrichmentFooter'];
         } catch (\Exception $e) {
-
         }
     }
 
