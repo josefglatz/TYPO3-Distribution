@@ -161,7 +161,6 @@ sync:
                 - "echo 'http://localprojectdomain.vm/ http://localprojectdomain.vm/typo3'"
                 - "echo 'http://localprojectdomain.docker/ http://localprojectdomain.docker/typo3'"
                 #- "ct docker:cli extbase solr:updateconnections"
-                - "docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && ./typo3cms dev:postSyncTasks'"
 
 
     ##################
