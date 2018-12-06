@@ -1,6 +1,4 @@
 <?php
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 defined('TYPO3_MODE') || die('Access denied.');
 
 // set instance values
@@ -14,7 +12,7 @@ $site = [
 ];
 
 // get complete context
-$context = GeneralUtility::getApplicationContext()->__toString();
+$context = \TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->__toString();
 
 if ($context) {
     // check for "Production/Live/Server123" etc
