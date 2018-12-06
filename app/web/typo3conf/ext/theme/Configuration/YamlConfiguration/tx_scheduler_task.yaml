@@ -1,7 +1,8 @@
 TYPO3:
   Data:
     tx_scheduler_task:
-      - uid: 1
+      -
+        uid: 1
         disable: 0
         description: 'Update language packs of active extensions from translation server'
         nextexecution: 1544394600
