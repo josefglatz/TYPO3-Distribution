@@ -1,0 +1,186 @@
+From fd75576f7748b5e284ea83693a985473a7987005 Mon Sep 17 00:00:00 2001
+From: Wolfgang Klinger <wolfgang@wazum.com>
+Date: Fri, 23 Nov 2018 13:23:25 +0100
+Subject: [PATCH] [BUGFIX] Fix nested arrays in conditions
+
+The RequestWrapper::getParsedBody method must return an array,
+otherwise the a condition like [request.getParsedBody()['foo'] == 1]
+results in a silent exception if the body is empty.
+
+ConditionMatcher::normalizeExpression is now using a full tested helper
+function to handle multiple [] signs correctly.
+
+Resolves: #86915
+Releases: master
+Change-Id: Ia3f951d1a3994d545025691e35521ca05b97a39a
+---
+
+diff --git a/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/AbstractConditionMatcher.php b/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/AbstractConditionMatcher.php
+index e7908e5..8a5954f 100644
+--- a/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/AbstractConditionMatcher.php
++++ b/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/AbstractConditionMatcher.php
+@@ -156,14 +156,8 @@
+      */
+     protected function normalizeExpression($expression)
+     {
+-        $normalizedExpression = preg_replace([
+-            '/\\]\\s*(OR|\\|\\|)?\\s*\\[/i',
+-            '/\\]\\s*(AND|&&)\\s*\\[/i'
+-        ], [
+-            ']||[',
+-            ']&&['
+-        ], trim($expression));
+-        return $normalizedExpression;
++        return GeneralUtility::makeInstance(ExpressionHelper::class)
++            ->normalizeExpression($expression);
+     }
+ 
+     /**
+diff --git a/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/ExpressionHelper.php b/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/ExpressionHelper.php
+new file mode 100644
+index 0000000..02a6f42
+--- /dev/null
++++ b/typo3/sysext/core/Classes/Configuration/TypoScript/ConditionMatching/ExpressionHelper.php
+@@ -0,0 +1,42 @@
++<?php
++namespace TYPO3\CMS\Core\Configuration\TypoScript\ConditionMatching;
++
++/*
++ * This file is part of the TYPO3 CMS project.
++ *
++ * It is free software; you can redistribute it and/or modify it under
++ * the terms of the GNU General Public License, either version 2
++ * of the License, or any later version.
++ *
++ * For the full copyright and license information, please read the
++ * LICENSE.txt file that was distributed with this source code.
++ *
++ * The TYPO3 project - inspiring people to share!
++ */
++
++/**
++ * Class ExpressionHelper
++ * This class was introduced as a BUGFIX and to provide tests for the broken code.
++ * It will be removed in v10 again with den other deprecated matcher code.
++ * @deprecated since TYPO3 v9.5, will be removed in TYPO3 v10.0.
++ */
++class ExpressionHelper
++{
++    /**
++     * @param string $expression
++     * @return string
++     * @deprecated since TYPO3 v9.5, will be removed in TYPO3 v10.0.
++     */
++    public function normalizeExpression(string $expression): string
++    {
++        $orPattern = '/\\]\\s*(OR|\\|\\|)\\s*\\[/i';
++        $normalizedExpression = preg_replace([
++            $orPattern,
++            '/\\]\\s*(AND|&&)\\s*\\[/i'
++        ], [
++            ']||[',
++            ']&&['
++        ], trim($expression));
++        return $normalizedExpression;
++    }
++}
+diff --git a/typo3/sysext/core/Classes/ExpressionLanguage/RequestWrapper.php b/typo3/sysext/core/Classes/ExpressionLanguage/RequestWrapper.php
+index af72b65..9067467 100644
+--- a/typo3/sysext/core/Classes/ExpressionLanguage/RequestWrapper.php
++++ b/typo3/sysext/core/Classes/ExpressionLanguage/RequestWrapper.php
+@@ -48,9 +48,9 @@
+         return $this->request->getQueryParams();
+     }
+ 
+-    public function getParsedBody()
++    public function getParsedBody(): array
+     {
+-        return $this->request->getParsedBody();
++        return (array)($this->request->getParsedBody() ?? []);
+     }
+ 
+     public function getHeaders(): array
+diff --git a/typo3/sysext/core/Tests/Unit/Configuration/TypoScript/ConditionMatching/ExpressionHelperTest.php b/typo3/sysext/core/Tests/Unit/Configuration/TypoScript/ConditionMatching/ExpressionHelperTest.php
+new file mode 100644
+index 0000000..6affaa1
+--- /dev/null
++++ b/typo3/sysext/core/Tests/Unit/Configuration/TypoScript/ConditionMatching/ExpressionHelperTest.php
+@@ -0,0 +1,78 @@
++<?php
++declare(strict_types = 1);
++namespace TYPO3\CMS\Core\Tests\Unit\Configuration\TypoScript\ConditionMatching;
++
++/*
++ * This file is part of the TYPO3 CMS project.
++ *
++ * It is free software; you can redistribute it and/or modify it under
++ * the terms of the GNU General Public License, either version 2
++ * of the License, or any later version.
++ *
++ * For the full copyright and license information, please read the
++ * LICENSE.txt file that was distributed with this source code.
++ *
++ * The TYPO3 project - inspiring people to share!
++ */
++
++use TYPO3\CMS\Core\Configuration\TypoScript\ConditionMatching\ExpressionHelper;
++use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
++
++/**
++ * Test cases
++ */
++class ExpressionHelperTest extends UnitTestCase
++{
++    public function expressionDataProvider(): array
++    {
++        return [
++            // Default variants
++            '[]' => ['[]', '[]'],
++            '[foo]' => ['[foo]', '[foo]'],
++            '[foo] && [bar]' => ['[foo] && [bar]', '[foo]&&[bar]'],
++            '[foo] AND [bar]' => ['[foo] AND [bar]', '[foo]&&[bar]'],
++            '[foo] and [bar]' => ['[foo] and [bar]', '[foo]&&[bar]'],
++            '[foo] || [bar]' => ['[foo] || [bar]', '[foo]||[bar]'],
++            '[foo] OR [bar]' => ['[foo] OR [bar]', '[foo]||[bar]'],
++            '[foo] or [bar]' => ['[foo] or [bar]', '[foo]||[bar]'],
++            '[foo] && [bar]&&[baz]' => ['[foo] && [bar]&&[baz]', '[foo]&&[bar]&&[baz]'],
++            '[foo] AND [bar]AND[baz]' => ['[foo] AND [bar]AND[baz]', '[foo]&&[bar]&&[baz]'],
++            '[foo] and [bar]and[baz]' => ['[foo] and [bar]and[baz]', '[foo]&&[bar]&&[baz]'],
++            '[foo] || [bar]||[baz]' => ['[foo] || [bar]||[baz]', '[foo]||[bar]||[baz]'],
++            '[foo] OR [bar]OR[baz]' => ['[foo] OR [bar]OR[baz]', '[foo]||[bar]||[baz]'],
++            '[foo] or [bar]or[baz]' => ['[foo] or [bar]or[baz]', '[foo]||[bar]||[baz]'],
++            '[foo] && [bar]||[baz]' => ['[foo] && [bar]||[baz]', '[foo]&&[bar]||[baz]'],
++            '[foo] AND [bar]OR[baz]' => ['[foo] AND [bar]OR[baz]', '[foo]&&[bar]||[baz]'],
++            '[foo] and [bar]or[baz]' => ['[foo] and [bar]or[baz]', '[foo]&&[bar]||[baz]'],
++            '[foo] || [bar]OR[baz]' => ['[foo] || [bar]OR[baz]', '[foo]||[bar]||[baz]'],
++            '[foo] || [bar]or[baz]' => ['[foo] || [bar]or[baz]', '[foo]||[bar]||[baz]'],
++            '[foo] OR [bar]AND[baz]' => ['[foo] OR [bar]AND[baz]', '[foo]||[bar]&&[baz]'],
++            '[foo] or [bar]and[baz]' => ['[foo] or [bar]and[baz]', '[foo]||[bar]&&[baz]'],
++
++            // Special variants
++            '[foo && bar && baz]' => ['[foo && bar && baz]', '[foo && bar && baz]'],
++            '[foo and bar and baz]' => ['[foo and bar and baz]', '[foo and bar and baz]'],
++            '[foo AND bar AND baz]' => ['[foo AND bar AND baz]', '[foo AND bar AND baz]'],
++            '[foo || bar || baz]' => ['[foo || bar || baz]', '[foo || bar || baz]'],
++            '[foo or bar or baz]' => ['[foo or bar or baz]', '[foo or bar or baz]'],
++            '[foo OR bar OR baz]' => ['[foo OR bar OR baz]', '[foo OR bar OR baz]'],
++            '[request.getParsedBody()[\'type\'] > 0]' => ['[request.getParsedBody()[\'type\'] > 0]', '[request.getParsedBody()[\'type\'] > 0]'],
++            '[request.getParsedBody()[\'type\'] > 0 || request.getQueryParams()[\'type\'] > 0]' => ['[request.getParsedBody()[\'type\'] > 0 || request.getQueryParams()[\'type\'] > 0]', '[request.getParsedBody()[\'type\'] > 0 || request.getQueryParams()[\'type\'] > 0]'],
++            '[request.getParsedBody()[\'type\'] > 0 or request.getQueryParams()[\'type\'] == 1]' => ['[request.getParsedBody()[\'type\'] > 0 or request.getQueryParams()[\'type\'] == 1]', '[request.getParsedBody()[\'type\'] > 0 or request.getQueryParams()[\'type\'] == 1]'],
++            '[ (request.getParsedBody()[\'type\'] > 0) || (request.getQueryParams()[\'type\'] > 0) ]' => ['[ (request.getParsedBody()[\'type\'] > 0) || (request.getQueryParams()[\'type\'] > 0) ]', '[ (request.getParsedBody()[\'type\'] > 0) || (request.getQueryParams()[\'type\'] > 0) ]'],
++            '[request.getParsedBody()[\'tx_news_pi1\'][\'news\'] > 0 || request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]' => ['[request.getParsedBody()[\'tx_news_pi1\'][\'news\'] > 0 || request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]', '[request.getParsedBody()[\'tx_news_pi1\'][\'news\'] > 0 || request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]'],
++            '[request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]' => ['[request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]', '[request.getQueryParams()[\'tx_news_pi1\'][\'news\'] > 0]'],
++        ];
++    }
++
++    /**
++     * @test
++     * @dataProvider expressionDataProvider
++     * @param string $expression
++     * @param string $expectedResult
++     */
++    public function normalizeExpressionWorksAsExpected(string $expression, string $expectedResult): void
++    {
++        $this->assertSame($expectedResult, (new ExpressionHelper())->normalizeExpression($expression));
++    }
++}
