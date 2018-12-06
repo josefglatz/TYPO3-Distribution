@@ -13,6 +13,7 @@
 /web/typo3
 /web/typo3temp/**/*
 /var/**/*
+!/var/labels/
 /web/typo3conf/PackageStates.php
 /web/typo3conf/temp_*.php
 /web/typo3conf/autoload/
