@@ -4,6 +4,10 @@
 config {
 	doctype = html5
 
+	htmlTag.attributes {
+		class = no-js
+	}
+
 	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution
 
 	debug = 0
