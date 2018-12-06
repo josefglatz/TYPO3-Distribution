@@ -49,7 +49,7 @@ lib.fluidTemplate {
 			cObject = TEXT
 			cObject {
 				data = pagelayout
-				case = uppercamelcase
+				case = ucifrst
 				split {
 					token = pagets__
 					1.current = 1
