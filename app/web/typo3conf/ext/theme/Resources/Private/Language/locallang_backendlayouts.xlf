@@ -20,6 +20,9 @@
 		<trans-unit id="col.main">
 			<source>Main Content Section</source>
 		</trans-unit>
+		<trans-unit id="col.sectionHeader">
+			<source>Section Header</source>
+		</trans-unit>
 		<trans-unit id="col.newsLatest">
 			<source>Latest News Section (automatic)</source>
 		</trans-unit>
