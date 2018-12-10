@@ -31,6 +31,7 @@ $EM_CONF[$_EXTKEY] = [
                     'beuser_fastswitch' => '',
                     'blog' => '',
                     'content_defender' => '',
+                    'crontab' => '',
                     'deprecationloganalyzer' => '',
                     'extractor' => '',
                     'felogin' => '',
