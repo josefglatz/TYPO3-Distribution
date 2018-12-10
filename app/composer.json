@@ -31,6 +31,7 @@
 	},
 	"require": {
 		"php": "^7.2",
+		"causal/extractor": "dev-master",
 		"cweagans/composer-patches": "^1.6",
 		"georgringer/autoswitchtolistview": "dev-master",
 		"georgringer/gdpr": "^1.0",
