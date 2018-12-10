@@ -1,3 +1,3 @@
 // Remove this file ONLY if you DO NOT want add sys_template configuration
 // with JosefGlatz\Theme\Hooks\Frontend\TypoScriptHook
-mod.web_list.deniedNewTables := addToList(sys_template)
+mod.web_list.deniedNewTables := addToList(sys_template,sys_domain)
