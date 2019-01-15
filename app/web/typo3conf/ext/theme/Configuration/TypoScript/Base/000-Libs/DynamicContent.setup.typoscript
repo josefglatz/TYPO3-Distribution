@@ -8,6 +8,8 @@
 #  ---------------
 #  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"hero\">|</div>'}" />
 #
+#  {f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{colPos: 0, wrap: \'<div class="col-12 col-lg-8">|</div>\'}')}
+#
 #  EXAMPLE: default
 #  ---------------
 #  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', wrap: '<div class=\"specialContentArea\">|</div>', elementWrap: '<div class=\"wrapAroundEachContentElement\">|</div>'}" />
