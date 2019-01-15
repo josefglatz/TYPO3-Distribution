@@ -18,8 +18,6 @@ config {
 	enableContentLengthHeader = 0
 	disablePrefixComment = 1
 
-	disableImgBorderAttr = 1
-
 	concatenateCss = 0
 	concatenateJs = 0
 	compressJs = 0
