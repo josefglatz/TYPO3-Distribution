@@ -34,7 +34,7 @@ RTE.config {
 		bodytext {
 			preset = theme_defaultNoTables
 			types {
-				theme_collapsible_text = theme_defaultNoTables
+				theme_collapsible_text.preset = theme_defaultNoTables
 				theme_lead_text.preset = theme_minimalWithLinks
 				theme_youtube.preset = theme_defaultNoTables
 				theme_textimage.preset = theme_defaultNoTables
