@@ -49,37 +49,38 @@ Basically the folder structure of this TYPO3 distribution is built to work with 
 
 ### Let's start
 
-1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate YourProject` Clone TYPO3-docker-boilerplate
-1. `git clone --depth=1 https://github.com/josefglatz/TYPO3-Distribution YourProjectTemp` Clone this TYPO3-Distribution
-1. `cd YourProject` Navigate to newly created project dir
-1. `rsync -av --progress --exclude '/README.md .git .github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
-1. `rm -rf ../YourProjectTemp` Remove the temporary folder
-1. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
-1. Edit your `docker-compose.yml` to your needs. E.g. set your active containers (and proper links) by un-/commenting lines
-1. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one from the values mentioned in the comments above within the same file)
-1. Edit environment variables in `etc/environment.development.yml` `etc/environment.yml`.
-1. Set the correct path to the web document root (based on project requirements) in `etc/environment.yml` (default: `WEB_DOCUMENT_ROOT=/app/web/`).
-1. Set the correct path to the TYPO3 CLI executable (based on your TYPO3 version) in `etc/environment.yml` (e.g. `CLI_SCRIPT=php /app/web/typo3/sysext/core/bin/typo3`).
-1. Adopt your php.ini settings for your project within `etc/php/development.ini`
-1. To start your environment take care that no other TYPO3-docker-boilerplate is running on your development environment with `docker ps`. If some other of your projects is running navigate to the folder and stop them by running `docker-compose stop`.
-1. Start your machines (basically webserver + mysql server) by running `docker-compose up -d` (make sure you're still in the same folder `YourProject`)
-1. Open `yourproject.vm/` in the browser - it should show the php info if all is running correct.
-1. `rm app/web/index.php` Delete the dummy index.php (which is responsible for the php info) since you know that the webserver works as expected.
-1. `cd app` switch to the app folder
-1. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
-1. `cd ./Build && ./ChangeVendor.sh Supseven` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
-1. `./ChangeHeaderComment.php by supseven - www.supseven.at` Replace the comment within the head of the website.
-1. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
-1. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
-1. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
-1. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
-1. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
-1. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
-1. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
-1. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
-1. Add/remove backend users and set strong passwords for all real backend users.
-1. Have fun developing another great TYPO3 website!
-1. Read on: [First steps](../../FirstSteps.md)
+1. `git clone --depth=1 https://github.com/webdevops/TYPO3-docker-boilerplate -b develop YourProject` Clone TYPO3-docker-boilerplate
+2. `git clone --depth=1 https://github.com/josefglatz/TYPO3-Distribution -b future-v9 YourProjectTemp` Clone this TYPO3-Distribution
+3. `cd YourProject` Navigate to newly created project dir
+4. `rsync -av --progress --exclude '/README.md .git .github' ../YourProjectTemp/ ./` Copy necessary files to prior created project
+5. `rm -rf ../YourProjectTemp` Remove the temporary folder
+6. `ln -s docker-compose.development.yml docker-compose.yml` Now choose your docker-compose file for your development environment
+7. Edit your `docker-compose.yml` to your needs. E.g. set your active containers (and proper links) by un-/commenting lines
+8. Choose your PHP version and webserver within `Dockerfile.development` just by adopting the value in the line `FROM ` (with one from the values mentioned in the comments above within the same file)
+9. Edit environment variables in `etc/environment.development.yml` `etc/environment.yml`.
+10. Set the correct path to the web document root (based on project requirements) in `etc/environment.yml` (default: `WEB_DOCUMENT_ROOT=/app/web/`).
+11. Set the correct path to the TYPO3 CLI executable (based on your TYPO3 version) in `etc/environment.yml` (e.g. `CLI_SCRIPT=php /app/web/typo3/sysext/core/bin/typo3`).
+12. Adopt your php.ini settings for your project within `etc/php/development.ini`
+13. To start your environment take care that no other TYPO3-docker-boilerplate is running on your development environment with `docker ps`. If some other of your projects is running navigate to the folder and stop them by running `docker-compose stop`.
+14. Start your machines (basically webserver + mysql server) by running `docker-compose up -d` (make sure you're still in the same folder `YourProject`)
+15. Open `yourproject.vm/` in the browser - it should show the php info if all is running correct.
+16. `rm app/web/index.php` Delete the dummy index.php (which is responsible for the php info) since you know that the webserver works as expected.
+17. `cd app` switch to the app folder
+18. Now start TYPO3 preparatory work: Ad your proper adjustments to the TYPO3 `composer.json`
+19. `cd ./Build && ./ChangeVendor.sh Supseven` Replace existing namespaces with your own (e.g. your Name `MaxMustermann`)
+20. `./ChangeHeaderComment.php by supseven - www.supseven.at` Replace the comment within the head of the website.
+21. Adjust configuration array `$site` to your needs in `app/web/typo3conf/AdditionalConfiguration.php`
+22. Now remove the git remote and create an initial commit `git remote remove origin && git add -A && git commit -m "[TASK] Initial development setup"`
+23. `docker exec -it $(docker-compose ps -q app) bash -c 'cd /app && composer install && ./typo3cms install:setup --non-interactive --admin-user-name admin --admin-password adminadmin --site-setup-type no --site-name TYPO3-Distribution'` It's time to install TYPO3
+24. Now open `yourproject.vm/typo3` in the browser and login with User `admin` and password `adminadmin`
+25. `cd .. && nano .gitignore` and remove the highlighted block at the beginning of the file.
+26. Commit your basic installation `git add -A && git commit -m "[TASK] Initial TYPO3 installation"`
+27. Comment out not needed tables in `/app/Build/InstallDefaultDatabaseRecords.sh` and
+28. `docker exec -it $(docker-compose ps -q app) bash -c '/app/Build/InstallDefaultDatabaseRecords.sh'` Import default database records via TYPO3 CLI (and the power of ext:yaml_configuration)
+29. Reload your TYPO3 backend and familiarize yourself with the TYPO3 instance
+30. Add/remove backend users and set strong passwords for all real backend users.
+31. Have fun developing another great TYPO3 website!
+32. Read on: [First steps](../../FirstSteps.md)
 
 
 
