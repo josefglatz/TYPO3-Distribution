@@ -105,6 +105,7 @@ TCEFORM.tt_content {
 
 	linkToTop {
 		types {
+			header.disabled = 1
 			theme_lead_text.disabled = 1
 		}
 	}
