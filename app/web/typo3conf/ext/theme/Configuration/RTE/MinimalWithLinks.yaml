@@ -66,6 +66,7 @@ editor:
     extraPlugins:
       - wordcount
       - selectall
+      - autolink
 
     # Plugins that must not be loaded
     removePlugins:

@@ -77,6 +77,7 @@ editor:
       - about
       - wordcount
       - selectall
+      - autolink
 #      - devtools
 
     # Plugins that must not be loaded
