@@ -38,6 +38,7 @@ call_user_func(
             'theme-content-person'           => 'theme-content-person.svg',
             'theme-content-testimonial'      => 'theme-content-testimonial.svg',
             'theme-content-text-lead'        => 'theme-content-text-lead.svg',
+            'theme-content-text-right'       => 'theme-content-text-right.svg',
             'theme-content-timeline'         => 'theme-content-timeline.svg',
             'theme-content-youtube'          => 'theme-content-youtube.svg',
 
