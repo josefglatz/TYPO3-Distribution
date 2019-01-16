@@ -248,7 +248,6 @@ page {
 		10 {
 			stdWrap {
 				noTrimWrap = | class="|"|
-				required = 1
 			}
 
 			# Add current language
