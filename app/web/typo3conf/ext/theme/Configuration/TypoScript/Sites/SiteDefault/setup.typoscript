@@ -2,7 +2,7 @@
 #### CONFIGURATION for Pagetree Default ####
 ############################################
 #
-# This one get's included on the default/first pagetree
+# This one get's included on a specific pagetree
 #
 ###############
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/setup.typoscript">
