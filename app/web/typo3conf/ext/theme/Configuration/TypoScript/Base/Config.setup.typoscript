@@ -7,28 +7,25 @@ config {
 	}
 
 	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution
+	disablePrefixComment = 1
 
 	debug = 0
 	admPanel = 1
+	index_enable = 0
 
 	# disabled until https://forge.typo3.org/issues/63815
 	sendCacheHeaders = 0
 	enableContentLengthHeader = 0
-
-	disablePrefixComment = 1
 
 	concatenateCss = 0
 	concatenateJs = 0
 	compressJs = 0
 	compressCss = 0
 	moveJsFromHeaderToFooter = 0
-#    removeDefaultJS = 1
+#	removeDefaultJS = 1
 	removeDefaultJS = external
 	inlineStyle2TempFile = 1
 	removeDefaultCss = 0
-
-	// No indexing, we're not using a search out of the box
-	index_enable = 0
 
 	// Content sharing across domains & jumpUrl & external target stuff
 	content_from_pid_allowOutsideDomain = 1
