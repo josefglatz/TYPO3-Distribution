@@ -319,13 +319,6 @@ page {
 ######################
 	stdWrap.replacement {
 		1 {
-			search = ###CURRENTYEAR###
-			replace {
-				data = date:U
-				strftime = %Y
-			}
-		}
-		2 {
 			search = ###SPACE###
 			replace {
 				char = 32
