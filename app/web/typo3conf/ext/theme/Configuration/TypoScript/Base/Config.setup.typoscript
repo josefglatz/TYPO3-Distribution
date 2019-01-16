@@ -2,8 +2,6 @@
 #### CONFIG ####
 ################
 config {
-	doctype = html5
-
 	htmlTag.attributes {
 		class = no-js
 	}
