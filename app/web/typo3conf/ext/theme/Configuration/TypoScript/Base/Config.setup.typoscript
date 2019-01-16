@@ -4,6 +4,8 @@
 config {
 	htmlTag.attributes {
 		class = no-js
+		itemscope = itemscope
+		itemtype = http://schema.org/WebPage
 	}
 
 	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution

@@ -79,9 +79,6 @@ site {
         }
     }
 
-    htmlTag_additionalTagAttributes = itemscope="itemscope" itemtype="http://schema.org/WebPage"
-
-
     titleTag {
         sitename = My Website
     }
