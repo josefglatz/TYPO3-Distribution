@@ -10,10 +10,11 @@ config {
 
 	debug = 0
 	admPanel = 1
+
 	# disabled until https://forge.typo3.org/issues/63815
 	sendCacheHeaders = 0
 	enableContentLengthHeader = 0
-	
+
 	disablePrefixComment = 1
 
 	concatenateCss = 0
@@ -32,8 +33,6 @@ config {
 	// Content sharing across domains & jumpUrl & external target stuff
 	content_from_pid_allowOutsideDomain = 1
 	disablePageExternalUrl = 0
-	jumpurl_enable = 0
-	jumpurl_mailto_disable = 1
 	intTarget = _self
 	extTarget = _blank
 	fileTarget =
