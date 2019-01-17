@@ -85,7 +85,7 @@ plugin.tx_news {
 }
 
 // @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
-[request.getParsedBody()['tx_news_pi1']['news'] > 0] || [request.getQueryParams()['tx_news_pi1']['news'] > 0]
+[request.getParsedBody()['tx_news_pi1']['news'] > 0 || request.getQueryParams()['tx_news_pi1']['news'] > 0]
 	config.defaultGetVars {
 		tx_news_pi1 {
 			controller = News

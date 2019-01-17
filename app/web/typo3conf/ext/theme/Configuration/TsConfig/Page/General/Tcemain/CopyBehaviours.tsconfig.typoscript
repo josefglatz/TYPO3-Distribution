@@ -58,7 +58,7 @@ TCEMAIN {
 }
 
 // Disable hideAtCopy for common tables on development specific environments
-[applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/']
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
 TCEMAIN.table {
 	pages.disableHideAtCopy = 1
 	tt_content.disableHideAtCopy = 1

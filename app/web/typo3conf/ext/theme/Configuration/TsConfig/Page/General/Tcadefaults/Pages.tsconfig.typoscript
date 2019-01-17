@@ -4,7 +4,7 @@ TCAdefaults {
 	}
 }
 
-[applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/'] || [applicationContext matches '/^Production\\\\\\\\/Staging/'] || [applicationContext matches '/^Production\\\\\\\\/Testing/']
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/' || applicationContext matches '/^Production\\\\\\\\/Staging/']
 	TCAdefaults {
 		pages {
 			hidden = 0

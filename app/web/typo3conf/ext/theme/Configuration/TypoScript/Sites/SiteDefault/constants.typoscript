@@ -135,7 +135,7 @@ site {
 }
 
 // @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
-[applicationContext matches "/^Development/"] || [applicationContext matches '/^Production\\\\\\\\/Dev/']
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
     theme {
         debug = 1
     }

@@ -82,7 +82,7 @@ config {
 #### DEBUGGING / DEVELOPMENT ####
 #################################
 // @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
-[{$theme.debug} == 1] && [getTSFE().beUserLogin === 1] || [applicationContext matches "/^Development/"]
+[{$theme.debug} == 1 && getTSFE().beUserLogin === 1 || applicationContext matches "/^Development/"]
 	config {
 		debug = 1
 		admPanel = 1

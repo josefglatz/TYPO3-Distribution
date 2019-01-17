@@ -14,6 +14,6 @@ TCEMAIN.preview {
 		}
 	}
 }
-[applicationContext = Production/Live]
+[applicationContext matches '/^Production\\\\\\\\/Live/']
 	TCEMAIN.preview.tx_news_domain_model_news.previewPageId = 1234
 [global]
