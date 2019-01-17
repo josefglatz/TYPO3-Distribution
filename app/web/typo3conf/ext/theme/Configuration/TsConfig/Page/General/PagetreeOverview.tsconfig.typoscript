@@ -1,10 +1,10 @@
 mod.web_info.fieldDefinitions {
 	1544039548 {
-		label = SEO #1
+		label = SEO Fields #1
 		fields = uid,title,nav_title,seo_title,slug,no_index,no_follow
 	}
 	1544039549 {
-		label = SEO #2
+		label = SEO Fields #2
 		fields = uid,title,seo_title,description,og_title,twitter_title
 	}
 	1544039550 {
