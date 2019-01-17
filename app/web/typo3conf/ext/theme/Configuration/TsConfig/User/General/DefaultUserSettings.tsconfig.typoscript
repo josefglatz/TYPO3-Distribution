@@ -8,6 +8,7 @@ setup.override {
 	extendedView = 1
 	edit_docModuleUpload = 0
 }
+setup.fields.edit_docModuleUpload.disabled = 1
 
 options {
 	enableBookmarks = 1
