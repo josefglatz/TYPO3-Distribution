@@ -16,12 +16,16 @@ options {
 		13 = Blog
 		14 = Forms
 	}
+	clipboardNumberPads = 5
 	createFoldersInEB = 1
 	file_list {
 		enableDisplayBigControlPanel = activated
-		enableDisplayThumbnails = activated
-		// file list module: files per page
+		enableDisplayThumbnails = selectable
 		filesPerPage = 40
+		thumbnail {
+			width = 160
+			height = 160
+		}
 	}
 	folderTree {
 		uploadFieldsInLinkBrowser = 1
