@@ -1,0 +1,53 @@
+#################################################
+#### BODY tag class attribute configurationg ####
+#################################################
+lib.pageClass = COA
+lib.pageClass {
+	# Add current language
+	20 = TEXT
+	20 {
+		value = language-{TSFE:sys_language_uid} languagecontent-{TSFE:sys_language_content}
+		insertData = 1
+		noTrimWrap = || |
+	}
+
+	# Add level
+	25 = TEXT
+	25 {
+		value = level-{level:0}
+		insertData = 1
+		noTrimWrap = || |
+	}
+
+	# Add backend-layout
+	30 = COA
+	30 {
+		10 =< page.10.templateName.stdWrap.cObject
+		wrap = tmpl-|
+	}
+
+	# Add uid of optional FE-layout
+	40 = TEXT
+	40 {
+		fieldRequired = layout
+		value = layout-{field:layout}
+		insertData = 1
+		noTrimWrap = | ||
+	}
+
+	# Add uid of rootpage
+	50 = TEXT
+	50 {
+		value = root-{leveluid:0}
+		insertData = 1
+		noTrimWrap = | ||
+	}
+
+	# Add class if it's the rootpage
+	60 = TEXT
+	60 {
+		fieldRequired = is_siteroot
+		value = rootpage
+		noTrimWrap = | ||
+	}
+}
