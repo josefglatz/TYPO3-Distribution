@@ -1,11 +1,7 @@
 setup.default {
 	thumbnailsByDefault = 1
-	condensedMode = 0
-	extendedView = 1
 }
 setup.override {
-	condensedMode = 0
-	extendedView = 1
 	edit_docModuleUpload = 0
 }
 setup.fields.edit_docModuleUpload.disabled = 1
