@@ -13,7 +13,6 @@ config {
 
 	debug = 0
 	admPanel = 1
-	index_enable = 0
 
 	# disabled until https://forge.typo3.org/issues/63815
 	sendCacheHeaders = 0
