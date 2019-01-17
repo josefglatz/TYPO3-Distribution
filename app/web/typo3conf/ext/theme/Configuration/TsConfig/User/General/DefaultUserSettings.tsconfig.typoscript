@@ -33,3 +33,8 @@ options {
 	// default direct upload folder
 #	defaultUploadFolder = 1:Bilder/
 }
+
+[applicationContext matches "/^Development/"]
+	setup.default.neverHideAtCopy = 1
+	setup.override.neverHideAtCopy = 1
+[global]

@@ -26,3 +26,7 @@ With Twitter Bootstrap activated fluid template.
 ## Additional useful custom icons for the backend
 
 Some useful icons for the backend for e.g. custom content elements, grid elements, ... `EXT:theme/Resources/Public/Icons/Backend` and an own backend module to list all registerd icon identifiers.
+
+## Backend improvements for non-productive environments
+
+- No record is hidden after copying if the applicationContext begins with `Development`
