@@ -173,24 +173,6 @@ site {
             }
         }
     }
-[applicationContext matches '/^Production\\\\\\\\/Testing/']
-    site {
-        tracking {
-            google {
-                enable = 0
-                id =
-                domain =
-            }
-            googleTagManager {
-                enable = 0
-                id = GTM-XXXXX
-            }
-            matomo {
-                enable = 0
-            }
-        }
-    }
-
 [getTSFE().beUserLogin === 1]
     site {
         tracking {
@@ -202,7 +184,6 @@ site {
             }
             googleTagManager {
                 enable = 0
-                id = GTM-XXXXX
             }
         }
     }
