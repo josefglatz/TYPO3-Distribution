@@ -16,7 +16,7 @@ page.1 {
 
     template = TEXT
     template.value (
-        <!-- Google Tag Manager (noscript) -->xxx
+        <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=###CODE###"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
