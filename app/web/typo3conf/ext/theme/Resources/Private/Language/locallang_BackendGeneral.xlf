@@ -347,6 +347,12 @@
 		<trans-unit id="genericlabel.sliderimage" approved="yes">
 			<source>Slider Image</source>
 		</trans-unit>
+		<trans-unit id="site.tab.extra" approved="yes">
+			<source>Extra</source>
+		</trans-unit>
+		<trans-unit id="site.trackingCode" approved="yes">
+			<source>Tracking code, e.g. Google Tag Manager</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -98,20 +98,7 @@ site {
 
 
     tracking {
-        google {
-            enable = 0
-            id =
-            domain =
-        }
-
-        googleTagManager {
-            enable = 0
-            id = GTM-XXXXX
-        }
-
         matomo {
-            enable = 0
-            id = -1
             // Matomo (former called "Piwik") host without schema and trailing slash like "//my.piwik.host"
             host = //matomo.domain.tld
         }
