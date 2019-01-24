@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Hooks\Backend;
+namespace JosefGlatz\HideSysTemplate\Hooks\Backend;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
@@ -26,9 +26,9 @@ class ProcessDatamapDataHandler
             $message = GeneralUtility::makeInstance(
                 FlashMessage::class,
                 htmlspecialchars($this->getLanguageService()
-                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
+                    ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
                 htmlspecialchars($this->getLanguageService()
-                    ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
+                    ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
                 FlashMessage::ERROR,
                 true
             );
@@ -65,7 +65,7 @@ class ProcessDatamapDataHandler
         if ($table === 'pages' && isset($fieldArray['TSconfig']) && ($fieldArray['TSconfig'] !== '')) {
             $message = GeneralUtility::makeInstance(
                 FlashMessage::class,
-                'Read EXT:theme/Configuration/TsConfig/Page/Specific/README.md for instructions ' .
+                'Read EXT:hide_sys_template/Configuration/TsConfig/Page/Specific/README.md for instructions ' .
                 'how to add page specific TSConfig with an alternative way.',
                 'Please consider NOT saving Page TS Config directly to database!',
                 FlashMessage::WARNING,

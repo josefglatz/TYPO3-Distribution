@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-14T22:52:58Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="hooks.dataHandler.prevent.sys_template.title">
+			<source>Creating a sys_template record in the database is not allowed</source>
+		</trans-unit>
+		<trans-unit id="hooks.dataHandler.prevent.sys_template.description">
+			<source>while sys_template records are created via runThroughTemplatesPostProcessing hook in EXT:theme/Classes/Hooks/Frontend/TypoScriptHook.php. Records in the database can not be versioned and offer potential for technical debt. Please add your changes through TypoScript files.</source>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

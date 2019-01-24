@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Hooks\Backend;
+namespace JosefGlatz\HideSysTemplate\Hooks\Backend;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Localization\LanguageService;
@@ -26,9 +26,9 @@ class NewStandardTemplateHandler
         $message = GeneralUtility::makeInstance(
             FlashMessage::class,
             htmlspecialchars($this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
+                ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
             htmlspecialchars($this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
+                ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
             FlashMessage::ERROR,
             true
         );

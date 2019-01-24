@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace JosefGlatz\Theme\Signals\Backend;
+namespace JosefGlatz\HideSysTemplate\Signals\Backend;
 
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Controller\EditDocumentController;
@@ -45,9 +45,9 @@ class EditDocumentControllerInitSlot
         $message = GeneralUtility::makeInstance(
             FlashMessage::class,
             htmlspecialchars($this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
+                ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.description')),
             htmlspecialchars($this->getLanguageService()
-                ->sL('LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
+                ->sL('LLL:EXT:hide_sys_template/Resources/Private/Language/locallang_BackendGeneral.xlf:hooks.dataHandler.prevent.sys_template.title')),
             FlashMessage::ERROR,
             true
         );
