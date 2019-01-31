@@ -382,7 +382,6 @@ if ($context) {
     if (is_file($file)) {
         /** @noinspection PhpIncludeInspection */
         include_once($file);
-        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
 
     /*
@@ -392,7 +391,6 @@ if ($context) {
     if (is_file($file)) {
         /** @noinspection PhpIncludeInspection */
         include_once($file);
-        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
 
     /*
@@ -403,6 +401,5 @@ if ($context) {
     if (is_file($file)) {
         /** @noinspection PhpIncludeInspection */
         include_once($file);
-        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], (array)$customChanges);
     }
 }
