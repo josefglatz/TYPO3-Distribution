@@ -37,6 +37,9 @@ page {
 ### DATA PROCESSING ###
 #######################
 		dataProcessing {
+			# Site
+			5 = JosefGlatz\Theme\DataProcessing\SiteProcessor
+
 			# Make specific TypoScript constants available in fluid template
 			10 = JosefGlatz\Theme\DataProcessing\ConstantsProcessor
 			10 {
