@@ -94,6 +94,36 @@ call_user_func(
             ]
         );
 
+        $tca = [
+            /*
+             * ['ctrl'] configuration
+             */
+            'ctrl' => [
+                // Add columns to search fields - so its included in the backend search results
+                'searchFields' => $GLOBALS['TCA'][$table]['ctrl']['searchFields'] . ',',
+            ],
+            /*
+             * ['interface'] configuration
+             */
+            'interface' => [
+                // Extend showRecordFieldList
+                'showRecordFieldList' => $GLOBALS['TCA'][$table]['interface']['showRecordFieldList'] . ',tx_theme_hide_page_heading,tx_theme_link_label,tx_theme_nav_image,tx_theme_sharing_enabled,tx_theme_show_in_secondary_navigation,tx_theme_related',
+            ],
+            /*
+             * Columns configuration
+             */
+            'columns' => [
+
+            ],
+            /*
+             * Types configuration
+             */
+            'types' => [
+
+            ],
+        ];
+        $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
+
         $additionalColumns = [
             'tx_theme_hide_page_heading' => [
                 'exclude' => true,
