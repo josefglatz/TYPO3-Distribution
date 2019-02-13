@@ -15,6 +15,7 @@ $EM_CONF[$_EXTKEY] = [
         [
             'depends' =>
                 [
+                    'hide_sys_template' => '',
                     'typo3' => '9.5.0-9.5.99',
                 ],
             'conflicts' =>

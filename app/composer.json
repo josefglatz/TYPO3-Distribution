@@ -40,6 +40,7 @@
 		"helhum/typo3-console": "^5",
 		"ichhabrecht/content-defender": "^3",
 		"josefglatz/beuser-fastswitch": "^2",
+		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
 		"josefglatz/seo-aspect-ratios": "^1.0",
 		"lochmueller/staticfilecache": "^6.1",
@@ -104,16 +105,6 @@
 			]
 		},
 		"patches": {
-			"typo3/cms-core": {
-				"Allow Expression Language Conditions": "Build/Patches/Typo3/Core/58935_3.diff",
-				"FEATURE: Allow replacing strings in slug": "Build/Patches/Typo3/Core/58851_15.diff"
-			},
-			"typo3/cms-fluid": {
-				"Re-enable fundamental TypoScript stdWrap functions": "Build/Patches/Typo3/Core/58661_9.diff"
-			},
-			"typo3/cms-frontend": {
-				"Make SiteLanguage available in TypoScript": "Build/Patches/Typo3/Core/58930_8.diff"
-			}
 		},
 		"composer-exit-on-patch-failure":  true
 	},

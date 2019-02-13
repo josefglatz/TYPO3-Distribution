@@ -61,7 +61,6 @@ Documentation-GENERATED-temp
 /web/typo3conf/ext/*
 # Ignore all ext's except project specific (or modified (you bad boy!)) extensions
 !/web/typo3conf/ext/theme/
-!/web/typo3conf/ext/hide_sys_template/
 !/web/typo3conf/ext/theme_*/
 
 /web/typo3conf/ext/theme/Resources/Public/JavaScript/Dist/**/*
