@@ -19,7 +19,7 @@ call_user_func(
              */
             'interface' => [
                 // Extend showRecordFieldList
-                'showRecordFieldList' => $GLOBALS['TCA'][$table]['ctrl']['interface']['showRecordFieldList'] . ',tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_big_media,tx_theme_link_label,tx_theme_link,tx_theme_unfolded,tx_theme_prefer_download',
+                'showRecordFieldList' => $GLOBALS['TCA'][$table]['interface']['showRecordFieldList'] . ',tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_big_media,tx_theme_link_label,tx_theme_link,tx_theme_unfolded,tx_theme_prefer_download',
             ],
             /*
              * Columns configuration
