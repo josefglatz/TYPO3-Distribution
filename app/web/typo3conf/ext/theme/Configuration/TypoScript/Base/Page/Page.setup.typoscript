@@ -38,7 +38,7 @@ page {
 #######################
 		dataProcessing {
 			# Site
-			5 = JosefGlatz\Theme\DataProcessing\SiteProcessor
+			5 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
 
 			# Make specific TypoScript constants available in fluid template
 			10 = JosefGlatz\Theme\DataProcessing\ConstantsProcessor
