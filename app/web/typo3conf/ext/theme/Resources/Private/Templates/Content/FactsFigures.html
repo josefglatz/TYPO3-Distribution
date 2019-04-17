@@ -1,7 +1,27 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:comment>
-	<!--@TODO: TYPO3-Distribution: CE FactsFigures finalize for Bootstrap 4 -->
-</f:comment>
-{_all -> f:debug(inline:1)}
+	<div class="container">
+		<div class="row">
+			<f:for each="{factsFigures}" as="fact">
+				<div class="card p-1 mr-1" style="width: 18rem;">
+					<img class="card-img-top" src="{f:render(section:'backgroundImage', arguments:{media:fact.icon}) -> f:spaceless()}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">{fact.data.label}</h5>
+						<p class="card-text">{fact.data.value}</p>
+						<f:link.typolink class="btn btn-primary" parameter="{fact.data.link}">Go somewhere</f:link.typolink>
+					</div>
+				</div>
+			</f:for>
+		</div>
+	</div>
 </html>
+
+
+<f:section name="backgroundImage">
+	<f:if condition="{media}">
+		<f:for each="{media}" as="file" iteration="i">
+			<f:if condition="{i.isFirst}">
+				<f:uri.image image="{file}" maxWidth="600" />
+			</f:if></f:for>
+	</f:if>
+</f:section>
