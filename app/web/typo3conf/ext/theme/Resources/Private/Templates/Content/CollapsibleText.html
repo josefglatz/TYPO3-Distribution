@@ -3,10 +3,22 @@
 	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
 
 	<f:if condition="{data.header} && {data.bodytext}">
-	<f:else></f:else>
-	<f:then>
-		{_all -> f:debug(inline:1)}
-	</f:then>
-	</f:if>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header" id="heading{data.uid}">
+					<h5 class="mb-0">
+						<button class="btn btn-link" data-toggle="collapse" data-target="#collapse{data.uid}" aria-expanded="true" aria-controls="collapse{data.uid}">
+							{data.header}
+						</button>
+					</h5>
+				</div>
 
+				<div id="collapse{data.uid}" class="collapse show {f:if(condition: data.tx_theme_unfolded, then: 'in')}" aria-labelledby="heading{data.uid}" data-parent="#accordion">
+					<div class="card-body p-1">
+						<f:format.html>{data.bodytext}</f:format.html>
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:if>
 </html>
