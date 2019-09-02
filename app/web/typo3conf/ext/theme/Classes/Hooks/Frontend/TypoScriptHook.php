@@ -1,4 +1,5 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\Hooks\Frontend;
 
@@ -15,12 +16,15 @@ class TypoScriptHook
         1 => [
             'path' => 'SiteDefault',
             'title' => 'Default Theme',
+            'sitetitle' => 'The TYPO3 Distribution',
             'uid' => 'theme_default'
         ]
     ];
 
     /**
      * Hooks into TemplateService to load the default TS
+     *
+     * This hook is used as an alternative to a sys_template record within the database.
      *
      * @param array $parameters
      * @param \TYPO3\CMS\Core\TypoScript\TemplateService $parentObject
@@ -49,6 +53,7 @@ class TypoScriptHook
                         'static_file_mode' => 3,
                         'uid' => $configuration['uid'],
                         'title' => $configuration['title'],
+                        'sitetitle' => $configuration['sitetitle'],
                     ];
                     $parentObject->processTemplate($row, 'sys_' . $row['uid'], $configurationPageId, 'sys_' . $row['uid']);
                 }

@@ -1,4 +1,5 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Media\Image;
 
@@ -7,7 +8,9 @@ use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\OnlineMediaHelperRegistry;
 use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Utility\PathUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Returns the public URL for the preview image of a given video file.
@@ -19,20 +22,27 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class VideoPreviewViewHelper extends AbstractViewHelper
 {
-    public function initializeArguments()
+    use CompileWithRenderStatic;
+
+    /**
+     * Initialize arguments
+     */
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('video', 'object', 'Video file', true);
     }
 
     /**
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
      * @return string
-     * @throws \RuntimeException
      * @throws \TYPO3\CMS\Core\Resource\Exception\InsufficientFolderAccessPermissionsException
      */
-    public function render() : string
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
-        $file = $this->arguments['video'];
+        $file = $arguments['video'];
         $video = null;
 
         if ($file instanceof File) {
@@ -42,7 +52,7 @@ class VideoPreviewViewHelper extends AbstractViewHelper
         } elseif ($file instanceof FileReference) {
             $video = $file->getOriginalFile();
         } else {
-            throw new \RuntimeException('Invalid file object. Type is: ' . get_class($file));
+            throw new \RuntimeException('Invalid file object. Type is: ' . \get_class($file));
         }
 
         $onlineHelper = OnlineMediaHelperRegistry::getInstance()->getOnlineMediaHelper($video);

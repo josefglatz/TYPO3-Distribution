@@ -2,7 +2,7 @@
 	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <f:section name="Content">
-	<f:if condition="{LanguageNavigation}">
+	<f:if condition="{LanguageNavigation -> f:count()} > 1">
 		<div class="languagemenu">
 			<f:render partial="Page/Dummy/Navigation/LanguageNavigation" arguments="{_all}" />
 		</div>

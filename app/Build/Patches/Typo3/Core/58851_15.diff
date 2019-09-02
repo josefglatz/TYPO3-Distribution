@@ -1,0 +1,213 @@
+From 03eed67c2c10944b4758a88f8d3c27db339101d9 Mon Sep 17 00:00:00 2001
+From: Georg Ringer <georg.ringer@gmail.com>
+Date: Tue, 06 Nov 2018 07:46:33 +0100
+Subject: [PATCH] [FEATURE] Allow replacing strings in slug
+
+The new setting `replacement` makes it possible to search and replace
+strings inside a slug.
+
+Resolves: #86740
+Releases: master
+Change-Id: Icc8fe167fcb5d48502ace2c43e0535884bc10341
+---
+
+diff --git a/typo3/sysext/core/Classes/DataHandling/SlugHelper.php b/typo3/sysext/core/Classes/DataHandling/SlugHelper.php
+index 364852f..d94feff 100644
+--- a/typo3/sysext/core/Classes/DataHandling/SlugHelper.php
++++ b/typo3/sysext/core/Classes/DataHandling/SlugHelper.php
+@@ -184,9 +184,13 @@
+ 
+         $fieldSeparator = $this->configuration['generatorOptions']['fieldSeparator'] ?? '/';
+         $slugParts = [];
++
++        $replaceConfiguration = $this->configuration['generatorOptions']['replacements'] ?? [];
+         foreach ($this->configuration['generatorOptions']['fields'] ?? [] as $fieldName) {
+             if (!empty($recordData[$fieldName])) {
+-                $slugParts[] = $recordData[$fieldName];
++                $pieceOfSlug = $recordData[$fieldName];
++                $pieceOfSlug = str_replace(array_keys($replaceConfiguration), array_values($replaceConfiguration), $pieceOfSlug);
++                $slugParts[] = $pieceOfSlug;
+             }
+         }
+         $slug = implode($fieldSeparator, $slugParts);
+diff --git a/typo3/sysext/core/Documentation/Changelog/9.5.x/Feature-86740-AllowRemovalOfSlashInSlug.rst b/typo3/sysext/core/Documentation/Changelog/9.5.x/Feature-86740-AllowRemovalOfSlashInSlug.rst
+new file mode 100644
+index 0000000..e05aa80
+--- /dev/null
++++ b/typo3/sysext/core/Documentation/Changelog/9.5.x/Feature-86740-AllowRemovalOfSlashInSlug.rst
+@@ -0,0 +1,62 @@
++.. include:: ../../Includes.txt
++
++============================================
++Feature: #86740 - Replace characters in slug
++============================================
++
++See :issue:`86740`
++
++Description
++===========
++
++The configuration of the TCA type `slug` has been extended by the setting `replace`.
++It allows to replace strings of a slug part.
++
++
++Impact
++======
++
++Especially for enhancing the site configuration it might be useful to set the configuration.
++
++Full example
++------------
++By using the following configuration, slashes are removed from the slug.
++
++.. code-block:: php
++
++    'type' => 'slug',
++    'config' => [
++        'generatorOptions' => [
++            'fields' => ['title'],
++            'replacements' => [
++                '/' => ''
++            ],
++        ]
++        'fallbackCharacter' => '-',
++        'prependSlash' => true,
++        'eval' => 'uniqueInPid'
++    ]
++
++Advanced examples
++-----------------
++The following configuration uses more replacements:
++
++.. code-block:: php
++
++    'type' => 'slug',
++    'config' => [
++        'generatorOptions' => [
++            'fields' => ['title'],
++            'replacements' => [
++                '(f/m)' => '',
++                '/' => '-'
++            ],
++        ]
++        'fallbackCharacter' => '-',
++        'prependSlash' => true,
++        'eval' => 'uniqueInPid'
++    ]
++
++This will change the provided slug `Some Job in city1/city2 (f/m)` to `some-job-in-city1-city2`.
++
++.. index:: Frontend, ext:core, NotScanned
+\ No newline at end of file
+diff --git a/typo3/sysext/core/Tests/Unit/DataHandling/SlugHelperTest.php b/typo3/sysext/core/Tests/Unit/DataHandling/SlugHelperTest.php
+index 0f364d3..90efdaa 100644
+--- a/typo3/sysext/core/Tests/Unit/DataHandling/SlugHelperTest.php
++++ b/typo3/sysext/core/Tests/Unit/DataHandling/SlugHelperTest.php
+@@ -353,19 +353,80 @@
+         return [
+             'simple title' => [
+                 'Products',
+-                '/parent-page/products'
++                '/parent-page/products',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                    ],
++                ]
+             ],
+             'title with spaces' => [
+                 'Product Cow',
+-                '/parent-page/product-cow'
++                '/parent-page/product-cow',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                    ],
++                ]
++            ],
++            'title with slash' => [
++                'Product/Cow',
++                '/parent-page/product/cow',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                    ],
++                ]
++            ],
++            'title with slash and replace' => [
++                'Product/Cow',
++                '/parent-page/productcow',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                        'replacements' => [
++                            '/' => ''
++                        ]
++                    ],
++                ]
++            ],
++            'title with slash and replace #2' => [
++                'Some Job in city1/city2 (m/w)',
++                '/parent-page/some-job-in-city1-city2',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                        'replacements' => [
++                            '(m/w)' => '',
++                            '/' => '-'
++                        ]
++                    ],
++                ]
+             ],
+             'title with invalid characters' => [
+                 'Products - Cows',
+-                '/parent-page/products-cows'
++                '/parent-page/products-cows',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                    ],
++                ]
+             ],
+             'title with only invalid characters' => [
+                 '!!!',
+-                '/parent-page/default-51cf35392c'
++                '/parent-page/default-51cf35392c',
++                [
++                    'generatorOptions' => [
++                        'fields' => ['title'],
++                        'prefixParentPageSlug' => true,
++                    ],
++                ]
+             ],
+         ];
+     }
+@@ -376,7 +437,7 @@
+      * @param string $expected
+      * @test
+      */
+-    public function generatePrependsSlugsForPages(string $input, string $expected)
++    public function generatePrependsSlugsForPages(string $input, string $expected, array $options)
+     {
+         $GLOBALS['dummyTable']['ctrl'] = [];
+         $parentPage = [
+@@ -390,12 +451,7 @@
+             [
+                 'pages',
+                 'slug',
+-                [
+-                    'generatorOptions' => [
+-                        'fields' => ['title'],
+-                        'prefixParentPageSlug' => true,
+-                    ],
+-                ]
++                $options
+             ]
+         );
+         $subject->expects(static::at(0))

@@ -25,14 +25,6 @@
 			<source>Clear all processed files</source>
 			<target>Leere alle verarbeiteten Dateien</target>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfDescription" approved="yes">
-			<source>Delete automatic generated realurl configuration file.</source>
-			<target>Automatisch generiertes RealUrl Konfigurationsdatei löschen.</target>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfTitle" approved="yes">
-			<source>Reset realurl automatic configuration</source>
-			<target>Automatische RealUrl Konfiguration zurücksetzen</target>
-		</trans-unit>
 		<trans-unit id="crop_variants.default.label" approved="yes">
 			<source>Default</source>
 			<target>Standard</target>
@@ -123,20 +115,12 @@
 		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
 			<target>Bild neben Text hinzufügen</target>
 		</trans-unit>
-		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_cemetery">
+		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_list">
 			<target>Logo hinzufügen</target>
 		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
 			<source>Text next to the Image</source>
 			<target>Text neben dem Bild</target>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_follow" approved="yes">
-			<source>Follow links on current page (SEO)</source>
-			<target>Links auf Seite folgen (SEO)</target>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_index" approved="yes">
-			<source>Index current page (SEO)</source>
-			<target>Aktuelle Seite indexieren (SEO)</target>
 		</trans-unit>
 		<trans-unit id="field.pages.sharing_enabled" approved="yes">
 			<source>Sharing Functionalities</source>
@@ -288,10 +272,6 @@
 		<trans-unit id="palette.pages.related" approved="yes">
 			<source>Related</source>
 			<target>Verwandt</target>
-		</trans-unit>
-		<trans-unit id="palette.pages.robot_instructions" approved="yes">
-			<source>Search robot settings</source>
-			<target>Suchroboter Einstellungen</target>
 		</trans-unit>
 		<trans-unit id="palette.pages.twitter" approved="yes">
 			<source>Twitter</source>

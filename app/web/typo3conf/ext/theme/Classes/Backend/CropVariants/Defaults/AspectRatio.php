@@ -28,7 +28,8 @@ class AspectRatio
             } else {
                 throw new UnexpectedValueException(
                     'Given aspectRatio "' . $key . '" not found."',
-                    1520426705);
+                    1520426705
+                );
             }
         }
         return $ratios;

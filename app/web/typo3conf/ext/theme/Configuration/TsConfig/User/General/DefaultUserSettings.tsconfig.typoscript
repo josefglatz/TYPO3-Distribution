@@ -1,0 +1,40 @@
+setup.default {
+	thumbnailsByDefault = 1
+}
+setup.override {
+	edit_docModuleUpload = 0
+}
+setup.fields.edit_docModuleUpload.disabled = 1
+
+options {
+	enableBookmarks = 1
+	bookmarkGroups {
+		// Every custom bookmark group will be available also globally
+		// Override the default bookmark group by just overriding 1 to 4
+		11 = Adminstration
+		12 = News
+		13 = Blog
+		14 = Forms
+	}
+	clipboardNumberPads = 5
+	createFoldersInEB = 1
+	file_list {
+		enableDisplayBigControlPanel = activated
+		enableDisplayThumbnails = selectable
+		filesPerPage = 40
+		thumbnail {
+			width = 160
+			height = 160
+		}
+	}
+	folderTree {
+		uploadFieldsInLinkBrowser = 1
+	}
+	// default direct upload folder
+#	defaultUploadFolder = 1:Bilder/
+}
+
+[applicationContext matches "/^Development/"]
+	setup.default.neverHideAtCopy = 1
+	setup.override.neverHideAtCopy = 1
+[global]

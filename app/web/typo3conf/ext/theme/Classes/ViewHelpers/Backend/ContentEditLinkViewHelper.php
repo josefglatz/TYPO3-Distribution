@@ -1,8 +1,9 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Backend;
 
-use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Be\AbstractBackendViewHelper;
@@ -37,7 +38,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderS
  * <output>
  * <a href="..."> {string} </a>
  * </output>
- *
  */
 class ContentEditLinkViewHelper extends AbstractBackendViewHelper
 {
@@ -54,7 +54,6 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
      */
     public function initializeArguments(): void
     {
@@ -64,10 +63,11 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
 
     /**
      * @param array $arguments
-     * @param callable $renderChildrenClosure
+     * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
      * @return string
      * @throws \UnexpectedValueException
+     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
      */
     public static function renderStatic(
         array $arguments,
@@ -85,8 +85,8 @@ class ContentEditLinkViewHelper extends AbstractBackendViewHelper
                 ],
                 'returnUrl' => GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') . '#element-tt_content-' . $arguments['uid'],
             ];
-            // only add link markup around content, if permissions have been granted
-            $content = '<a class="theme-content-edit-link" href="' . BackendUtility::getModuleUrl('record_edit', $urlParameter) . '">' . $content . '</a>';
+            $uri = (string)GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute('record_edit', $urlParameter);
+            $content = '<a class="theme-content-edit-link" href="' . $uri . '">' . $content . '</a>';
         }
 
         return $content;

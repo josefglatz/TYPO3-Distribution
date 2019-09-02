@@ -96,8 +96,7 @@ class ContentExceptionHandler implements ExceptionHandlerInterface
     {
         if (ExtensionManagementUtility::isLoaded('logging')) {
             return GeneralUtility::makeInstance(\GeorgRinger\Logging\Log\MonologManager::class)->getLogger(__CLASS__);
-        } else {
-            return GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__);
         }
+        return GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__);
     }
 }

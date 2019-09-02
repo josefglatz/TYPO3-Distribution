@@ -20,12 +20,6 @@
 		<trans-unit id="clearcacheaction.clear.processedfiles.title">
 			<source>Clear all processed files</source>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfDescription">
-			<source>Delete automatic generated realurl configuration file.</source>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.realurl.autoConfTitle">
-			<source>Reset realurl automatic configuration</source>
-		</trans-unit>
 		<trans-unit id="crop_variants.default.label">
 			<source>Default</source>
 		</trans-unit>
@@ -152,7 +146,7 @@
 		<trans-unit id="field.tt_content.image.irre.new.label.type.textimage">
 			<source>Add Image next to Textblock</source>
 		</trans-unit>
-		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_cemetery">
+		<trans-unit id="field.tt_content.image.irre.new.label.type.theme_logo_list">
 			<source>Add logo</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.assets.irre.new.label.type.youtube">
@@ -164,7 +158,7 @@
 		<trans-unit id="field.tt_content.image.label.type.textimage">
 			<source>Image next to the Text</source>
 		</trans-unit>
-		<trans-unit id="field.tt_content.image.label.type.theme_logo_cemetery">
+		<trans-unit id="field.tt_content.image.label.type.theme_logo_list">
 			<source>Logos</source>
 		</trans-unit>
 		<trans-unit id="field.tt_content.bodytext.label.type.textimage">
@@ -175,12 +169,6 @@
 		</trans-unit>
 		<trans-unit id="field.tt_content.image.backendpreview.info.missing">
 			<source>Image not set. Please add an image to this content element</source>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_follow">
-			<source>Follow links on current page (SEO)</source>
-		</trans-unit>
-		<trans-unit id="field.pages.robot_index">
-			<source>Index current page (SEO)</source>
 		</trans-unit>
 		<trans-unit id="field.pages.sharing_enabled">
 			<source>Sharing Functionalities</source>
@@ -302,9 +290,6 @@
 		<trans-unit id="palette.pages.related">
 			<source>Related</source>
 		</trans-unit>
-		<trans-unit id="palette.pages.robot_instructions">
-			<source>Search robot settings</source>
-		</trans-unit>
 		<trans-unit id="palette.pages.twitter">
 			<source>Twitter</source>
 		</trans-unit>
@@ -356,17 +341,17 @@
 		<trans-unit id="field.tt_content.tx_theme_facts_figures.irre.new.label.type.theme_facts_figures">
 			<source>Add Fact/Figure</source>
 		</trans-unit>
-		<trans-unit id="hooks.dataHandler.prevent.sys_template.title">
-			<source>Creating a sys_template record in the database is not allowed</source>
-		</trans-unit>
-		<trans-unit id="hooks.dataHandler.prevent.sys_template.description">
-			<source>while sys_template records are created via runThroughTemplatesPostProcessing hook in EXT:theme/Classes/Hooks/Frontend/TypoScriptHook.php. Records in the database can not be versioned and offer potential for technical debt. Please add your changes through TypoScript files.</source>
-		</trans-unit>
 		<trans-unit id="genericlabel.image" approved="yes">
 			<source>Image</source>
 		</trans-unit>
 		<trans-unit id="genericlabel.sliderimage" approved="yes">
 			<source>Slider Image</source>
+		</trans-unit>
+		<trans-unit id="site.tab.extra" approved="yes">
+			<source>Extra</source>
+		</trans-unit>
+		<trans-unit id="site.trackingCode" approved="yes">
+			<source>Tracking code, e.g. Google Tag Manager</source>
 		</trans-unit>
 		</body>
 	</file>

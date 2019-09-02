@@ -1,0 +1,8 @@
+options {
+	file_list {
+		thumbnail {
+			width = 256
+			height = 256
+		}
+	}
+}

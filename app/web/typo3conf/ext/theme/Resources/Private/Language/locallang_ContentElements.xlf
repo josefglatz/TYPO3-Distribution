@@ -56,10 +56,10 @@
 		<trans-unit id="theme_lead_text.title">
 			<source>Lead Text</source>
 		</trans-unit>
-		<trans-unit id="theme_logo_cemetery.description">
+		<trans-unit id="theme_logo_list.description">
 			<source>Display logos in a defined grid (with describing text for each logo).</source>
 		</trans-unit>
-		<trans-unit id="theme_logo_cemetery.title">
+		<trans-unit id="theme_logo_list.title">
 			<source>Logos</source>
 		</trans-unit>
 		<trans-unit id="theme_youtube.description">

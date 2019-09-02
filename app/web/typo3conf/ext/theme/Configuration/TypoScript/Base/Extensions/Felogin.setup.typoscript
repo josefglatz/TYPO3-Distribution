@@ -1,0 +1,59 @@
+// Default TypoScript located at
+//        app/vendor/typo3/cms/typo3/sysext/felogin/ext_localconf.php L:5ff (Constants) L:65 (Setup)
+
+plugin.tx_felogin_pi1 {
+	// set infinite storagePid
+	recursive = 250
+
+	templateFile = {$theme.resPrivate}/Extension/Felogin/FrontendLogin.html
+	storagePid = {$site.uid.felogin.storagePid}
+
+	// Wraps
+	welcomeHeader_stdWrap.wrap = <h3>|</h3>
+	successHeader_stdWrap.wrap = <h3>|</h3>
+	logoutHeader_stdWrap.wrap = <h3>|</h3>
+	errorHeader_stdWrap.wrap = <h3>|</h3>
+	forgotHeader_stdWrap.wrap = <h3>|</h3>
+	changePasswordHeader_stdWrap.wrap = <h3>|</h3>
+
+	welcomeMessage_stdWrap.wrap = <p>|</p>
+	logoutMessage_stdWrap.wrap = <p>|</p>
+	errorMessage_stdWrap.wrap = <p class="text-danger">|</p>
+	successMessage_stdWrap.wrap = <p class="text-success">|</p>
+	cookieWarning_stdWrap.wrap = <p class="text-warning">|</p>
+	forgotMessage_stdWrap.wrap = <p>|</p>
+	forgotErrorMessage_stdWrap.wrap = <p class="text-danger">|</p>
+	forgotResetMessageEmailSentMessage_stdWrap.wrap = <p class="text-success">|</p>
+	changePasswordNotValidMessage_stdWrap.wrap = <p class="text-danger">|</p>
+	changePasswordTooShortMessage_stdWrap.wrap = <p class="text-danger">|</p>
+	changePasswordNotEqualMessage_stdWrap.wrap = <p class="text-danger">|</p>
+	changePasswordMessage_stdWrap.wrap = <p>|</p>
+	changePasswordDoneMessage_stdWrap.wrap = <p class="text-success">|</p>
+
+	// remove default CSS styles
+	_CSS_DEFAULT_STYLE >
+	// remove default
+	wrapContentInBaseClass = 0
+
+	# redirect options
+	redirectMode =
+	redirectFirstMethod =
+	redirectPageLogin =
+	redirectPageLoginError =
+	redirectPageLogout =
+
+	# additional fields
+	showForgotPasswordLink = 1
+	showPermaLogin = 0
+
+	# when setting a new password, this is the minimum amount of characters
+	newPasswordMinLength = 8
+
+	exposeNonexistentUserInForgotPasswordDialog = 0
+
+	# E-Mail Settings
+	email_from = {$site.felogin.emailFrom}
+	email_fromName = {$site.felogin.emailFromName}
+	replyTo = {$site.felogin.replyTo}
+}
+

@@ -1,9 +1,10 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Format;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 /**
@@ -19,7 +20,7 @@ class CleanupStringViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @return void
+     * Initialize arguments
      */
     public function initializeArguments(): void
     {
@@ -65,7 +66,7 @@ class CleanupStringViewHelper extends AbstractViewHelper
      */
     protected static function eliminateWhitespace($content): string
     {
-        $content = (string) preg_replace('/\s+/', '', $content);
+        $content = (string)preg_replace('/\s+/', '', $content);
         return $content;
     }
 

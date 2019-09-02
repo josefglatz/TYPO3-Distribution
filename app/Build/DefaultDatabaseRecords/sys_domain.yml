@@ -1,2 +1,0 @@
-TYPO3:
-    Data: { sys_domain: [{ uid: '1', pid: '1', domainName: project.vm, redirectHttpStatusCode: '301', sorting: '64' }, { uid: '2', pid: '1', domainName: project.docker, redirectHttpStatusCode: '301', sorting: '128' }] }

@@ -1,0 +1,16 @@
+TCAdefaults {
+	tt_content {
+		header_layout = 2
+		imageborder = 0
+		imagecols = 1
+		sectionIndex = 0
+	}
+}
+
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
+	TCAdefaults {
+		tt_content {
+			hidden = 0
+		}
+	}
+[global]

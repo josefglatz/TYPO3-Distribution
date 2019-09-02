@@ -4,8 +4,8 @@ namespace JosefGlatz\Theme\ViewHelpers\Context;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -31,6 +31,6 @@ class ProductionLiveViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): bool
     {
-        return (bool) StringUtility::beginsWith(GeneralUtility::getApplicationContext()->__toString(), 'Production/Live');
+        return (bool)StringUtility::beginsWith(GeneralUtility::getApplicationContext()->__toString(), 'Production/Live');
     }
 }

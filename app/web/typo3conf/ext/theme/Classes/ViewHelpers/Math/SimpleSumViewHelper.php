@@ -1,16 +1,16 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Math;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Returns the sum of a and b.
  */
-class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterface
+class SimpleSumViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -18,9 +18,9 @@ class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterf
     protected $escapeOutput = false;
 
     /**
-     * @return void
+     * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('a', 'string', 'First number', true);
         $this->registerArgument('b', 'string', 'Second number', true);
@@ -34,14 +34,9 @@ class SimpleSumViewHelper extends AbstractViewHelper implements CompilableInterf
      * @param RenderingContextInterface $renderingContext
      * @return float
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?float
     {
-        try {
-            return self::sum($arguments);
-        } catch (\Exception $e) {
-            // @TODO: TYPO3-Distribution: VH math.SimpleSum logging when calculation is not possible
-            return '';
-        }
+        return self::sum($arguments);
     }
 
     protected static function sum($arguments): float

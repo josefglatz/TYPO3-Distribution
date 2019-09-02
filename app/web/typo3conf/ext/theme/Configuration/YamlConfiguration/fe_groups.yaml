@@ -1,0 +1,14 @@
+TYPO3:
+  Data:
+    fe_groups:
+      -
+        uid: 1
+        tx_extbase_type: Tx_Extbase_Domain_Model_FrontendUserGroup
+        pid: 8
+        title: 'Website Frontend Group'
+        hidden: 0
+        lockToDomain: ''
+        deleted: 0
+        description: 'Default Frontend Usergroup'
+        subgroup: null
+        TSconfig: null

@@ -1,46 +1,13 @@
 {
 	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/w8tcha/CKEditor-WordCount-Plugin"
-		},
-		{
-			"type":"package",
-			"package": {
-				"name": "ckeditor/ckeditor-dev",
-				"version":"4.7.0",
-				"source": {
-					"url": "https://github.com/ckeditor/ckeditor-dev",
-					"type": "git",
-					"reference":"release/4.7.x"
-				}
-			}
-		}
 	],
 	"name": "josefglatz/typo3-distribution",
-	"description": "A distribution package for TYPO3 CMS in composer mode with helhum/typo3-console and custom application environment support",
-	"keywords": [
-		"TYPO3 CMS",
-		"typo3cms-distribution",
-		"sitepackage",
-		"typo3distribution",
-		"typo3 example",
-		"theme",
-		"web"
-	],
+	"description": "A TYPO3 CMS kickstarter distribution package in composer mode",
 	"_comment": [
 		"This is my TYPO3 distribution",
-		"@TODO/TBD: https://github.com/helhum/TYPO3-Distribution/blob/master/composer.json#L49",
-		"mimimi",
-		"mumumu"
+		"based on https://github.com/josefglatz/TYPO3-Distribution"
 	],
 	"authors": [
-		{
-			"name": "Josef Glatz",
-			"email": "j.glatz@supseven.at",
-			"role": "Developer",
-			"homepage": "https://www.supseven.at"
-		},
 		{
 			"name": "Josef Glatz",
 			"email": "jousch@jousch.com",
@@ -64,103 +31,64 @@
 	},
 	"require": {
 		"php": "^7.2",
-		"apache-solr-for-typo3/solr": "^8",
-		"causal/image_autoresize": "dev-master#3c3fde1",
-		"cmsexperts/unlocalizedcrop": "^1.0",
-		"dmitryd/typo3-dd-googlesitemap": "^2.1.4",
-		"dmitryd/typo3-realurl": "^2",
-		"fluidtypo3/vhs": "dev-development",
-		"georgringer/autoswitchtolistview": "^2.0",
-		"georgringer/backend-debug": "^1",
-		"georgringer/deprecationloganalyzer": "^2.0",
-		"georgringer/logging": "dev-master",
+		"causal/extractor": "dev-master",
+		"cweagans/composer-patches": "^1.6",
+		"georgringer/autoswitchtolistview": "dev-master",
+		"georgringer/gdpr": "^1.0",
 		"georgringer/news": "^7",
-		"georgringer/page_speed": "^1",
+		"georgringer/page_speed": "dev-master",
 		"helhum/typo3-console": "^5",
-		"ichhabrecht/content-defender": "^3.0",
-		"instituteweb/unroll": "^2.0",
-		"josefglatz/beuser-fastswitch": "^1.0.2",
+		"ichhabrecht/content-defender": "^3",
+		"josefglatz/beuser-fastswitch": "^2",
+		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
-		"lochmueller/staticfilecache": "^6.0",
-		"minifranske/gravatar": "^1.0",
-		"reelworx/rx-shariff": "^11",
-		"roave/security-advisories": "dev-master",
-		"slowprog/composer-copy-file": "^0.2.1",
-		"spooner-web/be_secure_pw": "~8",
-		"t3monitor/t3monitoring_client": "^1.0",
-		"typo3/cms-about": "^8.7.19",
-		"typo3/cms-belog": "^8.7.19",
-		"typo3/cms-beuser": "^8.7.19",
-		"typo3/cms-context-help": "^8.7.19",
-		"typo3/cms-felogin": "^8.7.19",
-		"typo3/cms-filelist": "^8.7.19",
-		"typo3/cms-filemetadata": "^8.7.19",
-		"typo3/cms-fluid-styled-content": "^8.7.19",
-		"typo3/cms-form": "^8.7.19",
-		"typo3/cms-func": "^8.7.19",
-		"typo3/cms-info": "^8.7.19",
-		"typo3/cms-info-pagetsconfig": "^8.7.19",
-		"typo3/cms-linkvalidator": "^8.7.19",
-		"typo3/cms-lowlevel": "^8.7.19",
-		"typo3/cms-recycler": "^8.7.19",
-		"typo3/cms-reports": "^8.7.19",
-		"typo3/cms-rte-ckeditor": "^8.7.19",
-		"typo3/cms-saltedpasswords": "^8.7.19",
-		"typo3/cms-scheduler": "^8.7.19",
-		"typo3/cms-setup": "^8.7.19",
-		"typo3/cms-sys-action": "^8.7.19",
-		"typo3/cms-sys-note": "^8.7.19",
-		"typo3/cms-taskcenter": "^8.7.19",
-		"typo3/cms-tstemplate": "^8.7.19",
-		"typo3/cms-viewpage": "^8.7.19",
-		"typo3/cms-wizard-crpages": "^8.7.19",
-		"typo3/cms-wizard-sortpages": "^8.7.19",
-		"typo3/minimal": "^8.7",
-		"w8tcha/ckeditor-wordcount-plugin": "1.17.3"
+		"josefglatz/seo-aspect-ratios": "^1.0",
+		"lochmueller/staticfilecache": "^6.1",
+		"minifranske/gravatar": "^1",
+		"t3monitor/t3monitoring_client": "^9.0",
+		"typo3/cms-about": "9.5.*@dev",
+		"typo3/cms-adminpanel": "9.5.*@dev",
+		"typo3/cms-backend": "9.5.*@dev",
+		"typo3/cms-belog": "9.5.*@dev",
+		"typo3/cms-beuser": "9.5.*@dev",
+		"typo3/cms-core": "9.5.*@dev",
+		"typo3/cms-extbase": "9.5.*@dev",
+		"typo3/cms-extensionmanager": "9.5.*@dev",
+		"typo3/cms-filelist": "9.5.*@dev",
+		"typo3/cms-filemetadata": "9.5.*@dev",
+		"typo3/cms-fluid": "9.5.*@dev",
+		"typo3/cms-fluid-styled-content": "9.5.*@dev",
+		"typo3/cms-form": "9.5.*@dev",
+		"typo3/cms-frontend": "9.5.*@dev",
+		"typo3/cms-info": "9.5.*@dev",
+		"typo3/cms-install": "9.5.*@dev",
+		"typo3/cms-linkvalidator": "9.5.*@dev",
+		"typo3/cms-lowlevel": "9.5.*@dev",
+		"typo3/cms-opendocs": "9.5.*@dev",
+		"typo3/cms-recordlist": "9.5.*@dev",
+		"typo3/cms-recycler": "9.5.*@dev",
+		"typo3/cms-redirects": "9.5.*@dev",
+		"typo3/cms-reports": "9.5.*@dev",
+		"typo3/cms-rte-ckeditor": "9.5.*@dev",
+		"typo3/cms-scheduler": "9.5.*@dev",
+		"typo3/cms-seo": "9.5.*@dev",
+		"typo3/cms-setup": "9.5.*@dev",
+		"typo3/cms-sys-action": "9.5.*@dev",
+		"typo3/cms-sys-note": "9.5.*@dev",
+		"typo3/cms-taskcenter": "9.5.*@dev",
+		"typo3/cms-tstemplate": "9.5.*@dev",
+		"typo3/cms-viewpage": "9.5.*@dev"
 	},
 	"require-dev": {
-		"ckeditor/ckeditor-dev": "4.7.0",
-		"ichhabrecht/mask-export": "^2.0",
-		"macopedia/mess_detector": "dev-master",
-		"mask/mask": "^3.0",
-		"maxserv/yaml_configuration": "dev-master",
+		"friendsofphp/php-cs-fixer": "^2.13",
 		"namelesscoder/typo3-repository-client": "^2.0",
-		"neronmoon/scriptsdev": "^0.1.2",
-		"sgalinski/lfeditor": "dev-master"
+		"neronmoon/scriptsdev": "^0.1.4",
+		"phpmd/phpmd": "^2.6",
+		"psychomieze/adminpanel-extended": "dev-develop",
+		"roave/security-advisories": "dev-master",
+		"squizlabs/php_codesniffer": "^3.3"
 	},
 	"suggest": {
-		"apache-solr-for-typo3/solr": "dev-master",
-		"causal/extractor": "dev-master",
-		"causal/image_autoresize": "dev-master",
-		"cedricziel/transladder": "dev-master",
-		"cmsexperts/unlocalizedcrop": "^1.0",
-		"cpsit/mask-export": "dev-master as 0.9.1",
-		"cweagans/composer-patches": "dev-master",
-		"in2code/realurlconflicts": "^1",
-		"georgringer/deprecationloganalyzer": "dev-master as 2.0.2",
-		"GeorgRinger/maildebug": "dev-master",
-		"georgringer/autoswitchtolistview": "dev-master",
-		"gridelementsteam/gridelements": "dev-master",
-		"helhum/typoscript-rendering": "dev-master",
-		"ichhabrecht/begroups_roles": "^3",
-		"ichhabrecht/content-defender": "^2",
-		"instituteweb/unroll": "^2.0",
-		"in2code/in2publish_core": "dev-master",
-		"in2code/powermail": "dev-master",
-		"josefglatz/beuser-fastswitch": "dev-master",
-		"koninklijke-collective/my-redirects": "dev-master",
-		"koninklijke-collective/my-user-management": "dev-master",
-		"lochmueller/sourceopt": "^1.0",
-		"mask/mask": "dev-master as 3.0.0",
-		"namelesscoder/typo3-cms-fluid-debug": "dev-master",
-		"rlmp/rlmp-language-detection": "dev-master",
-		"roave/security-advisories": "dev-master",
-		"schnitzler/fluid-styled-responsive-images": "^8.7.0",
-		"sjbr/sr-language-menu": "dev-master",
-		"sup7even/benefits": "dev-master",
-		"t3g/blog": "dev-master",
-		"t3g/querybuilder": "dev-master",
-		"yoast-seo-for-typo3/yoast_seo": "^1.4"
 	},
 	"extra": {
 		"typo3/cms": {
@@ -171,14 +99,14 @@
 			"install-binary": false,
 			"install-extension-dummy": false
 		},
-		"copy-file": {
-			"vendor/w8tcha/ckeditor-wordcount-plugin/wordcount/": "web/typo3conf/ext/theme/Resources/Public/RTE/Plugins/wordcount/"
-		},
 		"scripts-dev": {
 			"post-autoload-dump": [
 				"@folder-structure"
 			]
-		}
+		},
+		"patches": {
+		},
+		"composer-exit-on-patch-failure":  true
 	},
 	"autoload": {
 		"classmap": [
@@ -229,10 +157,8 @@
 			"@package-states"
 		],
 		"post-install-cmd": [
-			"SlowProg\\CopyFile\\ScriptHandler::copy"
 		],
 		"post-update-cmd": [
-			"SlowProg\\CopyFile\\ScriptHandler::copy"
 		]
 	}
 }

@@ -1,0 +1,21 @@
+options {
+	pageTree {
+		showPageIdWithTitle = 1
+		showNavTitle = 1
+#		doktypesToShowInNewPageDragArea =
+		showDomainNameWithTitle = 0
+		// @TODO Discuss if we should add background for a better backend experience
+#		backgroundColor {
+#		}
+		showPathAboveMounts = 1
+		// @TODO Inform about options.pageTree.altElementBrowserMountPoints and discuss if we should use it for a better backend experience
+#		altElementBrowserMountPoints = 20,31
+#		altElementBrowserMountPoints.append = 1
+	}
+}
+
+[backend.user.isAdmin == true]
+	options.pageTree {
+		showPageIdWithTitle = 1
+	}
+[global]

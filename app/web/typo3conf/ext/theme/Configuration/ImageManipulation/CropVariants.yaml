@@ -15,60 +15,60 @@ imageManipulation:
       defaultCropVariantsConfiguration:
         default:
           aspectRatios:
-            - 3:2
-            - 2:3
-            - 4:3
-            - 3:4
-            - 1:1
-            - NaN
+            - "3:2"
+            - "2:3"
+            - "4:3"
+            - "3:4"
+            - "1:1"
+            - "NaN"
 
       ##################################################################################################################
       ### Set all your available aspectRatios (add/remove as you need it in you specific project)
       aspectRatios:
         # Open Graph, Facebook, Twitter Image (official @ early 2018)
-        1.91:1:
-            title: 1.91:1 (Open Graph, Facebook, Twitter)
+        "1.91:1":
+            title: "1.91:1 (Open Graph, Facebook, Twitter)"
             value: 1.91 / 1
         # Common used for wide sujet images
-        3:1:
-            title: 3:1
+        "3:1":
+            title: "3:1"
             value: 3 / 1
         # Common video format
-        16:9:
-            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9
+        "16:9":
+            title: "LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9"
             value: 16 / 9
         # Common DSLR/SLR format
-        3:2:
-            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2
+        "3:2":
+            title: "LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.3_2"
             value: 3 / 2
-        2:3:
-            title: 2:3
+        "2:3":
+            title: "2:3"
             value: 2 / 3
         # Common used for wide sujet images
-        2:1:
-            title: 2:1
+        "2:1":
+            title: "2:1"
             value: 2 / 1
         # Common Point'n'Shoot camera format
-        4:3:
-            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3
+        "4:3":
+            title: "LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3"
             value: 4 / 3
-        3:4:
-            title: 3:4
+        "3:4":
+            title: "3:4"
             value: 3 / 4
         # Square image format
-        1:1:
-            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1
+        "1:1":
+            title: "LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.1_1"
             value: 1.0
         # Common large/medium camera format
-        5:4:
-            title: 5:4
+        "5:4":
+            title: "5:4"
             value: 5 / 4
-        4:5:
-            title: 4:5
+        "4:5":
+            title: "4:5"
             value: 4 / 5
         # Free ratio / no ratio limitation
         NaN:
-            title: LLL:EXT:lang/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free
+            title: "LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free"
             value: 0.0
 
 

@@ -1,17 +1,20 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Resource\FileCollectionRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Class FalCollectionViewHelper
  *
- * Retrieve file references from file one or multiple file_collections
+ * Retrieve file references from one or multiple file collections
  *
  * = Example =
  *
@@ -31,10 +34,10 @@ use TYPO3\CMS\Frontend\Resource\FileCollector;
  * </f:if>
  * </theme:fileCollection>
  * </code>
- *
  */
 class FileCollectionViewHelper extends AbstractViewHelper
 {
+    use CompileWithRenderStatic;
 
     /**
      * @var bool
@@ -42,47 +45,85 @@ class FileCollectionViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
-     * @param string $table
-     * @param string $field
-     * @param int $id
-     * @param string $as
-     * @return string
+     * Initialize arguments
+     */
+    public function initializeArguments(): void
+    {
+        $this->registerArgument(
+            'table',
+            'string',
+            'Table (Foreign table)',
+            true
+        );
+        $this->registerArgument(
+            'field',
+            'string',
+            'Field (Foreign field)',
+            true
+        );
+        $this->registerArgument(
+            'id',
+            'int',
+            'ID (Foreign uid)',
+            true
+        );
+        $this->registerArgument(
+            'as',
+            'string',
+            'This parameter specifies the name of the variable that will be used for the returned ' .
+            'ViewHelper result.',
+            false,
+            'references'
+        );
+    }
+
+    /**
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
+     * @return mixed
      * @throws \TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException
      */
-    public function render(string $table, string $field, int $id, string $as = 'references')
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
         // create query builder object
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable($table);
+            ->getQueryBuilderForTable($arguments['table']);
         // query
         $row = $queryBuilder
             ->select('*')
-            ->from($table)
-            ->where('uid=' . (int)$id)
+            ->from($arguments['table'])
+            ->where($queryBuilder->expr()->eq(
+                'uid',
+                $queryBuilder->createNamedParameter($arguments['id'], \PDO::PARAM_INT)
+            ))
             ->execute()
             ->fetch();
-        if (!$row) {
-            return '';
+
+        $templateVariableContainer = $renderingContext->getVariableProvider();
+
+        if ($row) {
+            $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
+            $collections = GeneralUtility::trimExplode(',', $row[$arguments['field']], true);
+            $fileCollector->addFilesFromFileCollections($collections);
+            $fileCollectionRepository = GeneralUtility::makeInstance(FileCollectionRepository::class);
+            $fileCollections = [];
+            foreach ($collections as $collection) {
+                $fileCollection = $fileCollectionRepository->findByUid($collection);
+                $fileCollections[] = [
+                    'title' => $fileCollection->getTitle()
+                ];
+            }
+            $templateVariableContainer->add($arguments['as'], $fileCollector->getFiles());
+            $templateVariableContainer->add('collectionInfos', $fileCollections);
         }
 
-        $fileCollector = GeneralUtility::makeInstance(FileCollector::class);
-        $collections = GeneralUtility::trimExplode(',', $row[$field], true);
-        $fileCollector->addFilesFromFileCollections($collections);
+        $content = $renderChildrenClosure();
 
-        $fileCollectionRepository = GeneralUtility::makeInstance(FileCollectionRepository::class);
-        $fileCollections = [];
-        foreach ($collections as $collection) {
-            $fileCollection = $fileCollectionRepository->findByUid($collection);
-            $fileCollections[] = [
-                'title' => $fileCollection->getTitle()
-            ];
+        if ($row) {
+            $templateVariableContainer->remove($arguments['as']);
         }
 
-        $this->templateVariableContainer->add($as, $fileCollector->getFiles());
-        $this->templateVariableContainer->add('collectionInfos', $fileCollections);
-        $output = $this->renderChildren();
-        $this->templateVariableContainer->remove($as);
-
-        return $output;
+        return $content;
     }
 }

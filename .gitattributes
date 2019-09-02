@@ -8,6 +8,7 @@
 *.eot binary
 *.otf binary
 *.ai binary
+*.pdf binary
 
 # Enforce checkout with linux lf consistent over all plattforms
 *.html text eol=lf

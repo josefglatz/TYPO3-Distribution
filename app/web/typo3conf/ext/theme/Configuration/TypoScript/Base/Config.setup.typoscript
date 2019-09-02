@@ -1,0 +1,96 @@
+################
+#### CONFIG ####
+################
+config {
+	htmlTag.attributes {
+		class = no-js
+		itemscope = itemscope
+		itemtype = http://schema.org/WebPage
+	}
+
+	headerComment = Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution
+	disablePrefixComment = 1
+
+	debug = 0
+	admPanel = 1
+
+	# disabled until https://forge.typo3.org/issues/63815
+	sendCacheHeaders = 0
+	enableContentLengthHeader = 0
+
+	concatenateCss = 0
+	concatenateJs = 0
+	compressJs = 0
+	compressCss = 0
+	moveJsFromHeaderToFooter = 0
+#	removeDefaultJS = 1
+	removeDefaultJS = external
+	inlineStyle2TempFile = 1
+	removeDefaultCss = 0
+
+	// Content sharing across domains & jumpUrl & external target stuff
+	content_from_pid_allowOutsideDomain = 1
+	disablePageExternalUrl = 0
+	intTarget = _self
+	extTarget = _blank
+	fileTarget =
+
+	// Linkhandler Frontend Configuration app/vendor/typo3/cms/typo3/sysext/core/Documentation/Changelog/8.6/Feature-79626-IntegrateRecordLinkHandler.rst
+	recordLinks {
+		// Keep in mind: you can setup multiple identifiers for just one table/extension
+
+		// Identifier "newsDefault"
+		newsDefault {
+			force = 0
+			typolink {
+				parameter = {$site.ext.news.defaultDetailPid}
+				additionalParams.data = field:uid
+				additionalParams.wrap = &tx_news_pi1[news]=|
+				useCacheHash = 1
+			}
+		}
+	}
+
+	pageTitleFirst = 1
+	pageTitleSeparator = -
+	pageTitleSeparator.noTrimWrap = | | |
+
+	// E-Mail AntiSpam
+#    spamProtectEmailAddresses_atSubst = <span style="display:none">&bull;</span>@<span style="display:none">&bull;</span>
+#    spamProtectEmailAddresses = -3
+	spamProtectEmailAddresses = ascii
+	spamProtectEmailAddresses_atSubst = &#64;
+	spamProtectEmailAddresses_lastDotSubst = &#46;
+
+#	linkVars := addToList(MyVar(0-1))
+#	linkVars := addToList(F(int))
+#	linkVars := addToList(tracking|green(0-5))
+#	linkVars := removeFromList()
+	// !!! Please do NOT add `type` OR `L` to config.linkVars !!!
+	linkVars =
+
+	contentObjectExceptionHandler = JosefGlatz\Theme\Error\ContentExceptionHandler
+}
+
+
+[getTSFE().beUserLogin === 1]
+	// Force generation of links to hidden linkhandler "newsDefault" records
+	config.recordLinks.newsDefault.forceLink = 1
+
+
+#################################
+#### DEBUGGING / DEVELOPMENT ####
+#################################
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
+[{$theme.debug} == 1 && getTSFE().beUserLogin === 1 || applicationContext matches "/^Development/"]
+	config {
+		debug = 1
+		admPanel = 1
+		sendCacheHeaders = 0
+		enableContentLengthHeader = 0
+		disablePrefixComment = 0
+		// https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#contentobjectexceptionhandler
+		contentObjectExceptionHandler = 0
+	}
+
+[global]

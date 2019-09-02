@@ -2,16 +2,16 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
-use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
-use TYPO3\CMS\Lang\LanguageService;
 
 class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, SingletonInterface
 {
@@ -56,6 +56,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
      *
      * @param array $row
      * @return string
+     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
      */
     protected function getEditLink(array $row): string
     {
@@ -69,7 +70,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
                 ],
                 'returnUrl' => GeneralUtility::getIndpEnv('REQUEST_URI') . '#element-tt_content-' . $row['uid'],
             ];
-            $url = BackendUtility::getModuleUrl('record_edit', $urlParameters);
+            $url = (string)GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute('record_edit', $urlParameters);
         }
         return $url;
     }

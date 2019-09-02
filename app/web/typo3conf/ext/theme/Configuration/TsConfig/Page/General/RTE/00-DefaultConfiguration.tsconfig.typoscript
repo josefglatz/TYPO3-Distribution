@@ -1,0 +1,53 @@
+############################
+### RTE CKEditor presets ###
+############################
+
+#
+#	TYPO3 Core default presets can be found under
+#		sysext:rte_ckeditor/Configuration/RTE/*.yaml
+#
+#	Custom presets can be found under
+#		ext:theme/Configuration/RTE/*.yaml
+#
+#	Additional presets must be registered before they can be used:
+#		ext:theme/ext_localconf.php → array $rtePresets
+#
+
+
+//
+// Set the very default rte preset for rte enabled fields
+//
+RTE.default.preset = theme_defaultNoTables
+
+
+//
+// Applying config to rte enabled fields
+//
+#
+#	RTE.config.table.column.preset = presetIdentifier
+#	RTE.config.table.column.types.typeName.preset = presetIdentifier
+#
+RTE.config {
+
+	tt_content {
+
+		bodytext {
+			preset = theme_defaultNoTables
+			types {
+				theme_collapsible_text.preset = theme_defaultNoTables
+				theme_lead_text.preset = theme_minimalWithLinks
+				theme_youtube.preset = theme_defaultNoTables
+				theme_textimage.preset = theme_defaultNoTables
+				text.preset = theme_defaultNoTables
+				textmedia.preset = theme_defaultNoTables
+			}
+		}
+
+	}
+
+
+	tx_news_domain_model_news {
+		bodytext.preset = theme_defaultNoTables
+	}
+
+}

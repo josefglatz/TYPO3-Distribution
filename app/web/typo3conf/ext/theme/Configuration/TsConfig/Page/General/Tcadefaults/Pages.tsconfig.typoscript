@@ -1,0 +1,13 @@
+TCAdefaults {
+	pages {
+
+	}
+}
+
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/' || applicationContext matches '/^Production\\\\\\\\/Staging/']
+	TCAdefaults {
+		pages {
+			hidden = 0
+		}
+	}
+[global]

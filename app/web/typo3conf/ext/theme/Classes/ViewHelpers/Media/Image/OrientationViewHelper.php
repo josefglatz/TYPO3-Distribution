@@ -1,12 +1,13 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Media\Image;
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Type\File\ImageInfo;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -25,13 +26,13 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * orientation
  * <output>
  */
-class OrientationViewHelper extends AbstractViewHelper implements CompilableInterface
+class OrientationViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
-        $child = PATH_site . $renderChildrenClosure();
+        $child = Environment::getPublicPath() . '/' . $renderChildrenClosure();
         $imageInfo = GeneralUtility::makeInstance(ImageInfo::class, $child);
         $height = $imageInfo->getHeight();
         $width = $imageInfo->getWidth();

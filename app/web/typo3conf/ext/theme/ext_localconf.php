@@ -6,22 +6,13 @@ call_user_func(
         // Add fields to rootLineFields
         $GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= '';
 
-        // Hook for adding realurl custom configuration
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][] =
-            'JosefGlatz\\Theme\\Hooks\\Frontend\\Realurl\\RealUrlAutoConfiguration->addThemeConfig';
-
-        // Disable ext:news realurl hook
-        //unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
-
         // Add general UserTSConfig
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TSConfig/UserGeneral.tsc">'
+            '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:' . $extKey . '/Configuration/TsConfig/UserGeneral.tsconfig.typoscript">'
         );
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Core/TypoScript/TemplateService']['runThroughTemplatesPostProcessing'][1500546787] =
             \JosefGlatz\Theme\Hooks\Frontend\TypoScriptHook::class . '->addCustomTypoScriptTemplate';
-
-        $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['robotstxt'] = \JosefGlatz\Theme\Controller\RobotsTxtController::class . '::processRequest';
 
         // Custom translations https://docs.typo3.org/typo3cms/CoreApiReference/Internationalization/Translation/Index.html?highlight=locallangxmloverride#custom-translations
         //$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:cms/locallang_tca.xlf'][] = 'EXT:' . $extKey . '/Resources/Private/Language/custom.xlf';
@@ -51,22 +42,14 @@ call_user_func(
             }
         }
 
-        // Edit restriction for specific records / Enrich DataHandler while updating specific records
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['theme'] =
-            \JosefGlatz\Theme\Hooks\Backend\ProcessDatamapDataHandler::class;
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][TYPO3\CMS\Tstemplate\Controller\TypoScriptTemplateModuleController::class]['newStandardTemplateHandler'] =
-            \JosefGlatz\Theme\Hooks\Backend\NewStandardTemplateHandler::class . '->restrict';
-
         // Only backend relevant stuff
         if (TYPO3_MODE === 'BE') {
 
             // Add PageTSConfig which is valid for the entire TYPO3 instance (e.g. Filelist > Metadata > formEngine labels overwrite)
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-                '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TSConfig/Page/General/Tceform/SysFileMetadata.tsc">'
+                '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TsConfig/Page/General/Tceform/SysFileMetadata.tsconfig.typoscript">'
             );
 
-            // Add custom cache action item: delete realurl configuration file
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearRealurlAutoConfMenuItem::class;
             // Add custom cache action item: clear processed files
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearProcessedFilesMenuItem::class;
 
@@ -87,22 +70,7 @@ call_user_func(
                     \TYPO3\CMS\Backend\Form\FormDataProvider\PageTsConfigMerged::class
                 ]
             ];
-
-            /**
-             * Instantiate SignalSlot Dispatcher
-             *
-             * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher
-             */
-            $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
-
-            // Edit restriction for specific new records
-            $signalSlotDispatcher->connect(
-                \TYPO3\CMS\Backend\Controller\EditDocumentController::class,
-                'preInitAfter',
-                \JosefGlatz\Theme\Signals\Backend\EditDocumentControllerInitSlot::class,
-                'adjustEditDocumentController'
-            );
         }
     },
-    $_EXTKEY
+    'theme'
 );

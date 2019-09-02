@@ -1,0 +1,90 @@
+tt_content {
+	theme_textimage =< lib.contentElement
+	theme_textimage {
+		templateName = Textimage
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				references.fieldName = image
+				as = images
+			}
+		}
+		stdWrap {
+			editIcons = tt_content: header [header_layout], bodytext, image
+			editIcons {
+				iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
+			}
+		}
+		settings {
+			breakpoints >
+			breakpoints {
+				type {
+					0 {
+						media = min-width
+						size = {$site.breakpoints.xs}
+						maxWidth = 513
+						cropVariant = xs
+					}
+					1 {
+						media = min-width
+						size = {$site.breakpoints.md}
+						maxWidth = 258
+						cropVariant = md
+					}
+					2 {
+						media = min-width
+						size = {$site.breakpoints.lg}
+						maxWidth = 227
+						cropVariant = lg
+					}
+					3 {
+						media = min-width
+						size = {$site.breakpoints.xl}
+						maxWidth = 277
+						cropVariant = lg
+					}
+					4 {
+						media = min-width
+						size = {$site.breakpoints.xxl}
+						maxWidth = 344
+						cropVariant = lg
+					}
+				}
+				override {
+					tx_theme_big_media < tt_content.theme_textimage.settings.breakpoints.type
+					tx_theme_big_media {
+						0 {
+							maxWidth = 540
+						}
+						1 {
+							maxWidth = 570
+						}
+						2 {
+							maxWidth = 530
+						}
+						3 {
+							maxWidth = 540
+						}
+						4 {
+							maxWidth = 660
+						}
+					}
+				}
+			}
+			defaultImageMaxWidth = 800
+			pixelDensities {
+				// Specify all TYPE SPECIFIC pixel densities, which should be processed by the Content/ImageRender fluid partial
+				//
+				// Defaults: EXT:theme/Configuration/TypoScript/Base/Extensions/FluidStyledContent/Base/FluidStyledContent.setup.typoscript
+				//
+				// KEEP IN MIND: each additional pixel density needs potentially more server resources (if no external image service is used)
+				//   - generating processed image (slow down if requested image sizes (while page request) must be generated)
+				//   - disk space used by processed image (by potentially more files)
+				type {
+					// pixel density ratio 1.0 is always generated and must be therefore not added to this list
+				}
+			}
+		}
+
+	}
+}

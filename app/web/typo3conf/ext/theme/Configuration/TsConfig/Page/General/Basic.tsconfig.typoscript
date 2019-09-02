@@ -1,0 +1,5 @@
+mod {
+	SHARED {
+		web_list.enableDisplayBigControlPanel = activated
+	}
+}

@@ -1,0 +1,123 @@
+TYPO3:
+  Data:
+    tx_scheduler_task:
+      -
+        uid: 1
+        disable: 0
+        description: 'Update language packs of active extensions from translation server'
+        nextexecution: 1544394600
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:54:\"TYPO3\\CMS\\Scheduler\\Task\\ExecuteSchedulableCommandTask\":11:{s:20:\"\0*\0commandIdentifier\";s:15:\"language:update\";s:12:\"\0*\0arguments\";a:1:{s:7:\"locales\";a:0:{}}s:11:\"\0*\0defaults\";a:1:{s:7:\"locales\";a:0:{}}s:10:\"\0*\0taskUid\";i:11;s:11:\"\0*\0disabled\";b:0;s:19:\"\0*\0runOnNextCronJob\";b:0;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1499404020;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:11:\"30 23 * * 7\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1544394600;s:14:\"\0*\0description\";s:66:\"Update language packs of active extensions from translation server\";s:12:\"\0*\0taskGroup\";i:1;s:9:\"\0*\0logger\";O:25:\"TYPO3\\CMS\\Core\\Log\\Logger\":5:{s:7:\"\0*\0name\";s:54:\"TYPO3.CMS.Scheduler.Task.ExecuteSchedulableCommandTask\";s:12:\"\0*\0requestId\";s:13:\"822f9e9294e05\";s:18:\"\0*\0minimumLogLevel\";i:7;s:10:\"\0*\0writers\";a:8:{i:0;a:2:{i:0;O:36:\"TYPO3\\CMS\\Core\\Log\\Writer\\FileWriter\":1:{s:10:\"\0*\0logFile\";s:97:\"/Volumes/CS/Projekte/TYPO3/TYPO3-Distribution/TYPO3-Distribution/app/var/log/typo3_def1afbf7d.log\";}i:1;O:42:\"TYPO3\\CMS\\Adminpanel\\Log\\InMemoryLogWriter\":0:{}}i:1;a:2:{i:0;r:26;i:1;r:28;}i:2;a:2:{i:0;r:26;i:1;r:28;}i:3;a:2:{i:0;r:26;i:1;r:28;}i:4;a:2:{i:0;r:26;i:1;r:28;}i:5;a:1:{i:0;r:28;}i:6;a:1:{i:0;r:28;}i:7;a:1:{i:0;r:28;}}s:13:\"\0*\0processors\";a:0:{}}}"
+        serialized_executions: null
+        task_group: 1
+        deleted: 0
+      -
+        uid: 2
+        disable: 1
+        description: 'Remove deleted records'
+        nextexecution: 1537413000
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:35:\"TYPO3\\CMS\\Recycler\\Task\\CleanerTask\":9:{s:9:\"\0*\0period\";i:730;s:12:\"\0*\0tcaTables\";a:5:{i:0;s:22:\"pages_language_overlay\";i:1;s:19:\"sys_file_collection\";i:2;s:10:\"tt_content\";i:3;s:5:\"pages\";i:4;s:14:\"sys_collection\";}s:10:\"\0*\0taskUid\";i:2;s:11:\"\0*\0disabled\";b:1;s:19:\"\0*\0runOnNextCronJob\";b:0;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477340918;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:10:\"10 5 * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1537413000;s:14:\"\0*\0description\";s:22:\"Remove deleted records\";s:12:\"\0*\0taskGroup\";i:5;}"
+        serialized_executions: null
+        task_group: 5
+        deleted: 0
+      -
+        uid: 3
+        disable: 1
+        description: null
+        nextexecution: 1477352400
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:62:\"TYPO3\\CMS\\Scheduler\\Task\\CachingFrameworkGarbageCollectionTask\":7:{s:16:\"selectedBackends\";a:1:{i:0;s:0:\"\";}s:10:\"\0*\0taskUid\";i:3;s:11:\"\0*\0disabled\";b:1;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477345827;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:11:\"40 23 * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477352400;s:14:\"\0*\0description\";s:0:\"\";s:12:\"\0*\0taskGroup\";i:5;}"
+        serialized_executions: null
+        task_group: 5
+        deleted: 0
+      -
+        uid: 4
+        disable: 1
+        description: 'Delete old sys_log entries'
+        nextexecution: 1477351500
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:51:\"TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask\":9:{s:9:\"allTables\";b:0;s:12:\"numberOfDays\";i:730;s:5:\"table\";s:7:\"sys_log\";s:10:\"\0*\0taskUid\";i:4;s:11:\"\0*\0disabled\";b:0;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477332000;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:11:\"25 23 * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477351500;s:14:\"\0*\0description\";s:26:\"Delete old sys_log entries\";s:12:\"\0*\0taskGroup\";i:5;}"
+        serialized_executions: null
+        task_group: 5
+        deleted: 0
+      -
+        uid: 5
+        disable: 1
+        description: 'Delete recycled files older than 100 days'
+        nextexecution: 1477508400
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:54:\"TYPO3\\CMS\\Scheduler\\Task\\RecyclerGarbageCollectionTask\":7:{s:12:\"numberOfDays\";i:100;s:10:\"\0*\0taskUid\";i:5;s:11:\"\0*\0disabled\";b:0;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477508400;s:6:\"\0*\0end\";s:0:\"\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:11:\"55 23 * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477508400;s:14:\"\0*\0description\";s:41:\"Delete recycled files older than 100 days\";s:12:\"\0*\0taskGroup\";i:5;}"
+        serialized_executions: null
+        task_group: 5
+        deleted: 0
+      -
+        uid: 6
+        disable: 1
+        description: 'Add some salt to all user passwords'
+        nextexecution: 0
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:45:\"TYPO3\\CMS\\Saltedpasswords\\Task\\BulkUpdateTask\":9:{s:20:\"\0*\0canDeactivateSelf\";b:1;s:18:\"\0*\0numberOfRecords\";i:250;s:20:\"\0*\0userRecordPointer\";a:2:{s:2:\"FE\";i:0;s:2:\"BE\";i:10;}s:10:\"\0*\0taskUid\";i:6;s:11:\"\0*\0disabled\";b:1;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477346245;s:6:\"\0*\0end\";i:1477346245;s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";i:0;s:10:\"\0*\0cronCmd\";s:0:\"\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477346245;s:14:\"\0*\0description\";s:35:\"Add some salt to all user passwords\";s:12:\"\0*\0taskGroup\";i:4;}"
+        serialized_executions: null
+        task_group: 4
+        deleted: 1
+      -
+        uid: 7
+        disable: 1
+        description: 'Update storage index if changes to fileadmin are possible outside of TYPO3  (e.g. sFTP)'
+        nextexecution: 1477347300
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:48:\"TYPO3\\CMS\\Scheduler\\Task\\FileStorageIndexingTask\":7:{s:10:\"storageUid\";i:1;s:10:\"\0*\0taskUid\";i:7;s:11:\"\0*\0disabled\";b:1;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477346297;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:12:\"*/15 * * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477347300;s:14:\"\0*\0description\";s:87:\"Update storage index if changes to fileadmin are possible outside of TYPO3  (e.g. sFTP)\";s:12:\"\0*\0taskGroup\";i:6;}"
+        serialized_executions: null
+        task_group: 6
+        deleted: 0
+      -
+        uid: 8
+        disable: 1
+        description: 'Extract file metadata'
+        nextexecution: 1477346700
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:50:\"TYPO3\\CMS\\Scheduler\\Task\\FileStorageExtractionTask\":8:{s:10:\"storageUid\";i:1;s:12:\"maxFileCount\";i:100;s:10:\"\0*\0taskUid\";i:8;s:11:\"\0*\0disabled\";b:1;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477346481;s:6:\"\0*\0end\";s:0:\"\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:11:\"*/5 * * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477346700;s:14:\"\0*\0description\";s:21:\"Extract file metadata\";s:12:\"\0*\0taskGroup\";i:6;}"
+        serialized_executions: null
+        task_group: 6
+        deleted: 0
+      -
+        uid: 9
+        disable: 1
+        description: 'Run Linkvalidator on SiteDefault'
+        nextexecution: 1477375200
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:42:\"TYPO3\\CMS\\Linkvalidator\\Task\\ValidatorTask\":21:{s:12:\"\0*\0sleepTime\";N;s:19:\"\0*\0sleepAfterFinish\";N;s:14:\"\0*\0countInARun\";N;s:18:\"\0*\0totalBrokenLink\";i:0;s:21:\"\0*\0oldTotalBrokenLink\";i:0;s:15:\"\0*\0templateMail\";N;s:16:\"\0*\0configuration\";s:0:\"\";s:23:\"\0*\0isDifferentToLastRun\";N;s:20:\"\0*\0emailTemplateFile\";s:63:\"EXT:linkvalidator/Resources/Private/Templates/mailtemplate.html\";s:8:\"\0*\0depth\";s:3:\"999\";s:7:\"\0*\0page\";s:1:\"1\";s:8:\"\0*\0email\";s:0:\"\";s:24:\"\0*\0emailOnBrokenLinkOnly\";i:1;s:18:\"\0*\0templateService\";N;s:15:\"\0*\0languageFile\";s:62:\"LLL:EXT:linkvalidator/Resources/Private/Language/locallang.xlf\";s:10:\"\0*\0taskUid\";i:9;s:11:\"\0*\0disabled\";b:1;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477346613;s:6:\"\0*\0end\";s:0:\"\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:9:\"0 6 * * *\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1477375200;s:14:\"\0*\0description\";s:32:\"Run Linkvalidator on SiteDefault\";s:12:\"\0*\0taskGroup\";i:3;}"
+        serialized_executions: null
+        task_group: 3
+        deleted: 0
+      -
+        uid: 10
+        disable: 1
+        description: 'Send system status update '
+        nextexecution: 1544508000
+        lastexecution_time: 0
+        lastexecution_failure: null
+        lastexecution_context: ''
+        serialized_task_object: "O:45:\"TYPO3\\CMS\\Reports\\Task\\SystemStatusUpdateTask\":10:{s:20:\"\0*\0notificationEmail\";s:36:\"typo3admin@yourDomain.topleveldomain\";s:18:\"\0*\0notificationAll\";b:0;s:10:\"\0*\0taskUid\";i:10;s:11:\"\0*\0disabled\";b:1;s:19:\"\0*\0runOnNextCronJob\";b:0;s:12:\"\0*\0execution\";O:29:\"TYPO3\\CMS\\Scheduler\\Execution\":6:{s:8:\"\0*\0start\";i:1477346713;s:6:\"\0*\0end\";s:1:\"0\";s:11:\"\0*\0interval\";i:0;s:11:\"\0*\0multiple\";s:1:\"0\";s:10:\"\0*\0cronCmd\";s:9:\"* 7 * * 2\";s:23:\"\0*\0isNewSingleExecution\";b:0;}s:16:\"\0*\0executionTime\";i:1544508000;s:14:\"\0*\0description\";s:26:\"Send system status update \";s:12:\"\0*\0taskGroup\";i:3;s:9:\"\0*\0logger\";N;}"
+        serialized_executions: null
+        task_group: 3
+        deleted: 0

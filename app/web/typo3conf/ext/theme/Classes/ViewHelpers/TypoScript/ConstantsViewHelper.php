@@ -1,13 +1,13 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\TypoScript;
 
 use TYPO3\CMS\Core\TypoScript\Parser\TypoScriptParser;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -39,7 +39,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  * <f:image maxWidth="{theme:typoScript.constants(path: 'site.breakpoints.xs-max')}" />
  * </code>
  */
-class ConstantsViewHelper extends AbstractViewHelper implements CompilableInterface
+class ConstantsViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -52,8 +52,6 @@ class ConstantsViewHelper extends AbstractViewHelper implements CompilableInterf
 
     /**
      * Initialize arguments.
-     *
-     * @return void
      */
     public function initializeArguments(): void
     {
@@ -62,7 +60,8 @@ class ConstantsViewHelper extends AbstractViewHelper implements CompilableInterf
             'string',
             'Path to TypoScript configuration array/key',
             false,
-            'site');
+            'site'
+        );
         $this->registerArgument(
             'as',
             'string',

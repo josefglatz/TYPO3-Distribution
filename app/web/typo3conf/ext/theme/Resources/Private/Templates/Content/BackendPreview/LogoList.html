@@ -1,0 +1,104 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:theme="http://typo3.org/ns/JosefGlatz/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="theme-backendpreview-{CType}">
+	<theme:backend.contentEditLink uid="{uid}">
+		<f:render section="Heading" arguments="{_all}"/>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<f:render section="Content" arguments="{_all}" />
+				</div>
+			</div>
+		</div>
+	</theme:backend.contentEditLink>
+</div>
+
+<f:section name="Content">
+	<f:if condition="{image}">
+		<f:then>
+			<theme:fal table="tt_content" field="image" id="{uid}" as="images">
+				<f:comment>
+					<!-- @TODO: TYPO3-Distribution: Finalize backend preview for theme_logo_list -->
+							- nice backend UI
+							- useful metadata
+				</f:comment>
+				<div class="theme-backendpreview-flexboxgrid">
+					<f:for each="{images}" as="image">
+						<f:render section="Item" arguments="{_all}" />
+					</f:for>
+				</div>
+			</theme:fal>
+		</f:then>
+		<f:else>
+			<div class="callout callout-danger">
+				<h4><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_logo_list.title" /></h4>
+				<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:field.tt_content.image.backendpreview.info.missing" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Item">
+	<f:variable name="fullfilledRequirements" value="{f:if(condition: '{image.title} && {image.alternative}', then: '1', else: '0')}" />
+	<div class="theme-style-boxed {f:if(condition: '{fullfilledRequirements}', else: 'theme-danger')}">
+		<f:image image="{image}" cropVariant="logo" class="theme-margin-bottom-15 theme-border-hover{f:if(condition: '{fullfilledRequirements}', else: ' theme-opacity-5')}" />
+
+		<f:if condition="!{fullfilledRequirements}">
+			<h5 class="theme-text-bold"><f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary" /></h5>
+			<f:translate key="LLL:EXT:theme/Resources/Private/Language/locallang_BackendGeneral.xlf:backendpreview.general.info.missing.necessary.fields" />
+			<f:if condition="{image.title} == ''">
+				<br>- <f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" />
+			</f:if>
+			<f:if condition="{image.alternative} == ''">
+				<br>- <f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" />
+			</f:if>
+			<hr>
+		</f:if>
+
+		<f:if condition="{image.title} || {image.alternative} || {image.description}">
+			<dl>
+				<f:if condition="{image.title}">
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.title" /></dt>
+					<dd>{image.title}</dd>
+				</f:if>
+				<f:if condition="{image.alternative}">
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.alternative" /></dt>
+					<dd>{image.alternative}</dd>
+				</f:if>
+				<f:if condition="{image.description}">
+					<dt><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.description" /></dt>
+					<dd>{image.description}</dd>
+				</f:if>
+				<f:comment><!-- @TODO: TYPO3-Distribution: CE theme_logo_list: render link url --></f:comment>
+			</dl>
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="Heading">
+	<f:if condition="{header}">
+		<div class="theme-backendpreview-heading">
+			<h2 class="h{f:render(section: 'HeadingType', arguments: '{_all}')}">{header}
+				<f:if condition="{subheader}"><br>
+					<small>{subheader}</small>
+				</f:if>
+			</h2>
+		</div>
+	</f:if>
+</f:section>
+
+<f:section name="HeadingType"><f:spaceless>
+	<f:switch expression="{header_layout}">
+		<f:case value="1">1</f:case>
+		<f:case value="2">2</f:case>
+		<f:case value="3">3</f:case>
+		<f:case value="4">4</f:case>
+		<f:case value="5">5</f:case>
+		<f:case value="6">6</f:case>
+		<f:defaultCase>2</f:defaultCase>
+	</f:switch>
+</f:spaceless></f:section>
+</html>

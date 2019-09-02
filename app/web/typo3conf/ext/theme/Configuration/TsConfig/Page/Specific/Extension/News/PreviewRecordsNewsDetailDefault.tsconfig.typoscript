@@ -1,0 +1,19 @@
+// If the setting [FE][disableNoCacheParameter] is enabled, the preview of records must contain the cHash
+TCEMAIN.preview {
+	tx_news_domain_model_news {
+		previewPageId =
+		useCacheHash = 1
+		useDefaultLanguageRecord = 0
+		fieldToParameterMap {
+			uid = tx_news_pi1[news_preview]
+		}
+		additionalGetParameters {
+			tx_news_pi1.controller = News
+			tx_news_pi1.action = detail
+			hidefromrobots = 1
+		}
+	}
+}
+[applicationContext matches '/^Production\\\\\\\\/Live/']
+	TCEMAIN.preview.tx_news_domain_model_news.previewPageId = 1234
+[global]

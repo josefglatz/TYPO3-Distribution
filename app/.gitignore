@@ -12,14 +12,14 @@
 /web/index.php
 /web/typo3
 /web/typo3temp/**/*
+/var/**/*
+!/var/labels/
 /web/typo3conf/PackageStates.php
 /web/typo3conf/temp_*.php
-/web/typo3conf/realurl_autoconf.php
 /web/typo3conf/autoload/
 /web/typo3conf/.tx_imageautoresize
 /web/typo3conf/l10n
 /web/typo3conf/mails.txt
-
 /web/typo3conf/ENABLE_INSTALL_TOOL
 /web/FIRST_INSTALL
 
@@ -34,6 +34,11 @@
 /upload
 /sgc
 /surf
+/pdepend
+/php-cs-fixer
+/phpcbf
+/phpcs
+/phpmd
 
 .php_cs.cache
 node_modules

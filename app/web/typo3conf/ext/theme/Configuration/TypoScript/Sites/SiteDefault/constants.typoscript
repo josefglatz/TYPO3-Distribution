@@ -1,3 +1,10 @@
+############################################
+#### CONFIGURATION for Pagetree Default ####
+############################################
+#
+# This one get's included on a specific pagetree
+#
+###############
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme/Configuration/TypoScript/Sites/Defaults/constants.typoscript">
 
 site {
@@ -42,14 +49,6 @@ site {
             navigationType = directory
             includeNotInMenu = 0
         }
-
-		// language navigation configuration
-		language {
-			// Enable Language Navigation
-			enable = 0
-			// Language Navigation Values: Comma separated list of language uids
-			languageValue = 0,1
-		}
     }
 
 
@@ -80,33 +79,12 @@ site {
         }
     }
 
-
-    l10n {
-        locale_all = de_AT.UTF-8, de_DE.UTF-8, de_AT, de_DE, de
-        language = de
-        # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
-        sys_language_isocode = de
-        directionalityOfText = ltr
-        sys_language_uid = 0
-        language_mode = content_fallback; 0
-        sys_language_overlay = 1
-        sys_language_isocode_default = de
-    }
-
-
-    htmlTag_additionalTagAttributes = itemscope="itemscope" itemtype="http://schema.org/WebPage"
-
-
     titleTag {
         sitename = My Website
     }
 
 
     meta {
-		// Add following string always to robots meta-tag (e.g. `,noimageindex`).
-		// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?csw=1
-        robotsAdditional =
-
         googleSiteVerification =
         author =
 		// Open Graph
@@ -115,30 +93,12 @@ site {
 			type = website
 			// Overwrite $site.titleTag.sitename in opengraph site_name tag
 			site_name =
-			image {
-				enable = 1
-				// name of database column to fetch image
-				fieldName = opengraph_image
-			}
 		}
     }
 
 
     tracking {
-        google {
-            enable = 0
-            id =
-            domain =
-        }
-
-        googleTagManager {
-            enable = 0
-            id = GTM-XXXXX
-        }
-
         matomo {
-            enable = 0
-            id = -1
             // Matomo (former called "Piwik") host without schema and trailing slash like "//my.piwik.host"
             host = //matomo.domain.tld
         }
@@ -161,21 +121,8 @@ site {
     }
 }
 
-
-[globalVar = GP:L=1]
-    site {
-        l10n {
-            locale_all = en_US.UTF-8, en_US.utf8, en_GB.UTF-8, en_US, en_GB, en
-            language = en
-            # https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#sys-language-isocode
-            sys_language_isocode = en
-            directionalityOfText = ltr
-            sys_language_uid = 1
-            language_mode = content_fallback; 0
-        }
-    }
-
-[applicationContext = Development*] || [applicationContext = /^Production\/Dev/]
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
+[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
     theme {
         debug = 1
     }
@@ -196,7 +143,7 @@ site {
         }
     }
 
-[applicationContext = Production/Staging]
+[applicationContext matches '/^Production\\\\\\\\/Staging/']
     site {
         tracking {
             google {
@@ -213,25 +160,7 @@ site {
             }
         }
     }
-[applicationContext = Production/Testing]
-    site {
-        tracking {
-            google {
-                enable = 0
-                id =
-                domain =
-            }
-            googleTagManager {
-                enable = 0
-                id = GTM-XXXXX
-            }
-            matomo {
-                enable = 0
-            }
-        }
-    }
-
-[globalVar = TSFE : beUserLogin > 0]
+[getTSFE().beUserLogin === 1]
     site {
         tracking {
 			matomo {
@@ -242,7 +171,6 @@ site {
             }
             googleTagManager {
                 enable = 0
-                id = GTM-XXXXX
             }
         }
     }

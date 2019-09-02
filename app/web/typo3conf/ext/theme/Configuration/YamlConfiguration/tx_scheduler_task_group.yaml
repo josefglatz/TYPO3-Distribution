@@ -1,0 +1,91 @@
+TYPO3:
+  Data:
+    tx_scheduler_task_group:
+      -
+        uid: 1
+        pid: 0
+        deleted: 0
+        sorting: 256
+        hidden: 0
+        groupName: General
+        description: null
+      -
+        uid: 2
+        pid: 0
+        deleted: 0
+        sorting: 512
+        hidden: 0
+        groupName: Search/Indexes/Solr
+        description: null
+      -
+        uid: 3
+        pid: 0
+        deleted: 0
+        sorting: 128
+        hidden: 0
+        groupName: Reports
+        description: null
+      -
+        uid: 4
+        pid: 0
+        deleted: 0
+        sorting: 64
+        hidden: 0
+        groupName: Security
+        description: null
+      -
+        uid: 5
+        pid: 0
+        deleted: 0
+        sorting: 1024
+        hidden: 0
+        groupName: Cleanup
+        description: null
+      -
+        uid: 6
+        pid: 0
+        deleted: 0
+        sorting: 2048
+        hidden: 0
+        groupName: FAL/Storages
+        description: null
+      -
+        uid: 7
+        pid: 0
+        deleted: 0
+        sorting: 32
+        hidden: 0
+        groupName: Performance
+        description: null
+      -
+        uid: 9
+        pid: 0
+        deleted: 0
+        sorting: 16
+        hidden: 0
+        groupName: 'External Data Imports'
+        description: 'For all kind of custom importer tasks'
+      -
+        uid: 10
+        pid: 0
+        deleted: 0
+        sorting: 8
+        hidden: 0
+        groupName: 'Address Imports'
+        description: null
+      -
+        uid: 11
+        pid: 0
+        deleted: 0
+        sorting: 4
+        hidden: 0
+        groupName: 'Custom Imports'
+        description: null
+      -
+        uid: 12
+        pid: 0
+        deleted: 0
+        sorting: 2
+        hidden: 0
+        groupName: 'Graphical Tasks'
+        description: ''

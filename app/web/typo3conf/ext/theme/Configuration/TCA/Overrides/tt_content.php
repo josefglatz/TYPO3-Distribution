@@ -19,7 +19,7 @@ call_user_func(
              */
             'interface' => [
                 // Extend showRecordFieldList
-                'showRecordFieldList' => $GLOBALS['TCA'][$table]['ctrl']['interface']['showRecordFieldList'] . ',tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_big_media,tx_theme_link_label,tx_theme_link,tx_theme_unfolded,tx_theme_prefer_download',
+                'showRecordFieldList' => $GLOBALS['TCA'][$table]['interface']['showRecordFieldList'] . ',tx_theme_bodytext_1,tx_theme_bodytext_2,tx_theme_big_media,tx_theme_link_label,tx_theme_link,tx_theme_unfolded,tx_theme_prefer_download',
             ],
             /*
              * Columns configuration
@@ -76,7 +76,7 @@ call_user_func(
             ],
             'tx_theme_bodytext_1' => [
                 'l10n_mode' => 'prefixLangTitle',
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text',
                 'config' => [
                     'type' => 'text',
                     'cols' => '80',
@@ -89,7 +89,7 @@ call_user_func(
             ],
             'tx_theme_bodytext_2' => [
                 'l10n_mode' => 'prefixLangTitle',
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text',
                 'config' => [
                     'type' => 'text',
                     'cols' => '80',
@@ -183,7 +183,7 @@ call_user_func(
                     'default' => 0,
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                            '0' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'
                         ]
                     ]
                 ],

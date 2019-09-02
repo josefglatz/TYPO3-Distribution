@@ -28,7 +28,8 @@ class Configuration
         if (!\is_array($defaults)) {
             throw new \UnexpectedValueException(
                 'The imageManipulation configuration can\'t be retrieved from the configuration file. (Please take a look at ' . self::CONFIGFILE . ')',
-                1524832974);
+                1524832974
+            );
         }
 
         // Return the whole default configuration if key argument is empty
@@ -40,14 +41,16 @@ class Configuration
         if (!isset($defaults[trim($key)])) {
             throw new \UnexpectedValueException(
                 'Requested key was not found. Is something missing in your configuration file? (Please take a look at ' . self::CONFIGFILE . ')',
-                1524835641);
+                1524835641
+            );
         }
 
         // Check if requested key is set in the configuration
         if (empty($defaults[trim($key)])) {
             throw new \UnexpectedValueException(
                 'Requested key doesn\'t contain any children.  (Please take a look at ' . self::CONFIGFILE . ')',
-                1524835441);
+                1524835441
+            );
         }
 
         return $defaults[trim($key)];

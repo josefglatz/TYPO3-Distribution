@@ -1,0 +1,133 @@
+##############
+#### PAGE ####
+##############
+page {
+
+
+#########################
+#### PAGE headerData ####
+#########################
+	headerData {
+
+		// realfavicongenerator.net powered favicon
+		1475270008 = TEMPLATE
+		1475270008.template = FILE
+		1475270008.template {
+			file = {$theme.resPartials}/Page/Favicon/Dist/RealFavIcon.html
+		}
+	}
+
+
+###################
+#### PAGE meta ####
+###################
+	meta {
+		viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+		viewport.replace = 1
+
+		SKYPE_TOOLBAR = SKYPE_TOOLBAR_PARSER_COMPATIBLE
+		SKYPE_TOOLBAR.replace = 1
+
+		format-detection = telephone=no
+		apple-mobile-web-app-capable = no
+
+		description = TEXT
+		description {
+			field = description
+			htmlSpecialChars = 1
+		}
+
+		keywords = TEXT
+		keywords {
+			field = keywords
+		}
+
+		google = {$site.meta.google}
+
+		google-site-verification = TEXT
+		google-site-verification {
+			if.isTrue = {$site.meta.googleSiteVerification}
+			stdWrap.cObject = COA
+			stdWrap.cObject {
+				10 = TEXT
+				10.value = {$site.meta.googleSiteVerification}
+			}
+		}
+
+		author = {$site.meta.author}
+		author {
+			override.field = author
+		}
+
+		date = TEXT
+		date {
+			data = page:SYS_LASTCHANGED // page:crdate
+			date = Y-m-d
+		}
+	}
+
+
+#####################################
+#### PAGE JS translation strings ####
+#####################################
+	inlineLanguageLabelFiles {
+		themeFrontend = {$theme.resLanguage}/locallang_JavascriptFrontend.xlf
+		themeFrontend {
+			// Only label keys that start with this prefix will be included (default: '')
+			selectionPrefix = frontend
+			// A string that will be removed from any included label key (default: '')
+			stripFromSelectionName = strip_me
+			// Error mode if the file could not be found: 0 - syslog entry, 1 - do nothing, 2 - throw an exception (default: 0)
+			errorMode = 2
+		}
+
+	}
+
+}
+
+
+#################################
+#### DEBUGGING / DEVELOPMENT ####
+#################################
+// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
+[getTSFE().beUserLogin == 1 || applicationContext matches "/^Development/" || applicationContext == "/^Production\/Dev/"]
+	// show some debug infos in <head>
+	page.headerData.666999 = TEXT
+	page.headerData.666999 {
+		insertData = 1
+		value (
+
+
+	<!-- TYPO3 debug infos
+
+	   Page Uid:             {page:uid}
+	   Page Pid:             {page:pid}
+	   Page Hidden:          {page:hidden}
+	   Page Doktype:         {page:doktype}
+	   Sys_language_uid:     {TSFE:sys_language_uid}
+	   Sys_language_content: {TSFE:sys_language_content}
+	   Level:                {level:0}
+	   Application Context:  {getenv:TYPO3_CONTEXT}
+	   Site Base:            {site:base}
+	   Site Root Page ID:    {site:rootPageId}
+
+	-->
+
+
+		)
+	}
+
+
+// Overwrite robots meta tag for specific environments (as an additional security layer!)
+[applicationContext matches '/^Production\\\\\\\\/Staging/' || applicationContext matches '/^Production\\\\\\\\/Dev/' || "{$site.dummyFrontend}" == 1]
+	page {
+
+		meta {
+			// @TODO: Improve TYPO3 v9 robots override in Development-Mode / Non-production-Mode
+			// 		- e.g. using a MetaTagProvider which shows the final production robots tag in a pseudo robots meta tag
+			robots = noindex, nofollow
+			robots.replace = 1
+		}
+
+	}
+[global]

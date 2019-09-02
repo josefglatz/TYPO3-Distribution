@@ -1,4 +1,5 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers;
 
@@ -8,8 +9,8 @@ namespace JosefGlatz\Theme\ViewHelpers;
  */
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 /**
@@ -30,11 +31,9 @@ class OrViewHelper extends AbstractViewHelper
     protected $escapeOutput = false;
 
     /**
-     * Initialize
-     *
-     * @return void
+     * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('content', 'mixed', 'Input to either use, if not empty');
         $this->registerArgument('alternative', 'mixed', 'Alternative if content is empty, can use LLL: shortcut');
@@ -55,9 +54,11 @@ class OrViewHelper extends AbstractViewHelper
     }
 
     /**
-     * @return mixed
+     * @param array $arguments
+     * @param RenderingContextInterface $renderingContext
+     * @return string|null
      */
-    protected static function getAlternativeValue(array $arguments, RenderingContextInterface $renderingContext)
+    protected static function getAlternativeValue(array $arguments, RenderingContextInterface $renderingContext): ?string
     {
         $alternative = $arguments['alternative'];
         $arguments = (array)$arguments['arguments'];

@@ -8,7 +8,8 @@
  * example: bin/typo3 backend:lock
  */
 return [
-    'dev:postSyncTasks' => [
-        'class' => \JosefGlatz\Theme\Command\PostSyncCommand::class
-    ]
+//    'dev:yourTask' => [
+//        'class' => \JosefGlatz\Theme\Command\YourCommand::class,
+//        'schedulable' => false,
+//    ]
 ];

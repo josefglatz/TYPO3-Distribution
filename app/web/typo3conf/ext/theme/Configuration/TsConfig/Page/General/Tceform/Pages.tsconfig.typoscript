@@ -1,0 +1,36 @@
+#################
+#### TCEFORM ####
+#################
+TCEFORM.pages {
+	// Remove alias in times like this
+	alias.disabled = 1
+
+	// Remove beLayout "None"
+	backend_layout.removeItems = -1
+	backend_layout_next_level.removeItems = -1
+
+	// disable doktype "Backend User Section"
+	doktype.removeItems = 6
+
+	layout {
+		// Remove default fe layouts
+		removeItems = 1,2,3
+	}
+
+	// disable barely used fields even for admins
+	keywords.disabled = 1
+	php_tree_stop.disabled = 1
+	TSconfig.disabled = 1
+	lastUpdated.disabled = 1
+	newUntil.disabled = 1
+	fe_login_mode.disabled = 1
+
+
+	// disable field only for specific treeLevel
+	tx_theme_show_in_secondary_navigation.disabled = 1
+}
+[tree.level == 2]
+	TCEFORM.pages {
+		tx_theme_show_in_secondary_navigation.disabled = 0
+	}
+[global]

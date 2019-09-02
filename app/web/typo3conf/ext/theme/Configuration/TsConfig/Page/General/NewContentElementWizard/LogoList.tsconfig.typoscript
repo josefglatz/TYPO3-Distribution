@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			theme_logo_list {
+				iconIdentifier = theme-content-logos
+				title = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_logo_list.title
+				description = LLL:EXT:theme/Resources/Private/Language/locallang_ContentElements.xlf:theme_logo_list.description
+				tt_content_defValues {
+					CType = theme_logo_list
+					sectionIndex = 0
+				}
+			}
+		}
+	}
+}

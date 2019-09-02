@@ -1,0 +1,10 @@
+page.mod.web_info.menu.function {
+	// disable "Page TSConfig" module
+	TYPO3\CMS\InfoPagetsconfig\Controller\InfoPageTyposcriptConfigController = 0
+
+	// disable "Linkvalidator" module
+	TYPO3\CMS\Linkvalidator\Report\LinkValidatorReport = 0
+
+	// disable "Log" module
+	TYPO3\CMS\Belog\Module\BackendLogModuleBootstrap = 0
+}

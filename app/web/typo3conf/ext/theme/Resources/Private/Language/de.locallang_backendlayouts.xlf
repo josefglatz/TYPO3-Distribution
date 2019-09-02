@@ -25,6 +25,10 @@
 			<source>Main Content Section</source>
 			<target>Hauptinhalt</target>
 		</trans-unit>
+		<trans-unit id="col.sectionHeader" approved="yes">
+			<source>Section Header</source>
+			<target>Hauptinhaltsbereich Überschrift</target>
+		</trans-unit>
 		<trans-unit id="col.newsLatest" approved="yes">
 			<source>Latest News Section (automatic)</source>
 			<target>Neueste News (Automatik)</target>

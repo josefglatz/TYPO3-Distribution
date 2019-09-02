@@ -1,14 +1,14 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
+use JosefGlatz\Theme\Configuration\ExtensionConfiguration;
 use JosefGlatz\Theme\Utility\ArrayTool;
-use JosefGlatz\Theme\Utility\EmConfiguration;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawFooterHookInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Lang\LanguageService;
 
 class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInterface
 {
@@ -48,7 +48,6 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      * @param \TYPO3\CMS\Backend\View\PageLayoutView $parentObject Calling parent object
      * @param string $info Processed values
      * @param array $row Record row of tt_content
-     * @return void
      * @throws \Exception
      */
     public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$info, array &$row)
@@ -237,8 +236,7 @@ class PageLayoutViewEnrichmentFooter implements PageLayoutViewDrawFooterHookInte
      */
     protected function isEnabled(): bool
     {
-        $extConf = EmConfiguration::getSettings();
-        return $extConf->isPageLayoutViewEnrichmentFooter();
+        return GeneralUtility::makeInstance(ExtensionConfiguration::class)->isPageLayoutViewEnrichmentFooter();
     }
 
     /**

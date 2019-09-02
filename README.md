@@ -1,4 +1,4 @@
-# TYPO3 Distribution
+# TYPO3 Distribution (TYPO3 9 LTS is WORK IN PROGRESS)
 
 [![StyleCI](https://styleci.io/repos/66637769/shield?branch=master)](https://styleci.io/repos/66637769/)
 
@@ -20,14 +20,12 @@ distribution based on my best practices.
 > **This TYPO3 distribution is an advanced, professional TYPO3
 > distribution which requires an all-encompassing TYPO3 know-how.**
 
-> **This distribution doesn't use rsaauth anymore (it's deprecated).
-> There are no reasons anymore to not use HTTPS!!!**
-
 ---
 
 #### Which TYPO3 version is actually supported?
 
-Branch **master**: TYPO3 8.7 LTS *(regular further development)*
+- TYPO3 9 LTS *(regular further development)*
+- TYPO3 8 LTS *(important bugfixes)*
 
 ---
 
@@ -75,9 +73,6 @@ Branch **master**: TYPO3 8.7 LTS *(regular further development)*
   * Module for listing all registered icon identifiers and showing
     specific icons as overview
 * Many TYPO3 frontend improvements
-  * ext:realurl (with both a) automatic configuration and
-    ready-to-edit-hook configuration or b) manual configuration)
-  * Simple dynamic robots.txt via eID
   * Quick and ready2use RealFaviconGenerator.net gulp script (just
     upload svg, adjust colors, run tasks, commit favicons and you're
     done)

@@ -35,14 +35,10 @@ editor:
 
     # List of classes to use for aligning the contents in the following order: left, center, right, justify http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-justifyClasses
     justifyClasses:
-      - text-left
-      - text-center
-      - text-right
-      - text-justify
-#      - align-left
-#      - align-center
-#      - align-right
-#      - align-justify
+      - "text-left"
+      - "text-center"
+      - "text-right"
+      - "text-justify"
 
     # Group all buttons http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups
     toolbarGroups:
@@ -79,7 +75,9 @@ editor:
       - specialchar
       - showblocks
       - about
-      - notification
+      - wordcount
+      - selectall
+      - autolink
 #      - devtools
 
     # Plugins that must not be loaded
@@ -134,6 +132,19 @@ editor:
     # Quicktable plugin configuration https://github.com/ufdada/quicktable/blob/master/plugin.js#L5
     qtClass: "table table-striped table-responsive table-bordered"
 
+    # Configure wordcount plugin for ckeditor check details and all config options under https://github.com/w8tcha/CKEditor-wordcount-Plugin
+    wordcount:
+      showParagraphs: true
+      showRemaining: false
+      showWordCount: true
+      showCharCount: true
+      countSpacesAsChars: false
+      countHTML: false
+      countLineBreaks: false
+      maxWordCount: -1
+      maxCharCount: -1
+      pasteWarningDuration: 3000
+
 
 ##################################
 ### Set the processing options ###
@@ -162,5 +173,4 @@ processing:
 # @TODO Check http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-format_address if it has to be used or only class in css is enough
 # @TODO Check /Add CKEDITOR.config.format_(h1-h6|p|pre)
 # @TODO Check/Add http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-indentClasses
-# @TODO Add/Import extraPlugin wordcount https://github.com/mschwemer/rte_ckeditor_wordcount
 # @TODO Develop a plugin based on the dialog plugin like the about plugin to display useful links for working with the RTE

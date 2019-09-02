@@ -1,0 +1,35 @@
+TYPO3:
+  Data:
+    fe_users:
+      -
+        uid: 1
+        tx_extbase_type: Tx_Extbase_Domain_Model_FrontendUser
+        pid: 8
+        username: frontenduser
+        password: $pbkdf2-sha256$25000$bdN/usg2HlgOg8Jm5WOlBQ$6Bs7kmYsRhxvy.i14091dDCc8hz8irDaGG7UVDhy2zY
+        usergroup: '1'
+        disable: 0
+        starttime: 0
+        endtime: 0
+        name: ''
+        first_name: PiBase
+        middle_name: ''
+        last_name: Extbase
+        address: ''
+        telephone: 0800TYPO3
+        fax: ''
+        email: ''
+        lockToDomain: ''
+        deleted: 0
+        description: 'Default Frontend User'
+        title: DJ
+        zip: '2851'
+        city: 'Krumbach i.d. Buckligen Welt'
+        country: Austria
+        www: jousch.com
+        company: ''
+        image: null
+        TSconfig: null
+        is_online: 0
+        gdpr_restricted: 0
+        gdpr_randomized: 0

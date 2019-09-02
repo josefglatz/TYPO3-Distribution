@@ -31,6 +31,10 @@ nbproject
 /*.tar.gz
 /*.sql
 *.bak
+.sonar/
+/todo.md
+/status.md
+Documentation.tmpl
 .~lock.*
 /backup/**/*
 !/backup/.gitkeep

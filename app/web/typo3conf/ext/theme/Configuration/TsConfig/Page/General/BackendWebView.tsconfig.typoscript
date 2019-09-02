@@ -1,0 +1,10 @@
+mod.web_view {
+
+	// typeNum value of &type parameter passed to the webpage
+	type = 0
+
+	previewFrameWidths >
+	previewFrameWidths {
+		// @TODO Add project bootstrap breakpoints https://github.com/josefglatz/TYPO3-Distribution/issues/369
+	}
+}

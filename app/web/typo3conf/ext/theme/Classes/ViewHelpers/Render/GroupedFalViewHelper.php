@@ -1,14 +1,14 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace JosefGlatz\Theme\ViewHelpers\Render;
 
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -46,9 +46,8 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  *         </f:link.typolink>
  *     </div>
  * </f:section>
- *
  */
-class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInterface
+class GroupedFalViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -58,7 +57,7 @@ class GroupedFalViewHelper extends AbstractViewHelper implements CompilableInter
     /**
      * Initialize required arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('as', 'string', 'Output variable', true);
         $this->registerArgument('folder', 'string', 'Folder');

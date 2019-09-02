@@ -1,26 +1,26 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Project specific theme extension',
-    'description' => 'Sitepackage/Theme/Extension of this great website.',
+    'title' => 'Base sitepackage',
+    'description' => 'Base sitepackage of another great website.',
     'category' => 'Theme',
     'author' => 'Josef Glatz',
-    'author_email' => 'jousch@jousch.com',
-    'author_company' => 'http://jousch.com',
-    'state' => 'excludeFromUpdates',
+    'author_email' => 'jousch@gmail.com',
+    'author_company' => 'https://jousch.com',
+    'state' => 'stable',
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 1,
-    'version' => '0.0.0',
+    'version' => '1.0.0',
     'constraints' =>
         [
             'depends' =>
                 [
-                    'typo3' => '8.7.1-8.7.99',
+                    'hide_sys_template' => '',
+                    'typo3' => '9.5.0-9.5.99',
                 ],
             'conflicts' =>
                 [
-                    'css_styled_content' => '',
-                    'rtehtmlarea' => '',
+                    'rsaauth' => '',
                 ],
             'suggests' =>
                 [
@@ -32,7 +32,7 @@ $EM_CONF[$_EXTKEY] = [
                     'beuser_fastswitch' => '',
                     'blog' => '',
                     'content_defender' => '',
-                    'dd_googlesitemap' => '',
+                    'crontab' => '',
                     'deprecationloganalyzer' => '',
                     'extractor' => '',
                     'felogin' => '',
@@ -40,6 +40,7 @@ $EM_CONF[$_EXTKEY] = [
                     'fluid_styled_responsive_images' => '',
                     'form' => '',
                     'formhandler' => '',
+                    'gdpr' => '',
                     'gravatar' => '',
                     'iconcheck' => '',
                     'gridelements' => '',
@@ -60,18 +61,17 @@ $EM_CONF[$_EXTKEY] = [
                     'page_speed' => '',
                     'powermail' => '',
                     'querybuilder' => '',
-                    'realurl' => '',
-                    'realurlconflicts' => '',
                     'rte_ckeditor' => '',
                     'rx_shariff' => '',
                     'scheduler' => '',
+                    'seo' => '',
                     'seo_basics' => '',
+                    'seo_aspect_ratios' => '',
                     'solr' => '',
                     'sourceopt' => '',
                     'sr_language_menu' => '',
                     'static_info_tables' => '',
                     't3monitoring_client' => '',
-                    'theme_project' => '',
                     'transladder' => '',
                     'tt_address' => '',
                     'typoscript_rendering' => '',
