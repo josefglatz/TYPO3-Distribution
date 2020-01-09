@@ -225,31 +225,6 @@ call_user_func(
             tx_theme_video_autoplay, tx_theme_video_showinfo, tx_theme_video_rel, tx_theme_video_fullscreen, tx_theme_video_loop,'
         );
 
-        // Default cropVariants configuration is automatically generated out of \JosefGlatz\Theme\Backend\CropVariants\Defaults\Configuration::CONFIGFILE
-        $fileLoader = TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader::class);
-        $configuration = $fileLoader->load(\JosefGlatz\Theme\Backend\CropVariants\Defaults\Configuration::CONFIGFILE);
-        $defaults = $configuration['imageManipulation']['cropVariants']['defaults']['defaultCropVariantsConfiguration'];
-        // Array must be at least available
-        if (!\is_array($defaults)) {
-            throw new \UnexpectedValueException(
-                'The defaultCropVariantsConfiguration configuration can\'t be retrieved from the configuration file. (Please take a look at ' . \JosefGlatz\Theme\Backend\CropVariants\Defaults\Configuration::CONFIGFILE . ')',
-                1524948477
-            );
-        }
-        // Overwrite the TYPO3 core default cropVariant configuration if the necessary configuration has at least one entry
-        if (!empty($defaults)) {
-            $defaultCrop = \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'crop');
-            foreach ($defaults as $key => $config) {
-                $defaultCrop = $defaultCrop->addCropVariant(
-                    \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create($key)
-                        ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
-                        ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get($config['aspectRatios']))
-                        ->get()
-                );
-            }
-            $defaultCrop->persistToDefaultTableTca();
-        }
-
         // cropVariants configuration for sys_file_reference.tx_theme_video_coverimage column
         \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_video_coverimage')
             ->disableDefaultCropVariants()

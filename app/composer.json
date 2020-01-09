@@ -40,6 +40,7 @@
 		"helhum/typo3-console": "^5",
 		"ichhabrecht/content-defender": "^3",
 		"josefglatz/beuser-fastswitch": "^2",
+		"josefglatz/cropvariantsbuilder": "dev-master",
 		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
 		"josefglatz/seo-aspect-ratios": "^1.0",

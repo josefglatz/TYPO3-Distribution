@@ -63,7 +63,7 @@ distribution based on my best practices.
 * DB-less sys_template record support (no more sys_template records!!!)
 * Many TYPO3 backend improvements
   * Support for automatic image resizing when uploading too large images
-  * Simplified cropVariants configuration (custom CropVariants Builder)
+  * Simplified cropVariants configuration (custom [CropVariants Builder](https://github.com/josefglatz/cropvariantsbuilder) )
   * Unlocalized crop configuration (per default – can be disabled)
   * Easy language file editing in the backend
     [sgalinski/lfeditor](https://packagist.org/packages/sgalinski/lfeditor)

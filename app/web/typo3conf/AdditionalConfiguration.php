@@ -51,6 +51,13 @@ $customChanges = [
             ],
         ],
     ],
+    'EXT' => [
+        'extConf' => [
+            'cropvariantsbuilder' => serialize([
+                'configurationProviderExtension' => 'theme'
+            ]),
+        ],
+    ],
     'EXTCONF' => [
         'lang' => [
             'availableLanguages' => [
@@ -118,6 +125,9 @@ $customChanges = [
             'showAdminUsers' => 0,
             'activeSearchbox' => 0,
             'defaultListing' => 'default',
+        ],
+        'cropvariantsbuilder' => [
+            'configurationProviderExtension' => 'theme',
         ],
         'extractor' => [
             'auto_extract' => 0,
