@@ -54,7 +54,8 @@ $customChanges = [
     'EXT' => [
         'extConf' => [
             'cropvariantsbuilder' => serialize([
-                'configurationProviderExtension' => 'theme'
+                'configurationProviderExtension' => 'theme',
+                'configurationProviderLocallangFilename' => 'locallang',
             ]),
         ],
     ],
