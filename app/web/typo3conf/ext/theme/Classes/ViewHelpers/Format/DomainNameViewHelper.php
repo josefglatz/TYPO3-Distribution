@@ -24,7 +24,7 @@ class DomainNameViewHelper extends AbstractViewHelper
      */
     public function initializeArguments(): void
     {
-        $this->registerArgument('url', 'string', 'Url where the domain must be extracted', true);
+        $this->registerArgument('url', 'string', 'Url where the domain must be extracted', false);
     }
 
     /**
@@ -37,6 +37,7 @@ class DomainNameViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?string
     {
+        $url = $arguments['url'] ??  $renderChildrenClosure();
         try {
             return self::parseUrl($arguments['url'], $arguments);
         } catch (\Exception $e) {
