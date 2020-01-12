@@ -227,21 +227,21 @@ call_user_func(
         /**
          * Set cropVariants configuration
          */
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_nav_image')
+        \JosefGlatz\CropVariantsBuilder\Builder::getInstance($table, 'tx_theme_nav_image')
             ->disableDefaultCropVariants()
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('xs')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['4:3']))
                     ->get()
             )
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('md')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('md')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['4:3']))
                     ->get()
             )
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('lg')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['4:3']))
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('lg')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['4:3']))
                     ->get()
             )
             ->persistToTca();

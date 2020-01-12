@@ -69,12 +69,12 @@ call_user_func(
             /***************
              * Configure cropVariants
              */
-            \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'fal_media')
+            \JosefGlatz\CropVariantsBuilder\Builder::getInstance($table, 'fal_media')
                 ->disableDefaultCropVariants()
                 ->addCropVariant(
-                    \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('teaser')
-                        ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
-                        ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
+                    \JosefGlatz\CropVariantsBuilder\CropVariant::create('teaser')
+                        ->setCropArea(\JosefGlatz\CropVariantsBuilder\Defaults\CropArea::get())
+                        ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['3:2']))
                         ->get()
                 )
                 ->persistToTca();

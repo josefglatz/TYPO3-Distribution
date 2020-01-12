@@ -226,11 +226,11 @@ call_user_func(
         );
 
         // cropVariants configuration for sys_file_reference.tx_theme_video_coverimage column
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'tx_theme_video_coverimage')
+        \JosefGlatz\CropVariantsBuilder\Builder::getInstance($table, 'tx_theme_video_coverimage')
             ->disableDefaultCropVariants()
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('video')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['16:9', '4:3']))
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('video')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['16:9', '4:3']))
                     ->setSelectedRatio('16:9')
                     ->get()
             )

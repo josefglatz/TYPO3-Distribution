@@ -108,11 +108,11 @@ call_user_func(
         /***************
          * Configure cropVariants
          */
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'image', $type)
+        \JosefGlatz\CropVariantsBuilder\Builder::getInstance($table, 'image', $type)
             ->disableDefaultCropVariants()
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('logo')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('logo')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['3:2']))
                     ->get()
             )
             ->persistToTca();

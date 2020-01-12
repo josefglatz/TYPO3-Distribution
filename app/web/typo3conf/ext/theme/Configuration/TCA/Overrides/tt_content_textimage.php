@@ -68,24 +68,24 @@ call_user_func(
         ];
         $GLOBALS['TCA'][$table] = array_replace_recursive($GLOBALS['TCA'][$table], $tca);
 
-        \JosefGlatz\Theme\Backend\CropVariants\Builder::getInstance($table, 'image', $type)
+        \JosefGlatz\CropVariantsBuilder\Builder::getInstance($table, 'image', $type)
             ->disableDefaultCropVariants()
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('xs')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
-                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('xs')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['3:2']))
+                    ->setCropArea(\JosefGlatz\CropVariantsBuilder\Defaults\CropArea::get())
                     ->get()
             )
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('md')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
-                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('md')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['3:2']))
+                    ->setCropArea(\JosefGlatz\CropVariantsBuilder\Defaults\CropArea::get())
                     ->get()
             )
             ->addCropVariant(
-                \JosefGlatz\Theme\Backend\CropVariants\CropVariant::create('lg')
-                    ->addAllowedAspectRatios(\JosefGlatz\Theme\Backend\CropVariants\Defaults\AspectRatio::get(['3:2']))
-                    ->setCropArea(\JosefGlatz\Theme\Backend\CropVariants\Defaults\CropArea::get())
+                \JosefGlatz\CropVariantsBuilder\CropVariant::create('lg')
+                    ->addAllowedAspectRatios(\JosefGlatz\CropVariantsBuilder\Defaults\AspectRatio::get(['3:2']))
+                    ->setCropArea(\JosefGlatz\CropVariantsBuilder\Defaults\CropArea::get())
                     ->get()
             )
             ->persistToTca();
