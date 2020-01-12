@@ -25,21 +25,6 @@
 			<source>Clear all processed files</source>
 			<target>Leere alle verarbeiteten Dateien</target>
 		</trans-unit>
-		<trans-unit id="crop_variants.default.label" approved="yes">
-			<source>Default</source>
-			<target>Standard</target>
-		</trans-unit>
-		<trans-unit id="crop_variants.logo.label" approved="yes">
-			<target>Logo spezifischer Crop</target>
-		</trans-unit>
-		<trans-unit id="crop_variants.opengraph.label" approved="yes">
-			<source>Open Graph (Official Suggestion 2018)</source>
-			<target>Open Graph (Offizielle Empfehlung aus 2018)</target>
-		</trans-unit>
-		<trans-unit id="crop_variants.twitterimage.label" approved="yes">
-			<source>Twitter Image (Official Suggestion 2018)</source>
-			<target>Twitter Bild (Offizielle Empfehlung aus 2018)</target>
-		</trans-unit>
 		<trans-unit id="div.pages.seo" approved="yes">
 			<source>SEO</source>
 			<target>SEO</target>
