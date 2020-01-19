@@ -14,6 +14,7 @@ nbproject
 .buildpath
 .cache
 .php_cs.cache
+.phpunit.result.cache
 .project
 .session
 .settings
@@ -32,6 +33,12 @@ nbproject
 /status.md
 Documentation.tmpl
 .~lock.*
+node_modules
+*.log
+Documentation-GENERATED-temp
 /backup/**/*
 !/backup/.gitkeep
 /docker-compose.yml
+/docker/app/root.pem
+/docker/app/ssl.crt
+/docker/app/ssl.key
