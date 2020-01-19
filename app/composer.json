@@ -88,6 +88,11 @@
 		"wazum/pagetree-resizable": "^1"
 	},
 	"require-dev": {
+		"captainhook/captainhook": "^4",
+		"codeception/codeception": "^4",
+		"codeception/module-asserts": "^1",
+		"codeception/module-webdriver": "^1",
+		"ericmartel/codeception-email-mailhog": "^1",
 		"friendsofphp/php-cs-fixer": "^2",
 		"friendsoftypo3/extension-builder": "^9",
 		"mercari/composer-diff-plugin": "^0",
@@ -96,7 +101,8 @@
 		"phpmd/phpmd": "^2.8",
 		"pyrech/composer-changelogs": "^1.6",
 		"roave/security-advisories": "dev-master",
-		"squizlabs/php_codesniffer": "^3"
+		"squizlabs/php_codesniffer": "^3",
+		"typo3/testing-framework": "^4"
 	},
 	"suggest": {
 	},

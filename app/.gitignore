@@ -32,6 +32,7 @@
 !/var/labels/
 /vendor
 
+/captainhoo*
 /codecept
 /doctrine-dbal
 /fluid
@@ -47,3 +48,4 @@
 node_modules
 *.log
 Documentation-GENERATED-temp
+
