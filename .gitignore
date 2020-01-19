@@ -8,16 +8,12 @@ Thumbs.db
 .svn
 .sass-cache
 /.idea/**/*
-!/.idea/encodings.xml
-!/.idea/php.xml
-!/.idea/vcs.xml
-!/.idea/modules.xml
-!/.idea/*.iml
 nbproject
 *.project
 *.swp
 .buildpath
 .cache
+.php_cs.cache
 .project
 .session
 .settings
