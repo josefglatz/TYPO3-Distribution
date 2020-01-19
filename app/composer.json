@@ -1,10 +1,14 @@
 {
 	"repositories": [
+		{
+			"type": "path",
+			"url": "./packages/*"
+		}
 	],
 	"name": "josefglatz/typo3-distribution",
 	"description": "A TYPO3 CMS kickstarter distribution package in composer mode",
 	"_comment": [
-		"This is my TYPO3 distribution",
+		"This is a TYPO3 project distribution",
 		"based on https://github.com/josefglatz/TYPO3-Distribution"
 	],
 	"authors": [
@@ -42,6 +46,7 @@
 		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
 		"josefglatz/seo-aspect-ratios": "^1",
+		"josefglatz/theme-project": "@dev",
 		"lochmueller/staticfilecache": "^10",
 		"minifranske/gravatar": "^1",
 		"php": "^7.3",
