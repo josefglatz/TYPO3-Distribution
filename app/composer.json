@@ -8,93 +8,97 @@
 		"based on https://github.com/josefglatz/TYPO3-Distribution"
 	],
 	"authors": [
-		{
-			"name": "Josef Glatz",
-			"email": "jousch@jousch.com",
-			"role": "Developer",
-			"homepage": "https://jousch.com"
-		}
 	],
-	"license": "GPL-3.0+",
+	"license": "GPL-2.0-or-later",
 	"support": {
 		"issues": "https://github.com/josefglatz/TYPO3-Distribution/issues"
 	},
-	"minimum-stability": "stable",
 	"config": {
 		"optimize-autoloader": true,
 		"secure-http": true,
 		"sort-packages": true,
 		"bin-dir": ".",
 		"platform": {
-			"php": "7.2"
+			"php": "7.3"
 		}
 	},
 	"require": {
-		"php": "^7.2",
 		"causal/extractor": "dev-master",
+		"christianessl/adminpanel_int": "^1.0",
 		"cweagans/composer-patches": "^1.6",
 		"georgringer/autoswitchtolistview": "dev-master",
 		"georgringer/gdpr": "^1.0",
 		"georgringer/news": "^7",
+		"georgringer/noopener": "dev-master",
 		"georgringer/page_speed": "dev-master",
+		"georgringer/schema-org-generator": "dev-master",
+		"georgringer/uri2link": "^0.1.0",
+		"helhum/dotenv-connector": "^2",
 		"helhum/typo3-console": "^5",
+		"helhum/typo3-secure-web": "^0",
 		"ichhabrecht/content-defender": "^3",
-		"josefglatz/beuser-fastswitch": "^2",
+		"josefglatz/beuser-fastswitch": "^3",
 		"josefglatz/cropvariantsbuilder": "dev-master",
 		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
-		"josefglatz/seo-aspect-ratios": "^1.0",
-		"lochmueller/staticfilecache": "^6.1",
+		"josefglatz/seo-aspect-ratios": "^1",
+		"lochmueller/staticfilecache": "^10",
 		"minifranske/gravatar": "^1",
-		"t3monitor/t3monitoring_client": "^9.0",
-		"typo3/cms-about": "9.5.*@dev",
-		"typo3/cms-adminpanel": "9.5.*@dev",
-		"typo3/cms-backend": "9.5.*@dev",
-		"typo3/cms-belog": "9.5.*@dev",
-		"typo3/cms-beuser": "9.5.*@dev",
-		"typo3/cms-core": "9.5.*@dev",
-		"typo3/cms-extbase": "9.5.*@dev",
-		"typo3/cms-extensionmanager": "9.5.*@dev",
-		"typo3/cms-filelist": "9.5.*@dev",
-		"typo3/cms-filemetadata": "9.5.*@dev",
-		"typo3/cms-fluid": "9.5.*@dev",
-		"typo3/cms-fluid-styled-content": "9.5.*@dev",
-		"typo3/cms-form": "9.5.*@dev",
-		"typo3/cms-frontend": "9.5.*@dev",
-		"typo3/cms-info": "9.5.*@dev",
-		"typo3/cms-install": "9.5.*@dev",
-		"typo3/cms-linkvalidator": "9.5.*@dev",
-		"typo3/cms-lowlevel": "9.5.*@dev",
-		"typo3/cms-opendocs": "9.5.*@dev",
-		"typo3/cms-recordlist": "9.5.*@dev",
-		"typo3/cms-recycler": "9.5.*@dev",
-		"typo3/cms-redirects": "9.5.*@dev",
-		"typo3/cms-reports": "9.5.*@dev",
-		"typo3/cms-rte-ckeditor": "9.5.*@dev",
-		"typo3/cms-scheduler": "9.5.*@dev",
-		"typo3/cms-seo": "9.5.*@dev",
-		"typo3/cms-setup": "9.5.*@dev",
-		"typo3/cms-sys-action": "9.5.*@dev",
-		"typo3/cms-sys-note": "9.5.*@dev",
-		"typo3/cms-taskcenter": "9.5.*@dev",
-		"typo3/cms-tstemplate": "9.5.*@dev",
-		"typo3/cms-viewpage": "9.5.*@dev"
+		"php": "^7.3",
+		"plan2net/webp": "^2",
+		"t3monitor/t3monitoring_client": "^9",
+		"typo3/cms-about": "*",
+		"typo3/cms-adminpanel": "*",
+		"typo3/cms-backend": "*",
+		"typo3/cms-belog": "*",
+		"typo3/cms-beuser": "*",
+		"typo3/cms-core": "^9.5",
+		"typo3/cms-extbase": "*",
+		"typo3/cms-extensionmanager": "*",
+		"typo3/cms-filelist": "*",
+		"typo3/cms-filemetadata": "*",
+		"typo3/cms-fluid": "*",
+		"typo3/cms-fluid-styled-content": "*",
+		"typo3/cms-form": "*",
+		"typo3/cms-frontend": "*",
+		"typo3/cms-info": "*",
+		"typo3/cms-install": "*",
+		"typo3/cms-linkvalidator": "*",
+		"typo3/cms-lowlevel": "*",
+		"typo3/cms-opendocs": "*",
+		"typo3/cms-recordlist": "*",
+		"typo3/cms-recycler": "*",
+		"typo3/cms-redirects": "*",
+		"typo3/cms-reports": "*",
+		"typo3/cms-rte-ckeditor": "*",
+		"typo3/cms-scheduler": "*",
+		"typo3/cms-seo": "*",
+		"typo3/cms-setup": "*",
+		"typo3/cms-sys-action": "*",
+		"typo3/cms-sys-note": "*",
+		"typo3/cms-taskcenter": "*",
+		"typo3/cms-tstemplate": "*",
+		"typo3/cms-viewpage": "*",
+		"wazum/pagetree-resizable": "^1"
 	},
 	"require-dev": {
-		"friendsofphp/php-cs-fixer": "^2.13",
-		"namelesscoder/typo3-repository-client": "^2.0",
+		"friendsofphp/php-cs-fixer": "^2",
+		"friendsoftypo3/extension-builder": "^9",
+		"mercari/composer-diff-plugin": "^0",
+		"namelesscoder/typo3-repository-client": "^2",
 		"neronmoon/scriptsdev": "^0.1.4",
-		"phpmd/phpmd": "^2.6",
-		"psychomieze/adminpanel-extended": "dev-develop",
+		"phpmd/phpmd": "^2.8",
+		"pyrech/composer-changelogs": "^1.6",
 		"roave/security-advisories": "dev-master",
-		"squizlabs/php_codesniffer": "^3.3"
+		"squizlabs/php_codesniffer": "^3"
 	},
 	"suggest": {
 	},
 	"extra": {
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"web-dir": "web"
+			"root-dir": "private",
+			"web-dir": "public"
 		},
 		"helhum/typo3-console": {
 			"install-binary": false,
@@ -105,16 +109,14 @@
 				"@folder-structure"
 			]
 		},
-		"patches": {
-		},
-		"composer-exit-on-patch-failure":  true
+		"patches": [],
+		"enable-patching": true,
+		"composer-exit-on-patch-failure": true
 	},
 	"autoload": {
 		"classmap": [
 		],
 		"psr-4": {
-			"JosefGlatz\\Theme\\": "web/typo3conf/ext/theme/Classes",
-			"JosefGlatz\\ThemeProject\\": "web/typo3conf/ext/theme/Classes"
 		}
 	},
 	"scripts": {
@@ -131,35 +133,19 @@
 			"@php ./typo3cms extension:setupactive"
 		],
 		"toolchain-install": [
-			"./sgc-core/install.sh --local && cd ./web/typo3conf/ext/theme/ && npm install"
+			"echo 'add command to install frontend pipeline'"
 		],
 		"toolchain-update": [
-			"cd ./web/typo3conf/ext/theme/ && npm install"
-		],
-		"toolchain-watch": [
-			"./sgc build && ./sgc"
-		],
-		"toolchain-watch-silent": [
-			"./sgc build && ./sgc -s"
-		],
-		"toolchain-watch-nobrowsersync": [
-			"./sgc build && ./sgc watch"
+			"echo 'add command to update frontend pipeline'"
 		],
 		"toolchain-build": [
-			"./sgc build"
+			"echo 'add command to run frontend pipeline'"
 		],
-		"php-cs-fixer": [
-			"php-cs-fixer fix --config ./Build/.php_cs"
-		],
-		"pre-deploy": [
-			"./sgc build"
+		"toolchain-watch": [
+			"echo 'add command to run frontend pipeline watch mode'"
 		],
 		"post-autoload-dump": [
 			"@package-states"
-		],
-		"post-install-cmd": [
-		],
-		"post-update-cmd": [
 		]
 	}
 }
