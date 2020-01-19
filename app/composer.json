@@ -46,6 +46,7 @@
 		"josefglatz/hide-sys-template": "^1",
 		"josefglatz/iconcheck": "^2",
 		"josefglatz/seo-aspect-ratios": "^1",
+		"josefglatz/theme": "@dev",
 		"josefglatz/theme-project": "@dev",
 		"lochmueller/staticfilecache": "^10",
 		"minifranske/gravatar": "^1",

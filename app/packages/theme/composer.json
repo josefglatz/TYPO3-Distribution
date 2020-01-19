@@ -1,0 +1,18 @@
+{
+    "name": "josefglatz/theme",
+    "type": "typo3-cms-extension",
+    "description": "EXT:theme sitepackage extension",
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JosefGlatz\\Theme\\": "Classes"
+        }
+    },
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "theme"
+		}
+	}
+}
