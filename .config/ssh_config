@@ -7,3 +7,8 @@ Host sshConfigHost2Name
     User sshConfigHost2User
     Port sshConfigHost2Port
     HostName sshConfigHost2RealHostName
+
+Host sshConfigHost3Name
+    User sshConfigHost3User
+    Port sshConfigHost3Port
+    HostName sshConfigHost3RealHostName
