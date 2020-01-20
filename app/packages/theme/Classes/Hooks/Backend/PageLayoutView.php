@@ -30,7 +30,7 @@ class PageLayoutView implements SingletonInterface
     public function render(): void
     {
         $this->pageRenderer->addCssFile(
-            '../' . PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath('theme')) . 'Resources/Public/Css/Backend/PageLayoutView.css'
+            'EXT:theme/Resources/Public/Css/Backend/PageLayoutView.css'
         );
     }
 }
