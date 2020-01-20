@@ -22,7 +22,6 @@ class ContentPostProc
      */
     public function run(array &$parameters)
     {
-        $parameters['pObj']->content = $this->adoptComment($parameters['pObj']->content);
         $parameters['pObj']->content = $this->simpleReplacements($parameters['pObj']->content);
     }
 
@@ -40,21 +39,5 @@ class ContentPostProc
         }
 
         return $searchText;
-    }
-
-    /**
-     * Always show the actual year in TYPO3 copyright
-     *
-     * @param string $searchText
-     * @return string
-     */
-    protected function adoptComment(string $searchText): string
-    {
-        $pattern = '/(1998-)([0-9]{4})( of Kasper Skaarhoj)/u';
-        preg_match($pattern, $searchText, $match);
-
-        $stringReplacement = $match[1] . date('Y') . $match[3];
-
-        return str_replace($match[0], $stringReplacement, $searchText);
     }
 }
