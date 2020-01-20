@@ -22,8 +22,8 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
     'SYS' => [
         'devIPmask' => '*',
         'displayErrors' => true,
-        'exceptionalErrors'   => E_ALL & ~(E_STRICT | E_NOTICE | E_DEPRECATED | E_USER_DEPRECATED | E_WARNING),
-        'systemLog' => true,
+        'exceptionalErrors'   => E_ALL & ~(E_STRICT | E_NOTICE | E_DEPRECATED | E_USER_DEPRECATED),
+        'trustedHostsPattern' => '.*',
     ],
 ]);
 
