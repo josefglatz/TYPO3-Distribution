@@ -60,7 +60,7 @@ if (is_file($backendLogo)) {
 // project specific configuration
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'], [
     'BE' => [
-        'debug'              => false,
+        'debug'              => true,
         'explicitADmode' => 'explicitAllow',
         'loginSecurityLevel' => 'normal',
         'notificationPrefix' => '[' . htmlspecialchars($site['sitenameBase']) . ' TYPO3 Note]',
