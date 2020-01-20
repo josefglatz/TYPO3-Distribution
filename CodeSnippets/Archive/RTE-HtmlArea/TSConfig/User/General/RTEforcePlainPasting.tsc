@@ -1,2 +1,0 @@
-// pasteStructure or plainText
-setup.override.rteCleanPasteBehaviour = plainText

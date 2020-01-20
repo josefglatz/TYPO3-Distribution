@@ -1,4 +1,4 @@
-# TYPO3 Distribution (TYPO3 9 LTS is WORK IN PROGRESS)
+# josefglatz/TYPO3-Distribution
 
 [![StyleCI](https://styleci.io/repos/66637769/shield?branch=master)](https://styleci.io/repos/66637769/)
 
@@ -8,7 +8,8 @@ distribution based on my best practices.
 > The goal of this package is to give an example of how a TYPO3 project
 > could be configured and structured for real world scenarios. It is
 > updated on a regular basis to reflect the current development of TYPO3
-> CMS.
+> CMS. It's used by me as an advanced TYPO3 boilerplate for real world
+> TYPO3 projects.
 
 ---
 
@@ -24,26 +25,13 @@ distribution based on my best practices.
 
 #### Which TYPO3 version is actually supported?
 
-- TYPO3 9 LTS *(regular further development)*
-- TYPO3 8 LTS *(important bugfixes)*
+- TYPO3 9.5 LTS *(regular further development)*
 
 ---
 
 ## DOCUMENTATION
 
 > The documentation is actually work in progress
-
-- [Overview](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md)
-- [Installation/Usage](app/web/typo3conf/ext/theme/Documentation/Markdown/Installation/Index.md)
-- [Frontend](app/web/typo3conf/ext/theme/Documentation/Markdown/Frontend/Index.md)
-- [Backend](app/web/typo3conf/ext/theme/Documentation/Markdown/Backend/Index.md)
-- [Basic Enhancements](app/web/typo3conf/ext/theme/Documentation/Markdown/BasicEnhancements/Index.md)
-- [CKEditor](app/web/typo3conf/ext/theme/Documentation/Markdown/CKEditor/Index.md)
-- [Images](app/web/typo3conf/ext/theme/Documentation/Markdown/Images/Index.md)
-- [TYPO3 Extensions](app/web/typo3conf/ext/theme/Documentation/Markdown/Extensions/Index.md)
-- [(PhpStorm) Productivity](app/web/typo3conf/ext/theme/Documentation/Markdown/PhpStorm/Index.md)
-- [Code Quality](app/web/typo3conf/ext/theme/Documentation/Markdown/CodeQuality/Index.md)
-
 
 ---
 
@@ -82,9 +70,3 @@ distribution based on my best practices.
   * Basic Bootstrap v4 website frontend
   * Simple cookieconsent v3 support (multilanguage)
   * Preconfigured extension georgringer/news
-
-> **Of course, this is just an excerpt** – Get a good overview by
-> browsing the source code and reading the
-> [documentation](app/web/typo3conf/ext/theme/Documentation/Markdown/Index.md).
-
-
