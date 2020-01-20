@@ -28,6 +28,7 @@
 	},
 	"require": {
 		"php": "^7.3",
+		"apache-solr-for-typo3/solr": "^10.0",
 		"christianessl/adminpanel_int": "^1.0",
 		"cweagans/composer-patches": "^1.6",
 		"georgringer/autoswitchtolistview": "dev-master",

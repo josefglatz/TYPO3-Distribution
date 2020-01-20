@@ -1,5 +1,6 @@
 Name                                   Version             License            
 algo26-matthias/idna-convert           v1.1.0              LGPL-2.1+          
+apache-solr-for-typo3/solr             10.0.1              GPL-3.0-or-later   
 behat/gherkin                          v4.6.0              MIT                
 captainhook/captainhook                4.5.8               MIT                
 christianessl/adminpanel_int           1.0.0               GPL-2.0-or-later   
@@ -98,6 +99,7 @@ sebastianfeldmann/camino               0.9.2               MIT
 sebastianfeldmann/cli                  3.2.2               MIT                
 sebastianfeldmann/git                  2.4.0               MIT                
 sjbr/static-info-tables                6.7.1               GPL-2.0+           
+solarium/solarium                      4.2.0               BSD-3-Clause       
 spatie/schema-org                      2.11.1              MIT                
 squizlabs/php_codesniffer              3.5.3               BSD-3-Clause       
 sseidelmann/static-info-tables-de      6.3.9               GPL-2.0+           

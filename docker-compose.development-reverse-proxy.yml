@@ -1,0 +1,123 @@
+version: '3.7'
+services:
+  #######################################
+  # PHP application Docker container
+  #######################################
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    volumes:
+      - ./app/:/app/
+      - ./:/docker/
+    # cap and privileged needed for slowlog
+    cap_add:
+      - SYS_PTRACE
+    privileged: true
+    env_file:
+      - app/.env
+    environment:
+      - TYPO3_CONTEXT=Development/Docker/ReverseProxy
+      - VIRTUAL_HOST=.mywebsitedomain.docker
+      - VIRTUAL_PORT=80
+      - POSTFIX_RELAYHOST=[mail]:1025
+      - PHP_DEBUGGER=xdebug
+      - php.date.timezone=Europe/Vienna
+      - fpm.global.error_log=/app/var/log/fpm-error.log
+      - fpm.global.log_level=debug
+      - fpm.pool.clear_env=no
+      - fpm.pool.request_slowlog_timeout=3s
+      - fpm.pool.slowlog=/app/var/log/fpm-slow.log
+      - fpm.pool.catch_workers_output=no
+      - fpm.pool.access.log=/app/var/log/fpm-access.log
+      - fpm.pool.access.format="\"%m %r%Q%q\" %s %f, %{mili}d ms, %{kilo}M kb, %C"
+
+
+  #######################################
+  # MySQL server
+  #######################################
+  mysql:
+    build:
+      context: docker/mysql/
+      dockerfile: MySQL-5.7.Dockerfile
+    #ports:
+    #  - 13306:3306
+    volumes:
+      - "./app/var/log/mysql:/var/log/mysql"
+      - "./backup:/backup"
+      - mysql:/var/lib/mysql
+    env_file:
+      - app/.env
+
+  #######################################
+  # Solr server
+  #######################################
+  solr:
+    image: "solr:8.2"
+    env_file: "app/.env"
+    environment:
+      - "SOLR_JAVA_MEM=-Xms128m -Xmx512m"
+      - "VIRTUAL_HOST=solr.mywebsitedomain.docker"
+      - "VIRTUAL_PORT=8983"
+    volumes:
+      - "./docker/solr:/var/solr/data"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  #######################################
+  # Redis
+  #######################################
+  redis:
+    image: "redis:5.0"
+    entrypoint: "/usr/local/bin/redis-server"
+    command: "/etc/redis.conf"
+    env_file: "app/.env"
+    init: true
+    working_dir: "/app"
+    volumes:
+      - "./docker/redis/redis.conf:/etc/redis.conf:ro"
+
+  #######################################
+  # Redis Admin
+  #######################################
+  redisadmin:
+    image: erikdubbelboer/phpredisadmin
+    environment:
+      - VIRTUAL_HOST=redis.mywebsitedomain.docker
+      - VIRTUAL_PORT=80
+      - REDIS_1_HOST=redis
+      - REDIS_1_NAME=redis.mywebsitedomain.docker
+      - REDIS_1_PORT=6379
+
+  #######################################
+  # Mail
+  #######################################
+  # Mailhog
+  mail:
+     image: mailhog/mailhog
+     environment:
+      - VIRTUAL_HOST=mail.mywebsitedomain.docker
+      - VIRTUAL_PORT=8025
+
+  #######################################
+  # phpMyAdmin
+  #######################################
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      - PMA_HOSTS=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=dev
+      - PMA_ABSOLUTE_URI=http://pma.mywebsitedomain.docker
+      - VIRTUAL_HOST=pma.mywebsitedomain.docker
+      - VIRTUAL_PORT=80
+    volumes:
+      - phpmyadmin:/sessions
+
+volumes:
+  mysql:
+  phpmyadmin:
