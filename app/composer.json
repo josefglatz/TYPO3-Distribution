@@ -27,7 +27,7 @@
 		}
 	},
 	"require": {
-		"causal/extractor": "dev-master",
+		"php": "^7.3",
 		"christianessl/adminpanel_int": "^1.0",
 		"cweagans/composer-patches": "^1.6",
 		"georgringer/autoswitchtolistview": "dev-master",
@@ -48,10 +48,10 @@
 		"josefglatz/seo-aspect-ratios": "^1",
 		"josefglatz/theme": "@dev",
 		"josefglatz/theme-project": "@dev",
-		"lochmueller/staticfilecache": "^10",
 		"minifranske/gravatar": "^1",
-		"php": "^7.3",
 		"plan2net/webp": "^2",
+		"sseidelmann/static-info-tables-de": "^6.3",
+		"t3g/querybuilder": "^9.5",
 		"t3monitor/t3monitoring_client": "^9",
 		"typo3/cms-about": "*",
 		"typo3/cms-adminpanel": "*",
@@ -142,8 +142,9 @@
 			"@php ./typo3cms install:fixfolderstructure"
 		],
 		"setup-project-files": [
-			"ln -sf config/.htaccess public/.htaccess",
-			"ln -sf config/AdditionalFactoryConfiguration.php private/typo3conf/AdditionalFactoryConfiguration.php"
+			"ln -snf config/.htaccess public/.htaccess",
+			"ln -snf config/AdditionalFactoryConfiguration.php private/typo3conf/AdditionalFactoryConfiguration.php",
+			"ln -snf config/AdditionalConfiguration.php private/typo3conf/AdditionalConfiguration.php"
 		],
 		"setup-active-extensions": [
 			"@php ./typo3cms extension:setupactive"

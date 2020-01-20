@@ -2,6 +2,7 @@
     "name": "josefglatz/theme",
     "type": "typo3-cms-extension",
     "description": "EXT:theme sitepackage extension",
+	"version": "9.5.0",
     "require": {
         "typo3/cms-core": "^9.5"
     },

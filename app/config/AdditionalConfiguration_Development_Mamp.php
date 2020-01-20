@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+declare(strict_types=1);
 
 /*
  * Example configuration block for MAMP's Apache host directives:

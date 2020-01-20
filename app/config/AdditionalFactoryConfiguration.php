@@ -25,12 +25,4 @@ return [
             ],
         ],
     ],
-    'GFX' => [
-        // Override default quality for processed images
-        'jpg_quality' => '86',
-        'processor_allowUpscaling' => false,
-    ],
-    'SYS' => [
-        'sitename' => 'TYPO3 Distribution',
-    ],
 ];
