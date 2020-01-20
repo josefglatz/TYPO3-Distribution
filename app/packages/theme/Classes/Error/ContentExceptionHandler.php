@@ -31,6 +31,12 @@ class ContentExceptionHandler implements ExceptionHandlerInterface
     protected $view;
 
     /**
+     * The severity level
+     * @var int
+     */
+    protected $severity = AbstractMessage::ERROR;
+
+    /**
      * @param array $configuration
      */
     public function __construct(array $configuration = [])
@@ -46,12 +52,6 @@ class ContentExceptionHandler implements ExceptionHandlerInterface
         ]));
         $this->view->setRenderingContext($context);
     }
-
-    /**
-     * The severity level
-     * @var int
-     */
-    protected $severity = AbstractMessage::ERROR;
 
     /**
      * Handles exceptions thrown during rendering of content objects

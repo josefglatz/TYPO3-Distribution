@@ -43,6 +43,7 @@ class RemoveEmptyParagraphViewHelper extends AbstractViewHelper
     {
         $content = $renderChildrenClosure();
         $content = preg_replace('~\\s?<p>(\\s|&nbsp;)+</p>\\s?~', '', $content);
+
         return $content;
     }
 }

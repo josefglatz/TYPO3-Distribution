@@ -38,8 +38,9 @@ class DomainNameViewHelper extends AbstractViewHelper
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): ?string
     {
         $url = $arguments['url'] ??  $renderChildrenClosure();
+
         try {
-            return self::parseUrl($arguments['url'], $arguments);
+            return self::parseUrl($url, $arguments);
         } catch (\Exception $e) {
             // @TODO VH format.domainName logging
             return 'domainName-extraction-not-possible';

@@ -38,8 +38,6 @@ class ContentEditLinkUrlViewHelper extends AbstractBackendViewHelper
      */
     protected $escapeOutput = false;
 
-    /**
-     */
     public function initializeArguments(): void
     {
         $this->registerArgument('uid', 'int', 'The record UID', true);

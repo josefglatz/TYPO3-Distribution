@@ -19,6 +19,7 @@ class ArrayTool
                 return false;
             }
         }
+
         return true;
     }
 
@@ -34,6 +35,7 @@ class ArrayTool
     public static function explodeCamelCase(string $camelCasedString, bool $lcfirstChar = true): array
     {
         $camelCasedString = trim($camelCasedString);
+
         if ($lcfirstChar) {
             $camelCasedString = lcfirst($camelCasedString);
         }
