@@ -45,10 +45,10 @@ class TypoScriptHook
                     if ($configurationPageId !== $rootPageId) {
                         continue;
                     }
-                    $path = 'FILE:EXT:theme/Configuration/TypoScript/Sites/' . $configuration['path'] . '/';
+                    $path = 'EXT:theme/Configuration/TypoScript/Sites/' . $configuration['path'] . '/';
                     $row = [
-                        'config' => '<INCLUDE_TYPOSCRIPT: source="' . $path . 'setup.typoscript">',
-                        'constants' => '<INCLUDE_TYPOSCRIPT: source="' . $path . 'constants.typoscript">',
+                        'config' => '@import \'' . $path . 'setup.typoscript\'',
+                        'constants' => '@import \'' . $path . 'constants.typoscript\'',
                         'nextLevel' => 0,
                         'static_file_mode' => 3,
                         'uid' => $configuration['uid'],
