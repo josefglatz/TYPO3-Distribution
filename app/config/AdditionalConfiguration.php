@@ -65,7 +65,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
         'loginSecurityLevel' => 'normal',
         'notificationPrefix' => '[' . htmlspecialchars($site['sitenameBase']) . ' TYPO3 Note]',
         'passwordHashing'    => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash',
+            'className' => \TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash::class,
             'options'   => [],
         ],
     ],
@@ -229,7 +229,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
         'hidePagesIfNotTranslatedByDefault' => true,
         'loginSecurityLevel' => 'normal',
         'passwordHashing'    => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash',
+            'className' => \TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash::class,
             'options'   => [],
         ],
         'versionNumberInFilename' => 'querystring',
