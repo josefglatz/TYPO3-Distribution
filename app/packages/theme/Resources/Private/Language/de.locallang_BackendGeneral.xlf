@@ -17,14 +17,6 @@
 			<source>Please add content to following fields:</source>
 			<target>Bitte befülle folgende Felder mit Inhalt:</target>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.clear.processedfiles.description" approved="yes">
-			<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
-			<target>Leere die Tabelle sys_file_processedfile und lösche alle physischen Dateien auf lokal angehängten Dateisystemen.</target>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.clear.processedfiles.title" approved="yes">
-			<source>Clear all processed files</source>
-			<target>Leere alle verarbeiteten Dateien</target>
-		</trans-unit>
 		<trans-unit id="div.pages.seo" approved="yes">
 			<source>SEO</source>
 			<target>SEO</target>

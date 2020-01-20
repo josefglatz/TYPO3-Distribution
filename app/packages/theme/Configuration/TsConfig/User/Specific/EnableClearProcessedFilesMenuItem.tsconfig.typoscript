@@ -1,3 +1,0 @@
-// Enable custom clear processed files clear cache entry provided by EXT:theme
-// Works only for TYPO3 admin users
-options.clearCache.processedfiles = 1

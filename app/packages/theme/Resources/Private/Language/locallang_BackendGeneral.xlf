@@ -14,12 +14,6 @@
 		<trans-unit id="backendpreview.general.info.missing.necessary.fields">
 			<source>Please add content to following fields:</source>
 		</trans-unit>
-		<trans-unit id="clearcacheaction.clear.processedfiles.description">
-			<source>Truncate sys_file_processedfile table and delete physical files of local storages.</source>
-		</trans-unit>
-		<trans-unit id="clearcacheaction.clear.processedfiles.title">
-			<source>Clear all processed files</source>
-		</trans-unit>
 		<trans-unit id="div.pages.seo">
 			<source>SEO</source>
 		</trans-unit>

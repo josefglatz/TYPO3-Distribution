@@ -50,8 +50,6 @@ call_user_func(
                 '<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme/Configuration/TsConfig/Page/General/Tceform/SysFileMetadata.tsconfig.typoscript">'
             );
 
-            // Add custom cache action item: clear processed files
-            $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = \JosefGlatz\Theme\Hooks\Backend\Toolbar\ClearProcessedFilesMenuItem::class;
 
             // Hook for adding custom CSS file to page module
             $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][] = \JosefGlatz\Theme\Hooks\Backend\PageLayoutView::class . '->render';
