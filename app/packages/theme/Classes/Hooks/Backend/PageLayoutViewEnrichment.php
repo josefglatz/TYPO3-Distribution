@@ -2,6 +2,7 @@
 
 namespace JosefGlatz\Theme\Hooks\Backend;
 
+use TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
@@ -33,6 +34,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
      * @param $headerContent
      * @param $itemContent
      * @param array $row
+     * @throws RouteNotFoundException
      */
     public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
     {
@@ -56,7 +58,7 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
      *
      * @param array $row
      * @return string
-     * @throws \TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
+     * @throws RouteNotFoundException
      */
     protected function getEditLink(array $row): string
     {

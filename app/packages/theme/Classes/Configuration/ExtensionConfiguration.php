@@ -8,6 +8,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class ExtensionConfiguration implements SingletonInterface
 {
+    /**
+     * @var boolean;
+     */
+    protected $pageLayoutViewEnrichmentFooter = true;
 
     /**
      * Fill the properties properly
@@ -20,11 +24,6 @@ class ExtensionConfiguration implements SingletonInterface
         } catch (\Exception $e) {
         }
     }
-
-    /**
-     * @var boolean;
-     */
-    protected $pageLayoutViewEnrichmentFooter = true;
 
     /**
      * @return bool
