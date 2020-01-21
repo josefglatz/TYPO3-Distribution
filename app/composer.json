@@ -40,6 +40,7 @@
 		"georgringer/uri2link": "^0.1.0",
 		"helhum/dotenv-connector": "^2",
 		"helhum/typo3-console": "^5",
+		"helhum/typo3-crontab": "^0.3.0",
 		"helhum/typo3-secure-web": "^0",
 		"ichhabrecht/content-defender": "^3",
 		"josefglatz/beuser-fastswitch": "^3",
