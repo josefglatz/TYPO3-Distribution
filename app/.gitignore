@@ -16,7 +16,6 @@
 /packages/**/*.tar.gz
 
 /private/**/*
-!/private/typo3conf/LocalConfiguration.php
 !/private/typo3conf/AdditionalConfiguration.php
 !/private/typo3conf/AdditionalConfiguration_*.php
 !/private/.htaccess
