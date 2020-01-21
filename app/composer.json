@@ -144,11 +144,6 @@
 		"folder-structure": [
 			"@php ./typo3cms install:fixfolderstructure"
 		],
-		"setup-project-files": [
-			"ln -snf config/.htaccess public/.htaccess",
-			"ln -snf config/AdditionalFactoryConfiguration.php private/typo3conf/AdditionalFactoryConfiguration.php",
-			"ln -snf config/AdditionalConfiguration.php private/typo3conf/AdditionalConfiguration.php"
-		],
 		"setup-active-extensions": [
 			"@php ./typo3cms extension:setupactive"
 		],
