@@ -1,7 +1,6 @@
 ######################################
 ## Remove from git ignore BEGIN
 ######################################
-/web/typo3conf/LocalConfiguration.php
 /composer.lock
 ######################################
 ## Remove from git ignore END
@@ -15,10 +14,7 @@
 /packages/**/*.tgz
 /packages/**/*.tar.gz
 
-/private/**/*
-!/private/typo3conf/AdditionalConfiguration.php
-!/private/typo3conf/AdditionalConfiguration_*.php
-!/private/.htaccess
+/private
 
 /public/fileadmin
 /public/typo3
