@@ -52,7 +52,6 @@
 		"josefglatz/toolbar-clear-processedfiles": "^1.0",
 		"minifranske/gravatar": "^1",
 		"plan2net/webp": "^2",
-		"sseidelmann/static-info-tables-de": "^6.3",
 		"t3g/querybuilder": "^9.5",
 		"t3monitor/t3monitoring_client": "^9",
 		"typo3/cms-about": "*",
