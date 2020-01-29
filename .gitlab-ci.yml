@@ -1,0 +1,20 @@
+stages:
+  - test
+  - deploy
+  - postdeploy
+
+image: edbizarro/gitlab-ci-pipeline-php:7.3
+
+variables:
+  SURF_DEPLOYMENT_PROJECTNAME: Best Customer Corporate Website
+  COMPOSER_CACHE_DIR: $CI_PROJECT_DIR/.cache/composer
+  NPM_CACHE_DIR: $CI_PROJECT_DIR/.cache/npm
+  YARN_CACHE_DIR: $CI_PROJECT_DIR/.cache/yarn
+  GULP_PRODUCTION: 'true'
+
+cache:
+  key: "$CI_PROJECT_ID-$CI_COMMIT_REF_NAME"
+  paths:
+    - $CI_PROJECT_DIR/.cache/yarn
+    - $CI_PROJECT_DIR/.cache/composer
+    - $CI_PROJECT_DIR/.cache/npm
