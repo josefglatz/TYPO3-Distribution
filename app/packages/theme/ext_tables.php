@@ -81,8 +81,6 @@ call_user_func(
             );
         }
 
-        // to register bitmap icons (e.g. png) you must register them using the BitmapIconProvider
-
         // Add CSH descriptions
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
             'sys_file_reference',
