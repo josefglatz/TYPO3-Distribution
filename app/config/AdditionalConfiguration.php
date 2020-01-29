@@ -143,6 +143,9 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive($GLOBALS['TYPO3_CONF_VARS'
             'specialChar' => true,
             'patterns' => 4, // Fitting patterns: How many patterns from above must fit to make the password secure
         ],
+        'crontab' => [
+            'hideSchedulerModule' => '1',
+        ],
         'cropvariantsbuilder' => [
             'configurationProviderExtension' => 'theme',
             'configurationProviderLocallangFilename' => 'locallang',
