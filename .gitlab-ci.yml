@@ -18,3 +18,13 @@ cache:
     - $CI_PROJECT_DIR/.cache/yarn
     - $CI_PROJECT_DIR/.cache/composer
     - $CI_PROJECT_DIR/.cache/npm
+
+
+test:composer:
+  stage: test
+  image: composer:latest
+  script:
+    - echo "Validate app/composer.json:"
+    - composer validate --working-dir=./app --no-check-all --strict
+    - echo "Validate bin/dependencies/php/composer.json:"
+    - composer validate --working-dir=./bin/dependencies/php --no-check-all --strict
