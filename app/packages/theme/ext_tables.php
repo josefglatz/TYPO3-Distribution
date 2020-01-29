@@ -83,14 +83,6 @@ call_user_func(
 
         // to register bitmap icons (e.g. png) you must register them using the BitmapIconProvider
 
-        // unset Install Tool Report for local instances
-        if (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->__toString() === 'Development/Docker') {
-            foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'] as $key => $value) {
-                if ($value === \TYPO3\CMS\Install\Report\SecurityStatusReport::class) {
-                    unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'][$key]);
-                }
-            }
-        }
         // Add CSH descriptions
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
             'sys_file_reference',

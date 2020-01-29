@@ -46,6 +46,7 @@ helhum/typo3-secure-web                  v0.2.9              GPL-2.0-or-later
 ichhabrecht/content-defender             3.0.11              GPL-2.0-or-later   
 josefglatz/beuser-fastswitch             3.2.1               GPL-3.0            
 josefglatz/cropvariantsbuilder           dev-master b0788ef  GPL-2.0-only       
+josefglatz/development-only              1.0.0               GPL-2.0-only       
 josefglatz/hide-sys-template             1.1.2               GPL-2.0            
 josefglatz/iconcheck                     2.1.0               GPL-3.0            
 josefglatz/seo-aspect-ratios             1.0.0               GPL-3.0            
