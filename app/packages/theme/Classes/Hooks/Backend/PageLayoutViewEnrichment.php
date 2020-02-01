@@ -27,7 +27,6 @@ class PageLayoutViewEnrichment implements PageLayoutViewDrawItemHookInterface, S
     }
 
     /**
-     * @noinspection MoreThanThreeArgumentsInspection
      * @noinspection ReferencingObjectsInspection
      * @param PageLayoutView $parentObject
      * @param $drawItem
