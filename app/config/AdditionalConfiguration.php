@@ -363,7 +363,7 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG'] = [
     ],
 ];
 
-if ($redisHost && $redisPort && class_exists(Redis::class)) {
+if ($redisHost && $redisPort && $redisFirstDatabase > 0 && class_exists(Redis::class)) {
     $cacheNames = [
         'cache_pages',
         'cache_pagesection',
