@@ -1,0 +1,7 @@
+{
+    "require": {
+        "symfony/var-exporter": "^5.0",
+        "mercari/composer-diff-plugin": "^0.0.1",
+        "pyrech/composer-changelogs": "^1.7"
+    }
+}

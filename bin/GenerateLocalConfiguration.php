@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 use Symfony\Component\VarExporter\VarExporter;
 
-include_once __DIR__ . '/../app/vendor/autoload.php';
+include_once __DIR__ . '/dependencies/php/vendor/autoload.php';
 
 // Resolve absolute path to LocalConfiguration.php
 $file = implode(
