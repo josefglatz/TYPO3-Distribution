@@ -282,8 +282,7 @@ page {
 #####################
 #### DEVELOPMENT ####
 #####################
-// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
-[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
+[applicationContext matches "#^(Development|Production/(Dev|Staging))#"]
 	page {
 		bodyTagCObject {
 			10 {
@@ -296,7 +295,7 @@ page {
 			}
 		}
 	}
-[applicationContext matches "/^Development/"]
+[applicationContext matches "#^Development#"]
 	page {
 		bodyTagCObject {
 			10 {

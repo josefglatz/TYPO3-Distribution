@@ -7,7 +7,7 @@ TCAdefaults {
 	}
 }
 
-[applicationContext matches "/^Development/" || applicationContext matches '/^Production\\\\\\\\/Dev/']
+[applicationContext matches "#^(Development|Production/(Dev|Staging))#"]
 	TCAdefaults {
 		tt_content {
 			hidden = 0

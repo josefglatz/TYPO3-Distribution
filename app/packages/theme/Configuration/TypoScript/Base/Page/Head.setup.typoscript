@@ -89,8 +89,7 @@ page {
 #################################
 #### DEBUGGING / DEVELOPMENT ####
 #################################
-// @TODO refactor applicationContext condition if the TypoScript Condition Parser/Matcher is fixed in the core
-[getTSFE().beUserLogin == 1 || applicationContext matches "/^Development/" || applicationContext == "/^Production\/Dev/"]
+[applicationContext matches "#^(Development|Production/(Dev|Staging))#" || getTSFE().beUserLogin == 1]
 	// show some debug infos in <head>
 	page.headerData.666999 = TEXT
 	page.headerData.666999 {
@@ -119,7 +118,7 @@ page {
 
 
 // Overwrite robots meta tag for specific environments (as an additional security layer!)
-[applicationContext matches '/^Production\\\\\\\\/Staging/' || applicationContext matches '/^Production\\\\\\\\/Dev/' || "{$site.dummyFrontend}" == 1]
+[applicationContext matches "#^(Production/(Dev|Staging))#"]
 	page {
 
 		meta {
