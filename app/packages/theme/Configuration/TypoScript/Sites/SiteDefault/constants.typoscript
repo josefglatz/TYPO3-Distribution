@@ -157,7 +157,7 @@ site {
             }
         }
     }
-[getTSFE().beUserLogin === 1]
+[getTSFE().isBackendUserLoggedIn()]
     site {
         tracking {
 			matomo {

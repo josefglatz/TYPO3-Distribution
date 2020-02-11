@@ -73,7 +73,7 @@ config {
 }
 
 
-[getTSFE().beUserLogin === 1]
+[getTSFE().isBackendUserLoggedIn()]
 	// Force generation of links to hidden linkhandler "newsDefault" records
 	config.recordLinks.newsDefault.forceLink = 1
 
@@ -81,7 +81,7 @@ config {
 #################################
 #### DEBUGGING / DEVELOPMENT ####
 #################################
-[{$theme.debug} == 1 && getTSFE().beUserLogin === 1 || applicationContext matches "#^Development#"]
+[{$theme.debug} == 1 && getTSFE().isBackendUserLoggedIn() || applicationContext matches "#^Development#"]
 	config {
 		debug = 1
 		admPanel = 1

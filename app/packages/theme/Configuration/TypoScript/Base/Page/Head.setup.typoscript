@@ -89,7 +89,7 @@ page {
 #################################
 #### DEBUGGING / DEVELOPMENT ####
 #################################
-[applicationContext matches "#^(Development|Production/(Dev|Staging))#" || getTSFE().beUserLogin == 1]
+[applicationContext matches "#^(Development|Production/(Dev|Staging))#" || getTSFE().isBackendUserLoggedIn()]
 	// show some debug infos in <head>
 	page.headerData.666999 = TEXT
 	page.headerData.666999 {
