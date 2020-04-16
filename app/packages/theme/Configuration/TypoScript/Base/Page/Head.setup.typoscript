@@ -58,12 +58,6 @@ page {
 		author {
 			override.field = author
 		}
-
-		date = TEXT
-		date {
-			data = page:SYS_LASTCHANGED // page:crdate
-			date = Y-m-d
-		}
 	}
 
 
