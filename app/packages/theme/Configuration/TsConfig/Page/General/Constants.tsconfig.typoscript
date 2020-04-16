@@ -1,7 +1,0 @@
-// TypoScript Frontend Constants
-// 		Constants which you can use within TypoScript and PageTSConfig
-// 		more infos https://docs.typo3.org/typo3cms/TSconfigReference/PageTsconfig/TSFE/Index.html
-
-TSFE.constants {
-#	foo.id = 123
-}
