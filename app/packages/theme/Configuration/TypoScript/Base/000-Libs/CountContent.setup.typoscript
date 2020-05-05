@@ -59,12 +59,13 @@ lib.countContent {
 	20 {
 		table = tt_content
 		select {
+			includeRecordsWithoutDefaultTranslation = 1
 			selectFields = count(uid) AS counter
-			where = {#colPos} IN({register:colPos})
+			where = {#colPos} IN({register:colPos}) AND sys_language_uid = {context:language:id}
 			where.insertData = 1
 			pidInList.data = register:pageUid
 			pidInList.override.data = register:contentFromPid
-			andWhere = (deleted = 0 AND hidden = 0)
+			languageField = 0
 		}
 
 		renderObj = COA
