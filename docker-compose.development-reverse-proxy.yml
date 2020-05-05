@@ -55,6 +55,7 @@ services:
     image: "solr:8.2"
     env_file: "app/.env"
     environment:
+      - "SOLR_HEAP=512m"
       - "SOLR_JAVA_MEM=-Xms128m -Xmx512m"
       - "VIRTUAL_HOST=solr.mywebsitedomain.docker"
       - "VIRTUAL_PORT=8983"
