@@ -2,13 +2,16 @@
 #    User sshConfigHost1User
 #    Port sshConfigHost1Port
 #    HostName sshConfigHost1RealHostName
+#    StrictHostKeyChecking no
 
 #Host sshConfigHost2Name
 #    User sshConfigHost2User
 #    Port sshConfigHost2Port
 #    HostName sshConfigHost2RealHostName
+#    StrictHostKeyChecking no
 
 #Host sshConfigHost3Name
 #    User sshConfigHost3User
 #    Port sshConfigHost3Port
 #    HostName sshConfigHost3RealHostName
+#    StrictHostKeyChecking no
