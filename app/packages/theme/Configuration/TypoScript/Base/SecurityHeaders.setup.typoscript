@@ -1,0 +1,41 @@
+// add Security Headers
+// !!!!!!!!!!!!!! but be careful! CSP needs to be adjusted !!!!!!!
+
+// Security Headers (Tests https://securityheaders.com/)
+config.additionalHeaders {
+    // HTTP Strict-Transport-Security (HSTS): Header informs the browser that the website can only be accessed via HTTPS (Man-in-the-Middle-Angriffe, Session-Hijacking )
+    10.header = strict-transport-security: max-age=31536000; includeSubDomains
+
+    // X-Frame-Options: Header prevents the page from loading into a frame on another page.
+    // "deny" or "sameorigin"
+    // the better and more up-to-date alternative is the content security policy (frame-ancestors directive)
+
+    // X-XSS-Protection: prevents "Cross Site Scripting"
+    // superfluous due to Content Security Policy (CSP)
+
+    // X-Content-Type-Options: Content type sniffing is prevented
+    20.header = X-Content-Type-Options: nosniff
+
+    // X-Powered-By: Overwrite information about the server configuration
+    30.header = X-Powered-By: nothing
+
+    // Referrer-Policy (privacy)
+    // controls whether the referrer value is transferred for outgoing links.
+    // "no-referrer" or "strict-origin"
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+    40.header = Referrer-Policy: strict-origin
+
+    // Permissions-Policy (earlier Feature-Policy): User data security
+    // Permissions-Policy: geolocation=(), midi=(), camera=(), usb=(), magnetometer=(), accelerometer=(), vr=(), speaker=(), ambient-light-sensor=(), gyroscope=(), microphone=()
+    // 50.header = Permissions-Policy: geolocation=()
+
+    // !!! Content-Security-Policy (CSP) !!!
+    // CSP will automatically block inline scripts (unless you implement workarounds)
+    // Syntax Content-Security-Policy: script-src <source> <source>;
+    // default-src: (none or self) fallback for all directives
+    // Allow Inline Scripts using a Hash, example: script-src 'sha256-xzi4zkCjuC8lZcD2UmnqDG0vurmq12W/XKM5Vd0+MlQ='
+    // Content-Security-Policy-Report-Only allows to experiment with policies by monitoring (but not enforcing) their effects
+    60.header (
+        Content-Security-Policy-Report-Only: default-src 'none'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; manifest-src 'self'; style-src 'self'; img-src 'self'; frame-src 'self'; report-uri https://dbde49557f2daa4525830d97cb9f5d5b.report-uri.com/r/d/csp/reportOnly
+    )
+}
