@@ -11,6 +11,7 @@ variables:
   NPM_CACHE_DIR: $CI_PROJECT_DIR/.cache/npm
   YARN_CACHE_DIR: $CI_PROJECT_DIR/.cache/yarn
   GULP_PRODUCTION: 'true'
+  GIT_DEPTH: 10
 
 cache:
   key: "$CI_PROJECT_ID-$CI_COMMIT_REF_NAME"
