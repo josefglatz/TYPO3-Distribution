@@ -10,7 +10,7 @@
         $replace_with=fgets(STDIN);
     }
 
-    $filename='./../web/typo3conf/ext/theme/Configuration/TypoScript/Base/Config.setup.typoscript';
+    $filename='./../packages/theme/Configuration/TypoScript/Base/Config.setup.typoscript';
     $string_to_replace = 'Based on the TYPO3 Distribution by Josef Glatz https://github.com/josefglatz/TYPO3-Distribution';
     replace_string_in_file($filename, $string_to_replace, $replace_with);
 
