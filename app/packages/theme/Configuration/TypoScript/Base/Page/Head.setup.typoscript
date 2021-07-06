@@ -103,6 +103,7 @@ page {
 	   Application Context:  {getenv:TYPO3_CONTEXT}
 	   Site Base:            {site:base}
 	   Site Root Page ID:    {site:rootPageId}
+       Site Language ID: 	 {siteLanguage:languageId}
 
 	-->
 
